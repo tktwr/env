@@ -1,0 +1,40 @@
+#!/bin/sh
+
+bin_name=`basename $0`
+memo_dir="$MY_LOCAL_CONFIG/memo"
+tags="$MY_LOCAL_CONFIG/memo/tags $MY_REMOTE_CONFIG/memo/tags"
+
+f_help()
+{
+  echo "NAME"
+  echo "  $bin_name"
+  echo
+  echo "SYNOPSIS"
+  echo "  $bin_name [options] [tag]"
+  echo
+  echo "OPTIONS"
+  echo "  -h, --help   print help"
+  echo
+  echo "TAGS"
+  awk '{print $1}' $tags | grep '^memo_' | sed 's/memo_//' | column
+}
+
+f_main()
+{
+  if [ $# -eq 1 ]; then
+    case $1 in
+      -h|--help)
+        f_help
+        exit
+        ;;
+      *)
+        vim -t "memo_$1" -c "normal zt"
+        ;;
+    esac
+  else
+    vim $memo_dir/memo.md.html
+  fi
+}
+
+f_main $*
+

@@ -1,0 +1,58 @@
+#!/bin/bash
+
+source $HOME/.hostname
+export ETC_DIR="$MY_REMOTE_CONFIG/etc"
+export BASH_DIR="$MY_REMOTE_CONFIG/etc/bash"
+
+# bash
+HISTCONTROL=ignoreboth
+#umask 022
+
+# env variables
+export PAGER='less'
+export EDITOR='vim'
+#export GIT_PAGER='less'
+#export GIT_EDITOR='vim'
+
+#==========================================================================
+# alias
+#==========================================================================
+
+unalias -a
+
+# basic
+#alias c='crontab $ETC_DIR/crontab.$MY_HOST_NAME'
+alias s='source $BASH_DIR/bashrc'
+
+#==========================================================================
+# load common files
+#==========================================================================
+
+source $BASH_DIR/bashrc.common.path
+source $BASH_DIR/bashrc.common.func
+source $BASH_DIR/bashrc.common.alias
+source $BASH_DIR/bashrc.common.colors
+
+#==========================================================================
+# check installed programs
+#==========================================================================
+
+source $BASH_DIR/check_lv.sh
+
+#==========================================================================
+# load specific files
+#==========================================================================
+
+for i in bashrc.os.$MY_OS_NAME bashrc.shell.$MY_SHELL_NAME bashrc.site.$MY_SITE_NAME bashrc.host.$MY_HOST_NAME; do
+  if [ -f $BASH_DIR/$i ]; then
+    source $BASH_DIR/$i
+  fi
+done
+
+#==========================================================================
+# setup
+#==========================================================================
+
+f_set_core_off
+f_set_git_prompt
+

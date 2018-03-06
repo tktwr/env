@@ -1,0 +1,7 @@
+#!/bin/sh
+
+source common.sh
+
+dst=`f_get_snapfname $1`
+f_eval "mv $1 $dst"
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+export PROG_FILES_64_DIR=`cygpath -u 'C:\Program Files'`
+export PROG_FILES_32_DIR=`cygpath -u 'C:\Program Files (x86)'`
+
+PATH="$HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
+
+alias x='explorer.exe'
+alias ls="ls -v -F --color=auto -I 'NTUSER.*' -I 'ntuser.*' -I '*.lnk' -I '*.url' -I 'desktop.ini'"
+alias cmake-unix='cmake -G "Unix Makefiles"'
+alias chrome='$PROG_FILES_32_DIR/Google/Chrome/Application/chrome.exe'
+

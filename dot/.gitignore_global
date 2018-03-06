@@ -1,0 +1,15 @@
+# vim
+*.swp
+.netrwhist
+tags
+
+# emacs
+*~
+
+# windows
+Thumbs.db
+*.lnk
+
+# mac
+.DS_Store
+

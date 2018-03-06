@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ ! -d "$PROG_FILES_32_DIR" ]; then
+  echo "$PROG_FILES_32_DIR is not a directory."
+  exit
+fi
+
+PATH="$PROG_FILES_32_DIR/Vim/vim80:$PATH"
+
+exec gvim "$@"
+

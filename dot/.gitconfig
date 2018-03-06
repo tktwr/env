@@ -1,0 +1,27 @@
+# gitconfig
+
+[user]
+	name = username
+	email = username@example.com
+[core]
+	autocrlf = input
+	quotepath = false
+	pager = less
+	editor = vim
+	excludesfile = ~/.gitignore_global
+
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[mergetool]
+	prompt = false
+
+[alias]
+	graph  = log --graph --all --pretty=format:\"%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s\" --date=format:'%Y/%m/%d %H:%M'
+	graph1 = log --graph --all --pretty=format:\"%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s\" --date=format:'%Y/%m/%d %H:%M' --name-status
+	co = checkout
+	dd = difftool -d
+

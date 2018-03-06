@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias x='nautilus'
+alias p='evince'
+

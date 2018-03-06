@@ -1,0 +1,8 @@
+export MY_HOST_NAME=unknown
+export MY_SITE_NAME=unknown
+export MY_SHELL_NAME=unknown
+export MY_OS_NAME=unknown
+
+export MY_REMOTE_CONFIG=$HOME
+export MY_LOCAL_CONFIG=$HOME
+
