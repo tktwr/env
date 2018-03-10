@@ -3,6 +3,6 @@ export MY_SITE_NAME=unknown
 export MY_SHELL_NAME=unknown
 export MY_OS_NAME=unknown
 
-export MY_REMOTE_CONFIG=$HOME
-export MY_LOCAL_CONFIG=$HOME
+export MY_REMOTE_CONFIG=$HOME/env.github
+export MY_LOCAL_CONFIG=$HOME/env.local
 

@@ -1,8 +1,7 @@
 #!/bin/bash
 
 source $HOME/.hostname
-export ETC_DIR="$MY_REMOTE_CONFIG/etc"
-export BASH_DIR="$MY_REMOTE_CONFIG/etc/bash"
+CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # bash
 HISTCONTROL=ignoreboth
@@ -20,32 +19,30 @@ export EDITOR='vim'
 
 unalias -a
 
-# basic
-#alias c='crontab $ETC_DIR/crontab.$MY_HOST_NAME'
-alias s='source $BASH_DIR/bashrc'
+alias s='source $HOME/.bashrc'
 
 #==========================================================================
 # load common files
 #==========================================================================
 
-source $BASH_DIR/bashrc.common.path
-source $BASH_DIR/bashrc.common.func
-source $BASH_DIR/bashrc.common.alias
-source $BASH_DIR/bashrc.common.colors
+source $CURRENT_DIR/bashrc.common.path
+source $CURRENT_DIR/bashrc.common.func
+source $CURRENT_DIR/bashrc.common.alias
+source $CURRENT_DIR/bashrc.common.colors
 
 #==========================================================================
 # check installed programs
 #==========================================================================
 
-source $BASH_DIR/check_lv.sh
+#source $CURRENT_DIR/check_lv.sh
 
 #==========================================================================
 # load specific files
 #==========================================================================
 
 for i in bashrc.os.$MY_OS_NAME bashrc.shell.$MY_SHELL_NAME bashrc.site.$MY_SITE_NAME bashrc.host.$MY_HOST_NAME; do
-  if [ -f $BASH_DIR/$i ]; then
-    source $BASH_DIR/$i
+  if [ -f $CURRENT_DIR/$i ]; then
+    source $CURRENT_DIR/$i
   fi
 done
 

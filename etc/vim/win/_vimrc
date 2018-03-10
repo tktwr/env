@@ -1,0 +1,17 @@
+set guifont=‚ ‚­‚ ƒtƒHƒ“ƒg:h12:cSHIFTJIS
+set fileencodings=utf-8,cp932,euc-jp,cp936
+set noswapfile
+set nobackup
+set noundofile
+
+" IM off for start up
+set iminsert=0
+set imsearch=-1
+inoremap <ESC> <ESC>:set iminsert=0<CR>
+
+nnoremap Q     :confirm qall<CR>
+
+" gui menu
+"set guioptions-=m
+"set guioptions-=T
+

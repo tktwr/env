@@ -1,1 +1,1 @@
-source $MY_REMOTE_CONFIG/etc/vim/vimrc
+source $HOME/.vim/vimrc
