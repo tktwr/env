@@ -1,8 +1,19 @@
-export MY_HOST_NAME=unknown
-export MY_SITE_NAME=unknown
-export MY_SHELL_NAME=unknown
-export MY_OS_NAME=unknown
+export MY_HOST_NAME=
+export MY_SITE_NAME=
+export MY_SHELL_NAME=
+export MY_OS_NAME=
 
-export MY_REMOTE_CONFIG=$HOME/env.github
-export MY_LOCAL_CONFIG=$HOME/env.local
+export MY_REMOTE_CONFIG=
+export MY_LOCAL_CONFIG=
+
+export MY_DIARY=
+export MY_TODO=
+
+export MY_GIT_REPO=
+export MY_SVN_REPO=
+
+export MY_PAPER_DIR=
+export MY_WORK_DIR=
+export MY_WORK_GIT=
+export MY_WORK_SVN=
 

@@ -6,6 +6,8 @@ inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
 inoremap <C-B>   <Left>
 inoremap <C-F>   <Right>
+"inoremap <C-P>   <Up>
+"inoremap <C-N>   <Down>
 inoremap <C-D>   <Del>
 
 cnoremap <C-A>   <Home>

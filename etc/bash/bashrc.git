@@ -1,0 +1,33 @@
+#!/bin/bash
+
+f_set_git_prompt() {
+  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007"'
+
+  GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
+  COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
+  COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
+  COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
+  if test -f "$COMPLETION_PATH/git-prompt.sh"
+  then
+    source "$COMPLETION_PATH/git-completion.bash"
+    source "$COMPLETION_PATH/git-prompt.sh"
+    GIT_BRANCH='`__git_ps1`'
+  fi
+
+  PS1="\[$COLORR$COLOR2\]${MY_SHELL_NAME}\[$COLORD\]\[$COLOR3\][\w]\[$COLOR6\]${GIT_BRANCH}\[$COLORD\]\$ "
+
+  export PS1
+}
+
+# git
+alias gb='git remote -v; git branch -a -vv'
+alias gs='git status'
+alias greset='git reset --hard'
+#alias gdirdiff='git difftool --dir-diff'
+#alias GG='vim -c "Agit"'
+
+#alias gg='git graph'
+#alias gg1='git graph1'
+gg() { git graph --color=always $* | less -R; }
+gg1() { git graph1 --color=always $* | less -R; }
+

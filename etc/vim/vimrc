@@ -40,6 +40,7 @@ set showcmd
 " display an encoding and a format in the status line
 set statusline=%<%f\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}%=%l,%c%V%8P
 
+set encoding=utf-8
 " encodings for unix
 "set fileencodings=utf-8,sjis,euc-jp,euc-cn
 " encodings for windows

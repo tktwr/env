@@ -1,0 +1,29 @@
+#!/bin/sh
+
+dia=$MY_DIARY
+todo=$MY_TODO
+opt="-v"
+
+if [ ! -f $dia ]; then
+  exit
+fi
+
+if [ ! -f $todo ]; then
+  exit
+fi
+
+if [ $# -eq 1 ]; then
+  opt=$1
+fi
+
+case $opt in
+-h)
+  # horizontal split
+  vim -o -c "resize 10" -c "wincmd j" -c "normal G" $todo $dia
+  ;;
+-v)
+  # vertical split
+  vim -O -c "wincmd l" -c "normal 1G" -c "vertical resize 40" -c "wincmd h" -c "normal G" $dia $todo
+  ;;
+esac
+

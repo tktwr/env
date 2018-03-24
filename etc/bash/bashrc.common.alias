@@ -24,15 +24,6 @@ alias more='$PAGER'
 alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
 
-# git
-alias gb='git remote -v; git branch -a -vv'
-alias gs='git status'
-alias gg='git graph'
-alias gg1='git graph1'
-alias greset='git reset --hard'
-#alias gdirdiff='git difftool --dir-diff'
-#alias GG='vim -c "Agit"'
-
 # net
 alias myrsync='rsync -auvR'
 alias mymirror='rsync -avR --delete'
@@ -40,4 +31,10 @@ alias mymirrorfat='rsync -avR --delete --size-only -O --no-g --no-p'
 alias wgetpage='wget -N -k -p -L -np'
 alias wgetpage1='wget -N -k -p -L -np -r -l1'
 alias wgetpage2='wget -N -k -p -L -np -r -l2'
+
+# cd
+alias cd-paper='cd $MY_PAPER_DIR'
+alias cd-work='cd $MY_WORK_DIR'
+alias cd-git='cd $MY_WORK_GIT'
+alias cd-svn='cd $MY_WORK_SVN'
 

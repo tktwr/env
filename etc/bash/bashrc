@@ -29,6 +29,7 @@ source $CURRENT_DIR/bashrc.common.path
 source $CURRENT_DIR/bashrc.common.func
 source $CURRENT_DIR/bashrc.common.alias
 source $CURRENT_DIR/bashrc.common.colors
+source $CURRENT_DIR/bashrc.git
 
 #==========================================================================
 # check installed programs
