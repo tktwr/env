@@ -94,14 +94,14 @@ nnoremap <F12> "*p
 inoremap <F12> <ESC>"*p
 
 " hyper link
-nnoremap <F4> y$:silent !firefox-remote "<C-R>""<CR>
+"nnoremap <F4> y$:silent !firefox-remote "<C-R>""<CR>
 
 " build
-nnoremap <F5> :make<CR>:cw<CR>
+"nnoremap <F5> :make<CR>:cw<CR>
 
-nnoremap <F6> :Grep <cword> *.h *.cxx *.cpp<CR>
+"nnoremap <F6> :Grep <cword> *.h *.cxx *.cpp<CR>
 
-nnoremap <F7> 0y$:InsertDate "<C-R>""<CR>kdd
+"nnoremap <F7> 0y$:InsertDate "<C-R>""<CR>kdd
 
 " bookmarks
 "nnoremap <F8> :sp $MEMO_DIR/bookmark.txt<CR>
@@ -119,5 +119,12 @@ inoremap <C-X>   <ESC>:r!env LC_TIME=C date '+\%Y/\%m/\%d (\%a)'<CR>kgJA
 inoremap <C-Z>   <ESC>:r!env LC_TIME=C date '+\%R'<CR>kgJA
 
 "nnoremap <C-X> :call <SID>LastModification()<CR>
+
+" transform two lines to a hyper link in markdeep format
 nnoremap <C-X> I[A]Jr(A)I- 
+" open a hyper link in markdeep format by chrome
+nnoremap <C-Z> 0f(lyt):silent !chrome "<C-R>""<CR>
+" open the current file in a web browser
+nnoremap <C-Y> :silent !chrome "%"<CR>
+
 

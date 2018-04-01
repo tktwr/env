@@ -3,6 +3,8 @@ export MY_SITE_NAME=
 export MY_SHELL_NAME=
 export MY_OS_NAME=
 
+export MY_WIN_HOME=
+
 export MY_REMOTE_CONFIG=
 export MY_LOCAL_CONFIG=
 

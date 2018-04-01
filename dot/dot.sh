@@ -20,6 +20,7 @@ $cmd .hostname $HOME/.hostname
 $cmd .bashrc $HOME/.bashrc
 $cmd .vimrc $HOME/.vimrc
 $cmd .minttyrc $HOME/.minttyrc
+$cmd .tmux.conf $HOME/.tmux.conf
 $cmd .gitconfig $HOME/.gitconfig
 $cmd .gitignore_global $HOME/.gitignore_global
 

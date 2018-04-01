@@ -99,11 +99,11 @@ func! s:GstatusToggle()
   endif
 endfunc
 
-nnoremap          <F1> :NERDTreeToggle<CR>
-nnoremap <silent> <F2> :call <SID>GstatusToggle()<CR>
-nnoremap          <F3> :TagbarToggle<CR>
+nnoremap          <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <F3> :call <SID>GstatusToggle()<CR>
 nnoremap          <F4> :Agit<CR>
 nnoremap          <F5> :tabN<CR>
 nnoremap          <F6> :tabn<CR>
+nnoremap          <F7> :TagbarToggle<CR>
 nnoremap          ++   :GitGutterToggle<CR>
 

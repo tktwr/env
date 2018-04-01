@@ -11,9 +11,11 @@ nmap <buffer> moc  $xxx^xxxx
 
 " abbrebiations
 iabclear
-iabbr Y<  &lt;
-iabbr Y>  &gt;
-iabbr Y"  &quot;
-iabbr Y&  &amp;
-iabbr LI  <li><a href=""></a></li>
+iabbr Y<      &lt;
+iabbr Y>      &gt;
+iabbr Y"      &quot;
+iabbr Y&      &amp;
+iabbr Yvbar   &brvbar;
+iabbr Yspace  &nbsp;
+iabbr LI      <li><a href=""></a></li>
 

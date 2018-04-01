@@ -9,6 +9,8 @@ endif
 " syntax highlighting for a colored terminal
 if (&t_Co > 1)
   syntax enable
+  set background=dark
+
   hi Folded     ctermfg=5 ctermbg=0
   hi FoldColumn ctermfg=5 ctermbg=0
 
@@ -20,6 +22,11 @@ if (&t_Co > 1)
   hi TabLine      ctermfg=3 ctermbg=0
   hi TabLineFill  ctermfg=0 ctermbg=3
   hi TabLineSel   ctermfg=0 ctermbg=3
+
+  "hi StatusLine   ctermfg=7,reverse
+  "hi StatusLineNC ctermfg=7,reverse
+
+  hi VertSplit    ctermfg=7 ctermbg=7
 endif
 
 " paste
