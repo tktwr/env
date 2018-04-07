@@ -1,11 +1,14 @@
 #!/bin/sh
 
-if [ ! -d "$PROG_FILES_32_DIR" ]; then
-  echo "$PROG_FILES_32_DIR is not a directory."
+BIN_DIR="$PROG_FILES_32_DIR/Google/Chrome/Application"
+BIN_FILE="chrome.exe"
+
+if [ ! -x "$BIN_DIR/$BIN_FILE" ]; then
+  echo "no $BIN_DIR/$BIN_FILE"
   exit
 fi
 
-PATH="$PROG_FILES_32_DIR/Google/Chrome/Application:$PATH"
+PATH="$BIN_DIR:$PATH"
 
-exec chrome "$@"
+exec "$BIN_FILE" "$@"
 

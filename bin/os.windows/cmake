@@ -1,11 +1,14 @@
 #!/bin/sh
 
-if [ ! -d "$PROG_FILES_64_DIR" ]; then
-  echo "$PROG_FILES_64_DIR is not a directory."
+BIN_DIR="$PROG_FILES_64_DIR/CMake/bin"
+BIN_FILE="cmake.exe"
+
+if [ ! -x "$BIN_DIR/$BIN_FILE" ]; then
+  echo "no $BIN_DIR/$BIN_FILE"
   exit
 fi
 
-PATH="$PROG_FILES_64_DIR/CMake/bin:$PATH"
+PATH="$BIN_DIR:$PATH"
 
-exec cmake "$@"
+exec "$BIN_FILE" "$@"
 

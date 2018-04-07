@@ -1,7 +1,7 @@
 #!/bin/sh
 
-BIN_DIR="$PROG_FILES_32_DIR/Vim/vim80"
-BIN_FILE="gvim.exe"
+BIN_DIR="$PROG_FILES_32_DIR/FastStone Image Viewer"
+BIN_FILE="fsviewer.exe"
 
 if [ ! -x "$BIN_DIR/$BIN_FILE" ]; then
   echo "no $BIN_DIR/$BIN_FILE"
