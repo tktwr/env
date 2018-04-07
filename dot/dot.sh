@@ -2,6 +2,11 @@
 
 cmd=diff
 
+if [ $# -eq 0 ]; then
+  dirdiff . ~
+  exit
+fi
+
 if [ $# -eq 1 ]; then
   case $1 in
     --cp)
@@ -12,6 +17,9 @@ if [ $# -eq 1 ]; then
       ;;
     --vimdiff)
       cmd=vimdiff
+      ;;
+    *)
+      exit
       ;;
   esac
 fi
