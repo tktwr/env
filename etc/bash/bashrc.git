@@ -23,6 +23,7 @@ f_set_git_prompt() {
 alias gb='git remote -v; git branch -a -vv'
 alias gs='git status'
 alias greset='git reset --hard'
+alias git-chmod='git update-index --add --chmod=+x'
 #alias gdirdiff='git difftool --dir-diff'
 #alias GG='vim -c "Agit"'
 

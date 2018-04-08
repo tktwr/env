@@ -1,16 +1,40 @@
 #!/bin/sh
 
-cmd=diff
+cmd=cmp
 
 if [ $# -eq 0 ]; then
-  dirdiff . ~
+  vimdirdiff . ~
   exit
 fi
+
+f_diff() {
+  if [ ! -f "$1" ]; then
+    echo "[no file] $1"
+  fi
+  if [ ! -f "$2" ]; then
+    echo "[no file] $2"
+  fi
+  if [ ! \( -f "$1" -a -f "$2" \) ]; then
+    return
+  fi
+  cmp -s "$1" "$2"
+  if [ $? -eq 0 ]; then
+    echo "[==] $1 $2"
+  elif [ $? -eq 1 ]; then
+    echo "[!=] $1 $2"
+    if [ "$cmd" = "diff" -o "$cmd" = "vimdiff" ]; then
+      $cmd "$1" "$2"
+    fi
+  fi
+}
 
 if [ $# -eq 1 ]; then
   case $1 in
     --cp)
       cmd=cp
+      ;;
+    --cmp)
+      cmd=cmp
       ;;
     --diff)
       cmd=diff
@@ -24,11 +48,11 @@ if [ $# -eq 1 ]; then
   esac
 fi
 
-$cmd .hostname $HOME/.hostname
-$cmd .bashrc $HOME/.bashrc
-$cmd .vimrc $HOME/.vimrc
-$cmd .minttyrc $HOME/.minttyrc
-$cmd .tmux.conf $HOME/.tmux.conf
-$cmd .gitconfig $HOME/.gitconfig
-$cmd .gitignore_global $HOME/.gitignore_global
+f_diff .hostname $HOME/.hostname
+f_diff .bashrc $HOME/.bashrc
+f_diff .vimrc $HOME/.vimrc
+f_diff .minttyrc $HOME/.minttyrc
+f_diff .tmux.conf $HOME/.tmux.conf
+f_diff .gitconfig $HOME/.gitconfig
+f_diff .gitignore_global $HOME/.gitignore_global
 
