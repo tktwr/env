@@ -7,17 +7,16 @@ if [ -x "$GITBASH_GIT" ]; then
 fi
 
 
-BIN_DIR="$PROG_FILES_64_DIR/Git/mingw64/bin"
-BIN_FILE="git.exe"
+BIN_FILE="$PROG_FILES_64_DIR/Git/mingw64/bin/git.exe"
 
-if [ ! -x "$BIN_DIR/$BIN_FILE" ]; then
-  echo "no $BIN_DIR/$BIN_FILE"
+if [ ! -x "$BIN_FILE" ]; then
+  echo "no $BIN_FILE"
   exit
 fi
 
 PATH="$PROG_FILES_64_DIR/Git/bin:$PATH"
 PATH="$PROG_FILES_64_DIR/Git/usr/bin:$PATH"
-PATH="$BIN_DIR:$PATH"
+PATH="$PROG_FILES_64_DIR/Git/mingw64/bin:$PATH"
 
 exec "$BIN_FILE" "$@"
 

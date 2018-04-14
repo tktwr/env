@@ -29,6 +29,6 @@ alias git-chmod='git update-index --add --chmod=+x'
 
 #alias gg='git graph'
 #alias gg1='git graph1'
-gg() { git graph --color=always $* | less -R; }
-gg1() { git graph1 --color=always $* | less -R; }
+gg() { git graph --color=always $* | less -EFRSX; }
+gg1() { git graph1 --color=always $* | less -EFRSX; }
 

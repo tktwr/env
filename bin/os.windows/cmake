@@ -1,14 +1,11 @@
 #!/bin/sh
 
-BIN_DIR="$PROG_FILES_64_DIR/CMake/bin"
-BIN_FILE="cmake.exe"
+BIN_FILE="$PROG_FILES_64_DIR/CMake/bin/cmake.exe"
 
-if [ ! -x "$BIN_DIR/$BIN_FILE" ]; then
-  echo "no $BIN_DIR/$BIN_FILE"
+if [ ! -x "$BIN_FILE" ]; then
+  echo "no $BIN_FILE"
   exit
 fi
-
-PATH="$BIN_DIR:$PATH"
 
 exec "$BIN_FILE" "$@"
 

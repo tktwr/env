@@ -8,7 +8,7 @@ HISTCONTROL=ignoreboth
 #umask 022
 
 # env variables
-export PAGER='less'
+export PAGER='less -FRX'
 export EDITOR='vim'
 #export GIT_PAGER='less'
 #export GIT_EDITOR='vim'
