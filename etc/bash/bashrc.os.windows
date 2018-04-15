@@ -1,9 +1,12 @@
 #!/bin/bash
 
-export PROG_FILES_64_DIR=`cygpath -u 'C:\Program Files'`
-export PROG_FILES_32_DIR=`cygpath -u 'C:\Program Files (x86)'`
+export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
+export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
+export SYS_WIN_HOME=`cygpath -u C:/Users/$USER`
+export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USER`
+export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
 
-PATH="$MY_WIN_HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
+PATH="$SYS_WIN_HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
 
 alias x='explorer.exe'
 alias ls="ls -v -F --color=auto -I 'NTUSER.*' -I 'ntuser.*' -I '*.lnk' -I '*.url' -I 'desktop.ini'"

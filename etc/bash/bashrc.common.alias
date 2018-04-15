@@ -23,6 +23,7 @@ alias psu='ps -u $USER'
 alias more='$PAGER'
 alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
+alias vimzero='vim -u NONE'
 
 # net
 alias myrsync='rsync -auvR'
@@ -33,6 +34,13 @@ alias wgetpage1='wget -N -k -p -L -np -r -l1'
 alias wgetpage2='wget -N -k -p -L -np -r -l2'
 
 # cd
+alias cd-win-home='cd $SYS_WIN_HOME'
+alias cd-msys2-home='cd $SYS_MSYS2_HOME'
+alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
+
+alias cd-rconfig='cd $MY_REMOTE_CONFIG'
+alias cd-lconfig='cd $MY_LOCAL_CONFIG'
+
 alias cd-paper='cd $MY_PAPER_DIR'
 alias cd-work='cd $MY_WORK_DIR'
 alias cd-git='cd $MY_WORK_GIT'

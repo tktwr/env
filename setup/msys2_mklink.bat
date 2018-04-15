@@ -7,8 +7,5 @@ mklink /d Downloads WinHome\Downloads
 mklink /d Dropbox WinHome\Dropbox
 mklink /d GoogleDrive "WinHome\Google\ ドライブ"
 
-mklink /d env.github WinHome\env.github
-mklink /d env.local WinHome\env.local
-
-mklink /d .vim env.github\etc\vim
+mklink /d .vim WinHome\tktwr.github\env\etc\vim
 

@@ -34,3 +34,14 @@ export COLOR7="\033[37m"  # white
 export COLORD="\033[0m"   # default
 export COLORR="\033[7m"   # reverse
 
+export ECO0="\[$COLOR0\]"
+export ECO1="\[$COLOR1\]"
+export ECO2="\[$COLOR2\]"
+export ECO3="\[$COLOR3\]"
+export ECO4="\[$COLOR4\]"
+export ECO5="\[$COLOR5\]"
+export ECO6="\[$COLOR6\]"
+export ECO7="\[$COLOR7\]"
+export ECOD="\[$COLORD\]"
+export ECOR="\[$COLORR\]"
+

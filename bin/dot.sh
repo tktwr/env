@@ -48,11 +48,14 @@ if [ $# -eq 1 ]; then
   esac
 fi
 
-f_diff .hostname $HOME/.hostname
+# common for all shells
 f_diff .bashrc $HOME/.bashrc
 f_diff .vimrc $HOME/.vimrc
-f_diff .minttyrc $HOME/.minttyrc
-f_diff .tmux.conf $HOME/.tmux.conf
-f_diff .gitconfig $HOME/.gitconfig
 f_diff .gitignore_global $HOME/.gitignore_global
+f_diff .tmux.conf $HOME/.tmux.conf
+
+# different for each shell
+f_diff .gitconfig $HOME/.gitconfig
+f_diff .hostname $HOME/.hostname
+f_diff .minttyrc $HOME/.minttyrc
 

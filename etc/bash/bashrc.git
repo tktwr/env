@@ -7,16 +7,14 @@ f_set_git_prompt() {
   COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
   COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
   COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
-  if test -f "$COMPLETION_PATH/git-prompt.sh"
-  then
+  if [ -f "$COMPLETION_PATH/git-prompt.sh" ]; then
     source "$COMPLETION_PATH/git-completion.bash"
     source "$COMPLETION_PATH/git-prompt.sh"
     GIT_BRANCH='`__git_ps1`'
   fi
 
-  PS1="\[$COLORR$COLOR2\]${MY_SHELL_NAME}\[$COLORD\]\[$COLOR3\][\w]\[$COLOR6\]${GIT_BRANCH}\[$COLORD\]\$ "
-
-  export PS1
+  export PROMPT_DIRTRIM=2
+  export PS1="$ECOR$ECO2${MY_SHELL_NAME}$ECOD$ECO3[\w]$ECO6${GIT_BRANCH}$ECOD\$ "
 }
 
 # git

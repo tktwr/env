@@ -1,4 +1,4 @@
 REM make symbolic links for gitbash
 
-mklink /d .vim env.github\etc\vim
+mklink /d .vim tktwr.github\env\etc\vim
 

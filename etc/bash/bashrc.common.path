@@ -23,7 +23,7 @@ for i in $MY_LOCAL_CONFIG/local $MY_LOCAL_CONFIG/opt.$MY_OS_NAME; do
   INFOPATH="$i/share/info:$INFOPATH"
 done
 
-for i in $MY_REMOTE_CONFIG $MY_LOCAL_CONFIG; do
+for i in $MY_REMOTE_CONFIG/env $MY_LOCAL_CONFIG/env; do
   PATH="$i/bin:$PATH"
   PATH="$i/bin/os.$MY_OS_NAME:$PATH"
   PATH="$i/bin/shell.$MY_SHELL_NAME:$PATH"
