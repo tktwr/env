@@ -1,11 +1,16 @@
 #!/bin/sh
 
+cols=$(tput cols)
+
 bin_name=`basename $0`
 memo_dir="$MY_LOCAL_CONFIG/memo"
-tags="$MY_LOCAL_CONFIG/memo/tags $MY_REMOTE_CONFIG/memo/tags"
+tags="$MY_LOCAL_CONFIG/memo/tags $MY_REMOTE_CONFIG/memo/tags $MY_REMOTE_CONFIG/samples/memotags"
 
-f_help()
-{
+f_print_tags() {
+  awk '{print $1}' $tags | grep '^memo_' | sed 's/memo_//' | column -c $cols
+}
+
+f_help() {
   echo "NAME"
   echo "  $bin_name"
   echo
@@ -16,15 +21,18 @@ f_help()
   echo "  -h, --help   print help"
   echo
   echo "TAGS"
-  awk '{print $1}' $tags | grep '^memo_' | sed 's/memo_//' | column
+  f_print_tags
 }
 
-f_main()
-{
+f_main() {
   if [ $# -eq 1 ]; then
     case $1 in
       -h|--help)
         f_help
+        exit
+        ;;
+      -p)
+        f_print_tags
         exit
         ;;
       *)

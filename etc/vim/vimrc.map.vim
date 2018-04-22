@@ -86,31 +86,20 @@ vnoremap C y:!expr.sh "<C-R>""<CR>
 " Func key
 "--------------------------------------------------------------------------
 
-" copy to the clipboard
-vnoremap <F11> "*y
-
-" paste from the clipboard
-nnoremap <F12> "*p
-inoremap <F12> <ESC>"*p
-
-" hyper link
-"nnoremap <F4> y$:silent !firefox-remote "<C-R>""<CR>
-
 " build
-"nnoremap <F5> :make<CR>:cw<CR>
+"nnoremap <F?> :make<CR>:cw<CR>
 
-"nnoremap <F6> :Grep <cword> *.h *.cxx *.cpp<CR>
+"nnoremap <F?> :Grep <cword> *.h *.cxx *.cpp<CR>
 
-"nnoremap <F7> 0y$:InsertDate "<C-R>""<CR>kdd
-
-" bookmarks
-"nnoremap <F8> :sp $MEMO_DIR/bookmark.txt<CR>
+"nnoremap <F?> 0y$:InsertDate "<C-R>""<CR>kdd
 
 " save session
-"nnoremap <F11> :mksession! ~/.vim/session.vim<CR>
+"nnoremap <F?> :mksession! ~/.vim/session.vim<CR>
 
 " load session
-"nnoremap <F12> :source ~/.vim/session.vim<CR>
+"nnoremap <F?> :source ~/.vim/session.vim<CR>
+
+"nnoremap          <F?> :TagbarToggle<CR>
 
 
 " insert date 
@@ -122,9 +111,30 @@ inoremap <C-Z>   <ESC>:r!env LC_TIME=C date '+\%R'<CR>kgJA
 
 " transform two lines to a hyper link in markdeep format
 nnoremap <C-X> I[A]Jr(A)I- 
-" open a hyper link in markdeep format by chrome
-nnoremap <C-Z> 0f(lyt):silent !chrome "<C-R>""<CR>
 " open the current file in a web browser
-nnoremap <C-Y> :silent !chrome "%"<CR>
+nnoremap <C-Z> :silent !chrome "%"<CR>
 
+nnoremap ++   :GitGutterToggle<CR>
+
+nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F3> :GstatusToggle<CR>
+nnoremap <F4> :Agit<CR>
+nnoremap <F5> :tabN<CR>
+nnoremap <F6> :tabn<CR>
+
+" open memo
+nnoremap <F7> :Memo<CR>
+
+" open a hyper link in markdeep format by w3m.vim
+nnoremap <F8> 0f(lyt):silent W3m <C-R>"<CR>
+
+" open a hyper link in markdeep format by chrome
+nnoremap <F9> 0f(lyt):silent !chrome "<C-R>""<CR>
+
+" copy to the clipboard
+vnoremap <F11> "*y
+
+" paste from the clipboard
+nnoremap <F12> "*p
+inoremap <F12> <ESC>"*p
 

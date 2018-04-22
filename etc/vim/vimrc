@@ -9,6 +9,7 @@ set path=.,,/usr/local/include,/usr/include
 set path+=$QTDIR/include
 set tags=./tags,../tags,../../tags,../../../tags,tags,
 set tags+=$MY_LOCAL_CONFIG/memo/tags,$MY_REMOTE_CONFIG/memo/tags
+set tags+=$MY_REMOTE_CONFIG/samples/memotags
 set tags+=$MY_LOCAL_CONFIG/log/tags.glm
 set tags+=$MY_LOCAL_CONFIG/log/tags.opencv2
 set dictionary=~/.vim/words
@@ -84,9 +85,8 @@ let mapleader = ","
 source $HOME/.vim/vimrc.command.vim
 source $HOME/.vim/vimrc.command_dev.vim
 source $HOME/.vim/vimrc.command_enc.vim
-source $HOME/.vim/vimrc.map.vim
 source $HOME/.vim/vimrc.skel.vim
 source $HOME/.vim/vimrc.term.vim
-
 source $HOME/.vim/vimrc.neobundle.vim
+source $HOME/.vim/vimrc.map.vim
 

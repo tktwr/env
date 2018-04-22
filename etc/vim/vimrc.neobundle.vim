@@ -65,8 +65,6 @@ if neobundle#is_installed('nerdtree-git-plugin')
       \ }
 endif
 
-NeoBundle 'majutsushi/tagbar'
-
 NeoBundle 'will133/vim-dirdiff'
 if neobundle#is_installed('vim-dirdiff')
   "let g:DirDiffForceLang = "en"
@@ -74,16 +72,17 @@ if neobundle#is_installed('vim-dirdiff')
   let g:DirDiffAddArgs = "-w" 
 endif
 
-NeoBundle 'tpope/vim-surround'
-
-NeoBundle 'godlygeek/tabular'
-
 NeoBundle 'tyru/eskk.vim'
 if neobundle#is_installed('eskk.vim')
   let g:eskk#directory = "~/.eskk"
   let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
 endif
+
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'yuratomo/w3m.vim'
 
 call neobundle#end()
 
@@ -98,12 +97,5 @@ func! s:GstatusToggle()
     Gstatus
   endif
 endfunc
-
-nnoremap          <F2> :NERDTreeToggle<CR>
-nnoremap <silent> <F3> :call <SID>GstatusToggle()<CR>
-nnoremap          <F4> :Agit<CR>
-nnoremap          <F5> :tabN<CR>
-nnoremap          <F6> :tabn<CR>
-nnoremap          <F7> :TagbarToggle<CR>
-nnoremap          ++   :GitGutterToggle<CR>
+command GstatusToggle call s:GstatusToggle()
 
