@@ -20,8 +20,8 @@
 	prompt = false
 
 [alias]
-	graph  = log --graph --all --pretty=format:\"%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s\" --date=format-local:'%Y/%m/%d %H:%M'
-	graph1 = log --graph --all --pretty=format:\"%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s\" --date=format-local:'%Y/%m/%d %H:%M' --name-status
+	graph  = log --graph --all --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --date-order
+	graph1 = log --graph --all --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --date-order --name-status
 	co = checkout
 	dd = difftool -d
 
