@@ -24,6 +24,8 @@ alias more='$PAGER'
 alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
 alias vimzero='vim -u NONE'
+alias z='dia'
+alias zh='dia -h'
 
 # net
 alias myrsync='rsync -auvR'
