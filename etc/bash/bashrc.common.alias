@@ -25,7 +25,9 @@ alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
 alias vimzero='vim -u NONE'
 alias z='dia'
+alias zv='dia -v'
 alias zh='dia -h'
+alias www='w3m -B'
 
 # net
 alias myrsync='rsync -auvR'

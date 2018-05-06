@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec tmux new-session \; split-window -h -b -l 60
+

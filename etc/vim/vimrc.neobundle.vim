@@ -83,6 +83,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'yuratomo/w3m.vim'
+"NeoBundle 'vim-airline/vim-airline'
+"NeoBundle 'vim-airline/vim-airline-themes'
 
 call neobundle#end()
 

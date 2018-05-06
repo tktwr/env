@@ -11,9 +11,17 @@ endif
 let loaded_memo = 1
 let s:memo_winname = '\[memo\]'
 
-func! s:OpenTag(name)
-  "exec "below stjump" "memo_".a:name
-  exec "tag" "memo_".a:name
+func! s:ListTags()
+  setlocal modifiable
+  silent %d _
+  silent exec "r!memo -p"
+  normal 1G
+  setlocal nomodifiable
+endfunc
+
+func! s:OpenTag(tagname)
+  "exec "below stjump" "memo_".a:tagname
+  exec "tag" "memo_".a:tagname
 endfunc
 
 func! s:DefineCommands()
@@ -22,19 +30,8 @@ func! s:DefineCommands()
   nnoremap <buffer> <silent> h B
 endfunc
 
-func! s:CmdMemo()
-  setlocal modifiable
-  silent %d _
-  silent exec "r!memo -p"
-  normal 1G
-  setlocal nomodifiable
-endfunc
-
-"--------------------------------------------------------------------------
-" Memo()
-"--------------------------------------------------------------------------
-func! Memo()
-  " make a [memo] window
+" make a [memo] window
+func! s:MakeMemoWindow()
   let s:memo_winnr = bufwinnr(s:memo_winname)
   if s:memo_winnr == -1
     silent exec "edit" s:memo_winname
@@ -45,12 +42,23 @@ func! Memo()
     let s:memo_winnr = bufwinnr(s:memo_winname)
     call s:DefineCommands()
   endif
+endfunc
 
-  call s:CmdMemo()
+"--------------------------------------------------------------------------
+" Memo()
+"--------------------------------------------------------------------------
+
+func! Memo(tagname)
+  if (empty(a:tagname))
+    call s:MakeMemoWindow()
+    call s:ListTags()
+  else
+    call s:OpenTag(a:tagname)
+  endif
 endfunc
 
 "--------------------------------------------------------------------------
 " command
 "--------------------------------------------------------------------------
-command Memo call Memo()
+command -nargs=? Memo call Memo(<q-args>)
 

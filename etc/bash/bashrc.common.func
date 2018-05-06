@@ -11,6 +11,7 @@ ll() { ls -l --color $* | $PAGER; }
 lst() { ls -lt --color $* | grep -v "/$" | head -15; }
 vid() { display "vid:$*"; }
 psall() { ps -aef | grep $*; }
+vimwhich() { vim `which $*`; }
 
 f_set_DISPLAY() { export DISPLAY="$*:0.0"; }
 f_print_DISPLAY() { echo $DISPLAY; }

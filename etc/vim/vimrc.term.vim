@@ -23,10 +23,9 @@ if (&t_Co > 1)
   hi TabLineFill  ctermfg=0 ctermbg=3
   hi TabLineSel   ctermfg=0 ctermbg=3
 
-  "hi StatusLine   ctermfg=7,reverse
-  "hi StatusLineNC ctermfg=7,reverse
-
-  hi VertSplit    ctermfg=7 ctermbg=7
+  hi StatusLine   ctermfg=3 ctermbg=0 cterm=reverse,bold
+  hi StatusLineNC ctermfg=3 ctermbg=0
+  hi VertSplit    ctermfg=3 ctermbg=3
 endif
 
 " paste

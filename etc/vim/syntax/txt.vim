@@ -60,14 +60,14 @@ if !exists("did_my_general_syntax_inits")
   hi link myHyperTextJump    Identifier
   hi link myHyperTextEntry   String
 
-  hi myItem ctermfg=5
-  hi myIdea ctermfg=6
-  hi mySeparator ctermfg=4
-  hi myCitation ctermfg=4
-  hi myDate ctermfg=3
-  hi myTime ctermfg=6
-  hi mySat ctermfg=4
-  hi mySun ctermfg=1
+  hi mySeparator ctermfg=4 cterm=bold
+  hi myCitation ctermfg=5 cterm=bold
+  hi myItem ctermfg=2 cterm=bold
+  hi myIdea ctermfg=6 cterm=bold
+  hi myDate ctermfg=3 cterm=bold
+  hi myTime ctermfg=3 cterm=bold
+  hi mySat ctermfg=4 cterm=bold
+  hi mySun ctermfg=1 cterm=bold
 endif
 
 set textwidth=0
