@@ -83,8 +83,16 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'yuratomo/w3m.vim'
-"NeoBundle 'vim-airline/vim-airline'
-"NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+
+NeoBundle 'tomasr/molokai'
+let g:molokai_original = 1
+"let g:rehash256 = 1
+
+NeoBundle 'morhetz/gruvbox'
+
+colorscheme gruvbox
 
 call neobundle#end()
 

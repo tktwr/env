@@ -7,7 +7,11 @@ memo_dir="$MY_LOCAL_CONFIG/memo"
 tags="$MY_LOCAL_CONFIG/memo/tags $MY_REMOTE_CONFIG/memo/tags $MY_REMOTE_CONFIG/samples/memotags"
 
 f_print_tags() {
-  awk '{print $1}' $tags | grep '^memo_' | sed 's/memo_//' | column -c $cols
+  for i in $tags; do
+    echo "[$i]"
+    awk '{print $1}' $i | grep '^memo_' | sed 's/memo_//' | column -c $cols
+    echo
+  done
 }
 
 f_help() {
@@ -19,6 +23,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help   print help"
+  echo "  -p           print tags"
   echo
   echo "TAGS"
   f_print_tags

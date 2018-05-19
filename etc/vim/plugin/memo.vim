@@ -14,7 +14,7 @@ let s:memo_winname = '\[memo\]'
 func! s:ListTags()
   setlocal modifiable
   silent %d _
-  silent exec "r!memo -p"
+  silent exec "0r!memo -p"
   normal 1G
   setlocal nomodifiable
 endfunc

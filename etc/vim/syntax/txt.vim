@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language:   txt
+" Language: txt
 " Maintainer: Takehiro Tawara
 
 " Remove any old syntax stuff hanging around
@@ -13,10 +13,16 @@ syn match    mySun              "(Sun)"
 syn match    mySun              "½ËÆü"
 
 syn match    myItem             "^\s*[-+] .*"
+syn match    myItem0            "^[-+] .*"
+syn match    myItem1            "^  [-+] .*"
+syn match    myItem2            "^    [-+] .*"
 syn match    myIdea             "^\s*-> .*"
 
-syn match    mySeparator        "^\s*-\+$"
-syn match    mySeparator        "^\s*=\+$"
+syn match    mySeparator        "^\s*--\+$"
+syn match    mySeparator        "^\s*==\+$"
+syn match    mySeparator        "^\s*\~\~\+$"
+
+syn match    myHtml             "<[^>]*>"
 
 syn match    myComment          "#.*$"
 syn match    myComment          "/\*"
@@ -24,6 +30,8 @@ syn match    myComment          "\*/"
 "syn region   myComment          start="/\*" end="\*/"
 "syn region   myComment          start=+(+ end=+)+
 
+syn match    myString           '"[^"]*"'
+syn match    myString           "'[^']*'"
 "syn region   myString           start=+"+ end=+"+ skip=+\\"+
 
 syn match    myCitation         "^\s*>.*$"
@@ -60,14 +68,18 @@ if !exists("did_my_general_syntax_inits")
   hi link myHyperTextJump    Identifier
   hi link myHyperTextEntry   String
 
-  hi mySeparator ctermfg=4 cterm=bold
-  hi myCitation ctermfg=5 cterm=bold
-  hi myItem ctermfg=2 cterm=bold
-  hi myIdea ctermfg=6 cterm=bold
-  hi myDate ctermfg=3 cterm=bold
-  hi myTime ctermfg=3 cterm=bold
-  hi mySat ctermfg=4 cterm=bold
-  hi mySun ctermfg=1 cterm=bold
+  hi mySeparator guifg=#707fd9 ctermfg=4 cterm=bold
+  hi myCitation  guifg=#9f5aa0 ctermfg=5 cterm=bold
+  hi myItem      guifg=#9dd970 ctermfg=2 cterm=bold
+  hi myItem0     guifg=#9dd970 ctermfg=2 cterm=bold
+  hi myItem1     guifg=#87bb61 ctermfg=4 cterm=bold
+  hi myItem2     guifg=#719c51 ctermfg=1 cterm=bold
+  hi myIdea      guifg=#4d9ba0 ctermfg=6 cterm=bold
+  hi myDate      guifg=#fabd2f ctermfg=3 cterm=bold
+  hi myTime      guifg=#fabd2f ctermfg=3 cterm=bold
+  hi mySat       guifg=#707fd9 ctermfg=4 cterm=bold
+  hi mySun       guifg=#d97070 ctermfg=1 cterm=bold
+  hi myHtml      guifg=#fabd2f ctermfg=3
 endif
 
 set textwidth=0
