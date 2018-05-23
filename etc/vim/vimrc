@@ -90,6 +90,3 @@ source $HOME/.vim/vimrc.term.vim
 source $HOME/.vim/vimrc.neobundle.vim
 source $HOME/.vim/vimrc.map.vim
 
-"hi Normal guibg=#464646
-hi Normal guibg=#303030
-

@@ -91,6 +91,7 @@ let g:molokai_original = 1
 "let g:rehash256 = 1
 
 NeoBundle 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark = "soft"
 
 colorscheme gruvbox
 
@@ -108,4 +109,7 @@ func! s:GstatusToggle()
   endif
 endfunc
 command GstatusToggle call s:GstatusToggle()
+
+"hi Normal guibg=#464646
+"hi Normal guibg=#303030
 
