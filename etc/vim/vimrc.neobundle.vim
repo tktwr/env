@@ -1,6 +1,6 @@
-"--------------------------------------------------------------------------
+"------------------------------------------------------
 " neobundle
-"--------------------------------------------------------------------------
+"------------------------------------------------------
 if has('vim_starting')
   let plugin_dir = "~/.vim_neobundle"
   let neobundle_dir = plugin_dir . "/neobundle.vim"
@@ -69,7 +69,7 @@ NeoBundle 'will133/vim-dirdiff'
 if neobundle#is_installed('vim-dirdiff')
   "let g:DirDiffForceLang = "en"
   let g:DirDiffExcludes = ".git,.svn,*.swp,*.o,*.exe,*.class,Release,Debug,*.png,*.jpg,*.bmp"
-  let g:DirDiffAddArgs = "-w" 
+  "let g:DirDiffAddArgs = "-w" 
 endif
 
 NeoBundle 'tyru/eskk.vim'

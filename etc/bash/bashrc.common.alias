@@ -45,8 +45,12 @@ alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
 alias cd-rconfig='cd $MY_REMOTE_CONFIG'
 alias cd-lconfig='cd $MY_LOCAL_CONFIG'
 
-alias cd-paper='cd $MY_PAPER_DIR'
-alias cd-work='cd $MY_WORK_DIR'
+alias cd-private='cd $MY_PRIVATE'
+alias cd-protected='cd $MY_PROTECTED'
+alias cd-public='cd $MY_PUBLIC'
+
+alias cd-work='cd $MY_WORK'
 alias cd-git='cd $MY_WORK_GIT'
 alias cd-svn='cd $MY_WORK_SVN'
+alias cd-paper='cd $MY_PAPER'
 

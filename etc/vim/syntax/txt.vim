@@ -69,12 +69,12 @@ if !exists("did_my_general_syntax_inits")
   hi link myHyperTextEntry   String
 
   hi mySeparator guifg=#707fd9 ctermfg=4 cterm=bold
-  hi myCitation  guifg=#9f5aa0 ctermfg=5 cterm=bold
-  hi myItem      guifg=#9dd970 ctermfg=2 cterm=bold
-  hi myItem0     guifg=#9dd970 ctermfg=2 cterm=bold
-  hi myItem1     guifg=#87bb61 ctermfg=4 cterm=bold
-  hi myItem2     guifg=#719c51 ctermfg=1 cterm=bold
-  hi myIdea      guifg=#4d9ba0 ctermfg=6 cterm=bold
+  hi myCitation  guifg=#9f5aa0 ctermfg=5
+  hi myItem      guifg=#9dd970 ctermfg=2
+  hi myItem0     guifg=#9dd970 ctermfg=2
+  hi myItem1     guifg=#87bb61 ctermfg=4
+  hi myItem2     guifg=#719c51 ctermfg=1
+  hi myIdea      guifg=#4d9ba0 ctermfg=6
   hi myDate      guifg=#fabd2f ctermfg=3 cterm=bold
   hi myTime      guifg=#fabd2f ctermfg=3 cterm=bold
   hi mySat       guifg=#707fd9 ctermfg=4 cterm=bold
