@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# for gitbash
 GITBASH_GIT="/mingw64/bin/git.exe"
 
 if [ -x "$GITBASH_GIT" ]; then
@@ -7,6 +8,7 @@ if [ -x "$GITBASH_GIT" ]; then
 fi
 
 
+# use windows native git on msys2
 BIN_FILE="$SYS_PROG64_DIR/Git/mingw64/bin/git.exe"
 
 if [ ! -x "$BIN_FILE" ]; then

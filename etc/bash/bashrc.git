@@ -21,12 +21,23 @@ f_set_git_prompt() {
 alias gb='git remote -v; git branch -a -vv'
 alias gf='git fetch'
 alias gs='git status'
+
 alias gR='git reset --hard'
 alias gRom='git reset --hard origin/master'
 alias gPom='git push origin master'
-alias gChmodx='git update-index --add --chmod=+x'
-#alias gdirdiff='git difftool --dir-diff'
-#alias GG='vim -c "Agit"'
+
+alias git-add-chmod-x='git update-index --add --chmod=+x'
+alias git-ls-filemode='git ls-files -s'
+
+alias git-stage='git add'
+alias git-unstage='git reset --'
+
+alias git-track='git add'
+alias git-untrack-file='git rm --cached'
+alias git-untrack-dir='git rm --cached -r'
+
+alias git-dirdiff='git difftool --dir-diff'
+alias GG='vim -c "Agit"'
 
 gg() { git graph --color=always $* | less -EFRSX; }
 gg1() { git graph1 --color=always $* | less -EFRSX; }

@@ -36,7 +36,7 @@ func! s:MakeMemoWindow()
   if s:memo_winnr == -1
     silent exec "edit" s:memo_winname
     setlocal buftype=nofile
-    setlocal bufhidden=delete
+    "setlocal bufhidden=delete
     setlocal noswapfile
     setlocal tabstop=8
     let s:memo_winnr = bufwinnr(s:memo_winname)

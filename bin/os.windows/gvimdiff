@@ -7,4 +7,4 @@ if [ ! -x "$BIN_FILE" ]; then
   exit
 fi
 
-exec "$BIN_FILE" "$@"
+exec "$BIN_FILE" -d $@

@@ -34,6 +34,7 @@ endif
 
 NeoBundle 'cohama/agit.vim'
 if neobundle#is_installed('agit.vim')
+  let g:agit_enable_auto_show_commit = 0
   autocmd FileType agit_stat call s:my_agit_stat_settings()
   function! s:my_agit_stat_settings()
     nmap <buffer> <silent> D <Plug>(agit-diff)
@@ -69,7 +70,7 @@ NeoBundle 'will133/vim-dirdiff'
 if neobundle#is_installed('vim-dirdiff')
   "let g:DirDiffForceLang = "en"
   let g:DirDiffExcludes = ".git,.svn,*.swp,*.o,*.exe,*.class,Release,Debug,*.png,*.jpg,*.bmp"
-  "let g:DirDiffAddArgs = "-w" 
+  let g:DirDiffAddArgs = "-bwBEZ" 
 endif
 
 NeoBundle 'tyru/eskk.vim'
@@ -93,7 +94,9 @@ let g:molokai_original = 1
 NeoBundle 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"
 
-colorscheme gruvbox
+if !has('gui_running')
+  colorscheme gruvbox
+endif
 
 call neobundle#end()
 

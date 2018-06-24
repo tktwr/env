@@ -9,6 +9,7 @@ export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
 PATH="$SYS_WIN_HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
 
 alias x='explorer.exe'
-#alias ls="ls -v -F --color=auto -I 'NTUSER.*' -I 'ntuser.*' -I '*.lnk' -I '*.url' -I 'desktop.ini'"
 alias cmake-unix='cmake -G "Unix Makefiles"'
-
+alias cd-win-home='cd $SYS_WIN_HOME'
+alias cd-msys2-home='cd $SYS_MSYS2_HOME'
+alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'

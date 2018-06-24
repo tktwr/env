@@ -1,21 +1,32 @@
 export MY_HOST_NAME=
 export MY_SITE_NAME=
-export MY_SHELL_NAME=
-export MY_OS_NAME=
+export MY_SHELL_NAME=$MSYSTEM
+export MY_OS_NAME=windows
 
-export MY_WIN_HOME=
+export MY_WIN_HOME=$HOME/WinHome
 
-export MY_REMOTE_CONFIG=
-export MY_LOCAL_CONFIG=
+export MY_REMOTE_CONFIG=$MY_WIN_HOME/tktwr.github
+export MY_LOCAL_CONFIG=$MY_WIN_HOME/tktwr.local
 
-export MY_DIARY=
-export MY_TODO=
+export MY_ENV=$MY_REMOTE_CONFIG/env
+export MY_MEMO=$MY_REMOTE_CONFIG/memo
+export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
 
-export MY_GIT_REPO=
-export MY_SVN_REPO=
 
-export MY_PAPER_DIR=
-export MY_WORK_DIR=
-export MY_WORK_GIT=
-export MY_WORK_SVN=
+export MY_PRIVATE=X:
+export MY_PROTECTED=Y:
+export MY_PUBLIC=Z:
+
+export MY_REPO_GIT=$MY_PRIVATE/git
+export MY_REPO_SVN=$MY_PRIVATE/svn
+
+export MY_WORK_GIT=$MY_WIN_HOME/Desktop/work/git
+export MY_WORK_SVN=$MY_WIN_HOME/Desktop/work/svn
+
+export MY_WORK=$MY_WIN_HOME/Desktop/work
+export MY_PAPER=$MY_PUBLIC/Papers
+export MY_BACKUP=$HOME/backup
+
+export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary.txt
+export MY_TODO=$MY_LOCAL_CONFIG/secret/todo.txt
 
