@@ -127,7 +127,7 @@ nnoremap <F3> :GstatusToggle<CR>
 nnoremap <F4> :Agit<CR>
 
 " tab
-nnoremap <F5> :tabN<CR>
+nnoremap <F5> :tabclose<CR>
 nnoremap <F6> :tabn<CR>
 
 " copy to the clipboard
