@@ -17,8 +17,18 @@ f_set_git_prompt() {
   export PS1="$ECOR$ECO2${MY_SHELL_NAME}$ECOD$ECO3[\w]$ECO6${GIT_BRANCH}$ECOD\$ "
 }
 
-# git
-alias gb='git remote -v; git branch -a -vv'
+gb() {
+  git remote -v
+  echo "[BRANCH]"
+  git branch -a -vv
+  echo "[TAG]"
+  git tag
+  git ls-remote --tags
+}
+
+gg()  { git graph  --color=always $* | less -EFRSX; }
+gg1() { git graph1 --color=always $* | less -EFRSX; }
+
 alias gf='git fetch'
 alias gs='git status'
 
@@ -37,8 +47,7 @@ alias git-untrack-file='git rm --cached'
 alias git-untrack-dir='git rm --cached -r'
 
 alias git-dirdiff='git difftool --dir-diff'
-alias GG='vim -c "Agit"'
 
-gg() { git graph --color=always $* | less -EFRSX; }
-gg1() { git graph1 --color=always $* | less -EFRSX; }
+alias GG='vim -c "Agit"'
+alias G='gg -15'
 

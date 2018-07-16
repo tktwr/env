@@ -21,9 +21,15 @@ alias where='type -all'
 alias lsd='\ls -d --color=auto */'
 alias psu='ps -u $USER'
 alias more='$PAGER'
+
+# vim
 alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
 alias vimzero='vim -u NONE'
+alias V='vim -c "NERDTreeToggle"'
+alias vs='vim -c "Gstatus"'
+
+# misc
 alias z='dia'
 alias zv='dia -v'
 alias zh='dia -h'

@@ -24,13 +24,13 @@ unalias -a
 alias s='source $HOME/.bashrc'
 
 #==========================================================================
-# load common files
+# load files
 #==========================================================================
 
-source $CURRENT_DIR/bashrc.common.path
-source $CURRENT_DIR/bashrc.common.func
-source $CURRENT_DIR/bashrc.common.alias
-source $CURRENT_DIR/bashrc.common.colors
+source $CURRENT_DIR/bashrc.colors
+source $CURRENT_DIR/bashrc.path
+source $CURRENT_DIR/bashrc.func
+source $CURRENT_DIR/bashrc.alias
 source $CURRENT_DIR/bashrc.git
 
 #==========================================================================

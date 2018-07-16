@@ -5,11 +5,20 @@ export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
 export SYS_WIN_HOME=`cygpath -u C:/Users/$USER`
 export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USER`
 export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
+export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
 
 PATH="$SYS_WIN_HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
+PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 
 alias x='explorer.exe'
+alias ls='ls.sh'
 alias cmake-unix='cmake -G "Unix Makefiles"'
+
 alias cd-win-home='cd $SYS_WIN_HOME'
 alias cd-msys2-home='cd $SYS_MSYS2_HOME'
 alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
+
+alias python='winpty python'
+alias ipython='winpty ipython'
+alias jupyter='winpty jupyter'
+alias adb='winpty adb'
