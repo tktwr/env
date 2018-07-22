@@ -29,6 +29,11 @@ syn match    myComment          "/\*"
 syn match    myComment          "\*/"
 "syn region   myComment          start="/\*" end="\*/"
 "syn region   myComment          start=+(+ end=+)+
+syn match    myComment          "<!--.*-->"
+
+syn match    mySection1         "^# "
+syn match    mySection2         "^## "
+syn match    mySection3         "^### "
 
 syn match    myString           '"[^"]*"'
 syn match    myString           "'[^']*'"
@@ -68,6 +73,9 @@ if !exists("did_my_general_syntax_inits")
   hi link myHyperTextJump    Identifier
   hi link myHyperTextEntry   String
 
+  hi mySection1  guifg=#707fd9 ctermfg=4 cterm=bold
+  hi mySection2  guifg=#707fd9 ctermfg=4 cterm=bold
+  hi mySection3  guifg=#707fd9 ctermfg=4 cterm=bold
   hi mySeparator guifg=#707fd9 ctermfg=4 cterm=bold
   hi myCitation  guifg=#9f5aa0 ctermfg=5
   hi myItem      guifg=#9dd970 ctermfg=2

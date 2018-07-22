@@ -21,9 +21,10 @@ endfunc
 command -nargs=1 InsertDate call s:InsertDate(<args>)
 
 func s:AddToday()
+  normal O<!---------------------------------------------------->
   call s:InsertDate("today")
-  normal o#------------------------------------------------------
-  normal -
+  normal I## 
+  normal 0
 endfunc
 command AddToday call s:AddToday()
 

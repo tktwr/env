@@ -19,11 +19,11 @@ fi
 case $opt in
 -h)
   # horizontal split
-  vim -o -c "resize 10" -c "wincmd j" -c "normal G" $todo $dia
+  vim -o -c "resize 10" -c "wincmd j" $todo $dia
   ;;
 -v)
   # vertical split
-  vim -O -c "wincmd l" -c "normal 1G" -c "vertical resize 40" -c "wincmd h" -c "normal G" $dia $todo
+  vim -O -c "wincmd l" -c "normal 1G" -c "vertical resize 40" -c "wincmd h" $dia $todo
   ;;
 esac
 
