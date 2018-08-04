@@ -86,6 +86,7 @@ NeoBundle 'godlygeek/tabular'
 NeoBundle 'yuratomo/w3m.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
+NeoBundle 'scrooloose/nerdcommenter'
 
 NeoBundle 'tomasr/molokai'
 let g:molokai_original = 1
