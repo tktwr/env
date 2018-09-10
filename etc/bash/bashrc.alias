@@ -51,6 +51,7 @@ alias cd-protected='cd $MY_PROTECTED'
 alias cd-public='cd $MY_PUBLIC'
 alias cd-git='cd $MY_WORK_GIT'
 alias cd-svn='cd $MY_WORK_SVN'
+alias cd-doc='cd $MY_DOC'
 alias cd-work='cd $MY_WORK'
 alias cd-paper='cd $MY_PAPER'
 

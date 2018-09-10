@@ -23,6 +23,7 @@ export MY_REPO_SVN=$MY_PRIVATE/svn
 export MY_WORK_GIT=$MY_WIN_HOME/Desktop/work/git
 export MY_WORK_SVN=$MY_WIN_HOME/Desktop/work/svn
 
+export MY_DOC=$MY_WIN_HOME/Desktop/doc
 export MY_WORK=$MY_WIN_HOME/Desktop/work
 export MY_PAPER=$MY_PUBLIC/Papers
 export MY_BACKUP=$HOME/backup
