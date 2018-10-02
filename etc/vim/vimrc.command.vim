@@ -10,23 +10,23 @@ endf
 command UpdateLastModification call s:UpdateLastModification()
 au BufWritePre,FileWritePre *.html  UpdateLastModification
 
-func s:InsertTime()
+func s:AddTime()
   silent exec "r!env LC_TIME=C date '+\\%T'"
 endfunc
-command InsertTime call s:InsertTime()
+command AddTime call s:AddTime()
 
-func s:InsertDate(date)
-  silent exec "r!env LC_TIME=C date --date=\"".a:date."\" '+\\%Y/\\%m/\\%d (\\%a)'"
+func s:AddDate(date)
+  silent exec "r!env LC_TIME=C date --date='".a:date."' '+\\%Y/\\%m/\\%d (\\%a)'"
 endfunc
-command -nargs=1 InsertDate call s:InsertDate(<args>)
+command -nargs=? AddDate call s:AddDate("<args>")
 
-func s:AddToday()
+func s:InsertDia(date)
   normal O<!---------------------------------------------------->
-  call s:InsertDate("today")
+  call s:AddDate(a:date)
   normal I## 
   normal 0
 endfunc
-command AddToday call s:AddToday()
+command -nargs=? InsertDia call s:InsertDia("<args>")
 
 command CDHERE cd %:h
 command LCDHERE lcd %:h

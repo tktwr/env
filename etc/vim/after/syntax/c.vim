@@ -26,6 +26,8 @@ syn keyword cppType     vector list deque stack queue priority_queue
 syn keyword cppType     map multimap set multiset
 syn keyword cppType     string array valarray bitset
 
+syn keyword cppType     unique_ptr shared_ptr weak_ptr
+
 if !exists("did_cpp_syntax_inits")
   let did_cpp_syntax_inits = 1
   hi link cppType	      Type

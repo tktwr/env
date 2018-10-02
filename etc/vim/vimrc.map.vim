@@ -63,15 +63,15 @@ vnoremap A2 y:'<,'>w !sumcol 2<CR>
 vnoremap A3 y:'<,'>w !sumcol 3<CR>
 
 " calc
-vnoremap C y:!expr.sh "<C-R>""<CR>
+"vnoremap C y:!expr.sh "<C-R>""<CR>
 
 "------------------------------------------------------
 " insert mode mapping
 "------------------------------------------------------
 " insert date 
-inoremap <C-X>   <ESC>:r!env LC_TIME=C date '+\%Y/\%m/\%d (\%a)'<CR>kgJA
+"inoremap <C-X>   <ESC>:r!env LC_TIME=C date '+\%Y/\%m/\%d (\%a)'<CR>kgJA
 " insert time
-inoremap <C-Z>   <ESC>:r!env LC_TIME=C date '+\%R'<CR>kgJA
+"inoremap <C-Z>   <ESC>:r!env LC_TIME=C date '+\%R'<CR>kgJA
 
 " expand abbr with no space
 "inoremap <S-Space>	<C-]>
@@ -83,9 +83,6 @@ inoremap <C-Z>   <ESC>:r!env LC_TIME=C date '+\%R'<CR>kgJA
 " label
 " http://...
 nnoremap <C-H> I[A]Jr(A)I- 
-
-" update date
-nnoremap <C-X> 0y$:InsertDate "<C-R>""<CR>kdd
 
 " open the current file in a web browser
 nnoremap <C-Y> :silent !chrome "%"<CR>
