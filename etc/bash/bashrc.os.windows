@@ -5,14 +5,18 @@ export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
 export SYS_WIN_HOME=`cygpath -u C:/Users/$USER`
 export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USER`
 export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
+export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk/platform-tools"
 export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
 
-PATH="$SYS_WIN_HOME/AppData/Local/Android/sdk/platform-tools:$PATH"
+PATH="$ANDROID_SDK:$PATH"
 PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 
 alias x='explorer.exe'
 alias ls='ls.sh'
 alias cmake-unix='cmake -G "Unix Makefiles"'
+alias cmake-vs2017='cmake -G "Visual Studio 15 2017 Win64"'
+alias cmake-build-release='cmake --build . --config Release'
+alias cmake-build-debug='cmake --build . --config Debug'
 
 alias cd-win-home='cd $SYS_WIN_HOME'
 alias cd-msys2-home='cd $SYS_MSYS2_HOME'

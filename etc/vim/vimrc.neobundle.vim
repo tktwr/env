@@ -83,7 +83,6 @@ endif
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'yuratomo/w3m.vim'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'scrooloose/nerdcommenter'
@@ -96,7 +95,7 @@ NeoBundle 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"
 
 if !has('gui_running')
-  colorscheme gruvbox
+  NeoBundle 'yuratomo/w3m.vim'
 endif
 
 call neobundle#end()
@@ -117,3 +116,4 @@ command GstatusToggle call s:GstatusToggle()
 "hi Normal guibg=#464646
 "hi Normal guibg=#303030
 
+colorscheme gruvbox

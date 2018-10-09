@@ -5,17 +5,22 @@
 set nocompatible
 
 "set shell=/bin/sh
+
 set path=.,,/usr/local/include,/usr/include
 set path+=$QTDIR/include
+
 set tags=./tags,../tags,../../tags,../../../tags,tags,
-set tags+=$MY_LOCAL_CONFIG/memo/tags,$MY_REMOTE_CONFIG/memo/tags
+set tags+=$MY_LOCAL_CONFIG/memo/tags
+set tags+=$MY_REMOTE_CONFIG/memo/tags
 set tags+=$MY_REMOTE_CONFIG/samples/memotags
 set tags+=$MY_LOCAL_CONFIG/log/tags.glm
 set tags+=$MY_LOCAL_CONFIG/log/tags.opencv2
+
 set dictionary=~/.vim/words
 
 set timeoutlen=500
 set autowrite
+
 set noswapfile
 set nobackup
 set noundofile
@@ -33,10 +38,9 @@ set listchars=tab:>-,trail:-,eol:$
 "set efm=%AERROR\ File\ =\ %f,\ Line\ =\ %l,%C%m
 set formatoptions=tcq
 
-" mode line
-set modeline
-set modelines=5
-" status line
+"set modeline
+"set modelines=5
+
 set laststatus=2
 set ruler
 set showcmd
@@ -67,7 +71,6 @@ set nofoldenable
 set iminsert=0
 set imsearch=-1
 "inoremap <ESC> <ESC>:set iminsert=0 nopaste<CR>
-"inoremap <F11> <ESC>:set iminsert=0 nopaste<CR>
 
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
