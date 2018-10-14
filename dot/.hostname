@@ -12,24 +12,26 @@ export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
 export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
 
+export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
+export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html
+
 
 export MY_PRIVATE=X:
 export MY_PROTECTED=Y:
 export MY_PUBLIC=Z:
 
-export MY_REPO_GIT=$MY_PRIVATE/git
-export MY_REPO_SVN=$MY_PRIVATE/svn
+export MY_REPO_GIT=$MY_PRIVATE/repo/git
+export MY_REPO_SVN=$MY_PRIVATE/repo/svn
+export MY_WORK_GIT=$MY_PRIVATE/work/git
+export MY_WORK_SVN=$MY_PRIVATE/work/svn
 
-export MY_WORK_GIT=$MY_WIN_HOME/Desktop/work/git
-export MY_WORK_SVN=$MY_WIN_HOME/Desktop/work/svn
-
-export MY_DOC=$MY_WIN_HOME/Desktop/doc
-export MY_WORK=$MY_WIN_HOME/Desktop/work
+export MY_DOC=$MY_PRIVATE/work/doc
+export MY_WORK=$MY_PRIVATE/work
+export MY_OPT=$MY_PUBLIC/opt
+export MY_DOWNLOADS=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers
-export MY_BACKUP=$HOME/backup
 
-export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
-export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html
+export MY_BACKUP=$HOME/backup
 
 export CC=clang
 export CXX=clang++
