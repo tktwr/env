@@ -18,15 +18,30 @@ if !exists("did_gl_syntax_inits")
   hi link glLabel       Label
 endif
 
-syn keyword cppType     uchar ushort uint ulong Float
+syn keyword cppType     uchar ushort uint ulong
 
-" SLT
 syn keyword cppType     std
 syn keyword cppType     vector list deque stack queue priority_queue
 syn keyword cppType     map multimap set multiset
 syn keyword cppType     string array valarray bitset
-
 syn keyword cppType     unique_ptr shared_ptr weak_ptr
+syn keyword cppType     ifstream ofstream
+syn keyword cppType     istringstream ostringstream
+
+syn keyword cppType     cv
+syn keyword cppType     Mat Scalar Point
+
+syn keyword cppType     tt
+syn keyword cppType     Vec2i Vec2f
+syn keyword cppType     Vec3i Vec3f
+syn keyword cppType     Vec4i Vec4f
+syn keyword cppType     Color1uc Color1us Color1f
+syn keyword cppType     Color3uc Color3us Color3f
+syn keyword cppType     Color4uc Color4us Color4f
+syn keyword cppType     Image1uc Image1us Image1f
+syn keyword cppType     Image3uc Image3us Image3f
+syn keyword cppType     Image4uc Image4us Image4f
+syn keyword cppType     FileName Array Time
 
 if !exists("did_cpp_syntax_inits")
   let did_cpp_syntax_inits = 1
