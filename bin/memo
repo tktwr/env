@@ -4,7 +4,7 @@ cols=$(tput cols)
 
 bin_name=`basename $0`
 memo_dir="$MY_LOCAL_CONFIG/memo"
-tags="$MY_REMOTE_CONFIG/memo/tags $MY_REMOTE_CONFIG/samples/memotags $MY_LOCAL_CONFIG/memo/tags"
+tags="$MY_REMOTE_CONFIG/memo/tags.memo $MY_REMOTE_CONFIG/samples/tags.memo $MY_LOCAL_CONFIG/memo/tags.memo"
 
 f_print_tags() {
   for i in $tags; do

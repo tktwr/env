@@ -36,8 +36,10 @@ func! s:MakeMemoWindow()
   if s:memo_winnr == -1
     silent exec "edit" s:memo_winname
     setlocal buftype=nofile
-    "setlocal bufhidden=delete
+    setlocal bufhidden=hide
+    setlocal buflisted
     setlocal noswapfile
+    setlocal readonly
     setlocal tabstop=8
     let s:memo_winnr = bufwinnr(s:memo_winname)
     call s:DefineCommands()
@@ -45,10 +47,10 @@ func! s:MakeMemoWindow()
 endfunc
 
 "--------------------------------------------------------------------------
-" Memo()
+" s:Memo()
 "--------------------------------------------------------------------------
 
-func! Memo(tagname)
+func! s:Memo(tagname)
   if (empty(a:tagname))
     call s:MakeMemoWindow()
     call s:ListTags()
@@ -60,5 +62,5 @@ endfunc
 "--------------------------------------------------------------------------
 " command
 "--------------------------------------------------------------------------
-command -nargs=? Memo call Memo(<q-args>)
+command -nargs=? Memo call s:Memo(<q-args>)
 
