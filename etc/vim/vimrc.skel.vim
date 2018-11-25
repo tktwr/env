@@ -1,5 +1,11 @@
 " load skeleton file
 
+func s:AfterH()
+  let header_id = substitute(expand("%:t"), "\\.", "_", "")
+  silent exec "%s/HEADER_ID/".header_id."/"
+endfunc
+command AfterH call s:AfterH()
+
 au BufNewFile Makefile        silent 0r ~/.vim/skel/skel.make
 au BufNewFile CMakeLists.txt  silent 0r ~/.vim/skel/skel.cmake
 au BufNewFile *.cxx,*.cpp     silent 0r ~/.vim/skel/skel.cxx

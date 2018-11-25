@@ -26,8 +26,9 @@ gb() {
   git ls-remote --tags
 }
 
-gg()  { git graph  --color=always $* | less -EFRSX; }
-gg1() { git graph1 --color=always $* | less -EFRSX; }
+gg()   { git graph --color=always $* | less -EFRSX; }
+gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
+gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
 alias gf='git fetch'
 alias gs='git status'
