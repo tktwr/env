@@ -45,7 +45,8 @@ f_main() {
         ;;
     esac
   else
-    vim $memo_dir/memo.md.html
+    #vim $memo_dir/memo.md.html
+    vim -c "Memo"
   fi
 }
 

@@ -28,10 +28,23 @@ nnoremap <C-K>   2<C-Y>
 nnoremap <C-E>   :only<CR>
 nnoremap <C-D>   :close<CR>
 
+"------------------------------------------------------
+" develop
+"------------------------------------------------------
 " tag
 nnoremap <C-]>      g<C-]>
 nnoremap <C-W><C-]> <C-W>g<C-]>
 nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<C-I>"<CR>
+
+" global
+nnoremap <silent> <Space>f :Gtags -f %<CR>
+nnoremap <silent> <Space>j :GtagsCursor<CR>
+nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
+nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
+
+" indent between { and }
+"nnoremap <Left><Left>	%ma%:.+1,'a-1<<CR>+%
+"nnoremap <Right><Right>	%ma%:.+1,'a-1><CR>+%/{<CR>
 
 "------------------------------------------------------
 " misc
@@ -77,7 +90,7 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 "inoremap <S-Space>	<C-]>
 
 "------------------------------------------------------
-" Func key
+" web
 "------------------------------------------------------
 " transform the following two lines to a hyper link in the markdeep format
 " label
@@ -92,29 +105,6 @@ nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
 
 " open a hyper link in the markdeep format by w3m.vim
 nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
-
-"------------------------------------------------------
-" others
-"------------------------------------------------------
-" indent between { and }
-"nnoremap <Left><Left>	%ma%:.+1,'a-1<<CR>+%
-"nnoremap <Right><Right>	%ma%:.+1,'a-1><CR>+%/{<CR>
-
-" build
-"nnoremap <F?> :make<CR>:cw<CR>
-
-"nnoremap <F?> :Grep <cword> *.h *.cxx *.cpp<CR>
-
-" save session
-"nnoremap <F?> :mksession! ~/.vim/session.vim<CR>
-
-" load session
-"nnoremap <F?> :source ~/.vim/session.vim<CR>
-
-"nnoremap <F?> :TagbarToggle<CR>
-
-" open memo
-"nnoremap <F?> :Memo<CR>
 
 "------------------------------------------------------
 " Func key
@@ -133,4 +123,17 @@ vnoremap <F11> "*y
 " paste from the clipboard
 nnoremap <F12> "*p
 inoremap <F12> <ESC>"*p
+
+" build
+"nnoremap <F?> :make<CR>:cw<CR>
+
+"nnoremap <F?> :Grep <cword> *.h *.cxx *.cpp<CR>
+
+" save session
+"nnoremap <F?> :mksession! ~/.vim/session.vim<CR>
+
+" load session
+"nnoremap <F?> :source ~/.vim/session.vim<CR>
+
+"nnoremap <F?> :TagbarToggle<CR>
 

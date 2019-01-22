@@ -32,13 +32,16 @@ syn keyword cppType     cv
 syn keyword cppType     Mat Scalar Point
 
 syn keyword cppType     tt
+syn keyword cppType     Vec1i Vec1f
 syn keyword cppType     Vec2i Vec2f
 syn keyword cppType     Vec3i Vec3f
 syn keyword cppType     Vec4i Vec4f
 syn keyword cppType     Color1uc Color1us Color1f
+syn keyword cppType     Color2uc Color2us Color2f
 syn keyword cppType     Color3uc Color3us Color3f
 syn keyword cppType     Color4uc Color4us Color4f
 syn keyword cppType     Image1uc Image1us Image1f
+syn keyword cppType     Image2uc Image2us Image2f
 syn keyword cppType     Image3uc Image3us Image3f
 syn keyword cppType     Image4uc Image4us Image4f
 syn keyword cppType     FileName Array Time

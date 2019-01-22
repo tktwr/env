@@ -29,7 +29,7 @@ f_print_path() {
   echo "$PATH" | $FORMAT
 }
 
-main() {
+f_main() {
   str=""
 
   for i in $*; do
@@ -65,5 +65,5 @@ main() {
   fi
 }
 
-main $*
+f_main $*
 
