@@ -8,6 +8,11 @@ env \
 memo \
 samples \
 templates \
+libtt \
+tools \
+"
+TAGS_DIRS="\
+libtt/tt \
 "
 MEMO_DIRS="\
 memo \
@@ -89,7 +94,7 @@ f_args() {
         f_exec_in_dirs clean $BUILD_DIRS
         ;;
       -t|--tags)
-        ${COMMAND['tags']} libtt/tt
+        ${COMMAND['tags']} $TAGS_DIRS
         ;;
       -m|--tags.memo)
         f_exec_in_dirs tags.memo $MEMO_DIRS
