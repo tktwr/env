@@ -52,17 +52,18 @@ endif
 
 "NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 if neobundle#is_installed('nerdtree-git-plugin')
+  "let g:NERDTreeShowIgnoredStatus = 1
   let g:NERDTreeIndicatorMapCustom = {
-      \ "Modified"  : "~",
-      \ "Staged"    : "+",
-      \ "Untracked" : "-",
-      \ "Renamed"   : ">",
-      \ "Unmerged"  : "=",
-      \ "Deleted"   : "x",
-      \ "Dirty"     : "d",
-      \ "Clean"     : "o",
-      \ "Ignored"   : "i",
-      \ "Unknown"   : "?"
+      \ 'Modified'  : 'M',
+      \ 'Staged'    : 'S',
+      \ 'Untracked' : 'U',
+      \ 'Renamed'   : 'R',
+      \ 'Unmerged'  : 'm',
+      \ 'Deleted'   : 'D',
+      \ 'Dirty'     : 'X',
+      \ 'Clean'     : 'C',
+      \ 'Ignored'   : 'I',
+      \ 'Unknown'   : 'u'
       \ }
 endif
 
@@ -80,23 +81,25 @@ if neobundle#is_installed('eskk.vim')
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
 endif
 
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'scrooloose/nerdcommenter'
-
-NeoBundle 'tomasr/molokai'
-let g:molokai_original = 1
-"let g:rehash256 = 1
-
 NeoBundle 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"
 
-if !has('gui_running')
-  NeoBundle 'yuratomo/w3m.vim'
-endif
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
+
+NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'godlygeek/tabular'
+
+"NeoBundle 'majutsushi/tagbar'
+
+"NeoBundle 'tomasr/molokai'
+"let g:molokai_original = 1
+""let g:rehash256 = 1
+
+"if !has('gui_running')
+"  NeoBundle 'yuratomo/w3m.vim'
+"endif
 
 call neobundle#end()
 

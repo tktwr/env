@@ -1,5 +1,15 @@
-set guifont=あくあフォント:h12:cSHIFTJIS
+source $HOME/.vim/vimrc
+
+"set guifont=あくあフォント:h14
+set guifont=Myrica_M:h14
+
+" gui menu
+set guioptions-=m
+set guioptions-=T
+
+set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,cp936
+
 set noswapfile
 set nobackup
 set noundofile
@@ -10,8 +20,4 @@ set imsearch=-1
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
 nnoremap Q     :confirm qall<CR>
-
-" gui menu
-"set guioptions-=m
-"set guioptions-=T
 
