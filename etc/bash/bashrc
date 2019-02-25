@@ -15,37 +15,39 @@ export EDITOR='vim'
 
 export WWW_HOME="https://tktwr.github.io/memo/"
 
-#==========================================================================
+#======================================================
 # alias
-#==========================================================================
+#======================================================
 
 unalias -a
 
 alias s='source $HOME/.bashrc'
 
-#==========================================================================
+#======================================================
 # load files
-#==========================================================================
+#======================================================
 
-source $CURRENT_DIR/bashrc.colors
-source $CURRENT_DIR/bashrc.path
-source $CURRENT_DIR/bashrc.func
-source $CURRENT_DIR/bashrc.alias
-source $CURRENT_DIR/bashrc.git
+files="\
+bashrc.colors \
+bashrc.path \
+bashrc.func \
+bashrc.alias \
+bashrc.git \
+bashrc.os.$MY_OS_NAME \
+bashrc.shell.$MY_SHELL_NAME \
+bashrc.site.$MY_SITE_NAME \
+bashrc.host.$MY_HOST_NAME \
+"
 
-#==========================================================================
-# load specific files
-#==========================================================================
-
-for i in bashrc.os.$MY_OS_NAME bashrc.shell.$MY_SHELL_NAME bashrc.site.$MY_SITE_NAME bashrc.host.$MY_HOST_NAME; do
+for i in $files; do
   if [ -f $CURRENT_DIR/$i ]; then
     source $CURRENT_DIR/$i
   fi
 done
 
-#==========================================================================
+#======================================================
 # setup
-#==========================================================================
+#======================================================
 
 f_set_core_off
 f_set_git_prompt

@@ -30,7 +30,7 @@ f_win_git() {
 f_gitbash_git "$@"
 
 case "$1" in
-  push|pull|fetch|clone|ls-remote)
+  push|pull|fetch|clone|submodule|ls-remote)
     f_win_git "$@"
     ;;
   *)

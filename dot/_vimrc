@@ -1,0 +1,2 @@
+source $HOME/.vim/vimrc
+source $HOME/.vim/vimrc.gui.vim

@@ -20,13 +20,9 @@ export MY_PRIVATE=X:
 export MY_PROTECTED=Y:
 export MY_PUBLIC=Z:
 
-export MY_REPO_GIT=$MY_PRIVATE/repo/git
-export MY_REPO_SVN=$MY_PRIVATE/repo/svn
-export MY_WORK_GIT=$MY_PRIVATE/work/git
-export MY_WORK_SVN=$MY_PRIVATE/work/svn
-
-export MY_DOC=$MY_PRIVATE/work/doc
+export MY_REPO=$MY_PRIVATE/repo
 export MY_WORK=$MY_PRIVATE/work
+export MY_DOC=$MY_PRIVATE/work/doc
 export MY_OPT=$MY_PUBLIC/opt
 export MY_DOWNLOADS=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers

@@ -1,7 +1,5 @@
-source $HOME/.vim/vimrc
-
-"set guifont=‚ ‚­‚ ƒtƒHƒ“ƒg:h14
 set guifont=Myrica_M:h14
+"set guifont=ã‚ãã‚ãƒ•ã‚©ãƒ³ãƒˆ:h14
 
 " gui menu
 set guioptions-=m

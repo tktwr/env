@@ -26,6 +26,12 @@ gb() {
   git ls-remote --tags
 }
 
+# less options
+# -E or --QUIT-AT-EOF
+# -F or --quit-if-one-screen
+# -R or --RAW-CONTROL-CHARS
+# -S or --chop-long-lines
+# -X or --no-init
 gg()   { git graph --color=always $* | less -EFRSX; }
 gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
 gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
@@ -47,8 +53,10 @@ alias git-track='git add'
 alias git-untrack-file='git rm --cached'
 alias git-untrack-dir='git rm --cached -r'
 
+alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
 
-alias GG='vim -c "Agit"'
 alias G='gg -15'
+alias GG='vim -c "Agit"'
+alias S='vim -c "Gstatus"'
 

@@ -5,12 +5,6 @@ set t_Co=256
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-if ($TERM == "xterm")
-  " mouse support
-  set mouse=a
-  set ttymouse=xterm2
-endif
-
 " syntax highlighting for a colored terminal
 if (&t_Co > 1)
   syntax enable
@@ -31,6 +25,12 @@ if (&t_Co > 1)
   hi StatusLine   ctermfg=3 ctermbg=0 cterm=reverse,bold
   hi StatusLineNC ctermfg=3 ctermbg=0
   hi VertSplit    ctermfg=3 ctermbg=3
+endif
+
+if &term == "xterm"
+  " mouse support
+  set mouse=a
+  set ttymouse=xterm2
 endif
 
 " paste

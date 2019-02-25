@@ -11,6 +11,7 @@ DOT_FILES_COMMON="\
 .minttyrc \
 .tmux.conf \
 .vimrc \
+_vimrc \
 "
 DOT_FILES_DIFF="\
 .gitconfig \
