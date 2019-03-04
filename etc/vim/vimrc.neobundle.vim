@@ -108,10 +108,11 @@ syntax enable
 NeoBundleCheck
 
 func! s:GstatusToggle()
-  if (&filetype == "gitcommit")
+  if (&filetype == "fugitive")
     normal q
   else
     Gstatus
+    resize 12
   endif
 endfunc
 command GstatusToggle call s:GstatusToggle()
