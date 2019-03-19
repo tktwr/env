@@ -5,7 +5,6 @@ export PREVPWD
 
 f_checkgit() {
   if [ "$PWD" != "$PREVPWD" ]; then
-    echo "check git!!"
     GIT_BRANCH=`__git_ps1`
     PREVPWD="$PWD"
   fi

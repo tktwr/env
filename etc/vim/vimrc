@@ -96,8 +96,8 @@ source $HOME/.vim/vimrc.term.vim
 source $HOME/.vim/vimrc.neobundle.vim
 source $HOME/.vim/vimrc.map.vim
 
-if &term == "xterm"
-elseif &term == "win32"
-elseif &term == "builtin_gui"
-endif
+"if &term == "xterm"
+"elseif &term == "win32"
+"elseif &term == "builtin_gui"
+"endif
 
