@@ -91,6 +91,8 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'godlygeek/tabular'
 
+NeoBundle 'christoomey/vim-tmux-navigator'
+
 "NeoBundle 'majutsushi/tagbar'
 
 "NeoBundle 'tomasr/molokai'

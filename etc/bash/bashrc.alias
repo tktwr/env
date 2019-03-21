@@ -16,14 +16,15 @@ alias df='df -h'
 alias more='$PAGER'
 
 # shell
+alias s='source $HOME/.bashrc'
 alias h='history 20'
 alias j='jobs -l'
 alias where='type -all'
+alias lsd='\ls -d --color=auto */'
+alias psu='ps -u $USER'
 ll() { ls -l --color $* | $PAGER; }
 lst() { ls -lt --color $* | grep -v "/$" | head -15; }
-alias lsd='\ls -d --color=auto */'
 psall() { ps -aef | grep $*; }
-alias psu='ps -u $USER'
 ff() { find . -name "$*" -print; }
 
 # net
@@ -38,8 +39,8 @@ alias wgetpage2='wget -N -k -p -L -np -r -l2'
 alias vi='vim'
 alias vimtags='vim -e -c "helptags . | quit"'
 alias vimzero='vim -u NONE'
-vimwhich() { vim `which $*`; }
 alias V='vim -c "NERDTreeToggle"'
+vimwhich() { vim `which $*`; }
 
 # cmake, build
 alias cmake-unix='cmake -G "Unix Makefiles"'

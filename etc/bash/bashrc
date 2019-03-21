@@ -15,13 +15,7 @@ export EDITOR='vim'
 
 export WWW_HOME="https://tktwr.github.io/memo/"
 
-#======================================================
-# alias
-#======================================================
-
 unalias -a
-
-alias s='source $HOME/.bashrc'
 
 #======================================================
 # load files
