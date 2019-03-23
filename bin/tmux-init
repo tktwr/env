@@ -4,8 +4,13 @@ case $1 in
   4)
     exec tmux -2 new-session \; split-window -h -b -l 60 \; split-window -v \; select-pane -R \; split-window -v -p 80
     ;;
-  *)
+  3)
+    exec tmux -2 new-session \; split-window -h -b -l 60 \; split-window -v \; select-pane -R
+    ;;
+  2)
     exec tmux -2 new-session \; split-window -h -b -l 60 \; select-pane -R
     ;;
 esac
+
+exec tmux -2 new-session
 
