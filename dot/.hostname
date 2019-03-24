@@ -11,6 +11,7 @@ export MY_LOCAL_CONFIG=$MY_WIN_HOME/tktwr.local
 export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
 export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
+export MY_LIBTT=$MY_REMOTE_CONFIG/libtt
 
 export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
 export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html
@@ -23,6 +24,7 @@ export MY_PUBLIC=Z:
 export MY_REPO=$MY_PRIVATE/repo
 export MY_WORK=$MY_PRIVATE/work
 export MY_DOC=$MY_PRIVATE/work/doc
+
 export MY_OPT=$MY_PUBLIC/opt
 export MY_DOWNLOADS=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers
