@@ -43,7 +43,8 @@ alias V='vim -c "NERDTreeToggle"'
 vimwhich() { vim `which $*`; }
 
 # cmake, build
-alias cmake-unix='cmake -G "Unix Makefiles"'
+alias cmake-unix-release='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release'
+alias cmake-unix-debug='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug'
 alias cmake-vs2017='cmake -G "Visual Studio 15 2017 Win64"'
 alias cmake-build-release='cmake --build . --config Release'
 alias cmake-build-debug='cmake --build . --config Debug'
@@ -74,6 +75,7 @@ alias cd-svn='cd $MY_WORK/svn'
 alias cd-repo='cd $MY_REPO'
 alias cd-work='cd $MY_WORK'
 alias cd-doc='cd $MY_DOC'
+
 alias cd-opt='cd $MY_OPT'
 alias cd-downloads='cd $MY_DOWNLOADS'
 alias cd-papers='cd $MY_PAPERS'

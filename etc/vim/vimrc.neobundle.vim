@@ -91,7 +91,16 @@ NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'godlygeek/tabular'
 
-NeoBundle 'christoomey/vim-tmux-navigator'
+NeoBundle 'easymotion/vim-easymotion'
+
+"NeoBundle 'christoomey/vim-tmux-navigator'
+
+"NeoBundle 'SirVer/ultisnips'
+"NeoBundle 'honza/vim-snippets'
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsJumpForwardTrigger="<c-b>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"let g:UltiSnipsEditSplit="vertical"
 
 "NeoBundle 'majutsushi/tagbar'
 

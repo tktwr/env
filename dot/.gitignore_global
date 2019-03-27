@@ -13,3 +13,8 @@ Thumbs.db
 # mac
 .DS_Store
 
+# build
+build*/
+!build.gradle
+imgui.ini
+

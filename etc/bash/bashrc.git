@@ -58,6 +58,12 @@ alias gR='git reset --hard'
 alias gRom='git reset --hard origin/master'
 alias gPom='git push origin master'
 
+alias git-pull-no-commit='git pull --no-commit'
+
+alias gA='git add'
+alias gAu='git add -u'
+alias gC='git commit -m'
+
 alias git-add-chmod-x='git update-index --add --chmod=+x'
 alias git-ls-filemode='git ls-files -s'
 
