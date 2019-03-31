@@ -10,6 +10,11 @@ f_checkgit() {
   fi
 }
 
+f_checkgit_force() {
+  PREVPWD=""
+  f_checkgit
+}
+
 f_git_ps1() {
   echo "$GIT_BRANCH"
 }
@@ -80,4 +85,5 @@ alias git-dirdiff='git difftool --dir-diff'
 alias G='gg -15'
 alias GG='vim -c "Agit"'
 alias S='vim -c "Gstatus"'
+alias u='f_checkgit_force'
 

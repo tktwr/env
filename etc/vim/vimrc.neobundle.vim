@@ -88,10 +88,23 @@ NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 
 NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'tpope/vim-surround'
 NeoBundle 'godlygeek/tabular'
 
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'easymotion/vim-easymotion'
+if neobundle#is_installed('vim-easymotion')
+  let g:EasyMotion_do_mapping = 0
+  " Jump to first match with enter & space
+  let g:EasyMotion_enter_jump_first = 1
+  let g:EasyMotion_space_jump_first = 1
+
+  nmap s <Plug>(easymotion-overwin-f2)
+  map f <Plug>(easymotion-fl)
+  map t <Plug>(easymotion-tl)
+  map F <Plug>(easymotion-Fl)
+  map T <Plug>(easymotion-Tl)
+endif
 
 "NeoBundle 'christoomey/vim-tmux-navigator'
 
