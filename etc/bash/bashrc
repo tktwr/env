@@ -33,9 +33,11 @@ bashrc.site.$MY_SITE_NAME \
 bashrc.host.$MY_HOST_NAME \
 "
 
-for i in $files; do
-  if [ -f $CURRENT_DIR/$i ]; then
-    source $CURRENT_DIR/$i
+for I in $files; do
+  if [ -f $CURRENT_DIR/$I ]; then
+    f_time_start $I
+    source $CURRENT_DIR/$I
+    f_time_end $I
   fi
 done
 

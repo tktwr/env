@@ -1,14 +1,20 @@
 #!/bin/bash
 
-export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
-export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
-export SYS_WIN_HOME=`cygpath -u C:/Users/$USER`
-export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USER`
-export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
+f_set_win_env() {
+  export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
+  export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
+  export SYS_WIN_HOME=`cygpath -u C:/Users/$USER`
+  export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USER`
+  export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USER`
 
-export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
-export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
-export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
+  export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
+  export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
+  export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
+}
+
+if [ -z "$SYS_PROG64_DIR" ]; then
+  f_set_win_env
+fi
 
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"

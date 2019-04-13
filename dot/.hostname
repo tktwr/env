@@ -3,7 +3,9 @@ export MY_SITE_NAME=
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
-export MY_WIN_HOME=`cygpath -u $USERPROFILE`
+if [ -z "$MY_WIN_HOME" ]; then
+  export MY_WIN_HOME=`cygpath -u $USERPROFILE`
+fi
 
 export MY_REMOTE_CONFIG=$MY_WIN_HOME/tktwr.github
 export MY_LOCAL_CONFIG=$MY_WIN_HOME/tktwr.local
