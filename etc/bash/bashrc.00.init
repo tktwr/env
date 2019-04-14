@@ -1,6 +1,15 @@
 #!/bin/bash
 
+#======================================================
+# init
+#======================================================
+
 source $HOME/.hostname
+
+export BASHRC_CACHED=$HOME/.bashrc_cached
+if [ -f $BASHRC_CACHED ]; then
+  source $BASHRC_CACHED
+fi
 
 # bash
 HISTCONTROL=ignoreboth

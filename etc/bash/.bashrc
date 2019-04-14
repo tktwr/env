@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#======================================================
+# time
+#======================================================
+
 TIME_PRINT=0
 
 declare -A TIME_START
@@ -25,7 +29,16 @@ f_time_end() {
 f_time_start bashrc.00.init
 #!/bin/bash
 
+#======================================================
+# init
+#======================================================
+
 source $HOME/.hostname
+
+export BASHRC_CACHED=$HOME/.bashrc_cached
+if [ -f $BASHRC_CACHED ]; then
+  source $BASHRC_CACHED
+fi
 
 # bash
 HISTCONTROL=ignoreboth
@@ -44,6 +57,10 @@ unalias -a
 f_time_end bashrc.00.init
 f_time_start bashrc.10.colors
 #!/bin/bash
+
+#======================================================
+# colors
+#======================================================
 
 # tw: スティッキビットありother書き込み権限つきディレクトリ
 # ow: スティッキビットなしother書き込み権限つきディレクトリ
@@ -167,6 +184,10 @@ f_time_end bashrc.10.func
 f_time_start bashrc.10.path
 #!/bin/bash
 
+#======================================================
+# path
+#======================================================
+
 # system path
 if [ -z "$SYS_PATH" ]; then
   export SYS_PATH=$PATH
@@ -202,6 +223,10 @@ done
 f_time_end bashrc.10.path
 f_time_start bashrc.11.alias
 #!/bin/bash
+
+#======================================================
+# alias
+#======================================================
 
 # directory stack
 alias .='pushd'
@@ -292,6 +317,10 @@ f_time_end bashrc.11.alias
 f_time_start bashrc.11.git
 #!/bin/bash
 
+#======================================================
+# git
+#======================================================
+
 export GIT_BRANCH
 export PREVPWD
 
@@ -311,15 +340,29 @@ f_git_ps1() {
   echo "$GIT_BRANCH"
 }
 
-f_set_git_prompt() {
-  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
-
+f_set_git_env() {
   GIT_EXEC_PATH="$(git --exec-path 2>/dev/null)"
   COMPLETION_PATH="${GIT_EXEC_PATH%/libexec/git-core}"
   COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
   COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
+
+  GIT_EXEC_PATH=`cygpath -u "$GIT_EXEC_PATH"`
+  COMPLETION_PATH=`cygpath -u "$COMPLETION_PATH"`
+
+  echo "export GIT_EXEC_PATH=\"$GIT_EXEC_PATH\""
+  echo "export COMPLETION_PATH=\"$COMPLETION_PATH\""
+}
+
+f_set_git_prompt() {
+  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
+
+  if [ -z "$COMPLETION_PATH" ]; then
+    echo "call f_set_git_env"
+    f_set_git_env >> $BASHRC_CACHED
+  fi
+
   if [ -f "$COMPLETION_PATH/git-prompt.sh" ]; then
-    source "$COMPLETION_PATH/git-completion.bash"
+    #source "$COMPLETION_PATH/git-completion.bash"
     source "$COMPLETION_PATH/git-prompt.sh"
     #GIT_BRANCH_FUNC='`__git_ps1`'
     GIT_BRANCH_FUNC='`f_git_ps1`'
@@ -384,6 +427,10 @@ f_time_end bashrc.11.git
 f_time_start bashrc.50.os.windows
 #!/bin/bash
 
+#======================================================
+# windows
+#======================================================
+
 f_set_win_env() {
   export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
   export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
@@ -394,10 +441,20 @@ f_set_win_env() {
   export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
   export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
   export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
+
+  echo "export SYS_PROG64_DIR=\"$SYS_PROG64_DIR\""
+  echo "export SYS_PROG32_DIR=\"$SYS_PROG32_DIR\""
+  echo "export SYS_WIN_HOME=\"$SYS_WIN_HOME\""
+  echo "export SYS_MSYS2_HOME=\"$SYS_MSYS2_HOME\""
+  echo "export SYS_CYGWIN_HOME=\"$SYS_CYGWIN_HOME\""
+  echo "export JAVA_HOME=\"$JAVA_HOME\""
+  echo "export ANDROID_SDK=\"$ANDROID_SDK\""
+  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
 }
 
 if [ -z "$SYS_PROG64_DIR" ]; then
-  f_set_win_env
+  echo "call f_set_win_env"
+  f_set_win_env >> $BASHRC_CACHED
 fi
 
 PATH="$JAVA_HOME/bin:$PATH"

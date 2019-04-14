@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#======================================================
+# windows
+#======================================================
+
 f_set_win_env() {
   export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
   export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
@@ -10,10 +14,20 @@ f_set_win_env() {
   export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
   export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
   export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
+
+  echo "export SYS_PROG64_DIR=\"$SYS_PROG64_DIR\""
+  echo "export SYS_PROG32_DIR=\"$SYS_PROG32_DIR\""
+  echo "export SYS_WIN_HOME=\"$SYS_WIN_HOME\""
+  echo "export SYS_MSYS2_HOME=\"$SYS_MSYS2_HOME\""
+  echo "export SYS_CYGWIN_HOME=\"$SYS_CYGWIN_HOME\""
+  echo "export JAVA_HOME=\"$JAVA_HOME\""
+  echo "export ANDROID_SDK=\"$ANDROID_SDK\""
+  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
 }
 
 if [ -z "$SYS_PROG64_DIR" ]; then
-  f_set_win_env
+  echo "call f_set_win_env"
+  f_set_win_env >> $BASHRC_CACHED
 fi
 
 PATH="$JAVA_HOME/bin:$PATH"

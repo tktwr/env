@@ -18,3 +18,12 @@ vimdiff-win:
 vimdirdiff-win:
 	dot.sh --vimdirdiff $(MY_WIN_HOME)
 
+help:
+	@echo "all"
+	@echo "dot"
+	@echo "vimdiff"
+	@echo "vimdirdiff"
+	@echo "dot-win"
+	@echo "vimdiff-win"
+	@echo "vimdirdiff-win"
+
