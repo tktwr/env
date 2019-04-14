@@ -132,17 +132,18 @@ filetype plugin indent on
 syntax enable
 NeoBundleCheck
 
-func! s:GstatusToggle()
+function! s:GstatusToggle()
   if (&filetype == "fugitive")
     normal q
   else
     Gstatus
     resize 12
   endif
-endfunc
+endfunction
 command GstatusToggle call s:GstatusToggle()
 
 "hi Normal guibg=#464646
 "hi Normal guibg=#303030
 
 colorscheme gruvbox
+

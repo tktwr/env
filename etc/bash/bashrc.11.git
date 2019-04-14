@@ -56,14 +56,16 @@ gg()   { git graph --color=always $* | less -EFRSX; }
 gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
 gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
-alias gf='git fetch'
 alias gs='git status'
+alias gf='git fetch'
+alias gu='f_checkgit_force'
 
 alias gR='git reset --hard'
 alias gRom='git reset --hard origin/master'
 alias gPom='git push origin master'
 
 alias git-pull-no-commit='git pull --no-commit'
+alias git-merge-no-commit='git merge --no-commit'
 
 alias gA='git add'
 alias gAu='git add -u'
@@ -85,5 +87,4 @@ alias git-dirdiff='git difftool --dir-diff'
 alias G='gg -15'
 alias GG='vim -c "Agit"'
 alias S='vim -c "Gstatus"'
-alias u='f_checkgit_force'
 

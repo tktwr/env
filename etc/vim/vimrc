@@ -89,9 +89,7 @@ endif
 
 let mapleader = ","
 
-source $HOME/.vim/vimrc.command.vim
-source $HOME/.vim/vimrc.command_dev.vim
-source $HOME/.vim/vimrc.command_enc.vim
+source $HOME/.vim/vimrc.func.vim
 source $HOME/.vim/vimrc.skel.vim
 source $HOME/.vim/vimrc.term.vim
 source $HOME/.vim/vimrc.neobundle.vim

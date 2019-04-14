@@ -5,9 +5,7 @@ cmd=cmp
 dir=$HOME
 
 DOT_FILES_COMMON="\
-.bashrc \
 .clang-format \
-.funcs \
 .gitignore_global \
 .minttyrc \
 .tmux.conf \
