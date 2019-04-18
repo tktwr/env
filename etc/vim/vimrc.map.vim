@@ -65,7 +65,7 @@ nnoremap q     @q
 nnoremap X ^y$:silent exec "<C-R>""<CR>
 
 " man
-nnoremap M :Man <cword><CR>
+"nnoremap M :Man <cword><CR>
 
 "------------------------------------------------------
 " visual mode mapping

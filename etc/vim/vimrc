@@ -22,7 +22,6 @@ set tags+=$MY_OPT/tags.stb
 
 set dictionary=~/.vim/words
 
-set timeoutlen=500
 set autowrite
 
 set noswapfile
