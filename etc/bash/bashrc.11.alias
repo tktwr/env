@@ -41,10 +41,11 @@ alias wgetpage2='wget -N -k -p -L -np -r -l2'
 
 # vim
 alias vi='vim'
-alias vimtags='vim -e -c "helptags . | quit"'
-alias vimzero='vim -u NONE'
+alias vim-tags='vim -e -c "helptags . | quit"'
+alias vim-zero='vim -u NONE'
+alias vim-test='vim -u ~/.vim/build/.vimrc'
 alias V='vim -c "NERDTreeToggle"'
-vimwhich() { vim `which $*`; }
+vim-which() { vim `which $*`; }
 
 # cmake, build
 alias cmake-unix-release='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release'

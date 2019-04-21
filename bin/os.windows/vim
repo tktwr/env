@@ -1,0 +1,5 @@
+#!/bin/sh
+
+PATH="/usr/bin:$PATH"
+exec /usr/bin/vim "$@"
+

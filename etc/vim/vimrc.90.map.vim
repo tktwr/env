@@ -108,7 +108,7 @@ nnoremap <C-Y> :silent !chrome "%"<CR>
 nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
 
 " open a hyper link in the markdeep format by w3m.vim
-nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
+"nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
 " Plugin & Func key

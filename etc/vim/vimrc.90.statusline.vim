@@ -1,8 +1,8 @@
 "------------------------------------------------------
 " statusline
 "------------------------------------------------------
-hi User1 ctermfg=0 ctermbg=2 cterm=bold guifg=#000000 guibg=#90A959 gui=bold
-hi User2 ctermfg=0 ctermbg=2 cterm=bold guifg=#000000 guibg=#90A959 gui=bold
+hi User1 ctermfg=0 ctermbg=2 cterm=bold guifg=#464646 guibg=#90A959 gui=bold
+hi User2 ctermfg=0 ctermbg=2 cterm=bold guifg=#464646 guibg=#90A959 gui=bold
 
 set laststatus=2
 set statusline=%1*%<%f%0*

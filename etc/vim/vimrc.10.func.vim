@@ -1,24 +1,53 @@
 "------------------------------------------------------
 " func & command
 "------------------------------------------------------
+"
+command CDHERE cd %:h
+command LCDHERE lcd %:h
+command -nargs=1 SetTab set tabstop=<args> shiftwidth=<args>
+command -nargs=1 -complete=file VSPR rightbelow vsplit <args>
+command -nargs=+ Grep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.md.html **/*.txt'
+
+func s:CheckEnv()
+  echo "version: ".v:version
+  echo "unix: ".has("unix")
+  echo "win32unix: ".has("win32unix")
+  echo "win32: ".has("win32")
+  echo "win64: ".has("win64")
+  echo "python: ".has("python")
+  if has("python")
+    py print(sys.version)
+  endif
+  echo "python3: ".has("python3")
+  if has("python3")
+    py3 print(sys.version)
+  endif
+  echo "gui_running: ".has("gui_running")
+  echo "term: ".&term
+  echo "shell: ".&shell
+  echo "path: ".&path
+  echo "runtimepath: ".&runtimepath
+  pwd
+endf
+command CheckEnv call s:CheckEnv()
+
+"------------------------------------------------------
+" edit
+"------------------------------------------------------
 
 " update the line started with "Last modification: "
 func s:UpdateLastModification()
   normal m'
   g/Last modification: /normal f:lD:r !env LC_TIME=C datekJ''
 endf
-command UpdateLastModification call s:UpdateLastModification()
-au BufWritePre,FileWritePre *.html  UpdateLastModification
 
 func s:AddTime()
   silent exec "r!env LC_TIME=C date '+\\%T'"
 endfunc
-command AddTime call s:AddTime()
 
 func s:AddDate(date)
   silent exec "r!env LC_TIME=C date --date='".a:date."' '+\\%Y/\\%m/\\%d (\\%a)'"
 endfunc
-command -nargs=? AddDate call s:AddDate("<args>")
 
 func s:InsertDia(date)
   normal O<!---------------------------------------------------->
@@ -26,13 +55,12 @@ func s:InsertDia(date)
   normal I## 
   normal 0
 endfunc
-command -nargs=? InsertDia call s:InsertDia("<args>")
 
-command CDHERE cd %:h
-command LCDHERE lcd %:h
-command -nargs=1 SetTab set tabstop=<args> shiftwidth=<args>
-command -nargs=1 -complete=file VSPR rightbelow vsplit <args>
-command -nargs=+ Grep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.md.html **/*.txt'
+command UpdateLastModification call s:UpdateLastModification()
+au BufWritePre,FileWritePre *.html  UpdateLastModification
+command AddTime call s:AddTime()
+command -nargs=? AddDate call s:AddDate("<args>")
+command -nargs=? InsertDia call s:InsertDia("<args>")
 
 "------------------------------------------------------
 " dev
@@ -47,7 +75,21 @@ func s:EditAltSrc()
   endif
   exec "edit" fname
 endf
+
+func s:StartProf()
+  profile start prof.txt
+  profile func *
+  profile file *
+endf
+
+func s:EndProf()
+  profile pause
+  noautocmd qall!
+endf
+
 command EditAltSrc call s:EditAltSrc()
+command StartProf call s:StartProf()
+command EndProf call s:EndProf()
 
 "------------------------------------------------------
 " diff
@@ -61,6 +103,7 @@ func s:SetDiffMode()
     nnoremap <buffer> <C-X>   :tabclose<CR>
   endif
 endfunc
+
 autocmd VimEnter,FilterWritePre * call s:SetDiffMode()
 
 "------------------------------------------------------
@@ -71,6 +114,7 @@ func s:SetJapanese()
   set fileencodings=japan
   set termencoding=japan
 endf
+
 command JP call s:SetJapanese()
 
 " utf encoding

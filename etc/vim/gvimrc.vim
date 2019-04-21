@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" gvimrc
+" minimal gvimrc
 "------------------------------------------------------
 
 set guifont=Myrica_M:h14
@@ -8,6 +8,9 @@ set guifont=Myrica_M:h14
 " gui menu
 set guioptions-=m
 set guioptions-=T
+
+set background=dark
+hi Normal guifg=#D0D0D0 guibg=#303030
 
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,cp936

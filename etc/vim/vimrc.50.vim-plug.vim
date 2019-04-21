@@ -81,6 +81,16 @@ let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 nmap S <Plug>(easymotion-overwin-f2)
 
+if &term == "xterm"
+  Plug 'SirVer/ultisnips'
+  Plug 'honza/vim-snippets'
+  let g:UltiSnipsListSnippets="<c-tab>"
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-j>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+  let g:UltiSnipsEditSplit="vertical"
+endif
+
 "------------------------------------------------------
 " vim-plug: unused
 "------------------------------------------------------
@@ -91,13 +101,6 @@ if 0
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
 
   Plug 'christoomey/vim-tmux-navigator'
-
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<c-b>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-  let g:UltiSnipsEditSplit="vertical"
 
   Plug 'godlygeek/tabular'
   Plug 'majutsushi/tagbar'
