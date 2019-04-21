@@ -1,7 +1,7 @@
 "------------------------------------------------------
 " mapping
 "------------------------------------------------------
-" emacs-style editing
+" emacs-style editing in the insert mode
 inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
 inoremap <C-B>   <Left>
@@ -10,6 +10,7 @@ inoremap <C-F>   <Right>
 "inoremap <C-N>   <Down>
 inoremap <C-D>   <Del>
 
+" emacs-style editing in the command mode
 cnoremap <C-A>   <Home>
 cnoremap <C-E>   <End>
 cnoremap <C-B>   <Left>
@@ -37,10 +38,10 @@ nnoremap <C-W><C-]> <C-W>g<C-]>
 nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<C-I>"<CR>
 
 " global
-nnoremap <silent> <Space>f :Gtags -f %<CR>
-nnoremap <silent> <Space>j :GtagsCursor<CR>
-nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
-nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
+"nnoremap <silent> <Space>f :Gtags -f %<CR>
+"nnoremap <silent> <Space>j :GtagsCursor<CR>
+"nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
+"nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
 
 " indent between { and }
 "nnoremap <Left><Left>	%ma%:.+1,'a-1<<CR>+%
@@ -93,8 +94,11 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " web
 "------------------------------------------------------
 " transform the following two lines to a hyper link in the markdeep format
+"
 " label
 " http://...
+"   to
+" [label](http://...)
 nnoremap <C-H> I[A]Jr(A)I- 
 
 " open the current file in a web browser
@@ -107,8 +111,11 @@ nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
 nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
-" Func key
+" Plugin & Func key
 "------------------------------------------------------
+" nerd commenter
+vmap C <Leader>c<Space>
+
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GstatusToggle<CR>
 nnoremap <F4> :Agit<CR>
@@ -126,8 +133,6 @@ inoremap <F12> <ESC>"*p
 
 " build
 "nnoremap <F?> :make<CR>:cw<CR>
-
-"nnoremap <F?> :Grep <cword> *.h *.cxx *.cpp<CR>
 
 " save session
 "nnoremap <F?> :mksession! ~/.vim/session.vim<CR>

@@ -9,6 +9,9 @@ set nocompatible
 set path=.,,/usr/local/include,/usr/include
 set path+=$QTDIR/include
 
+set runtimepath^=$HOME/.vim
+set runtimepath+=$HOME/.vim/after
+
 set tags=./tags,../tags,../../tags,../../../tags,tags
 set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
 set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
@@ -28,6 +31,8 @@ set noswapfile
 set nobackup
 set noundofile
 
+set showcmd
+
 set cmdheight=2
 set winheight=3
 "set scrolloff=5
@@ -43,12 +48,6 @@ set formatoptions=tcq
 
 "set modeline
 "set modelines=5
-
-set laststatus=2
-set ruler
-set showcmd
-" display an encoding and a format in the status line
-set statusline=%<%f\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}%=%l,%c%V%8P
 
 set encoding=utf-8
 " encodings for unix
@@ -87,10 +86,4 @@ if version >= 700
 endif
 
 let mapleader = ","
-
-source $HOME/.vim/vimrc.func.vim
-source $HOME/.vim/vimrc.skel.vim
-source $HOME/.vim/vimrc.term.vim
-source $HOME/.vim/vimrc.neobundle.vim
-source $HOME/.vim/vimrc.map.vim
 

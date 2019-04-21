@@ -48,5 +48,5 @@ f_make_bashrc() {
 }
 
 files=`f_get_files`
-f_make_bashrc $files > .bashrc
+f_make_bashrc $files
 

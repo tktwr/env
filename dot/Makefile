@@ -1,29 +1,29 @@
-all: dot
 
-dot:
-	dot.sh
+all: install
+
+cmp:
+	./dot.sh --common-files --diff-files
+	./dot.sh --common-files --diff-files $(USERPROFILE)
 
 vimdiff:
-	dot.sh --vimdiff
+	./dot.sh --common-files --diff-files --vimdiff
+	./dot.sh --common-files --diff-files --vimdiff $(USERPROFILE)
 
 vimdirdiff:
-	dot.sh --vimdirdiff
-
-dot-win:
-	dot.sh $(MY_WIN_HOME)
-
-vimdiff-win:
-	dot.sh --vimdiff $(MY_WIN_HOME)
+	./dot.sh --common-files --diff-files --vimdirdiff
 
 vimdirdiff-win:
-	dot.sh --vimdirdiff $(MY_WIN_HOME)
+	./dot.sh --common-files --diff-files --vimdirdiff $(USERPROFILE)
+
+install:
+	./dot.sh --common-files --cp
+	./dot.sh --common-files --cp $(USERPROFILE)
 
 help:
 	@echo "all"
-	@echo "dot"
+	@echo "cmp"
 	@echo "vimdiff"
 	@echo "vimdirdiff"
-	@echo "dot-win"
-	@echo "vimdiff-win"
 	@echo "vimdirdiff-win"
+	@echo "install"
 

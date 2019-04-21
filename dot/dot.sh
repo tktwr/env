@@ -9,13 +9,12 @@ DOT_FILES_COMMON="\
 .gitignore_global \
 .minttyrc \
 .tmux.conf \
-.vimrc \
-_vimrc \
 "
 DOT_FILES_DIFF="\
 .gitconfig \
 .hostname \
 "
+DOT_FILES=""
 
 f_help() {
   echo "NAME"
@@ -25,12 +24,14 @@ f_help() {
   echo "  $bin_name [options] [dir]"
   echo
   echo "OPTIONS"
-  echo "  -h, --help   print help"
-  echo "  --cp         copy files"
-  echo "  --cmp        compare files"
-  echo "  --diff       diff files"
-  echo "  --vimdiff    vimdiff files"
-  echo "  --vimdirdiff vimdirdiff dir"
+  echo "  -h, --help      print help"
+  echo "  --common-files  common files"
+  echo "  --diff-files    diff files"
+  echo "  --cp            copy files"
+  echo "  --cmp           compare files"
+  echo "  --diff          diff files"
+  echo "  --vimdiff       vimdiff files"
+  echo "  --vimdirdiff    vimdirdiff dir"
 }
 
 f_diff() {
@@ -55,17 +56,16 @@ f_diff() {
 }
 
 f_diff_files() {
-  # common for all shells
-  for i in $DOT_FILES_COMMON; do
+  for i in $DOT_FILES; do
     f_diff $i $1/$i
   done
+}
 
-  echo
-
-  # different for each shell
-  for i in $DOT_FILES_DIFF; do
-    f_diff $i $1/$i
-  done
+f_cp_files() {
+  if [ -n "$DOT_FILES" ]; then
+    echo "cp $DOT_FILES $1"
+    cp $DOT_FILES $1
+  fi
 }
 
 f_diff_dir() {
@@ -78,6 +78,12 @@ f_main() {
       -h|--help)
         f_help
         exit
+        ;;
+      --common-files)
+        DOT_FILES="$DOT_FILES $DOT_FILES_COMMON"
+        ;;
+      --diff-files)
+        DOT_FILES="$DOT_FILES $DOT_FILES_DIFF"
         ;;
       --cp)
         cmd=cp
@@ -104,8 +110,11 @@ f_main() {
     vimdirdiff)
       f_diff_dir $dir
       ;;
-    *)
+    cmp|diff|vimdiff)
       f_diff_files $dir
+      ;;
+    cp)
+      f_cp_files $dir
       ;;
   esac
 }

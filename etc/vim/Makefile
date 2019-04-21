@@ -1,11 +1,29 @@
-all: clean
-	vim -c "q" --startuptime log.txt
-	grep '/home/' log.txt | grep -v 'neobundle' > log-home.txt
+BUILD_DIR=build
 
-zero: clean
-	vim -u NONE -c "q" --startuptime log.txt
-	grep '/home/' log.txt | grep -v 'neobundle' > log-home.txt
+all: vimrc install
+
+vimrc:
+	mkdir -p $(BUILD_DIR)
+	./make-vimrc.sh > $(BUILD_DIR)/.vimrc
+	./make-gvimrc.sh > $(BUILD_DIR)/_vimrc
 
 clean:
-	rm -f log.txt log-home.txt
+	rm -rf $(BUILD_DIR)
+
+install:
+	cp $(BUILD_DIR)/.vimrc $(HOME)/.vimrc
+	cp $(BUILD_DIR)/.vimrc $(USERPROFILE)/.vimrc
+	cp $(BUILD_DIR)/_vimrc $(USERPROFILE)/_vimrc
+
+log: log.clean
+	vim -c "q" --startuptime $(BUILD_DIR)/log.txt
+	grep '/home/' $(BUILD_DIR)/log.txt | grep -v 'neobundle' > $(BUILD_DIR)/log-home.txt
+
+log.zero: log.clean
+	vim -u NONE -c "q" --startuptime $(BUILD_DIR)/log.txt
+	grep '/home/' $(BUILD_DIR)/log.txt | grep -v 'neobundle' > $(BUILD_DIR)/log-home.txt
+
+log.clean:
+	rm -f $(BUILD_DIR)/log.txt
+	rm -f $(BUILD_DIR)/log-home.txt
 

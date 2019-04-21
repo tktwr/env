@@ -1,10 +1,6 @@
-" term
-
-set termguicolors
-set t_Co=256
-"let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-
+"------------------------------------------------------
+" color
+"------------------------------------------------------
 " syntax highlighting for a colored terminal
 if (&t_Co > 1)
   syntax enable
@@ -26,29 +22,4 @@ if (&t_Co > 1)
   hi StatusLineNC ctermfg=3 ctermbg=0
   hi VertSplit    ctermfg=3 ctermbg=3
 endif
-
-if &term == "xterm"
-  " mouse support
-  set mouse=a
-  set ttymouse=xterm2
-endif
-
-" paste
-if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-    let &t_EI .= "\e[?2004l"
-    let &pastetoggle = "\e[201~"
-
-    function XTermPasteBegin(ret)
-        set paste
-        return a:ret
-    endfunction
-
-    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
-endif
-
-"if &term == "xterm"
-"elseif &term == "win32"
-"elseif &term == "builtin_gui"
-"endif
 

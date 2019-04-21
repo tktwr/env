@@ -1,3 +1,7 @@
+"------------------------------------------------------
+" gvimrc
+"------------------------------------------------------
+
 set guifont=Myrica_M:h14
 "set guifont=あくあフォント:h14
 
@@ -18,4 +22,3 @@ set imsearch=-1
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 
 nnoremap Q     :confirm qall<CR>
-

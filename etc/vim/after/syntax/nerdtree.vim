@@ -2,7 +2,7 @@
 " Language: nerdtree
 " Maintainer: Takehiro Tawara
 
-syn match ntType      "Makefile"
+syn keyword ntType      "Makefile"
 
 if !exists("did_nt_syntax_inits")
   let did_nt_syntax_inits = 1

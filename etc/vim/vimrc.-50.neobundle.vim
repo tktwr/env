@@ -19,17 +19,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tpope/vim-fugitive'
 if neobundle#is_installed('vim-fugitive')
   autocmd QuickFixCmdPost *grep* cwindow
-  set statusline+=%{fugitive#statusline()}
-
-  "autocmd FileType gitcommit call s:my_gitcommit_settings()
-  "function! s:my_gitcommit_settings()
-  "endfunction
 endif
 
-NeoBundle 'airblade/vim-gitgutter'
-if neobundle#is_installed('vim-gitgutter')
-  let g:gitgutter_override_sign_column_highlight = 0
-  highlight SignColumn ctermbg=0
+if &term == "xterm"
+  NeoBundle 'airblade/vim-gitgutter'
+  if neobundle#is_installed('vim-gitgutter')
+    let g:gitgutter_override_sign_column_highlight = 0
+    highlight SignColumn ctermbg=0
+  endif
 endif
 
 NeoBundle 'cohama/agit.vim'
@@ -50,7 +47,7 @@ if neobundle#is_installed('nerdtree')
   let g:NERDTreeDirArrowCollapsible = '-'
 endif
 
-"NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 if neobundle#is_installed('nerdtree-git-plugin')
   "let g:NERDTreeShowIgnoredStatus = 1
   let g:NERDTreeIndicatorMapCustom = {
@@ -74,18 +71,8 @@ if neobundle#is_installed('vim-dirdiff')
   let g:DirDiffAddArgs = "-bwBEZ" 
 endif
 
-NeoBundle 'tyru/eskk.vim'
-if neobundle#is_installed('eskk.vim')
-  let g:eskk#directory = "~/.eskk"
-  let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
-  let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
-endif
-
 NeoBundle 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"
-
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
 
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'godlygeek/tabular'
@@ -107,29 +94,42 @@ if neobundle#is_installed('vim-easymotion')
   "map T <Plug>(easymotion-Tl)
 endif
 
-"NeoBundle 'christoomey/vim-tmux-navigator'
+if 0
+  NeoBundle 'tyru/eskk.vim'
+  if neobundle#is_installed('eskk.vim')
+    let g:eskk#directory = "~/.eskk"
+    let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
+    let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+  endif
 
-"NeoBundle 'SirVer/ultisnips'
-"NeoBundle 'honza/vim-snippets'
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-"let g:UltiSnipsEditSplit="vertical"
+  NeoBundle 'christoomey/vim-tmux-navigator'
 
-"NeoBundle 'majutsushi/tagbar'
+  NeoBundle 'SirVer/ultisnips'
+  NeoBundle 'honza/vim-snippets'
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+  let g:UltiSnipsEditSplit="vertical"
 
-"NeoBundle 'tomasr/molokai'
-"let g:molokai_original = 1
-""let g:rehash256 = 1
+  NeoBundle 'majutsushi/tagbar'
 
-"if !has('gui_running')
-"  NeoBundle 'yuratomo/w3m.vim'
-"endif
+  NeoBundle 'vim-airline/vim-airline'
+  NeoBundle 'vim-airline/vim-airline-themes'
+
+  NeoBundle 'tomasr/molokai'
+  let g:molokai_original = 1
+  "let g:rehash256 = 1
+
+  if !has('gui_running')
+    NeoBundle 'yuratomo/w3m.vim'
+  endif
+endif
 
 call neobundle#end()
 
 filetype plugin indent on
 syntax enable
+
 NeoBundleCheck
 
 function! s:GstatusToggle()
@@ -146,4 +146,4 @@ command GstatusToggle call s:GstatusToggle()
 "hi Normal guibg=#303030
 
 colorscheme gruvbox
-
+set background=dark
