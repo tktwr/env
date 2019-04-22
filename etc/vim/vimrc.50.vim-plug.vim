@@ -28,12 +28,6 @@ let g:NERDTreeDirArrowCollapsible = '-'
 Plug 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
 
-if &term == "xterm"
-  Plug 'airblade/vim-gitgutter'
-  let g:gitgutter_override_sign_column_highlight = 0
-  highlight SignColumn ctermbg=0
-endif
-
 Plug 'cohama/agit.vim'
 let g:agit_enable_auto_show_commit = 0
 autocmd FileType agit_stat call s:my_agit_stat_settings()
@@ -42,19 +36,29 @@ function! s:my_agit_stat_settings()
   nmap <buffer> <silent> <2-LeftMouse> <Plug>(agit-diff)
 endfunction
 
-Plug 'Xuyuanp/nerdtree-git-plugin'
-let g:NERDTreeIndicatorMapCustom = {
-    \ 'Modified'  : 'M',
-    \ 'Staged'    : 'S',
-    \ 'Untracked' : 'U',
-    \ 'Renamed'   : 'R',
-    \ 'Unmerged'  : 'm',
-    \ 'Deleted'   : 'D',
-    \ 'Dirty'     : 'X',
-    \ 'Clean'     : 'C',
-    \ 'Ignored'   : 'I',
-    \ 'Unknown'   : 'u'
-    \ }
+if 1
+  if &term == "xterm"
+    Plug 'airblade/vim-gitgutter'
+    let g:gitgutter_override_sign_column_highlight = 0
+    highlight SignColumn ctermbg=0
+  endif
+endif
+
+if 1
+  Plug 'Xuyuanp/nerdtree-git-plugin'
+  let g:NERDTreeIndicatorMapCustom = {
+      \ 'Modified'  : 'M',
+      \ 'Staged'    : 'S',
+      \ 'Untracked' : 'U',
+      \ 'Renamed'   : 'R',
+      \ 'Unmerged'  : 'm',
+      \ 'Deleted'   : 'D',
+      \ 'Dirty'     : 'X',
+      \ 'Clean'     : 'C',
+      \ 'Ignored'   : 'I',
+      \ 'Unknown'   : 'u'
+      \ }
+endif
 
 "------------------------------------------------------
 " vim-plug: diff
