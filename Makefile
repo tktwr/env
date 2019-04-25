@@ -23,12 +23,3 @@ tar:
 zip:
 	git archive HEAD --prefix=$(DIR)/ --output=$(fname).zip
 
-install:
-	cd dot && make
-	cd etc/bash && make
-	cd etc/vim && make
-
-clean:
-	cd etc/bash && make clean
-	cd etc/vim && make clean
-
