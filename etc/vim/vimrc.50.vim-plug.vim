@@ -69,21 +69,17 @@ let g:DirDiffExcludes = ".git,.svn,*.swp,*.o,*.exe,*.class,Release,Debug,*.png,*
 let g:DirDiffAddArgs = "-bwBEZ" 
 
 "------------------------------------------------------
+" vim-plug: highlight
+"------------------------------------------------------
+Plug 't9md/vim-quickhl'
+
+"------------------------------------------------------
 " vim-plug: edit
 "------------------------------------------------------
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
-
-"------------------------------------------------------
-" vim-plug: move
-"------------------------------------------------------
-Plug 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_enter_jump_first = 1
-let g:EasyMotion_space_jump_first = 1
-nmap S <Plug>(easymotion-overwin-f2)
 
 if &term == "xterm"
   Plug 'SirVer/ultisnips'
@@ -94,6 +90,14 @@ if &term == "xterm"
   let g:UltiSnipsJumpBackwardTrigger="<c-k>"
   let g:UltiSnipsEditSplit="vertical"
 endif
+
+"------------------------------------------------------
+" vim-plug: move
+"------------------------------------------------------
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
 
 "------------------------------------------------------
 " vim-plug: unused

@@ -37,12 +37,6 @@ nnoremap <C-]>      g<C-]>
 nnoremap <C-W><C-]> <C-W>g<C-]>
 nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<C-I>"<CR>
 
-" global
-"nnoremap <silent> <Space>f :Gtags -f %<CR>
-"nnoremap <silent> <Space>j :GtagsCursor<CR>
-"nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
-"nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
-
 " indent between { and }
 "nnoremap <Left><Left>	%ma%:.+1,'a-1<<CR>+%
 "nnoremap <Right><Right>	%ma%:.+1,'a-1><CR>+%/{<CR>
@@ -53,7 +47,6 @@ nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<
 nnoremap '     `
 nnoremap Q     :confirm qall<CR>
 nnoremap --    :set invnumber<CR>:set invlist<CR>
-nnoremap ++    :GitGutterToggle<CR>
 " fold on/off
 nnoremap ==    zi
 
@@ -111,18 +104,15 @@ nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
 "nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
-" Plugin & Func key
+" Func key
 "------------------------------------------------------
-" nerd commenter
-vmap C <Leader>c<Space>
-
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GstatusToggle<CR>
 nnoremap <F4> :Agit<CR>
 
 " tab
-nnoremap <F5> :tabclose<CR>
-nnoremap <F6> :tabn<CR>
+"nnoremap <F5> :tabclose<CR>
+"nnoremap <F6> :tabn<CR>
 
 " copy to the clipboard
 vnoremap <F11> "*y
@@ -140,5 +130,32 @@ inoremap <F12> <ESC>"*p
 " load session
 "nnoremap <F?> :source ~/.vim/session.vim<CR>
 
+"------------------------------------------------------
+" Plugin's key map
+"------------------------------------------------------
+" gitgutter
+nnoremap ++    :GitGutterToggle<CR>
+
+" nerd commenter
+vmap C <Leader>c<Space>
+
+" quickhl
+nmap <F5> <Plug>(quickhl-manual-this)
+xmap <F5> <Plug>(quickhl-manual-this)
+nmap <F6> <Plug>(quickhl-manual-toggle)
+xmap <F6> <Plug>(quickhl-manual-toggle)
+nmap ,M <Plug>(quickhl-manual-reset)
+xmap ,M <Plug>(quickhl-manual-reset)
+
+" easymotion
+nmap S <Plug>(easymotion-overwin-f2)
+
+" global
+"nnoremap <silent> <Space>f :Gtags -f %<CR>
+"nnoremap <silent> <Space>j :GtagsCursor<CR>
+"nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
+"nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
+
+" tagbar
 "nnoremap <F?> :TagbarToggle<CR>
 
