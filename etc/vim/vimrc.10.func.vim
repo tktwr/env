@@ -6,7 +6,7 @@ command CDHERE cd %:h
 command LCDHERE lcd %:h
 command -nargs=1 SetTab set tabstop=<args> shiftwidth=<args>
 command -nargs=1 -complete=file VSPR rightbelow vsplit <args>
-command -nargs=+ Grep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.md.html **/*.txt'
+command -nargs=+ Grep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.html **/*.txt **/*.sh'
 
 func s:CheckEnv()
   echo "version: ".v:version
