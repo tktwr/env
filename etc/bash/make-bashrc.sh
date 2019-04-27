@@ -33,10 +33,7 @@ f_get_files() {
 }
 
 f_make_bashrc() {
-  local files=$*
-
-  cat bashrc.time
-
+  local files=`f_get_files`
   local I
   for I in $files; do
     if [ -f $I ]; then
@@ -47,6 +44,21 @@ f_make_bashrc() {
   done
 }
 
-files=`f_get_files`
-f_make_bashrc $files
+f_make_local_bashrc() {
+  local local_bashrc_dir=$MY_LOCAL_CONFIG/env/etc/bash
+  local files="bashrc"
+  local I
+  for I in $files; do
+    I=$local_bashrc_dir/$I
+    if [ -f $I ]; then
+      echo "f_time_start $I"
+      cat $I
+      echo "f_time_end $I"
+    fi
+  done
+}
+
+cat bashrc.time
+f_make_bashrc
+f_make_local_bashrc
 

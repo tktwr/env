@@ -1,6 +1,6 @@
-"------------------------------------------------------
+"======================================================
 " .vimrc
-"------------------------------------------------------
+"======================================================
 
 set nocompatible
 
@@ -9,8 +9,10 @@ set nocompatible
 set path=.,,/usr/local/include,/usr/include
 set path+=$QTDIR/include
 
-set runtimepath^=$HOME/.vim
-set runtimepath+=$HOME/.vim/after
+set runtimepath-=~/.vim
+set runtimepath-=~/.vim/after
+set runtimepath^=$MY_VIM
+set runtimepath+=$MY_VIM/after
 
 set tags=./tags,../tags,../../tags,../../../tags,tags
 set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
@@ -23,7 +25,7 @@ set tags+=$MY_OPT/tags.nativefiledialog
 set tags+=$MY_OPT/tags.opencv2
 set tags+=$MY_OPT/tags.stb
 
-set dictionary=~/.vim/words
+set dictionary=$MY_VIM/words
 
 set autowrite
 

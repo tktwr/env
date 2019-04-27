@@ -15,6 +15,7 @@ export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
 export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
 export MY_LIBTT=$MY_REMOTE_CONFIG/libtt
+export MY_VIM=$MY_REMOTE_CONFIG/env/etc/vim
 
 export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
 export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html

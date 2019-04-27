@@ -1,6 +1,6 @@
-"------------------------------------------------------
+"======================================================
 " mapping
-"------------------------------------------------------
+"======================================================
 " emacs-style editing in the insert mode
 inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
@@ -125,10 +125,10 @@ inoremap <F12> <ESC>"*p
 "nnoremap <F?> :make<CR>:cw<CR>
 
 " save session
-"nnoremap <F?> :mksession! ~/.vim/session.vim<CR>
+"nnoremap <F?> :mksession! $MY_VIM/session.vim<CR>
 
 " load session
-"nnoremap <F?> :source ~/.vim/session.vim<CR>
+"nnoremap <F?> :source $MY_VIM/session.vim<CR>
 
 "------------------------------------------------------
 " Plugin's key map
