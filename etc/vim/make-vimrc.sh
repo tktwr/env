@@ -2,18 +2,22 @@
 
 export MY_VIM
 
-f_make_vim_header() {
+f_set_default() {
   if [ -z "$MY_VIM" ]; then
     MY_VIM='~/.vim'
-    dir=$MY_VIM
-  else
-    if [ "$1" = "unix" ]; then
-      dir=`cygpath -au "$MY_VIM"`
-    elif [ "$1" = "win" ]; then
-      dir=`cygpath -am "$MY_VIM"`
-    fi
   fi
-  echo "let \$MY_VIM=\"$dir\""
+}
+
+f_make_env_var() {
+  local os=$1
+  local name=$2
+  local val=$3
+  if [ "$os" = "unix" ]; then
+    dir=`cygpath -u $val`
+  elif [ "$os" = "win" ]; then
+    dir=`cygpath -m $val`
+  fi
+  echo "let \$$name=\"$dir\""
 }
 
 f_make_vimrc() {
@@ -32,7 +36,11 @@ f_make_local_vimrc() {
   done
 }
 
-f_make_vim_header $1
+f_set_default
+f_make_env_var $1 MY_VIM $MY_VIM
+f_make_env_var $1 MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
+f_make_env_var $1 MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
+f_make_env_var $1 MY_OPT $MY_OPT
 f_make_vimrc
 f_make_local_vimrc
 

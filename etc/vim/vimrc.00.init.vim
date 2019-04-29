@@ -80,6 +80,7 @@ inoremap <ESC> <ESC>:set iminsert=0 nopaste<CR>
 "behave mswin
 
 if version >= 700
+  " disable popup menu for completion
   "set completeopt=
   "set textwidth=0
   "set paste

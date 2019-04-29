@@ -88,6 +88,7 @@ let g:NERDDefaultAlign='left'
 if &term == "xterm"
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
+  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
   let g:UltiSnipsListSnippets="<c-tab>"
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<c-j>"
