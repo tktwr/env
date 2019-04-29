@@ -15,6 +15,10 @@ call plug#begin('$MY_VIM/plugged')
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"
 
+Plug 'tomasr/molokai'
+let g:molokai_original = 1
+"let g:rehash256 = 1
+
 "------------------------------------------------------
 " vim-plug: file
 "------------------------------------------------------
@@ -115,10 +119,6 @@ if 0
 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-
-  Plug 'tomasr/molokai'
-  let g:molokai_original = 1
-  "let g:rehash256 = 1
 
   if !has('gui_running')
     Plug 'yuratomo/w3m.vim'

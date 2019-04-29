@@ -43,7 +43,7 @@ alias wgetpage2='wget -N -k -p -L -np -r -l2'
 alias vi='vim'
 alias vim-tags='vim -e -c "helptags . | quit"'
 alias vim-zero='vim -u NONE'
-alias vim-test='vim -u ~/.vim/build/.vimrc'
+alias vim-test='vim -u $MY_VIM/build/.vimrc'
 alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
 

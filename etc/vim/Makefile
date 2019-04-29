@@ -4,7 +4,8 @@ all: vimrc install
 
 vimrc:
 	mkdir -p $(BUILD_DIR)
-	./make-vimrc.sh > $(BUILD_DIR)/.vimrc
+	./make-vimrc.sh unix > $(BUILD_DIR)/.vimrc
+	./make-vimrc.sh win > $(BUILD_DIR)/_vimrc
 
 clean:
 	rm -rf $(BUILD_DIR)
@@ -12,6 +13,7 @@ clean:
 install:
 	cp $(BUILD_DIR)/.vimrc $(HOME)/.vimrc
 	cp $(BUILD_DIR)/.vimrc $(USERPROFILE)/.vimrc
+	cp $(BUILD_DIR)/_vimrc $(USERPROFILE)/_vimrc
 
 log: log.clean
 	vim -c "q" --startuptime $(BUILD_DIR)/log.txt

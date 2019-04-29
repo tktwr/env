@@ -92,15 +92,15 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " http://...
 "   to
 " [label](http://...)
-nnoremap <C-H> I[A]Jr(A)I- 
+nnoremap <C-A> I[A]Jr(A)I- 
 
-" open the current file in a web browser
-nnoremap <C-Y> :silent !chrome "%"<CR>
-
-" open a hyper link in the markdeep format by chrome
+" open an URL in the markdeep format by chrome
 nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
 
-" open a hyper link in the markdeep format by w3m.vim
+" open the current file in a web browser
+nnoremap <C-O> :silent !chrome "%"<CR>
+
+" open an URL in the markdeep format by w3m.vim
 "nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
@@ -140,12 +140,10 @@ nnoremap ++    :GitGutterToggle<CR>
 vmap C <Leader>c<Space>
 
 " quickhl
-nmap <F5> <Plug>(quickhl-manual-this)
-xmap <F5> <Plug>(quickhl-manual-this)
-nmap <F6> <Plug>(quickhl-manual-toggle)
-xmap <F6> <Plug>(quickhl-manual-toggle)
-nmap ,M <Plug>(quickhl-manual-reset)
-xmap ,M <Plug>(quickhl-manual-reset)
+nmap <C-H> <Plug>(quickhl-manual-this)
+xmap <C-H> <Plug>(quickhl-manual-this)
+nmap <C-Y> <Plug>(quickhl-manual-reset)
+xmap <C-Y> <Plug>(quickhl-manual-reset)
 
 " easymotion
 nmap S <Plug>(easymotion-overwin-f2)
