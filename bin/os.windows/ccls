@@ -1,0 +1,4 @@
+#!/bin/sh
+
+exec "$MY_OPT/ccls/build/ccls.exe" "$@"
+

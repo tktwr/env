@@ -57,7 +57,7 @@ if 1
       \ 'Renamed'   : 'R',
       \ 'Unmerged'  : 'm',
       \ 'Deleted'   : 'D',
-      \ 'Dirty'     : 'X',
+      \ 'Dirty'     : '!',
       \ 'Clean'     : 'C',
       \ 'Ignored'   : 'I',
       \ 'Unknown'   : 'u'
@@ -78,6 +78,12 @@ let g:DirDiffAddArgs = "-bwBEZ"
 Plug 't9md/vim-quickhl'
 
 "------------------------------------------------------
+" vim-plug: move
+"------------------------------------------------------
+Plug 'easymotion/vim-easymotion'
+Plug 'yuttie/comfortable-motion.vim'
+
+"------------------------------------------------------
 " vim-plug: edit
 "------------------------------------------------------
 Plug 'tpope/vim-repeat'
@@ -85,25 +91,95 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
 
-if &term == "xterm"
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
-  let g:UltiSnipsListSnippets="<c-tab>"
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<c-j>"
-  let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-  let g:UltiSnipsEditSplit="vertical"
+"------------------------------------------------------
+" vim-plug: SuperTab
+"------------------------------------------------------
+"Plug 'ervandew/supertab'
+"let g:SuperTabDefaultCompletionType = "context"
+
+"------------------------------------------------------
+" vim-plug: deoplete
+"------------------------------------------------------
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
+"let g:deoplete#enable_at_startup = 1
+
+"------------------------------------------------------
+" vim-plug: vim-lsp
+"------------------------------------------------------
+if 1
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/vim-lsp'
+  Plug 'prabirshrestha/asyncomplete.vim'
+  Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+  if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'pyls',
+      \ 'cmd': {server_info->['pyls']},
+      \ 'whitelist': ['python'],
+      \ })
+  endif
+
+  " Register ccls C++ lanuage server.
+  if executable('ccls')
+     au User lsp_setup call lsp#register_server({
+       \ 'name': 'ccls',
+       \ 'cmd': {server_info->['ccls']},
+       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+       \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
+       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+       \ })
+  endif
+
+  if 1
+    " debug
+    let g:lsp_log_verbose = 1
+    let g:lsp_log_file = expand('$MY_VIM/build/vim-lsp.log')
+    let g:asyncomplete_log_file = expand('$MY_VIM/build/asyncomplete.log')
+  endif
+
+  " Key bindings for vim-lsp.
+  "nn <silent> <M-d> :LspDefinition<cr>
+  "nn <silent> <M-r> :LspReferences<cr>
+  "nn <f2> :LspRename<cr>
+  "nn <silent> <M-a> :LspWorkspaceSymbol<cr>
+  "nn <silent> <M-l> :LspDocumentSymbol<cr>
+
+  "inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
+  "inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
+  "inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
+  "imap <C-Space> <Plug>(asyncomplete_force_refresh)
 endif
 
 "------------------------------------------------------
-" vim-plug: move
+" vim-plug: ultisnips
 "------------------------------------------------------
-Plug 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-let g:EasyMotion_enter_jump_first = 1
-let g:EasyMotion_space_jump_first = 1
+if 1
+  if has('python3')
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+  endif
 
+  if has('python3')
+    Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
+    au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
+      \ 'name': 'ultisnips',
+      \ 'whitelist': ['*'],
+      \ 'completor': function('asyncomplete#sources#ultisnips#completor')
+      \ }))
+  endif
+
+  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
+  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsListSnippets="<C-Tab>"
+  let g:UltiSnipsExpandTrigger="<Tab>"
+  let g:UltiSnipsJumpForwardTrigger="<C-J>"
+  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+  "inoremap <C-X><C-K> <C-X><C-K>
+endif
 "------------------------------------------------------
 " vim-plug: unused
 "------------------------------------------------------

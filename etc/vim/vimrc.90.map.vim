@@ -146,7 +146,20 @@ nmap <C-Y> <Plug>(quickhl-manual-reset)
 xmap <C-Y> <Plug>(quickhl-manual-reset)
 
 " easymotion
-nmap S <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+nmap <C-X> <Plug>(easymotion-overwin-line)
+
+" comfortable-motion
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 0.8
+nnoremap <silent> <C-F> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <C-B> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+"nnoremap <silent> <C-F> :call comfortable_motion#flick(200)<CR>
+"nnoremap <silent> <C-B> :call comfortable_motion#flick(-200)<CR>
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 
 " global
 "nnoremap <silent> <Space>f :Gtags -f %<CR>

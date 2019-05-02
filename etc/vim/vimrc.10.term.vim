@@ -27,8 +27,3 @@ if &term =~ "xterm"
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
 
-"if &term == "xterm"
-"elseif &term == "win32"
-"elseif &term == "builtin_gui"
-"endif
-

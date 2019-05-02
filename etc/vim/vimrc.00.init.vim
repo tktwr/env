@@ -24,6 +24,7 @@ set tags+=$MY_OPT/tags.imgui
 set tags+=$MY_OPT/tags.nativefiledialog
 set tags+=$MY_OPT/tags.opencv2
 set tags+=$MY_OPT/tags.stb
+set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 
 set dictionary=$MY_VIM/words
 
@@ -33,7 +34,7 @@ set noswapfile
 set nobackup
 set noundofile
 
-set showcmd
+"set showcmd
 
 set cmdheight=2
 set winheight=3
@@ -52,11 +53,12 @@ set formatoptions=tcq
 "set modelines=5
 
 set encoding=utf-8
-" encodings for unix
-"set fileencodings=utf-8,sjis,euc-jp,euc-cn
-" encodings for windows
-"set fileencodings=ucs-bom,utf-8,cp932,euc-jp,cp936
-set fileencodings=utf-8,cp932,euc-jp,cp936
+if has("win32unix") || has("win32") || has("win64")
+  "set fileencodings=ucs-bom,utf-8,cp932,euc-jp,cp936
+  set fileencodings=utf-8,cp932,euc-jp,cp936
+elseif has("unix")
+  set fileencodings=utf-8,sjis,euc-jp,euc-cn
+endif
 
 " indent
 set noautoindent

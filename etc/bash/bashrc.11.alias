@@ -48,9 +48,9 @@ alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
 
 # cmake, build
-alias cmake-unix-release='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release'
-alias cmake-unix-debug='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug'
-alias cmake-vs2017='cmake -G "Visual Studio 15 2017 Win64"'
+alias cmake-unix-release='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES'
+alias cmake-unix-debug='cmake -G "Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=YES'
+alias cmake-vs2017='cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_EXPORT_COMPILE_COMMANDS=YES'
 alias cmake-build-release='cmake --build . --config Release'
 alias cmake-build-debug='cmake --build . --config Debug'
 

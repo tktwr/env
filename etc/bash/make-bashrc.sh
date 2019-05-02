@@ -8,26 +8,19 @@ f_get_files() {
   for i in $files; do
     case $i in
       bashrc.0?.*)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.1?.*)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.50.os.$MY_OS_NAME)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.51.shell.$MY_SHELL_NAME)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.52.site.$MY_SITE_NAME)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.53.host.$MY_HOST_NAME)
-        echo $i
-        ;;
+        echo $i ;;
       bashrc.9?.*)
-        echo $i
-        ;;
+        echo $i ;;
     esac
   done
 }
