@@ -13,7 +13,6 @@ f_set_win_env() {
 
   export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
   export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
-  export ANACONDA_HOME="$SYS_WIN_HOME/Anaconda3"
 
   echo "export SYS_PROG64_DIR=\"$SYS_PROG64_DIR\""
   echo "export SYS_PROG32_DIR=\"$SYS_PROG32_DIR\""
@@ -22,7 +21,6 @@ f_set_win_env() {
   echo "export SYS_CYGWIN_HOME=\"$SYS_CYGWIN_HOME\""
   echo "export JAVA_HOME=\"$JAVA_HOME\""
   echo "export ANDROID_SDK=\"$ANDROID_SDK\""
-  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
 }
 
 if [ -z "$SYS_PROG64_DIR" ]; then
@@ -32,7 +30,6 @@ fi
 
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
-PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 
 alias x='explorer.exe'
 alias ls='ls.sh'
@@ -41,9 +38,27 @@ alias cd-win-home='cd $SYS_WIN_HOME'
 alias cd-msys2-home='cd $SYS_MSYS2_HOME'
 alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
 
-alias python='winpty python'
-alias ipython='winpty ipython'
-alias jupyter='winpty jupyter'
 alias adb='winpty adb'
 alias net='winpty net'
+
+#------------------------------------------------------
+# anaconda
+#------------------------------------------------------
+
+f_set_anaconda() {
+  export ANACONDA_HOME=`cygpath -u "$USERPROFILE/Anaconda3"`
+
+  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
+
+  alias python='winpty python'
+  alias ipython='winpty ipython'
+  alias jupyter='winpty jupyter'
+}
+
+if [ -z "$ANACONDA_HOME" ]; then
+  echo "call f_set_anaconda"
+  f_set_anaconda >> $BASHRC_CACHED
+fi
+
+PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 
