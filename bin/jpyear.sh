@@ -7,7 +7,10 @@ f_jpyear () {
   local nenngo
   local jpyear
 
-  if [ $year -gt 1988 ]; then
+  if [ $year -gt 2018 ]; then
+    nenngo="reiwa"
+    jpyear=`expr $year - 2018`
+  elif [ $year -gt 1988 ]; then
     nenngo="heisei"
     jpyear=`expr $year - 1988`
   elif [ $year -gt 1925 ]; then
