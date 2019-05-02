@@ -25,28 +25,32 @@ inoremap <buffer> <C-D>    <C-X><C-D>
 
 " abbrebiations
 iabclear
-iabbr #d     #define
-iabbr #i     #include
-iabbr <<;;   << endl << flush;
-iabbr <<;    << endl;
-iabbr FOR    for (int i=0; i<3; i++)<CR>{<CR>}<ESC>%kf(
-iabbr FORJ   for (int j=0; j<3; j++)<CR>{<CR>}<ESC>%kf(
-iabbr FORJI  for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<ESC>%kf(
-iabbr FORKJI for (k=0; k<nk; k++)<CR>{<CR>for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
-iabbr FORYX  for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<ESC>%kf(
-iabbr FORZYX for (z=0; z<nz; z++)<CR>{<CR>for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
-iabbr IF     if ()<CR>{<CR>}<ESC>%kf(
-iabbr ELIF   else if ()<CR>{<CR>}<ESC>%kf(
-iabbr EL     else<CR>{<CR>}<ESC>%k
-iabbr WH     while ()<CR>{<CR>}<ESC>%kf(
-iabbr SW     switch ()<CR>{<CR>}<ESC>%ocase '':<CR>break;<CR>default:<CR>break;<ESC><CR>%kf(
-iabbr CL     class<CR>{<CR>public:<CR>private:<CR>};<ESC>h%kA
-iabbr ST     struct<CR>{<CR>};<ESC>h%kA
-iabbr EN     enum<CR>{<CR>};<ESC>h%
-iabbr FUNC   ()<CR>{<CR>}<ESC>%k
-iabbr COM    ///////////////////////////////////////////////////////////////////////////<CR>//<CR>//<CR>//<CR>///////////////////////////////////////////////////////////////////////////<ESC>2kA class
-iabbr COUT   cout << " : " << x << endl;<ESC>0f"
-iabbr /**    /**<CR>*<CR>*/<ESC>-a
+if 0
+  iabbr #d     #define
+  iabbr #i     #include
+  iabbr IF     if ()<CR>{<CR>}<ESC>%kf(
+  iabbr ELIF   else if ()<CR>{<CR>}<ESC>%kf(
+  iabbr EL     else<CR>{<CR>}<ESC>%k
+  iabbr FOR    for (int i=0; i<3; i++)<CR>{<CR>}<ESC>%kf(
+  iabbr FORJ   for (int j=0; j<3; j++)<CR>{<CR>}<ESC>%kf(
+  iabbr FORJI  for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<ESC>%kf(
+  iabbr FORKJI for (k=0; k<nk; k++)<CR>{<CR>for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
+  iabbr FORYX  for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<ESC>%kf(
+  iabbr FORZYX for (z=0; z<nz; z++)<CR>{<CR>for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
+  iabbr WH     while ()<CR>{<CR>}<ESC>%kf(
+  iabbr SW     switch ()<CR>{<CR>}<ESC>%ocase '':<CR>break;<CR>default:<CR>break;<ESC><CR>%kf(
+  iabbr CL     class<CR>{<CR>public:<CR>private:<CR>};<ESC>h%kA
+  iabbr ST     struct<CR>{<CR>};<ESC>h%kA
+  iabbr EN     enum<CR>{<CR>};<ESC>h%
+  iabbr FUNC   ()<CR>{<CR>}<ESC>%k
+
+  iabbr COM    ///////////////////////////////////////////////////////////////////////////<CR>//<CR>//<CR>//<CR>///////////////////////////////////////////////////////////////////////////<ESC>2kA class
+  iabbr /**    /**<CR>*<CR>*/<ESC>-a
+
+  iabbr COUT   std::cout << " : " << x << std::endl;<ESC>0f"
+  iabbr <<;;   << std::endl << std::flush;
+  iabbr <<;    << std::endl;
+endif
 
 iabbr GLb     GLbyte
 iabbr GLs     GLshort

@@ -1,6 +1,137 @@
-snippet if
-if (${1:1}) {
+# snippet for C++
+
+snippet == "separator"
+//=========================================================================
+
+endsnippet
+
+snippet -- "separator"
+//-------------------------------------------------------------------------
+
+endsnippet
+
+snippet #I "#include"
+#include <$0>
+endsnippet
+
+snippet #i "#include"
+#include "$0"
+endsnippet
+
+snippet #d "#define"
+#define $0
+endsnippet
+
+snippet if "if"
+if (${1:true}) {
     $0
 }
+endsnippet
+
+snippet ifel "if else"
+if (${1:true}) {
+    $0
+} else {
+}
+endsnippet
+
+snippet elif "else if"
+else if (${1:true}) {
+    $0
+}
+endsnippet
+
+snippet el "else"
+else {
+    $0
+}
+endsnippet
+
+snippet for "for"
+for (int i = 0; i < n; ++i) {
+    $0
+}
+endsnippet
+
+snippet forj "for j"
+for (int j = 0; j < n; ++j) {
+    $0
+}
+endsnippet
+
+snippet forji "for ji"
+for (int j = 0; j < nj; ++j) {
+    for (int i = 0; i < ni; ++i) {
+        $0
+    }
+}
+endsnippet
+
+snippet forkji "for kji"
+for (int k = 0; k < nk; ++k) {
+    for (int j = 0; j < nj; ++j) {
+        for (int i = 0; i < ni; ++i) {
+            $0
+        }
+    }
+}
+endsnippet
+
+snippet foryx "for yx"
+for (int y = 0; y < ny; ++y) {
+    for (int x = 0; x < nx; ++x) {
+        $0
+    }
+}
+endsnippet
+
+snippet forzyx "for zyx"
+for (int z = 0; z < nz; ++z) {
+    for (int y = 0; y < ny; ++y) {
+        for (int x = 0; x < nx; ++x) {
+            $0
+        }
+    }
+}
+endsnippet
+
+snippet wh "while"
+while () {
+}
+endsnippet
+
+snippet sw "switch"
+switch () {
+    case '':
+        break;
+    default:
+        break;
+}
+endsnippet
+
+snippet cl "class"
+class $0 {
+public:
+private:
+};
+endsnippet
+
+snippet st "struct"
+struct $0 {
+};
+endsnippet
+
+snippet en "enum"
+enum $0 {
+};
+endsnippet
+
+snippet fn "func"
+$0() {
+}
+endsnippet
+
+snippet cout "cout"
+std::cout << " : " << x << std::endl;
 endsnippet
 

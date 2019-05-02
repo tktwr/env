@@ -1,3 +1,5 @@
+# snippet for sh
+
 snippet ==
 #======================================================
 
@@ -7,3 +9,33 @@ snippet --
 #------------------------------------------------------
 
 endsnippet
+
+snippet if
+if [ $0 ]; then
+fi
+endsnippet
+
+snippet elif
+elif [ $0 ]; then
+endsnippet
+
+snippet el
+else
+endsnippet
+
+snippet for
+for i in $0; do
+done
+endsnippet
+
+snippet wh
+while [ $0 ]; do
+done
+endsnippet
+
+snippet sw
+case $0 in
+  *) ;;
+esac
+endsnippet
+
