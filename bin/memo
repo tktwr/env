@@ -30,8 +30,12 @@ f_help() {
 }
 
 f_main() {
-  if [ $# -eq 1 ]; then
-    case $1 in
+  if [ $# -eq 0 ]; then
+    vim -c "Memo"
+    exit
+  fi
+  for i in $*; do
+    case $i in
       -h|--help)
         f_help
         exit
@@ -40,14 +44,14 @@ f_main() {
         f_print_tags
         exit
         ;;
+      -c=*)
+        cols=`echo $i | sed 's+^-c=++'`
+        ;;
       *)
-        vim -t "memo_$1" -c "normal zt"
+        vim -t "memo_$i" -c "normal zt"
         ;;
     esac
-  else
-    #vim $memo_dir/memo.md.html
-    vim -c "Memo"
-  fi
+  done
 }
 
 f_main $*
