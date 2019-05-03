@@ -19,4 +19,3 @@ sample.exe: $(sample_OBJS)
 clean:
 	find . -name '*.o' -exec rm {} \;
 	rm -f *.exe
-
