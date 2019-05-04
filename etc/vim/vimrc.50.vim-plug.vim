@@ -1,6 +1,17 @@
 "======================================================
 " vim-plug
 "======================================================
+set complete=.,w,b,u,i
+let s:use_gitgutter=1
+let s:use_nerdtree_git_plugin=1
+let s:use_ultisnips=1
+let s:use_lsp=1
+let s:use_lsp_pyls=1
+let s:use_lsp_ccls=1
+let s:use_lsp_ultisnips=1
+let s:lsp_debug=1
+let s:auto_popup=1
+
 if empty(glob('$MY_VIM/autoload/plug.vim'))
   silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -40,7 +51,7 @@ function! s:my_agit_stat_settings()
   nmap <buffer> <silent> <2-LeftMouse> <Plug>(agit-diff)
 endfunction
 
-if 1
+if s:use_gitgutter
   if &term == "xterm"
     Plug 'airblade/vim-gitgutter'
     let g:gitgutter_override_sign_column_highlight = 0
@@ -48,7 +59,7 @@ if 1
   endif
 endif
 
-if 1
+if s:use_nerdtree_git_plugin
   Plug 'Xuyuanp/nerdtree-git-plugin'
   let g:NERDTreeIndicatorMapCustom = {
       \ 'Modified'  : 'M',
@@ -92,7 +103,7 @@ Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
 
 "------------------------------------------------------
-" vim-plug: SuperTab
+" vim-plug: supertab
 "------------------------------------------------------
 "Plug 'ervandew/supertab'
 "let g:SuperTabDefaultCompletionType = "context"
@@ -108,33 +119,13 @@ let g:NERDDefaultAlign='left'
 "------------------------------------------------------
 " vim-plug: vim-lsp
 "------------------------------------------------------
-if 1
+if s:use_lsp
   Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/vim-lsp'
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-  if executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-      \ 'name': 'pyls',
-      \ 'cmd': {server_info->['pyls']},
-      \ 'whitelist': ['python'],
-      \ })
-  endif
-
-  " Register ccls C++ lanuage server.
-  if executable('ccls')
-     au User lsp_setup call lsp#register_server({
-       \ 'name': 'ccls',
-       \ 'cmd': {server_info->['ccls']},
-       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-       \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
-       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-       \ })
-  endif
-
-  if 1
+  if s:lsp_debug
     " debug
     let g:lsp_log_verbose = 1
     let g:lsp_log_file = expand('$MY_VIM/build/vim-lsp.log')
@@ -152,18 +143,61 @@ if 1
   "inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
   "inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
   "imap <C-Space> <Plug>(asyncomplete_force_refresh)
+
+  if !s:auto_popup
+    " disable auto popup
+    let g:asyncomplete_auto_popup = 0
+    function! s:check_back_space() abort
+      let col = col('.') - 1
+      return !col || getline('.')[col - 1]  =~ '\s'
+    endfunction
+
+    inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ asyncomplete#force_refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  endif
+
+  if s:use_lsp_pyls && executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'pyls',
+      \ 'cmd': {server_info->['pyls']},
+      \ 'whitelist': ['python'],
+      \ })
+  endif
+
+  " Register ccls C++ lanuage server.
+  if s:use_lsp_ccls && executable('ccls')
+     au User lsp_setup call lsp#register_server({
+       \ 'name': 'ccls',
+       \ 'cmd': {server_info->['ccls']},
+       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+       \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
+       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+       \ })
+  endif
 endif
 
 "------------------------------------------------------
 " vim-plug: ultisnips
 "------------------------------------------------------
-if 1
+if s:use_ultisnips
   if has('python3')
     Plug 'SirVer/ultisnips'
     Plug 'honza/vim-snippets'
   endif
 
-  if has('python3')
+  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
+  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsListSnippets="<F6>"
+  let g:UltiSnipsExpandTrigger="<Tab>"
+  let g:UltiSnipsJumpForwardTrigger="<C-J>"
+  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+  "inoremap <C-X><C-K> <C-X><C-K>
+
+  if s:use_lsp_ultisnips && has('python3')
     Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
     au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
       \ 'name': 'ultisnips',
@@ -171,15 +205,8 @@ if 1
       \ 'completor': function('asyncomplete#sources#ultisnips#completor')
       \ }))
   endif
-
-  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
-  let g:UltiSnipsEditSplit="vertical"
-  let g:UltiSnipsListSnippets="<C-Tab>"
-  let g:UltiSnipsExpandTrigger="<Tab>"
-  let g:UltiSnipsJumpForwardTrigger="<C-J>"
-  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-  "inoremap <C-X><C-K> <C-X><C-K>
 endif
+
 "------------------------------------------------------
 " vim-plug: unused
 "------------------------------------------------------

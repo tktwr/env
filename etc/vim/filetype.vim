@@ -5,7 +5,7 @@ endif
 
 augroup filetypedetect
   au! BufNewFile,BufRead *.txt          setf txt
-  au! BufNewFile,BufRead *.md.html      setf txt
-  "au! BufNewFile,BufRead *.md.html      setf markdown
+  "au! BufNewFile,BufRead *.md.html      setf txt
+  au! BufNewFile,BufRead *.md.html      setf markdown
 augroup END
 
