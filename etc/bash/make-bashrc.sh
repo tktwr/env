@@ -7,9 +7,7 @@ f_get_files() {
 
   for i in $files; do
     case $i in
-      bashrc.0?.*)
-        echo $i ;;
-      bashrc.1?.*)
+      bashrc.[0-4]?.*)
         echo $i ;;
       bashrc.50.os.$MY_OS_NAME)
         echo $i ;;
@@ -19,7 +17,7 @@ f_get_files() {
         echo $i ;;
       bashrc.53.host.$MY_HOST_NAME)
         echo $i ;;
-      bashrc.9?.*)
+      bashrc.[6-9]?.*)
         echo $i ;;
     esac
   done

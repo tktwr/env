@@ -1,11 +1,11 @@
 
-all: install.all
+all: all.install
 
-install.all: install
+all.install: install
 	cd bash && make
 	cd vim && make
 
-clean.all: clean
+all.clean: clean
 	cd bash && make clean
 	cd vim && make clean
 
@@ -32,8 +32,8 @@ vimdirdiff-win:
 help:
 	@echo "=== all ==="
 	@echo "all"
-	@echo "install.all"
-	@echo "clean.all"
+	@echo "all.install"
+	@echo "all.clean"
 	@echo "=== command ==="
 	@echo "install"
 	@echo "clean"
