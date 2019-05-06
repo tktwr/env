@@ -8,7 +8,7 @@ f_set_default() {
   fi
 }
 
-f_make_env_var() {
+f_expand_dir() {
   local os=$1
   local name=$2
   local val=$3
@@ -37,10 +37,10 @@ f_make_local_vimrc() {
 }
 
 f_set_default
-f_make_env_var $1 MY_VIM $MY_VIM
-f_make_env_var $1 MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
-f_make_env_var $1 MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
-f_make_env_var $1 MY_OPT $MY_OPT
+f_expand_dir $1 MY_VIM $MY_VIM
+f_expand_dir $1 MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
+f_expand_dir $1 MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
+f_expand_dir $1 MY_OPT $MY_OPT
 f_make_vimrc
 f_make_local_vimrc
 

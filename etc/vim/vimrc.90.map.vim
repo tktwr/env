@@ -22,12 +22,20 @@ cnoremap <C-D>   <Del>
 " scroll
 nnoremap <Space> <C-F>
 nnoremap <BS>    <C-B>
-nnoremap <C-J>   2<C-E>
-nnoremap <C-K>   2<C-Y>
+"nnoremap <C-J>   2<C-E>
+"nnoremap <C-K>   2<C-Y>
 
 " window
+nnoremap <C-H>   <C-W>h
+nnoremap <C-J>   <C-W>j
+nnoremap <C-K>   <C-W>k
+nnoremap <C-L>   <C-W>l
+
 nnoremap <C-E>   :only<CR>
 nnoremap <C-D>   :close<CR>
+
+" redraw screen
+nnoremap <C-N>   <C-L>
 
 "------------------------------------------------------
 " develop
@@ -95,10 +103,10 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 nnoremap <C-A> I[A]Jr(A)I- 
 
 " open an URL in the markdeep format by chrome
-nnoremap <C-U> 0f(lyt):silent !chrome "<C-R>""<CR>
+nnoremap <C-P> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
 
 " open the current file in a web browser
-nnoremap <C-O> :silent !chrome "%"<CR>
+nnoremap <C-O> :silent !chrome.sh "%"<CR>
 
 " open an URL in the markdeep format by w3m.vim
 "nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
@@ -139,9 +147,18 @@ nnoremap ++    :GitGutterToggle<CR>
 " nerd commenter
 vmap C <Leader>c<Space>
 
+" ultisnips
+let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsListSnippets="<F6>"
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+"inoremap <C-X><C-K> <C-X><C-K>
+
 " quickhl
-nmap <C-H> <Plug>(quickhl-manual-this)
-xmap <C-H> <Plug>(quickhl-manual-this)
+nmap <C-U> <Plug>(quickhl-manual-this)
+xmap <C-U> <Plug>(quickhl-manual-this)
 nmap <C-Y> <Plug>(quickhl-manual-reset)
 xmap <C-Y> <Plug>(quickhl-manual-reset)
 

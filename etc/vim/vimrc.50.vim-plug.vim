@@ -189,14 +189,6 @@ if s:use_ultisnips
     Plug 'honza/vim-snippets'
   endif
 
-  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
-  let g:UltiSnipsEditSplit="vertical"
-  let g:UltiSnipsListSnippets="<F6>"
-  let g:UltiSnipsExpandTrigger="<Tab>"
-  let g:UltiSnipsJumpForwardTrigger="<C-J>"
-  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-  "inoremap <C-X><C-K> <C-X><C-K>
-
   if s:use_lsp_ultisnips && has('python3')
     Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
     au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
