@@ -1,14 +1,26 @@
 ; autohotkey.ahk
 
-; set the right alt key as the left windows key
+; left meta
+SC07B::F1
+
+; left alt
+;LAlt::LAlt
+
+; right alt
 RAlt::LWin
 
-; set the right Shift key as the Hankaku/Zenkaku key
-RShift::
+; right meta to Hankaku/Zenkaku
+SC079::
 send,{vkF3sc029}
 return
 
 #IfWinActive ahk_class mintty
+; right Shift
+RShift::
+send,{vkF3sc029}
+send,{Esc}
+return
+
 ; right half window
 ;#x::
 Del::
