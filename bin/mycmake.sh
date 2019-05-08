@@ -2,7 +2,9 @@
 
 f_mycmake() {
   local generator=$1
-  local config=$2
+  shift
+  local config=$1
+  shift
 
   local generator_name
   local build_dir
@@ -32,8 +34,8 @@ f_mycmake() {
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT/usr/local"
   opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
 
-  echo "cmake -S. -B$build_dir -G\"$generator_name\" $opt"
-  cmake -S. -B$build_dir -G"$generator_name" $opt
+  echo "cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  cmake -S. -B$build_dir -G"$generator_name" $opt $@
 }
 
 f_mycmake $@

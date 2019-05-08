@@ -2,7 +2,9 @@
 
 f_mycmake_build() {
   local generator=$1
-  local config=$2
+  shift
+  local config=$1
+  shift
 
   local build_dir
   local opt
@@ -24,8 +26,8 @@ f_mycmake_build() {
       ;;
   esac
 
-  echo "cmake --build $build_dir --config $config $opt"
-  cmake --build $build_dir --config $config $opt
+  echo "cmake --build $build_dir --config $config $opt $@"
+  cmake --build $build_dir --config $config $opt $@
 }
 
 f_mycmake_build $@
