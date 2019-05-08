@@ -9,17 +9,17 @@ f_mycmake() {
   local opt
 
   case $generator in
-    ninja)
+    ninja*)
       generator_name="Ninja"
       build_dir=build.$generator/$config
       opt="$opt -DCMAKE_BUILD_TYPE=$config"
       ;;
-    unix)
+    make*)
       generator_name="Unix Makefiles"
       build_dir=build.$generator/$config
       opt="$opt -DCMAKE_BUILD_TYPE=$config"
       ;;
-    vs2017)
+    vs2017*)
       generator_name="Visual Studio 15 2017 Win64"
       build_dir=build.$generator
       ;;

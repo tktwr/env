@@ -31,14 +31,6 @@ lst() { ls -lt --color $* | grep -v "/$" | head -15; }
 psall() { ps -aef | grep $*; }
 ff() { find . -name "$*" -print; }
 
-# net
-alias myrsync='rsync -auvR'
-alias mymirror='rsync -avR --delete'
-alias mymirrorfat='rsync -avR --delete --size-only -O --no-g --no-p'
-alias wgetpage='wget -N -k -p -L -np'
-alias wgetpage1='wget -N -k -p -L -np -r -l1'
-alias wgetpage2='wget -N -k -p -L -np -r -l2'
-
 # vim
 alias vi='vim'
 alias vim-tags='vim -e -c "helptags . | quit"'
@@ -47,18 +39,26 @@ alias vim-test='vim -u $MY_VIM/build/.vimrc'
 alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
 
+# net
+alias myrsync='rsync -auvR'
+alias mymirror='rsync -avR --delete'
+alias mymirrorfat='rsync -avR --delete --size-only -O --no-g --no-p'
+alias wgetpage='wget -N -k -p -L -np'
+alias wgetpage1='wget -N -k -p -L -np -r -l1'
+alias wgetpage2='wget -N -k -p -L -np -r -l2'
+
 # cmake
 alias mycmake-ninja-release='mycmake.sh ninja Release'
 alias mycmake-ninja-debug='mycmake.sh ninja Debug'
-alias mycmake-unix-release='mycmake.sh unix Release'
-alias mycmake-unix-debug='mycmake.sh unix Debug'
+alias mycmake-make-release='mycmake.sh make Release'
+alias mycmake-make-debug='mycmake.sh make Debug'
 alias mycmake-vs2017='mycmake.sh vs2017'
 
 # build
 alias mycmake-build-ninja-release='mycmake-build.sh ninja Release'
 alias mycmake-build-ninja-debug='mycmake-build.sh ninja Debug'
-alias mycmake-build-unix-release='mycmake-build.sh unix Release'
-alias mycmake-build-unix-debug='mycmake-build.sh unix Debug'
+alias mycmake-build-make-release='mycmake-build.sh make Release'
+alias mycmake-build-make-debug='mycmake-build.sh make Debug'
 alias mycmake-build-vs2017-release='mycmake-build.sh vs2017 Release'
 alias mycmake-build-vs2017-debug='mycmake-build.sh vs2017 Debug'
 alias mycmake-build-vs2017-reldeb='mycmake-build.sh vs2017 RelWithDebInfo'

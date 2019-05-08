@@ -8,14 +8,14 @@ f_mycmake_build() {
   local opt
 
   case $generator in
-    ninja)
+    ninja*)
       build_dir=build.$generator/$config
       ;;
-    unix)
+    make*)
       build_dir=build.$generator/$config
       opt="$opt -j10"
       ;;
-    vs2017)
+    vs2017*)
       build_dir=build.$generator
       ;;
     *)
