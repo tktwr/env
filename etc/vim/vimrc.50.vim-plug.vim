@@ -133,16 +133,19 @@ if s:use_lsp
   endif
 
   " Key bindings for vim-lsp.
-  "nn <silent> <M-d> :LspDefinition<cr>
-  "nn <silent> <M-r> :LspReferences<cr>
-  "nn <f2> :LspRename<cr>
-  "nn <silent> <M-a> :LspWorkspaceSymbol<cr>
-  "nn <silent> <M-l> :LspDocumentSymbol<cr>
+  nn <silent> <M-d> :LspDefinition<cr>
+  nn <silent> <M-r> :LspReferences<cr>
+  nn <silent> <M-n> :LspRename<cr>
+  nn <silent> <M-w> :LspWorkspaceSymbol<cr>
+  nn <silent> <M-s> :LspDocumentSymbol<cr>
 
   "inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
   "inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
-  "inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
+  inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
   "imap <C-Space> <Plug>(asyncomplete_force_refresh)
+
+  set completeopt+=preview
+  autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
   if !s:auto_popup
     " disable auto popup
