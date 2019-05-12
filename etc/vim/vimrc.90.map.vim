@@ -20,10 +20,11 @@ cnoremap <C-N>   <Down>
 cnoremap <C-D>   <Del>
 
 " scroll
-nnoremap <Space> <C-F>
-nnoremap <BS>    <C-B>
+"nnoremap <Space> <C-F>
+"nnoremap <BS>    <C-B>
 "nnoremap <C-J>   2<C-E>
 "nnoremap <C-K>   2<C-Y>
+nnoremap <C-D>    <C-B>
 
 " window
 nnoremap <C-H>   <C-W>h
@@ -32,7 +33,7 @@ nnoremap <C-K>   <C-W>k
 nnoremap <C-L>   <C-W>l
 
 nnoremap <C-E>   :only<CR>
-nnoremap <C-D>   :close<CR>
+nnoremap <C-X>   :close<CR>
 
 " redraw screen
 nnoremap <C-N>   <C-L>
@@ -166,15 +167,15 @@ xmap <C-Y> <Plug>(quickhl-manual-reset)
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-nmap <C-X> <Plug>(easymotion-overwin-line)
+nmap <C-G> <Plug>(easymotion-overwin-line)
 
 " comfortable-motion
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:comfortable_motion_impulse_multiplier = 0.8
-nnoremap <silent> <C-F> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
-nnoremap <silent> <C-B> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
-"nnoremap <silent> <C-F> :call comfortable_motion#flick(200)<CR>
-"nnoremap <silent> <C-B> :call comfortable_motion#flick(-200)<CR>
+nnoremap <silent> <Space> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+nnoremap <silent> <BS> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+"nnoremap <silent> <Space> :call comfortable_motion#flick(200)<CR>
+"nnoremap <silent> <BS> :call comfortable_motion#flick(-200)<CR>
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 

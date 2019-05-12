@@ -33,9 +33,8 @@ COMMAND['fetch']="git fetch"
 COMMAND['push']="git push origin master"
 COMMAND['build']="make"
 COMMAND['clean']="make clean.all"
-COMMAND['tags']="ctags -R"
+COMMAND['tags']="make tags"
 COMMAND['tags.memo']="make tags.memo"
-COMMAND['dot']="dot.sh --cmp"
 
 f_help() {
   echo "NAME"
@@ -54,7 +53,6 @@ f_help() {
   echo "  -c, --clean      ${COMMAND['clean']}"
   echo "  -t, --tags       ${COMMAND['tags']}"
   echo "  -m, --tags.memo  ${COMMAND['tags.memo']}"
-  echo "  -d, --dot        ${COMMAND['dot']}"
 }
 
 f_exec_in_dirs() {
@@ -94,14 +92,10 @@ f_args() {
         f_exec_in_dirs clean $BUILD_DIRS
         ;;
       -t|--tags)
-        ${COMMAND['tags']} $TAGS_DIRS
+        f_exec_in_dirs tags $TAGS_DIRS
         ;;
       -m|--tags.memo)
         f_exec_in_dirs tags.memo $MEMO_DIRS
-        ;;
-      -d|--dot)
-        cd env/dot
-        ${COMMAND['dot']}
         ;;
     esac
   done

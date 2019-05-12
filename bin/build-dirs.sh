@@ -25,6 +25,7 @@ f_args() {
     case $i in
       -h|--help)
         f_help
+        exit
         ;;
       -p|--print)
         COMMAND="echo"
