@@ -29,8 +29,10 @@ f_set_git_env() {
   COMPLETION_PATH="${COMPLETION_PATH%/lib/git-core}"
   COMPLETION_PATH="$COMPLETION_PATH/share/git/completion"
 
-  GIT_EXEC_PATH=`cygpath -u "$GIT_EXEC_PATH"`
-  COMPLETION_PATH=`cygpath -u "$COMPLETION_PATH"`
+  if [ -x /usr/bin/cygpath ]; then
+    GIT_EXEC_PATH=`cygpath -u "$GIT_EXEC_PATH"`
+    COMPLETION_PATH=`cygpath -u "$COMPLETION_PATH"`
+  fi
 
   echo "export GIT_EXEC_PATH=\"$GIT_EXEC_PATH\""
   echo "export COMPLETION_PATH=\"$COMPLETION_PATH\""

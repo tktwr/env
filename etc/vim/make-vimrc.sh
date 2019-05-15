@@ -12,11 +12,17 @@ f_expand_dir() {
   local os=$1
   local name=$2
   local val=$3
-  if [ "$os" = "unix" ]; then
-    dir=`cygpath -u $val`
-  elif [ "$os" = "win" ]; then
-    dir=`cygpath -m $val`
+
+  if [ -x /usr/bin/cygpath ]; then
+    if [ "$os" = "unix" ]; then
+      dir=`cygpath -u $val`
+    elif [ "$os" = "win" ]; then
+      dir=`cygpath -m $val`
+    fi
+  else
+    dir=$val
   fi
+
   echo "let \$$name=\"$dir\""
 }
 
