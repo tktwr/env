@@ -23,27 +23,11 @@ f_set_core_off() { ulimit -S -c 0; }
 f_set_core_on() { ulimit -S -c unlimited; }
 
 f_set_prompt() {
-  local COLOR_USER
-  local COLOR_HOST
-  local COLOR_DEF
+  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007"'
+  #PROMPT_COMMAND='echo -ne "\033]0;`dirs`\007"'
 
-  if [ $TERM = "xterm" -o $TERM = "vt100" ]; then
-    # set title bar
-    PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007"'
-    #PROMPT_COMMAND='echo -ne "\033]0;`dirs`\007"'
-
-    COLOR_USER="\[$COLORR$COLOR6\]"
-    COLOR_DEF="\[$COLORD\]"
-    case $MY_HOST_NAME in
-    *)
-      COLOR_HOST="\[$COLOR2\]"
-      ;;
-    esac
-  fi
-
-  PS1="$COLOR_USER\u$COLOR_HOST@\h$COLOR_DEF[\w]\$ "
-
-  export PS1
+  export PROMPT_DIRTRIM=2
+  export PS1="$ECOR$ECO2${MY_SHELL_NAME}$ECOD$ECO3[\w]$ECOD\$ "
 }
 
 f_set_locale() {
