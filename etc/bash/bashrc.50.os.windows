@@ -7,12 +7,11 @@
 f_set_win_env() {
   export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
   export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
-  export SYS_WIN_HOME=`cygpath -u C:/Users/$USERNAME`
+  export SYS_WIN_HOME=`cygpath -u $USERPROFILE`
   export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USERNAME`
   export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USERNAME`
-
   export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
-  export ANDROID_SDK="$SYS_WIN_HOME/AppData/Local/Android/sdk"
+  export ANDROID_SDK=`cygpath -u "$USERPROFILE/AppData/Local/Android/sdk"`
 
   echo "export SYS_PROG64_DIR=\"$SYS_PROG64_DIR\""
   echo "export SYS_PROG32_DIR=\"$SYS_PROG32_DIR\""
