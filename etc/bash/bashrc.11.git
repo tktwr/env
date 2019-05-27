@@ -41,10 +41,19 @@ f_set_git_env() {
 f_set_git_prompt() {
   PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
 
-  if [ -z "$COMPLETION_PATH" ]; then
-    echo "call f_set_git_env"
-    f_set_git_env >> $BASHRC_CACHED
-  fi
+  #if [ -z "$COMPLETION_PATH" ]; then
+  #  echo "call f_set_git_env"
+  #  f_set_git_env >> $BASHRC_CACHED
+  #fi
+
+  case $MY_SHELL_NAME in
+    MINGW64|gitbash)
+      COMPLETION_PATH="/c/Program Files/Git/mingw64/share/git/completion"
+      ;;
+    termux)
+      COMPLETION_PATH="/data/data/com.termux/files/usr/etc/bash_completion.d"
+      ;;
+  esac
 
   if [ -f "$COMPLETION_PATH/git-prompt.sh" ]; then
     #source "$COMPLETION_PATH/git-completion.bash"
