@@ -1,4 +1,6 @@
 {
     "python.pythonPath": "C:\\Users\\Takeh\\Anaconda3",
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "workbench.colorTheme": "Monokai",
+    "editor.renderWhitespace": "all"
 }

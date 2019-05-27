@@ -1,10 +1,12 @@
 #!/bin/sh
 
 bin_name=`basename $0`
-COMMAND=echo
+PATTERN=""
+COMMAND=""
 
 f_find() {
-  find . -type d -name 'build*' -prune -exec $COMMAND {} \;
+  echo "find . $PATTERN $COMMAND"
+  eval "find . $PATTERN $COMMAND"
 }
 
 f_help() {
@@ -16,7 +18,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help       print help"
-  echo "  -p, --print      print dirs"
+  echo "  -b, --build      print build dirs"
   echo "  -rm              remove dirs"
 }
 
@@ -27,16 +29,16 @@ f_args() {
         f_help
         exit
         ;;
-      -p|--print)
-        COMMAND="echo"
+      -b|--build)
+        PATTERN="-type d -name 'build*' -prune"
         ;;
       -rm)
-        COMMAND="rm -rf"
+        COMMAND="-exec rm -rf {} \;"
         ;;
     esac
   done
 }
 
-f_args $*
+f_args "$@"
 f_find
 
