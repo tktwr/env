@@ -27,8 +27,8 @@ f_mycmake_build() {
   esac
 
   echo "cmake --build $build_dir --config $config $opt $@"
-  cmake --build $build_dir --config $config $opt $@
+  eval "cmake --build $build_dir --config $config $opt $@"
 }
 
-f_mycmake_build $@
+f_mycmake_build "$@"
 

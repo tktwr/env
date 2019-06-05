@@ -67,35 +67,3 @@ alias mycmake-build-vs2017-reldeb='mycmake-build.sh vs2017 RelWithDebInfo'
 alias www='w3m -B'
 vid() { display "vid:$*"; }
 
-#======================================================
-# private
-#======================================================
-# cd
-alias cd-rconfig='cd $MY_REMOTE_CONFIG'
-alias cd-lconfig='cd $MY_LOCAL_CONFIG'
-
-alias cd-env='cd $MY_ENV'
-alias cd-memo='cd $MY_MEMO'
-alias cd-samples='cd $MY_SAMPLES'
-
-alias cd-private='cd $MY_PRIVATE'
-alias cd-protected='cd $MY_PROTECTED'
-alias cd-public='cd $MY_PUBLIC'
-
-alias cd-github='cd $MY_WORK/github'
-alias cd-git='cd $MY_WORK/git'
-alias cd-svn='cd $MY_WORK/svn'
-
-alias cd-repo='cd $MY_REPO'
-alias cd-work='cd $MY_WORK'
-alias cd-doc='cd $MY_DOC'
-
-alias cd-opt='cd $MY_OPT'
-alias cd-downloads='cd $MY_DOWNLOADS'
-alias cd-papers='cd $MY_PAPERS'
-
-# dia
-alias z='dia'
-alias zv='dia -v'
-alias zh='dia -h'
-

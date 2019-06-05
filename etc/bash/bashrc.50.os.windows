@@ -30,6 +30,27 @@ fi
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
 
+#------------------------------------------------------
+# anaconda
+#------------------------------------------------------
+
+f_set_anaconda() {
+  export ANACONDA_HOME=`cygpath -u "$USERPROFILE/Anaconda3"`
+
+  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
+}
+
+if [ -z "$ANACONDA_HOME" ]; then
+  echo "call f_set_anaconda"
+  f_set_anaconda >> $BASHRC_CACHED
+fi
+
+PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+
+#------------------------------------------------------
+# alias
+#------------------------------------------------------
+
 alias x='explorer.exe'
 alias ls='ls.sh'
 
@@ -40,24 +61,7 @@ alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
 alias adb='winpty adb'
 alias net='winpty net'
 
-#------------------------------------------------------
-# anaconda
-#------------------------------------------------------
-
-f_set_anaconda() {
-  export ANACONDA_HOME=`cygpath -u "$USERPROFILE/Anaconda3"`
-
-  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
-
-  alias python='winpty python'
-  alias ipython='winpty ipython'
-  alias jupyter='winpty jupyter'
-}
-
-if [ -z "$ANACONDA_HOME" ]; then
-  echo "call f_set_anaconda"
-  f_set_anaconda >> $BASHRC_CACHED
-fi
-
-PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+alias python='winpty python'
+alias ipython='winpty ipython'
+alias jupyter='winpty jupyter'
 

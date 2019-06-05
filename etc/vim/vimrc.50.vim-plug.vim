@@ -2,6 +2,7 @@
 " vim-plug
 "======================================================
 set complete=.,w,b,u,i
+let s:use_eskk=1
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=1
 let s:use_ultisnips=1
@@ -203,14 +204,19 @@ if s:use_ultisnips
 endif
 
 "------------------------------------------------------
-" vim-plug: unused
+" vim-plug: eskk
 "------------------------------------------------------
-if 0
+if s:use_eskk
   Plug 'tyru/eskk.vim'
   let g:eskk#directory = "~/.eskk"
   let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+endif
 
+"------------------------------------------------------
+" vim-plug: unused
+"------------------------------------------------------
+if 0
   Plug 'christoomey/vim-tmux-navigator'
 
   Plug 'godlygeek/tabular'

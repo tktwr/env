@@ -8,6 +8,9 @@ if [ -z "$MY_WIN_HOME" ]; then
   export MY_WIN_HOME=`cygpath -u $USERPROFILE`
 fi
 
+export MY_DESKTOP=$MY_WIN_HOME/Desktop
+export MY_DOWNLOADS=$MY_WIN_HOME/Downloads
+
 export MY_REMOTE_CONFIG=$MY_WIN_HOME/tktwr.github
 export MY_LOCAL_CONFIG=$MY_WIN_HOME/tktwr.local
 
@@ -21,17 +24,19 @@ export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
 export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html
 
 
-export MY_PRIVATE=X:
-export MY_PROTECTED=Y:
-export MY_PUBLIC=Z:
+export MY_PRIVATE=/x
+export MY_PROTECTED=/y
+export MY_PUBLIC=/z
 
 export MY_REPO=$MY_PRIVATE/repo
 export MY_WORK=$MY_PRIVATE/work
 export MY_DOC=$MY_PRIVATE/work/doc
+export MY_OFFICE=$MY_PRIVATE/office
 
 export MY_OPT=$MY_PUBLIC/opt
-export MY_DOWNLOADS=$MY_PUBLIC/Downloads
+export MY_PUBLIC_DOWNLOADS=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers
+export MY_DATA=$MY_PUBLIC/data
 
 export MY_BACKUP=$HOME/backup
 

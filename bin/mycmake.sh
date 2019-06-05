@@ -35,8 +35,8 @@ f_mycmake() {
   opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
 
   echo "cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
-  cmake -S. -B$build_dir -G"$generator_name" $opt $@
+  eval "cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
-f_mycmake $@
+f_mycmake "$@"
 

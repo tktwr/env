@@ -22,6 +22,7 @@ endfunc
 func! s:OpenTag(tagname)
   "exec "below stjump" "memo_".a:tagname
   exec "tag" "memo_".a:tagname
+  normal z
 endfunc
 
 func! s:DefineCommands()
@@ -31,10 +32,14 @@ func! s:DefineCommands()
 endfunc
 
 " make a [memo] window
-func! s:MakeMemoWindow()
+func! s:MakeMemoWindow(vert)
   let s:memo_winnr = bufwinnr(s:memo_winname)
   if s:memo_winnr == -1
-    silent exec "edit" s:memo_winname
+    if (a:vert)
+      silent exec "rightbelow 60vnew" s:memo_winname
+    else
+      silent exec "15new" s:memo_winname
+    endif
     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal buflisted
@@ -43,6 +48,8 @@ func! s:MakeMemoWindow()
     setlocal tabstop=8
     let s:memo_winnr = bufwinnr(s:memo_winname)
     call s:DefineCommands()
+  else
+    exec s:memo_winnr . "wincmd w"
   endif
 endfunc
 
@@ -51,10 +58,17 @@ endfunc
 "--------------------------------------------------------------------------
 
 func! s:Memo(tagname)
-  if (empty(a:tagname))
-    call s:MakeMemoWindow()
-    call s:ListTags()
-  else
+  call s:MakeMemoWindow(0)
+  call s:ListTags()
+  if (!empty(a:tagname))
+    call s:OpenTag(a:tagname)
+  endif
+endfunc
+
+func! s:Ref(tagname)
+  call s:MakeMemoWindow(1)
+  call s:ListTags()
+  if (!empty(a:tagname))
     call s:OpenTag(a:tagname)
   endif
 endfunc
@@ -63,4 +77,5 @@ endfunc
 " command
 "--------------------------------------------------------------------------
 command -nargs=? Memo call s:Memo(<q-args>)
+command -nargs=? Ref call s:Ref(<q-args>)
 
