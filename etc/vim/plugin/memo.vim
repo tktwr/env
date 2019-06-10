@@ -22,7 +22,7 @@ endfunc
 func! s:OpenTag(tagname)
   "exec "below stjump" "memo_".a:tagname
   exec "tag" "memo_".a:tagname
-  normal z
+  exec "normal z\<CR>"
 endfunc
 
 func! s:DefineCommands()

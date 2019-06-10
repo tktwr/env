@@ -33,10 +33,10 @@ alias cd-github='cd $MY_WORK/github'
 alias cd-git='cd $MY_WORK/git'
 alias cd-svn='cd $MY_WORK/svn'
 
-alias cd-public-opt='cd $MY_OPT'
-alias cd-public-downloads='cd $MY_PUBLIC_DOWNLOADS'
-alias cd-public-papers='cd $MY_PAPERS'
-alias cd-public-data='cd $MY_DATA'
+alias cd-downloads2='cd $MY_DOWNLOADS2'
+alias cd-opt='cd $MY_OPT'
+alias cd-papers='cd $MY_PAPERS'
+alias cd-data='cd $MY_DATA'
 
 mv-desktop() { mv "$@" $MY_DESKTOP; }
 mv-downloads() { mv "$@" $MY_DOWNLOADS; }
@@ -45,8 +45,8 @@ mv-work() { mv "$@" $MY_WORK; }
 mv-doc() { mv "$@" $MY_DOC; }
 mv-office() { mv "$@" $MY_OFFICE; }
 
-mv-public-opt() { mv "$@" $MY_OPT; }
-mv-public-downloads() { mv "$@" $MY_PUBLIC_DOWNLOADS; }
-mv-public-papers() { mv "$@" $MY_PAPERS; }
-mv-public-data() { mv "$@" $MY_DATA; }
+mv-downloads2() { mv "$@" $MY_DOWNLOADS2; }
+mv-opt() { mv "$@" $MY_OPT; }
+mv-papers() { mv "$@" $MY_PAPERS; }
+mv-data() { mv "$@" $MY_DATA; }
 

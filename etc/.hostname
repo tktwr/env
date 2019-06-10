@@ -1,3 +1,5 @@
+#!/bin/sh
+
 export MY_HOST_NAME=
 export MY_SITE_NAME=
 export MY_SHELL_NAME=$MSYSTEM
@@ -33,8 +35,8 @@ export MY_WORK=$MY_PRIVATE/work
 export MY_DOC=$MY_PRIVATE/work/doc
 export MY_OFFICE=$MY_PRIVATE/office
 
+export MY_DOWNLOADS2=$MY_PUBLIC/Downloads
 export MY_OPT=$MY_PUBLIC/opt
-export MY_PUBLIC_DOWNLOADS=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers
 export MY_DATA=$MY_PUBLIC/data
 
