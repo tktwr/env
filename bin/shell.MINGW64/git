@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "git $@" >> ~/log-git.txt
+
 WIN_GIT="$SYS_PROG64_DIR/Git/mingw64/bin/git.exe"
 
 PATH="$SYS_PROG64_DIR/Git/bin:$PATH"

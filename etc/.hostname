@@ -5,16 +5,11 @@ export MY_SITE_NAME=
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
-if [ -z "$MY_WIN_HOME" ]; then
-  echo "set MY_WIN_HOME"
-  export MY_WIN_HOME=`cygpath -u $USERPROFILE`
-fi
+export MY_DESKTOP=$SYS_WIN_HOME/Desktop
+export MY_DOWNLOADS=$SYS_WIN_HOME/Downloads
 
-export MY_DESKTOP=$MY_WIN_HOME/Desktop
-export MY_DOWNLOADS=$MY_WIN_HOME/Downloads
-
-export MY_REMOTE_CONFIG=$MY_WIN_HOME/tktwr.github
-export MY_LOCAL_CONFIG=$MY_WIN_HOME/tktwr.local
+export MY_REMOTE_CONFIG=$SYS_WIN_HOME/tktwr.github
+export MY_LOCAL_CONFIG=$SYS_WIN_HOME/tktwr.local
 
 export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
@@ -32,7 +27,7 @@ export MY_PUBLIC=/z
 
 export MY_REPO=$MY_PRIVATE/repo
 export MY_WORK=$MY_PRIVATE/work
-export MY_DOC=$MY_PRIVATE/work/doc
+export MY_DOC=$MY_PRIVATE/doc
 export MY_OFFICE=$MY_PRIVATE/office
 
 export MY_DOWNLOADS2=$MY_PUBLIC/Downloads

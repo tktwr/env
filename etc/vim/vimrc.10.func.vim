@@ -32,7 +32,7 @@ endf
 command CheckEnv call s:CheckEnv()
 
 "------------------------------------------------------
-" edit
+" func: edit
 "------------------------------------------------------
 
 " update the line started with "Last modification: "
@@ -63,7 +63,7 @@ command -nargs=? AddDate call s:AddDate("<args>")
 command -nargs=? InsertDia call s:InsertDia("<args>")
 
 "------------------------------------------------------
-" dev
+" func: dev
 "------------------------------------------------------
 
 func s:EditAltSrc()
@@ -92,7 +92,7 @@ command StartProf call s:StartProf()
 command EndProf call s:EndProf()
 
 "------------------------------------------------------
-" diff
+" func: diff
 "------------------------------------------------------
 
 set diffopt=filler,vertical,iwhite
@@ -107,7 +107,7 @@ endfunc
 autocmd VimEnter,FilterWritePre * call s:SetDiffMode()
 
 "------------------------------------------------------
-" encoding
+" func: encoding
 "------------------------------------------------------
 func s:SetJapanese()
   " encoding

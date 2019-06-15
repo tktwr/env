@@ -1,4 +1,4 @@
-VSCODE_SETTINGS=$(MY_WIN_HOME)/AppData/Roaming/Code/User/settings.json
+VSCODE_SETTINGS=$(SYS_WIN_HOME)/AppData/Roaming/Code/User/settings.json
 
 pull-vscode:
 	cp $(VSCODE_SETTINGS) .

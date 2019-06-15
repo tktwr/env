@@ -42,11 +42,26 @@ f_make_local_vimrc() {
   done
 }
 
+target_os=$1
+target_shell=$2
+
+case $target_shell in
+  MINGW64)
+    GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$MY_SHELL_NAME/git
+    ;;
+  gitbash)
+    GIT_EXE=git
+    ;;
+esac
+
 f_set_default
-f_expand_dir $1 MY_VIM $MY_VIM
-f_expand_dir $1 MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
-f_expand_dir $1 MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
-f_expand_dir $1 MY_OPT $MY_OPT
+
+f_expand_dir $target_os MY_VIM $MY_VIM
+f_expand_dir $target_os MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
+f_expand_dir $target_os MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
+f_expand_dir $target_os MY_OPT $MY_OPT
+f_expand_dir $target_os MY_GIT_EXE $GIT_EXE
+
 f_make_vimrc
 f_make_local_vimrc
 

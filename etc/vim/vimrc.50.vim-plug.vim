@@ -12,6 +12,7 @@ let s:use_lsp_ccls=1
 let s:use_lsp_ultisnips=1
 let s:lsp_debug=1
 let s:auto_popup=1
+let g:fugitive_git_executable='$MY_GIT_EXE'
 
 if empty(glob('$MY_VIM/autoload/plug.vim'))
   silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs
@@ -81,7 +82,7 @@ endif
 "------------------------------------------------------
 Plug 'will133/vim-dirdiff'
 "let g:DirDiffForceLang = "en"
-let g:DirDiffExcludes = ".git,.svn,*.swp,*.o,*.exe,*.class,Release,Debug,*.png,*.jpg,*.bmp"
+let g:DirDiffExcludes = ".git,.svn,*.swp,*.o,*.exe,*.class,build.ninja,build.make,build.vs2017,Release,Debug,*.png,*.jpg,*.bmp"
 let g:DirDiffAddArgs = "-bwBEZ" 
 
 "------------------------------------------------------

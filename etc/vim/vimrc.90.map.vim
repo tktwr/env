@@ -1,5 +1,5 @@
 "======================================================
-" mapping
+" map
 "======================================================
 " emacs-style editing in the insert mode
 inoremap <C-A>   <Home>
@@ -39,7 +39,7 @@ nnoremap <C-X>   :close<CR>
 nnoremap <C-N>   <C-L>
 
 "------------------------------------------------------
-" develop
+" map: develop
 "------------------------------------------------------
 " tag
 nnoremap <C-]>      g<C-]>
@@ -51,7 +51,7 @@ nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<
 "nnoremap <Right><Right>	%ma%:.+1,'a-1><CR>+%/{<CR>
 
 "------------------------------------------------------
-" misc
+" map: misc
 "------------------------------------------------------
 nnoremap '     `
 nnoremap Q     :confirm qall<CR>
@@ -71,7 +71,7 @@ nnoremap X ^y$:silent exec "<C-R>""<CR>
 "nnoremap M :Man <cword><CR>
 
 "------------------------------------------------------
-" visual mode mapping
+" map: visual mode mapping
 "------------------------------------------------------
 " add column
 vnoremap A1 y:'<,'>w !sumcol 1<CR>
@@ -82,7 +82,7 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 "vnoremap C y:!expr.sh "<C-R>""<CR>
 
 "------------------------------------------------------
-" insert mode mapping
+" map: insert mode mapping
 "------------------------------------------------------
 " insert date 
 "inoremap <C-X>   <ESC>:r!env LC_TIME=C date '+\%Y/\%m/\%d (\%a)'<CR>kgJA
@@ -93,7 +93,7 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 "inoremap <S-Space>	<C-]>
 
 "------------------------------------------------------
-" web
+" map: web
 "------------------------------------------------------
 " transform the following two lines to a hyper link in the markdeep format
 "
@@ -113,7 +113,7 @@ nnoremap <C-O> :silent !chrome.sh "%"<CR>
 "nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
-" Func key
+" map: function key
 "------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GstatusToggle<CR>
@@ -140,7 +140,7 @@ inoremap <F12> <ESC>"*p
 "nnoremap <F?> :source $MY_VIM/session.vim<CR>
 
 "------------------------------------------------------
-" Plugin's key map
+" map: plugin's key map
 "------------------------------------------------------
 " gitgutter
 nnoremap ++    :GitGutterToggle<CR>
@@ -172,19 +172,27 @@ nmap <C-G> <Plug>(easymotion-overwin-line)
 " comfortable-motion
 let g:comfortable_motion_no_default_key_mappings = 1
 let g:comfortable_motion_impulse_multiplier = 0.8
-nnoremap <silent> <Space> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
-nnoremap <silent> <BS> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
-"nnoremap <silent> <Space> :call comfortable_motion#flick(200)<CR>
-"nnoremap <silent> <BS> :call comfortable_motion#flick(-200)<CR>
+if 1
+  nnoremap <silent> <Space> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+  nnoremap <silent> <BS> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+else
+  nnoremap <silent> <Space> :call comfortable_motion#flick(200)<CR>
+  nnoremap <silent> <BS> :call comfortable_motion#flick(-200)<CR>
+endif
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 
-" global
-"nnoremap <silent> <Space>f :Gtags -f %<CR>
-"nnoremap <silent> <Space>j :GtagsCursor<CR>
-"nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
-"nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
+"------------------------------------------------------
+" map: unused
+"------------------------------------------------------
+if 0
+  " global
+  nnoremap <silent> <Space>f :Gtags -f %<CR>
+  nnoremap <silent> <Space>j :GtagsCursor<CR>
+  nnoremap <silent> <Space>d :<C-u>exe('Gtags '.expand('<cword>'))<CR>
+  nnoremap <silent> <Space>r :<C-u>exe('Gtags -r '.expand('<cword>'))<CR>
 
-" tagbar
-"nnoremap <F?> :TagbarToggle<CR>
+  " tagbar
+  nnoremap <F?> :TagbarToggle<CR>
+endif
 

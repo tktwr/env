@@ -8,8 +8,9 @@ endif
 
 vimrc:
 	mkdir -p $(BUILD_DIR)
-	./make-vimrc.sh unix > $(BUILD_DIR)/.vimrc
-	./make-vimrc.sh win > $(BUILD_DIR)/_vimrc
+	./make-vimrc.sh unix MINGW64 > $(BUILD_DIR)/.vimrc.unix.MINGW64
+	./make-vimrc.sh unix gitbash > $(BUILD_DIR)/.vimrc.unix.gitbash
+	./make-vimrc.sh win  MINGW64 > $(BUILD_DIR)/_vimrc.win.MINGW64
 
 clean:
 	rm -rf $(BUILD_DIR)
@@ -17,13 +18,13 @@ clean:
 #======================================================
 
 install:
-	cp $(BUILD_DIR)/.vimrc $(HOME)/.vimrc
+	cp $(BUILD_DIR)/.vimrc.unix.MINGW64 $(HOME)/.vimrc
 
 #======================================================
 
 install.win:
-	cp $(BUILD_DIR)/.vimrc $(USERPROFILE)/.vimrc
-	cp $(BUILD_DIR)/_vimrc $(USERPROFILE)/_vimrc
+	cp $(BUILD_DIR)/.vimrc.unix.gitbash $(USERPROFILE)/.vimrc
+	cp $(BUILD_DIR)/_vimrc.win.MINGW64 $(USERPROFILE)/_vimrc
 
 #======================================================
 

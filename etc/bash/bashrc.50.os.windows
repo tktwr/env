@@ -22,10 +22,10 @@ f_set_win_env() {
   echo "export ANDROID_SDK=\"$ANDROID_SDK\""
 }
 
-if [ -z "$SYS_PROG64_DIR" ]; then
-  echo "call f_set_win_env"
-  f_set_win_env >> $BASHRC_CACHED
-fi
+#if [ -z "$SYS_PROG64_DIR" ]; then
+#  echo "call f_set_win_env"
+#  f_set_win_env >> $BASHRC_CACHED
+#fi
 
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
@@ -40,10 +40,10 @@ f_set_anaconda() {
   echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
 }
 
-if [ -z "$ANACONDA_HOME" ]; then
-  echo "call f_set_anaconda"
-  f_set_anaconda >> $BASHRC_CACHED
-fi
+#if [ -z "$ANACONDA_HOME" ]; then
+#  echo "call f_set_anaconda"
+#  f_set_anaconda >> $BASHRC_CACHED
+#fi
 
 PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 

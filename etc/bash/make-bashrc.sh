@@ -2,6 +2,24 @@
 
 source $HOME/.hostname
 
+f_expand_dir() {
+  local os="$1"
+  local name="$2"
+  local val="$3"
+
+  if [ -x /usr/bin/cygpath ]; then
+    if [ "$os" = "unix" ]; then
+      dir=`cygpath -u "$val"`
+    elif [ "$os" = "win" ]; then
+      dir=`cygpath -m "$val"`
+    fi
+  else
+    dir="$val"
+  fi
+
+  echo "export $name=\"$dir\""
+}
+
 f_get_files() {
   local files="bashrc.??.*"
 
@@ -48,6 +66,18 @@ f_make_local_bashrc() {
     fi
   done
 }
+
+os=$1
+
+f_expand_dir $os SYS_PROG64_DIR "C:\Program Files"
+f_expand_dir $os SYS_PROG32_DIR "C:\Program Files (x86)"
+f_expand_dir $os SYS_WIN_HOME "$USERPROFILE"
+f_expand_dir $os SYS_MSYS2_HOME "C:/msys64/home/$USERNAME"
+f_expand_dir $os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
+f_expand_dir $os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
+f_expand_dir $os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
+f_expand_dir $os ANACONDA_HOME "$USERPROFILE/Anaconda3"
+f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
 
 cat bashrc.time
 f_make_bashrc
