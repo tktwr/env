@@ -49,7 +49,7 @@ case $target_shell in
   MINGW64)
     GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$MY_SHELL_NAME/git
     ;;
-  gitbash)
+  gitbash|termux)
     GIT_EXE=git
     ;;
 esac

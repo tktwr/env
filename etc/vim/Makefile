@@ -1,30 +1,42 @@
 BUILD_DIR=build
 
 ifdef USERPROFILE
-all: vimrc install install.win
+all: vimrc install vimrc.win install.win
 else
-all: vimrc install
+all: vimrc.termux install.termux
 endif
+
+#======================================================
 
 vimrc:
 	mkdir -p $(BUILD_DIR)
 	./make-vimrc.sh unix MINGW64 > $(BUILD_DIR)/.vimrc.unix.MINGW64
+
+vimrc.win:
+	mkdir -p $(BUILD_DIR)
 	./make-vimrc.sh unix gitbash > $(BUILD_DIR)/.vimrc.unix.gitbash
 	./make-vimrc.sh win  MINGW64 > $(BUILD_DIR)/_vimrc.win.MINGW64
 
-clean:
-	rm -rf $(BUILD_DIR)
+vimrc.termux:
+	mkdir -p $(BUILD_DIR)
+	./make-vimrc.sh unix termux > $(BUILD_DIR)/.vimrc.unix.termux
 
 #======================================================
 
 install:
 	cp $(BUILD_DIR)/.vimrc.unix.MINGW64 $(HOME)/.vimrc
 
-#======================================================
-
 install.win:
 	cp $(BUILD_DIR)/.vimrc.unix.gitbash $(USERPROFILE)/.vimrc
 	cp $(BUILD_DIR)/_vimrc.win.MINGW64 $(USERPROFILE)/_vimrc
+
+install.termux:
+	cp $(BUILD_DIR)/.vimrc.unix.termux $(HOME)/.vimrc
+
+#======================================================
+
+clean:
+	rm -rf $(BUILD_DIR)
 
 #======================================================
 
