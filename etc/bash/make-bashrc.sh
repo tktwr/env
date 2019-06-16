@@ -20,6 +20,22 @@ f_expand_dir() {
   echo "export $name=\"$dir\""
 }
 
+f_set_env_vars() {
+  local os="$1"
+
+  if [ ! -z "$USERPROFILE" ]; then
+    f_expand_dir $os SYS_PROG64_DIR "C:\Program Files"
+    f_expand_dir $os SYS_PROG32_DIR "C:\Program Files (x86)"
+    f_expand_dir $os SYS_WIN_HOME "$USERPROFILE"
+    f_expand_dir $os SYS_MSYS2_HOME "C:/msys64/home/$USERNAME"
+    f_expand_dir $os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
+    f_expand_dir $os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
+    f_expand_dir $os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
+    f_expand_dir $os ANACONDA_HOME "$USERPROFILE/Anaconda3"
+    f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
+  fi
+}
+
 f_get_files() {
   local files="bashrc.??.*"
 
@@ -69,16 +85,7 @@ f_make_local_bashrc() {
 
 os=$1
 
-f_expand_dir $os SYS_PROG64_DIR "C:\Program Files"
-f_expand_dir $os SYS_PROG32_DIR "C:\Program Files (x86)"
-f_expand_dir $os SYS_WIN_HOME "$USERPROFILE"
-f_expand_dir $os SYS_MSYS2_HOME "C:/msys64/home/$USERNAME"
-f_expand_dir $os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
-f_expand_dir $os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
-f_expand_dir $os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
-f_expand_dir $os ANACONDA_HOME "$USERPROFILE/Anaconda3"
-f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
-
+f_set_env_vars $os
 cat bashrc.time
 f_make_bashrc
 f_make_local_bashrc
