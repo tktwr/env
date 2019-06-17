@@ -44,7 +44,7 @@ set backspace=2
 set hlsearch
 set incsearch
 "set ignorecase
-set viminfo='50,\"50,%
+"set viminfo='50,\"50,%
 set listchars=tab:>-,trail:-,eol:$
 "set efm=%AERROR\ File\ =\ %f,\ Line\ =\ %l,%C%m
 set formatoptions=tcq

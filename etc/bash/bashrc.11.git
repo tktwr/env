@@ -118,5 +118,6 @@ alias git-dirdiff='git difftool --dir-diff'
 
 alias G='gg -15'
 alias GG='vim -c "Agit"'
+alias GV='vim -c "GV"'
 alias S='vim -c "Gstatus"'
 
