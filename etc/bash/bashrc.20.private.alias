@@ -17,6 +17,8 @@ alias cd-rconfig='cd $MY_REMOTE_CONFIG'
 alias cd-lconfig='cd $MY_LOCAL_CONFIG'
 
 alias cd-env='cd $MY_ENV'
+alias cd-etc='cd $MY_ENV/etc'
+alias cd-bin='cd $MY_ENV/bin'
 alias cd-memo='cd $MY_MEMO'
 alias cd-samples='cd $MY_SAMPLES'
 
