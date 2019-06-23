@@ -39,19 +39,13 @@ Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 "------------------------------------------------------
 " vim-plug: git
 "------------------------------------------------------
 Plug 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
-
-Plug 'cohama/agit.vim'
-let g:agit_enable_auto_show_commit = 0
-autocmd FileType agit_stat call s:my_agit_stat_settings()
-function! s:my_agit_stat_settings()
-  nmap <buffer> <silent> D <Plug>(agit-diff)
-  nmap <buffer> <silent> <2-LeftMouse> <Plug>(agit-diff)
-endfunction
 
 if s:use_gitgutter
   if &term == "xterm"
@@ -79,6 +73,14 @@ endif
 
 Plug 'junegunn/gv.vim'
 
+Plug 'cohama/agit.vim'
+let g:agit_enable_auto_show_commit = 0
+autocmd FileType agit_stat call s:my_agit_stat_settings()
+function! s:my_agit_stat_settings()
+  nmap <buffer> <silent> D <Plug>(agit-diff)
+  nmap <buffer> <silent> <2-LeftMouse> <Plug>(agit-diff)
+endfunction
+
 "------------------------------------------------------
 " vim-plug: diff
 "------------------------------------------------------
@@ -105,20 +107,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
-
-"------------------------------------------------------
-" vim-plug: supertab
-"------------------------------------------------------
-"Plug 'ervandew/supertab'
-"let g:SuperTabDefaultCompletionType = "context"
-
-"------------------------------------------------------
-" vim-plug: deoplete
-"------------------------------------------------------
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'roxma/nvim-yarp'
-"Plug 'roxma/vim-hug-neovim-rpc'
-"let g:deoplete#enable_at_startup = 1
 
 "------------------------------------------------------
 " vim-plug: vim-lsp
@@ -217,6 +205,20 @@ if s:use_eskk
 endif
 
 "------------------------------------------------------
+" vim-plug: supertab
+"------------------------------------------------------
+"Plug 'ervandew/supertab'
+"let g:SuperTabDefaultCompletionType = "context"
+
+"------------------------------------------------------
+" vim-plug: deoplete
+"------------------------------------------------------
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
+"let g:deoplete#enable_at_startup = 1
+
+"------------------------------------------------------
 " vim-plug: unused
 "------------------------------------------------------
 if 0
@@ -247,3 +249,4 @@ command GstatusToggle call s:GstatusToggle()
 
 colorscheme gruvbox
 set background=dark
+

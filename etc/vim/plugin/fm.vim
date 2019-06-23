@@ -14,9 +14,9 @@ let s:fm_winname = '\[fm\]'
 
 let g:fm_cmd = ""
 let s:fm_cmd_doc = "ooffice"
-let s:fm_cmd_pdf = "chrome"
-let s:fm_cmd_png = "chrome"
-let s:fm_cmd_jpg = "chrome"
+let s:fm_cmd_pdf = "chrome.sh"
+let s:fm_cmd_png = "chrome.sh"
+let s:fm_cmd_jpg = "chrome.sh"
 let s:fm_cmd_obj = "meshlab"
 let s:fm_cmd_stl = "meshlab"
 
@@ -182,7 +182,7 @@ func! Fm(cmd, dir)
     setlocal tabstop=8
     let s:fm_winnr = bufwinnr(s:fm_winname)
     call s:DefineCommands()
-    let s:cols = system("tput cols")
+    let s:cols = winwidth(0)
   endif
 
   let w:help = 0

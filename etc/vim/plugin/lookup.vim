@@ -10,6 +10,7 @@ if exists("loaded_lookup")
 endif
 
 let loaded_lookup = 1
+let s:lookup_winname = '\[Lookup\]'
 let s:tmpfile = tempname()
 
 "--------------------------------------------------------------------------
@@ -90,7 +91,7 @@ func! Lookup (prg, opt, word) range
 
   let s:word = '"'.s:word.'"'
 
-  silent botright pedit \[Lookup\]
+  silent botright pedit s:lookup_winname
   wincmd P
   resize 12
 

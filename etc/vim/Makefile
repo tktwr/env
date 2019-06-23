@@ -15,7 +15,7 @@ vimrc:
 vimrc.win:
 	mkdir -p $(BUILD_DIR)
 	./make-vimrc.sh unix gitbash > $(BUILD_DIR)/.vimrc.unix.gitbash
-	./make-vimrc.sh win  MINGW64 > $(BUILD_DIR)/_vimrc.win.MINGW64
+	./make-vimrc.sh win  gitbash > $(BUILD_DIR)/_vimrc.win.gitbash
 
 vimrc.termux:
 	mkdir -p $(BUILD_DIR)
@@ -28,7 +28,7 @@ install:
 
 install.win:
 	cp $(BUILD_DIR)/.vimrc.unix.gitbash $(USERPROFILE)/.vimrc
-	cp $(BUILD_DIR)/_vimrc.win.MINGW64 $(USERPROFILE)/_vimrc
+	cp $(BUILD_DIR)/_vimrc.win.gitbash $(USERPROFILE)/_vimrc
 
 install.termux:
 	cp $(BUILD_DIR)/.vimrc.unix.termux $(HOME)/.vimrc
