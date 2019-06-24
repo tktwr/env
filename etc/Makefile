@@ -1,20 +1,20 @@
 all: all.install
 
 ifdef USERPROFILE
-all.install: subdir.install install install.win
+all.install: subdir.all install install.win
 all.clean: subdir.clean clean clean.win
 cmp.all: cmp cmp.win
 vimdiff.all: vimdiff vimdiff.win
 else
-all.install: subdir.install install
+all.install: subdir.all install
 all.clean: subdir.clean clean
 cmp.all: cmp
 vimdiff.all: vimdiff
 endif
 
-subdir.install:
-	cd bash && make
-	cd vim && make
+subdir.all:
+	cd bash && make all
+	cd vim && make all
 
 subdir.clean:
 	cd bash && make clean

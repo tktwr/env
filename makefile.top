@@ -1,0 +1,45 @@
+.PHONY: tags
+
+GIT_DIRS="env \
+memo \
+samples \
+templates \
+libtt \
+tools"
+
+TAGS_DIRS="libtt/tt"
+
+MEMO_DIRS="memo \
+samples"
+
+BUILD_DIRS="samples/cpp \
+samples/app_cmd \
+samples/app_imgui \
+tools/imgedit \
+tools/imgview"
+
+
+all: status
+
+graph:
+	@for-dir.sh "git graph -3" $(GIT_DIRS)
+
+fetch:
+	@for-dir.sh "git fetch" $(GIT_DIRS)
+
+status:
+	@for-dir.sh "git status -s" $(GIT_DIRS)
+
+tags:
+	@for-dir.sh "make tags" $(TAGS_DIRS)
+	@for-dir.sh "make tags.memo" $(MEMO_DIRS)
+
+build:
+	@for-dir.sh "make all" $(BUILD_DIRS)
+
+clean:
+	@for-dir.sh "make all.clean" $(BUILD_DIRS)
+
+print-build:
+	myfind.sh -b
+
