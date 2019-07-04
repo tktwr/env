@@ -16,4 +16,5 @@ au BufNewFile *.h             silent 0r $MY_VIM/skel/skel.h | AfterH
 au BufNewFile *.html          silent 0r $MY_VIM/skel/skel.html
 au BufNewFile *.md.html       silent 0r $MY_VIM/skel/skel.md.html
 au BufNewFile *.tex           silent 0r $MY_VIM/skel/skel.tex
+au BufNewFile *.py            silent 0r $MY_VIM/skel/skel.py
 

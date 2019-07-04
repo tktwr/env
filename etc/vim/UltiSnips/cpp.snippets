@@ -10,11 +10,11 @@ snippet -- "separator"
 
 endsnippet
 
-snippet #I "#include"
+snippet #i< "#include"
 #include <$0>
 endsnippet
 
-snippet #i "#include"
+snippet #i" "#include"
 #include "$0"
 endsnippet
 
@@ -24,45 +24,46 @@ endsnippet
 
 snippet if "if"
 if (${1:true}) {
-    $0
+    ${0:statement};
 }
 endsnippet
 
 snippet ifel "if else"
 if (${1:true}) {
-    $0
+    ${0:statement};
 } else {
+    statement;
 }
 endsnippet
 
 snippet elif "else if"
 else if (${1:true}) {
-    $0
+    ${0:statement};
 }
 endsnippet
 
 snippet el "else"
 else {
-    $0
+    ${0:statement};
 }
 endsnippet
 
 snippet for "for"
 for (int i = 0; i < n; ++i) {
-    $0
+    ${0:statement};
 }
 endsnippet
 
 snippet forj "for j"
 for (int j = 0; j < n; ++j) {
-    $0
+    ${0:statement};
 }
 endsnippet
 
 snippet forji "for ji"
 for (int j = 0; j < nj; ++j) {
     for (int i = 0; i < ni; ++i) {
-        $0
+        ${0:statement};
     }
 }
 endsnippet
@@ -71,7 +72,7 @@ snippet forkji "for kji"
 for (int k = 0; k < nk; ++k) {
     for (int j = 0; j < nj; ++j) {
         for (int i = 0; i < ni; ++i) {
-            $0
+            ${0:statement};
         }
     }
 }
@@ -80,7 +81,7 @@ endsnippet
 snippet foryx "for yx"
 for (int y = 0; y < ny; ++y) {
     for (int x = 0; x < nx; ++x) {
-        $0
+        ${0:statement};
     }
 }
 endsnippet
@@ -89,19 +90,20 @@ snippet forzyx "for zyx"
 for (int z = 0; z < nz; ++z) {
     for (int y = 0; y < ny; ++y) {
         for (int x = 0; x < nx; ++x) {
-            $0
+            ${0:statement};
         }
     }
 }
 endsnippet
 
 snippet wh "while"
-while () {
+while (${1:true}) {
+    ${0:statement};
 }
 endsnippet
 
 snippet sw "switch"
-switch () {
+switch (${1:i}) {
     case '':
         break;
     default:
@@ -126,8 +128,8 @@ enum $0 {
 };
 endsnippet
 
-snippet fn "func"
-$0() {
+snippet func "function"
+void ${0:func}() {
 }
 endsnippet
 

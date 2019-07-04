@@ -26,6 +26,7 @@ set tags+=$MY_OPT/tags.nativefiledialog
 set tags+=$MY_OPT/tags.opencv2
 set tags+=$MY_OPT/tags.stb
 set tags+=$MY_OPT/tags.json11
+set tags+=$MY_OPT/tags.win
 
 set dictionary=$MY_VIM/words
 

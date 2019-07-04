@@ -122,6 +122,7 @@ nnoremap <F4> :Agit<CR>
 " tab
 "nnoremap <F5> :tabclose<CR>
 "nnoremap <F6> :tabn<CR>
+nnoremap <F5> :Ggrep <cword><CR>
 
 " copy to the clipboard
 vnoremap <F11> "*y
