@@ -24,6 +24,12 @@ f_mycmake() {
     vs2017*)
       generator_name="Visual Studio 15 2017 Win64"
       build_dir=build.$generator
+      export OpenCV_DIR=/z/opt/opencv-4.1.0/build
+      ;;
+    vs2019*)
+      generator_name="Visual Studio 16 2019"
+      build_dir=build.$generator
+      export OpenCV_DIR=/z/opt/opencv-4.1.0/build
       ;;
     *)
       echo "no such generator: $generator"
@@ -34,8 +40,8 @@ f_mycmake() {
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT/usr/local"
   opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
 
-  echo "cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
-  eval "cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  echo "winpty cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  eval "winpty cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
 f_mycmake "$@"

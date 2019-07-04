@@ -20,14 +20,17 @@ f_mycmake_build() {
     vs2017*)
       build_dir=build.$generator
       ;;
+    vs2019*)
+      build_dir=build.$generator
+      ;;
     *)
       echo "no such generator: $generator"
       return
       ;;
   esac
 
-  echo "cmake --build $build_dir --config $config $opt $@"
-  eval "cmake --build $build_dir --config $config $opt $@"
+  echo "winpty cmake --build $build_dir --config $config $opt $@"
+  eval "winpty cmake --build $build_dir --config $config $opt $@"
 }
 
 f_mycmake_build "$@"

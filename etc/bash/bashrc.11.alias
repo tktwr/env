@@ -38,6 +38,7 @@ alias vim-zero='vim -u NONE'
 alias vim-test='vim -u $MY_VIM/build/.vimrc'
 alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
+vim-where() { vim `which $*`; }
 
 # net
 alias myrsync='rsync -auvR'
@@ -53,6 +54,7 @@ alias mycmake-ninja-debug='mycmake.sh ninja Debug'
 alias mycmake-make-release='mycmake.sh make Release'
 alias mycmake-make-debug='mycmake.sh make Debug'
 alias mycmake-vs2017='mycmake.sh vs2017'
+alias mycmake-vs2019='mycmake.sh vs2019'
 
 # build
 alias mycmake-build-ninja-release='mycmake-build.sh ninja Release'
@@ -62,6 +64,9 @@ alias mycmake-build-make-debug='mycmake-build.sh make Debug'
 alias mycmake-build-vs2017-release='mycmake-build.sh vs2017 Release'
 alias mycmake-build-vs2017-debug='mycmake-build.sh vs2017 Debug'
 alias mycmake-build-vs2017-reldeb='mycmake-build.sh vs2017 RelWithDebInfo'
+alias mycmake-build-vs2019-release='mycmake-build.sh vs2019 Release'
+alias mycmake-build-vs2019-debug='mycmake-build.sh vs2019 Debug'
+alias mycmake-build-vs2019-reldeb='mycmake-build.sh vs2019 RelWithDebInfo'
 
 # misc
 alias www='w3m -B'
