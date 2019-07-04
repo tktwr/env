@@ -12,9 +12,12 @@ TAGS_DIRS="libtt/tt"
 MEMO_DIRS="memo \
 samples"
 
-BUILD_DIRS="samples/cpp \
+BUILD_DIRS="libtt \
+samples/cpp \
+samples/cpp_lib \
 samples/app_cmd \
 samples/app_imgui \
+samples/mycmake \
 tools/imgedit \
 tools/imgview"
 
