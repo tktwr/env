@@ -44,6 +44,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 "------------------------------------------------------
 " vim-plug: git
 "------------------------------------------------------
+"Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-fugitive'
 autocmd QuickFixCmdPost *grep* cwindow
 

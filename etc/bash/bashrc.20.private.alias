@@ -30,6 +30,7 @@ alias cd-repo='cd $MY_REPO'
 alias cd-work='cd $MY_WORK'
 alias cd-doc='cd $MY_DOC'
 alias cd-office='cd $MY_OFFICE'
+alias cd-proj='cd $MY_PROJ'
 
 alias cd-github='cd $MY_WORK/github'
 alias cd-git='cd $MY_WORK/git'

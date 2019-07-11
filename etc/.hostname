@@ -14,21 +14,22 @@ export MY_LOCAL_CONFIG=$SYS_WIN_HOME/tktwr.local
 export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
 export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
-export MY_LIBTT=$MY_REMOTE_CONFIG/libtt
+export MY_LIBTT=`cygpath -m $MY_REMOTE_CONFIG/libtt`
 export MY_VIM=$MY_REMOTE_CONFIG/env/etc/vim
 
 export MY_DIARY=$MY_LOCAL_CONFIG/secret/diary/diary.md.html
 export MY_TODO=$MY_LOCAL_CONFIG/secret/diary/todo.md.html
 
 
-export MY_PRIVATE=/x
-export MY_PROTECTED=/y
-export MY_PUBLIC=/z
+export MY_PRIVATE=X:
+export MY_PROTECTED=Y:
+export MY_PUBLIC=Z:
 
 export MY_REPO=$MY_PRIVATE/repo
 export MY_WORK=$MY_PRIVATE/work
 export MY_DOC=$MY_PRIVATE/doc
 export MY_OFFICE=$MY_PRIVATE/office
+export MY_PROJ=$MY_PRIVATE/proj
 
 export MY_DOWNLOADS2=$MY_PUBLIC/Downloads
 export MY_OPT=$MY_PUBLIC/opt
@@ -39,3 +40,5 @@ export MY_BACKUP=$HOME/backup
 
 export CC=clang
 export CXX=clang++
+
+export MSVC_OpenCV_DIR=Z:/opt/opencv-4.1.0/build
