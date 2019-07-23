@@ -73,6 +73,10 @@ if s:use_nerdtree_git_plugin
 endif
 
 Plug 'junegunn/gv.vim'
+autocmd FileType git call s:my_gv_settings()
+function! s:my_gv_settings()
+  nmap D O
+endfunction
 
 Plug 'cohama/agit.vim'
 let g:agit_enable_auto_show_commit = 0

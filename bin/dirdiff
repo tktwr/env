@@ -5,8 +5,8 @@ LANG=C
 src=${1%/}
 dst=${2%/}
 
-tmpfile1=$(mktemp)
-tmpfile2=$(mktemp)
+tmpfile1=$(mktemp).tmpfile1.dirdiff
+tmpfile2=$(mktemp).tmpfile2.dirdiff
 
 echo "dir: $src" > $tmpfile1
 find $src -type f -exec md5sum -b {} \; | sed "s|$src/||" >> $tmpfile1

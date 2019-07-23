@@ -1,19 +1,24 @@
 #!/bin/sh
 
-cols=$(tput cols)
+cols=80
 
-tracked_files=$(mktemp)
-untracked_files=$(mktemp)
-out_tracked_files=$(mktemp)
-out_untracked_files=$(mktemp)
-out_mixed_files=$(mktemp)
+which tput > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  cols=$(tput cols)
+fi
+
+tracked_files=$(mktemp).tracked_files.gls
+untracked_files=$(mktemp).untracked_files.gls
+out_tracked_files=$(mktemp).out_tracked_files.gls
+out_untracked_files=$(mktemp).out_untracked_files.gls
+out_mixed_files=$(mktemp).out_mixed_files.gls
 
 f_uniq_dir() {
   sed 's|/.*|/|' | uniq | sort
 }
 
 f_tracked() {
-  sed 's|\(.*\)|\1 [T]|'
+  sed 's|\(.*\)|\1 [.]|'
 }
 
 f_untracked() {

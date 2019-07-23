@@ -42,7 +42,7 @@ f_all ()
   f_esc 07
 }
 
-f_all | column -c 40
+f_all | column -c 80
 
 echo -e "${esc}20GHello world."
 COLUMNS=80
