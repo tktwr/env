@@ -1,5 +1,10 @@
 #!/bin/sh
 
+W=""
+if [ -t 1 ]; then
+  W="winpty"
+fi
+
 f_mycmake_build() {
   local generator=$1
   shift
@@ -29,8 +34,8 @@ f_mycmake_build() {
       ;;
   esac
 
-  echo "winpty cmake --build $build_dir --config $config $opt $@"
-  eval "winpty cmake --build $build_dir --config $config $opt $@"
+  echo "$W /mingw64/bin/cmake --build $build_dir --config $config $opt $@"
+  eval "$W /mingw64/bin/cmake --build $build_dir --config $config $opt $@"
 }
 
 f_mycmake_build "$@"

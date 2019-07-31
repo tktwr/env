@@ -1,5 +1,10 @@
 #!/bin/sh
 
+W=""
+if [ -t 1 ]; then
+  W="winpty"
+fi
+
 f_mycmake() {
   local generator=$1
   shift
@@ -43,8 +48,8 @@ f_mycmake() {
 
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT/usr/local"
 
-  echo "winpty cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
-  eval "winpty cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  echo "$W /mingw64/bin/cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  eval "$W /mingw64/bin/cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
 f_mycmake "$@"

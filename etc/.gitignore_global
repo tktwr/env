@@ -17,4 +17,4 @@ Thumbs.db
 build*/
 !build.gradle
 imgui.ini
-
+compile_commands.json
