@@ -7,13 +7,13 @@
 	autocrlf = input
 	quotepath = false
 	pager = less
-	editor = vim
+	editor = gvim
 	excludesfile = ~/.gitignore_global
 
 [diff]
-	tool = vimdiff
+	tool = gvimdiff
 [merge]
-	tool = vimdiff
+	tool = gvimdiff
 [difftool]
 	prompt = false
 [mergetool]

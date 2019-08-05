@@ -46,3 +46,13 @@ clean:
 print-build:
 	myfind.sh -b
 
+help:
+	@echo all
+	@echo graph
+	@echo fetch
+	@echo status
+	@echo tags
+	@echo build
+	@echo clean
+	@echo print-build
+
