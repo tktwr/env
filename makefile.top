@@ -7,7 +7,7 @@ templates \
 libtt \
 tools"
 
-TAGS_DIRS="libtt/tt"
+TAGS_DIRS="libtt"
 
 MEMO_DIRS="memo \
 samples"

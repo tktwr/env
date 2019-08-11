@@ -1,0 +1,61 @@
+snippet msg "message"
+message(STATUS "$0")
+endsnippet
+
+snippet inc "include"
+include($0)
+endsnippet
+
+snippet if_os "if_os"
+if(WIN32)
+elseif(UNIX)
+else()
+endif()
+endsnippet
+
+snippet if_cc "if_cc"
+if(MSVC)
+elseif(MINGW)
+else()
+endif()
+endsnippet
+
+snippet find_package "find_package"
+find_package(package REQUIRED)
+endsnippet
+
+snippet inc_dir "include_directories"
+include_directories($0)
+endsnippet
+
+snippet link_dir "link_directories"
+link_directories($0)
+endsnippet
+
+snippet set "set"
+set(name val)
+endsnippet
+
+snippet set_srcs "set_srcs"
+set(app_SRCS
+  main.cpp
+  )
+endsnippet
+
+snippet add_exe "add_executable"
+add_executable(${PROJECT_NAME} ${app_SRCS})
+endsnippet
+
+snippet link_lib "target_link_libraries"
+target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS} ${OPENGL_gl_LIBRARY} ${GLFW_LIBS})
+endsnippet
+
+snippet file "file"
+file(GLOB DATA_FILES data/icon.png ${OpenCV_DLLS})
+
+if(NOT ("${DATA_FILES}" STREQUAL ""))
+  add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${DATA_FILES} $<TARGET_FILE_DIR:${PROJECT_NAME}>)
+endif()
+endsnippet
+
