@@ -1,5 +1,2 @@
-#ifndef HEADER_ID
-#define HEADER_ID
+#pragma once
 
-
-#endif  // HEADER_ID
