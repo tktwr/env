@@ -7,4 +7,4 @@ FontHeight=14
 Locale=ja_JP
 Charset=UTF-8
 Term=xterm
-ThemeFile=tomorrow.soft
+ThemeFile=tomorrow.custom
