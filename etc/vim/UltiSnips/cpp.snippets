@@ -22,6 +22,13 @@ snippet #d "#define"
 #define $0
 endsnippet
 
+snippet #if "#if"
+#if $0
+#endif
+endsnippet
+
+#======================================================
+
 snippet if "if"
 if (${1:true}) {
     ${0:statement};
@@ -47,6 +54,8 @@ else {
     ${0:statement};
 }
 endsnippet
+
+#======================================================
 
 snippet for "for"
 for (int i = 0; i < n; ++i) {
@@ -96,6 +105,8 @@ for (int z = 0; z < nz; ++z) {
 }
 endsnippet
 
+#======================================================
+
 snippet wh "while"
 while (${1:true}) {
     ${0:statement};
@@ -133,7 +144,53 @@ void ${0:func}() {
 }
 endsnippet
 
-snippet cout "cout"
+#======================================================
+# STL
+#======================================================
+
+snippet str "std::string"
+std::string
+endsnippet
+
+snippet vec "std::vector<int>"
+std::vector<${0:int}>
+endsnippet
+
+snippet map "std::map<std::string, int>"
+std::map<${1:std::string}, ${0:int}>
+endsnippet
+
+snippet array "std::array<int, 2>"
+std::array<${1:int}, ${0:2}>
+endsnippet
+
+snippet pair "std::pair<int, int>"
+std::pair<${1:int}, ${0:int}>
+endsnippet
+
+snippet cout "std::cout"
 std::cout << " : " << x << std::endl;
+endsnippet
+
+snippet foritr "for iterator"
+for (auto itr = std::begin(vec); itr != std::end(vec); ++itr) {
+    std::cout << *itr << " ";
+}
+std::cout << std::endl;
+endsnippet
+
+snippet forr "for range"
+for (auto x : vec) {
+    std::cout << x << " ";
+}
+std::cout << std::endl;
+endsnippet
+
+snippet sp "shared_ptr<>"
+shared_ptr<${0:int}>
+endsnippet
+
+snippet up "unique_ptr<>"
+unique_ptr<${0:int}>
 endsnippet
 

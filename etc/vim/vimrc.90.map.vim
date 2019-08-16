@@ -157,6 +157,8 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"
 "inoremap <C-X><C-K> <C-X><C-K>
+"inoremap <C-N> <C-X><C-N>
+"inoremap <C-P> <C-X><C-P>
 
 " quickhl
 nmap <C-U> <Plug>(quickhl-manual-this)

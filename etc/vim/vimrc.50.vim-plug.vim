@@ -6,13 +6,13 @@ let s:use_eskk=1
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=1
 let s:use_ultisnips=1
-let s:use_lsp=0
+let s:use_lsp=1
 let s:use_lsp_pyls=1
-let s:use_lsp_ccls=1
+let s:use_lsp_ccls=0
 let s:use_lsp_ultisnips=1
 let s:lsp_debug=1
 let s:auto_popup=1
-let g:fugitive_git_executable='$MY_GIT_EXE'
+let g:fugitive_git_executable=$MY_GIT_EXE
 
 if empty(glob('$MY_VIM/autoload/plug.vim'))
   silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs
@@ -136,10 +136,10 @@ if s:use_lsp
   nn <silent> <M-w> :LspWorkspaceSymbol<cr>
   nn <silent> <M-s> :LspDocumentSymbol<cr>
 
-  "inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
-  "inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
+  inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
   inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
-  "imap <C-Space> <Plug>(asyncomplete_force_refresh)
+  imap <C-Space> <Plug>(asyncomplete_force_refresh)
 
   set completeopt+=preview
   autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
@@ -186,7 +186,7 @@ endif
 if s:use_ultisnips
   if has('python3')
     Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    "Plug 'honza/vim-snippets'
   endif
 
   if s:use_lsp_ultisnips && has('python3')
