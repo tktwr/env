@@ -152,7 +152,7 @@ vmap C <Leader>c<Space>
 " ultisnips
 let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsListSnippets="<F6>"
+"let g:UltiSnipsListSnippets="<F6>"
 let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-J>"
 let g:UltiSnipsJumpBackwardTrigger="<C-K>"

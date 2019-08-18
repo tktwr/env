@@ -1,4 +1,135 @@
-# snippet for C++
+#======================================================
+# snippets for C++
+#======================================================
+
+snippet l "long"
+long
+endsnippet
+
+snippet u "unsigned"
+unsigned
+endsnippet
+
+snippet uc "unsigned char"
+unsigned char
+endsnippet
+
+snippet us "unsigned short"
+unsigned short
+endsnippet
+
+snippet ui "unsigned int"
+unsigned int
+endsnippet
+
+snippet c "char"
+char
+endsnippet
+
+snippet i "int"
+int
+endsnippet
+
+snippet s "short"
+short
+endsnippet
+
+snippet f "float"
+float
+endsnippet
+
+snippet d "double"
+double
+endsnippet
+
+snippet using "using"
+using ${1:new_type} = ${0:type};
+endsnippet
+
+snippet ns "namespace"
+namespace ${1:namespace_name} {
+}
+endsnippet
+
+snippet cl "class"
+class ${1:ClassName} {
+public:
+    $1() {}
+    virtual ~$1() {}
+
+protected:
+
+private:
+};
+endsnippet
+
+snippet st "struct"
+struct ${1:StructName} {
+};
+endsnippet
+
+snippet en "enum"
+enum ${1:EnumName} {
+};
+endsnippet
+
+snippet func "function"
+void ${1:func_name}() {
+}
+endsnippet
+
+snippet lambda "lambda function"
+auto f = [](${1:args}) {
+};
+endsnippet
+
+snippet try "try-catch"
+try {
+} catch(const std::exception& e) {
+    std::cout << e.what() << std::endl;
+    throw e;
+}
+endsnippet
+
+snippet tp "template<class T>"
+template<class ${0:T}>
+endsnippet
+
+snippet R "raw string"
+R"($0)"
+endsnippet
+
+#======================================================
+# values
+#======================================================
+
+snippet 20f "0.0f, 0.0f" w
+0.0f, 0.0f
+endsnippet
+
+snippet 30f "0.0f, 0.0f, 0.0f" w
+0.0f, 0.0f, 0.0f
+endsnippet
+
+snippet 40f "0.0f, 0.0f, 0.0f, 0.0f" w
+0.0f, 0.0f, 0.0f, 0.0f
+endsnippet
+
+snippet 21f "1.0f, 1.0f" w
+1.0f, 1.0f
+endsnippet
+
+snippet 31f "1.0f, 1.0f, 1.0f" w
+1.0f, 1.0f, 1.0f
+endsnippet
+
+snippet 41f "1.0f, 1.0f, 1.0f, 1.0f" w
+1.0f, 1.0f, 1.0f, 1.0f
+endsnippet
+
+#======================================================
+# comment
+#======================================================
 
 snippet == "separator"
 //=========================================================================
@@ -9,6 +140,10 @@ snippet -- "separator"
 //-------------------------------------------------------------------------
 
 endsnippet
+
+#======================================================
+# preprocessor
+#======================================================
 
 snippet #i< "#include"
 #include <$0>
@@ -23,10 +158,43 @@ snippet #d "#define"
 endsnippet
 
 snippet #if "#if"
-#if $0
+#if ${1:VAR1}
+#elif ${0:VAR2}
+#else
 #endif
 endsnippet
 
+snippet #ifos "#if by os"
+#if defined(_WIN32)         // both 32 bit and 64 bit windows
+#elif defined(__APPLE__)
+#elif defined(__ANDROID__)
+#elif defined(__linux__)
+#else
+#endif
+endsnippet
+
+snippet #ifcc "#if by compiler"
+#if defined(_MSC_VER)
+#elif defined(__clang__)
+#elif defined(__GNUC__)
+#else
+#endif
+endsnippet
+
+snippet extc "extern C"
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+$0
+
+#ifdef __cplusplus
+}
+#endif
+endsnippet
+
+#======================================================
+# statement: if
 #======================================================
 
 snippet if "if"
@@ -56,20 +224,22 @@ else {
 endsnippet
 
 #======================================================
+# statement: for
+#======================================================
 
-snippet for "for"
+snippet fori "for by i"
 for (int i = 0; i < n; ++i) {
     ${0:statement};
 }
 endsnippet
 
-snippet forj "for j"
+snippet forj "for by j"
 for (int j = 0; j < n; ++j) {
     ${0:statement};
 }
 endsnippet
 
-snippet forji "for ji"
+snippet forji "for by ji"
 for (int j = 0; j < nj; ++j) {
     for (int i = 0; i < ni; ++i) {
         ${0:statement};
@@ -77,7 +247,7 @@ for (int j = 0; j < nj; ++j) {
 }
 endsnippet
 
-snippet forkji "for kji"
+snippet forkji "for by kji"
 for (int k = 0; k < nk; ++k) {
     for (int j = 0; j < nj; ++j) {
         for (int i = 0; i < ni; ++i) {
@@ -87,7 +257,19 @@ for (int k = 0; k < nk; ++k) {
 }
 endsnippet
 
-snippet foryx "for yx"
+snippet forx "for by x"
+for (int x = 0; x < nx; ++x) {
+    ${0:statement};
+}
+endsnippet
+
+snippet fory "for by y"
+for (int y = 0; y < ny; ++y) {
+    ${0:statement};
+}
+endsnippet
+
+snippet foryx "for by yx"
 for (int y = 0; y < ny; ++y) {
     for (int x = 0; x < nx; ++x) {
         ${0:statement};
@@ -95,7 +277,7 @@ for (int y = 0; y < ny; ++y) {
 }
 endsnippet
 
-snippet forzyx "for zyx"
+snippet forzyx "for by zyx"
 for (int z = 0; z < nz; ++z) {
     for (int y = 0; y < ny; ++y) {
         for (int x = 0; x < nx; ++x) {
@@ -105,12 +287,34 @@ for (int z = 0; z < nz; ++z) {
 }
 endsnippet
 
+snippet foritr "for by iterator"
+for (auto itr = std::begin(vec); itr != std::end(vec); ++itr) {
+    std::cout << *itr << " ";
+}
+std::cout << std::endl;
+endsnippet
+
+snippet forr "for by range"
+for (auto x : vec) {
+    std::cout << x << " ";
+}
+std::cout << std::endl;
+endsnippet
+
+#======================================================
+# statement
 #======================================================
 
 snippet wh "while"
 while (${1:true}) {
     ${0:statement};
 }
+endsnippet
+
+snippet do "do-while"
+do {
+    ${0:statement};
+} while (${1:true});
 endsnippet
 
 snippet sw "switch"
@@ -122,26 +326,24 @@ switch (${1:i}) {
 }
 endsnippet
 
-snippet cl "class"
-class $0 {
-public:
-private:
-};
+#======================================================
+# cast
+#======================================================
+
+snippet cc "const_cast<new_type>(expression)"
+const_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet st "struct"
-struct $0 {
-};
+snippet dc "dynamic_cast<new_type>(expression)"
+dynamic_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet en "enum"
-enum $0 {
-};
+snippet rc "reinterpret_cast<new_type>(expression)"
+reinterpret_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet func "function"
-void ${0:func}() {
-}
+snippet sc "static_cast<new_type>(expression)"
+static_cast<${1:new_type}>(${0:expression})
 endsnippet
 
 #======================================================
@@ -156,6 +358,30 @@ snippet vec "std::vector<int>"
 std::vector<${0:int}>
 endsnippet
 
+snippet list "std::list<int>"
+std::list<${0:int}>
+endsnippet
+
+snippet stack "std::stack<int>"
+std::stack<${0:int}>
+endsnippet
+
+snippet queue "std::queue<int>"
+std::queue<${0:int}>
+endsnippet
+
+snippet priority_queue "std::priority_queue<int>"
+std::priority_queue<${0:int}>
+endsnippet
+
+snippet deque "std::deque<int>"
+std::deque<${0:int}>
+endsnippet
+
+snippet set "std::set<int>"
+std::set<${0:int}>
+endsnippet
+
 snippet map "std::map<std::string, int>"
 std::map<${1:std::string}, ${0:int}>
 endsnippet
@@ -168,29 +394,80 @@ snippet pair "std::pair<int, int>"
 std::pair<${1:int}, ${0:int}>
 endsnippet
 
-snippet cout "std::cout"
-std::cout << " : " << x << std::endl;
+snippet tuple "std::tuple<int, int, int>"
+std::tuple<${1:int}, ${2:int}, ${0:int}>
 endsnippet
 
-snippet foritr "for iterator"
-for (auto itr = std::begin(vec); itr != std::end(vec); ++itr) {
-    std::cout << *itr << " ";
+snippet cout "std::cout message"
+std::cout << "${0:message}" << std::endl;
+endsnippet
+
+snippet coutv "std::cout val"
+std::cout << "${1:name} : " << ${0:val} << std::endl;
+endsnippet
+
+#======================================================
+# memory
+#======================================================
+
+snippet sp "std::shared_ptr<int>"
+std::shared_ptr<${0:int}>
+endsnippet
+
+snippet up "std::unique_ptr<int>"
+std::unique_ptr<${0:int}>
+endsnippet
+
+snippet wp "std::weak_ptr<int>"
+std::weak_ptr<${0:int}>
+endsnippet
+
+snippet ms "std::make_shared<type>()"
+std::make_shared<${1:type}>($0)
+endsnippet
+
+snippet mu "std::make_unique<type>()"
+std::make_unique<${1:type}>($0)
+endsnippet
+
+#======================================================
+# pointer_cast
+#======================================================
+
+snippet cpc "std::const_pointer_cast<new_type>(expression)"
+std::const_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet dpc "std::dynamic_pointer_cast<new_type>(expression)"
+std::dynamic_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet rpc "std::reinterpret_pointer_cast<new_type>(expression)"
+std::reinterpret_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet spc "std::static_pointer_cast<new_type>(expression)"
+std::static_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+#======================================================
+# io
+#======================================================
+
+snippet f_read_text "read text from a text file"
+void f_read_text(const std::string& fname, std::string& text) {
+    std::ifstream ifs(fname.c_str());
+    std::string line;
+    while (std::getline(ifs, line)) {
+        text += line + '\n';
+    }
 }
-std::cout << std::endl;
 endsnippet
 
-snippet forr "for range"
-for (auto x : vec) {
-    std::cout << x << " ";
+snippet f_write_text "write text to a text file"
+void f_write_text(const std::string& fname, const std::string& text) {
+    std::ofstream ofs(fname.c_str());
+    ofs << text;
 }
-std::cout << std::endl;
-endsnippet
-
-snippet sp "shared_ptr<>"
-shared_ptr<${0:int}>
-endsnippet
-
-snippet up "unique_ptr<>"
-unique_ptr<${0:int}>
 endsnippet
 

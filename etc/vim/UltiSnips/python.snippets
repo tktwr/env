@@ -1,3 +1,20 @@
+#======================================================
+# snippets for python
+#======================================================
+
+snippet imp "import"
+import ${0:module}
+endsnippet
+
+snippet main "main"
+import sys
+
+if __name__ == "__main__":
+    argv = sys.argv
+    print(argv)
+    main()
+endsnippet
+
 snippet def "def"
 def ${1:function}(${2:arg1}):
     ${0:pass}
@@ -6,3 +23,78 @@ endsnippet
 snippet print "print"
 print("${1:name}: {0}".format(${2:val}))
 endsnippet
+
+#======================================================
+# control
+#======================================================
+
+snippet if "if"
+if ${1:True}:
+    ${0:pass}
+endsnippet
+
+snippet elif "elif"
+elif ${1:True}:
+    ${0:pass}
+endsnippet
+
+snippet else "else"
+else:
+    ${0:pass}
+endsnippet
+
+snippet wh "while"
+while ${1:True}:
+    ${0:pass}
+endsnippet
+
+snippet for "for"
+for i in range(0, 5, 1):
+    print("%d " % i, end="")
+print()
+endsnippet
+
+#======================================================
+# io
+#======================================================
+
+snippet f_read_text "read a text file"
+def f_read_text(fname):
+    f = open(fname, "r")
+    text = ""
+    for line in f:
+        text += line
+    f.close()
+    return text
+
+endsnippet
+
+snippet f_write_text "write a text file"
+def f_write_text(fname, text):
+    f = open(fname, "w")
+    f.write(text)
+    f.close()
+
+endsnippet
+
+snippet f_read_json "read a json file"
+import json
+
+def f_read_json(fname):
+    f = open(fname, "r")
+    json_data = json.load(f)
+    f.close()
+    return json_data
+
+endsnippet
+
+snippet f_write_json "write a json file"
+import json
+
+def f_write_json(fname, data):
+    f = open(fname, "w")
+    f.write(json.dumps(data))
+    f.close()
+
+endsnippet
+
