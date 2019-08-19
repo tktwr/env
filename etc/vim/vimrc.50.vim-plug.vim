@@ -6,13 +6,14 @@ let s:use_eskk=1
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=1
 let s:use_ultisnips=1
-let s:use_lsp=0
+let s:use_lsp=1
 let s:use_lsp_pyls=1
-let s:use_lsp_ccls=1
+let s:use_lsp_ccls=0
+let s:use_lsp_clangd=1
 let s:use_lsp_ultisnips=1
 let s:lsp_debug=1
 let s:use_asyncomplete=1
-let s:auto_popup=0
+let s:auto_popup=1
 let g:fugitive_git_executable=$MY_GIT_EXE
 
 if empty(glob('$MY_VIM/autoload/plug.vim'))
@@ -193,6 +194,15 @@ if s:use_lsp
        \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
        \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
        \ })
+  endif
+
+  " Register clangd C++ lanuage server.
+  if s:use_lsp_clangd && executable('clangd')
+        au User lsp_setup call lsp#register_server({
+            \ 'name': 'clangd',
+            \ 'cmd': {server_info->['clangd', '-background-index']},
+            \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+            \ })
   endif
 endif
 
