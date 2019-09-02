@@ -84,13 +84,15 @@ inoremap <ESC> <ESC>:set iminsert=0<CR>
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
-if version >= 700
-  " disable popup menu for completion
-  "set completeopt=
-  "set textwidth=0
-  "set paste
-  "set ambiwidth=double
-  set cm=blowfish2
+if !has('nvim')
+    if version >= 700
+        " disable popup menu for completion
+        "set completeopt=
+        "set textwidth=0
+        "set paste
+        "set ambiwidth=double
+        set cm=blowfish2
+    endif
 endif
 
 let mapleader = ","

@@ -41,6 +41,9 @@ int main(int argc, char *argv[]) {
     A a;
     a.getValue();
 
+    B b;
+    b.getValueB();
+
     std::string text =
 R"(abc
 def

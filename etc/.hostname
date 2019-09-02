@@ -44,3 +44,4 @@ export CC=clang
 export CXX=clang++
 
 export MSVC_OpenCV_DIR=Z:/opt/opencv-4.1.0/build
+export XDG_CONFIG_HOME=`cygpath -m $MY_REMOTE_CONFIG/env/config`

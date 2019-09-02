@@ -24,6 +24,7 @@ f_expand_dir() {
   fi
 
   echo "let \$$name=\"$dir\""
+  #echo "let \$$name=expand(\"$dir\")"
 }
 
 f_make_vimrc() {
@@ -56,6 +57,7 @@ esac
 
 f_set_default
 
+#target_os="win"
 f_expand_dir $target_os MY_VIM $MY_VIM
 f_expand_dir $target_os MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
 f_expand_dir $target_os MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
