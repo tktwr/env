@@ -90,7 +90,7 @@ gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
 alias gs='git status'
 alias gf='git fetch'
-alias gu='f_checkgit_force'
+alias g.='f_checkgit_force'
 
 alias gR='git reset --hard'
 alias gRom='git reset --hard origin/master'
@@ -103,15 +103,15 @@ alias gA='git add'
 alias gAu='git add -u'
 alias gC='git commit -m'
 
-alias git-add-chmod-x='git update-index --add --chmod=+x'
-alias git-ls-filemode='git ls-files -s'
-
 alias git-stage='git add'
 alias git-unstage='git reset --'
+alias git-add-chmod-x='git update-index --add --chmod=+x'
 
 alias git-track='git add'
 alias git-untrack-file='git rm --cached'
 alias git-untrack-dir='git rm --cached -r'
+alias git-ls-track='git ls-files -s'
+alias git-ls-untrack='git ls-files -o --directory'
 
 alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
