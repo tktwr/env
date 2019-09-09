@@ -1,8 +1,14 @@
-VSCODE_SETTINGS=$(SYS_WIN_HOME)/AppData/Roaming/Code/User/settings.json
+VSCODE=$(SYS_WIN_HOME)/AppData/Roaming/Code/User
 
-push-vscode:
-	cp settings.json $(VSCODE_SETTINGS)
+vimdiff:
+	vimdiff settings.json $(VSCODE)/settings.json
+	vimdiff keybindings.json $(VSCODE)/keybindings.json
 
-pull-vscode:
-	cp $(VSCODE_SETTINGS) .
+push:
+	cp settings.json $(VSCODE)
+	cp keybindings.json $(VSCODE)
+
+pull:
+	cp $(VSCODE)/settings.json .
+	cp $(VSCODE)/keybindings.json .
 
