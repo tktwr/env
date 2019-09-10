@@ -18,3 +18,4 @@ build*/
 !build.gradle
 imgui.ini
 compile_commands.json
+.clangd/
