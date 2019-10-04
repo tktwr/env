@@ -31,14 +31,10 @@ f_mycmake() {
     vs2017*)
       generator_name="Visual Studio 15 2017 Win64"
       build_dir=build.$generator
-      #export OpenCV_DIR=$MSVC_OpenCV_DIR
-      #opt="$opt -DOpenCV_DIR=$OpenCV_DIR"
       ;;
     vs2019*)
       generator_name="Visual Studio 16 2019"
       build_dir=build.$generator
-      #export OpenCV_DIR=$MSVC_OpenCV_DIR
-      #opt="$opt -DOpenCV_DIR=$OpenCV_DIR"
       ;;
     *)
       echo "no such generator: $generator"
