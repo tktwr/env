@@ -2,6 +2,11 @@
 " func & command
 "======================================================
 
+command Chrome silent !chrome.sh "%"
+command Vscode silent !vscode.sh "%"
+command Gvim silent !gvim "%"
+command Win silent !explorer.exe %:h
+
 command CDHERE cd %:h
 command LCDHERE lcd %:h
 command -nargs=1 SetTab set tabstop=<args> shiftwidth=<args>

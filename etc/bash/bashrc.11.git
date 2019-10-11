@@ -116,6 +116,16 @@ alias git-ls-untrack='git ls-files -o --directory'
 alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
 
+git-tmp() {
+    git checkout -b tmp_work;
+    git commit -a -m "[TMP] $*";
+}
+git-tmp-reset() {
+    git reset HEAD^;
+    git checkout master;
+    git branch -d tmp_work;
+}
+
 alias G='gg -15'
 alias GG='vim -c "Agit"'
 alias GV='vim -c "GV --all"'
