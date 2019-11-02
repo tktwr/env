@@ -101,25 +101,26 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " http://...
 "   to
 " [label](http://...)
-nnoremap <C-A> I[A]Jr(A)I- 
+nnoremap <C-O> I[A]Jr(A)I- 
 
 " open an URL in the markdeep format by chrome
-nnoremap <C-P> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
+"nnoremap <C-P> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
+nnoremap <C-P> :!chrome.sh <cfile><CR>
 
 " open an URL in the markdeep format by w3m.vim
-"nnoremap <C-I> 0f(lyt):silent W3m <C-R>"<CR>
+"nnoremap <C-?> 0f(lyt):silent W3m <C-R>"<CR>
 
 "------------------------------------------------------
 " map: function key
 "------------------------------------------------------
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :GstatusToggle<CR>
-nnoremap <F4> :Agit<CR>
+"nnoremap <F4> :Agit<CR>
+nnoremap <F4> :GV --all<CR>
 
 " tab
-"nnoremap <F5> :tabclose<CR>
-"nnoremap <F6> :tabn<CR>
-nnoremap <F5> :Ggrep <cword><CR>
+nnoremap <F5> :tabclose<CR>
+nnoremap <F6> :tabnext<CR>
 
 " copy to the clipboard
 vnoremap <F11> "*y
@@ -127,6 +128,8 @@ vnoremap <F11> "*y
 " paste from the clipboard
 nnoremap <F12> "*p
 inoremap <F12> <ESC>"*p
+
+"nnoremap <F6> :Ggrep <cword><CR>
 
 " build
 "nnoremap <F?> :make<CR>:cw<CR>
@@ -167,7 +170,7 @@ xmap <C-Y> <Plug>(quickhl-manual-reset)
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-nmap <C-G> <Plug>(easymotion-overwin-line)
+nmap <C-A> <Plug>(easymotion-overwin-line)
 
 " comfortable-motion
 let g:comfortable_motion_no_default_key_mappings = 1
