@@ -21,3 +21,6 @@ compile_commands.json
 .clangd/
 local.cmake
 local.mk
+doxygen/
+!Doxyfile
+
