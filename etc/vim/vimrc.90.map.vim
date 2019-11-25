@@ -119,8 +119,14 @@ nnoremap <F3> :GstatusToggle<CR>
 nnoremap <F4> :GV --all<CR>
 
 " tab
-nnoremap <F5> :tabclose<CR>
-nnoremap <F6> :tabnext<CR>
+"nnoremap <F5> :tabclose<CR>
+"nnoremap <F6> :tabnext<CR>
+
+" build
+nnoremap <F5> :make<CR>:cw<CR>
+" grep
+nnoremap <F6> :Ggrep <cword><CR>
+
 
 " copy to the clipboard
 vnoremap <F11> "*y
@@ -128,11 +134,6 @@ vnoremap <F11> "*y
 " paste from the clipboard
 nnoremap <F12> "*p
 inoremap <F12> <ESC>"*p
-
-"nnoremap <F6> :Ggrep <cword><CR>
-
-" build
-"nnoremap <F?> :make<CR>:cw<CR>
 
 " save session
 "nnoremap <F?> :mksession! $MY_VIM/session.vim<CR>

@@ -21,17 +21,14 @@ send,{vkF3sc029}
 send,{Esc}
 return
 
-; right half window
-;#x::
-Del::
+; one window
+Ins::
 send,{F8}
-send,#{Right}
+send,#{Down}
 return
 
-; maximize window
-;#z::
-Ins::
-send,#{Left}
+; recover windows
+Del::
 send,#{Up}
 send,{F8}
 return
