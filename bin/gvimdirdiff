@@ -1,0 +1,4 @@
+#!/bin/sh
+
+gvim -c "DirDiff $1 $2"
+
