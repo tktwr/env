@@ -33,6 +33,9 @@ f_set_env_vars() {
     f_expand_dir $os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
     f_expand_dir $os ANACONDA_HOME "$USERPROFILE/Anaconda3"
     f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
+  else
+    f_expand_dir $os SYS_WIN_HOME "$HOME"
+    f_expand_dir $os MY_WIN_HOME "$HOME"
   fi
 }
 
