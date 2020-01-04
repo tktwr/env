@@ -9,12 +9,14 @@ f_exec_in_dirs() {
   dirs="$@"
 
   for i in $dirs; do
-    echo "=== [$i] ==="
-    cd "$i"
-    eval "$cmd"
-    echo
-    echo
-    cd $top_dir
+    if [ -d $i ]; then
+      echo "=== [$i] ==="
+      cd "$i"
+      eval "$cmd"
+      echo
+      echo
+      cd $top_dir
+    fi
   done
 }
 
