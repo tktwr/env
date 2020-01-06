@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 cols=80
 
@@ -37,7 +37,7 @@ f_help() {
 
 f_main() {
   if [ $# -eq 0 ]; then
-    vim -c "Memo"
+    vim -c "Memo" -c "only"
     exit
   fi
   for i in $*; do
@@ -54,7 +54,7 @@ f_main() {
         cols=`echo $i | sed 's+^-c=++'`
         ;;
       *)
-        vim -t "memo_$i" -c "normal zt"
+        vim -t "memo_$i" -c "normal zt" -c "only"
         ;;
     esac
   done

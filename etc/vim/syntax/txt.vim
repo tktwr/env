@@ -49,6 +49,7 @@ syn match    myType             "@\w\+"
 syn match    myNumber           "[-+]\=\d*\.\=\d\+"
 syn match    myDate             "\d\+/\d\+/\d\+"
 syn match    myTime             "\d\+:\d\+"
+syn match    myTime             "\d\+:\d\+:\d\+"
 
 if has("ebcdic")
   syn match myHyperTextJump     "|[^"*|]\+|"

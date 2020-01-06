@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo "git $@" >> ~/log-git.txt
+#echo "git $@" >> ~/log-git.txt
 
 WIN_GIT="$SYS_PROG64_DIR/Git/mingw64/bin/git.exe"
 
