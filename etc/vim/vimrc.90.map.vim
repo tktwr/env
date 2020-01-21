@@ -60,9 +60,9 @@ nnoremap --    :set invnumber<CR>:set invlist<CR>
 nnoremap ==    zi
 
 " yank a line as commands into the register q
-nnoremap ,q    0"qy$
+"nnoremap ,q    0"qy$
 " execute commands in the register q
-nnoremap q     @q
+"nnoremap q     @q
 
 " execute commands under the cursor
 nnoremap X ^y$:silent exec "<C-R>""<CR>
