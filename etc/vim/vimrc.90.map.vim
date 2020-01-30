@@ -101,11 +101,11 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " http://...
 "   to
 " [label](http://...)
-nnoremap <C-O> I[A]Jr(A)I- 
+nnoremap <C-P> I[A]Jr(A)I- 
 
 " open an URL in the markdeep format by chrome
-"nnoremap <C-P> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
-nnoremap <C-P> :!chrome.sh <cfile><CR>
+"nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
+nnoremap <C-O> :!chrome.sh <cfile><CR>
 
 " open an URL in the markdeep format by w3m.vim
 "nnoremap <C-?> 0f(lyt):silent W3m <C-R>"<CR>
@@ -125,7 +125,7 @@ nnoremap <F4> :GV --all<CR>
 " build
 nnoremap <F5> :make<CR>:cw<CR>
 " grep
-nnoremap <F6> :Ggrep <cword><CR>
+nnoremap <F6> :Ggrep -I <cword> -- ':!*.dat'<CR>
 
 
 " copy to the clipboard
