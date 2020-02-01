@@ -15,17 +15,21 @@ if [ -t 1 ]; then
 fi
 
 f_help() {
-  echo "mycmake.sh [OPTIONS] BUILD CONFIG [CMAKE_OPTIONS]"
+  echo "mycmake.sh         BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
+  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
+  echo "mycmake.sh --set   BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
+  echo "mycmake.sh [OPTIONS]"
   echo
   echo "OPTIONS:"
-  echo "  --help"
-  echo "  --set"
-  echo "  --build"
+  echo "  --help          print help"
+  echo "  --build-sys     print build_sys"
+  echo "  --build-config  print build_config"
+  echo "  --build-dir     print build_dir"
   echo
-  echo "BUILD:"
+  echo "BUILD_SYS:"
   echo "  ninja|make|vs2017|vs2019"
   echo
-  echo "CONFIG:"
+  echo "BUILD_CONFIG:"
   echo "  Debug|Release|RelWithDebInfo"
   echo
   echo "ENV:"
@@ -128,6 +132,15 @@ case $1 in
   --build)
     shift
     f_mycmake_build "$@"
+    ;;
+  --build-sys)
+    echo $MY_BUILD_SYS
+    ;;
+  --build-config)
+    echo $MY_BUILD_CONFIG
+    ;;
+  --build-dir)
+    echo build.$MY_BUILD_SYS
     ;;
   *)
     f_mycmake "$@"
