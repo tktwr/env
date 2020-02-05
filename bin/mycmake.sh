@@ -17,6 +17,8 @@ fi
 f_help() {
   echo "mycmake.sh         BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
   echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
+  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG --target clean"
+  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG --target install"
   echo "mycmake.sh --set   BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
   echo "mycmake.sh [OPTIONS]"
   echo
