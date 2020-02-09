@@ -50,6 +50,7 @@ f_eval() {
 }
 
 f_mycmake() {
+  echo "======================================================="
   local generator=${1:-$MY_BUILD_SYS}
   shift
   local config=${1:-$MY_BUILD_CONFIG}
@@ -92,6 +93,7 @@ f_mycmake() {
 }
 
 f_mycmake_build() {
+  echo "======================================================="
   local generator=${1:-$MY_BUILD_SYS}
   shift
   local config=${1:-$MY_BUILD_CONFIG}

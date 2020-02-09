@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "======================================================="
+
 SDK=$SYS_WIN_HOME/AppData/Local/Android/sdk
 NDK=$SDK/ndk-bundle
 CMAKE=$SDK/cmake/3.6.4111459/bin/cmake.exe
