@@ -113,8 +113,8 @@ nnoremap <C-O> :!chrome.sh <cfile><CR>
 "------------------------------------------------------
 " map: function key
 "------------------------------------------------------
-nnoremap <F2> :NERDTreeToggle<CR>
-nnoremap <F3> :GstatusToggle<CR>
+nnoremap <F2> :MyNERDTreeToggle<CR>
+nnoremap <F3> :MyGstatusToggle<CR>
 "nnoremap <F4> :Agit<CR>
 nnoremap <F4> :GV --all<CR>
 

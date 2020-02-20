@@ -274,7 +274,16 @@ endif
 
 call plug#end()
 
-function! s:GstatusToggle()
+function! s:MyNERDTreeToggle()
+  if (&filetype == "nerdtree")
+    NERDTreeToggle
+  else
+    NERDTreeFind
+  endif
+endfunction
+command MyNERDTreeToggle call s:MyNERDTreeToggle()
+
+function! s:MyGstatusToggle()
   if (&filetype == "fugitive")
     normal q
   else
@@ -282,7 +291,7 @@ function! s:GstatusToggle()
     resize 12
   endif
 endfunction
-command GstatusToggle call s:GstatusToggle()
+command MyGstatusToggle call s:MyGstatusToggle()
 
 colorscheme gruvbox
 set background=dark
