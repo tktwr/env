@@ -4,6 +4,9 @@ bin_name=`basename $0`
 cmd=cmp
 dir=$HOME
 
+DOT_DIRS_COMMON="\
+mintty \
+"
 DOT_FILES_COMMON="\
 .clang-format \
 .gitignore_global \
