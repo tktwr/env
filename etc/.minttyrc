@@ -6,5 +6,5 @@ Font=Myrica M
 FontHeight=14
 Locale=ja_JP
 Charset=UTF-8
-Term=xterm
+Term=xterm-256color
 ThemeFile=tomorrow.custom

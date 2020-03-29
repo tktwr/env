@@ -40,6 +40,10 @@ alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
+# file
+alias f='vifm -c "OneCol" . ~'
+alias f2='vifm -c "TwoCol" . ~'
+
 # net
 alias wgetpage='wget -N -k -p -L -np'
 alias wgetpage1='wget -N -k -p -L -np -r -l1'
