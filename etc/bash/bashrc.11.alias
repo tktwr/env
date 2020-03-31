@@ -41,8 +41,9 @@ vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
 # file
-alias f='vifm -c "OneCol" . ~'
-alias f2='vifm -c "TwoCol" . ~'
+alias f='vifm'
+alias f.='vifm -c "OneCol" . ~'
+alias f..='vifm -c "TwoCol" . .'
 
 # net
 alias wgetpage='wget -N -k -p -L -np'

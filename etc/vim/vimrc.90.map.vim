@@ -101,7 +101,7 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " http://...
 "   to
 " [label](http://...)
-nnoremap <C-P> I[A]Jr(A)I- 
+nnoremap <C-A> I[A]Jr(A)I- 
 
 " open an URL in the markdeep format by chrome
 "nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
@@ -171,7 +171,7 @@ xmap <C-Y> <Plug>(quickhl-manual-reset)
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-nmap <C-A> <Plug>(easymotion-overwin-line)
+nmap <C-P> <Plug>(easymotion-overwin-line)
 
 " comfortable-motion
 let g:comfortable_motion_no_default_key_mappings = 1
