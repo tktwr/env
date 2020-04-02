@@ -102,11 +102,6 @@ set statusline="%A %10u:%-7g %15s %20d %{&sort}"
 
 "-------------------------------------------------
 
-mark h ~/
-mark d ~/Desktop
-
-"-------------------------------------------------
-
 " :com[mand][!] command_name action
 " The following macros can be used in a command
 " %a is replaced with the user arguments.
@@ -178,8 +173,8 @@ filetype *.odt,*.doc,*.docx,*.xls,*.xlsx,*.odp,*.pptx
 
 " What should be saved automatically between vifm sessions.  Drop "savedirs"
 " value if you don't want vifm to remember last visited directories for you.
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+"set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
+"    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 "-------------------------------------------------
 
@@ -216,8 +211,8 @@ nnoremap C :copy<cr>
 nnoremap M :move<cr>
 nnoremap R cw
 nnoremap v :view<cr>
-nnoremap I       zo
-nnoremap II      zm
+nnoremap B :bmarks<cr>
+nnoremap I       za
 nnoremap u       h
 nnoremap <C-U>   u
 nnoremap <C-S>   :sort<cr>
@@ -225,4 +220,11 @@ nnoremap <C-E>   :OneCol<cr>
 nnoremap |       :TwoCol<cr>
 nnoremap ==      :sync!<cr>
 nnoremap x       :!explorer.sh %d<cr>
+
+"-------------------------------------------------
+
+bmark! ~ Home
+bmark! ~/WinHome/ WinHome
+bmark! ~/Desktop/ Desktop
+bmark! ~/Downloads/ Downloads
 
