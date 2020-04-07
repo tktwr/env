@@ -1,16 +1,7 @@
 ; autohotkey.ahk
 
-; left meta
-SC07B::F1
-
-; left alt
-;LAlt::LAlt
-
-; right alt
-RAlt::LWin
-
-; right meta to Hankaku/Zenkaku
-SC079::
+; AppsKey to Hankaku/Zenkaku
+AppsKey::
 send,{vkF3sc029}
 return
 
@@ -21,14 +12,14 @@ send,{vkF3sc029}
 send,{Esc}
 return
 
-; one window
-Ins::
+; maximize the tmux pane, minimize the window
+F5::
 send,{F8}
 send,#{Down}
 return
 
-; recover windows
-Del::
+; maximize the window, restore tmux panes
+F6::
 send,#{Up}
 send,{F8}
 return

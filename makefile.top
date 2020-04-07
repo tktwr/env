@@ -1,23 +1,21 @@
-GIT_DIRS="env \
+GIT_DIRS="\
+env \
 memo \
 samples \
 templates \
 libtt \
-tools"
+"
 
 TAGS_DIRS="libtt"
 
-MEMO_DIRS="memo \
-samples"
+MEMO_DIRS="memo samples"
 
-BUILD_DIRS="libtt \
+BUILD_DIRS="\
+libtt \
 samples/cpp \
 samples/cpp_lib \
-samples/app_cmd \
-samples/app_imgui \
-samples/mycmake \
-tools/imgedit \
-tools/imgview"
+samples/mycmake.test \
+"
 
 
 all: status

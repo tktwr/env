@@ -123,9 +123,9 @@ nnoremap <F4> :GV --all<CR>
 "nnoremap <F6> :tabnext<CR>
 
 " build
-nnoremap <F5> :make<CR>:cw<CR>
+"nnoremap <F5> :make<CR>:cw<CR>
 " grep
-nnoremap <F6> :Ggrep -I <cword> -- ':!*.dat'<CR>
+"nnoremap <F6> :Ggrep -I <cword> -- ':!*.dat'<CR>
 
 
 " copy to the clipboard

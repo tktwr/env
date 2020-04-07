@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $1 in
+  4)
+    exec tmux split-window -h -b -l 80 \; split-window -v \; select-pane -R \; split-window -v -p 80
+    ;;
+  3)
+    exec tmux split-window -h -b -l 80 \; split-window -v \; select-pane -R
+    ;;
+esac
+
+exec tmux split-window -h -b -l 80 \; select-pane -R
+
