@@ -32,6 +32,9 @@ f_set_env_vars() {
     f_expand_dir $os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
     f_expand_dir $os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
     f_expand_dir $os ANACONDA_HOME "$USERPROFILE/Anaconda3"
+    f_expand_dir $os MINICONDA_HOME "$USERPROFILE/miniconda3"
+    f_expand_dir $os MY_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38-32"
+    f_expand_dir $os MY_PYTHON_ROAMING "$USERPROFILE/AppData/Roaming/Python/Python38"
     f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
   else
     f_expand_dir $os SYS_WIN_HOME "$HOME"

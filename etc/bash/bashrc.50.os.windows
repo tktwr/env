@@ -4,29 +4,6 @@
 # windows
 #======================================================
 
-f_set_win_env() {
-  export SYS_PROG64_DIR=`cygpath -u 'C:\Program Files'`
-  export SYS_PROG32_DIR=`cygpath -u 'C:\Program Files (x86)'`
-  export SYS_WIN_HOME=`cygpath -u $USERPROFILE`
-  export SYS_MSYS2_HOME=`cygpath -u C:/msys64/home/$USERNAME`
-  export SYS_CYGWIN_HOME=`cygpath -u C:/cygwin64/home/$USERNAME`
-  export JAVA_HOME=`cygpath -u 'C:\Program Files\Android\Android Studio\jre'`
-  export ANDROID_SDK=`cygpath -u "$USERPROFILE/AppData/Local/Android/sdk"`
-
-  echo "export SYS_PROG64_DIR=\"$SYS_PROG64_DIR\""
-  echo "export SYS_PROG32_DIR=\"$SYS_PROG32_DIR\""
-  echo "export SYS_WIN_HOME=\"$SYS_WIN_HOME\""
-  echo "export SYS_MSYS2_HOME=\"$SYS_MSYS2_HOME\""
-  echo "export SYS_CYGWIN_HOME=\"$SYS_CYGWIN_HOME\""
-  echo "export JAVA_HOME=\"$JAVA_HOME\""
-  echo "export ANDROID_SDK=\"$ANDROID_SDK\""
-}
-
-#if [ -z "$SYS_PROG64_DIR" ]; then
-#  echo "call f_set_win_env"
-#  f_set_win_env >> $BASHRC_CACHED
-#fi
-
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
 
@@ -34,18 +11,20 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 # anaconda
 #------------------------------------------------------
 
-f_set_anaconda() {
-  export ANACONDA_HOME=`cygpath -u "$USERPROFILE/Anaconda3"`
+#PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 
-  echo "export ANACONDA_HOME=\"$ANACONDA_HOME\""
-}
+#------------------------------------------------------
+# miniconda
+#------------------------------------------------------
 
-#if [ -z "$ANACONDA_HOME" ]; then
-#  echo "call f_set_anaconda"
-#  f_set_anaconda >> $BASHRC_CACHED
-#fi
+PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
 
-PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+#------------------------------------------------------
+# python
+#------------------------------------------------------
+
+#PATH="$MY_PYTHON_ROAMING/Scripts:$PATH"
+#PATH="$MY_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
 
 #------------------------------------------------------
 # alias
@@ -54,9 +33,9 @@ PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
 alias x='explorer.exe'
 alias ls='ls.sh'
 
-alias cd-win-home='cd $SYS_WIN_HOME'
-alias cd-msys2-home='cd $SYS_MSYS2_HOME'
-alias cd-cygwin-home='cd $SYS_CYGWIN_HOME'
+alias cd.win-home='cd $SYS_WIN_HOME'
+alias cd.msys2-home='cd $SYS_MSYS2_HOME'
+alias cd.cygwin-home='cd $SYS_CYGWIN_HOME'
 
 alias adb='winpty adb'
 alias net='winpty net'
@@ -64,4 +43,5 @@ alias net='winpty net'
 alias python='winpty python'
 alias ipython='winpty ipython'
 alias jupyter='winpty jupyter'
+alias pip='winpty pip'
 
