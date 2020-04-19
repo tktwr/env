@@ -17,7 +17,9 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 # miniconda
 #------------------------------------------------------
 
-PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
+#PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
+eval "$($SYS_WIN_HOME/miniconda3/Scripts/conda.exe 'shell.bash' 'hook')"
+#source $SYS_WIN_HOME/miniconda3/etc/profile.d/conda.sh
 
 #------------------------------------------------------
 # python
@@ -43,5 +45,4 @@ alias net='winpty net'
 alias python='winpty python'
 alias ipython='winpty ipython'
 alias jupyter='winpty jupyter'
-alias pip='winpty pip'
 
