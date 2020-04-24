@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BIN_FILE="$SYS_PROG64_DIR/CMake/bin/cmake.exe"
 

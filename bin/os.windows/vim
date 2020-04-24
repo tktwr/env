@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PATH="/usr/bin:$PATH"
 exec /usr/bin/vim "$@"

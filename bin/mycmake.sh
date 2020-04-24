@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MY_BUILD_SYS=ninja
 MY_BUILD_CONFIG=Release

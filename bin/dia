@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 dia=$MY_DIARY
 todo=$MY_TODO

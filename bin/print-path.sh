@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 bin_name=`basename $0`
 

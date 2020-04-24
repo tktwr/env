@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 f_make_dir() {
   local src=$1

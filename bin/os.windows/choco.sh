@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BIN_FILE=`cygpath -u C:/ProgramData/chocolatey/bin/choco.exe`
 

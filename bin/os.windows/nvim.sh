@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BIN_FILE=`cygpath -u C:/tools/neovim/Neovim/bin/nvim.exe`
 

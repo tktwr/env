@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # remove commas
 f_rm_comma () { sed 's/,//g'; }

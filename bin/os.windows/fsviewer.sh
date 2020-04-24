@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BIN_FILE="$SYS_PROG32_DIR/FastStone Image Viewer/fsviewer.exe"
 
