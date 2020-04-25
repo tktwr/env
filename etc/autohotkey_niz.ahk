@@ -1,9 +1,12 @@
 ; autohotkey.ahk
 
-; AppsKey to Hankaku/Zenkaku
-AppsKey::
+; right alt to Hankaku/Zenkaku
+RAlt::
 send,{vkF3sc029}
 return
+
+; AppsKey
+;AppsKey::
 
 #IfWinActive ahk_class mintty
 ; right Shift

@@ -37,6 +37,19 @@ f_help() {
   echo "  --vimdirdiff    vimdirdiff dir"
 }
 
+f_init() {
+  if [ ! -d $HOME/.orig ]; then
+    mkdir $HOME/.orig
+    # backup original files
+    for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+      cp $HOME/$i $HOME/.orig
+    done
+    for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+      cp $i $HOME
+    done
+  fi
+}
+
 f_diff() {
   if [ ! -f "$1" ]; then
     echo "[no file] $1"
@@ -80,6 +93,10 @@ f_main() {
     case $i in
       -h|--help)
         f_help
+        exit
+        ;;
+      --init)
+        f_init
         exit
         ;;
       --common-files)

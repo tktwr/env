@@ -6,5 +6,4 @@
 
 f_set_core_off
 f_set_git_prompt
-conda activate dl
 

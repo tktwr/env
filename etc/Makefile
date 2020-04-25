@@ -22,6 +22,11 @@ subdir.clean:
 
 #======================================================
 
+init:
+	./dot.sh --init
+
+#======================================================
+
 install:
 	./dot.sh --common-files --cp
 
@@ -60,6 +65,7 @@ help:
 	@echo "all.install"
 	@echo "all.clean"
 	@echo "=== command ==="
+	@echo "init"
 	@echo "install[.win]"
 	@echo "clean[.win]"
 	@echo "=== compare ==="

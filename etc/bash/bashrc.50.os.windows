@@ -21,6 +21,8 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 eval "$($SYS_WIN_HOME/miniconda3/Scripts/conda.exe 'shell.bash' 'hook')"
 #source $SYS_WIN_HOME/miniconda3/etc/profile.d/conda.sh
 
+#conda activate dl
+
 #------------------------------------------------------
 # python
 #------------------------------------------------------

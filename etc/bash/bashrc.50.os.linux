@@ -7,3 +7,5 @@
 alias x='nautilus'
 alias p='evince'
 
+alias ls='ls -v -F --color=auto'
+
