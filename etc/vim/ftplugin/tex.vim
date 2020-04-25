@@ -6,6 +6,9 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
+setl tabstop=2
+setl shiftwidth=2
+
 iabclear
 iabbr EQ    \[ \]<ESC>F[a
 iabbr FRAC  \frac{}{}<ESC>2F{

@@ -7,7 +7,7 @@ set t_Co=256
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
-if &term == "xterm"
+if &term == "xterm" || &term == "xterm-256color"
   " mouse support
   set mouse=a
   set ttymouse=xterm2

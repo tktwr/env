@@ -8,4 +8,3 @@ let b:did_ftplugin = 1
 
 setl tabstop=2
 setl shiftwidth=2
-setl expandtab

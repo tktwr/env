@@ -1,12 +1,6 @@
 #!/bin/bash
 
-export MY_VIM
-
-f_set_default() {
-  if [ -z "$MY_VIM" ]; then
-    MY_VIM='~/.vim'
-  fi
-}
+source $HOME/.hostname
 
 f_expand_dir() {
   local os=$1
@@ -50,12 +44,10 @@ case $target_shell in
   MINGW64)
     GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$MY_SHELL_NAME/git
     ;;
-  gitbash|termux)
+  gitbash|termux|bash)
     GIT_EXE=git
     ;;
 esac
-
-f_set_default
 
 #target_os="win"
 f_expand_dir $target_os MY_VIM $MY_VIM
