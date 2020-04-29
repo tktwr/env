@@ -1,33 +1,38 @@
 #!/bin/bash
 
-f_print_colors()
-{
-  esc="\033["
+ESC="\033["
 
+f_line() {
+  attr=$1
+  for fg in 30 31 32 33 34 35 36 37; do
+    begin="${ESC}${attr};${fg}m"
+    end="${ESC}0m"
+    printf "${begin} Text ${end} "
+  done
+  printf "\n"
+}
+
+f_print_colors() {
   printf "Normal "
-  for fg in 30 31 32 33 34 35 36 37; do
-    esc_begin="${esc}${fg}m"
-    esc_end="${esc}0m"
-    printf "${esc_begin} Text ${esc_end} "
-  done
-  printf "\n"
-
+  f_line 0
   printf "Bold   "
-  for fg in 30 31 32 33 34 35 36 37; do
-    esc_begin="${esc}${fg};1m"
-    esc_end="${esc}0m"
-    printf "${esc_begin} Text ${esc_end} "
-  done
-  printf "\n"
+  f_line 1
+  printf "Under  "
+  f_line 4
+  printf "Blink  "
+  f_line 5
+  printf "Rev    "
+  f_line 7
+
 
   printf "\n"
 
   for fg in 30 31 32 33 34 35 36 37; do
     printf "       "
     for bg in 40 41 42 43 44 45 46 47; do
-      esc_begin="${esc}${bg};${fg}m"
-      esc_end="${esc}0m"
-      printf "${esc_begin} Text ${esc_end} "
+      begin="${ESC}${bg};${fg}m"
+      end="${ESC}0m"
+      printf "${begin} Text ${end} "
     done
     printf "\n"
   done
