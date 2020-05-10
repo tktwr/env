@@ -28,6 +28,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help      print help"
+  echo "  --init          init"
   echo "  --common-files  common files"
   echo "  --diff-files    diff files"
   echo "  --cp            copy files"
@@ -40,10 +41,13 @@ f_help() {
 f_init() {
   if [ ! -d $HOME/.orig ]; then
     mkdir $HOME/.orig
+
     # backup original files
     for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
       cp $HOME/$i $HOME/.orig
     done
+
+    # copy default dot files
     for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
       cp $i $HOME
     done

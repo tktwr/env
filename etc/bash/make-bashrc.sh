@@ -37,8 +37,8 @@ f_set_env_vars() {
     f_expand_dir $os MY_PYTHON_ROAMING "$USERPROFILE/AppData/Roaming/Python/Python38"
     f_expand_dir $os MY_WIN_HOME "$USERPROFILE"
   else
-    f_expand_dir $os SYS_WIN_HOME "$HOME"
-    f_expand_dir $os MY_WIN_HOME "$HOME"
+    f_expand_dir $os SYS_WIN_HOME "$HOME/WinHome"
+    f_expand_dir $os MY_WIN_HOME "$HOME/WinHome"
   fi
 }
 

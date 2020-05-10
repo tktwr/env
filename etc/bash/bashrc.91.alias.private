@@ -73,16 +73,16 @@ alias .opt='pushd $MY_OPT'
 alias .papers='pushd $MY_PAPERS'
 alias .data='pushd $MY_DATA'
 
-mv-desktop() { mv "$@" $MY_DESKTOP; }
-mv-downloads() { mv "$@" $MY_DOWNLOADS; }
+mv-desktop()    { mv "$@" $MY_DESKTOP; }
+mv-downloads()  { mv "$@" $MY_DOWNLOADS; }
 
-mv-work() { mv "$@" $MY_WORK; }
-mv-doc() { mv "$@" $MY_DOC; }
-mv-office() { mv "$@" $MY_OFFICE; }
-mv-proj() { mv "$@" $MY_PROJ; }
+mv-work()       { mv "$@" $MY_WORK; }
+mv-doc()        { mv "$@" $MY_DOC; }
+mv-office()     { mv "$@" $MY_OFFICE; }
+mv-proj()       { mv "$@" $MY_PROJ; }
 
 mv-downloads2() { mv "$@" $MY_DOWNLOADS2; }
-mv-opt() { mv "$@" $MY_OPT; }
-mv-papers() { mv "$@" $MY_PAPERS; }
-mv-data() { mv "$@" $MY_DATA; }
+mv-opt()        { mv "$@" $MY_OPT; }
+mv-papers()     { mv "$@" $MY_PAPERS; }
+mv-data()       { mv "$@" $MY_DATA; }
 
