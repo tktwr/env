@@ -43,6 +43,9 @@ alias cd.cygwin-home='cd $SYS_CYGWIN_HOME'
 
 alias adb='winpty adb'
 alias net='winpty net'
+alias ping='winpty ping'
+alias ipconfig='winpty ipconfig'
+alias tracert='winpty tracert'
 
 alias python='winpty python'
 alias ipython='winpty ipython'
