@@ -2,6 +2,7 @@
 " func & command
 "======================================================
 
+command Firefox silent !firefox "%"
 command Chrome silent !chrome.sh "%"
 command Vscode silent !vscode.sh "%"
 command Gvim silent !gvim "%"
