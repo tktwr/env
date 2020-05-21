@@ -1,20 +1,14 @@
 ; autohotkey.ahk
 
-; right alt to Hankaku/Zenkaku
-RAlt::
-send,{vkF3sc029}
-return
-
 ; AppsKey
 ;AppsKey::
 
-#IfWinActive ahk_class mintty
-; right Shift
+; right shift to Hankaku/Zenkaku
 RShift::
 send,{vkF3sc029}
-send,{Esc}
 return
 
+#IfWinActive ahk_class mintty
 ; maximize the tmux pane, minimize the window
 F5::
 send,{F8}
