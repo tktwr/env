@@ -20,7 +20,6 @@ f_checkgit_force() {
 }
 
 f_git_ps1() {
-  #GIT_BRANCH="$(git symbolic-ref --short HEAD 2>/dev/null)"
   echo "$GIT_BRANCH"
 }
 
@@ -58,22 +57,33 @@ f_set_git_prompt() {
 }
 
 git-tmp() {
-    git checkout -b tmp_work;
     git commit -a -m "[TMP] $*";
 }
 git-tmp-reset() {
     git reset HEAD^;
-    git checkout master;
-    git branch -d tmp_work;
 }
 
 gb() {
+  echo "[REMOTE]"
   git remote -v
   echo "[BRANCH]"
   git branch -a -vv
+}
+
+git-tag() {
   echo "[TAG]"
   git tag
   git ls-remote --tags
+}
+
+git-branch-name() {
+  git rev-parse --abbrev-ref HEAD 2>/dev/null
+  #git symbolic-ref --short HEAD 2>/dev/null
+  #git branch --show-current 2>/dev/null
+}
+
+git-push() {
+  git push origin $(git-branch-name)
 }
 
 # less options
