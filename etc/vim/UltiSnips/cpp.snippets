@@ -334,20 +334,40 @@ endsnippet
 # cast
 #======================================================
 
-snippet cc "const_cast<new_type>(expression)"
+snippet ccast "const_cast<new_type>(expression)"
 const_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet dc "dynamic_cast<new_type>(expression)"
+snippet dcast "dynamic_cast<new_type>(expression)"
 dynamic_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet rc "reinterpret_cast<new_type>(expression)"
+snippet rcast "reinterpret_cast<new_type>(expression)"
 reinterpret_cast<${1:new_type}>(${0:expression})
 endsnippet
 
-snippet sc "static_cast<new_type>(expression)"
+snippet scast "static_cast<new_type>(expression)"
 static_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+#======================================================
+# pointer_cast
+#======================================================
+
+snippet cpcast "std::const_pointer_cast<new_type>(expression)"
+std::const_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet dpcast "std::dynamic_pointer_cast<new_type>(expression)"
+std::dynamic_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet rpcast "std::reinterpret_pointer_cast<new_type>(expression)"
+std::reinterpret_pointer_cast<${1:new_type}>(${0:expression})
+endsnippet
+
+snippet spcast "std::static_pointer_cast<new_type>(expression)"
+std::static_pointer_cast<${1:new_type}>(${0:expression})
 endsnippet
 
 #======================================================
@@ -414,64 +434,60 @@ endsnippet
 # memory
 #======================================================
 
-snippet sp "std::shared_ptr<int>"
+snippet sptr "std::shared_ptr<int>"
 std::shared_ptr<${0:int}>
 endsnippet
 
-snippet up "std::unique_ptr<int>"
+snippet uptr "std::unique_ptr<int>"
 std::unique_ptr<${0:int}>
 endsnippet
 
-snippet wp "std::weak_ptr<int>"
+snippet wptr "std::weak_ptr<int>"
 std::weak_ptr<${0:int}>
 endsnippet
 
-snippet ms "std::make_shared<type>()"
+snippet makes "std::make_shared<type>()"
 std::make_shared<${1:type}>($0)
 endsnippet
 
-snippet mu "std::make_unique<type>()"
+snippet makeu "std::make_unique<type>()"
 std::make_unique<${1:type}>($0)
-endsnippet
-
-#======================================================
-# pointer_cast
-#======================================================
-
-snippet cpc "std::const_pointer_cast<new_type>(expression)"
-std::const_pointer_cast<${1:new_type}>(${0:expression})
-endsnippet
-
-snippet dpc "std::dynamic_pointer_cast<new_type>(expression)"
-std::dynamic_pointer_cast<${1:new_type}>(${0:expression})
-endsnippet
-
-snippet rpc "std::reinterpret_pointer_cast<new_type>(expression)"
-std::reinterpret_pointer_cast<${1:new_type}>(${0:expression})
-endsnippet
-
-snippet spc "std::static_pointer_cast<new_type>(expression)"
-std::static_pointer_cast<${1:new_type}>(${0:expression})
 endsnippet
 
 #======================================================
 # io
 #======================================================
 
-snippet f_read_text "read text from a text file"
-void f_read_text(const std::string& fname, std::string& text) {
+snippet f_read_text_file "read a text file"
+void f_read_text_file(const std::string& fname, std::vector<std::string>& texts) {
     std::ifstream ifs(fname.c_str());
     std::string line;
     while (std::getline(ifs, line)) {
-        text += line + '\n';
+        texts.push_back(line);
     }
 }
 endsnippet
 
-snippet f_write_text "write text to a text file"
-void f_write_text(const std::string& fname, const std::string& text) {
+snippet f_write_text_file "write a text file"
+void f_write_text_file(const std::string& fname, const std::vector<std::string>& texts) {
     std::ofstream ofs(fname.c_str());
-    ofs << text;
+    for (auto line : texts) {
+        ofs << line << std::endl;
+    }
+}
+endsnippet
+
+snippet f_read_binary_file "read a binary file"
+void f_read_binary_file(const std::string& fname, char* data, size_t size) {
+    std::ifstream ifs(fname.c_str(), std::ios::binary);
+    ifs.read(data, size);
+}
+endsnippet
+
+snippet f_write_binary_file "write a binary file"
+void f_write_binary_file(const std::string& fname, const char* data, size_t size) {
+    std::ofstream ofs(fname.c_str(), std::ios::binary);
+    ofs.write(data, size);
 }
 endsnippet
 

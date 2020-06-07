@@ -13,7 +13,7 @@ let s:use_lsp_ccls=0
 let s:use_lsp_clangd=0
 let s:use_lsp_ultisnips=1
 let s:use_ultisnips=1
-let s:lsp_debug=1
+let s:lsp_debug=0
 let s:auto_popup=1
 
 let g:fugitive_git_executable=$MY_GIT_EXE
