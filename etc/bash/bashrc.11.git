@@ -82,8 +82,16 @@ git-branch-name() {
   #git branch --show-current 2>/dev/null
 }
 
-git-push() {
+git-push-origin() {
   git push origin $(git-branch-name)
+}
+
+git-rebase-origin() {
+  git rebase origin/$(git-branch-name)
+}
+
+git-merge-origin() {
+  git merge --no-commit origin/$(git-branch-name)
 }
 
 # less options

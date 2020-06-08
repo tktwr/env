@@ -37,8 +37,8 @@ alias cd.git='cd $MY_WORK/git'
 alias cd.svn='cd $MY_WORK/svn'
 
 alias cd.downloads2='cd $MY_DOWNLOADS2'
-alias cd.opt='cd $MY_OPT'
 alias cd.papers='cd $MY_PAPERS'
+alias cd.opt='cd $MY_OPT'
 alias cd.data='cd $MY_DATA'
 
 # pushd
@@ -69,8 +69,8 @@ alias .git='pushd $MY_WORK/git'
 alias .svn='pushd $MY_WORK/svn'
 
 alias .downloads2='pushd $MY_DOWNLOADS2'
-alias .opt='pushd $MY_OPT'
 alias .papers='pushd $MY_PAPERS'
+alias .opt='pushd $MY_OPT'
 alias .data='pushd $MY_DATA'
 
 mv-desktop()    { mv "$@" $MY_DESKTOP; }
@@ -82,7 +82,7 @@ mv-office()     { mv "$@" $MY_OFFICE; }
 mv-proj()       { mv "$@" $MY_PROJ; }
 
 mv-downloads2() { mv "$@" $MY_DOWNLOADS2; }
-mv-opt()        { mv "$@" $MY_OPT; }
 mv-papers()     { mv "$@" $MY_PAPERS; }
+mv-opt()        { mv "$@" $MY_OPT; }
 mv-data()       { mv "$@" $MY_DATA; }
 
