@@ -4,6 +4,7 @@ cat vifmrc
 
 echo "bmark! $MY_REMOTE_CONFIG/ MY_REMOTE_CONFIG"
 echo "bmark! $MY_LOCAL_CONFIG/ MY_LOCAL_CONFIG"
+echo "bmark! $MY_PRIVATE_CONFIG/ MY_PRIVATE_CONFIG"
 
 echo "bmark! $MY_PRIVATE/ MY_PRIVATE"
 echo "bmark! $MY_PROTECTED/ MY_PROTECTED"
