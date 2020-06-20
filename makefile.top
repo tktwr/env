@@ -20,14 +20,17 @@ samples/mycmake.test \
 
 all: status
 
-status:
-	@for-dir.sh "git status -s" $(GIT_DIRS)
-
 graph:
 	@for-dir.sh "git graph -3" $(GIT_DIRS)
 
+status:
+	@for-dir.sh "git status -s" $(GIT_DIRS)
+
 fetch:
 	@for-dir.sh "git fetch" $(GIT_DIRS)
+
+pull:
+	@for-dir.sh "git pull" $(GIT_DIRS)
 
 .PHONY: tags
 tags:
@@ -48,9 +51,10 @@ help:
 	@echo ""
 	@echo "target:"
 	@echo "  all    ... status in GIT_DIRS"
-	@echo "  status ... status in GIT_DIRS"
 	@echo "  graph  ... graph  in GIT_DIRS"
+	@echo "  status ... status in GIT_DIRS"
 	@echo "  fetch  ... fetch  in GIT_DIRS"
+	@echo "  pull   ... pull  in GIT_DIRS"
 	@echo "  tags   ... tags in TAGS_DIRS and MEMO_DIRS"
 	@echo "  build  ... build in BUILD_DIRS"
 	@echo "  clean  ... clean in BUILD_DIRS"
