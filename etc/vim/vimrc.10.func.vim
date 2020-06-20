@@ -2,19 +2,19 @@
 " func & command
 "======================================================
 
-command Firefox silent !firefox "%"
-command Chrome silent !chrome.sh "%"
-command Vscode silent !vscode.sh "%"
-command Gvim silent !gvim "%"
-command Win silent !explorer.exe %:h
+command RunFirefox silent !firefox "%"
+command RunChrome silent !chrome.sh "%"
+command RunVscode silent !vscode.sh "%"
+command RunGvim silent !gvim "%"
+command RunExplorer silent !explorer.exe %:h
 
-command CDHERE cd %:h
-command LCDHERE lcd %:h
-command -nargs=1 SetTab set tabstop=<args> shiftwidth=<args>
-command -nargs=1 -complete=file VSPR rightbelow vsplit <args>
-command -nargs=+ Grep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.html **/*.txt **/*.sh'
+command MyCdHere cd %:h
+command MyLcdHere lcd %:h
+command -nargs=1 MySetTab set tabstop=<args> shiftwidth=<args>
+command -nargs=1 -complete=file MyVspRight rightbelow vsplit <args>
+command -nargs=+ MyGrep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.html **/*.txt **/*.sh'
 
-func s:CheckEnv()
+func s:MyCheckEnv()
   echo "version: ".v:version
   echo "unix: ".has("unix")
   echo "win32unix: ".has("win32unix")
@@ -35,44 +35,44 @@ func s:CheckEnv()
   echo "runtimepath: ".&runtimepath
   pwd
 endf
-command CheckEnv call s:CheckEnv()
+command MyCheckEnv call s:MyCheckEnv()
 
 "------------------------------------------------------
 " func: edit
 "------------------------------------------------------
 
 " update the line started with "Last modification: "
-func s:UpdateLastModification()
+func s:MyUpdateLastModification()
   normal m'
   g/Last modification: /normal f:lD:r !env LC_TIME=C datekJ''
 endf
 
-func s:AddTime()
+func s:MyAddTime()
   silent exec "r!env LC_TIME=C date '+\\%T'"
 endfunc
 
-func s:AddDate(date)
+func s:MyAddDate(date)
   silent exec "r!env LC_TIME=C date --date='".a:date."' '+\\%Y/\\%m/\\%d (\\%a)'"
 endfunc
 
-func s:InsertDia(date)
+func s:MyInsertDia(date)
   normal O<!---------------------------------------------------->
-  call s:AddDate(a:date)
+  call s:MyAddDate(a:date)
   normal I## 
   normal 0
 endfunc
 
-command UpdateLastModification call s:UpdateLastModification()
-au BufWritePre,FileWritePre *.html  UpdateLastModification
-command AddTime call s:AddTime()
-command -nargs=? AddDate call s:AddDate("<args>")
-command -nargs=? InsertDia call s:InsertDia("<args>")
+command MyUpdateLastModification call s:MyUpdateLastModification()
+au BufWritePre,FileWritePre *.html  MyUpdateLastModification
+command MyAddTime call s:MyAddTime()
+command -nargs=? MyAddDate call s:MyAddDate("<args>")
+command -nargs=? MyInsertDia call s:MyInsertDia("<args>")
 
 "------------------------------------------------------
 " func: dev
 "------------------------------------------------------
 
-func s:EditAltSrc()
+func s:MyEditAltSrc()
   let ext = expand("%:e")
   if (ext == "c" || ext == "cxx" || ext == "cpp")
     let fname = expand("%:r") . ".h"
@@ -82,27 +82,27 @@ func s:EditAltSrc()
   exec "edit" fname
 endf
 
-func s:StartProf()
+func s:MyStartProf()
   profile start prof.txt
   profile func *
   profile file *
 endf
 
-func s:EndProf()
+func s:MyEndProf()
   profile pause
   noautocmd qall!
 endf
 
-command EditAltSrc call s:EditAltSrc()
-command StartProf call s:StartProf()
-command EndProf call s:EndProf()
+command MyEditAltSrc call s:MyEditAltSrc()
+command MyStartProf call s:MyStartProf()
+command MyEndProf call s:MyEndProf()
 
 "------------------------------------------------------
 " func: diff
 "------------------------------------------------------
 
 set diffopt=filler,vertical,iwhite
-func s:SetDiffMode()
+func s:MySetDiffMode()
   if &diff
     nnoremap <buffer> <C-P>   [c
     nnoremap <buffer> <C-N>   ]c
@@ -110,18 +110,18 @@ func s:SetDiffMode()
   endif
 endfunc
 
-autocmd VimEnter,FilterWritePre * call s:SetDiffMode()
+autocmd VimEnter,FilterWritePre * call s:MySetDiffMode()
 
 "------------------------------------------------------
 " func: encoding
 "------------------------------------------------------
-func s:SetJapanese()
+func s:MySetJapanese()
   " encoding
   set fileencodings=japan
   set termencoding=japan
 endf
 
-command JP call s:SetJapanese()
+command JP call s:MySetJapanese()
 
 " utf encoding
 command EUTF8    e ++enc=utf-8
