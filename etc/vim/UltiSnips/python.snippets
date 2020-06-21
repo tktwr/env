@@ -9,10 +9,11 @@ endsnippet
 snippet main "main"
 import sys
 
-if __name__ == "__main__":
-    argv = sys.argv
+def main(argv):
     print(argv)
-    main()
+
+if __name__ == "__main__":
+    main(sys.argv)
 endsnippet
 
 snippet def "def"
@@ -52,6 +53,29 @@ snippet for "for"
 for i in range(0, 5, 1):
     print("%d " % i, end="")
 print()
+endsnippet
+
+#======================================================
+# class
+#======================================================
+snippet cl "class"
+class MyClass():
+    n = 0
+    def __init__(self, x):
+        MyClass.n += 1
+        self.x = x
+    def add(self, x):
+        self.x += x
+        return self.x
+    @classmethod
+    def f(self, text):
+        print(text)
+endsnippet
+
+snippet subcl "sub class"
+class MySubClass(MyClass):
+    def g(self):
+        return self.x
 endsnippet
 
 #======================================================
