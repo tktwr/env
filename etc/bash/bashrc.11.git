@@ -37,7 +37,7 @@ f_set_git_prompt() {
       COMPLETION_PATH="/data/data/com.termux/files/usr/etc/bash_completion.d"
       GIT_PROMPT_SH=$COMPLETION_PATH/git-prompt.sh
       GIT_BRANCH_FUNC='`__git_ps1`'
-      ECO_TERM=$ECO2
+      ECO_TERM=$ECO3
       ;;
     bash)
       COMPLETION_PATH="/etc/bash_completion.d"
