@@ -90,7 +90,7 @@ git-rebase-origin() {
   git rebase origin/$(git-branch-name)
 }
 
-git-merge-origin() {
+git-merge-no-commit-origin() {
   git merge --no-commit origin/$(git-branch-name)
 }
 

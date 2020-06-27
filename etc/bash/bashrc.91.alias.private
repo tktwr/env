@@ -23,6 +23,9 @@ alias cd.bin='cd $MY_ENV/bin'
 alias cd.memo='cd $MY_MEMO'
 alias cd.samples='cd $MY_SAMPLES'
 
+alias cd.dia='cd $MY_DIARY'
+
+
 alias cd.private='cd $MY_PRIVATE'
 alias cd.protected='cd $MY_PROTECTED'
 alias cd.public='cd $MY_PUBLIC'
@@ -55,6 +58,9 @@ alias .etc='pushd $MY_ENV/etc'
 alias .bin='pushd $MY_ENV/bin'
 alias .memo='pushd $MY_MEMO'
 alias .samples='pushd $MY_SAMPLES'
+
+alias .dia='pushd $MY_DIARY'
+
 
 alias .private='pushd $MY_PRIVATE'
 alias .protected='pushd $MY_PROTECTED'

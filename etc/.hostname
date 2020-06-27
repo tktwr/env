@@ -20,8 +20,7 @@ export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
 export MY_VIM=$MY_REMOTE_CONFIG/env/etc/vim
 export MY_LIBTT=$MY_REMOTE_CONFIG/libtt
 
-export MY_DIARY=$MY_PRIVATE_CONFIG/diary/diary.md.html
-export MY_TODO=$MY_PRIVATE_CONFIG/diary/todo.md.html
+export MY_DIARY=$MY_PRIVATE_CONFIG/diary
 
 
 export MY_PRIVATE=/x
