@@ -7,5 +7,5 @@ if [ ! -x "$BIN_FILE" ]; then
   exit
 fi
 
-exec "$BIN_FILE" "$@"
+exec "$BIN_FILE" "$@" > /dev/null 2>&1 &
 
