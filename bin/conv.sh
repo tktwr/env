@@ -2,7 +2,7 @@
 
 source common.sh
 
-opt="-geometry 1280"
+#opt="-geometry 1280"
 #opt="-colorspace gray"
 ext=".jpg"
 

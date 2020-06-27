@@ -115,8 +115,8 @@ nnoremap <C-O> :!chrome.sh <cfile><CR>
 "------------------------------------------------------
 nnoremap <F2> :MyNERDTreeToggle<CR>
 nnoremap <F3> :MyGstatusToggle<CR>
-"nnoremap <F4> :Agit<CR>
-nnoremap <F4> :GV --all<CR>
+" grep cword in git tracked files
+nnoremap <F4> :Ggrep -I <cword> -- ':!*.dat'<CR>
 
 " tab
 "nnoremap <F5> :tabclose<CR>
@@ -124,8 +124,6 @@ nnoremap <F4> :GV --all<CR>
 
 " build
 "nnoremap <F5> :make<CR>:cw<CR>
-" grep
-"nnoremap <F6> :Ggrep -I <cword> -- ':!*.dat'<CR>
 
 
 " copy to the clipboard
@@ -140,6 +138,9 @@ inoremap <F12> <ESC>"*p
 
 " load session
 "nnoremap <F?> :source $MY_VIM/session.vim<CR>
+
+"nnoremap <F?> :Agit<CR>
+"nnoremap <F?> :GV --all<CR>
 
 "------------------------------------------------------
 " map: plugin's key map

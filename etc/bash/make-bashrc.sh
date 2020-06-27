@@ -26,15 +26,20 @@ f_set_env_vars() {
   if [ ! -z "$USERPROFILE" ]; then
     f_expand_dir $target_os SYS_PROG64_DIR "C:\Program Files"
     f_expand_dir $target_os SYS_PROG32_DIR "C:\Program Files (x86)"
+
     f_expand_dir $target_os SYS_WIN_HOME "$USERPROFILE"
     f_expand_dir $target_os SYS_MSYS2_HOME "C:/msys64/home/$USERNAME"
     f_expand_dir $target_os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
+
+    f_expand_dir $target_os USER_PROG_DIR "$USERPROFILE/AppData/Local/Programs"
+    f_expand_dir $target_os USER_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38-32"
+    f_expand_dir $target_os USER_PYTHON_ROAMING "$USERPROFILE/AppData/Roaming/Python/Python38"
+
     f_expand_dir $target_os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
     f_expand_dir $target_os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
     f_expand_dir $target_os ANACONDA_HOME "$USERPROFILE/Anaconda3"
     f_expand_dir $target_os MINICONDA_HOME "$USERPROFILE/miniconda3"
-    f_expand_dir $target_os MY_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38-32"
-    f_expand_dir $target_os MY_PYTHON_ROAMING "$USERPROFILE/AppData/Roaming/Python/Python38"
+
     f_expand_dir $target_os MY_WIN_HOME "$USERPROFILE"
   else
     f_expand_dir $target_os SYS_WIN_HOME "$HOME/WinHome"

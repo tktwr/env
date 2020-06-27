@@ -1,11 +1,7 @@
 #!/bin/bash
 
-BIN_FILE="$SYS_PROG64_DIR/Microsoft VS Code/Code.exe"
+PATH="$SYS_PROG64_DIR/Microsoft VS Code:$PATH"
+PATH="$USER_PROG_DIR/Microsoft VS Code:$PATH"
 
-if [ ! -x "$BIN_FILE" ]; then
-  echo "no $BIN_FILE"
-  exit
-fi
-
-exec "$BIN_FILE" "$@"
+exec Code.exe "$@"
 

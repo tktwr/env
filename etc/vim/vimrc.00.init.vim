@@ -56,10 +56,10 @@ set formatoptions=tcq
 
 set encoding=utf-8
 if has("win32unix") || has("win32") || has("win64")
-  "set fileencodings=ucs-bom,utf-8,cp932,euc-jp,cp936
-  set fileencodings=utf-8,cp932,euc-jp,cp936
+  "set fileencodings=ucs-bom,utf-8,euc-jp,cp932,cp936
+  set fileencodings=utf-8,euc-jp,cp932,cp936
 elseif has("unix")
-  set fileencodings=utf-8,sjis,euc-jp,euc-cn
+  set fileencodings=utf-8,euc-jp,sjis,euc-cn
 endif
 
 " indent

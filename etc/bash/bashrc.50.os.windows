@@ -18,17 +18,17 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 #------------------------------------------------------
 
 #PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
-eval "$($SYS_WIN_HOME/miniconda3/Scripts/conda.exe 'shell.bash' 'hook')"
-#source $SYS_WIN_HOME/miniconda3/etc/profile.d/conda.sh
+eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
+#source $MINICONDA_HOME/etc/profile.d/conda.sh
 
-#conda activate dl
+#conda activate base
 
 #------------------------------------------------------
 # python
 #------------------------------------------------------
 
-#PATH="$MY_PYTHON_ROAMING/Scripts:$PATH"
-#PATH="$MY_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
+#PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
+#PATH="$USER_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
 
 #------------------------------------------------------
 # alias
