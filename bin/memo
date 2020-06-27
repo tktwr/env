@@ -13,9 +13,11 @@ tags="$MY_REMOTE_CONFIG/memo/tags.memo $MY_REMOTE_CONFIG/samples/tags.memo $MY_L
 
 f_print_tags() {
   for i in $tags; do
-    echo "[$i]"
-    awk '{print $1}' $i | grep '^memo_' | sed 's/memo_//' | column -c $cols
-    echo
+    if [ -f $i ]; then
+      echo "[$i]"
+      awk '{print $1}' $i | grep '^memo_' | sed 's/memo_//' | column -c $cols
+      echo
+    fi
   done
 }
 

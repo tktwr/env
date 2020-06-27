@@ -8,6 +8,8 @@ command RunVscode silent !vscode.sh "%"
 command RunGvim silent !gvim "%"
 command RunExplorer silent !explorer.exe %:h
 
+command Trans bot term ++rows=10 ++close trans -I -b
+
 command MyCdHere cd %:h
 command MyLcdHere lcd %:h
 command -nargs=1 MySetTab set tabstop=<args> shiftwidth=<args>
