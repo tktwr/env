@@ -15,10 +15,10 @@ set runtimepath^=$MY_VIM
 set runtimepath+=$MY_VIM/after
 
 set tags=./tags,../tags,../../tags,../../../tags,tags
-set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
-set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
-set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
+set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
+set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
+set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
 set tags+=$MY_OPT/tags.eigen
 set tags+=$MY_OPT/tags.glm
 set tags+=$MY_OPT/tags.imgui
@@ -85,14 +85,14 @@ inoremap <ESC> <ESC>:set iminsert=0<CR>
 "behave mswin
 
 if !has('nvim')
-    if version >= 700
-        " disable popup menu for completion
-        "set completeopt=
-        "set textwidth=0
-        "set paste
-        "set ambiwidth=double
-        set cm=blowfish2
-    endif
+  if version >= 700
+    " disable popup menu for completion
+    "set completeopt=
+    "set textwidth=0
+    "set paste
+    "set ambiwidth=double
+    set cm=blowfish2
+  endif
 endif
 
 let mapleader = ","

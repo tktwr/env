@@ -66,3 +66,8 @@ alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 alias www='w3m -B'
 vid() { display "vid:$*"; }
 
+# python
+python-venv-make() { python3 -m venv ~/.venv/$1; }
+python-venv-activate() { source ~/.venv/$1/bin/activate; }
+python-venv-deactivate() { deactivate; }
+

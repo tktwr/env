@@ -18,9 +18,9 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 #------------------------------------------------------
 
 #PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
-eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
 #source $MINICONDA_HOME/etc/profile.d/conda.sh
 
+eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
 #conda activate base
 
 #------------------------------------------------------

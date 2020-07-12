@@ -13,7 +13,7 @@ let s:use_lsp_ccls=0
 let s:use_lsp_clangd=0
 let s:use_lsp_ultisnips=1
 let s:use_ultisnips=1
-let s:lsp_debug=0
+let s:lsp_debug=1
 let s:auto_popup=1
 
 let g:fugitive_git_executable=$MY_GIT_EXE
@@ -86,14 +86,6 @@ function! s:my_gv_settings()
   nmap D O
 endfunction
 
-Plug 'cohama/agit.vim'
-let g:agit_enable_auto_show_commit = 0
-autocmd FileType agit_stat call s:my_agit_stat_settings()
-function! s:my_agit_stat_settings()
-  nmap <buffer> <silent> D <Plug>(agit-diff)
-  nmap <buffer> <silent> <2-LeftMouse> <Plug>(agit-diff)
-endfunction
-
 "------------------------------------------------------
 " vim-plug: diff
 "------------------------------------------------------
@@ -122,94 +114,31 @@ Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
 
 "------------------------------------------------------
-" vim-plug: asyncomplete
-"------------------------------------------------------
-if s:use_asyncomplete
-  Plug 'prabirshrestha/asyncomplete.vim'
-  "set completeopt=menu,noinsert,noselect
-  "let g:asyncomplete_auto_completeopt = 0
-
-  "inoremap <expr> <Tab>   pumvisible() ? "\<C-N>" : "\<Tab>"
-  "inoremap <expr> <S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
-  inoremap <expr> <CR>    pumvisible() ? "\<C-Y>" : "\<CR>"
-  "imap <S-Tab> <Plug>(asyncomplete_force_refresh)
-
-  "set completeopt+=preview
-  "autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-
-  if !s:auto_popup
-    let g:asyncomplete_auto_popup = 0
-    inoremap <expr> <S-Tab>
-      \ pumvisible() ? "\<C-N>" :
-      \ asyncomplete#force_refresh()
-  endif
-
-  if 0
-    " disable auto popup
-    let g:asyncomplete_auto_popup = 0
-    function! s:check_back_space() abort
-      let col = col('.') - 1
-      return !col || getline('.')[col - 1]  =~ '\s'
-    endfunction
-
-    inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ asyncomplete#force_refresh()
-    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  endif
-endif
-
-"------------------------------------------------------
 " vim-plug: vim-lsp
 "------------------------------------------------------
+if 1
 if s:use_lsp
-  Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/vim-lsp'
+  Plug 'mattn/vim-lsp-settings'
+endif
+
+if s:use_asyncomplete
+  Plug 'prabirshrestha/async.vim'
+  Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
+endif
 
-  if s:lsp_debug
-    " debug
-    let g:lsp_log_verbose = 1
-    let g:lsp_log_file = expand('$MY_VIM/build/vim-lsp.log')
-    let g:asyncomplete_log_file = expand('$MY_VIM/build/asyncomplete.log')
-  endif
+let g:lsp_diagnostics_enabled = 1     " disable diagnostics support
+let g:lsp_signs_enabled = 1           " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+setlocal omnifunc=lsp#complete
+setlocal signcolumn=yes
 
-  " Key bindings for vim-lsp.
-  nn <silent> <M-d> :LspDefinition<cr>
-  nn <silent> <M-r> :LspReferences<cr>
-  nn <silent> <M-n> :LspRename<cr>
-  nn <silent> <M-w> :LspWorkspaceSymbol<cr>
-  nn <silent> <M-s> :LspDocumentSymbol<cr>
-
-  if s:use_lsp_pyls && executable('pyls')
-    " pip install python-language-server
-    au User lsp_setup call lsp#register_server({
-      \ 'name': 'pyls',
-      \ 'cmd': {server_info->['pyls']},
-      \ 'whitelist': ['python'],
-      \ })
-  endif
-
-  " Register ccls C++ lanuage server.
-  if s:use_lsp_ccls && executable('ccls')
-     au User lsp_setup call lsp#register_server({
-       \ 'name': 'ccls',
-       \ 'cmd': {server_info->['ccls']},
-       \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
-       \ 'initialization_options': {'cache': {'directory': '/tmp/ccls/cache' }},
-       \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
-       \ })
-  endif
-
-  " Register clangd C++ lanuage server.
-  if s:use_lsp_clangd && executable('clangd')
-        au User lsp_setup call lsp#register_server({
-            \ 'name': 'clangd',
-            \ 'cmd': {server_info->['clangd', '-background-index']},
-            \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
-            \ })
-  endif
+if s:lsp_debug
+  let g:lsp_log_verbose = 1
+  let g:lsp_log_file = expand('$MY_VIM/build/vim-lsp.log')
+  let g:asyncomplete_log_file = expand('$MY_VIM/build/asyncomplete.log')
+endif
 endif
 
 "------------------------------------------------------
@@ -242,62 +171,14 @@ if s:use_eskk
 endif
 
 "------------------------------------------------------
-" vim-plug: translate-shell
+" vim-plug: vim-ref
 "------------------------------------------------------
-"Plug 'soimort/translate-shell'
-
-"------------------------------------------------------
-" vim-plug: supertab
-"------------------------------------------------------
-"Plug 'ervandew/supertab'
-"let g:SuperTabDefaultCompletionType = "context"
+Plug 'thinca/vim-ref'
 
 "------------------------------------------------------
-" vim-plug: deoplete
+" vim-plug: tagbar
 "------------------------------------------------------
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'roxma/nvim-yarp'
-"Plug 'roxma/vim-hug-neovim-rpc'
-"let g:deoplete#enable_at_startup = 1
+Plug 'majutsushi/tagbar'
 
 "------------------------------------------------------
-" vim-plug: unused
-"------------------------------------------------------
-if 0
-  Plug 'christoomey/vim-tmux-navigator'
-
-  Plug 'godlygeek/tabular'
-  Plug 'majutsushi/tagbar'
-
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
-
-  if !has('gui_running')
-    Plug 'yuratomo/w3m.vim'
-  endif
-endif
-
-call plug#end()
-
-function! s:MyNERDTreeToggle()
-  if (&filetype == "nerdtree")
-    NERDTreeToggle
-  else
-    NERDTreeFind
-  endif
-endfunction
-command MyNERDTreeToggle call s:MyNERDTreeToggle()
-
-function! s:MyGstatusToggle()
-  if (&filetype == "fugitive")
-    normal q
-  else
-    Gstatus
-    resize 12
-  endif
-endfunction
-command MyGstatusToggle call s:MyGstatusToggle()
-
-colorscheme gruvbox
-set background=dark
 

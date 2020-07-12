@@ -77,5 +77,5 @@ endfunc
 " command
 "--------------------------------------------------------------------------
 command -nargs=? Memo call s:Memo(<q-args>)
-command -nargs=? Ref call s:Ref(<q-args>)
+"command -nargs=? Ref call s:Ref(<q-args>)
 

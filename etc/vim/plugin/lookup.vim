@@ -134,7 +134,7 @@ command -range -nargs=* Tzh call Lookup("trans", ":zh -w 60 -b", <q-args>)
 "--------------------------------------------------------------------------
 " map
 "--------------------------------------------------------------------------
-nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
+"nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
 
 nnoremap Tja  :call Lookup("trans", ":ja -w 60 -b", expand("<cword>"))<CR>
 nnoremap Ten  :call Lookup("trans", ":en -w 60 -b", expand("<cword>"))<CR>
