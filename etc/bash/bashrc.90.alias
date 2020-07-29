@@ -46,9 +46,9 @@ alias f.='vifm -c "OneCol" . ~'
 alias f..='vifm -c "TwoCol" . .'
 
 # net
-alias wgetpage='wget -N -k -p -L -np'
-alias wgetpage1='wget -N -k -p -L -np -r -l1'
-alias wgetpage2='wget -N -k -p -L -np -r -l2'
+alias wget-page='wget -N -k -p -L -np'
+alias wget-page1='wget -N -k -p -L -np -r -l1'
+alias wget-page2='wget -N -k -p -L -np -r -l2'
 
 # cmake
 alias mycmake-set-ninja-release='mycmake.sh --set ninja Release'

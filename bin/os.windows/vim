@@ -1,5 +1,20 @@
 #!/bin/bash
 
 PATH="/usr/bin:$PATH"
+
+debug=0
+if [ $debug -eq 1 ]; then
+  echo $PATH | print-path.sh > ~/vim.log
+
+  echo >> ~/vim.log
+  echo "[which]" >> ~/vim.log
+  which python >> ~/vim.log
+  which python3 >> ~/vim.log
+  which pip >> ~/vim.log
+  which pip3 >> ~/vim.log
+  which pyls >> ~/vim.log
+  which clangd >> ~/vim.log
+fi
+
 exec /usr/bin/vim "$@"
 

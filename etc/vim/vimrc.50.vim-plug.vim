@@ -128,9 +128,9 @@ if s:use_asyncomplete
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
 
-let g:lsp_diagnostics_enabled = 1     " disable diagnostics support
-let g:lsp_signs_enabled = 1           " enable signs
-let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_signs_enabled=1
+let g:lsp_diagnostics_enabled=1
+let g:lsp_diagnostics_echo_cursor=1
 setlocal omnifunc=lsp#complete
 setlocal signcolumn=yes
 
