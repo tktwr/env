@@ -5,5 +5,5 @@
 #======================================================
 
 f_set_core_off
-f_set_git_prompt
+f_set_git_prompt_fast
 

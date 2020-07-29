@@ -4,53 +4,28 @@
 # git
 #======================================================
 
-export GIT_BRANCH
-export PREVPWD
-
-f_checkgit() {
-  if [ "$PWD" != "$PREVPWD" ]; then
-    GIT_BRANCH=`__git_ps1`
-    PREVPWD="$PWD"
-  fi
-}
-
-f_checkgit_force() {
-  PREVPWD=""
-  f_checkgit
-}
-
-f_git_ps1() {
-  echo "$GIT_BRANCH"
-}
-
-f_set_git_prompt() {
-  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
-
+f_get_prompt_color() {
   case $MY_SHELL_NAME in
     MINGW64|gitbash)
-      COMPLETION_PATH="/c/Program Files/Git/mingw64/share/git/completion"
-      GIT_PROMPT_SH=$COMPLETION_PATH/git-prompt.sh
-      GIT_BRANCH_FUNC='`f_git_ps1`'
       ECO_TERM=$ECO2
       ;;
     termux)
-      COMPLETION_PATH="/data/data/com.termux/files/usr/etc/bash_completion.d"
-      GIT_PROMPT_SH=$COMPLETION_PATH/git-prompt.sh
-      GIT_BRANCH_FUNC='`__git_ps1`'
       ECO_TERM=$ECO3
       ;;
     bash)
-      COMPLETION_PATH="/etc/bash_completion.d"
-      GIT_PROMPT_SH=$COMPLETION_PATH/git-prompt
-      GIT_BRANCH_FUNC='`__git_ps1`'
-      ECO_TERM=$ECO2
+      ECO_TERM=$ECO5
       ;;
   esac
 
-  if [ -f "$GIT_PROMPT_SH" ]; then
-    #source "$COMPLETION_PATH/git-completion.bash"
-    source "$GIT_PROMPT_SH"
-  fi
+  echo $ECO_TERM
+}
+
+f_set_git_prompt() {
+  source "$MY_ENV/etc/git/git-prompt.sh"
+  source "$MY_ENV/etc/git/git-completion.bash"
+
+  GIT_BRANCH_FUNC='`__git_ps1`'
+  ECO_TERM=$(f_get_prompt_color)
 
   export PROMPT_DIRTRIM=2
   export PS1="$ECOR$ECO_TERM${MY_SHELL_NAME}$ECOD$ECO3[\w]$ECO6${GIT_BRANCH_FUNC}$ECOD\$ "
@@ -104,7 +79,6 @@ gg()   { git graph --color=always $* | less -EFRSX; }
 gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
 gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
-alias g.='f_checkgit_force'
 alias gs='git status'
 alias gf='git fetch'
 
