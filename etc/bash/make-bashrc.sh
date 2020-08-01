@@ -39,11 +39,25 @@ f_set_env_vars() {
     f_expand_dir $target_os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
     f_expand_dir $target_os ANACONDA_HOME "$USERPROFILE/Anaconda3"
     f_expand_dir $target_os MINICONDA_HOME "$USERPROFILE/miniconda3"
-
-    f_expand_dir $target_os MY_WIN_HOME "$USERPROFILE"
   else
     f_expand_dir $target_os SYS_WIN_HOME "$HOME/WinHome"
-    f_expand_dir $target_os MY_WIN_HOME "$HOME/WinHome"
+  fi
+
+  if [ -d $SYS_WIN_HOME ]; then
+    f_expand_dir $target_os MY_HOME "$SYS_WIN_HOME"
+  else
+    f_expand_dir $target_os MY_HOME "$HOME"
+  fi
+
+  echo 'source $HOME/.hostname'
+
+  if [ ! -z "$USERPROFILE" ]; then
+    f_expand_dir win MY_LIBTT_WIN $MY_LIBTT
+    f_expand_dir win MY_OPT_WIN $MY_OPT
+    f_expand_dir win MY_DATA_WIN $MY_DATA
+    #f_expand_dir $target_os XDG_CONFIG_HOME $SYS_WIN_HOME/.config
+  #else
+    #f_expand_dir $target_os XDG_CONFIG_HOME $HOME/.config
   fi
 }
 
@@ -94,8 +108,8 @@ f_make_local_bashrc() {
   done
 }
 
-f_set_env_vars $1
 cat bashrc.time
+f_set_env_vars $1
 f_make_bashrc
 f_make_local_bashrc
 

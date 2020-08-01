@@ -4,8 +4,6 @@
 # init
 #======================================================
 
-source $HOME/.hostname
-
 # bash
 HISTCONTROL=ignoreboth
 #umask 022

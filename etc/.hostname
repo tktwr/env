@@ -7,12 +7,12 @@ export MY_OS_NAME=windows
 
 export MY_BACKUP=$HOME/backup
 
-export MY_DESKTOP=$SYS_WIN_HOME/Desktop
-export MY_DOWNLOADS=$SYS_WIN_HOME/Downloads
+export MY_DESKTOP=$MY_HOME/Desktop
+export MY_DOWNLOADS=$MY_HOME/Downloads
 
-export MY_REMOTE_CONFIG=$SYS_WIN_HOME/tktwr.github
-export MY_LOCAL_CONFIG=$SYS_WIN_HOME/tktwr.local
-export MY_PRIVATE_CONFIG=$SYS_WIN_HOME/tktwr.private
+export MY_REMOTE_CONFIG=$MY_HOME/tktwr.github
+export MY_LOCAL_CONFIG=$MY_HOME/tktwr.local
+export MY_PRIVATE_CONFIG=$MY_HOME/tktwr.private
 
 export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo
@@ -37,11 +37,6 @@ export MY_DOWNLOADS2=$MY_PUBLIC/Downloads
 export MY_PAPERS=$MY_PUBLIC/Papers
 export MY_OPT=$MY_PUBLIC/opt
 export MY_DATA=$MY_PUBLIC/data
-
-export MY_LIBTT_WIN=`cygpath -m $MY_LIBTT`
-export MY_OPT_WIN=`cygpath -m $MY_OPT`
-export MY_DATA_WIN=`cygpath -m $MY_DATA`
-#export XDG_CONFIG_HOME=`cygpath -m $MY_REMOTE_CONFIG/env/config`
 
 export CC=clang
 export CXX=clang++

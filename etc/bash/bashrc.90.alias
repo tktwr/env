@@ -67,7 +67,7 @@ alias www='w3m -B'
 vid() { display "vid:$*"; }
 
 # python
-python-venv-make() { python3 -m venv ~/.venv/$1; }
-python-venv-activate() { source ~/.venv/$1/bin/activate; }
-python-venv-deactivate() { deactivate; }
+python3-venv-make() { python3 -m venv ~/.python3-venv/$1; }
+python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
+python3-venv-deactivate() { deactivate; }
 
