@@ -8,7 +8,6 @@ DOT_DIRS_COMMON="\
 mintty \
 "
 DOT_FILES_COMMON="\
-.buildrc \
 .clang-format \
 .gitignore_global \
 .minttyrc \
@@ -16,6 +15,7 @@ DOT_FILES_COMMON="\
 .NERDTreeBookmarks \
 "
 DOT_FILES_DIFF="\
+.buildrc \
 .gitconfig \
 .hostname \
 "
