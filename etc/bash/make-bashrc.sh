@@ -61,7 +61,7 @@ f_set_env_vars() {
   fi
 }
 
-f_get_files() {
+f_get_bashrc() {
   local files="bashrc.??.*"
 
   for i in $files; do
@@ -82,24 +82,13 @@ f_get_files() {
   done
 }
 
-f_make_bashrc() {
-  local files=`f_get_files`
+f_cat_bashrc() {
+  local DIR=$1
+  shift
+  local files="$@"
   local I
   for I in $files; do
-    if [ -f $I ]; then
-      echo "f_time_start $I"
-      cat $I
-      echo "f_time_end $I"
-    fi
-  done
-}
-
-f_make_local_bashrc() {
-  local local_bashrc_dir=$MY_LOCAL_CONFIG/env/etc/bash
-  local files="bashrc"
-  local I
-  for I in $files; do
-    I=$local_bashrc_dir/$I
+    I=$DIR/$I
     if [ -f $I ]; then
       echo "f_time_start $I"
       cat $I
@@ -110,6 +99,6 @@ f_make_local_bashrc() {
 
 cat bashrc.time
 f_set_env_vars $1
-f_make_bashrc
-f_make_local_bashrc
+f_cat_bashrc . `f_get_bashrc`
+f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash bashrc
 

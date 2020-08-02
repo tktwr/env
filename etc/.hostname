@@ -9,10 +9,11 @@ export MY_BACKUP=$HOME/backup
 
 export MY_DESKTOP=$MY_HOME/Desktop
 export MY_DOWNLOADS=$MY_HOME/Downloads
+export MY_CONFIG=$MY_HOME/MyConfig
 
-export MY_REMOTE_CONFIG=$MY_HOME/tktwr.github
-export MY_LOCAL_CONFIG=$MY_HOME/tktwr.local
-export MY_PRIVATE_CONFIG=$MY_HOME/tktwr.private
+export MY_REMOTE_CONFIG=$MY_CONFIG/tktwr.github
+export MY_LOCAL_CONFIG=$MY_CONFIG/tktwr.local
+export MY_PRIVATE_CONFIG=$MY_CONFIG/tktwr.private
 
 export MY_ENV=$MY_REMOTE_CONFIG/env
 export MY_MEMO=$MY_REMOTE_CONFIG/memo

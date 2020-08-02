@@ -1,0 +1,2 @@
+export MY_BUILD_SYS=make
+export MY_BUILD_CONFIG=Debug

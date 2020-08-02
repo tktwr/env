@@ -156,7 +156,7 @@ nnoremap x       :!explorer.sh %d<cr>
 "-------------------------------------------------
 
 bmark! ~ Home
-bmark! ~/WinHome/ WinHome
 bmark! ~/Desktop/ Desktop
 bmark! ~/Downloads/ Downloads
+bmark! ~/MyConfig/ MyConfig
 

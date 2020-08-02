@@ -12,6 +12,7 @@ ln -s WinHome/Desktop Desktop
 ln -s WinHome/Downloads Downloads
 ln -s WinHome/Dropbox Dropbox
 ln -s "WinHome/Google\ ドライブ" GoogleDrive
+ln -s WinHome/MyConfig MyConfig
 
-#ln -s WinHome/tktwr.github/env/etc/vim .vim
+#ln -s MyConfig/tktwr.github/env/etc/vim .vim
 

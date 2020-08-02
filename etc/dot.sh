@@ -8,10 +8,12 @@ DOT_DIRS_COMMON="\
 mintty \
 "
 DOT_FILES_COMMON="\
+.buildrc \
 .clang-format \
 .gitignore_global \
 .minttyrc \
 .tmux.conf \
+.NERDTreeBookmarks \
 "
 DOT_FILES_DIFF="\
 .gitconfig \

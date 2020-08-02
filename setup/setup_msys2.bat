@@ -6,6 +6,7 @@ mklink /d Desktop WinHome\Desktop
 mklink /d Downloads WinHome\Downloads
 mklink /d Dropbox WinHome\Dropbox
 mklink /d GoogleDrive "WinHome\Google\ ドライブ"
+mklink /d MyConfig WinHome\MyConfig
 
-REM mklink /d .vim WinHome\tktwr.github\env\etc\vim
+REM mklink /d .vim MyConfig\tktwr.github\env\etc\vim
 

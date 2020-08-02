@@ -18,9 +18,11 @@ let s:auto_popup=1
 
 let g:fugitive_git_executable=$MY_GIT_EXE
 let g:lsp_diagnostics_echo_cursor=1
+let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowGitStatus=1
 let g:NERDTreeShowIgnoredStatus=0
 let g:NERDTreeGitStatusIgnoreSubmodules=1
+let g:NERDTreeChDirMode=2
 
 if empty(glob('$MY_VIM/autoload/plug.vim'))
   silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs

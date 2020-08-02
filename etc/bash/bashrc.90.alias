@@ -33,9 +33,9 @@ ff() { find . -name "$*" -print; }
 
 # vim
 alias vi='vim'
-alias vim-tags='vim -e -c "helptags . | quit"'
-alias vim-zero='vim -u NONE'
+alias vim-zero='/usr/bin/vim -u NONE'
 alias vim-test='vim -u $MY_VIM/build/.vimrc'
+alias vim-tags='vim -e -c "helptags . | quit"'
 alias V='vim -c "NERDTreeToggle"'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }

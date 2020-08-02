@@ -41,16 +41,13 @@ f_set_env_vars() {
   f_expand_dir $target_os MY_GIT_EXE $GIT_EXE
 }
 
-f_make_vimrc() {
-  cat vimrc.??.*.vim
-}
-
-f_make_local_vimrc() {
-  local local_vim_dir=$MY_LOCAL_CONFIG/env/etc/vim
-  local files="vimrc"
+f_cat_vimrc() {
+  local DIR=$1
+  shift
+  local files="$@"
   local I
   for I in $files; do
-    I=$local_vim_dir/$I
+    I=$DIR/$I
     if [ -f $I ]; then
       cat $I
     fi
@@ -58,6 +55,6 @@ f_make_local_vimrc() {
 }
 
 f_set_env_vars $1 $2
-f_make_vimrc
-f_make_local_vimrc
+f_cat_vimrc . vimrc.??.*.vim
+f_cat_vimrc $MY_LOCAL_CONFIG/env/etc/vim vimrc
 
