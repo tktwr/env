@@ -19,7 +19,7 @@ echo "bmark! $MY_WORK/git MY_GIT"
 echo "bmark! $MY_WORK/github MY_GITHUB"
 
 echo "bmark! $MY_DOWNLOADS2/ MY_DOWNLOADS2"
-echo "bmark! $MY_OPT/ MY_OPT"
 echo "bmark! $MY_PAPERS/ MY_PAPERS"
+echo "bmark! $MY_OPT/ MY_OPT"
 echo "bmark! $MY_DATA/ MY_DATA"
 

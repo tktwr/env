@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export MY_HOST_NAME=
-export MY_SITE_NAME=
+export MY_HOST_NAME=myhost
+export MY_SITE_NAME=mysite
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
@@ -41,4 +41,6 @@ export MY_DATA=$MY_PUBLIC/data
 
 export CC=clang
 export CXX=clang++
+
+export USE_CONDA=0
 

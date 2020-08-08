@@ -11,8 +11,8 @@ DOT_FILES_COMMON="\
 .clang-format \
 .gitignore_global \
 .minttyrc \
-.tmux.conf \
 .NERDTreeBookmarks \
+.tmux.conf \
 "
 DOT_FILES_DIFF="\
 .buildrc \
