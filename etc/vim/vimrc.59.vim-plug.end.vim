@@ -1,7 +1,4 @@
-
 call plug#end()
-
-"------------------------------------------------------
 
 function! s:MyNERDTreeToggle()
   if (&filetype == "nerdtree")
