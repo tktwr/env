@@ -49,11 +49,14 @@ set incsearch
 "set viminfo='50,\"50,%
 set listchars=tab:>-,trail:-,eol:$
 "set efm=%AERROR\ File\ =\ %f,\ Line\ =\ %l,%C%m
-set formatoptions=tcq
+"set formatoptions=tcq
 
 "set modeline
 "set modelines=5
 
+"------------------------------------------------------
+" encoding
+"------------------------------------------------------
 set encoding=utf-8
 if has("win32unix") || has("win32") || has("win64")
   "set fileencodings=ucs-bom,utf-8,euc-jp,cp932,cp936
@@ -61,28 +64,36 @@ if has("win32unix") || has("win32") || has("win64")
 elseif has("unix")
   set fileencodings=utf-8,euc-jp,sjis,euc-cn
 endif
-
+"------------------------------------------------------
 " indent
+"------------------------------------------------------
 set noautoindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
+"------------------------------------------------------
 " folding
+"------------------------------------------------------
 set foldcolumn=0
 set foldmethod=indent
 set foldnestmax=1
 set foldclose=all
 set nofoldenable
-
+"------------------------------------------------------
 " IM off for start up
+"------------------------------------------------------
 set iminsert=0
 set imsearch=-1
 inoremap <ESC> <ESC>:set iminsert=0<CR>
 "inoremap <ESC> <ESC>:set iminsert=0 nopaste<CR>
-
-"source $VIMRUNTIME/mswin.vim
-"behave mswin
+"------------------------------------------------------
+" Windows
+"------------------------------------------------------
+if has("win32unix") || has("win32") || has("win64")
+  "source $VIMRUNTIME/mswin.vim
+  "behave mswin
+endif
+"------------------------------------------------------
 
 if !has('nvim')
   if version >= 700
