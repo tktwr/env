@@ -12,15 +12,30 @@ command Trans bot term ++rows=10 ++close trans -I -b
 
 command MyCdHere cd %:h
 command MyLcdHere lcd %:h
-command -nargs=1 MySetTab set tabstop=<args> shiftwidth=<args>
 command -nargs=1 -complete=file MyVspRight rightbelow vsplit <args>
-command -nargs=+ MyGrep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.html **/*.txt **/*.sh'
+
+func s:MyVimGrep(word)
+  silent exec "vimgrep ".a:word." **/*.h **/*.cpp **/*.cxx **/*.py **/*.vim **/*.html **/*.txt **/*.sh"
+endfunc
+command -nargs=+ MyVimGrep call s:MyVimGrep("<args>")
+
+func s:MySetTab(nr)
+  let &tabstop=a:nr
+  let &shiftwidth=a:nr
+endfunc
+command -nargs=1 MySetTab call s:MySetTab("<args>")
+
+func s:MyLineNumberToggle()
+  set invnumber
+  set invlist
+endfunc
+command MyLineNumberToggle call s:MyLineNumberToggle()
 
 func s:MyIDE()
   NERDTree
   wincmd l
   Tagbar
-endf
+endfunc
 command MyIDE call s:MyIDE()
 
 func s:MyCheckEnv()
@@ -43,7 +58,7 @@ func s:MyCheckEnv()
   echo "path: ".&path
   echo "runtimepath: ".&runtimepath
   pwd
-endf
+endfunc
 command MyCheckEnv call s:MyCheckEnv()
 
 "------------------------------------------------------
@@ -54,7 +69,7 @@ command MyCheckEnv call s:MyCheckEnv()
 func s:MyUpdateLastModification()
   normal m'
   g/Last modification: /normal f:lD:r !env LC_TIME=C datekJ''
-endf
+endfunc
 
 func s:MyAddTime()
   silent exec "r!env LC_TIME=C date '+\\%T'"
@@ -89,18 +104,18 @@ func s:MyEditAltSrc()
     let fname = expand("%:r") . ".cpp"
   endif
   exec "edit" fname
-endf
+endfunc
 
 func s:MyStartProf()
   profile start prof.txt
   profile func *
   profile file *
-endf
+endfunc
 
 func s:MyEndProf()
   profile pause
   noautocmd qall!
-endf
+endfunc
 
 command MyEditAltSrc call s:MyEditAltSrc()
 command MyStartProf call s:MyStartProf()
@@ -128,7 +143,7 @@ func s:MySetJapanese()
   " encoding
   set fileencodings=japan
   set termencoding=japan
-endf
+endfunc
 
 command JP call s:MySetJapanese()
 

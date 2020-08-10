@@ -105,6 +105,8 @@ nnoremap <C-A> I[A]Jr(A)I- 
 
 " open an URL in the markdeep format by chrome
 "nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
+
+" open an URL under the cursor
 nnoremap <C-O> :!chrome.sh <cfile><CR>
 
 " open an URL in the markdeep format by w3m.vim
