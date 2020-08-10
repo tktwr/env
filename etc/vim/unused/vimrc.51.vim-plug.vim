@@ -31,8 +31,6 @@ endfunction
 if 0
   Plug 'christoomey/vim-tmux-navigator'
 
-  Plug 'godlygeek/tabular'
-
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 

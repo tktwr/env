@@ -22,6 +22,7 @@ alias cd.etc='cd $MY_ENV/etc'
 alias cd.bin='cd $MY_ENV/bin'
 alias cd.memo='cd $MY_MEMO'
 alias cd.samples='cd $MY_SAMPLES'
+alias cd.libtt='cd $MY_LIBTT'
 
 alias cd.dia='cd $MY_DIARY'
 
@@ -58,6 +59,7 @@ alias .etc='pushd $MY_ENV/etc'
 alias .bin='pushd $MY_ENV/bin'
 alias .memo='pushd $MY_MEMO'
 alias .samples='pushd $MY_SAMPLES'
+alias .libtt='pushd $MY_LIBTT'
 
 alias .dia='pushd $MY_DIARY'
 

@@ -16,6 +16,13 @@ command -nargs=1 MySetTab set tabstop=<args> shiftwidth=<args>
 command -nargs=1 -complete=file MyVspRight rightbelow vsplit <args>
 command -nargs=+ MyGrep execute 'silent vimgrep <args> **/*.h **/*.cpp **/*.cxx **/*.vim **/*.html **/*.txt **/*.sh'
 
+func s:MyIDE()
+  NERDTree
+  wincmd l
+  Tagbar
+endf
+command MyIDE call s:MyIDE()
+
 func s:MyCheckEnv()
   echo "version: ".v:version
   echo "unix: ".has("unix")

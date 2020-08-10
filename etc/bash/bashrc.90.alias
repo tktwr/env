@@ -10,6 +10,7 @@ alias ..='pushd +2'
 alias ...='pushd +3'
 alias ,='popd'
 alias ,,='popd +1'
+alias ,,,='popd +2'
 alias ?='dirs -v'
 alias .c='dirs -c'
 alias .i='dirs -c; cd'
@@ -36,7 +37,7 @@ alias vi='vim'
 alias vim-zero='/usr/bin/vim -u NONE'
 alias vim-test='vim -u $MY_VIM/build/.vimrc'
 alias vim-tags='vim -e -c "helptags . | quit"'
-alias V='vim -c "NERDTreeToggle"'
+alias V='vim -c "NERDTree"'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 

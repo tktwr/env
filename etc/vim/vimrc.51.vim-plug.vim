@@ -90,8 +90,12 @@ Plug 'yuttie/comfortable-motion.vim'
 "------------------------------------------------------
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
+let g:NERDMenuMode=0
+
+Plug 'godlygeek/tabular'
 
 "------------------------------------------------------
 " vim-plug: vim-lsp
