@@ -4,7 +4,8 @@ function! s:MyNERDTreeToggle()
   if (&filetype == "nerdtree")
     NERDTreeToggle
   else
-    NERDTreeFind
+    "NERDTreeFind
+    NERDTreeToggle
   endif
 endfunction
 command MyNERDTreeToggle call s:MyNERDTreeToggle()

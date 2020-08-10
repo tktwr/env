@@ -50,10 +50,10 @@ def
 123
 )";
 
-    f_write_text_file("hoge", text);
+    f_write_text_file("cpp_data.txt", text);
 
     std::string text2;
-    f_read_text_file("hoge", text2);
+    f_read_text_file("cpp_data.txt", text2);
 
     std::cout << text2;
 

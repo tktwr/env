@@ -2,11 +2,11 @@
 " func & command
 "======================================================
 
-command RunFirefox silent !firefox "%"
-command RunChrome silent !chrome.sh "%"
-command RunVscode silent !vscode.sh "%"
-command RunGvim silent !gvim "%"
 command RunExplorer silent !explorer.exe %:h
+command RunGvim     silent !gvim "%"
+command RunVscode   silent !vscode.sh "%"
+command RunChrome   silent !chrome.sh "%"
+command RunFirefox  silent !firefox "%"
 
 command Trans bot term ++rows=10 ++close trans -I -b
 

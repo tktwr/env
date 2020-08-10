@@ -18,6 +18,13 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeShowIgnoredStatus=0
 let g:NERDTreeGitStatusIgnoreSubmodules=1
 let g:NERDTreeChDirMode=2
+let g:NERDTreeAutoDeleteBuffer=1
+
+autocmd FileType nerdtree call s:my_nerdtree_settings()
+function! s:my_nerdtree_settings()
+  "nmap <Tab> cdCD
+  nmap <Tab> C
+endfunction
 
 "Plug 'ctrlpvim/ctrlp.vim'
 
