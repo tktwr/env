@@ -8,6 +8,6 @@ if has("gui_running")
 
   " gui menu
   "set guioptions-=m
-  "set guioptions-=T
+  set guioptions-=T
 endif
 

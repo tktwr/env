@@ -21,5 +21,4 @@ endfunction
 command MyGstatusToggle call s:MyGstatusToggle()
 
 colorscheme gruvbox
-set background=dark
 
