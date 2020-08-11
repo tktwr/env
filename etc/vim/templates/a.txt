@@ -22,6 +22,9 @@ abc_def
   # comment
 /* comment */
 <!-- comment -->
+<!--
+comment
+-->
 "string"
 'string'
 2018/01/01 (Mon)
