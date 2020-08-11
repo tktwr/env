@@ -12,7 +12,7 @@ command Trans bot term ++rows=10 ++close trans -I -b
 
 command MyCdHere cd %:h
 command MyLcdHere lcd %:h
-command -nargs=1 -complete=file MyVspRight rightbelow vsplit <args>
+command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 
 func s:MyVimGrep(word)
   silent exec "vimgrep ".a:word." **/*.h **/*.cpp **/*.cxx **/*.py **/*.vim **/*.html **/*.txt **/*.sh"
@@ -70,14 +70,18 @@ func s:MyUpdateLastModification()
   normal m'
   g/Last modification: /normal f:lD:r !env LC_TIME=C datekJ''
 endfunc
+command MyUpdateLastModification call s:MyUpdateLastModification()
+au BufWritePre,FileWritePre *.html  MyUpdateLastModification
 
 func s:MyAddTime()
   silent exec "r!env LC_TIME=C date '+\\%T'"
 endfunc
+command MyAddTime call s:MyAddTime()
 
 func s:MyAddDate(date)
   silent exec "r!env LC_TIME=C date --date='".a:date."' '+\\%Y/\\%m/\\%d (\\%a)'"
 endfunc
+command -nargs=? MyAddDate call s:MyAddDate("<args>")
 
 func s:MyInsertDia(date)
   normal O<!---------------------------------------------------->
@@ -85,11 +89,6 @@ func s:MyInsertDia(date)
   normal I## 
   normal 0
 endfunc
-
-command MyUpdateLastModification call s:MyUpdateLastModification()
-au BufWritePre,FileWritePre *.html  MyUpdateLastModification
-command MyAddTime call s:MyAddTime()
-command -nargs=? MyAddDate call s:MyAddDate("<args>")
 command -nargs=? MyInsertDia call s:MyInsertDia("<args>")
 
 "------------------------------------------------------
@@ -105,20 +104,19 @@ func s:MyEditAltSrc()
   endif
   exec "edit" fname
 endfunc
+command MyEditAltSrc call s:MyEditAltSrc()
 
 func s:MyStartProf()
   profile start prof.txt
   profile func *
   profile file *
 endfunc
+command MyStartProf call s:MyStartProf()
 
 func s:MyEndProf()
   profile pause
   noautocmd qall!
 endfunc
-
-command MyEditAltSrc call s:MyEditAltSrc()
-command MyStartProf call s:MyStartProf()
 command MyEndProf call s:MyEndProf()
 
 "------------------------------------------------------
@@ -126,6 +124,7 @@ command MyEndProf call s:MyEndProf()
 "------------------------------------------------------
 
 set diffopt=filler,vertical,iwhite
+
 func s:MySetDiffMode()
   if &diff
     nnoremap <buffer> <C-P>   [c

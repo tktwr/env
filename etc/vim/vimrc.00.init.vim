@@ -4,6 +4,9 @@
 
 set nocompatible
 
+"------------------------------------------------------
+" path
+"------------------------------------------------------
 "set shell=/bin/sh
 
 set path=.,,/usr/local/include,/usr/include
@@ -29,7 +32,9 @@ set tags+=$MY_OPT/tags.json11
 set tags+=$MY_OPT/tags.win
 
 set dictionary=$MY_VIM/words
-
+"------------------------------------------------------
+" basic
+"------------------------------------------------------
 set autowrite
 
 set noswapfile
@@ -54,16 +59,25 @@ set listchars=tab:>-,trail:-,eol:$
 "set modeline
 "set modelines=5
 
-"------------------------------------------------------
-" encoding
-"------------------------------------------------------
-set encoding=utf-8
-if has("win32unix") || has("win32") || has("win64")
-  "set fileencodings=ucs-bom,utf-8,euc-jp,cp932,cp936
-  set fileencodings=utf-8,euc-jp,cp932,cp936
-elseif has("unix")
-  set fileencodings=utf-8,euc-jp,sjis,euc-cn
+let mapleader = ","
+
+if !has('nvim')
+  if version >= 700
+    " disable popup menu for completion
+    "set completeopt=
+    "set textwidth=0
+    "set paste
+    "set ambiwidth=double
+    set cm=blowfish2
+  endif
 endif
+
+"------------------------------------------------------
+" color
+"------------------------------------------------------
+set termguicolors
+set t_Co=256
+set background=dark
 "------------------------------------------------------
 " indent
 "------------------------------------------------------
@@ -80,6 +94,16 @@ set foldnestmax=1
 set foldclose=all
 set nofoldenable
 "------------------------------------------------------
+" encoding
+"------------------------------------------------------
+set encoding=utf-8
+if has("win32unix") || has("win32") || has("win64")
+  "set fileencodings=ucs-bom,utf-8,euc-jp,cp932,cp936
+  set fileencodings=utf-8,euc-jp,cp932,cp936
+elseif has("unix")
+  set fileencodings=utf-8,euc-jp,sjis,euc-cn
+endif
+"------------------------------------------------------
 " IM off for start up
 "------------------------------------------------------
 set iminsert=0
@@ -94,17 +118,4 @@ if has("win32unix") || has("win32") || has("win64")
   "behave mswin
 endif
 "------------------------------------------------------
-
-if !has('nvim')
-  if version >= 700
-    " disable popup menu for completion
-    "set completeopt=
-    "set textwidth=0
-    "set paste
-    "set ambiwidth=double
-    set cm=blowfish2
-  endif
-endif
-
-let mapleader = ","
 
