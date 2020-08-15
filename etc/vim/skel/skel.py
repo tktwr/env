@@ -3,8 +3,10 @@
 
 import sys
 
-def main():
-    print("Hello world.")
 
-main()
+def main(argv):
+    print(argv)
 
+
+if __name__ == "__main__":
+    main(sys.argv)

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-PATH="/usr/bin:$PATH"
+python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
+
+PATH="/mingw64/bin:/usr/bin:$PATH"
+python3-venv-activate vim
 
 debug=0
 if [ $debug -eq 1 ]; then

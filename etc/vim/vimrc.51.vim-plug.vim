@@ -9,14 +9,12 @@ let g:molokai_original = 1
 "let g:rehash256 = 1
 
 "------------------------------------------------------
-" vim-plug: file
+" vim-plug: IDE
 "------------------------------------------------------
 Plug 'scrooloose/nerdtree'
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeShowBookmarks=1
-let g:NERDTreeShowIgnoredStatus=0
-let g:NERDTreeGitStatusIgnoreSubmodules=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeAutoDeleteBuffer=1
 
@@ -25,6 +23,10 @@ function! s:my_nerdtree_settings()
   "nmap <Tab> cdCD
   nmap <Tab> C
 endfunction
+
+Plug 'majutsushi/tagbar'
+
+Plug 'thinca/vim-ref'
 
 "Plug 'ctrlpvim/ctrlp.vim'
 
@@ -45,8 +47,15 @@ endif
 
 if s:use_nerdtree_git_plugin
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  let g:NERDTreeShowGitStatus=1
-  let g:NERDTreeIndicatorMapCustom = {
+  "let g:NERDTreeShowGitStatus=1
+  "let g:NERDTreeShowIgnoredStatus=0
+  "let g:NERDTreeGitStatusIgnoreSubmodules=1
+  "let g:NERDTreeIndicatorMapCustom = {
+
+  let g:NERDTreeGitStatusEnable=1
+  let g:NERDTreeGitStatusShowIgnored=0
+  let g:NERDTreeGitStatusIgnoreSubmodules=1
+  let g:NERDTreeGitStatusIndicatorMapCustom = {
       \ 'Modified'  : 'M',
       \ 'Staged'    : 'S',
       \ 'Untracked' : 'U',
@@ -100,14 +109,13 @@ Plug 'godlygeek/tabular'
 "------------------------------------------------------
 " vim-plug: vim-lsp
 "------------------------------------------------------
-if 1
 if s:use_lsp
   Plug 'prabirshrestha/vim-lsp'
-  Plug 'mattn/vim-lsp-settings'
+  "Plug 'mattn/vim-lsp-settings'
 endif
 
 if s:use_asyncomplete
-  Plug 'prabirshrestha/async.vim'
+  "Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
@@ -123,6 +131,22 @@ if s:lsp_debug
   let g:lsp_log_file = expand('$MY_VIM/build/vim-lsp.log')
   let g:asyncomplete_log_file = expand('$MY_VIM/build/asyncomplete.log')
 endif
+
+if s:use_lsp_pyls && executable('pyls')
+  " pip install python-language-server
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'pyls',
+    \ 'cmd': {server_info->['pyls']},
+    \ 'allowlist': ['python'],
+    \ })
+endif
+
+if s:use_lsp_clangd && executable('clangd-7')
+  au User lsp_setup call lsp#register_server({
+    \ 'name': 'clangd-7',
+    \ 'cmd': {server_info->['clangd-7']},
+    \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp'],
+    \ })
 endif
 
 "------------------------------------------------------
@@ -138,7 +162,7 @@ if s:use_ultisnips
     Plug 'prabirshrestha/asyncomplete-ultisnips.vim'
     au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#ultisnips#get_source_options({
       \ 'name': 'ultisnips',
-      \ 'whitelist': ['*'],
+      \ 'allowlist': ['*'],
       \ 'completor': function('asyncomplete#sources#ultisnips#completor')
       \ }))
   endif
@@ -155,14 +179,3 @@ if s:use_eskk
 endif
 
 "------------------------------------------------------
-" vim-plug: vim-ref
-"------------------------------------------------------
-Plug 'thinca/vim-ref'
-
-"------------------------------------------------------
-" vim-plug: tagbar
-"------------------------------------------------------
-Plug 'majutsushi/tagbar'
-
-"------------------------------------------------------
-

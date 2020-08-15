@@ -6,10 +6,10 @@ set complete=.,w,b,u,i
 let s:use_eskk=1
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=0
+
 let s:use_asyncomplete=1
 let s:use_lsp=1
 let s:use_lsp_pyls=1
-let s:use_lsp_ccls=0
 let s:use_lsp_clangd=1
 let s:use_lsp_ultisnips=1
 let s:use_ultisnips=1

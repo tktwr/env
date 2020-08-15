@@ -9,8 +9,10 @@ endsnippet
 snippet main "main"
 import sys
 
+
 def main(argv):
     print(argv)
+
 
 if __name__ == "__main__":
     main(sys.argv)
@@ -19,10 +21,16 @@ endsnippet
 snippet def "def"
 def ${1:function}(${2:arg1}):
     ${0:pass}
+
+
 endsnippet
 
 snippet print "print"
-print("${1:name}: {0}".format(${2:val}))
+print(f"$1: {${1:val}}")
+endsnippet
+
+snippet printf "printf"
+print("${1:name}: {}".format(${2:val}))
 endsnippet
 
 #======================================================
@@ -61,21 +69,28 @@ endsnippet
 snippet cl "class"
 class MyClass():
     n = 0
+
     def __init__(self, x):
         MyClass.n += 1
         self.x = x
+
     def add(self, x):
         self.x += x
         return self.x
+
     @classmethod
     def f(self, text):
         print(text)
+
+
 endsnippet
 
 snippet subcl "sub class"
 class MySubClass(MyClass):
     def g(self):
         return self.x
+
+
 endsnippet
 
 #======================================================

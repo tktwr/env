@@ -11,27 +11,50 @@ PATH="$ANDROID_SDK/platform-tools:$PATH"
 # anaconda
 #------------------------------------------------------
 
-#PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+f_set_python_anaconda() {
+  PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+}
 
 #------------------------------------------------------
 # miniconda
 #------------------------------------------------------
 
-#PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
-#source $MINICONDA_HOME/etc/profile.d/conda.sh
+f_set_python_miniconda() {
+  #PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
+  #source $MINICONDA_HOME/etc/profile.d/conda.sh
 
-USE_CONDA=1
-eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
-#export CONDA_ENVS_PATH=$HOME/.conda/envs
-#export CONDA_PKGS_DIRS=$HOME/.conda/pkgs
-#conda activate base
+  eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
+  #export CONDA_ENVS_PATH=$HOME/.conda/envs
+  #export CONDA_PKGS_DIRS=$HOME/.conda/pkgs
+  #conda activate base
+}
 
 #------------------------------------------------------
 # python
 #------------------------------------------------------
 
-#PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
-#PATH="$USER_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
+f_set_python_win() {
+  PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
+  PATH="$USER_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
+}
+
+#------------------------------------------------------
+# select python
+#------------------------------------------------------
+
+case $WHICH_PYTHON in
+  python_anaconda)
+    f_set_python_anaconda
+    ;;
+  python_miniconda)
+    f_set_python_miniconda
+    ;;
+  python_win)
+    f_set_python_win
+    ;;
+  python)
+    ;;
+esac
 
 #------------------------------------------------------
 # alias
