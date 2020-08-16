@@ -97,6 +97,7 @@ alias gf='git fetch'
 alias gA='git add'
 alias gAu='git add -u'
 alias gC='git commit -m'
+alias gCamend='git commit --amend -m'
 alias gAC='git commit -a -m "update"'
 
 alias gR='git reset --hard'
