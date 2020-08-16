@@ -39,6 +39,7 @@ f_set_env_vars() {
     f_expand_dir $target_os ANDROID_SDK "$USERPROFILE/AppData/Local/Android/sdk"
     f_expand_dir $target_os ANACONDA_HOME "$USERPROFILE/Anaconda3"
     f_expand_dir $target_os MINICONDA_HOME "$USERPROFILE/miniconda3"
+    f_expand_dir $target_os NODEJS_HOME "C:\Program Files\nodejs"
   else
     f_expand_dir $target_os SYS_WIN_HOME "$HOME/WinHome"
   fi

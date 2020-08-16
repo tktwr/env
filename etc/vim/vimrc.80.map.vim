@@ -153,16 +153,18 @@ nnoremap ++    :GitGutterToggle<CR>
 " nerd commenter
 vmap C <Leader>c<Space>
 
-" ultisnips
-let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
-let g:UltiSnipsEditSplit="vertical"
-"let g:UltiSnipsListSnippets="<F6>"
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-"inoremap <C-X><C-K> <C-X><C-K>
-"inoremap <C-N> <C-X><C-N>
-"inoremap <C-P> <C-X><C-P>
+if 0
+  " ultisnips
+  let g:UltiSnipsSnippetsDir=expand('$MY_VIM/UltiSnips')
+  let g:UltiSnipsEditSplit="vertical"
+  "let g:UltiSnipsListSnippets="<F6>"
+  let g:UltiSnipsExpandTrigger="<Tab>"
+  let g:UltiSnipsJumpForwardTrigger="<C-J>"
+  let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+  "inoremap <C-X><C-K> <C-X><C-K>
+  "inoremap <C-N> <C-X><C-N>
+  "inoremap <C-P> <C-X><C-P>
+endif
 
 " quickhl
 nmap <C-U> <Plug>(quickhl-manual-this)

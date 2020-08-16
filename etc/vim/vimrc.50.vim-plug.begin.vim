@@ -3,7 +3,7 @@
 "======================================================
 set complete=.,w,b,u,i
 
-let s:use_eskk=1
+let s:use_eskk=0
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=0
 

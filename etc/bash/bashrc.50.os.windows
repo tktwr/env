@@ -6,6 +6,7 @@
 
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
+PATH="$NODEJS_HOME:$PATH"
 
 #------------------------------------------------------
 # anaconda

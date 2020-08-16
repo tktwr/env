@@ -3,9 +3,10 @@ call plug#end()
 function! s:MyNERDTreeToggle()
   if (&filetype == "nerdtree")
     NERDTreeToggle
+  elseif (&filetype == "")
+    NERDTree
   else
-    "NERDTreeFind
-    NERDTreeToggle
+    NERDTreeFind
   endif
 endfunction
 command MyNERDTreeToggle call s:MyNERDTreeToggle()

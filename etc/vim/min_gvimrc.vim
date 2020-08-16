@@ -13,11 +13,6 @@ set noundofile
 
 set background=dark
 
-" IM off for start up
-set iminsert=0
-set imsearch=-1
-inoremap <ESC> <ESC>:set iminsert=0<CR>
-
 nnoremap Q     :confirm qall<CR>
 
 "------------------------------------------------------
@@ -31,4 +26,11 @@ set guioptions-=m
 set guioptions-=T
 
 hi Normal guifg=#D0D0D0 guibg=#303030
+
+if 0
+  " IM off for start up
+  set iminsert=0
+  set imsearch=-1
+  inoremap <ESC> <ESC>:set iminsert=0<CR>
+endif
 

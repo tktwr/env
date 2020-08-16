@@ -20,8 +20,7 @@ let g:NERDTreeAutoDeleteBuffer=1
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()
 function! s:my_nerdtree_settings()
-  "nmap <Tab> cdCD
-  nmap <Tab> C
+  nmap <buffer> <Tab> C
 endfunction
 
 Plug 'majutsushi/tagbar'
@@ -72,7 +71,7 @@ endif
 Plug 'junegunn/gv.vim'
 autocmd FileType git call s:my_gv_settings()
 function! s:my_gv_settings()
-  nmap D O
+  nmap <buffer> D O
 endfunction
 
 "------------------------------------------------------
@@ -107,8 +106,24 @@ let g:NERDMenuMode=0
 Plug 'godlygeek/tabular'
 
 "------------------------------------------------------
+" vim-plug: coc
+"------------------------------------------------------
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gh :call CocAction('doHover')<CR>
+
+setlocal signcolumn=yes
+let g:coc_disable_startup_warning = 1
+
+"------------------------------------------------------
 " vim-plug: vim-lsp
 "------------------------------------------------------
+if 0
+
 if s:use_lsp
   Plug 'prabirshrestha/vim-lsp'
   "Plug 'mattn/vim-lsp-settings'
@@ -167,6 +182,8 @@ if s:use_ultisnips
       \ 'completor': function('asyncomplete#sources#ultisnips#completor')
       \ }))
   endif
+endif
+
 endif
 
 "------------------------------------------------------

@@ -104,13 +104,6 @@ elseif has("unix")
   set fileencodings=utf-8,euc-jp,sjis,euc-cn
 endif
 "------------------------------------------------------
-" IM off for start up
-"------------------------------------------------------
-set iminsert=0
-set imsearch=-1
-inoremap <ESC> <ESC>:set iminsert=0<CR>
-"inoremap <ESC> <ESC>:set iminsert=0 nopaste<CR>
-"------------------------------------------------------
 " Windows
 "------------------------------------------------------
 if has("win32unix") || has("win32") || has("win64")

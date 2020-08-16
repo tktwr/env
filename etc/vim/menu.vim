@@ -4,7 +4,7 @@ endif
 let did_install_my_menu = 1
 
 menu Plugin.IDE               :MyIDE<CR>
-menu Plugin.NERDTree<Tab>F2   :NERDTreeToggle<CR>
+menu Plugin.NERDTree<Tab>F2   :MyNERDTreeToggle<CR>
 menu Plugin.Tagbar            :TagbarToggle<CR>
 menu Plugin.Gstatus<Tab>F3    :MyGstatusToggle<CR>
 menu Plugin.GV                :GV --all<CR>
