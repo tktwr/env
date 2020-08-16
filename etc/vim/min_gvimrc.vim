@@ -18,11 +18,14 @@ nnoremap Q     :confirm qall<CR>
 "------------------------------------------------------
 " gui
 "------------------------------------------------------
-set guifont=Myrica_M:h14
+set ambiwidth=double
+
+set guifont=Cica:h14
+"set guifont=Myrica_M:h14
 "set guifont=あくあフォント:h14
 
 " gui menu
-set guioptions-=m
+"set guioptions-=m
 set guioptions-=T
 
 hi Normal guifg=#D0D0D0 guibg=#303030

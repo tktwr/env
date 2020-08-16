@@ -13,7 +13,8 @@ PATH="$NODEJS_HOME:$PATH"
 #------------------------------------------------------
 
 f_set_python_anaconda() {
-  PATH="$ANACONDA_HOME/Scripts:$ANACONDA_HOME:$PATH"
+  PATH="$ANACONDA_HOME:$PATH"
+  PATH="$ANACONDA_HOME/Scripts:$PATH"
 }
 
 #------------------------------------------------------
@@ -21,7 +22,8 @@ f_set_python_anaconda() {
 #------------------------------------------------------
 
 f_set_python_miniconda() {
-  #PATH="$MINICONDA_HOME/Scripts:$MINICONDA_HOME:$PATH"
+  #PATH="$MINICONDA_HOME:$PATH"
+  #PATH="$MINICONDA_HOME/Scripts:$PATH"
   #source $MINICONDA_HOME/etc/profile.d/conda.sh
 
   eval "$($MINICONDA_HOME/Scripts/conda.exe 'shell.bash' 'hook')"
@@ -36,7 +38,8 @@ f_set_python_miniconda() {
 
 f_set_python_win() {
   PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
-  PATH="$USER_PYTHON_HOME/Scripts:$MY_PYTHON_HOME:$PATH"
+  PATH="$USER_PYTHON_HOME:$PATH"
+  PATH="$USER_PYTHON_HOME/Scripts:$PATH"
 }
 
 #------------------------------------------------------

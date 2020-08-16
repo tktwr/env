@@ -116,7 +116,9 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gh :call CocAction('doHover')<CR>
 
-setlocal signcolumn=yes
+imap <C-l> <Plug>(coc-snippets-expand)
+
+set signcolumn=yes
 let g:coc_disable_startup_warning = 1
 
 "------------------------------------------------------
@@ -194,6 +196,14 @@ if s:use_eskk
   let g:eskk#directory = "~/.eskk"
   let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
+endif
+
+"------------------------------------------------------
+" vim-plug: icons
+"------------------------------------------------------
+if has("gui_running")
+  Plug 'ryanoasis/vim-devicons'
+  "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 endif
 
 "------------------------------------------------------

@@ -2,8 +2,11 @@
 " gvim
 "======================================================
 
+set ambiwidth=double
+
 if has("gui_running")
-  set guifont=Myrica_M:h14
+  set guifont=Cica:h14
+  "set guifont=Myrica_M:h14
   "set guifont=あくあフォント:h14
 
   " gui menu

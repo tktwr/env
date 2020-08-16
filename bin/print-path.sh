@@ -22,11 +22,20 @@ f_format_dos_path() { sed 's+;+\n+g'; }
 FORMAT=f_format_unix_path
 
 f_print_path() {
-  echo "SYS_PATH"
+  echo "[SYS_PATH]"
   echo "$SYS_PATH" | $FORMAT
   echo
-  echo "PATH"
+  echo "[PATH]"
   echo "$PATH" | $FORMAT
+  echo
+  echo "[which]"
+  which python
+  which python3
+  which pip
+  which pip3
+  which pyls
+  which clangd
+  which node
 }
 
 f_main() {
