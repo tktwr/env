@@ -73,6 +73,7 @@ vid() { display "vid:$*"; }
 python3-venv-create() { python3 -m venv ~/.python3-venv/$1; }
 python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
 python3-venv-deactivate() { deactivate; }
+python3-venv-exist() { return $(test -d ~/.python3-venv/$1); }
 
 # conda
 conda-venv-info() { conda info -e; }

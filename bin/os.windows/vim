@@ -1,11 +1,18 @@
 #!/bin/bash
 
 python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
+python3-venv-exist() { return $(test -d ~/.python3-venv/$1); }
 
 PATH="/mingw64/bin:/usr/bin:$PATH"
-python3-venv-activate vim
 
-debug=0
+venv=""
+python3-venv-exist vim
+if [ $? -eq 0 ]; then
+  python3-venv-activate vim
+  venv="vim"
+fi
+
+debug=1
 if [ $debug -eq 1 ]; then
   echo $PATH | print-path.sh > ~/vim.log
 
@@ -17,6 +24,7 @@ if [ $debug -eq 1 ]; then
   which pip3 >> ~/vim.log
   which pyls >> ~/vim.log
   which clangd >> ~/vim.log
+  echo "venv: $venv" >> ~/vim.log
 fi
 
 exec /usr/bin/vim "$@"

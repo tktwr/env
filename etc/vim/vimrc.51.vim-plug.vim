@@ -115,7 +115,6 @@ if s:use_lsp
 endif
 
 if s:use_asyncomplete
-  "Plug 'prabirshrestha/async.vim'
   Plug 'prabirshrestha/asyncomplete.vim'
   Plug 'prabirshrestha/asyncomplete-lsp.vim'
 endif
@@ -132,21 +131,23 @@ if s:lsp_debug
   let g:asyncomplete_log_file = expand('$MY_VIM/build/asyncomplete.log')
 endif
 
-if s:use_lsp_pyls && executable('pyls')
-  " pip install python-language-server
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'pyls',
-    \ 'cmd': {server_info->['pyls']},
-    \ 'allowlist': ['python'],
-    \ })
-endif
+if 1
+  if s:use_lsp_pyls && executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'pyls',
+      \ 'cmd': {server_info->['pyls']},
+      \ 'allowlist': ['python'],
+      \ })
+  endif
 
-if s:use_lsp_clangd && executable('clangd-7')
-  au User lsp_setup call lsp#register_server({
-    \ 'name': 'clangd-7',
-    \ 'cmd': {server_info->['clangd-7']},
-    \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp'],
-    \ })
+  if s:use_lsp_clangd && executable('clangd')
+    au User lsp_setup call lsp#register_server({
+      \ 'name': 'clangd',
+      \ 'cmd': {server_info->['clangd']},
+      \ 'allowlist': ['c', 'cpp', 'objc', 'objcpp'],
+      \ })
+  endif
 endif
 
 "------------------------------------------------------
