@@ -5,6 +5,9 @@ export MY_SITE_NAME=mysite
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
+export MY_PYTHON_TYPE=python
+export MY_PYTHON_VENV=
+
 export MY_BACKUP=$HOME/backup
 
 export MY_DESKTOP=$MY_HOME/Desktop
@@ -41,6 +44,4 @@ export MY_DATA=$MY_PUBLIC/data
 
 export CC=clang
 export CXX=clang++
-
-export WHICH_PYTHON=python_miniconda
 

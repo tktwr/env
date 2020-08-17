@@ -46,19 +46,35 @@ f_set_python_win() {
 # select python
 #------------------------------------------------------
 
-case $WHICH_PYTHON in
-  python_anaconda)
-    f_set_python_anaconda
-    ;;
-  python_miniconda)
-    f_set_python_miniconda
-    ;;
-  python_win)
-    f_set_python_win
-    ;;
-  python)
-    ;;
-esac
+f_select_python() {
+  local python_type=$1
+
+  case $python_type in
+    python-anaconda)
+      f_set_python_anaconda
+      ;;
+    python-miniconda)
+      f_set_python_miniconda
+      ;;
+    python-win)
+      f_set_python_win
+      ;;
+    python)
+      ;;
+  esac
+
+  case $python_type in
+    python-anaconda|python-miniconda|python-win)
+      alias python='winpty python'
+      alias ipython='winpty ipython'
+      alias jupyter='winpty jupyter'
+      ;;
+    python)
+      ;;
+  esac
+}
+
+f_select_python $MY_PYTHON_TYPE
 
 #------------------------------------------------------
 # alias
@@ -76,8 +92,4 @@ alias net='winpty net'
 alias ping='winpty ping'
 alias ipconfig='winpty ipconfig'
 alias tracert='winpty tracert'
-
-alias python='winpty python'
-alias ipython='winpty ipython'
-alias jupyter='winpty jupyter'
 
