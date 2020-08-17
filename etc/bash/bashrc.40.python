@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# python
+python3-venv-create() { python3 -m venv ~/.python3-venv/$1; }
+python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
+python3-venv-deactivate() { deactivate; }
+python3-venv-exist() { return $(test -d ~/.python3-venv/$1); }
+
+# conda
+conda-venv-info() { conda info -e; }
+conda-venv-create() { conda create -n $1 python; }
+conda-venv-activate() { conda activate $1; }
+conda-venv-deactivate() { conda deactivate; }
+conda-venv-remove() { conda remove -n $1 --all; }
+conda-venv-move() {
+  conda create -n $2 --clone $1;
+  conda remove -n $1 --all;
+}
+
+f_activate_python() {
+  local python_type=$1
+  local python_venv=$2
+
+  if [ ! -z "$python_venv" ]; then
+    case $python_type in
+      python-anaconda|python-miniconda)
+        conda activate $python_venv
+        ;;
+      python-win|python)
+        python3-venv-activate $python_venv
+        ;;
+    esac
+  fi
+}
+
