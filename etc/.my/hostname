@@ -1,12 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 export MY_HOST_NAME=myhost
 export MY_SITE_NAME=mysite
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
-export MY_PYTHON_TYPE=python
-export MY_PYTHON_VENV=
 
 export MY_BACKUP=$HOME/backup
 

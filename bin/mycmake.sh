@@ -3,7 +3,7 @@
 MY_BUILD_SYS=ninja
 MY_BUILD_CONFIG=Release
 
-BUILDRC=$HOME/.buildrc
+BUILDRC=$HOME/.my/buildrc
 
 if [ -f $BUILDRC ]; then
   source $BUILDRC

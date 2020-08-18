@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/.hostname
+source $HOME/.my/hostname
 
 f_expand_dir() {
   local os="$1"

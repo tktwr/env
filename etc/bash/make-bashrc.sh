@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source $HOME/.hostname
+source $HOME/.my/hostname
 
 f_expand_dir() {
   local os="$1"
@@ -50,7 +50,8 @@ f_set_env_vars() {
     f_expand_dir $target_os MY_HOME "$HOME"
   fi
 
-  echo 'source $HOME/.hostname'
+  echo 'source $HOME/.my/hostname'
+  echo 'source $HOME/.my/pythonrc'
 
   if [ ! -z "$USERPROFILE" ]; then
     f_expand_dir win MY_LIBTT_WIN $MY_LIBTT

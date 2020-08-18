@@ -22,6 +22,9 @@ subdir.clean:
 
 #======================================================
 
+backup:
+	./dot.sh --backup
+
 init:
 	./dot.sh --init
 
@@ -65,6 +68,7 @@ help:
 	@echo "all.install"
 	@echo "all.clean"
 	@echo "=== command ==="
+	@echo "backup"
 	@echo "init"
 	@echo "install[.win]"
 	@echo "clean[.win]"

@@ -57,6 +57,7 @@ func s:MyCheckEnv()
   echo "shell: ".&shell
   echo "path: ".&path
   echo "runtimepath: ".&runtimepath
+  echo "pwd:"
   pwd
 endfunc
 command MyCheckEnv call s:MyCheckEnv()

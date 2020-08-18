@@ -40,4 +40,4 @@ set statusline=%1*%<%f%0*
 set statusline+=\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}
 set statusline+=%=%l/%L,%c%V%4p%%
 set statusline+=\ %2*%{fugitive#statusline()}%0*
-
+set statusline^=%{coc#status()}

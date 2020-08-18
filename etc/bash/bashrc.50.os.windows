@@ -65,6 +65,7 @@ f_select_python() {
 
   case $python_type in
     python-anaconda|python-miniconda|python-win)
+      alias pip='winpty pip'
       alias python='winpty python'
       alias ipython='winpty ipython'
       alias jupyter='winpty jupyter'

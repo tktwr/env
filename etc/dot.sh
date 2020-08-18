@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 bin_name=`basename $0`
 cmd=cmp
@@ -15,11 +15,16 @@ DOT_FILES_COMMON="\
 .tmux.conf \
 "
 DOT_FILES_DIFF="\
-.buildrc \
 .gitconfig \
-.hostname \
+.my/hostname \
+.my/buildrc \
+.my/pythonrc \
 "
 DOT_FILES=""
+
+function f_get_date() {
+  echo `env LC_TIME=C date '+%Y%m%d'`
+}
 
 f_help() {
   echo "NAME"
@@ -30,6 +35,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help      print help"
+  echo "  --backup        backup"
   echo "  --init          init"
   echo "  --common-files  common files"
   echo "  --diff-files    diff files"
@@ -40,20 +46,26 @@ f_help() {
   echo "  --vimdirdiff    vimdirdiff dir"
 }
 
-f_init() {
-  if [ ! -d $HOME/.orig ]; then
-    mkdir $HOME/.orig
+f_backup() {
+  local ORIG_DIR=$HOME/.my.$(f_get_date)
 
-    # backup original files
-    for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
-      cp $HOME/$i $HOME/.orig
-    done
-
-    # copy default dot files
-    for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
-      cp $i $HOME
-    done
+  if [ ! -d $ORIG_DIR ]; then
+    mkdir $ORIG_DIR
   fi
+
+  cd
+
+  # backup original files
+  for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+    cp --parents $i $ORIG_DIR
+  done
+}
+
+f_init() {
+  # copy default dot files
+  for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+    cp --parents $i $HOME
+  done
 }
 
 f_diff() {
@@ -99,6 +111,10 @@ f_main() {
     case $i in
       -h|--help)
         f_help
+        exit
+        ;;
+      --backup)
+        f_backup
         exit
         ;;
       --init)
