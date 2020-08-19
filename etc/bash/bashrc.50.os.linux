@@ -4,6 +4,18 @@
 # linux
 #======================================================
 
+export MY_PYTHON_EXE=python3
+
+python-venv-activate() {
+  source $MY_PYTHON_VENV_DIR/$1/bin/activate
+  MY_PYTHON_VENV="$1"
+}
+
+python-venv-deactivate() {
+  deactivate
+  MY_PYTHON_VENV=""
+}
+
 #alias x='nautilus'
 #alias p='evince'
 alias x='exo-open --launch FileManager'

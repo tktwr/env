@@ -1,4 +1,17 @@
 {
-  "python.jediEnabled": false,
-  "snippets.userSnippetsDirectory": "C:\\Users\\username\\.vim\\UltiSnips"
+  // snippets
+  "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
+
+  // python-win
+  "python.pythonPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\python",
+  "python.linting.pylintPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\pylint",
+
+  // python-miniconda
+  //"python.condaPath": "C:\\Users\\Takeh\\miniconda3\\Scripts\\conda",
+  //"python.pythonPath": "C:\\Users\\Takeh\\miniconda3\\envs\\conda-vim\\python",
+  //"python.linting.pylintPath": "C:\\Users\\Takeh\\miniconda3\\envs\\conda-vim\\Scripts\\pylint",
+
+  //"python.jediEnabled": false,
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true
 }

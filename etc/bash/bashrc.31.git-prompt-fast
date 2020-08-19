@@ -5,22 +5,22 @@
 #======================================================
 
 export GIT_BRANCH
-export PREVPWD
+export PREV_PWD
 
 f_checkgit() {
-  if [ "$PWD" != "$PREVPWD" ]; then
+  if [ "$PWD" != "$PREV_PWD" ]; then
     GIT_BRANCH=`__git_ps1`
-    PREVPWD="$PWD"
+    PREV_PWD="$PWD"
   fi
 }
 
 f_checkgit_force() {
-  PREVPWD=""
+  PREV_PWD=""
   f_checkgit
 }
 
 f_git_ps1() {
-  echo "$GIT_BRANCH"
+  echo "[$MY_PYTHON_TYPE,$MY_PYTHON_VENV]$GIT_BRANCH"
 }
 
 f_set_git_prompt_fast() {

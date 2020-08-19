@@ -69,3 +69,5 @@ alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 alias www='w3m -B'
 vid() { display "vid:$*"; }
 
+alias pp='print-path.sh -p'
+

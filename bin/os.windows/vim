@@ -1,16 +1,13 @@
 #!/bin/bash
 
-python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
-python3-venv-exist() { return $(test -d ~/.python3-venv/$1); }
-
-PATH="/mingw64/bin:/usr/bin:$PATH"
+#PATH="/mingw64/bin:/usr/bin:$PATH"
 
 venv=""
-python3-venv-exist vim
-if [ $? -eq 0 ]; then
-  python3-venv-activate vim
-  venv="vim"
-fi
+#python-venv-exist vim
+#if [ $? -eq 0 ]; then
+#  python-venv-activate vim
+#  venv="vim"
+#fi
 
 debug=1
 if [ $debug -eq 1 ]; then

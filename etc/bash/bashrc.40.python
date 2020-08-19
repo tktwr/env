@@ -1,10 +1,20 @@
 #!/bin/bash
 
+export MY_PYTHON_VENV_DIR=$HOME/.python-venv
+
+# pip
+pip-upgrade() {
+  $MY_PYTHON_EXE -m pip install --upgrade pip
+}
+
 # python
-python3-venv-create() { python3 -m venv ~/.python3-venv/$1; }
-python3-venv-activate() { source ~/.python3-venv/$1/bin/activate; }
-python3-venv-deactivate() { deactivate; }
-python3-venv-exist() { return $(test -d ~/.python3-venv/$1); }
+python-venv-create() {
+  $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$1
+}
+
+python-venv-exist() {
+  return $(test -d $MY_PYTHON_VENV_DIR/$1)
+}
 
 # conda
 conda-venv-info() { conda info -e; }
@@ -27,9 +37,14 @@ f_activate_python() {
         conda activate $python_venv
         ;;
       python-win|python)
-        python3-venv-activate $python_venv
+        python-venv-activate $python_venv
         ;;
     esac
   fi
 }
+
+alias mypython-set-anaconda='mypython.sh --set python-anaconda'
+alias mypython-set-miniconda='mypython.sh --set python-miniconda'
+alias mypython-set-win='mypython.sh --set python-win'
+alias mypython-set-default='mypython.sh --set python'
 

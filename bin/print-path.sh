@@ -22,18 +22,30 @@ f_format_dos_path() { sed 's+;+\n+g'; }
 FORMAT=f_format_unix_path
 
 f_print_path() {
-  echo "[SYS_PATH]"
+  echo "=== [SYS_PATH] ==="
   echo "$SYS_PATH" | $FORMAT
   echo
-  echo "[PATH]"
+  echo "=== [PATH] ==="
   echo "$PATH" | $FORMAT
   echo
-  echo "[which]"
+  echo "=== [env] ==="
+  echo "MY_PYTHON_TYPE: $MY_PYTHON_TYPE"
+  echo "MY_PYTHON_VENV: $MY_PYTHON_VENV"
+  echo "MY_PYTHON_VENV_DIR: $MY_PYTHON_VENV_DIR"
+  echo "MY_PYTHON_EXE: $MY_PYTHON_EXE"
+  echo
+  echo "=== [which] ==="
   which python
-  which python3
+  python --version
   which pip
+  pip --version
+  which python3
+  python3 --version
   which pip3
+  pip3 --version
   which pyls
+  which pylint
+  which clang
   which clangd
   which node
 }

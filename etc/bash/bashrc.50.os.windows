@@ -36,10 +36,23 @@ f_set_python_miniconda() {
 # python
 #------------------------------------------------------
 
+export MY_PYTHON_EXE=python
+
 f_set_python_win() {
   PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
   PATH="$USER_PYTHON_HOME:$PATH"
   PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+}
+
+python-venv-activate() {
+  MY_OLD_PATH=$PATH
+  PATH="$MY_PYTHON_VENV_DIR/$1/Scripts:$PATH"
+  MY_PYTHON_VENV="$1"
+}
+
+python-venv-deactivate() {
+  PATH=$MY_OLD_PATH
+  MY_PYTHON_VENV=""
 }
 
 #------------------------------------------------------
