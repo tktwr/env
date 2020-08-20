@@ -43,8 +43,3 @@ f_activate_python() {
   fi
 }
 
-alias mypython-set-anaconda='mypython.sh --set python-anaconda'
-alias mypython-set-miniconda='mypython.sh --set python-miniconda'
-alias mypython-set-win='mypython.sh --set python-win'
-alias mypython-set-default='mypython.sh --set python'
-

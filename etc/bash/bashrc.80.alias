@@ -53,21 +53,7 @@ alias wget-page='wget -N -k -p -L -np'
 alias wget-page1='wget -N -k -p -L -np -r -l1'
 alias wget-page2='wget -N -k -p -L -np -r -l2'
 
-# cmake
-alias mycmake-set-ninja-release='mycmake.sh --set ninja Release'
-alias mycmake-set-ninja-debug='mycmake.sh --set ninja Debug'
-alias mycmake-set-make-release='mycmake.sh --set make Release'
-alias mycmake-set-make-debug='mycmake.sh --set make Debug'
-alias mycmake-set-vs2017-release='mycmake.sh --set vs2017 Release'
-alias mycmake-set-vs2017-debug='mycmake.sh --set vs2017 Debug'
-alias mycmake-set-vs2017-reldeb='mycmake.sh --set vs2017 RelWithDebInfo'
-alias mycmake-set-vs2019-release='mycmake.sh --set vs2019 Release'
-alias mycmake-set-vs2019-debug='mycmake.sh --set vs2019 Debug'
-alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
-
 # misc
 alias www='w3m -B'
 vid() { display "vid:$*"; }
-
-alias pp='print-path.sh -p'
 

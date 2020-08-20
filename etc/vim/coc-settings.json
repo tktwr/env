@@ -3,6 +3,7 @@
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
 
   // python-win
+  "python.venvFolders": ["C:\\msys64\\home\\Takeh\\.python-venv"],
   "python.pythonPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\python",
   "python.linting.pylintPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\pylint",
 

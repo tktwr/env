@@ -120,6 +120,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
 
 set signcolumn=yes
 let g:coc_disable_startup_warning = 1
+"let g:coc_uri_prefix_replace_patterns = {'/Users': '/home'}
 
 "------------------------------------------------------
 " vim-plug: vim-lsp
