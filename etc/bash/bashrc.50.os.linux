@@ -4,6 +4,10 @@
 # linux
 #======================================================
 
+#------------------------------------------------------
+# python venv
+#------------------------------------------------------
+
 export MY_PYTHON_EXE=python3
 
 python-venv-activate() {
@@ -15,6 +19,8 @@ python-venv-deactivate() {
   deactivate
   MY_PYTHON_VENV=""
 }
+
+#------------------------------------------------------
 
 #alias x='nautilus'
 #alias p='evince'

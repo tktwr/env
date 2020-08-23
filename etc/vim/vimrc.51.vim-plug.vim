@@ -118,9 +118,15 @@ nmap <silent> gh :call CocAction('doHover')<CR>
 
 imap <C-l> <Plug>(coc-snippets-expand)
 
-set signcolumn=yes
+if has("win32unix") || has("win32") || has("win64")
+  let g:coc_config_home = expand('$MY_VIM/coc/win')
+else
+  let g:coc_config_home = expand('$MY_VIM/coc/linux')
+endif
 let g:coc_disable_startup_warning = 1
 "let g:coc_uri_prefix_replace_patterns = {'/Users': '/home'}
+
+set signcolumn=yes
 
 "------------------------------------------------------
 " vim-plug: vim-lsp

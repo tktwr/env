@@ -1,0 +1,14 @@
+{
+  // snippets
+  "snippets.userSnippetsDirectory": "$MY_VIM/UltiSnips",
+
+  "python.venvFolders": ["~/.python-venv"],
+  "python.pythonPath": "~/.python-venv/vim/bin/python",
+  "python.linting.pylintPath": "~/.python-venv/vim/bin/pylint",
+  "python.linting.flake8Path": "~/.python-venv/vim/bin/flake8",
+
+  //"python.jediEnabled": false
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.enabled": true
+}

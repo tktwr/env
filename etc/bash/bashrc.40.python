@@ -3,20 +3,28 @@
 export MY_PYTHON_VENV_DIR=$HOME/.python-venv
 
 # pip
+pip-init() {
+  pip install python-language-server pylint flake8
+}
+
 pip-upgrade() {
   $MY_PYTHON_EXE -m pip install --upgrade pip
 }
 
+#------------------------------------------------------
 # python
-python-venv-create() {
-  $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$1
-}
-
+#------------------------------------------------------
 python-venv-exist() {
   return $(test -d $MY_PYTHON_VENV_DIR/$1)
 }
 
+python-venv-create() {
+  $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$1
+}
+
+#------------------------------------------------------
 # conda
+#------------------------------------------------------
 conda-venv-info() { conda info -e; }
 conda-venv-create() { conda create -n $1 python; }
 conda-venv-activate() { conda activate $1; }
@@ -25,6 +33,39 @@ conda-venv-remove() { conda remove -n $1 --all; }
 conda-venv-move() {
   conda create -n $2 --clone $1;
   conda remove -n $1 --all;
+}
+
+#------------------------------------------------------
+# select python
+#------------------------------------------------------
+
+f_select_python() {
+  local python_type=$1
+
+  case $python_type in
+    python-anaconda)
+      f_set_python_anaconda
+      ;;
+    python-miniconda)
+      f_set_python_miniconda
+      ;;
+    python-win)
+      f_set_python_win
+      ;;
+    python)
+      ;;
+  esac
+
+  case $python_type in
+    python-anaconda|python-miniconda|python-win)
+      alias pip='winpty pip'
+      alias python='winpty python'
+      alias ipython='winpty ipython'
+      alias jupyter='winpty jupyter'
+      ;;
+    python)
+      ;;
+  esac
 }
 
 f_activate_python() {

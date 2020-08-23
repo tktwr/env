@@ -36,13 +36,17 @@ f_set_python_miniconda() {
 # python
 #------------------------------------------------------
 
-export MY_PYTHON_EXE=python
-
 f_set_python_win() {
   PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
   PATH="$USER_PYTHON_HOME:$PATH"
   PATH="$USER_PYTHON_HOME/Scripts:$PATH"
 }
+
+#------------------------------------------------------
+# python venv
+#------------------------------------------------------
+
+export MY_PYTHON_EXE=python
 
 python-venv-activate() {
   MY_OLD_PATH=$PATH
@@ -53,39 +57,6 @@ python-venv-activate() {
 python-venv-deactivate() {
   PATH=$MY_OLD_PATH
   MY_PYTHON_VENV=""
-}
-
-#------------------------------------------------------
-# select python
-#------------------------------------------------------
-
-f_select_python() {
-  local python_type=$1
-
-  case $python_type in
-    python-anaconda)
-      f_set_python_anaconda
-      ;;
-    python-miniconda)
-      f_set_python_miniconda
-      ;;
-    python-win)
-      f_set_python_win
-      ;;
-    python)
-      ;;
-  esac
-
-  case $python_type in
-    python-anaconda|python-miniconda|python-win)
-      alias pip='winpty pip'
-      alias python='winpty python'
-      alias ipython='winpty ipython'
-      alias jupyter='winpty jupyter'
-      ;;
-    python)
-      ;;
-  esac
 }
 
 #------------------------------------------------------
