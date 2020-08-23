@@ -119,7 +119,7 @@ nmap <silent> gh :call CocAction('doHover')<CR>
 imap <C-l> <Plug>(coc-snippets-expand)
 
 if filereadable(expand('~/.vim/coc-settings.json'))
-  let g:coc_config_home = expand('~/.vim/coc-settings.json')
+  let g:coc_config_home = expand('~/.vim')
 elseif has("win32unix") || has("win32") || has("win64")
   let g:coc_config_home = expand('$MY_VIM/coc/win')
 else
