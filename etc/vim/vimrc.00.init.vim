@@ -43,6 +43,7 @@ set noundofile
 
 "set showcmd
 
+set signcolumn=yes
 set cmdheight=2
 set winheight=3
 "set scrolloff=5

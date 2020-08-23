@@ -8,6 +8,8 @@ export MY_OS_NAME=windows
 
 export MY_BACKUP=$HOME/backup
 
+export MY_PYTHON_VENV_DIR=$MY_HOME/.python-venv
+
 export MY_DESKTOP=$MY_HOME/Desktop
 export MY_DOWNLOADS=$MY_HOME/Downloads
 export MY_CONFIG=$MY_HOME/MyConfig

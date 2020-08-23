@@ -3,11 +3,10 @@
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
 
   // python-win
-  "python.venvFolders": ["C:\\msys64\\home\\Takeh\\.python-venv"],
-  "python.pythonPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\python",
-  "python.linting.pylintPath": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\pylint",
-  "python.linting.flake8Path": "C:\\msys64\\home\\Takeh\\.python-venv\\vim\\Scripts\\flake8.exe",
-  //"python.linting.flake8Path": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\bin\\os.windows\\flake8.sh",
+  "python.venvFolders": ["C:\\Users\\Takeh\\.python-venv\\vim", "C:\\Users\\Takeh\\.python-venv"],
+  "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\python",
+  "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\pylint",
+  "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\flake8",
 
   // python-miniconda
   //"python.condaPath": "C:\\Users\\Takeh\\miniconda3\\Scripts\\conda",

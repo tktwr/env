@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export MY_PYTHON_VENV_DIR=$HOME/.python-venv
-
 # pip
 pip-init() {
   pip install python-language-server pylint flake8
