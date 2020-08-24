@@ -45,6 +45,7 @@ f_print_path() {
   pip3 --version
   which pyls
   which pylint
+  which flake8
   which clang
   which clangd
   which node

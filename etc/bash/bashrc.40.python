@@ -1,28 +1,45 @@
 #!/bin/bash
 
+#------------------------------------------------------
 # pip
-pip-init() {
+#------------------------------------------------------
+pip-upgrade() {
+  $MY_PYTHON_EXE -m pip install --upgrade pip
+}
+
+pip-install-vim() {
+  pip install wheel
   pip install python-language-server pylint flake8
 }
 
-pip-upgrade() {
-  $MY_PYTHON_EXE -m pip install --upgrade pip
+pip-install-torch() {
+  pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+  pip install opencv-python
+  pip install matplotlib
+  pip install numpy
+  pip install scipy
+  pip install sklearn
 }
 
 #------------------------------------------------------
 # python
 #------------------------------------------------------
-python-venv-exist() {
-  return $(test -d $MY_PYTHON_VENV_DIR/$1)
+python-venv-info() {
+  ls $MY_PYTHON_VENV_DIR
 }
 
 python-venv-create() {
   $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$1
 }
 
+python-venv-exist() {
+  return $(test -d $MY_PYTHON_VENV_DIR/$1)
+}
+
 #------------------------------------------------------
 # conda
 #------------------------------------------------------
+conda-upgrade() { conda update -n base -c defaults conda; }
 conda-venv-info() { conda info -e; }
 conda-venv-create() { conda create -n $1 python; }
 conda-venv-activate() { conda activate $1; }

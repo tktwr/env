@@ -32,7 +32,7 @@ f_set_env_vars() {
     f_expand_dir $target_os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
 
     f_expand_dir $target_os USER_PROG_DIR "$USERPROFILE/AppData/Local/Programs"
-    f_expand_dir $target_os USER_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38-32"
+    f_expand_dir $target_os USER_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38"
     f_expand_dir $target_os USER_PYTHON_ROAMING "$USERPROFILE/AppData/Roaming/Python/Python38"
 
     f_expand_dir $target_os JAVA_HOME "C:\Program Files\Android\Android Studio\jre"
