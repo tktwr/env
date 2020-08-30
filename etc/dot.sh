@@ -16,8 +16,8 @@ DOT_FILES_COMMON="\
 "
 DOT_FILES_DIFF="\
 .gitconfig \
-.my/hostname \
 .my/buildrc \
+.my/hostname \
 .my/pythonrc \
 "
 DOT_FILES=""

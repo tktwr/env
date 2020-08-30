@@ -35,20 +35,24 @@ f_print_path() {
   echo "MY_PYTHON_EXE: $MY_PYTHON_EXE"
   echo
   echo "=== [which] ==="
-  which python
+  which python 2> /dev/null
   python --version
-  which pip
+  echo
+  which pip 2> /dev/null
   pip --version
-  which python3
+  echo
+  which python3 2> /dev/null
   python3 --version
-  which pip3
+  echo
+  which pip3 2> /dev/null
   pip3 --version
-  which pyls
-  which pylint
-  which flake8
-  which clang
-  which clangd
-  which node
+  echo
+  which pyls 2> /dev/null
+  which pylint 2> /dev/null
+  which flake8 2> /dev/null
+  which clang 2> /dev/null
+  which clangd 2> /dev/null
+  which node 2> /dev/null
 }
 
 f_main() {

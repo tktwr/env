@@ -108,6 +108,7 @@ Plug 'godlygeek/tabular'
 "------------------------------------------------------
 " vim-plug: coc
 "------------------------------------------------------
+let $NVIM_COC_LOG_LEVEL='debug'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 nmap <silent> gd <Plug>(coc-definition)
@@ -125,8 +126,13 @@ elseif has("win32unix") || has("win32") || has("win64")
 else
   let g:coc_config_home = expand('$MY_VIM/coc/linux')
 endif
+
+if has("win32unix") || has("win32") || has("win64")
+  let g:coc_data_home = expand('$MY_VIM/coc_data/win')
+endif
+
 let g:coc_disable_startup_warning = 1
-"let g:coc_uri_prefix_replace_patterns = {'/Users': '/home'}
+"let g:coc_uri_prefix_replace_patterns = {'/home': 'C:/msys64/home'}
 
 "------------------------------------------------------
 " vim-plug: vim-lsp
@@ -211,6 +217,14 @@ endif
 if has("gui_running")
   Plug 'ryanoasis/vim-devicons'
   "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+endif
+
+"------------------------------------------------------
+" vim-plug: airline
+"------------------------------------------------------
+if 0
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 endif
 
 "------------------------------------------------------

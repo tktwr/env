@@ -3,10 +3,10 @@
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
 
   // python-win
-  "python.venvFolders": ["C:\\Users\\Takeh\\.python-venv\\vim", "C:\\Users\\Takeh\\.python-venv"],
-  "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\python",
-  "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\pylint",
-  "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\vim\\Scripts\\flake8",
+  "python.venvFolders": ["C:\\Users\\Takeh\\.python-venv\\torch\\Scripts", "C:\\Users\\Takeh\\.python-venv\\torch", "C:\\Users\\Takeh\\.python-venv"],
+  "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\python.exe",
+  "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\pylint.exe",
+  "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\flake8.exe",
 
   // python-miniconda
   //"python.condaPath": "C:\\Users\\Takeh\\miniconda3\\Scripts\\conda",
@@ -14,7 +14,7 @@
   //"python.linting.pylintPath": "C:\\Users\\Takeh\\miniconda3\\envs\\conda-vim\\Scripts\\pylint",
 
   //"python.jediEnabled": false,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.enabled": true
 }

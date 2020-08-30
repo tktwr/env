@@ -24,6 +24,7 @@ f_set_env_vars() {
   local target_os="$1"
 
   if [ ! -z "$USERPROFILE" ]; then
+    # msys|cygwin|gitbash
     f_expand_dir $target_os SYS_PROG64_DIR "C:\Program Files"
     f_expand_dir $target_os SYS_PROG32_DIR "C:\Program Files (x86)"
 
@@ -41,6 +42,7 @@ f_set_env_vars() {
     f_expand_dir $target_os MINICONDA_HOME "$USERPROFILE/miniconda3"
     f_expand_dir $target_os NODEJS_HOME "C:\Program Files\nodejs"
   else
+    # linux|termux|virtualbox
     f_expand_dir $target_os SYS_WIN_HOME "$HOME/WinHome"
   fi
 

@@ -34,10 +34,14 @@ hi! link WildMenu   MyYellowRevBold
 "hi User2 ctermfg=0 ctermbg=2 guifg=#464646 guibg=#90A959 cterm=bold gui=bold
 hi! link User1   MyAquaRevBold
 hi! link User2   MyAquaRevBold
+hi! link User3   MyYellowRevBold
 
-set laststatus=2
-set statusline=%1*%<%f%0*
-set statusline+=\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}
-set statusline+=%=%l/%L,%c%V%4p%%
-set statusline+=\ %2*%{fugitive#statusline()}%0*
-set statusline^=%{coc#status()}
+if 1
+  set laststatus=2
+  set statusline=%1*%<%f%0*
+  set statusline+=\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}
+  set statusline+=\ %{coc#status()}
+  set statusline+=%=%l/%L,%c%V%4p%%
+  set statusline+=\ %2*%{FugitiveStatusline()}%0*
+endif
+
