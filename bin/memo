@@ -11,6 +11,23 @@ bin_name=`basename $0`
 memo_dir="$MY_LOCAL_CONFIG/memo"
 tags="$MY_REMOTE_CONFIG/memo/tags.memo $MY_REMOTE_CONFIG/samples/tags.memo $MY_LOCAL_CONFIG/memo/tags.memo"
 
+f_help() {
+  echo "NAME"
+  echo "  $bin_name"
+  echo
+  echo "SYNOPSIS"
+  echo "  $bin_name [options] [tag]"
+  echo
+  echo "OPTIONS"
+  echo "  -h, --help   print help"
+  echo "  -p           print tags"
+  echo "  -s=tag       search tag"
+  echo "  -c=N         set N columns"
+  echo
+  echo "TAGS"
+  f_print_tags
+}
+
 f_print_tags() {
   for i in $tags; do
     if [ -f $i ]; then
@@ -29,21 +46,8 @@ f_search_tag() {
   done
 }
 
-f_help() {
-  echo "NAME"
-  echo "  $bin_name"
-  echo
-  echo "SYNOPSIS"
-  echo "  $bin_name [options] [tag]"
-  echo
-  echo "OPTIONS"
-  echo "  -h, --help   print help"
-  echo "  -p           print tags"
-  echo "  -s=tag       search tag"
-  echo "  -c=N         set N columns"
-  echo
-  echo "TAGS"
-  f_print_tags
+f_exec_vim() {
+  vim -t "$1" -c "normal zt" -c "only"
 }
 
 f_main() {
@@ -70,7 +74,7 @@ f_main() {
         cols=`echo $i | sed 's+^-c=++'`
         ;;
       *)
-        vim -t "memo_$i" -c "normal zt" -c "only"
+        f_exec_vim `f_search_tag $i`
         ;;
     esac
   done
