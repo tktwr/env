@@ -43,11 +43,16 @@ f_set_env_vars() {
 
 f_cat_vimrc() {
   local DIR=$1
-  shift
-  local files="$@"
+  if [ ! -d $DIR ]; then
+    return
+  fi
+
+  cd $DIR
+
+  local files="vimrc.??.*.vim"
   local I
+
   for I in $files; do
-    I=$DIR/$I
     if [ -f $I ]; then
       cat $I
     fi
@@ -55,6 +60,7 @@ f_cat_vimrc() {
 }
 
 f_set_env_vars $1 $2
-f_cat_vimrc . vimrc.??.*.vim
-f_cat_vimrc $MY_LOCAL_CONFIG/env/etc/vim vimrc
+f_cat_vimrc $MY_REMOTE_CONFIG/env/etc/vim
+f_cat_vimrc $MY_LOCAL_CONFIG/env/etc/vim
+f_cat_vimrc $MY_PRIVATE_CONFIG/env/etc/vim
 

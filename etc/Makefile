@@ -36,13 +36,13 @@ install:
 clean:
 
 cmp:
-	./dot.sh --common-files --diff-files
+	./dot.sh --all-files --cmp
 
 vimdiff:
-	./dot.sh --common-files --diff-files --vimdiff
+	./dot.sh --all-files --vimdiff
 
 vimdirdiff:
-	./dot.sh --common-files --diff-files --vimdirdiff
+	./dot.sh --all-files --vimdirdiff
 
 #======================================================
 
@@ -52,13 +52,13 @@ install.win:
 clean.win:
 
 cmp.win:
-	./dot.sh --common-files --diff-files $(USERPROFILE)
+	./dot.sh --all-files --cmp $(USERPROFILE)
 
 vimdiff.win:
-	./dot.sh --common-files --diff-files --vimdiff $(USERPROFILE)
+	./dot.sh --all-files --vimdiff $(USERPROFILE)
 
 vimdirdiff.win:
-	./dot.sh --common-files --diff-files --vimdirdiff $(USERPROFILE)
+	./dot.sh --all-files --vimdirdiff $(USERPROFILE)
 
 #======================================================
 

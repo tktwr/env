@@ -121,6 +121,9 @@ f_main() {
         f_init
         exit
         ;;
+      --all-files)
+        DOT_FILES="$DOT_FILES_COMMON $DOT_FILES_DIFF"
+        ;;
       --common-files)
         DOT_FILES="$DOT_FILES $DOT_FILES_COMMON"
         ;;

@@ -6,3 +6,4 @@
 2.r.memo ~/MyConfig/tktwr.github/memo
 2.r.samples ~/MyConfig/tktwr.github/samples
 3.l.etc ~/MyConfig/tktwr.local/env/etc
+4.p.etc ~/MyConfig/tktwr.private/env/etc

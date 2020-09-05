@@ -20,17 +20,27 @@ f_expand_dir() {
   echo "export $name=\"$dir\""
 }
 
+f_cat_my_home() {
+cat << END
+if [ -d \$SYS_WIN_HOME ]; then
+  export MY_HOME=\$SYS_WIN_HOME
+else
+  export MY_HOME=\$HOME
+fi
+END
+}
+
 f_set_env_vars() {
   local target_os="$1"
 
   if [ ! -z "$USERPROFILE" ]; then
     # msys|cygwin|gitbash
-    f_expand_dir $target_os SYS_PROG64_DIR "C:\Program Files"
-    f_expand_dir $target_os SYS_PROG32_DIR "C:\Program Files (x86)"
-
     f_expand_dir $target_os SYS_WIN_HOME "$USERPROFILE"
     f_expand_dir $target_os SYS_MSYS2_HOME "C:/msys64/home/$USERNAME"
     f_expand_dir $target_os SYS_CYGWIN_HOME "C:/cygwin64/home/$USERNAME"
+
+    f_expand_dir $target_os SYS_PROG64_DIR "C:\Program Files"
+    f_expand_dir $target_os SYS_PROG32_DIR "C:\Program Files (x86)"
 
     f_expand_dir $target_os USER_PROG_DIR "$USERPROFILE/AppData/Local/Programs"
     f_expand_dir $target_os USER_PYTHON_HOME "$USERPROFILE/AppData/Local/Programs/Python/Python38"
@@ -41,16 +51,14 @@ f_set_env_vars() {
     f_expand_dir $target_os ANACONDA_HOME "$USERPROFILE/Anaconda3"
     f_expand_dir $target_os MINICONDA_HOME "$USERPROFILE/miniconda3"
     f_expand_dir $target_os NODEJS_HOME "C:\Program Files\nodejs"
+    #f_expand_dir $target_os XDG_CONFIG_HOME $USERPROFILE/.config
   else
     # linux|termux|virtualbox
     f_expand_dir $target_os SYS_WIN_HOME "$HOME/WinHome"
+    #f_expand_dir $target_os XDG_CONFIG_HOME $HOME/.config
   fi
 
-  if [ -d $SYS_WIN_HOME ]; then
-    f_expand_dir $target_os MY_HOME "$SYS_WIN_HOME"
-  else
-    f_expand_dir $target_os MY_HOME "$HOME"
-  fi
+  f_cat_my_home
 
   echo 'source $HOME/.my/hostname'
   echo 'source $HOME/.my/pythonrc'
@@ -59,9 +67,6 @@ f_set_env_vars() {
     f_expand_dir win MY_LIBTT_WIN $MY_LIBTT
     f_expand_dir win MY_OPT_WIN $MY_OPT
     f_expand_dir win MY_DATA_WIN $MY_DATA
-    #f_expand_dir $target_os XDG_CONFIG_HOME $SYS_WIN_HOME/.config
-  #else
-    #f_expand_dir $target_os XDG_CONFIG_HOME $HOME/.config
   fi
 }
 
@@ -88,21 +93,27 @@ f_get_bashrc() {
 
 f_cat_bashrc() {
   local DIR=$1
-  shift
-  local files="$@"
+  if [ ! -d $DIR ]; then
+    return
+  fi
+
+  cd $DIR
+
+  local files=`f_get_bashrc`
   local I
+
   for I in $files; do
-    I=$DIR/$I
     if [ -f $I ]; then
-      echo "f_time_start $I"
+      echo "f_time_start $DIR/$I"
       cat $I
-      echo "f_time_end $I"
+      echo "f_time_end $DIR/$I"
     fi
   done
 }
 
 cat bashrc.time
 f_set_env_vars $1
-f_cat_bashrc . `f_get_bashrc`
-f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash bashrc
+f_cat_bashrc $MY_REMOTE_CONFIG/env/etc/bash
+f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash
+f_cat_bashrc $MY_PRIVATE_CONFIG/env/etc/bash
 
