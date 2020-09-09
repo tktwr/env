@@ -78,3 +78,8 @@ alias ping='winpty ping'
 alias ipconfig='winpty ipconfig'
 alias tracert='winpty tracert'
 
+net-info() {
+  net share
+  net use
+}
+
