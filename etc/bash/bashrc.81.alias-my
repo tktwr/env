@@ -113,10 +113,22 @@ cp.G()           { cp "$@" `mypushd.sh --get`; }
 #------------------------------------------------------
 # mypython.sh
 #------------------------------------------------------
-alias mypython-set-python-anaconda='mypython.sh --set python-anaconda'
-alias mypython-set-python-miniconda='mypython.sh --set python-miniconda'
-alias mypython-set-python-win='mypython.sh --set python-win'
-alias mypython-set-python='mypython.sh --set python'
+mypython-set-python-anaconda() {
+  mypython.sh --set python-anaconda $1
+  source $HOME/.bashrc
+}
+mypython-set-python-miniconda() {
+  mypython.sh --set python-miniconda $1
+  source $HOME/.bashrc
+}
+mypython-set-python-win() {
+  mypython.sh --set python-win $1
+  source $HOME/.bashrc
+}
+mypython-set-python() {
+  mypython.sh --set python $1
+  source $HOME/.bashrc
+}
 
 #------------------------------------------------------
 # mycmake.sh

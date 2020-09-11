@@ -49,14 +49,14 @@ f_set_python_win() {
 
 export MY_PYTHON_EXE=python
 
-python-venv-activate() {
+mypython-venv-activate() {
   MY_OLD_PATH=$PATH
   PATH="$MY_PYTHON_VENV_DIR/$1:$PATH"
   PATH="$MY_PYTHON_VENV_DIR/$1/Scripts:$PATH"
   MY_PYTHON_VENV="$1"
 }
 
-python-venv-deactivate() {
+mypython-venv-deactivate() {
   PATH=$MY_OLD_PATH
   MY_PYTHON_VENV=""
 }
