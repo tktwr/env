@@ -28,6 +28,10 @@ int main(int argc, char *argv[]) {
     B b;
     b.getValue();
     b.getValue(1);
+    b.getValue(2);
+    if (true) {
+        statement;
+    }
 
     return 0;
 }

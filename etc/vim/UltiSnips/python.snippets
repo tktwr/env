@@ -18,24 +18,25 @@ if __name__ == "__main__":
     main(sys.argv)
 endsnippet
 
-snippet def "def"
-def ${1:function}(${2:arg1}):
-    ${0:pass}
-
-
-endsnippet
-
 snippet print "print"
-print(f"$1: {${1:val}}")
+print(f"${1:val}: {$1}")
 endsnippet
 
 snippet printf "printf"
-print("${1:name}: {}".format(${2:val}))
+print("${1:val}: {}".format($1))
 endsnippet
 
-#======================================================
+snippet range "range"
+range(${1:0}, ${2:5}, ${3:1})
+endsnippet
+
+snippet int-list "int list"
+list(int(i) for i in range(${1:0}, ${2:5}, ${3:1}))
+endsnippet
+
+#------------------------------------------------------
 # control
-#======================================================
+#------------------------------------------------------
 
 snippet if "if"
 if ${1:True}:
@@ -58,14 +59,25 @@ while ${1:True}:
 endsnippet
 
 snippet for "for"
-for i in range(0, 5, 1):
-    print("%d " % i, end="")
-print()
+for ${1:i} in ${2:list}:
+    ${0:pass}
 endsnippet
 
-#======================================================
+#------------------------------------------------------
+# function
+#------------------------------------------------------
+
+snippet def "def"
+def ${1:function}(${2:arg1}):
+    ${0:pass}
+
+
+endsnippet
+
+#------------------------------------------------------
 # class
-#======================================================
+#------------------------------------------------------
+
 snippet cl "class"
 class MyClass():
     n = 0
@@ -93,26 +105,25 @@ class MySubClass(MyClass):
 
 endsnippet
 
-#======================================================
+#------------------------------------------------------
 # io
-#======================================================
+#------------------------------------------------------
 
 snippet f_read_text "read a text file"
 def f_read_text(fname):
-    f = open(fname, "r")
-    text = ""
-    for line in f:
-        text += line
-    f.close()
-    return text
+    with open(fname, "r") as f:
+        lines = f.readlines()
+    return lines
+
 
 endsnippet
 
 snippet f_write_text "write a text file"
-def f_write_text(fname, text):
-    f = open(fname, "w")
-    f.write(text)
-    f.close()
+def f_write_text(fname, lines):
+    with open(fname, "w") as f:
+        for i in lines:
+            f.write(i)
+
 
 endsnippet
 
@@ -120,10 +131,10 @@ snippet f_read_json "read a json file"
 import json
 
 def f_read_json(fname):
-    f = open(fname, "r")
-    json_data = json.load(f)
-    f.close()
+    with open(fname, "r") as f:
+        json_data = json.load(f)
     return json_data
+
 
 endsnippet
 
@@ -131,9 +142,9 @@ snippet f_write_json "write a json file"
 import json
 
 def f_write_json(fname, data):
-    f = open(fname, "w")
-    f.write(json.dumps(data))
-    f.close()
+    with open(fname, "w") as f:
+        f.write(json.dumps(data))
+
 
 endsnippet
 
