@@ -35,14 +35,18 @@ set dictionary=$MY_VIM/words
 "------------------------------------------------------
 " basic
 "------------------------------------------------------
+set hidden
+
 set autowrite
 
 set noswapfile
 set nobackup
+set nowritebackup
 set noundofile
 
 "set showcmd
 
+set updatetime=300
 set signcolumn=yes
 set cmdheight=2
 set winheight=3

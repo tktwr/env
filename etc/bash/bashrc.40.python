@@ -13,13 +13,14 @@ mypip-install-vim() {
 }
 
 mypip-install-torch() {
-  # pytorch with CUDA 10.2
-  pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
   pip install opencv-python
   pip install matplotlib
   pip install numpy
   pip install scipy
   pip install sklearn
+  pip install parse
+  # pytorch with CUDA 10.2
+  pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 }
 
 #------------------------------------------------------
@@ -30,6 +31,17 @@ mypython-venv-info() {
 }
 
 mypython-venv-create() {
+  if [ -z "$1" ]; then
+    echo "mypython-venv-create venv_name"
+    return
+  fi
+
+  mypython-venv-exist $1
+  if [ $? -eq 0 ]; then
+    echo "already existed: $1"
+    return
+  fi
+
   $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$1
   mypython.sh --set $MY_PYTHON_TYPE $1
   source $HOME/.bashrc

@@ -7,8 +7,9 @@ public:
     B() {}
     virtual ~B() {}
 
-    void setValueB(int v) { m_val = v; }
-    int  getValueB() const { return m_val; }
+    void setValue(int v) { m_val = v; }
+    int  getValue() const { return m_val; }
+    int  getValue(int x) const;
 
 private:
     int m_val = 0;

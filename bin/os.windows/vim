@@ -3,9 +3,9 @@
 #PATH="/mingw64/bin:/usr/bin:$PATH"
 
 venv=""
-#python-venv-exist vim
+#mypython-venv-exist vim
 #if [ $? -eq 0 ]; then
-#  python-venv-activate vim
+#  mypython-venv-activate vim
 #  venv="vim"
 #fi
 
