@@ -24,3 +24,7 @@ local.mk
 doxygen/
 !Doxyfile
 
+# python
+__pycache__
+*.model
+
