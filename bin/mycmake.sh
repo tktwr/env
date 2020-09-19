@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MY_BUILD_SYS=ninja
+MY_BUILD_SYS=make
 MY_BUILD_CONFIG=Release
 
 BUILDRC=$HOME/.my/buildrc
@@ -42,6 +42,7 @@ f_help() {
 f_set() {
   echo "export MY_BUILD_SYS=$1"
   echo "export MY_BUILD_CONFIG=$2"
+  echo "export CLANGD_FLAGS=--compile-commands-dir=build.$1/$2"
 }
 
 f_eval() {

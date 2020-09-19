@@ -62,6 +62,7 @@ f_set_env_vars() {
 
   echo 'source $HOME/.my/hostname'
   echo 'source $HOME/.my/pythonrc'
+  echo 'source $HOME/.my/buildrc'
 
   if [ ! -z "$USERPROFILE" ]; then
     f_expand_dir win MY_LIBTT_WIN $MY_LIBTT

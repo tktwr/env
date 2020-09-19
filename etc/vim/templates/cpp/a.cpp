@@ -1,6 +1,6 @@
 #include <vector>
 #include <cstdio>
-#include "b.h"
+#include "b.hpp"
 
 using namespace std;
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
     b.getValue(1);
     b.getValue(2);
     if (true) {
-        statement;
+        printf("hello world.\n");
     }
 
     return 0;
