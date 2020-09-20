@@ -19,6 +19,7 @@ mypip-install-torch() {
   pip install scipy
   pip install sklearn
   pip install parse
+  pip install tensorboard
   # pytorch with CUDA 10.2
   pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
 }

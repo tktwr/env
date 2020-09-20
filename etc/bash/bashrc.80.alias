@@ -57,3 +57,19 @@ alias wget-page2='wget -N -k -p -L -np -r -l2'
 alias www='w3m -B'
 vid() { display "vid:$*"; }
 
+# fzy
+fzy_cd() {
+  cd $(find -type d | fzy)
+}
+fzy_hist() {
+  cmd=$(history 40 | fzy | awk '{print $2}')
+  eval "$cmd"
+}
+fzy_pushd() {
+  nr=$(dirs -v | fzy | awk '{print $1}')
+  pushd +$nr
+}
+alias fcd='fzy_cd'
+alias fh='fzy_hist'
+alias ??='fzy_pushd'
+
