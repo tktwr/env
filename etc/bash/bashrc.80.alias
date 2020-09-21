@@ -59,15 +59,22 @@ vid() { display "vid:$*"; }
 
 # fzy
 fzy_cd() {
-  cd $(find -type d | fzy)
+  dir=$(find -type d | fzy)
+  if [ ! -z "$dir" ]; then
+    cd $dir
+  fi
 }
 fzy_hist() {
   cmd=$(history 40 | fzy | awk '{print $2}')
-  eval "$cmd"
+  if [ ! -z "$cmd" ]; then
+    eval "$cmd"
+  fi
 }
 fzy_pushd() {
   nr=$(dirs -v | fzy | awk '{print $1}')
-  pushd +$nr
+  if [ ! -z "$nr" ]; then
+    pushd +$nr
+  fi
 }
 alias fcd='fzy_cd'
 alias fh='fzy_hist'
