@@ -136,3 +136,10 @@ if 0
 endif
 
 "------------------------------------------------------
+" vim-plug: vim-which-key
+"------------------------------------------------------
+Plug 'liuchengxu/vim-which-key'
+
+nnoremap <silent> <leader>      :<c-u>WhichKey ','<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
+"------------------------------------------------------

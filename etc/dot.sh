@@ -13,11 +13,13 @@ DOT_FILES_COMMON="\
 .minttyrc \
 .NERDTreeBookmarks \
 .tmux.conf \
+.my/bmk \
 "
 DOT_FILES_DIFF="\
 .gitconfig \
 .my/buildrc \
 .my/hostname \
+.my/pushdrc \
 .my/pythonrc \
 "
 DOT_FILES=""
