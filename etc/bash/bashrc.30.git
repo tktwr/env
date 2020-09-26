@@ -51,9 +51,17 @@ alias gf='git fetch'
 
 alias gA='git add'
 alias gAu='git add -u'
-alias gC='git commit -m'
 alias gC-amend='git commit --amend -m'
-alias gAC='git commit -a -m "update"'
+
+gC() {
+  msg=${1:-"update"}
+  git commit -m "$msg"
+}
+
+gAC() {
+  msg=${1:-"update"}
+  git commit -a -m "$msg"
+}
 
 alias gR='git reset --hard'
 alias gRom='git reset --hard origin/master'
@@ -83,11 +91,15 @@ git-chmod-x-all() {
 #------------------------------------------------------
 # git-tmp
 #------------------------------------------------------
-git-tmp() {
+git-tmp-commit() {
   git commit -a -m "[TMP] $*";
 }
 
 git-tmp-reset() {
+  git reset HEAD^;
+}
+
+git-reset-last() {
   git reset HEAD^;
 }
 

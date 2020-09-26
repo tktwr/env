@@ -19,12 +19,15 @@ build*/
 imgui.ini
 compile_commands.json
 .clangd/
-local.cmake
-local.mk
 doxygen/
 !Doxyfile
 
 # python
 __pycache__
 *.model
+
+# local
+local/
+local.cmake
+local.mk
 
