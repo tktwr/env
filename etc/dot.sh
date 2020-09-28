@@ -99,8 +99,8 @@ f_diff_files() {
 
 f_cp_files() {
   if [ -n "$DOT_FILES" ]; then
-    echo "cp $DOT_FILES $1"
-    cp $DOT_FILES $1
+    echo "cp --parents $DOT_FILES $1"
+    cp --parents $DOT_FILES $1
   fi
 }
 
