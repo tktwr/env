@@ -38,6 +38,14 @@ f_print_tags() {
   done
 }
 
+f_fzy_tags() {
+  for i in $tags; do
+    if [ -f $i ]; then
+      awk '{print $1}' $i | grep '^memo_'
+    fi
+  done
+}
+
 f_search_tag() {
   for i in $tags; do
     if [ -f $i ]; then
@@ -63,6 +71,10 @@ f_main() {
         ;;
       -p)
         f_print_tags
+        exit
+        ;;
+      --fzy)
+        f_fzy_tags
         exit
         ;;
       -s=*)
