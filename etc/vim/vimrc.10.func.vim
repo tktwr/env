@@ -2,6 +2,8 @@
 " func & command
 "======================================================
 
+command ClangFormat !clang-format -i %
+
 command RunExplorer silent !explorer.exe %:h
 command RunGvim     silent !gvim "%"
 command RunVscode   silent !vscode.sh "%"

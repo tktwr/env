@@ -57,35 +57,3 @@ alias wget-page2='wget -N -k -p -L -np -r -l2'
 alias www='w3m -B'
 vid() { display "vid:$*"; }
 
-# fzy
-fzy_bmk() {
-  dir=$(cat ~/.my/bmk | fzy | awk '{print $2}')
-  if [ ! -z "$dir" ]; then
-    eval "$1 $dir"
-  fi
-}
-fzy_find_dir() {
-  dir=$(find -type d | fzy)
-  if [ ! -z "$dir" ]; then
-    eval "$1 $dir"
-  fi
-}
-fzy_hist() {
-  cmd=$(history 40 | fzy | awk '{print $2}')
-  if [ ! -z "$cmd" ]; then
-    eval "$cmd"
-  fi
-}
-fzy_pushd() {
-  nr=$(dirs -v | fzy | awk '{print $1}')
-  if [ ! -z "$nr" ]; then
-    pushd +$nr
-  fi
-}
-alias .bmk='fzy_bmk pushd'
-alias .fd='fzy_find_dir pushd'
-alias bmk='fzy_bmk cd'
-alias fd='fzy_find_dir cd'
-alias fh='fzy_hist'
-alias ??='fzy_pushd'
-

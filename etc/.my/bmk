@@ -1,40 +1,40 @@
-desktop     $MY_DESKTOP
-downloads   $MY_DOWNLOADS
+desktop    | $MY_DESKTOP
+downloads  | $MY_DOWNLOADS
 
-rconfig     $MY_REMOTE_CONFIG
-lconfig     $MY_LOCAL_CONFIG
-pconfig     $MY_PRIVATE_CONFIG
+rconfig    | $MY_REMOTE_CONFIG
+lconfig    | $MY_LOCAL_CONFIG
+pconfig    | $MY_PRIVATE_CONFIG
 
-env         $MY_ENV
-etc         $MY_ENV/etc
-bash        $MY_ENV/etc/bash
-vim         $MY_ENV/etc/vim
-bin         $MY_ENV/bin
-memo        $MY_MEMO
-samples     $MY_SAMPLES
-libtt       $MY_LIBTT
+env        | $MY_ENV
+etc        | $MY_ENV/etc
+bash       | $MY_ENV/etc/bash
+vim        | $MY_ENV/etc/vim
+bin        | $MY_ENV/bin
+memo       | $MY_MEMO
+samples    | $MY_SAMPLES
+libtt      | $MY_LIBTT
 
-dia         $MY_DIARY
+dia        | $MY_DIARY
 
 
-private     $MY_PRIVATE
-protected   $MY_PROTECTED
-public      $MY_PUBLIC
+private    | $MY_PRIVATE
+protected  | $MY_PROTECTED
+public     | $MY_PUBLIC
 
-repo        $MY_REPO
-work        $MY_WORK
-doc         $MY_DOC
-office      $MY_OFFICE
-proj        $MY_PROJ
+repo       | $MY_REPO
+work       | $MY_WORK
+doc        | $MY_DOC
+office     | $MY_OFFICE
+proj       | $MY_PROJ
 
-github      $MY_WORK/github
-git         $MY_WORK/git
-svn         $MY_WORK/svn
+github     | $MY_WORK/github
+git        | $MY_WORK/git
+svn        | $MY_WORK/svn
 
-downloads2  $MY_DOWNLOADS2
-papers      $MY_PAPERS
-opt         $MY_OPT
-data        $MY_DATA
+downloads2 | $MY_DOWNLOADS2
+papers     | $MY_PAPERS
+opt        | $MY_OPT
+data       | $MY_DATA
 
-winhome     ~/WinHome
+winhome    | ~/WinHome
 

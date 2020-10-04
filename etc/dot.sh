@@ -14,6 +14,7 @@ DOT_FILES_COMMON="\
 .NERDTreeBookmarks \
 .tmux.conf \
 .my/bmk \
+.my/links \
 "
 DOT_FILES_DIFF="\
 .gitconfig \
