@@ -47,6 +47,7 @@ f_set_git_prompt() {
 # git-alias
 #------------------------------------------------------
 alias gs='git status'
+alias gd='git diff'
 alias gf='git fetch'
 
 alias gA='git add'
