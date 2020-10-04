@@ -12,3 +12,11 @@ pytorch.transfer_learning   | https://pytorch.org/tutorials/beginner/transfer_le
 pytorch.tensorboard         | https://pytorch.org/docs/stable/tensorboard.html
 cpp.cppreference            | https://ja.cppreference.com/w/
 cpp.cpprefjp                | https://cpprefjp.github.io/
+glm                         | https://glm.g-truc.net/
+glm.doc                     | https://glm.g-truc.net/0.9.8/api/modules.html
+glm.doc.1                   | https://qiita.com/usagi/items/f34976a3d3011506ff7d
+Eigen                       | http://eigen.tuxfamily.org/
+Eigen.1                     | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
+OpenCV                      | https://opencv.org/
+OpenCV.doc                  | https://docs.opencv.org/master/
+OpenCV.cookbook             | http://opencv.jp/cookbook/index.html
