@@ -5,13 +5,13 @@
 #======================================================
 
 fzy_arg_links() {
-  echo $(cat ~/.my/links ~/.my/links.local | fzy | awk '{print $3}')
+  echo $(grep -s -h -v '^#' ~/.my/links.txt ~/.my/local/links.txt | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_bmk() {
-  echo $(cat ~/.my/bmk ~/.my/bmk.local | fzy | awk '{print $3}')
+  echo $(grep -s -h -v '^#' ~/.my/bmk.txt ~/.my/local/bmk.txt | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_bmk_expand() {
-  dir=$(cat ~/.my/bmk ~/.my/bmk.local | fzy | awk '{print $3}')
+  dir=$(grep -s -h -v '^#' ~/.my/bmk.txt ~/.my/local/bmk.txt | fzy | awk -F '|' '{print $2}')
   dir1=`eval "echo $dir"`
   dir2=`/usr/bin/cygpath -m "$dir1"`
   echo "$dir2"

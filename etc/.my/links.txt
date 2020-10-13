@@ -1,22 +1,39 @@
+# python                    |
 python                      | https://www.python.org/
 python.doc                  | https://docs.python.org/ja/3/index.html
 python.tutorial             | https://docs.python.org/ja/3/tutorial/
 python.基礎文法とサンプル集 | https://algorithm.joho.info/programming/python/sample-code-py/
 python.numpy                | https://algorithm.joho.info/programming/python/numpy-sample-code/
+python.pillow               | https://pillow.readthedocs.io/en/stable/
 python.matplotlib           | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
 python.scipy                | https://www.scipy.org/
 python.scikit-learn         | https://scikit-learn.org/stable/
 python.scikit-image         | https://scikit-image.org/
+# pytorch                   |
 pytorch                     | https://pytorch.org/
 pytorch.transfer_learning   | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
 pytorch.tensorboard         | https://pytorch.org/docs/stable/tensorboard.html
+# c++                       |
 cpp.cppreference            | https://ja.cppreference.com/w/
 cpp.cpprefjp                | https://cpprefjp.github.io/
+# lib                       |
 glm                         | https://glm.g-truc.net/
 glm.doc                     | https://glm.g-truc.net/0.9.8/api/modules.html
 glm.doc.1                   | https://qiita.com/usagi/items/f34976a3d3011506ff7d
 Eigen                       | http://eigen.tuxfamily.org/
 Eigen.1                     | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
+glfw                        | http://www.glfw.org/
+glad                        | https://github.com/Dav1dde/glad
+imgui                       | https://github.com/ocornut/imgui
+stb                         | https://github.com/nothings/stb
+# opencv                    |
 OpenCV                      | https://opencv.org/
 OpenCV.doc                  | https://docs.opencv.org/master/
 OpenCV.cookbook             | http://opencv.jp/cookbook/index.html
+# opengl                    |
+OpenGL 4                    | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+OpenGL ES 3.0               | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+# tutorial                  |
+Learn OpenGL                | https://learnopengl.com/
+OpenGL Tutorial             | http://www.opengl-tutorial.org/jp/
+PBRT                        | http://www.pbr-book.org/3ed-2018/contents.html

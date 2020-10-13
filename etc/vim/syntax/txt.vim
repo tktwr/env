@@ -10,12 +10,13 @@ syn case match
 " see "help pattern"
 syn match    myHtml             "<[^>]*>"
 syn match    myHtml             "^http.*"
+syn match    myHtml             "^https.*"
 
 syn match    myComment          "<!--.*-->"
 syn match    myComment          "#.*$"
-syn match    myComment          "/\*"
-syn match    myComment          "\*/"
-"syn region   myComment          start="/\*" end="\*/"
+"syn match    myComment          "/\*"
+"syn match    myComment          "\*/"
+syn region   myComment          start="/\*" end="\*/"
 "syn region   myComment          start=+(+ end=+)+
 
 syn match    mySeparator        "^\s*--\+$"
@@ -26,9 +27,9 @@ syn match    mySat              "(Sat)"
 syn match    mySun              "(Sun)"
 syn match    mySun              "½ËÆü"
 
-syn match    mySection1         "^# "
-syn match    mySection2         "^## "
-syn match    mySection3         "^### "
+syn match    mySection1         "^# .*"
+syn match    mySection2         "^## .*"
+syn match    mySection3         "^### .*"
 
 syn match    myItem             "^\s*[-+] .*"
 syn match    myItem0            "^[-+] .*"
