@@ -1,11 +1,17 @@
+#                |
 # windows        |
+#                |
 desktop          | $MY_DESKTOP
 downloads        | $MY_DOWNLOADS
+#                |
 # config         |
+#                |
 rconfig          | $MY_REMOTE_CONFIG
 lconfig          | $MY_LOCAL_CONFIG
 pconfig          | $MY_PRIVATE_CONFIG
+#                |
 # rconfig        |
+#                |
 env              | $MY_ENV
 etc              | $MY_ENV/etc
 bash             | $MY_ENV/etc/bash
@@ -14,9 +20,13 @@ bin              | $MY_ENV/bin
 memo             | $MY_MEMO
 samples          | $MY_SAMPLES
 libtt            | $MY_LIBTT
+#                |
 # dia            |
+#                |
 dia              | $MY_DIARY
+#                |
 # network folder |
+#                |
 private          | $MY_PRIVATE
 protected        | $MY_PROTECTED
 public           | $MY_PUBLIC
@@ -37,4 +47,4 @@ opt              | $MY_OPT
 data             | $MY_DATA
 #                |
 winhome          | ~/WinHome
-
+my               | ~/.my
