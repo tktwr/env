@@ -41,6 +41,7 @@ alias  findd?='fzy_cmd "cd " fzy_arg_find_dir'
 alias .findd?='fzy_cmd "pushd " fzy_arg_find_dir'
 #alias h?='fzy_cmd "!" fzy_arg_hist'
 alias ??='fzy_cmd "pushd +" fzy_arg_pushd'
+alias ,?='fzy_cmd "popd +" fzy_arg_pushd'
 alias make?='fzy_cmd "make " fzy_arg_make'
 alias memo?='fzy_cmd "memo " fzy_arg_memo'
 
