@@ -63,9 +63,9 @@ vimdirdiff.win:
 #======================================================
 
 help:
-	@echo "all"
-	@echo "all.install"
-	@echo "all.clean"
+	@echo "all         ... all.install"
+	@echo "all.install ... subdir, install"
+	@echo "all.clean   ... subdir, clean"
 	@echo "backup"
 	@echo "init"
 	@echo "install"

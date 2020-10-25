@@ -3,6 +3,8 @@
 "======================================================
 
 command ClangFormat !clang-format -i %
+command TabBar Tabularize /|
+command TabDot Tabularize /\.\.\.
 
 command RunExplorer silent !explorer.exe %:h
 command RunGvim     silent !gvim "%"
