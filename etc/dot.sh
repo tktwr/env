@@ -13,6 +13,7 @@ DOT_FILES_COMMON="\
 .minttyrc \
 .NERDTreeBookmarks \
 .tmux.conf \
+.my/cmd.txt \
 .my/dir.txt \
 .my/links.txt \
 "

@@ -1,0 +1,30 @@
+#                                   |
+# cmake                             |
+#                                   |
+mycmake-set-ninja-release           | mycmake.sh --set ninja Release
+mycmake-set-ninja-debug             | mycmake.sh --set ninja Debug
+mycmake-set-make-release            | mycmake.sh --set make Release
+mycmake-set-make-debug              | mycmake.sh --set make Debug
+mycmake-set-vs2017-release          | mycmake.sh --set vs2017 Release
+mycmake-set-vs2017-debug            | mycmake.sh --set vs2017 Debug
+mycmake-set-vs2017-reldeb           | mycmake.sh --set vs2017 RelWithDebInfo
+mycmake-set-vs2019-release          | mycmake.sh --set vs2019 Release
+mycmake-set-vs2019-debug            | mycmake.sh --set vs2019 Debug
+mycmake-set-vs2019-reldeb           | mycmake.sh --set vs2019 RelWithDebInfo
+#                                   |
+# python                            |
+#                                   |
+mypython-set-python-anaconda torch  | mypython-set-python-anaconda torch
+mypython-set-python-miniconda torch | mypython-set-python-miniconda torch
+mypython-set-python-win torch       | mypython-set-python-win torch
+mypython-set-python torch           | mypython-set-python torch
+mypython-venv-info                  | mypython-venv-info
+#                                   |
+# git                               |
+#                                   |
+git-ls-track                        | git-ls-track
+git-ls-untrack                      | git-ls-untrack
+git-ls-no-x                         | git-ls-no-x
+gls                                 | gls
+gb                                  | git-branch
+git-tag                             | git-tag
