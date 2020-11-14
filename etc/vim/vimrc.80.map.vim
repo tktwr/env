@@ -117,8 +117,7 @@ nnoremap <C-O> :!chrome.sh <cfile><CR>
 "------------------------------------------------------
 nnoremap <F2> :MyNERDTreeToggle<CR>
 nnoremap <F3> :MyGstatusToggle<CR>
-" grep cword in git tracked files
-nnoremap <F4> :Ggrep -I <cword> -- ':!*.dat'<CR>
+nnoremap <F4> :GgrepHere<CR>
 
 " tab
 "nnoremap <F5> :tabclose<CR>
