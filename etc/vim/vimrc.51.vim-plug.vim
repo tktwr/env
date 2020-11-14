@@ -50,11 +50,6 @@ endif
 
 if s:use_nerdtree_git_plugin
   Plug 'Xuyuanp/nerdtree-git-plugin'
-  "let g:NERDTreeShowGitStatus=1
-  "let g:NERDTreeShowIgnoredStatus=0
-  "let g:NERDTreeGitStatusIgnoreSubmodules=1
-  "let g:NERDTreeIndicatorMapCustom = {
-
   let g:NERDTreeGitStatusEnable=1
   let g:NERDTreeGitStatusShowIgnored=0
   let g:NERDTreeGitStatusIgnoreSubmodules=1
@@ -89,13 +84,36 @@ let g:DirDiffAddArgs = "-bwBEZ"
 "------------------------------------------------------
 " vim-plug: highlight
 "------------------------------------------------------
+" quickhl
 Plug 't9md/vim-quickhl'
+nmap <C-U> <Plug>(quickhl-manual-this)
+xmap <C-U> <Plug>(quickhl-manual-this)
+nmap <C-Y> <Plug>(quickhl-manual-reset)
+xmap <C-Y> <Plug>(quickhl-manual-reset)
 
 "------------------------------------------------------
 " vim-plug: move
 "------------------------------------------------------
+" easymotion
 Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_enter_jump_first = 1
+let g:EasyMotion_space_jump_first = 1
+nmap <C-P> <Plug>(easymotion-overwin-line)
+
+" comfortable-motion
 Plug 'yuttie/comfortable-motion.vim'
+let g:comfortable_motion_no_default_key_mappings = 1
+let g:comfortable_motion_impulse_multiplier = 0.8
+if 1
+  nnoremap <silent> <Space> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * 4)<CR>
+  nnoremap <silent> <BS> :call comfortable_motion#flick(g:comfortable_motion_impulse_multiplier * winheight(0) * -4)<CR>
+else
+  nnoremap <silent> <Space> :call comfortable_motion#flick(200)<CR>
+  nnoremap <silent> <BS> :call comfortable_motion#flick(-200)<CR>
+endif
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 
 "------------------------------------------------------
 " vim-plug: edit
