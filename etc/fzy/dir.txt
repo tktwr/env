@@ -1,0 +1,60 @@
+# name           | env var            | dir
+#                |                    |
+# home           |                    |
+#                |                    |
+my               | MY_DOTMY           | $HOME/.my
+backup           | MY_BACKUP          | $HOME/backup
+winhome          | MY_WINHOME         | $HOME/WinHome
+#                |                    |
+# windows        |                    |
+#                |                    |
+python-venv      | MY_PYTHON_VENV_DIR | $MY_HOME/.python-venv
+desktop          | MY_DESKTOP         | $MY_HOME/Desktop
+downloads        | MY_DOWNLOADS       | $MY_HOME/Downloads
+config           | MY_CONFIG          | $MY_HOME/MyConfig
+#                |                    |
+# config         |                    |
+#                |                    |
+rconfig          | MY_REMOTE_CONFIG   | $MY_CONFIG/tktwr.github
+lconfig          | MY_LOCAL_CONFIG    | $MY_CONFIG/tktwr.local
+pconfig          | MY_PRIVATE_CONFIG  | $MY_CONFIG/tktwr.private
+#                |                    |
+# rconfig        |                    |
+#                |                    |
+env              | MY_ENV             | $MY_REMOTE_CONFIG/env
+etc              | MY_ETC             | $MY_REMOTE_CONFIG/env/etc
+bash             | MY_BASH            | $MY_REMOTE_CONFIG/env/etc/bash
+vim              | MY_VIM             | $MY_REMOTE_CONFIG/env/etc/vim
+bin              | MY_BIN             | $MY_REMOTE_CONFIG/env/bin
+memo             | MY_MEMO            | $MY_REMOTE_CONFIG/memo
+samples          | MY_SAMPLES         | $MY_REMOTE_CONFIG/samples
+libtt            | MY_LIBTT           | $MY_REMOTE_CONFIG/libtt
+#                |                    |
+# pconfig        |                    |
+#                |                    |
+dia              | MY_DIARY           | $MY_PRIVATE_CONFIG/diary
+#                |                    |
+# network folder |                    |
+#                |                    |
+private          | MY_PRIVATE         | /x
+protected        | MY_PROTECTED       | /y
+public           | MY_PUBLIC          | /z
+#                |                    |
+# private        |                    |
+#                |                    |
+repo             | MY_REPO            | $MY_PRIVATE/repo
+work             | MY_WORK            | $MY_PRIVATE/work
+doc              | MY_DOC             | $MY_PRIVATE/doc
+office           | MY_OFFICE          | $MY_PRIVATE/office
+proj             | MY_PROJ            | $MY_PRIVATE/proj
+github           | MY_GITHUB          | $MY_PRIVATE/work/github
+git              | MY_GIT             | $MY_PRIVATE/work/git
+svn              | MY_SVN             | $MY_PRIVATE/work/svn
+#                |                    |
+# public         |                    |
+#                |                    |
+downloads2       | MY_DOWNLOADS2      | $MY_PUBLIC/Downloads
+papers           | MY_PAPERS          | $MY_PUBLIC/Papers
+opt              | MY_OPT             | $MY_PUBLIC/opt
+man              | MY_MAN             | $MY_PUBLIC/man
+data             | MY_DATA            | $MY_PUBLIC/data

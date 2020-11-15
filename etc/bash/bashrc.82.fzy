@@ -4,14 +4,28 @@
 # fzy
 #======================================================
 
+export MY_FZY=$MY_REMOTE_CONFIG/env/etc/fzy
+export MY_FZY_LOCAL=$MY_LOCAL_CONFIG/env/etc/fzy
+export MY_FZY_PRIVATE=$MY_PRIVATE_CONFIG/env/etc/fzy
+
 fzy_arg_links() {
-  echo $(grep -s -h -v '^#' ~/.my/links.txt ~/.my/local/links.txt | fzy | awk -F '|' '{print $2}')
+  local files="$MY_FZY/links.txt \
+               $MY_FZY_LOCAL/links.txt \
+               $MY_FZY_PRIVATE/links.txt"
+  echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_dir() {
-  echo $(grep -s -h -v '^#' ~/.my/dir.txt ~/.my/local/dir.txt | fzy | awk -F '|' '{print $2}')
+  local files="$MY_FZY/dir.txt \
+               $MY_FZY/dir.sys.msys.txt \
+               $MY_FZY_LOCAL/dir.txt \
+               $MY_FZY_PRIVATE/dir.txt"
+  echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $3}')
 }
 fzy_arg_cmd() {
-  echo $(grep -s -h -v '^#' ~/.my/cmd.txt ~/.my/local/cmd.txt | fzy | awk -F '|' '{print $2}')
+  local files="$MY_FZY/cmd.txt \
+               $MY_FZY_LOCAL/cmd.txt \
+               $MY_FZY_PRIVATE/cmd.txt"
+  echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_find_dir() {
   echo $(find -type d | fzy)

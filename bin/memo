@@ -92,5 +92,5 @@ f_main() {
   done
 }
 
-f_main $*
+f_main "$@"
 

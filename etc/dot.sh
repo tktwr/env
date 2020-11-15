@@ -13,9 +13,6 @@ DOT_FILES_COMMON="\
 .minttyrc \
 .NERDTreeBookmarks \
 .tmux.conf \
-.my/cmd.txt \
-.my/dir.txt \
-.my/links.txt \
 "
 DOT_FILES_DIFF="\
 .gitconfig \

@@ -1,32 +1,9 @@
 #!/bin/bash
 
-#------------------------------------------------------
-# pip
-#------------------------------------------------------
-mypip-upgrade() {
-  $MY_PYTHON_EXE -m pip install --upgrade pip
-}
-
-mypip-install-vim() {
-  pip install wheel
-  pip install python-language-server pylint flake8
-}
-
-mypip-install-torch() {
-  pip install opencv-python
-  pip install matplotlib
-  pip install numpy
-  pip install scipy
-  pip install sklearn
-  pip install parse
-  pip install tensorboard
-  # pytorch with CUDA 10.2
-  pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
-}
-
-#------------------------------------------------------
+#======================================================
 # python
-#------------------------------------------------------
+#======================================================
+
 mypython-venv-info() {
   ls $MY_PYTHON_VENV_DIR
 }
@@ -50,20 +27,6 @@ mypython-venv-create() {
 
 mypython-venv-exist() {
   return $(test -d $MY_PYTHON_VENV_DIR/$1)
-}
-
-#------------------------------------------------------
-# conda
-#------------------------------------------------------
-conda-upgrade() { conda update -n base -c defaults conda; }
-conda-venv-info() { conda info -e; }
-conda-venv-create() { conda create -n $1 python; }
-conda-venv-activate() { conda activate $1; }
-conda-venv-deactivate() { conda deactivate; }
-conda-venv-remove() { conda remove -n $1 --all; }
-conda-venv-move() {
-  conda create -n $2 --clone $1;
-  conda remove -n $1 --all;
 }
 
 #------------------------------------------------------
@@ -113,5 +76,45 @@ f_activate_python() {
         ;;
     esac
   fi
+}
+
+#------------------------------------------------------
+# pip
+#------------------------------------------------------
+
+mypip-upgrade() {
+  $MY_PYTHON_EXE -m pip install --upgrade pip
+}
+
+mypip-install-vim() {
+  pip install wheel
+  pip install python-language-server pylint flake8
+}
+
+mypip-install-torch() {
+  pip install opencv-python
+  pip install matplotlib
+  pip install numpy
+  pip install scipy
+  pip install sklearn
+  pip install parse
+  pip install tensorboard
+  # pytorch with CUDA 10.2
+  pip install torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html
+}
+
+#------------------------------------------------------
+# conda
+#------------------------------------------------------
+
+conda-upgrade() { conda update -n base -c defaults conda; }
+conda-venv-info() { conda info -e; }
+conda-venv-create() { conda create -n $1 python; }
+conda-venv-activate() { conda activate $1; }
+conda-venv-deactivate() { conda deactivate; }
+conda-venv-remove() { conda remove -n $1 --all; }
+conda-venv-move() {
+  conda create -n $2 --clone $1;
+  conda remove -n $1 --all;
 }
 

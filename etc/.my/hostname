@@ -5,43 +5,11 @@ export MY_SITE_NAME=mysite
 export MY_SHELL_NAME=$MSYSTEM
 export MY_OS_NAME=windows
 
-
-export MY_BACKUP=$HOME/backup
-
-export MY_PYTHON_VENV_DIR=$MY_HOME/.python-venv
-
-export MY_DESKTOP=$MY_HOME/Desktop
-export MY_DOWNLOADS=$MY_HOME/Downloads
-export MY_CONFIG=$MY_HOME/MyConfig
-
-export MY_REMOTE_CONFIG=$MY_CONFIG/tktwr.github
-export MY_LOCAL_CONFIG=$MY_CONFIG/tktwr.local
-export MY_PRIVATE_CONFIG=$MY_CONFIG/tktwr.private
-
-export MY_ENV=$MY_REMOTE_CONFIG/env
-export MY_MEMO=$MY_REMOTE_CONFIG/memo
-export MY_SAMPLES=$MY_REMOTE_CONFIG/samples
-export MY_VIM=$MY_REMOTE_CONFIG/env/etc/vim
-export MY_LIBTT=$MY_REMOTE_CONFIG/libtt
-
-export MY_DIARY=$MY_PRIVATE_CONFIG/diary
-
-
-export MY_PRIVATE=/x
-export MY_PROTECTED=/y
-export MY_PUBLIC=/z
-
-export MY_REPO=$MY_PRIVATE/repo
-export MY_WORK=$MY_PRIVATE/work
-export MY_DOC=$MY_PRIVATE/doc
-export MY_OFFICE=$MY_PRIVATE/office
-export MY_PROJ=$MY_PRIVATE/proj
-
-export MY_DOWNLOADS2=$MY_PUBLIC/Downloads
-export MY_PAPERS=$MY_PUBLIC/Papers
-export MY_OPT=$MY_PUBLIC/opt
-export MY_DATA=$MY_PUBLIC/data
-
 export CC=clang
 export CXX=clang++
 
+if [ -d $SYS_WIN_HOME ]; then
+  export MY_HOME=$SYS_WIN_HOME
+else
+  export MY_HOME=$HOME
+fi

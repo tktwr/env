@@ -68,10 +68,6 @@ mypython-venv-deactivate() {
 alias x='explorer.exe'
 alias ls='ls.sh'
 
-alias cd.win-home='cd $SYS_WIN_HOME'
-alias cd.msys2-home='cd $SYS_MSYS2_HOME'
-alias cd.cygwin-home='cd $SYS_CYGWIN_HOME'
-
 alias adb='winpty adb'
 alias net='winpty net'
 alias ping='winpty ping'

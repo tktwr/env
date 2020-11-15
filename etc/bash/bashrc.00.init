@@ -16,5 +16,3 @@ export EDITOR='vim'
 
 export WWW_HOME="https://tktwr.github.io/memo/"
 
-unalias -a
-
