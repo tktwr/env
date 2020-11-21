@@ -7,9 +7,3 @@ export MY_OS_NAME=windows
 
 export CC=clang
 export CXX=clang++
-
-if [ -d $SYS_WIN_HOME ]; then
-  export MY_HOME=$SYS_WIN_HOME
-else
-  export MY_HOME=$HOME
-fi

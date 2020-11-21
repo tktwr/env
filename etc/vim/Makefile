@@ -66,3 +66,8 @@ log.clean:
 	rm -f $(BUILD_DIR)/log.txt
 	rm -f $(BUILD_DIR)/log.zero.txt
 
+#======================================================
+
+install.min:
+	cp min_vimrc.vim $(HOME)/.vimrc
+

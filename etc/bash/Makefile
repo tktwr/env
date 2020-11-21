@@ -1,25 +1,26 @@
 BUILD_DIR=build
 
-ifdef USERPROFILE
-all: bashrc install install.win
-else
-all: bashrc install
-endif
+all: init bashrc install
+
+#======================================================
+
+init:
+	mkdir -p $(BUILD_DIR)
+	./init.sh > $(BUILD_DIR)/.bashrc.env
 
 bashrc:
 	mkdir -p $(BUILD_DIR)
-	./make-bashrc.sh unix > $(BUILD_DIR)/.bashrc
+	./make-bashrc.sh > $(BUILD_DIR)/.bashrc
+
+install:
+	cp $(BUILD_DIR)/.bashrc.env $(HOME)
+	cp $(BUILD_DIR)/.bashrc $(HOME)
 
 clean:
 	rm -rf $(BUILD_DIR)
 
 #======================================================
 
-install:
-	cp $(BUILD_DIR)/.bashrc $(HOME)/.bashrc
-
-#======================================================
-
-install.win:
-	cp $(BUILD_DIR)/.bashrc $(USERPROFILE)/.bashrc
+install.min:
+	cp bashrc.min $(HOME)/.bashrc
 

@@ -1,16 +1,11 @@
 all: all.install
 
-ifdef USERPROFILE
-all.install: install install.win subdir.all
-all.clean: clean clean.win subdir.clean
-cmp.all: cmp cmp.win
-vimdiff.all: vimdiff vimdiff.win
-else
 all.install: install subdir.all
 all.clean: clean subdir.clean
-cmp.all: cmp
-vimdiff.all: vimdiff
-endif
+
+install.min:
+	cd bash && make install.min
+	cd vim && make install.min
 
 subdir.all:
 	cd bash && make all
@@ -46,39 +41,16 @@ vimdirdiff:
 
 #======================================================
 
-install.win:
-	./dot.sh --common-files --cp $(USERPROFILE)
-
-clean.win:
-
-cmp.win:
-	./dot.sh --all-files --cmp $(USERPROFILE)
-
-vimdiff.win:
-	./dot.sh --all-files --vimdiff $(USERPROFILE)
-
-vimdirdiff.win:
-	./dot.sh --all-files --vimdirdiff $(USERPROFILE)
-
-#======================================================
-
 help:
 	@echo "all         ... all.install"
-	@echo "all.install ... subdir, install"
-	@echo "all.clean   ... subdir, clean"
-	@echo "backup"
-	@echo "init"
-	@echo "install"
-	@echo "install.win"
-	@echo "clean"
-	@echo "clean.win"
-	@echo "cmp            ... compare"
-	@echo "cmp.win        ... compare for win"
-	@echo "cmp.all        ... compare for all"
-	@echo "vimdiff        ... vimdiff"
-	@echo "vimdiff.win    ... vimdiff for win"
-	@echo "vimdiff.all    ... vimdiff for all"
-	@echo "vimdirdiff     ... vimdirdiff"
-	@echo "vimdirdiff.win ... vimdirdiff for win"
-	@echo "help           ... print help"
+	@echo "all.install ... install, subdir"
+	@echo "all.clean   ... clean, subdir"
+	@echo "backup      ... backup"
+	@echo "init        ... init"
+	@echo "install     ... install"
+	@echo "clean       ... clean"
+	@echo "cmp         ... compare"
+	@echo "vimdiff     ... vimdiff"
+	@echo "vimdirdiff  ... vimdirdiff"
+	@echo "help        ... print help"
 

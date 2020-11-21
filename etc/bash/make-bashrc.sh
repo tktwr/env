@@ -3,22 +3,16 @@
 source $HOME/.my/hostname
 
 FILES_DIR="\
-$MY_REMOTE_CONFIG/env/etc/fzy/dir.txt \
 $MY_LOCAL_CONFIG/env/etc/fzy/dir.txt \
 $MY_PRIVATE_CONFIG/env/etc/fzy/dir.txt \
 "
 
 f_set_env_vars() {
-  if [ ! -z "$USERPROFILE" ]; then
-    ./make-dir.py ../fzy/dir.sys.msys.txt
-  else
-    ./make-dir.py ../fzy/dir.sys.unix.txt
-  fi
-
   echo 'source $HOME/.my/hostname'
   echo 'source $HOME/.my/buildrc'
   echo 'source $HOME/.my/pythonrc'
   echo 'source $HOME/.my/pushdrc'
+  echo 'source $HOME/.bashrc.env'
 
   ./make-dir.py $FILES_DIR
 }
