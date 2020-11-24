@@ -1,3 +1,4 @@
+# name                              | command
 #                                   |
 # cmake                             |
 #                                   |
@@ -20,6 +21,10 @@ mypython-set-python-win torch       | mypython-set-python-win torch
 mypython-set-python torch           | mypython-set-python torch
 mypython-venv-info                  | mypython-venv-info
 #                                   |
+# pip                               |
+#                                   |
+mypip-upgrade                       | mypip-upgrade
+#                                   |
 # git                               |
 #                                   |
 git-ls-track                        | git-ls-track
@@ -28,3 +33,8 @@ git-ls-no-x                         | git-ls-no-x
 gls                                 | gls
 gb                                  | git-branch
 git-tag                             | git-tag
+git-update                          | git update-git-for-windows
+#                                   |
+# pacman                            |
+#                                   |
+pacman-update                       | pacman -Syu

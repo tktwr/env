@@ -1,3 +1,0 @@
-# linux/termux/virtualbox
-# name   | env var      | dir
-win-home | SYS_WIN_HOME | "$HOME/WinHome"

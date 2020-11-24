@@ -1,0 +1,7 @@
+# name           | env var            | dir
+#                |                    |
+# network folder |                    |
+#                |                    |
+private          | MY_PRIVATE         | /x
+protected        | MY_PROTECTED       | /y
+public           | MY_PUBLIC          | /z

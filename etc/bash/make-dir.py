@@ -35,8 +35,8 @@ def f_make_dir(fname):
                 dir_name = f_expand_path_unix(lst[2].strip())
                 dir_name_win = f_expand_path_win(lst[2].strip())
 
-                print(f"export {env_name}={dir_name}")
-                print(f"export {env_name}_WIN={dir_name_win}")
+                print(f"export {env_name}=\"{dir_name}\"")
+                print(f"export {env_name}_WIN=\"{dir_name_win}\"")
                 print(f"alias cd.{name}='cd {dir_name}'")
                 print(f"alias .{name}='pushd {dir_name}'")
     except FileNotFoundError as e:

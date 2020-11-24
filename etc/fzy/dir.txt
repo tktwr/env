@@ -34,12 +34,6 @@ libtt            | MY_LIBTT           | $MY_REMOTE_CONFIG/libtt
 #                |                    |
 dia              | MY_DIARY           | $MY_PRIVATE_CONFIG/diary
 #                |                    |
-# network folder |                    |
-#                |                    |
-private          | MY_PRIVATE         | /x
-protected        | MY_PROTECTED       | /y
-public           | MY_PUBLIC          | /z
-#                |                    |
 # private        |                    |
 #                |                    |
 repo             | MY_REPO            | $MY_PRIVATE/repo

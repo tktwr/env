@@ -1,20 +1,24 @@
 #!/bin/bash
 
-source $HOME/.my/hostname
+hostname_file=$HOME/.my/hostname
+bashrc_env_file=build/.bashrc.env
 
-FILES_DIR="\
-$MY_LOCAL_CONFIG/env/etc/fzy/dir.txt \
-$MY_PRIVATE_CONFIG/env/etc/fzy/dir.txt \
-"
+f_source_file() {
+  file=$1
+  if [ -f $file ]; then
+    source $file
+  else
+    echo "no file: $file"
+  fi
+}
 
 f_set_env_vars() {
+  echo 'unalias -a'
   echo 'source $HOME/.my/hostname'
   echo 'source $HOME/.my/buildrc'
   echo 'source $HOME/.my/pythonrc'
   echo 'source $HOME/.my/pushdrc'
   echo 'source $HOME/.bashrc.env'
-
-  ./make-dir.py $FILES_DIR
 }
 
 f_get_bashrc() {
@@ -58,8 +62,10 @@ f_cat_bashrc() {
   done
 }
 
+f_source_file $hostname_file
+f_source_file $bashrc_env_file
+
 cat bashrc.time
-echo 'unalias -a'
 f_set_env_vars
 f_cat_bashrc $MY_REMOTE_CONFIG/env/etc/bash
 f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash
