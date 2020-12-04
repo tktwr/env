@@ -9,7 +9,7 @@ venv=""
 #  venv="vim"
 #fi
 
-debug=1
+debug=0
 if [ $debug -eq 1 ]; then
   echo $PATH | print-path.sh > ~/vim.log
 
