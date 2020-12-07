@@ -3,12 +3,13 @@
 
 import sys
 import os
+import re
 
 
 def f_expand_path_unix(fname):
     fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
     fname = fname.replace('$USERNAME', os.environ['USERNAME'])
-    fname = fname.replace('C:', '/c')
+    fname = re.sub('^C:', '/c', fname)
     fname = fname.replace('\\', '/')
     return fname
 
@@ -16,8 +17,10 @@ def f_expand_path_unix(fname):
 def f_expand_path_win(fname):
     fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
     fname = fname.replace('$USERNAME', os.environ['USERNAME'])
-    fname = fname.replace('/c', 'C:')
-    fname = fname.replace('/', '\\')
+    fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
+    fname = re.sub('^/c', 'C:', fname)
+    #fname = fname.replace('/', '\\')
+    fname = fname.replace('\\', '/')
     return fname
 
 
