@@ -25,6 +25,7 @@ env              | MY_ENV             | $MY_REMOTE_CONFIG/env
 etc              | MY_ETC             | $MY_REMOTE_CONFIG/env/etc
 bash             | MY_BASH            | $MY_REMOTE_CONFIG/env/etc/bash
 vim              | MY_VIM             | $MY_REMOTE_CONFIG/env/etc/vim
+fzy              | MY_FZY             | $MY_REMOTE_CONFIG/env/etc/fzy
 bin              | MY_BIN             | $MY_REMOTE_CONFIG/env/bin
 memo             | MY_MEMO            | $MY_REMOTE_CONFIG/memo
 samples          | MY_SAMPLES         | $MY_REMOTE_CONFIG/samples

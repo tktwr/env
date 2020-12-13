@@ -3,7 +3,7 @@
 "======================================================
 
 func s:MyVimGrep(word)
-  silent exec "vimgrep ".a:word." **/*.h **/*.cpp **/*.cxx **/*.py **/*.vim **/*.html **/*.txt **/*.sh"
+  silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
 endfunc
 
 func s:MySetTab(nr)

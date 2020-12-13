@@ -53,6 +53,7 @@ set winheight=3
 "set scrolloff=5
 set backspace=2
 
+set wildignore+=*/build*/**
 set hlsearch
 set incsearch
 "set ignorecase

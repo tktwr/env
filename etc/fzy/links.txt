@@ -56,3 +56,5 @@ PBRT                        | http://www.pbr-book.org/3ed-2018/contents.html
 # blender                   |
 #                           |
 Blender                     | https://docs.blender.org/
+Blender.py                  | https://docs.blender.org/api/current/index.html
+Blender.py.2.83             | https://docs.blender.org/api/2.83
