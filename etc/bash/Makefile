@@ -1,16 +1,13 @@
 BUILD_DIR=build
 
-all: init bashrc install
+all: bashrc install
 
 #======================================================
 
-init:
-	mkdir -p $(BUILD_DIR)
-	./init.sh > $(BUILD_DIR)/.bashrc.env
-
 bashrc:
 	mkdir -p $(BUILD_DIR)
-	./make-bashrc.sh > $(BUILD_DIR)/.bashrc
+	./make.00.bashrc.env.sh > $(BUILD_DIR)/.bashrc.env
+	./make.01.bashrc.sh > $(BUILD_DIR)/.bashrc
 
 install:
 	cp $(BUILD_DIR)/.bashrc.env $(HOME)
