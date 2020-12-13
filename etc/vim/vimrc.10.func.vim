@@ -2,6 +2,29 @@
 " func
 "======================================================
 
+func s:MyDia(split)
+  let l:dia = "$MY_DIARY/diary.md.html"
+  let l:todo = "$MY_DIARY/todo.md.html"
+
+  if a:split == 'd'
+    exec "sp" l:dia
+  elseif a:split == 't'
+    exec "sp" l:todo
+  elseif a:split == 'h'
+    exec "e" l:todo
+    exec "sp" l:dia
+    wincmd j
+    resize 10
+    wincmd k
+  elseif a:split == 'v'
+    exec "e" l:todo
+    exec "vsp" l:dia
+    wincmd l
+    vertical resize 40
+    wincmd h
+  endif
+endfunc
+
 func s:MyVimGrep(word)
   silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
 endfunc

@@ -23,7 +23,7 @@ DOT_FILES_DIFF="\
 "
 DOT_FILES=""
 
-function f_get_date() {
+f_get_date() {
   echo `env LC_TIME=C date '+%Y%m%d'`
 }
 
@@ -48,7 +48,7 @@ f_help() {
 }
 
 f_backup() {
-  local ORIG_DIR=$HOME/.my.$(f_get_date)
+  local ORIG_DIR=$HOME/.dot.$(f_get_date)
 
   if [ ! -d $ORIG_DIR ]; then
     mkdir $ORIG_DIR

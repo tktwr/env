@@ -1,22 +1,18 @@
-all: all.install
-
-all.install: install subdir.all
-all.install.min: install subdir.install.min
-all.clean: clean subdir.clean
-
-subdir.install.min:
-	cd bash && make install.min
-	cd vim && make install.min
-
-subdir.all:
+all:
+	./dot.sh --common-files --cp
 	cd bash && make all
 	cd vim && make all
 
-subdir.clean:
+all.min:
+	./dot.sh --common-files --cp
+	cd bash && make all.min
+	cd vim && make all.min
+
+clean:
 	cd bash && make clean
 	cd vim && make clean
 
-#======================================================
+#------------------------------------------------------
 
 backup:
 	./dot.sh --backup
@@ -24,12 +20,7 @@ backup:
 init:
 	./dot.sh --init
 
-#======================================================
-
-install:
-	./dot.sh --common-files --cp
-
-clean:
+#------------------------------------------------------
 
 cmp:
 	./dot.sh --all-files --cmp
@@ -40,19 +31,16 @@ vimdiff:
 vimdirdiff:
 	./dot.sh --all-files --vimdirdiff
 
-#======================================================
+#------------------------------------------------------
 
 help:
-	@echo "all             ... all.install"
-	@echo "all.install     ... install, subdir.all"
-	@echo "all.install.min ... install, subdir.install.min"
-	@echo "all.clean       ... clean, subdir.clean"
-	@echo "backup          ... backup"
-	@echo "init            ... init"
-	@echo "install         ... install"
-	@echo "clean           ... clean"
-	@echo "cmp             ... compare"
-	@echo "vimdiff         ... vimdiff"
-	@echo "vimdirdiff      ... vimdirdiff"
-	@echo "help            ... print help"
+	@echo "all        ... all"
+	@echo "all.min    ... all.min"
+	@echo "clean      ... clean"
+	@echo "backup     ... backup"
+	@echo "init       ... init"
+	@echo "cmp        ... compare"
+	@echo "vimdiff    ... vimdiff"
+	@echo "vimdirdiff ... vimdirdiff"
+	@echo "help       ... print help"
 

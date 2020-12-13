@@ -1,16 +1,9 @@
 #!/bin/bash
 
+source ../common.sh
+
 hostname_file=$HOME/.my/hostname
 bashrc_env_file=build/.bashrc.env
-
-f_source_file() {
-  file=$1
-  if [ -f $file ]; then
-    source $file
-  else
-    echo "no file: $file"
-  fi
-}
 
 f_set_env_vars() {
   echo 'unalias -a'

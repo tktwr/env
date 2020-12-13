@@ -27,6 +27,11 @@ command ECP936 e ++enc=cp936
 command WCP936 w ++enc=cp936 ++ff=dos
 
 "------------------------------------------------------
+command Dia  call s:MyDia('d')
+command Todo call s:MyDia('t')
+command HDia call s:MyDia('h')
+command VDia call s:MyDia('v')
+
 command RunExplorer silent !explorer.exe %:h
 command RunGvim     silent !gvim "%"
 command RunVscode   silent !vscode.sh "%"
