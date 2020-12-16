@@ -6,17 +6,25 @@ import os
 import re
 
 
+def f_expand_env(fname):
+    if os.getenv('USERPROFILE') != None:
+        fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
+    if os.getenv('USERNAME') != None:
+        fname = fname.replace('$USERNAME', os.environ['USERNAME'])
+    if os.getenv('HOME') != None:
+        fname = fname.replace('$HOME', os.environ['HOME'])
+    return fname
+
+
 def f_expand_path_unix(fname):
-    fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
-    fname = fname.replace('$USERNAME', os.environ['USERNAME'])
+    fname = f_expand_env(fname)
     fname = re.sub('^C:', '/c', fname)
     fname = fname.replace('\\', '/')
     return fname
 
 
 def f_expand_path_win(fname):
-    fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
-    fname = fname.replace('$USERNAME', os.environ['USERNAME'])
+    fname = f_expand_env(fname)
     fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
     fname = re.sub('^/c', 'C:', fname)
     #fname = fname.replace('/', '\\')
@@ -43,8 +51,10 @@ def f_make_dir(fname):
                 print(f"alias cd.{name}='cd \"{dir_name}\"'")
                 print(f"alias .{name}='pushd \"{dir_name}\"'")
     except FileNotFoundError as e:
+        #print(f"FileNotFoundError: {e}")
         pass;
     except Exception as e:
+        #print(f"Exception: {e}")
         pass;
 
 

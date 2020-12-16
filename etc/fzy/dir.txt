@@ -4,7 +4,6 @@
 #                |                    |
 my               | MY_DOTMY           | $HOME/.my
 backup           | MY_BACKUP          | $HOME/backup
-winhome          | MY_WINHOME         | $HOME/WinHome
 #                |                    |
 # windows        |                    |
 #                |                    |

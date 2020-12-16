@@ -1,9 +1,8 @@
 #!/bin/bash
 
+source $HOME/.my/hostname
+source $HOME/.bashrc.env
 source ../common.sh
-
-hostname_file=$HOME/.my/hostname
-bashrc_env_file=$HOME/.bashrc.env
 
 f_expand_dir() {
   local opt="$1"
@@ -16,7 +15,7 @@ f_expand_dir() {
   #echo "let \$$name=expand(\"$dir\")"
 }
 
-f_set_env_vars() {
+f_print_env() {
   local target_os=$1
   local target_shell=$2
   local opt
@@ -29,9 +28,10 @@ f_set_env_vars() {
       opt="-m"
       ;;
   esac
+
   case $target_shell in
     MINGW64)
-      GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$MY_SHELL_NAME/git
+      GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$target_shell/git
       ;;
     gitbash|termux|bash)
       GIT_EXE=git
@@ -46,8 +46,5 @@ f_set_env_vars() {
   f_expand_dir $opt MY_GIT_EXE $GIT_EXE
 }
 
-f_source_file $hostname_file
-f_source_file $bashrc_env_file
-
-f_set_env_vars $1 $2
+f_print_env $1 $2
 

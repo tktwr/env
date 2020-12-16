@@ -1,13 +1,13 @@
 #!/bin/bash
 
-MY_OS=unix
-MY_SHELL=MINGW64
+source $HOME/.my/hostname
+source $HOME/.bashrc.env
 
 BUILD_DIR=build
 
 f_make() {
   mkdir -p $BUILD_DIR
-  ./make.00.vimrc.env.sh $MY_OS $MY_SHELL > $BUILD_DIR/.vimrc.env
+  ./make.00.vimrc.env.sh unix $MY_SHELL_NAME > $BUILD_DIR/.vimrc.env
   ./make.01.vimrc.sh > $BUILD_DIR/.vimrc
 }
 

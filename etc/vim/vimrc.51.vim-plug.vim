@@ -29,7 +29,8 @@ Plug 'thinca/vim-ref'
 
 "Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 "------------------------------------------------------

@@ -1,11 +1,10 @@
 #!/bin/bash
 
+source $HOME/.my/hostname
+source build/.bashrc.env
 source ../common.sh
 
-hostname_file=$HOME/.my/hostname
-bashrc_env_file=build/.bashrc.env
-
-f_set_env_vars() {
+f_init() {
   echo 'unalias -a'
   echo 'source $HOME/.my/hostname'
   echo 'source $HOME/.my/buildrc'
@@ -55,11 +54,8 @@ f_cat_bashrc() {
   done
 }
 
-f_source_file $hostname_file
-f_source_file $bashrc_env_file
-
 cat bashrc.time
-f_set_env_vars
+f_init
 f_cat_bashrc $MY_REMOTE_CONFIG/env/etc/bash
 f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash
 f_cat_bashrc $MY_PRIVATE_CONFIG/env/etc/bash
