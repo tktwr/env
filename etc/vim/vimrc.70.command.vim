@@ -27,6 +27,15 @@ command ECP936 e ++enc=cp936
 command WCP936 w ++enc=cp936 ++ff=dos
 
 "------------------------------------------------------
+" My commands
+"------------------------------------------------------
+" apply the command to each entry in the quickfix list
+command Cdo cdo execute "normal! @q" | w
+" apply the command to each file in the quickfix list
+command Cfdo cfdo execute "normal! @q" | w
+
+command Tips Memo vim.tips
+
 command Dia  call s:MyDia('d')
 command Todo call s:MyDia('t')
 command HDia call s:MyDia('h')
@@ -39,10 +48,10 @@ command RunChrome   silent !chrome.sh "%"
 command RunFirefox  silent !firefox "%"
 
 command ClangFormat !clang-format -i %
+command Trans bot term ++rows=10 ++close trans -I -b
+
 command TabBar Tabularize /|
 command TabDot Tabularize /\.\.\.
-
-command Trans bot term ++rows=10 ++close trans -I -b
 
 command -nargs=+ VimGrep call s:MyVimGrep("<args>")
 command VimGrepHere VimGrep <cword>
