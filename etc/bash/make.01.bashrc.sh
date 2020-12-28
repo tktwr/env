@@ -14,21 +14,21 @@ f_init() {
 }
 
 f_get_bashrc() {
-  local files="bashrc.??.*"
+  local files="bashrc.??.*.sh"
 
   for i in $files; do
     case $i in
-      bashrc.[0-4]?.*)
+      bashrc.[0-4]?.*.sh)
         echo $i ;;
-      bashrc.50.os.$MY_OS_NAME)
+      bashrc.50.os.$MY_OS_NAME.sh)
         echo $i ;;
-      bashrc.51.shell.$MY_SHELL_NAME)
+      bashrc.51.shell.$MY_SHELL_NAME.sh)
         echo $i ;;
-      bashrc.52.site.$MY_SITE_NAME)
+      bashrc.52.site.$MY_SITE_NAME.sh)
         echo $i ;;
-      bashrc.53.host.$MY_HOST_NAME)
+      bashrc.53.host.$MY_HOST_NAME.sh)
         echo $i ;;
-      bashrc.[6-9]?.*)
+      bashrc.[6-9]?.*.sh)
         echo $i ;;
     esac
   done
@@ -54,7 +54,7 @@ f_cat_bashrc() {
   done
 }
 
-cat bashrc.time
+cat bashrc.time.sh
 f_init
 f_cat_bashrc $MY_REMOTE_CONFIG/env/etc/bash
 f_cat_bashrc $MY_LOCAL_CONFIG/env/etc/bash

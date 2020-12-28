@@ -4,7 +4,7 @@ all:
 	./make.sh
 
 all.min:
-	cp bashrc.min $(HOME)/.bashrc
+	cp bashrc.min.sh $(HOME)/.bashrc
 
 clean:
 	rm -rf $(BUILD_DIR)

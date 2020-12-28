@@ -34,7 +34,7 @@ command Cdo cdo execute "normal! @q" | w
 " apply the command to each file in the quickfix list
 command Cfdo cfdo execute "normal! @q" | w
 
-command Tips Memo vim.tips
+command Tips Memo my.vim.tips
 
 command Dia  call s:MyDia('d')
 command Todo call s:MyDia('t')

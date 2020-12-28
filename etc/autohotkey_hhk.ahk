@@ -17,17 +17,43 @@ RShift::
 send,{vkF3sc029}
 return
 
-#IfWinActive ahk_class mintty
-; maximize the tmux pane, minimize the window
+;#IfWinActive ahk_class mintty
+;; maximize the tmux pane, minimize the window
+;F5::
+;send,{F8}
+;send,#{Down}
+;return
+
+;; maximize the window, restore tmux panes
+;F6::
+;send,#{Up}
+;send,{F8}
+;return
+;#IfWinActive
+
 F5::
-send,{F8}
-send,#{Down}
+IfWinExist ahk_exe chrome.exe
+{
+  WinActivate
+  send,#{Left}
+}
+IfWinExist ahk_exe mintty.exe
+{
+  WinActivate
+  send,#{Right}
+}
 return
 
-; maximize the window, restore tmux panes
 F6::
-send,#{Up}
-send,{F8}
+IfWinExist ahk_exe chrome.exe
+{
+  WinActivate
+  WinMaximize,A
+}
+IfWinExist ahk_exe mintty.exe
+{
+  WinActivate
+  WinMaximize,A
+}
 return
-#IfWinActive
 
