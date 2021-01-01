@@ -28,7 +28,9 @@ set guifont=Cica:h14
 "set guioptions-=m
 set guioptions-=T
 
-hi Normal guifg=#D0D0D0 guibg=#303030
+"hi Normal ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
+colorscheme desert
+syntax on
 
 if 0
   " IM off for start up

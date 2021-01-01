@@ -1,12 +1,13 @@
-all: update
+BUILD_DIR=build
+
+all:
+	./make.sh
 
 init:
 	mkdir -p ~/.vifm
 	cp -a colors ~/.vifm
 
-update:
-	./make-vifmrc.sh > ~/.vifm/vifmrc
-
 clean:
+	rm -rf $(BUILD_DIR)
 	rm -f ~/.vifm/vifminfo
 

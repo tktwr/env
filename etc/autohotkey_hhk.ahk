@@ -41,6 +41,7 @@ IfWinExist ahk_exe mintty.exe
 {
   WinActivate
   send,#{Right}
+  send,{F8}
 }
 return
 
@@ -54,6 +55,7 @@ IfWinExist ahk_exe mintty.exe
 {
   WinActivate
   WinMaximize,A
+  send,{F8}
 }
 return
 
