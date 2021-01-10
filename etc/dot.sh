@@ -49,17 +49,17 @@ f_help() {
 }
 
 f_backup() {
-  local ORIG_DIR=$HOME/.dot.$(f_get_date)
+  local BACKUP_DIR=$HOME/.dot.$(f_get_date)
 
-  if [ ! -d $ORIG_DIR ]; then
-    mkdir $ORIG_DIR
+  if [ ! -d $BACKUP_DIR ]; then
+    mkdir $BACKUP_DIR
   fi
 
   cd
 
   # backup original files
   for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
-    cp --parents $i $ORIG_DIR
+    cp --parents $i $BACKUP_DIR
   done
 }
 

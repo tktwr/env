@@ -88,19 +88,14 @@ endsnippet
 
 snippet cl "class"
 class MyClass():
-    n = 0
+    def __init__(self):
+        pass
 
-    def __init__(self, x):
-        MyClass.n += 1
-        self.x = x
+    def __del__(self):
+        pass
 
-    def add(self, x):
-        self.x += x
-        return self.x
-
-    @classmethod
-    def f(self, text):
-        print(text)
+    def f(self):
+        pass
 
 
 endsnippet
@@ -108,7 +103,7 @@ endsnippet
 snippet subcl "sub class"
 class MySubClass(MyClass):
     def g(self):
-        return self.x
+        pass
 
 
 endsnippet
@@ -151,7 +146,7 @@ import json
 
 def f_write_json(fname, data):
     with open(fname, "w") as f:
-        f.write(json.dumps(data))
+        f.write(json.dumps(data, sort_keys=True, indent=4))
 
 
 endsnippet
