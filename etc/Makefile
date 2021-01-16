@@ -1,16 +1,11 @@
 all:
-	./dot.sh --common-files --cp
-	cd bash && make all
-	cd vim && make all
+	./make.sh --all
 
 all.min:
-	./dot.sh --common-files --cp
-	cd bash && make all.min
-	cd vim && make all.min
+	./make.sh --min
 
 clean:
-	cd bash && make clean
-	cd vim && make clean
+	./make.sh --clean
 
 #------------------------------------------------------
 

@@ -1,13 +1,13 @@
 BUILD_DIR=build
 
 all:
-	./make.sh
+	./make.sh --all
 
 all.min:
-	cp min_vimrc.vim $(HOME)/.vimrc
+	./make.sh --min
 
 clean:
-	rm -rf $(BUILD_DIR)
+	./make.sh --clean
 
 log: log.clean
 	vim -c "q" --startuptime $(BUILD_DIR)/log.txt

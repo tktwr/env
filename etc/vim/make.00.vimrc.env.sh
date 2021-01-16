@@ -31,7 +31,8 @@ f_print_env() {
 
   case $target_shell in
     MINGW64)
-      GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$target_shell/git
+      #GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$target_shell/git
+      GIT_EXE=git
       ;;
     gitbash|termux|bash)
       GIT_EXE=git

@@ -22,6 +22,7 @@ DOT_FILES_DIFF="\
 .my/hostname \
 .my/pythonrc \
 "
+DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 DOT_FILES=""
 
 f_get_date() {
@@ -36,16 +37,17 @@ f_help() {
   echo "  $bin_name [options] [dir]"
   echo
   echo "OPTIONS"
-  echo "  -h, --help      print help"
-  echo "  --backup        backup"
-  echo "  --init          init"
-  echo "  --common-files  common files"
-  echo "  --diff-files    diff files"
-  echo "  --cp            copy files"
-  echo "  --cmp           compare files"
-  echo "  --diff          diff files"
-  echo "  --vimdiff       vimdiff files"
-  echo "  --vimdirdiff    vimdirdiff dir"
+  echo "  -h, --help     ... print help"
+  echo "  --backup       ... backup"
+  echo "  --init         ... init"
+  echo "  --all-files    ... all files"
+  echo "  --common-files ... common files"
+  echo "  --diff-files   ... diff files"
+  echo "  --cp           ... copy files"
+  echo "  --cmp          ... compare files"
+  echo "  --diff         ... diff files"
+  echo "  --vimdiff      ... vimdiff files"
+  echo "  --vimdirdiff   ... vimdirdiff dir"
 }
 
 f_backup() {
@@ -58,14 +60,14 @@ f_backup() {
   cd
 
   # backup original files
-  for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+  for i in $DOT_FILES_ALL; do
     cp --parents $i $BACKUP_DIR
   done
 }
 
 f_init() {
   # copy default dot files
-  for i in $DOT_FILES_COMMON $DOT_FILES_DIFF; do
+  for i in $DOT_FILES_ALL; do
     cp --parents $i $HOME
   done
 }
@@ -108,9 +110,9 @@ f_diff_dir() {
   vimdirdiff . $1
 }
 
-f_main() {
-  for i in $*; do
-    case $i in
+f_args() {
+  for i in "$@"; do
+    case "$i" in
       -h|--help)
         f_help
         exit
@@ -124,7 +126,7 @@ f_main() {
         exit
         ;;
       --all-files)
-        DOT_FILES="$DOT_FILES_COMMON $DOT_FILES_DIFF"
+        DOT_FILES="$DOT_FILES_ALL"
         ;;
       --common-files)
         DOT_FILES="$DOT_FILES $DOT_FILES_COMMON"
@@ -166,5 +168,5 @@ f_main() {
   esac
 }
 
-f_main $*
+f_args "$@"
 

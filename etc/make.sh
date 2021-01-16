@@ -1,8 +1,8 @@
 #!/bin/bash
 
-bin_name=`basename $0`
+export PATH=$HOME/AppData/Local/Programs/Python/Python38:$PATH
 
-BUILD_DIR=build
+bin_name=`basename $0`
 
 f_help() {
   echo "NAME"
@@ -18,23 +18,18 @@ f_help() {
   echo "  --clean    ... clean"
 }
 
+f_dot() {
+  ./dot.sh --common-files --cp
+}
+
 f_make() {
-	mkdir -p $BUILD_DIR
-	./make.00.bashrc.env.sh > $BUILD_DIR/.bashrc.env
-	./make.01.bashrc.sh > $BUILD_DIR/.bashrc
-}
+  cd bash
+  ./make.sh "$@"
+  cd ..
 
-f_install() {
-	cp $BUILD_DIR/.bashrc.env $HOME
-	cp $BUILD_DIR/.bashrc $HOME
-}
-
-f_install_min() {
-	cp bashrc.min.sh $HOME/.bashrc
-}
-
-f_clean() {
-	rm -rf $BUILD_DIR
+  cd vim
+  ./make.sh "$@"
+  cd ..
 }
 
 f_args() {
@@ -44,14 +39,15 @@ f_args() {
         f_help
         ;;
       --all)
-        f_make
-        f_install
+        f_dot
+        f_make --all
         ;;
       --min)
-        f_install_min
+        f_dot
+        f_make --min
         ;;
       --clean)
-        f_clean
+        f_make --clean
         ;;
     esac
   done

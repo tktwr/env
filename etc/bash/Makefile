@@ -1,11 +1,9 @@
-BUILD_DIR=build
-
 all:
-	./make.sh
+	./make.sh --all
 
 all.min:
-	cp bashrc.min.sh $(HOME)/.bashrc
+	./make.sh --min
 
 clean:
-	rm -rf $(BUILD_DIR)
+	./make.sh --clean
 
