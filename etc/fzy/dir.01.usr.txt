@@ -1,7 +1,8 @@
-# name           | env var            | dir
-#                |                    |
-# network folder |                    |
-#                |                    |
-private          | MY_PRIVATE         | /x
-protected        | MY_PROTECTED       | /y
-public           | MY_PUBLIC          | /z
+# name      | env var            | dir
+python-venv | MY_PYTHON_VENV_DIR | $HOME/.python-venv
+desktop     | MY_DESKTOP         | $HOME/Desktop
+downloads   | MY_DOWNLOADS       | $HOME/Downloads
+config      | MY_CONFIG          | $HOME/MyConfig
+private     | MY_PRIVATE         | $HOME/MyShare/private
+protected   | MY_PROTECTED       | $HOME/MyShare/protected
+public      | MY_PUBLIC          | $HOME/MyShare/public

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PATH=$HOME/AppData/Local/Programs/Python/Python38:$PATH
-
 bin_name=`basename $0`
 
 f_help() {

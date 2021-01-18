@@ -16,7 +16,6 @@ fzy_arg_links() {
 }
 fzy_arg_dir() {
   local files="$MY_FZY/dir.txt \
-               $MY_FZY/dir.sys.msys.txt \
                $MY_FZY_LOCAL/dir.txt \
                $MY_FZY_PRIVATE/dir.txt"
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $3}')

@@ -5,13 +5,6 @@
 my               | MY_DOTMY           | $HOME/.my
 backup           | MY_BACKUP          | $HOME/backup
 #                |                    |
-# windows        |                    |
-#                |                    |
-python-venv      | MY_PYTHON_VENV_DIR | $MY_HOME/.python-venv
-desktop          | MY_DESKTOP         | $MY_HOME/Desktop
-downloads        | MY_DOWNLOADS       | $MY_HOME/Downloads
-config           | MY_CONFIG          | $MY_HOME/MyConfig
-#                |                    |
 # config         |                    |
 #                |                    |
 rconfig          | MY_REMOTE_CONFIG   | $MY_CONFIG/tktwr.github
