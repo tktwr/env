@@ -1,9 +1,7 @@
 0.Home ~/
+0..my ~/.my
 1.Desktop ~/Desktop
 1.Downloads ~/Downloads
 2.r.etc ~/MyConfig/tktwr.github/env/etc
-2.r.libtt ~/MyConfig/tktwr.github/libtt
-2.r.memo ~/MyConfig/tktwr.github/memo
-2.r.samples ~/MyConfig/tktwr.github/samples
 3.l.etc ~/MyConfig/tktwr.local/env/etc
 4.p.etc ~/MyConfig/tktwr.private/env/etc

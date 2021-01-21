@@ -17,7 +17,10 @@ f_get_prompt_color_host() {
 f_get_prompt_color_shell() {
   local CO
   case $MY_SHELL_NAME in
-    MINGW64|gitbash)
+    gitbash)
+      CO=$ECO1
+      ;;
+    MINGW64)
       CO=$ECO2
       ;;
     termux)
