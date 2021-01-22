@@ -9,19 +9,22 @@ export MY_FZY_LOCAL=$MY_LOCAL_CONFIG/env/etc/fzy
 export MY_FZY_PRIVATE=$MY_PRIVATE_CONFIG/env/etc/fzy
 
 fzy_arg_links() {
-  local files="$MY_FZY/links.txt \
+  local files="$HOME/.my/links.txt \
+               $MY_FZY/links.txt \
                $MY_FZY_LOCAL/links.txt \
                $MY_FZY_PRIVATE/links.txt"
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_dir() {
-  local files="$MY_FZY/dir.txt \
+  local files="$HOME/.my/dir.txt \
+               $MY_FZY/dir.txt \
                $MY_FZY_LOCAL/dir.txt \
                $MY_FZY_PRIVATE/dir.txt"
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $3}')
 }
 fzy_arg_cmd() {
-  local files="$MY_FZY/cmd.txt \
+  local files="$HOME/.my/cmd.txt \
+               $MY_FZY/cmd.txt \
                $MY_FZY_LOCAL/cmd.txt \
                $MY_FZY_PRIVATE/cmd.txt"
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
