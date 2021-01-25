@@ -1,4 +1,7 @@
 {
+  //"session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
+  "session.saveOnVimLeave": false,
+
   // snippets
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
 
