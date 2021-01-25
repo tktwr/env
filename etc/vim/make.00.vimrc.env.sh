@@ -40,6 +40,7 @@ f_print_env() {
   esac
 
   f_expand_dir $opt MY_VIM $MY_VIM
+  f_expand_dir -m   MY_VIM_WIN $MY_VIM
   f_expand_dir $opt MY_REMOTE_CONFIG $MY_REMOTE_CONFIG
   f_expand_dir $opt MY_LOCAL_CONFIG $MY_LOCAL_CONFIG
   f_expand_dir $opt MY_PRIVATE_CONFIG $MY_PRIVATE_CONFIG

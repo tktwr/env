@@ -65,11 +65,6 @@ command MyLineNumberToggle call s:MyLineNumberToggle()
 command MyIDE call s:MyIDE()
 command MyCheckEnv call s:MyCheckEnv()
 
-command MyUpdateLastModification call s:MyUpdateLastModification()
-command MyAddTime call s:MyAddTime()
-command -nargs=? MyAddDate call s:MyAddDate("<args>")
-command -nargs=? MyInsertDia call s:MyInsertDia("<args>")
-
 command MyEditAltSrc call s:MyEditAltSrc()
 command MyStartProf call s:MyStartProf()
 command MyEndProf call s:MyEndProf()
@@ -77,6 +72,5 @@ command MyEndProf call s:MyEndProf()
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------
-au BufWritePre,FileWritePre *.html  MyUpdateLastModification
 au VimEnter,FilterWritePre * call s:MySetDiffMode()
 

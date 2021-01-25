@@ -8,13 +8,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 if filereadable(expand('~/.vim/coc-settings.json'))
   let g:coc_config_home = expand('~/.vim')
 elseif has("win32unix") || has("win32") || has("win64")
-  let g:coc_config_home = expand('$MY_VIM/coc/win')
+  let g:coc_config_home = expand('$MY_VIM_WIN/coc/win')
 else
   let g:coc_config_home = expand('$MY_VIM/coc/linux')
 endif
 
 if has("win32unix") || has("win32") || has("win64")
-  let g:coc_data_home = expand('$MY_VIM/coc_data/win')
+  let g:coc_data_home = expand('$MY_VIM_WIN/coc_data/win')
 endif
 
 let g:coc_disable_startup_warning = 1

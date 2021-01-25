@@ -36,7 +36,7 @@ nnoremap <C-E>   :only<CR>
 nnoremap <C-X>   :close<CR>
 
 " redraw screen
-nnoremap <C-N>   <C-L>
+nnoremap <C-N>   <C-L><C-G>
 
 "------------------------------------------------------
 " map: develop
@@ -146,9 +146,11 @@ inoremap <F12> <ESC>"*p
 "------------------------------------------------------
 " map: plugin's key map
 "------------------------------------------------------
+nnoremap <C-G> :CocList vimcommands<CR>
+
 " gitgutter
 nnoremap ++    :GitGutterToggle<CR>
 
 " nerd commenter
-vmap C <Leader>c<Space>
+vmap C         <Leader>c<Space>
 

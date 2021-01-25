@@ -69,31 +69,6 @@ func s:MyCheckEnv()
 endfunc
 
 "------------------------------------------------------
-" func: edit
-"------------------------------------------------------
-
-" update the line started with "Last modification: "
-func s:MyUpdateLastModification()
-  normal m'
-  g/Last modification: /normal f:lD:r !env LC_TIME=C datekJ''
-endfunc
-
-func s:MyAddTime()
-  silent exec "r!env LC_TIME=C date '+\\%T'"
-endfunc
-
-func s:MyAddDate(date)
-  silent exec "r!env LC_TIME=C date --date='".a:date."' '+\\%Y/\\%m/\\%d (\\%a)'"
-endfunc
-
-func s:MyInsertDia(date)
-  normal O<!---------------------------------------------------->
-  call s:MyAddDate(a:date)
-  normal I## 
-  normal 0
-endfunc
-
-"------------------------------------------------------
 " func: dev
 "------------------------------------------------------
 
