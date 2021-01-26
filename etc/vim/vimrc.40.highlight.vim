@@ -27,6 +27,8 @@ hi! link Folded     MyYellowSign
 hi! link FoldColumn MyYellowSign
 hi! link WildMenu   MyYellowRevBold
 
+hi! link WhichKeyFloating   MyYellowSign
+
 "======================================================
 " statusline
 "======================================================

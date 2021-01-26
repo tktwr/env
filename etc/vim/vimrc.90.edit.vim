@@ -76,10 +76,3 @@ command MyAddDateHere            call s:MyAddDate(expand("<cWORD>"))
 au BufWritePre,FileWritePre *.html  MyUpdateLastChange
 au BufWritePre,FileWritePre *.txt   MyUpdateLastChange
 
-"------------------------------------------------------
-" map
-"------------------------------------------------------
-
-"nnoremap <C-G>            :TogglePathFormat<CR>
-"nnoremap <C-G>            :MyAddDateHere<CR>
-

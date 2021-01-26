@@ -146,8 +146,6 @@ inoremap <F12> <ESC>"*p
 "------------------------------------------------------
 " map: plugin's key map
 "------------------------------------------------------
-nnoremap <C-G> :CocList vimcommands<CR>
-
 " gitgutter
 nnoremap ++    :GitGutterToggle<CR>
 

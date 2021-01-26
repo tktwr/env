@@ -8,7 +8,8 @@ if &term =~ "xterm"
 endif
 
 " terminal window
-set notimeout ttimeout timeoutlen=100
+"set notimeout ttimeout
+set timeoutlen=500
 tnoremap <Esc>   <C-W>N
 tnoremap <C-H>   <C-W>h
 tnoremap <C-J>   <C-W>j

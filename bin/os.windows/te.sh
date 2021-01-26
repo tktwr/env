@@ -1,0 +1,11 @@
+#!/bin/bash
+
+BIN_FILE="$MY_PUBLIC/bin/te210114/TE64.exe"
+
+if [ ! -x "$BIN_FILE" ]; then
+  echo "no $BIN_FILE"
+  exit
+fi
+
+exec "$BIN_FILE" "$@" > /dev/null 2>&1 &
+

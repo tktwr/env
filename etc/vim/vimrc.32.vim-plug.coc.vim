@@ -20,6 +20,9 @@ endif
 let g:coc_disable_startup_warning = 1
 "let g:coc_uri_prefix_replace_patterns = {'/home': 'C:/msys64/home'}
 
+"------------------------------------------------------
+" map
+"------------------------------------------------------
 nmap <silent> gh :call CocAction('doHover')<CR>
 nmap <silent> gD :CocDiagnostics<CR>
 
@@ -42,13 +45,18 @@ nmap <silent> gF <Plug>(coc-format-selected)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "------------------------------------------------------
-" coc-explorer
-"------------------------------------------------------
-nmap <space>e :CocCommand explorer<CR>
-
-"------------------------------------------------------
 " coc-snippets
 "------------------------------------------------------
 imap <C-l> <Plug>(coc-snippets-expand)
+
+"------------------------------------------------------
+" coc-lists
+"------------------------------------------------------
+nnoremap <C-G> :CocList vimcommands<CR>
+
+"------------------------------------------------------
+" coc-explorer
+"------------------------------------------------------
+nmap gE :CocCommand explorer<CR>
 
 "------------------------------------------------------

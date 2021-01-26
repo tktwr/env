@@ -9,7 +9,6 @@ function! s:MyNERDTreeToggle()
     NERDTreeFind
   endif
 endfunction
-command MyNERDTreeToggle call s:MyNERDTreeToggle()
 
 function! s:MyGstatusToggle()
   if (&filetype == "fugitive")
@@ -19,7 +18,9 @@ function! s:MyGstatusToggle()
     resize 12
   endif
 endfunction
-command MyGstatusToggle call s:MyGstatusToggle()
+
+command MyNERDTreeToggle call s:MyNERDTreeToggle()
+command MyGstatusToggle  call s:MyGstatusToggle()
 
 colorscheme gruvbox
 

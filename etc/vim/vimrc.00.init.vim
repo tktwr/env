@@ -65,8 +65,8 @@ set listchars=tab:>-,trail:-,eol:$
 "set modeline
 "set modelines=5
 
-let mapleader = ","
-let maplocalleader = ','
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 
 if !has('nvim')
   if version >= 700
