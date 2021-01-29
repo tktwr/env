@@ -107,7 +107,8 @@ nnoremap <C-A> I[A]Jr(A)I- 
 "nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
 
 " open an URL under the cursor
-nnoremap <C-O> :!chrome.sh <cfile><CR>
+"nnoremap <C-O> :!chrome.sh <cfile><CR>
+nnoremap <C-O> :OpenURL <cfile><CR>
 
 " open an URL in the markdeep format by w3m.vim
 "nnoremap <C-?> 0f(lyt):silent W3m <C-R>"<CR>
@@ -146,9 +147,6 @@ inoremap <F12> <ESC>"*p
 "------------------------------------------------------
 " map: plugin's key map
 "------------------------------------------------------
-" gitgutter
-nnoremap ++    :GitGutterToggle<CR>
-
 " nerd commenter
 vmap C         <Leader>c<Space>
 

@@ -47,6 +47,8 @@ command RunVscode   silent !vscode.sh "%"
 command RunChrome   silent !chrome.sh "%"
 command RunFirefox  silent !firefox "%"
 
+command -nargs=1 OpenURL     silent !chrome.sh "<args>"
+
 command ClangFormat !clang-format -i %
 command Trans bot term ++rows=10 ++close trans -I -b
 
