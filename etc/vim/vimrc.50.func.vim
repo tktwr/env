@@ -2,6 +2,14 @@
 " func
 "======================================================
 
+func s:ClangFormat()
+  !clang-format -i %
+endfunc
+
+func s:Trans()
+  bot term ++rows=10 ++close trans -I -b
+endfunc
+
 func s:MyDia(split)
   let l:dia = "$MY_DIARY/diary.md.html"
   let l:todo = "$MY_DIARY/todo.md.html"

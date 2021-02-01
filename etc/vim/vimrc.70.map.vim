@@ -55,7 +55,7 @@ nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<
 "------------------------------------------------------
 nnoremap '     `
 nnoremap Q     :confirm qall<CR>
-nnoremap --    :set invnumber<CR>:set invlist<CR>
+nnoremap --    :MyLineNumberToggle<CR>
 " fold on/off
 nnoremap ==    zi
 
@@ -101,7 +101,8 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " http://...
 "   to
 " [label](http://...)
-nnoremap <C-A> I[A]Jr(A)I- 
+"nnoremap <C-A> I[A]Jr(A)I- 
+nnoremap <C-A> :MyMakeLink<CR>
 
 " open an URL in the markdeep format by chrome
 "nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>

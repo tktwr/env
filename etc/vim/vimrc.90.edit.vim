@@ -2,7 +2,7 @@
 " edit
 "======================================================
 
-" remole a linefeed NL (0x0A)
+" remove a linefeed NL (0x0A)
 func s:RemoveNL(str)
   return substitute(a:str, "[\xA]$", '', '')
 endfunc
@@ -59,6 +59,15 @@ func s:MyAddDate(date)
   call setline('.', l:str)
 endfunc
 
+func s:MyMakeLink(prefix)
+  let l:start = line('.')
+  let l:end = l:start + 1
+  let l:line = getline(start, end)
+  let l:str = a:prefix.'['.l:line[0].']('.l:line[1].')'
+  call setline('.', l:str)
+  execute l:end 'delete _'
+endfunc
+
 "------------------------------------------------------
 " command
 "------------------------------------------------------
@@ -67,7 +76,10 @@ command TogglePathFormat         call s:TogglePathFormat()
 command MyUpdateLastChange       call s:MyUpdateLastChange()
 command MyAddTime                call s:MyAddTime()
 command -nargs=? MyAddDate       call s:MyAddDate("<args>")
-command MyAddDateHere            call s:MyAddDate(expand("<cWORD>"))
+command MyUpdateDateHere         call s:MyAddDate(expand("<cWORD>"))
+
+command MyMakeLink               call s:MyMakeLink('- ')
+command MyMakeImageLink          call s:MyMakeLink('!')
 
 "------------------------------------------------------
 " autocmd

@@ -67,6 +67,14 @@ endfunc
 "--------------------------------------------------------------------------
 " Lookup (prg, opt, word)
 "--------------------------------------------------------------------------
+" remove a linefeed NL (0x0A)
+func s:RemoveNL(str)
+  let l:str = a:str
+  let l:str = substitute(l:str, '\n', '', 'g')
+  let l:str = substitute(l:str, "[\xA]", '', 'g')
+  return l:str
+endfunc
+
 func! Lookup (prg, opt, word) range
   " check the window where the command is invoked
   if (!&previewwindow)
@@ -80,16 +88,16 @@ func! Lookup (prg, opt, word) range
   " store arguments to window-local variables
   let s:prg = a:prg
   let s:opt = a:opt
-  let s:word = a:word
+  let s:word = expand(a:word)
 
   if (empty(s:word))
     silent normal gvy
     let selected = @@
     let s:word = selected
-    let s:word = substitute(s:word, '\n', ' ', 'g')
   endif
 
-  let s:word = '"'.s:word.'"'
+  let s:word = s:RemoveNL(s:word)
+  let s:word = '\"'.s:word.'\"'
 
   silent botright pedit s:lookup_winname
   wincmd P
@@ -122,25 +130,29 @@ command -range -nargs=+ EE  call Lookup("ee", "", <q-args>)
 command -range -nargs=+ GJ  call Lookup("gj", "", <q-args>)
 
 " dictionary
-command -range -nargs=* Dja call Lookup("trans", ":ja -w 60 -no-ansi", <q-args>)
-command -range -nargs=* Den call Lookup("trans", ":en -w 60 -no-ansi", <q-args>)
-command -range -nargs=* Dzh call Lookup("trans", ":zh -w 60 -no-ansi", <q-args>)
+command -range -nargs=* DictJa call Lookup("trans", ":ja -w 60 -no-ansi", <q-args>)
+command -range -nargs=* DictEn call Lookup("trans", ":en -w 60 -no-ansi", <q-args>)
+command -range -nargs=* DictZh call Lookup("trans", ":zh -w 60 -no-ansi", <q-args>)
 
 " translation
-command -range -nargs=* Tja call Lookup("trans", ":ja -w 60 -b", <q-args>)
-command -range -nargs=* Ten call Lookup("trans", ":en -w 60 -b", <q-args>)
-command -range -nargs=* Tzh call Lookup("trans", ":zh -w 60 -b", <q-args>)
+command -range -nargs=* TransJa call Lookup("trans", ":ja -w 60 -b", <q-args>)
+command -range -nargs=* TransEn call Lookup("trans", ":en -w 60 -b", <q-args>)
+command -range -nargs=* TransZh call Lookup("trans", ":zh -w 60 -b", <q-args>)
+
+command DictJaHere     DictJa <cword>
+command DictEnHere     DictEn <cword>
+command DictZhHere     DictZh <cword>
+
+command TransJaVisual  TransJa
+command TransEnVisual  TransEn
+command TransZhVisual  TransZh
+
+"command TransJaVisual  TransJa "<C-R>""
+"command TransEnVisual  TransEn "<C-R>""
+"command TransZhVisual  TransZh "<C-R>""
 
 "--------------------------------------------------------------------------
 " map
 "--------------------------------------------------------------------------
 "nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
-
-nnoremap Tja  :call Lookup("trans", ":ja -w 60 -b", expand("<cword>"))<CR>
-nnoremap Ten  :call Lookup("trans", ":en -w 60 -b", expand("<cword>"))<CR>
-nnoremap Tzh  :call Lookup("trans", ":zh -w 60 -b", expand("<cword>"))<CR>
-
-vnoremap Tja y:call Lookup("trans", ":ja -w 60 -b", "<C-R>"")<CR>
-vnoremap Ten y:call Lookup("trans", ":en -w 60 -b", "<C-R>"")<CR>
-vnoremap Tzh y:call Lookup("trans", ":zh -w 60 -b", "<C-R>"")<CR>
 

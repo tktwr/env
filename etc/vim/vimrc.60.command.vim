@@ -49,27 +49,27 @@ command RunFirefox  silent !firefox "%"
 
 command -nargs=1 OpenURL     silent !chrome.sh "<args>"
 
-command ClangFormat !clang-format -i %
-command Trans bot term ++rows=10 ++close trans -I -b
+command ClangFormat    call s:ClangFormat()
+command Trans          call s:Trans()
 
 command TabBar Tabularize /|
 command TabDot Tabularize /\.\.\.
 
 command -nargs=+ VimGrep call s:MyVimGrep("<args>")
-command VimGrepHere VimGrep <cword>
-command GgrepHere Ggrep -I <cword> -- ':!*.dat'
+command VimGrepHere      VimGrep <cword>
+command GgrepHere        Ggrep -I <cword> -- ':!*.dat'
 
 command MyCdHere cd %:h
 command MyLcdHere lcd %:h
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
-command -nargs=1 MySetTab call s:MySetTab("<args>")
+command -nargs=1 MySetTab  call s:MySetTab("<args>")
 command MyLineNumberToggle call s:MyLineNumberToggle()
-command MyIDE call s:MyIDE()
-command MyCheckEnv call s:MyCheckEnv()
+command MyIDE              call s:MyIDE()
+command MyCheckEnv         call s:MyCheckEnv()
 
 command MyEditAltSrc call s:MyEditAltSrc()
-command MyStartProf call s:MyStartProf()
-command MyEndProf call s:MyEndProf()
+command MyStartProf  call s:MyStartProf()
+command MyEndProf    call s:MyEndProf()
 
 "------------------------------------------------------
 " autocmd
