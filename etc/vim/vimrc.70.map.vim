@@ -63,6 +63,7 @@ nnoremap ==    zi
 "nnoremap ,q    0"qy$
 " execute commands in the register q
 "nnoremap q     @q
+nnoremap <C-Q>     @q
 
 " execute commands under the cursor
 nnoremap X ^y$:silent exec "<C-R>""<CR>
