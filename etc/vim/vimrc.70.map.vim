@@ -102,14 +102,14 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 "   to
 " [label](http://...)
 "nnoremap <C-A> I[A]Jr(A)I- 
-nnoremap <C-A> :MyMakeLink<CR>
+"nnoremap <C-A> :MyMakeLink<CR>
 
 " open an URL in the markdeep format by chrome
 "nnoremap <C-O> 0f(lyt):silent !chrome.sh "<C-R>""<CR>
 
 " open an URL under the cursor
 "nnoremap <C-O> :!chrome.sh <cfile><CR>
-nnoremap <C-O> :OpenURL <cfile><CR>
+"nnoremap <C-O> :OpenURL <cfile><CR>
 
 " open an URL in the markdeep format by w3m.vim
 "nnoremap <C-?> 0f(lyt):silent W3m <C-R>"<CR>
@@ -117,9 +117,9 @@ nnoremap <C-O> :OpenURL <cfile><CR>
 "------------------------------------------------------
 " map: function key
 "------------------------------------------------------
-nnoremap <F2> :MyNERDTreeToggle<CR>
-nnoremap <F3> :MyGstatusToggle<CR>
-nnoremap <F4> :GgrepHere<CR>
+"nnoremap <F2> :MyNERDTreeToggle<CR>
+"nnoremap <F3> :MyGstatusToggle<CR>
+"nnoremap <F4> :GgrepHere<CR>
 
 " tab
 "nnoremap <F5> :tabclose<CR>
@@ -130,11 +130,11 @@ nnoremap <F4> :GgrepHere<CR>
 
 
 " copy to the clipboard
-vnoremap <F11> "*y
+"vnoremap <F11> "*y
 
 " paste from the clipboard
-nnoremap <F12> "*p
-inoremap <F12> <ESC>"*p
+"nnoremap <F12> "*p
+"inoremap <F12> <ESC>"*p
 
 " save session
 "nnoremap <F?> :mksession! $MY_VIM/session.vim<CR>

@@ -31,6 +31,10 @@ return
 ;return
 ;#IfWinActive
 
+F4::
+  send,#+s
+  return
+
 F5::
 IfWinExist ahk_exe chrome.exe
 {

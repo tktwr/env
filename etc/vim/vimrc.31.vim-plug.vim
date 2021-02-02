@@ -100,7 +100,7 @@ Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-nmap <C-P> <Plug>(easymotion-overwin-line)
+nmap <C-A> <Plug>(easymotion-overwin-line)
 
 "------------------------------------------------------
 " vim-plug: edit
