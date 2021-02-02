@@ -10,22 +10,22 @@ func s:Trans()
   bot term ++rows=10 ++close trans -I -b
 endfunc
 
-func s:MyDia(split)
+func s:MyDia(sp, type)
   let l:dia = "$MY_DIARY/diary.md.html"
   let l:todo = "$MY_DIARY/todo.md.html"
 
-  if a:split == 'd'
-    exec "sp" l:dia
-  elseif a:split == 't'
-    exec "sp" l:todo
-  elseif a:split == 'h'
-    exec "sp" l:todo
+  if a:type == 'd'
+    exec a:sp l:dia
+  elseif a:type == 't'
+    exec a:sp l:todo
+  elseif a:type == 'h'
+    exec a:sp l:todo
     exec "sp" l:dia
     wincmd j
     resize 10
     wincmd k
-  elseif a:split == 'v'
-    exec "sp" l:todo
+  elseif a:type == 'v'
+    exec a:sp l:todo
     exec "vsp" l:dia
     wincmd l
     vertical resize 40

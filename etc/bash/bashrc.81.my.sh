@@ -65,11 +65,8 @@ alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 #------------------------------------------------------
 # dia
 #------------------------------------------------------
-alias dia='vim -c "Dia"'
-alias todo='vim -c "Todo"'
-alias z='vim -c "VDia"'
-alias zv='vim -c "VDia"'
-alias zh='vim -c "HDia"'
+alias z='vim -c "DiaFull"'
+alias zh='vim -c "HDiaFull"'
 
 #------------------------------------------------------
 # misc

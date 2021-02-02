@@ -11,7 +11,7 @@ nnoremap <leader>n            :MyNERDTreeToggle<CR>
 nnoremap <leader>s            :MyGstatusToggle<CR>
 nnoremap <leader>u            :OpenURL <cfile><CR>
 nnoremap <leader>m            :Memo<CR>
-nnoremap <leader>d            :VDia<CR>
+nnoremap <leader>d            :Dia<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
 inoremap <leader>p            <ESC>"*p

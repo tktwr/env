@@ -36,10 +36,9 @@ command Cfdo cfdo execute "normal! @q" | w
 
 command Tips Memo my.vim.tips
 
-command Dia  call s:MyDia('d')
-command Todo call s:MyDia('t')
-command HDia call s:MyDia('h')
-command VDia call s:MyDia('v')
+command Dia      call s:MyDia('sp', 'v')
+command DiaFull  call s:MyDia('e', 'v')
+command HDiaFull call s:MyDia('e', 'h')
 
 command RunExplorer silent !explorer.exe %:h
 command RunGvim     silent !gvim "%"
