@@ -44,6 +44,7 @@ autocmd QuickFixCmdPost *grep* cwindow
 if s:use_gitgutter
   if &term =~ "xterm"
     Plug 'airblade/vim-gitgutter'
+    let g:gitgutter_map_keys = 0
     let g:gitgutter_override_sign_column_highlight = 0
     highlight SignColumn ctermbg=0
   endif
@@ -111,6 +112,7 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 let g:NERDDefaultAlign='left'
 let g:NERDMenuMode=0
+let g:NERDCreateDefaultMappings=0
 
 Plug 'godlygeek/tabular'
 

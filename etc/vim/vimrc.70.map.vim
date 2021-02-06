@@ -36,7 +36,7 @@ nnoremap <C-E>   :only<CR>
 nnoremap <C-X>   :close<CR>
 
 " redraw screen
-nnoremap <C-N>   <C-L><C-G>
+nnoremap <C-G>   <C-L><C-G>
 
 "------------------------------------------------------
 " map: develop
@@ -66,7 +66,7 @@ nnoremap ==    zi
 nnoremap <C-Q>     @q
 
 " execute commands under the cursor
-nnoremap X ^y$:silent exec "<C-R>""<CR>
+"nnoremap X ^y$:silent exec "<C-R>""<CR>
 
 " man
 "nnoremap M :Man <cword><CR>
@@ -75,9 +75,9 @@ nnoremap X ^y$:silent exec "<C-R>""<CR>
 " map: visual mode mapping
 "------------------------------------------------------
 " add column
-vnoremap A1 y:'<,'>w !sumcol 1<CR>
-vnoremap A2 y:'<,'>w !sumcol 2<CR>
-vnoremap A3 y:'<,'>w !sumcol 3<CR>
+"vnoremap A1 y:'<,'>w !sumcol 1<CR>
+"vnoremap A2 y:'<,'>w !sumcol 2<CR>
+"vnoremap A3 y:'<,'>w !sumcol 3<CR>
 
 " calc
 "vnoremap C y:!expr.sh "<C-R>""<CR>
@@ -150,5 +150,5 @@ vnoremap A3 y:'<,'>w !sumcol 3<CR>
 " map: plugin's key map
 "------------------------------------------------------
 " nerd commenter
-vmap C         <Leader>c<Space>
-
+"vmap C  <Leader>c<Space>
+"vmap C  <plug>NERDCommenterToggle

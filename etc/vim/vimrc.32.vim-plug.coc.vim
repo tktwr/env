@@ -52,7 +52,7 @@ imap <C-l> <Plug>(coc-snippets-expand)
 "------------------------------------------------------
 " coc-lists
 "------------------------------------------------------
-nnoremap <C-G> :CocList vimcommands<CR>
+nnoremap <C-N> :CocList vimcommands<CR>
 
 "------------------------------------------------------
 " coc-explorer

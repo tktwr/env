@@ -9,7 +9,7 @@ endif
 
 " terminal window
 "set notimeout ttimeout
-set timeoutlen=300
+set timeoutlen=100
 tnoremap <Esc>   <C-W>N
 tnoremap <C-H>   <C-W>h
 tnoremap <C-J>   <C-W>j
