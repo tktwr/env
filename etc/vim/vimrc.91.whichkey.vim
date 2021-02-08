@@ -6,20 +6,26 @@ vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
-nmap     <leader>E            <plug>(easymotion-overwin-line)
 vmap     <leader>C            <plug>NERDCommenterToggle
-nnoremap <leader>n            :MyNERDTreeToggle<CR>
-nnoremap <leader>s            :MyGstatusToggle<CR>
-nnoremap <leader>u            :OpenURL <cfile><CR>
-nnoremap <leader>m            :Memo<CR>
-nnoremap <leader>d            :Dia<CR>
+nmap     <leader>E            <plug>(easymotion-overwin-line)
+nnoremap <leader>M            :Memo<CR>
+nnoremap <leader>D            :Dia<CR>
+nnoremap <leader>N            :MyNERDTreeToggle<CR>
+nnoremap <leader>S            :MyGstatusToggle<CR>
+nnoremap <leader>U            :OpenURL <cfile><CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
 inoremap <leader>p            <ESC>"*p
-nnoremap <leader>k            :make<CR>
-nnoremap <leader>t            :bot term<CR>
-nnoremap <leader>T            :Trans<CR>
+nnoremap <leader>K            :make<CR>:cw<CR>
+nnoremap <leader>T            :bot term<CR>
+nnoremap <leader>R            :Trans<CR>
 nnoremap <leader>Q            :confirm qall<CR>
+
+nnoremap <leader>te           :tabedit<CR>
+nnoremap <leader>tc           :tabclose<CR>
+nnoremap <leader>to           :tabonly<CR>
+nnoremap <leader>tn           :tabnext<CR>
+nnoremap <leader>tp           :tabprev<CR>
 
 nnoremap <leader>vd           :MyCdHere<CR>
 nnoremap <leader>vD           :MyLcdHere<CR>
@@ -41,12 +47,15 @@ nnoremap <leader>etd          :TabDot<CR>
 nnoremap <leader>id           :MyAddDate<CR>
 nnoremap <leader>it           :MyAddTime<CR>
 
+nnoremap <leader>ds           :vert diffsplit 
+nnoremap <leader>du           :diffupdate<CR>
+
 nnoremap <leader>qd           :Cdo<CR>
 nnoremap <leader>qf           :Cfdo<CR>
 
-nnoremap <leader>ot           :TagbarToggle<CR>
-nnoremap <leader>oi           :MyIDE<CR>
-nnoremap <leader>op           :Tips<CR>
+nnoremap <leader>oI           :MyIDE<CR>
+nnoremap <leader>oT           :TagbarToggle<CR>
+nnoremap <leader>ot           :Tips<CR>
 nnoremap <leader>oC           :ClangFormat<CR>
 nnoremap <leader>oM           :Ref man 
 nnoremap <leader>oP           :Ref pydoc 
@@ -87,14 +96,13 @@ vnoremap <leader>A3           y:'<,'>w !sumcol 3<CR>
 call which_key#register('<Space>', "g:which_key_map")
 "let g:which_key_vertical = 1
 let g:which_key_exit = ["\<Space>", "\<Esc>"]
-let g:which_key_map = {
-      \ 'name' : '+top',
-      \ 'E' : 'easymotion',
-      \ 'C' : 'NERDCommenter',
-      \ 'n' : 'NERDTree',
-      \ 's' : 'GStatus',
-      \ 'u' : 'OpenURL',
-      \ 't' : 'term',
+let g:which_key_map = { 'name' : '+top',
+      \ 'C' : 'Comment',
+      \ 'E' : 'Easymotion',
+      \ 'N' : 'NERDTree',
+      \ 'S' : 'GStatus',
+      \ 'U' : 'OpenURL',
+      \ 'T' : 'term',
       \ 'y' : 'yank',
       \ 'p' : 'paste',
       \ 'Q' : 'Quit',
@@ -102,10 +110,12 @@ let g:which_key_map = {
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }
 
+let g:which_key_map.t   = { 'name' : '+tab' }
 let g:which_key_map.v   = { 'name' : '+vim' }
 let g:which_key_map.e   = { 'name' : '+edit' }
 let g:which_key_map.e.t = { 'name' : '+tabularize' }
 let g:which_key_map.i   = { 'name' : '+insert' }
+let g:which_key_map.d   = { 'name' : '+diff' }
 let g:which_key_map.q   = { 'name' : '+q-command' }
 let g:which_key_map.o   = { 'name' : '+open' }
 let g:which_key_map.o.D = { 'name' : '+Dict' }

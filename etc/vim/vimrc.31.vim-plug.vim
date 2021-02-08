@@ -20,7 +20,7 @@ let g:NERDTreeAutoDeleteBuffer=1
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()
 function! s:my_nerdtree_settings()
-  nmap <buffer> <Tab> C
+  nmap <buffer> . C
 endfunction
 
 Plug 'majutsushi/tagbar'
@@ -88,10 +88,6 @@ let g:DirDiffAddArgs = "-bwBEZ"
 "------------------------------------------------------
 " quickhl
 Plug 't9md/vim-quickhl'
-nmap <C-U> <Plug>(quickhl-manual-this)
-xmap <C-U> <Plug>(quickhl-manual-this)
-nmap <C-Y> <Plug>(quickhl-manual-reset)
-xmap <C-Y> <Plug>(quickhl-manual-reset)
 
 "------------------------------------------------------
 " vim-plug: move
@@ -101,7 +97,6 @@ Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
-nmap <C-A> <Plug>(easymotion-overwin-line)
 
 "------------------------------------------------------
 " vim-plug: edit

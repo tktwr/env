@@ -24,3 +24,16 @@ command MyGstatusToggle  call s:MyGstatusToggle()
 
 colorscheme gruvbox
 
+"------------------------------------------------------
+" custom map for plugins
+"------------------------------------------------------
+
+nnoremap <TAB> :MyNERDTreeToggle<CR>
+
+nmap <BS> <Plug>(easymotion-overwin-line)
+
+nmap <C-U> <Plug>(quickhl-manual-this)
+xmap <C-U> <Plug>(quickhl-manual-this)
+nmap <C-Y> <Plug>(quickhl-manual-reset)
+xmap <C-Y> <Plug>(quickhl-manual-reset)
+

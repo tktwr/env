@@ -55,7 +55,7 @@ f_search_tag() {
 }
 
 f_exec_vim() {
-  vim -t "$1" -c "normal zt" -c "only"
+  vim -t "$1" -c "normal zt"
 }
 
 f_main() {

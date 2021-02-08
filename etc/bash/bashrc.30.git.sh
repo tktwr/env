@@ -68,8 +68,8 @@ gAC() {
 }
 
 alias gR='git reset --hard'
-alias gRom='git reset --hard origin/master'
-alias gPom='git push origin master'
+alias gRom='git reset --hard origin/$(git-branch-name)'
+alias gPom='git push origin $(git-branch-name)'
 
 alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
@@ -146,20 +146,21 @@ git-branch-name() {
   #git branch --show-current 2>/dev/null
 }
 
-git-branch() {
+print-git-branch() {
   echo "[REMOTE]"
   git remote -v
   echo "[BRANCH]"
   git branch -a -vv
 }
 
-git-tag() {
+print-git-tag() {
   echo "[TAG]"
   git tag
   git ls-remote --tags
 }
 
-alias gb='git-branch'
+alias gb='print-git-branch'
+alias gt='print-git-tag'
 
 #------------------------------------------------------
 # git-graph
