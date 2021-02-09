@@ -90,7 +90,7 @@ f_mycmake() {
 
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
 
-  f_eval "$W /mingw64/bin/cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  f_eval "$W cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
 f_mycmake_build() {
@@ -123,7 +123,7 @@ f_mycmake_build() {
       ;;
   esac
 
-  f_eval "$W /mingw64/bin/cmake --build $build_dir --config $config $opt $@"
+  f_eval "$W cmake --build $build_dir --config $config $opt $@"
 }
 
 case $1 in

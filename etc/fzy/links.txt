@@ -47,6 +47,10 @@ OpenCV.cookbook             | http://opencv.jp/cookbook/index.html
 OpenGL 4                    | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 OpenGL ES 3.0               | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 #                           |
+# vulkan                    |
+#                           |
+VulkanSDK                   | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+#                           |
 # tutorial                  |
 #                           |
 Learn OpenGL                | https://learnopengl.com/

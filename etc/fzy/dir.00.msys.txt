@@ -13,4 +13,6 @@ anaconda-home       | ANACONDA_HOME       | $USERPROFILE/Anaconda3
 miniconda-home      | MINICONDA_HOME      | $USERPROFILE/miniconda3
 nodejs-home         | NODEJS_HOME         | C:\Program Files\nodejs
 java-home           | JAVA_HOME           | C:\Program Files\Android\Android Studio\jre
+my-cmake            | MY_CMAKE            | C:\Program Files\CMake
+my-vulkan-sdk       | MY_VULKAN_SDK       | $VULKAN_SDK
 my-home             | MY_HOME             | $USERPROFILE

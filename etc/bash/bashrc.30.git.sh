@@ -117,6 +117,10 @@ git-push-origin() {
   git push origin $(git-branch-name)
 }
 
+git-pull-origin() {
+  git pull origin $(git-branch-name)
+}
+
 git-rebase-origin() {
   git rebase origin/$(git-branch-name)
 }

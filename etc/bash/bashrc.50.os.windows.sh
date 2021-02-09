@@ -7,6 +7,8 @@
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
 PATH="$NODEJS_HOME:$PATH"
+PATH="$MY_CMAKE/bin:$PATH"
+PATH="$MY_VULKAN_SDK/Bin:$PATH"
 
 #------------------------------------------------------
 # anaconda
