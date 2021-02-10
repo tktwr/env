@@ -7,10 +7,14 @@ if &term =~ "xterm"
   set ttymouse=xterm2
 endif
 
+"------------------------------------------------------
 " terminal window
+"------------------------------------------------------
 "set notimeout ttimeout
 set timeoutlen=100
-tnoremap <Esc>   <C-W>N
+"tnoremap <Esc>   <C-W>N
+"tnoremap <Esc>   <C-\><C-n>
+tnoremap <C-O>   <C-W>N
 tnoremap <C-H>   <C-W>h
 tnoremap <C-J>   <C-W>j
 tnoremap <C-K>   <C-W>k

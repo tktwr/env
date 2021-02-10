@@ -13,6 +13,8 @@ def f_expand_env(fname):
         fname = fname.replace('$USERNAME', os.environ['USERNAME'])
     if os.getenv('HOME') != None:
         fname = fname.replace('$HOME', os.environ['HOME'])
+    if os.getenv('VULKAN_SDK') != None:
+        fname = fname.replace('$VULKAN_SDK', os.environ['VULKAN_SDK'])
     return fname
 
 
