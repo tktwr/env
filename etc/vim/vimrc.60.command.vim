@@ -46,30 +46,47 @@ command RunVscode   silent !vscode.sh "%"
 command RunChrome   silent !chrome.sh "%"
 command RunFirefox  silent !firefox "%"
 
-command -nargs=1 OpenURL     silent !chrome.sh "<args>"
+command -nargs=1 OpenURL   silent !chrome.sh "<args>"
 
-command ClangFormat    call s:ClangFormat()
-command Trans          call s:Trans()
+command ClangFormat        call s:ClangFormat()
+command Trans              call s:Trans()
 
-command TabBar    Tabularize /|
-command TabDot    Tabularize /\.\.\.
+command TabBar             Tabularize /|
+command TabDot             Tabularize /\.\.\.
 
-command -nargs=+ VimGrep  call s:MyVimGrep("<args>")
-command VimGrepHere       VimGrep <cword>
-command GgrepHere         Ggrep -I <cword> -- ':!*.dat'
+command -nargs=+ VimGrep   call s:MyVimGrep("<args>")
+command VimGrepHere        VimGrep <cword>
+command GgrepHere          Ggrep -I <cword> -- ':!*.dat'
 
-command MyCdHere          cd %:h
-command MyLcdHere         lcd %:h
-command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
+command MyCdHere           cd %:h
+command MyLcdHere          lcd %:h
 command -nargs=1 MySetTab  call s:MySetTab("<args>")
 command MyLineNumberToggle call s:MyLineNumberToggle()
 command MyIDE              call s:MyIDE()
 command MyCheckEnv         call s:MyCheckEnv()
 
-command MyEditAltSrc call s:MyEditAltSrc()
-command MyStartProf  call s:MyStartProf()
-command MyEndProf    call s:MyEndProf()
+command MyEditAltSrc       call s:MyEditAltSrc()
+command MyStartProf        call s:MyStartProf()
+command MyEndProf          call s:MyEndProf()
 
+command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
+
+func s:MyTerm(type)
+  if a:type == 0
+    bot term
+  elseif a:type == 1
+    tabedit
+    bot term
+    only
+  elseif a:type == 2
+    tabedit
+    bot term
+    only
+    bot term
+  endif
+endfunc
+
+command -nargs=1 MyTerm       call s:MyTerm("<args>")
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------

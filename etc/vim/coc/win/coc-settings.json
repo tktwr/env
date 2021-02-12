@@ -19,5 +19,6 @@
   //"python.jediEnabled": false,
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": false,
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  "clangd.path": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\coc_data\\win\\extensions\\coc-clangd-data\\install\\11.0.0\\clangd_11.0.0\\bin\\clangd.exe"
 }

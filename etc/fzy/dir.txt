@@ -3,7 +3,8 @@
 # home           |                    |
 #                |                    |
 my               | MY_DOTMY           | $HOME/.my
-backup           | MY_BACKUP          | $HOME/backup
+backup           | MY_BACKUP          | $MY_PRIVATE/backup
+tmp              | MY_TMP             | $MY_PRIVATE/tmp
 #                |                    |
 # config         |                    |
 #                |                    |

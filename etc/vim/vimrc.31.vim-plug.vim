@@ -133,5 +133,6 @@ endif
 " vim-plug: vim-which-key
 "------------------------------------------------------
 Plug 'liuchengxu/vim-which-key'
+let g:which_key_sep = '>'
 
 "------------------------------------------------------

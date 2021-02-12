@@ -4,11 +4,17 @@
 # windows
 #======================================================
 
+#PATH="$SYS_GIT/bin:$PATH"
+#PATH="$SYS_GIT/usr/bin:$PATH"
+#PATH="$SYS_GIT/mingw64/bin:$PATH"
+
+PATH="$SYS_GIT/cmd:$PATH"
+
 PATH="$JAVA_HOME/bin:$PATH"
 PATH="$ANDROID_SDK/platform-tools:$PATH"
 PATH="$NODEJS_HOME:$PATH"
-PATH="$MY_CMAKE/bin:$PATH"
-PATH="$MY_VULKAN_SDK/Bin:$PATH"
+PATH="$SYS_CMAKE/bin:$PATH"
+PATH="$SYS_VULKAN_SDK/Bin:$PATH"
 
 #------------------------------------------------------
 # anaconda

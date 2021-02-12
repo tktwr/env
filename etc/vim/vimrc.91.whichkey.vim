@@ -12,14 +12,17 @@ nnoremap <leader>M            :Memo<CR>
 nnoremap <leader>D            :Dia<CR>
 nnoremap <leader>N            :MyNERDTreeToggle<CR>
 nnoremap <leader>S            :MyGstatusToggle<CR>
-nnoremap <leader>U            :OpenURL <cfile><CR>
+nnoremap <leader>U            :OpenURL <cfile><CR><C-L>
+nnoremap <leader>K            :make<CR>:cw<CR>
+nnoremap <leader>R            :Trans<CR>
+nnoremap <leader>Q            :confirm qall<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
 inoremap <leader>p            <ESC>"*p
-nnoremap <leader>K            :make<CR>:cw<CR>
-nnoremap <leader>T            :bot term<CR>
-nnoremap <leader>R            :Trans<CR>
-nnoremap <leader>Q            :confirm qall<CR>
+
+nnoremap <leader>T0           :MyTerm 0<CR>
+nnoremap <leader>T1           :MyTerm 1<CR>
+nnoremap <leader>T2           :MyTerm 2<CR>
 
 nnoremap <leader>te           :tabedit<CR>
 nnoremap <leader>tc           :tabclose<CR>
@@ -102,7 +105,7 @@ let g:which_key_map = { 'name' : '+top',
       \ 'N' : 'NERDTree',
       \ 'S' : 'GStatus',
       \ 'U' : 'OpenURL',
-      \ 'T' : 'term',
+      \ 'K' : 'Make',
       \ 'y' : 'yank',
       \ 'p' : 'paste',
       \ 'Q' : 'Quit',
@@ -110,6 +113,7 @@ let g:which_key_map = { 'name' : '+top',
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }
 
+let g:which_key_map.T   = { 'name' : '+Term' }
 let g:which_key_map.t   = { 'name' : '+tab' }
 let g:which_key_map.v   = { 'name' : '+vim' }
 let g:which_key_map.e   = { 'name' : '+edit' }
