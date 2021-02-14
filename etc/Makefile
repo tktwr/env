@@ -13,7 +13,7 @@ backup:
 	./dot.sh --backup
 
 init:
-	./dot.sh --init
+	./make.sh --init
 
 #------------------------------------------------------
 

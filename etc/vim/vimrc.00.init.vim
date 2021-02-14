@@ -49,7 +49,7 @@ set noundofile
 set updatetime=300
 set signcolumn=yes
 set cmdheight=2
-set winheight=3
+set winheight=10
 "set scrolloff=5
 set backspace=2
 

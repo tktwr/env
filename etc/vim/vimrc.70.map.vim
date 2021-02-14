@@ -43,8 +43,8 @@ nnoremap <C-G>   <C-L><C-G>
 "------------------------------------------------------
 " tag
 nnoremap <C-]>      g<C-]>
-nnoremap <C-W><C-]> <C-W>g<C-]>
-nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<C-I>"<CR>
+"nnoremap <C-W><C-]> <C-W>g<C-]>
+"nnoremap [I         [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[<C-I>"<CR>
 
 " indent between { and }
 "nnoremap <Left><Left>	%ma%:.+1,'a-1<<CR>+%

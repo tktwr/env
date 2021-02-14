@@ -5,8 +5,7 @@ cmd=cmp
 dir=$HOME
 
 DOT_DIRS_COMMON="\
-mintty \
-w3m \
+.mintty \
 "
 DOT_FILES_COMMON="\
 .clang-format \
@@ -25,16 +24,12 @@ DOT_FILES_DIFF="\
 DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 DOT_FILES=""
 
-f_get_date() {
-  echo `env LC_TIME=C date '+%Y%m%d'`
-}
-
 f_help() {
   echo "NAME"
   echo "  $bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $bin_name [options] [dir]"
+  echo "  $bin_name [options] [dir=$HOME]"
   echo
   echo "OPTIONS"
   echo "  -h, --help     ... print help"
@@ -48,6 +43,10 @@ f_help() {
   echo "  --diff         ... diff files"
   echo "  --vimdiff      ... vimdiff files"
   echo "  --vimdirdiff   ... vimdirdiff dir"
+}
+
+f_get_date() {
+  echo `env LC_TIME=C date '+%Y%m%d'`
 }
 
 f_backup() {
@@ -70,8 +69,13 @@ f_init() {
   for i in $DOT_FILES_ALL; do
     cp --parents $i $HOME
   done
+
+  cp -a $DOT_DIRS_COMMON $HOME
 }
 
+#------------------------------------------------------
+# f_diff file1 file2
+#------------------------------------------------------
 f_diff() {
   if [ ! -f "$1" ]; then
     echo "[no file] $1"
@@ -93,12 +97,18 @@ f_diff() {
   fi
 }
 
+#------------------------------------------------------
+# f_diff_files dir
+#------------------------------------------------------
 f_diff_files() {
   for i in $DOT_FILES; do
     f_diff $i $1/$i
   done
 }
 
+#------------------------------------------------------
+# f_cp_files dir
+#------------------------------------------------------
 f_cp_files() {
   if [ -n "$DOT_FILES" ]; then
     echo "cp --parents $DOT_FILES $1"
@@ -106,10 +116,16 @@ f_cp_files() {
   fi
 }
 
+#------------------------------------------------------
+# f_diff_dir dir
+#------------------------------------------------------
 f_diff_dir() {
   vimdirdiff . $1
 }
 
+#------------------------------------------------------
+# f_args args
+#------------------------------------------------------
 f_args() {
   for i in "$@"; do
     case "$i" in
@@ -156,14 +172,14 @@ f_args() {
   done
 
   case $cmd in
-    vimdirdiff)
-      f_diff_dir $dir
-      ;;
     cmp|diff|vimdiff)
       f_diff_files $dir
       ;;
     cp)
       f_cp_files $dir
+      ;;
+    vimdirdiff)
+      f_diff_dir $dir
       ;;
   esac
 }

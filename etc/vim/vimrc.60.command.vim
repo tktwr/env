@@ -52,7 +52,8 @@ command ClangFormat        call s:ClangFormat()
 command Trans              call s:Trans()
 
 command TabBar             Tabularize /|
-command TabDot             Tabularize /\.\.\.
+command TabDots            Tabularize /\.\.\.
+command TabComma           Tabularize /,
 
 command -nargs=+ VimGrep   call s:MyVimGrep("<args>")
 command VimGrepHere        VimGrep <cword>
@@ -73,7 +74,7 @@ command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 
 func s:MyTerm(type)
   if a:type == 0
-    bot term
+    bot term ++rows=10
   elseif a:type == 1
     tabedit
     bot term

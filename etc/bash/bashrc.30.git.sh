@@ -3,49 +3,6 @@
 #======================================================
 # git
 #======================================================
-
-f_get_prompt_color_host() {
-  local CO
-  case $HOSTNAME in
-    *)
-      CO=$ECO5
-      ;;
-  esac
-  echo $CO$HOSTNAME
-}
-
-f_get_prompt_color_shell() {
-  local CO
-  case $MY_SHELL_NAME in
-    gitbash)
-      CO=$ECO1
-      ;;
-    MINGW64)
-      CO=$ECO2
-      ;;
-    termux)
-      CO=$ECO3
-      ;;
-    bash)
-      CO=$ECO5
-      ;;
-  esac
-  echo $CO$MY_SHELL_NAME
-}
-
-f_set_git_prompt() {
-  source "$MY_ENV/etc/git/git-prompt.sh"
-  source "$MY_ENV/etc/git/git-completion.bash"
-
-  GIT_BRANCH_FUNC='`__git_ps1`'
-  PS1_HOST=$(f_get_prompt_color_host)
-  PS1_SHELL=$(f_get_prompt_color_shell)
-  PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
-
-  export PROMPT_DIRTRIM=2
-  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$ECO3[\w]$PS1_GIT$ECOD\$ "
-}
-
 #------------------------------------------------------
 # git-alias
 #------------------------------------------------------

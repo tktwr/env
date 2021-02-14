@@ -34,7 +34,7 @@ f_print_env() {
       #GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$target_shell/git
       GIT_EXE=git
       ;;
-    gitbash|termux|bash)
+    MSYS|gitbash|termux|bash)
       GIT_EXE=git
       ;;
   esac

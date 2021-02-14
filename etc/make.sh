@@ -16,11 +16,14 @@ f_help() {
   echo "  --clean    ... clean"
 }
 
-f_dot() {
-  ./dot.sh --common-files --cp
+f_init() {
+  ./dot.sh --init
+  f_make --min
 }
 
 f_make() {
+  ./dot.sh --common-files --cp
+
   cd bash
   ./make.sh "$@"
   cd ..
@@ -36,12 +39,13 @@ f_args() {
       -h|--help)
         f_help
         ;;
+      --init)
+        f_init
+        ;;
       --all)
-        f_dot
         f_make --all
         ;;
       --min)
-        f_dot
         f_make --min
         ;;
       --clean)

@@ -24,9 +24,10 @@ mv.data()       { mv "$@" $MY_DATA; }
 # mypushd.sh
 #------------------------------------------------------
 alias set.G='mypushd.sh --set `pwd`'
+alias get.G='mypushd.sh --get'
 alias cd.G='cd `mypushd.sh --get`'
-mv.G()           { mv "$@" `mypushd.sh --get`; }
-cp.G()           { cp "$@" `mypushd.sh --get`; }
+mv.G()          { mv "$@" `mypushd.sh --get`; }
+cp.G()          { cp "$@" `mypushd.sh --get`; }
 
 #------------------------------------------------------
 # mypython.sh

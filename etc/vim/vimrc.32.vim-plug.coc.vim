@@ -47,12 +47,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "------------------------------------------------------
 " coc-snippets
 "------------------------------------------------------
-imap <C-l> <Plug>(coc-snippets-expand)
+imap <C-L> <Plug>(coc-snippets-expand)
 
 "------------------------------------------------------
 " coc-lists
 "------------------------------------------------------
-nnoremap <C-N> :CocList vimcommands<CR>
+nnoremap <C-P> :CocList vimcommands<CR>
 
 "------------------------------------------------------
 " coc-explorer
