@@ -17,10 +17,14 @@ let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeChDirMode=2
 let g:NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeMinimalMenu=0
+let g:NERDTreeWinSize=31
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()
 function! s:my_nerdtree_settings()
   nmap <buffer> . C
+  nmap <buffer> <Space> go
 endfunction
 
 Plug 'majutsushi/tagbar'

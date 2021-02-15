@@ -39,7 +39,6 @@ alias vim-zero='/usr/bin/vim -u NONE'
 alias vim-min='/usr/bin/vim -u $MY_VIM/min_vimrc.vim'
 alias gvim-min='gvim -u $MY_VIM/min_gvimrc.vim'
 alias vim-tags='vim -e -c "helptags . | quit"'
-alias V='vim -c "NERDTree"'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
