@@ -72,7 +72,7 @@ f_checkgit_force() {
 }
 
 f_git_ps1() {
-  echo "[$MY_PYTHON_TYPE,$MY_PYTHON_VENV]$GIT_BRANCH"
+  echo "[$MY_PYTHON_TYPE,$MY_PYTHON_VENV][$MY_BUILD_SYS,$MY_BUILD_CONFIG]$GIT_BRANCH"
 }
 
 f_set_git_prompt_fast() {
@@ -85,7 +85,7 @@ f_set_git_prompt_fast() {
   PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
 
   export PROMPT_DIRTRIM=2
-  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$ECO3[\w]$PS1_GIT$ECOD\$ "
+  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$ECO3[\w]$PS1_GIT$ECOD\n\$ "
 }
 
 alias g.='f_checkgit_force'

@@ -76,5 +76,14 @@ alias zh='vim -c "HDiaFull"'
 #------------------------------------------------------
 # misc
 #------------------------------------------------------
+print-env() {
+  echo "MY_PUSHD_DIR=$MY_PUSHD_DIR"
+  echo "MY_PYTHON_TYPE=$MY_PYTHON_TYPE"
+  echo "MY_PYTHON_VENV=$MY_PYTHON_VENV"
+  echo "MY_BUILD_SYS=$MY_BUILD_SYS"
+  echo "MY_BUILD_CONFIG=$MY_BUILD_CONFIG"
+}
+
+alias pe='print-env'
 alias pp='print-path.sh -p'
 
