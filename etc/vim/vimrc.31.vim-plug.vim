@@ -20,6 +20,7 @@ let g:NERDTreeAutoDeleteBuffer=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeMinimalMenu=0
 let g:NERDTreeWinSize=31
+let g:NERDTreeIgnore=['NTUSER\.', 'ntuser\.', '\.lnk$', '\.url', 'desktop\.ini']
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()
 function! s:my_nerdtree_settings()
@@ -138,5 +139,12 @@ endif
 "------------------------------------------------------
 Plug 'liuchengxu/vim-which-key'
 let g:which_key_sep = '>'
+
+"------------------------------------------------------
+" vim-plug: vim-which-key
+"------------------------------------------------------
+Plug 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 "------------------------------------------------------

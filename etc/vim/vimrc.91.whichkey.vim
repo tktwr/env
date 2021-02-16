@@ -39,12 +39,13 @@ nnoremap <leader>to           :tabonly<CR>
 nnoremap <leader>tn           :tabnext<CR>
 nnoremap <leader>tp           :tabprev<CR>
 
-nnoremap <leader>vd           :MyCdHere<CR>
-nnoremap <leader>vD           :MyLcdHere<CR>
-nnoremap <leader>ve           :MyCheckEnv<CR>
+nnoremap <leader>vE           :MyCheckEnv<CR>
+nnoremap <leader>vD           :MyCdHere<CR>
+nnoremap <leader>vd           :MyLcdHere<CR>
 nnoremap <leader>v2           :MySetTab 2<CR>
 nnoremap <leader>v4           :MySetTab 4<CR>
-nnoremap <leader>vl           :MyLineNumberToggle<CR>
+nnoremap <leader>vL           :MyLineNumberToggle<CR>
+nnoremap <leader>vI           :IndentGuidesToggle<CR>
 nnoremap <leader>vf           zi
 nnoremap <leader>vG           :VimGrepHere<CR>
 nnoremap <leader>vg           :VimGrep 
