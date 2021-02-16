@@ -27,9 +27,9 @@ syn match    mySat              "(Sat)"
 syn match    mySun              "(Sun)"
 syn match    mySun              "½ËÆü"
 
-syn match    mySection1         "^# .*"
-syn match    mySection2         "^## .*"
-syn match    mySection3         "^### .*"
+syn match    mySection1         "^# "
+syn match    mySection2         "^## "
+syn match    mySection3         "^### "
 
 syn match    myItem             "^\s*[-+] .*"
 syn match    myItem0            "^[-+] .*"
@@ -79,9 +79,9 @@ if !exists("did_my_general_syntax_inits")
   hi link myHyperTextEntry   String
 
   hi link mySeparator        MyAqua
-  hi link mySection1         MyAqua
-  hi link mySection2         MyAqua
-  hi link mySection3         MyAqua
+  hi link mySection1         MyOrange
+  hi link mySection2         MyOrange
+  hi link mySection3         MyOrange
   hi link myItem             MyGreen
   hi link myItem0            MyGreen
   hi link myItem1            MyGreen
