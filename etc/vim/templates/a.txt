@@ -13,6 +13,9 @@ comment
 "string"
 'string'
 string_1
+[TODO]
+[DONE]
+[FIXED]
 2018/01/01 (Mon)
 2018/01/01 (Sat)
 2018/01/01 (Sun)
@@ -51,7 +54,7 @@ C:/aa/bb/cc c\dd
 \\aa\bb\cc c/dd
 //xx/yy/zz
 
-[LastChange] Tue Feb 16 17:23:11     2021
+[LastChange] Wed Feb 17 19:03:38     2021
 
 aaa 1   2
 bbb 10  20

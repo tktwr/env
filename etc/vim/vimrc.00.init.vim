@@ -50,7 +50,7 @@ set updatetime=300
 set signcolumn=yes
 set cmdheight=2
 set winheight=10
-"set scrolloff=5
+set scrolloff=0
 set backspace=2
 
 set wildignore+=*/build*/**

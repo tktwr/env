@@ -72,22 +72,6 @@ command MyEndProf          call s:MyEndProf()
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 
-func s:MyTerm(type)
-  if a:type == 0
-    bot term ++rows=10
-  elseif a:type == 1
-    tabedit
-    bot term
-    only
-  elseif a:type == 2
-    tabedit
-    bot term
-    only
-    bot term
-  endif
-endfunc
-
-command -nargs=1 MyTerm       call s:MyTerm("<args>")
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------

@@ -10,6 +10,8 @@ endif
 
 let loaded_memo = 1
 let s:memo_winname = '\[memo\]'
+let s:memo_winwidth = 60
+let s:memo_winheight = 15
 
 func! s:ListTags()
   setlocal modifiable
@@ -36,9 +38,9 @@ func! s:MakeMemoWindow(vert)
   let s:memo_winnr = bufwinnr(s:memo_winname)
   if s:memo_winnr == -1
     if (a:vert)
-      silent exec "rightbelow 60vnew" s:memo_winname
+      silent exec "rightbelow" s:memo_winwidth."vnew" s:memo_winname
     else
-      silent exec "15new" s:memo_winname
+      silent exec s:memo_winheight."new" s:memo_winname
     endif
     setlocal buftype=nofile
     setlocal bufhidden=hide
@@ -65,7 +67,7 @@ func! s:Memo(tagname)
   endif
 endfunc
 
-func! s:Ref(tagname)
+func! s:VMemo(tagname)
   call s:MakeMemoWindow(1)
   call s:ListTags()
   if (!empty(a:tagname))
@@ -77,5 +79,5 @@ endfunc
 " command
 "--------------------------------------------------------------------------
 command -nargs=? Memo call s:Memo(<q-args>)
-"command -nargs=? Ref call s:Ref(<q-args>)
+command -nargs=? VMemo call s:VMemo(<q-args>)
 

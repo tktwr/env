@@ -15,13 +15,21 @@ function! s:MyGstatusToggle()
     normal q
   else
     Gstatus
-    resize 12
+    exec "resize" g:my_gstatus_winheight
   endif
 endfunction
 
+func s:MyCocInstall()
+  CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
+endfunc
+
 command MyNERDTreeToggle call s:MyNERDTreeToggle()
 command MyGstatusToggle  call s:MyGstatusToggle()
+command MyCocInstall     call s:MyCocInstall()
 
+"------------------------------------------------------
+" colorscheme
+"------------------------------------------------------
 colorscheme gruvbox
 
 "------------------------------------------------------

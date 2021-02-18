@@ -23,7 +23,6 @@ nnoremap <leader>K            :make<CR>:cw<CR>
 nnoremap <leader>Q            :confirm qall<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
-inoremap <leader>p            <ESC>"*p
 
 nnoremap <leader>w0           <C-W>=
 nnoremap <leader>w1           :resize<CR>
@@ -89,6 +88,12 @@ nnoremap <leader>gg           :Ggrep
 nnoremap <leader>gu           :GitGutterToggle<CR>
 nnoremap <leader>gv           :GV --all<CR>
 
+nmap     <leader>PI           :PlugInstall<CR>
+nmap     <leader>Pu           :PlugUpdate<CR>
+nmap     <leader>PU           :PlugUpgrade<CR>
+
+nmap     <leader>cI           :MyCocInstall<CR>
+nmap     <leader>cu           :CocUpdate<CR>
 nmap     <leader>ch           :call CocAction('doHover')<CR>
 nmap     <leader>cD           :CocDiagnostics<CR>
 nmap     <leader>c[           <Plug>(coc-diagnostic-prev)
