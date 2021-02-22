@@ -2,6 +2,8 @@
 
 bin_name=`basename $0`
 
+source ./common_etc.sh
+
 f_help() {
   echo "NAME"
   echo "  $bin_name"
@@ -23,6 +25,7 @@ f_init() {
 
 f_make() {
   ./dot.sh --common-files --cp
+  $MY_PYTHON_EXE ./nerdtree_bmk.py > ~/.NERDTreeBookmarks
 
   cd bash
   ./make.sh "$@"

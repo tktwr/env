@@ -7,4 +7,4 @@ source $MY_VIM/menu.vim
 set wildmenu
 set cpo-=<
 set wcm=<C-Z>
-map <C-Down> :emenu <C-Z>
+"map <C-Down> :emenu <C-Z>

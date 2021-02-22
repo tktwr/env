@@ -49,7 +49,6 @@ set noundofile
 set updatetime=300
 set signcolumn=yes
 set cmdheight=2
-set winheight=10
 set scrolloff=0
 set backspace=2
 
@@ -64,9 +63,6 @@ set listchars=tab:>-,trail:-,eol:$
 
 "set modeline
 "set modelines=5
-
-let g:mapleader = "\<Space>"
-let g:maplocalleader = ','
 
 if !has('nvim')
   if version >= 700
@@ -117,5 +113,14 @@ if has("win32unix") || has("win32") || has("win64")
   "source $VIMRUNTIME/mswin.vim
   "behave mswin
 endif
+"------------------------------------------------------
+" user settings
+"------------------------------------------------------
+set winheight=10
+let g:my_gstatus_winheight = 12
+let g:my_term_winheight = 10
+
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
 "------------------------------------------------------
 

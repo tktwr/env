@@ -1,11 +1,6 @@
 #!/bin/bash
 
-if [ ! -z "$USERPROFILE" ]; then
-  export PATH=$HOME/AppData/Local/Programs/Python/Python38:$PATH
-  export MY_PYTHON_EXE=python
-else
-  export MY_PYTHON_EXE=python3
-fi
+source ../common_etc.sh
 
 _MY_CONFIG=../../../..
 _MY_REMOTE_FZY=$_MY_CONFIG/tktwr.github/env/etc/fzy

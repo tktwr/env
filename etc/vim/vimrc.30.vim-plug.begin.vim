@@ -7,9 +7,6 @@ let s:use_eskk=0
 let s:use_gitgutter=1
 let s:use_nerdtree_git_plugin=0
 
-let g:my_gstatus_winheight = 12
-let g:my_term_winheight = 10
-
 if empty(glob('$MY_VIM/autoload/plug.vim'))
   silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

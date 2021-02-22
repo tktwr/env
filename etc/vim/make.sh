@@ -23,7 +23,7 @@ f_help() {
 
 f_make() {
   mkdir -p $BUILD_DIR
-  ./make.00.vimrc.env.sh unix $MY_SHELL_NAME > $BUILD_DIR/.vimrc.env
+  ./make.00.vimrc.env.sh unix > $BUILD_DIR/.vimrc.env
   ./make.01.vimrc.sh > $BUILD_DIR/.vimrc
 }
 

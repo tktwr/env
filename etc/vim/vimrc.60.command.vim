@@ -39,6 +39,7 @@ command DiaFull  call s:MyDia('e', 'v')
 command HDiaFull call s:MyDia('e', 'h')
 
 command Tips     Memo my.tips
+command Links    sp $MY_ETC/fzy/links.txt
 
 command RunExplorer silent !explorer.exe %:h
 command RunGvim     silent !gvim "%"

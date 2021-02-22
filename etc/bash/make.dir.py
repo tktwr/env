@@ -6,7 +6,18 @@ import os
 import re
 
 
-def f_expand_env(fname):
+def f_expand_env(s):
+    r = re.search('\$\w+', s)
+    if r != None:
+        matched = r.group()
+        env_var = matched[1:]
+        if env_var[:3] != "MY_":
+            if os.getenv(env_var) != None:
+                s = s.replace(matched, os.environ[env_var])
+    return s
+
+
+def f_expand_env2(fname):
     if os.getenv('USERPROFILE') != None:
         fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
     if os.getenv('USERNAME') != None:

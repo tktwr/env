@@ -1,6 +1,7 @@
 "======================================================
 " which_key
 "======================================================
+tnoremap <silent> <C-Space>     <C-W>:<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
@@ -8,13 +9,14 @@ vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
 vmap     <leader>C            <plug>NERDCommenterToggle
 
-nnoremap <leader>0            :MyTerm 0<CR>
-nnoremap <leader>1            :Dia<CR>
-nnoremap <leader>2            :Memo<CR>
-nnoremap <leader>3            :Tips<CR>
-nnoremap <leader>4            :silent GgrepHere<CR><C-L>
-nnoremap <leader>5            :VimGrepHere<CR>
-nnoremap <leader>9            :Trans<CR>
+nnoremap <leader>0            <C-W>:MyTerm 0<CR>
+nnoremap <leader>1            <C-W>:Dia<CR>
+nnoremap <leader>2            <C-W>:Memo<CR>
+nnoremap <leader>3            <C-W>:Tips<CR>
+nnoremap <leader>4            <C-W>:Links<CR>
+nnoremap <leader>5            :silent GgrepHere<CR><C-L>
+nnoremap <leader>6            :VimGrepHere<CR>
+nnoremap <leader>9            <C-W>:Trans<CR>
 nmap     <leader>E            <plug>(easymotion-overwin-line)
 nnoremap <leader>N            :MyNERDTreeToggle<CR>
 nnoremap <leader>S            :MyGstatusToggle<CR>
@@ -25,18 +27,18 @@ vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
 
 nnoremap <leader>w0           <C-W>=
-nnoremap <leader>w1           :resize<CR>
-nnoremap <leader>w2           :resize 10<CR>
+nnoremap <leader>w1           <C-W>:resize<CR>
+nnoremap <leader>w2           <C-W>:resize 10<CR>
 
-nnoremap <leader>T0           :MyTerm 0<CR>
-nnoremap <leader>T1           :MyTerm 1<CR>
-nnoremap <leader>T2           :MyTerm 2<CR>
+nnoremap <leader>T0           <C-W>:MyTerm 0<CR>
+nnoremap <leader>T1           <C-W>:MyTerm 1<CR>
+nnoremap <leader>T2           <C-W>:MyTerm 2<CR>
 
-nnoremap <leader>te           :tabedit<CR>
+nnoremap <leader>te           <C-W>:tabedit<CR>
 nnoremap <leader>tc           :tabclose<CR>
 nnoremap <leader>to           :tabonly<CR>
-nnoremap <leader>tn           :tabnext<CR>
-nnoremap <leader>tp           :tabprev<CR>
+nnoremap <leader>tn           <C-W>:tabnext<CR>
+nnoremap <leader>tp           <C-W>:tabprev<CR>
 
 nnoremap <leader>vE           :MyCheckEnv<CR>
 nnoremap <leader>vD           :MyCdHere<CR>
@@ -56,9 +58,8 @@ nnoremap <leader>ei           :MyMakeImageLink<CR>
 nnoremap <leader>etb          :TabBar<CR>
 nnoremap <leader>etd          :TabDots<CR>
 nnoremap <leader>etc          :TabComma<CR>
-
-nnoremap <leader>id           :MyAddDate<CR>
-nnoremap <leader>it           :MyAddTime<CR>
+nnoremap <leader>eD           :MyAddDate<CR>
+nnoremap <leader>eT           :MyAddTime<CR>
 
 nnoremap <leader>ds           :vert diffsplit 
 nnoremap <leader>du           :diffupdate<CR>
@@ -120,8 +121,9 @@ let g:which_key_map = { 'name' : '+top',
       \ '1' : 'Dia',
       \ '2' : 'Memo',
       \ '3' : 'Tips',
-      \ '4' : 'GgrepHere',
-      \ '5' : 'VimGrepHere',
+      \ '4' : 'Links',
+      \ '5' : 'GgrepHere',
+      \ '6' : 'VimGrepHere',
       \ '9' : 'Trans',
       \ 'C' : 'Comment',
       \ 'E' : 'Easymotion (BS)',
@@ -142,13 +144,13 @@ let g:which_key_map.t   = { 'name' : '+tab' }
 let g:which_key_map.v   = { 'name' : '+vim' }
 let g:which_key_map.e   = { 'name' : '+edit' }
 let g:which_key_map.e.t = { 'name' : '+tabularize' }
-let g:which_key_map.i   = { 'name' : '+insert' }
 let g:which_key_map.d   = { 'name' : '+diff' }
 let g:which_key_map.q   = { 'name' : '+q-command' }
 let g:which_key_map.o   = { 'name' : '+open' }
 let g:which_key_map.o.d = { 'name' : '+Dict' }
 let g:which_key_map.o.t = { 'name' : '+Trans' }
 let g:which_key_map.g   = { 'name' : '+git' }
+let g:which_key_map.P   = { 'name' : '+Plug' }
 let g:which_key_map.c   = { 'name' : '+coc' }
 let g:which_key_map.A   = { 'name' : '+Add' }
 

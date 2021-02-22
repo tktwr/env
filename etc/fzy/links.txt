@@ -62,3 +62,5 @@ PBRT                        | http://www.pbr-book.org/3ed-2018/contents.html
 Blender                     | https://docs.blender.org/
 Blender.py                  | https://docs.blender.org/api/current/index.html
 Blender.py.2.83             | https://docs.blender.org/api/2.83
+
+# vim:set syntax=txt nowrap:

@@ -2,7 +2,7 @@
 
 source $HOME/.my/hostname
 source $HOME/.bashrc.env
-source ../common.sh
+source ../common_etc.sh
 
 f_expand_dir() {
   local opt="$1"
@@ -12,12 +12,10 @@ f_expand_dir() {
   dir=`f_cygpath $opt $val`
 
   echo "let \$$name=\"$dir\""
-  #echo "let \$$name=expand(\"$dir\")"
 }
 
 f_print_env() {
   local target_os=$1
-  local target_shell=$2
   local opt
 
   case $target_os in
@@ -29,15 +27,7 @@ f_print_env() {
       ;;
   esac
 
-  case $target_shell in
-    MINGW64)
-      #GIT_EXE=$MY_REMOTE_CONFIG/env/bin/shell.$target_shell/git
-      GIT_EXE=git
-      ;;
-    MSYS|gitbash|termux|bash)
-      GIT_EXE=git
-      ;;
-  esac
+  GIT_EXE=git
 
   f_expand_dir $opt MY_VIM $MY_VIM
   f_expand_dir -m   MY_VIM_WIN $MY_VIM
@@ -48,5 +38,5 @@ f_print_env() {
   f_expand_dir $opt MY_GIT_EXE $GIT_EXE
 }
 
-f_print_env $1 $2
+f_print_env $1
 
