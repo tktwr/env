@@ -50,6 +50,9 @@ syn match    myHoliday          "½ËÆü"
 syn match    myTODO             "\[TODO\]"
 syn match    myDONE             "\[DONE\]"
 syn match    myFIXED            "\[FIXED\]"
+syn match    mySOLVED           "\[SOLVED\]"
+syn match    myOK               "\[OK\]"
+syn match    myFAIL             "\[FAIL\]"
 
 " Highlighting
 " ============
@@ -58,10 +61,10 @@ if !exists("did_my_general_syntax_inits")
   let did_my_general_syntax_inits = 1
 
   hi link myComment          Comment
-  hi link myString           String
+  hi link myString           MyAqua
 
-  hi link myHyperTextJump    Identifier
-  hi link myHyperTextEntry   String
+  hi link myHyperTextJump    MyYellow
+  hi link myHyperTextEntry   MyAqua
 
   hi link mySeparator        MyAqua
 
@@ -82,6 +85,9 @@ if !exists("did_my_general_syntax_inits")
   hi link myTODO             MyOrange
   hi link myDONE             MyGreen
   hi link myFIXED            MyGreen
+  hi link mySOLVED           MyGreen
+  hi link myOK               MyGreen
+  hi link myFAIL             MyRed
 endif
 
 set textwidth=0

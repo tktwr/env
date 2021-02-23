@@ -1,5 +1,11 @@
 #!/bin/bash
 
-PATH="$ANDROID_SDK/ndk-bundle/prebuilt/windows-x86_64/bin:$PATH"
+BIN_FILE="$ANDROID_SDK/ndk-bundle/prebuilt/windows-x86_64/bin/make.exe"
 
-exec make "$@"
+if [ ! -x "$BIN_FILE" ]; then
+  echo "no $BIN_FILE"
+  exit
+fi
+
+exec "$BIN_FILE" "$@"
+

@@ -1,5 +1,12 @@
 # name                      | link
 #                           |
+# Google                    |
+#                           |
+Google.Gmail                | https://mail.google.com/mail/u/0/#inbox
+Google.Calendar             | https://www.google.com/calendar/render?hl=ja
+Google.Keep                 | https://keep.google.com/
+Google.Drive                | https://drive.google.com/drive/my-drive
+#                           |
 # python                    |
 #                           |
 python                      | https://www.python.org/

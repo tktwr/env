@@ -28,6 +28,8 @@ alias gR='git reset --hard'
 alias gRom='git reset --hard origin/$(git-branch-name)'
 alias gPom='git push origin $(git-branch-name)'
 
+alias git-clone-recursive='git clone --recurse-submodules'
+
 alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
 

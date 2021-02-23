@@ -9,24 +9,25 @@ if [ -f $BUILDRC ]; then
   source $BUILDRC
 fi
 
+# use winpty on terminal
 W=""
 if [ -t 1 ]; then
   W="winpty"
 fi
 
 f_help() {
-  echo "mycmake.sh         BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
-  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
-  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG --target clean"
-  echo "mycmake.sh --build BUILD_SYS BUILD_CONFIG --target install"
-  echo "mycmake.sh --set   BUILD_SYS BUILD_CONFIG [CMAKE_OPTIONS]"
-  echo "mycmake.sh [OPTIONS]"
+  echo "mycmake.sh         [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
+  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
+  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] --target clean"
+  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] --target install"
+  echo "mycmake.sh --set    BUILD_SYS   BUILD_CONFIG"
   echo
   echo "OPTIONS:"
   echo "  --help          print help"
   echo "  --build-sys     print build_sys"
   echo "  --build-config  print build_config"
   echo "  --build-dir     print build_dir"
+  echo "  --set           set build settings"
   echo
   echo "BUILD_SYS:"
   echo "  ninja|make|vs2017|vs2019"
@@ -109,7 +110,7 @@ f_mycmake_build() {
       ;;
     make)
       build_dir=build.$generator/$config
-      opt="$opt -j10"
+      opt="$opt -j7"
       ;;
     vs2017)
       build_dir=build.$generator
@@ -134,10 +135,6 @@ case $1 in
     shift
     f_set "$@" > $BUILDRC
     ;;
-  --build)
-    shift
-    f_mycmake_build "$@"
-    ;;
   --build-sys)
     echo $MY_BUILD_SYS
     ;;
@@ -146,6 +143,10 @@ case $1 in
     ;;
   --build-dir)
     echo build.$MY_BUILD_SYS
+    ;;
+  --build)
+    shift
+    f_mycmake_build "$@"
     ;;
   *)
     f_mycmake "$@"
