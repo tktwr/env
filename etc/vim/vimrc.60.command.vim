@@ -34,9 +34,9 @@ command Cdo      cdo execute "normal! @q" | w
 " apply the command to each file in the quickfix list
 command Cfdo     cfdo execute "normal! @q" | w
 
-command Dia      call s:MyDia('sp', 'v')
-command DiaFull  call s:MyDia('e', 'v')
-command HDiaFull call s:MyDia('e', 'h')
+command Dia      call s:MyDia('top sp', 'v')
+command DiaFull  call s:MyDia('tabe', 'v')
+command HDiaFull call s:MyDia('tabe', 'h')
 
 command Tips     Memo my.tips
 command Links    sp $MY_ETC/fzy/links.txt
