@@ -53,6 +53,10 @@ f_print_path() {
   which clang 2> /dev/null
   which clangd 2> /dev/null
   which node 2> /dev/null
+  which cmake 2> /dev/null
+  which make 2> /dev/null
+  which git 2> /dev/null
+  which vim 2> /dev/null
 }
 
 f_main() {

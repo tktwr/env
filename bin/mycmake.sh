@@ -10,9 +10,9 @@ if [ -f $BUILDRC ]; then
 fi
 
 # use winpty on terminal
-W=""
+WINPTY=""
 if [ -t 1 ]; then
-  W="winpty"
+  WINPTY="winpty"
 fi
 
 f_help() {
@@ -47,84 +47,84 @@ f_set() {
 }
 
 f_eval() {
+  echo "======================================================="
   echo "$@"
+  echo "======================================================="
   eval "$@"
 }
 
 f_mycmake() {
-  echo "======================================================="
-  local generator=${1:-$MY_BUILD_SYS}
+  local build_sys=${1:-$MY_BUILD_SYS}
   shift
-  local config=${1:-$MY_BUILD_CONFIG}
+  local build_config=${1:-$MY_BUILD_CONFIG}
   shift
 
   local generator_name
   local build_dir
   local opt
 
-  case $generator in
+  case $build_sys in
     ninja)
       generator_name="Ninja"
-      build_dir=build.$generator/$config
-      opt="$opt -DCMAKE_BUILD_TYPE=$config"
+      build_dir=build.$build_sys/$build_config
+      opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
       ;;
     make)
       generator_name="Unix Makefiles"
-      build_dir=build.$generator/$config
-      opt="$opt -DCMAKE_BUILD_TYPE=$config"
+      build_dir=build.$build_sys/$build_config
+      opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
       ;;
     vs2017)
       generator_name="Visual Studio 15 2017 Win64"
-      build_dir=build.$generator
+      build_dir=build.$build_sys
       ;;
     vs2019)
       generator_name="Visual Studio 16 2019"
-      build_dir=build.$generator
+      build_dir=build.$build_sys
       ;;
     *)
-      echo "no such generator: $generator"
+      echo "no such build_sys: $build_sys"
       return
       ;;
   esac
 
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
 
-  f_eval "$W cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  f_eval "$WINPTY cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
 f_mycmake_build() {
-  echo "======================================================="
-  local generator=${1:-$MY_BUILD_SYS}
+  local build_sys=${1:-$MY_BUILD_SYS}
   shift
-  local config=${1:-$MY_BUILD_CONFIG}
+  local build_config=${1:-$MY_BUILD_CONFIG}
   shift
 
   local build_dir
   local opt
 
-  case $generator in
+  case $build_sys in
     ninja)
-      build_dir=build.$generator/$config
+      build_dir=build.$build_sys/$build_config
       ;;
     make)
-      build_dir=build.$generator/$config
+      build_dir=build.$build_sys/$build_config
       opt="$opt -j7"
       ;;
     vs2017)
-      build_dir=build.$generator
+      build_dir=build.$build_sys
       ;;
     vs2019)
-      build_dir=build.$generator
+      build_dir=build.$build_sys
       ;;
     *)
-      echo "no such generator: $generator"
+      echo "no such build_sys: $build_sys"
       return
       ;;
   esac
 
-  f_eval "$W cmake --build $build_dir --config $config $opt $@"
+  f_eval "$WINPTY cmake --build $build_dir --config $build_config $opt $@"
 }
 
 case $1 in

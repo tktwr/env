@@ -1,0 +1,34 @@
+#!/bin/bash
+
+f_eval() {
+  echo "======================================================="
+  echo "$@"
+  echo "======================================================="
+  eval "$@"
+}
+
+# use winpty on terminal
+WINPTY=""
+if [ -t 1 ]; then
+  WINPTY="winpty"
+fi
+
+BIN_FILES=(\
+"$ANDROID_SDK/ndk-bundle/prebuilt/windows-x86_64/bin/make.exe" \
+)
+
+BIN_FILE=""
+for i in ${BIN_FILES[@]}; do
+  if [ -x "$i" ]; then
+    BIN_FILE="$i"
+    break
+  fi
+done
+
+if [ ! -x "$BIN_FILE" ]; then
+  echo "no $BIN_FILE"
+  exit
+fi
+
+f_eval "$WINPTY $BIN_FILE $@"
+

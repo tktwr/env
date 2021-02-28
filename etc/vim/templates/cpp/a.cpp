@@ -30,7 +30,6 @@ int main(int argc, char *argv[]) {
     b.getValue(1);
     b.getValue(2);
     if (true) {
-        x
         printf("hello world.\n");
     }
 
