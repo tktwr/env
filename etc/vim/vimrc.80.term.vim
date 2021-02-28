@@ -15,7 +15,7 @@ set timeoutlen=100
 
 func s:MyTerm(type)
   if a:type == 0
-    exec "below term ++rows=".g:my_term_winheight
+    exec "bot term ++rows=".g:my_term_winheight
   elseif a:type == 1
     tabedit
     bot term
@@ -53,8 +53,8 @@ nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
-nnoremap <silent> <C-Down>   <C-W>:MyTerm 1<CR>
-tnoremap <silent> <C-Down>   <C-W>:MyTerm 1<CR>
+nnoremap <silent> <C-Down>   <C-W>:MyTerm 0<CR>
+tnoremap <silent> <C-Down>   <C-W>:MyTerm 0<CR>
 
 nmap <Insert> <C-Up>
 tmap <Insert> <C-Up>

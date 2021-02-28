@@ -38,14 +38,15 @@ command Dia      call s:MyDia('top sp', 'v')
 command DiaFull  call s:MyDia('tabe', 'v')
 command HDiaFull call s:MyDia('tabe', 'h')
 
-command Tips     Memo my.tips
-command Links    sp $MY_ETC/fzy/links.txt
+command Tips               Memo my.tips
+command Links              sp $MY_ETC/fzy/links.txt
+command Scratchpad         call s:Scratchpad()
 
-command RunExplorer silent !explorer.exe %:h
-command RunGvim     silent !gvim "%"
-command RunVscode   silent !vscode.sh "%"
-command RunChrome   silent !chrome.sh "%"
-command RunFirefox  silent !firefox "%"
+command RunExplorer        silent !explorer.exe %:h
+command RunGvim            silent !gvim "%"
+command RunVscode          silent !vscode.sh "%"
+command RunChrome          silent !chrome.sh "%"
+command RunFirefox         silent !firefox "%"
 
 command -nargs=1 OpenURL   silent !chrome.sh "<args>"
 

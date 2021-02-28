@@ -85,7 +85,7 @@ mypython-venv-deactivate() {
 alias x='x.sh'
 alias ls='ls.sh'
 
-alias adb='winpty adb'
+#alias adb='winpty adb'
 alias net='winpty net'
 alias ping='winpty ping'
 alias ipconfig='winpty ipconfig'

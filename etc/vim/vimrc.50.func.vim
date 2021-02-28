@@ -2,6 +2,11 @@
 " func
 "======================================================
 
+func s:Scratchpad()
+  only
+  e ~/.my/scratchpad.md.html
+endfunc
+
 func s:ClangFormat()
   !clang-format -i %
 endfunc
