@@ -119,6 +119,9 @@ endif
 set winheight=10
 let g:my_gstatus_winheight = 12
 let g:my_term_winheight = 10
+let g:my_dia_file = "$MY_DIARY/diary.md.html"
+let g:my_todo_file = "$MY_DIARY/todo.md.html"
+let g:my_scratchpad_file = "$MY_DIARY/scratchpad.md.html"
 
 let g:mapleader = "\<Space>"
 let g:maplocalleader = ','

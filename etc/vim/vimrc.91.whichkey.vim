@@ -14,7 +14,8 @@ nnoremap <leader>1            <C-W>:Dia<CR>
 nnoremap <leader>2            <C-W>:Memo<CR>
 nnoremap <leader>3            <C-W>:Tips<CR>
 nnoremap <leader>4            <C-W>:Links<CR>
-nnoremap <leader>5            <C-W>:Scratchpad<CR>
+nnoremap <leader>5            <C-W>:Papers<CR>
+nnoremap <leader>6            <C-W>:Scratchpad<CR>
 nnoremap <leader>7            :silent GgrepHere<CR><C-L>
 nnoremap <leader>8            :VimGrepHere<CR>
 nnoremap <leader>9            <C-W>:Trans<CR>
@@ -135,7 +136,8 @@ let g:which_key_map = { 'name' : '+top',
       \ '2' : 'Memo',
       \ '3' : 'Tips',
       \ '4' : 'Links',
-      \ '5' : 'Scratchpad',
+      \ '5' : 'Papers',
+      \ '6' : 'Scratchpad',
       \ '7' : 'GgrepHere',
       \ '8' : 'VimGrepHere',
       \ '9' : 'Trans',

@@ -2,7 +2,7 @@
 
 source $HOME/.my/hostname
 source build/.bashrc.env
-source ../common_etc.sh
+source ../lib/common_etc.sh
 
 f_init() {
   echo 'unalias -a'

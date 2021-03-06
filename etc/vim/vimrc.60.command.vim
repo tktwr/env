@@ -34,13 +34,9 @@ command Cdo      cdo execute "normal! @q" | w
 " apply the command to each file in the quickfix list
 command Cfdo     cfdo execute "normal! @q" | w
 
-command Dia      call s:MyDia('top sp', 'v')
-command DiaFull  call s:MyDia('tabe', 'v')
-command HDiaFull call s:MyDia('tabe', 'h')
-
 command Tips               Memo my.tips
 command Links              sp $MY_ETC/fzy/links.txt
-command Scratchpad         call s:Scratchpad()
+command Papers             sp $MY_PAPERS/papers.md.html
 
 command RunExplorer        silent !explorer.exe %:h
 command RunGvim            silent !gvim "%"

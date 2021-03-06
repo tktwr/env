@@ -2,40 +2,12 @@
 " func
 "======================================================
 
-func s:Scratchpad()
-  only
-  e ~/.my/scratchpad.md.html
-endfunc
-
 func s:ClangFormat()
   !clang-format -i %
 endfunc
 
 func s:Trans()
   bot term ++rows=10 ++close trans -I -b
-endfunc
-
-func s:MyDia(sp, type)
-  let l:dia = "$MY_DIARY/diary.md.html"
-  let l:todo = "$MY_DIARY/todo.md.html"
-
-  if a:type == 'd'
-    exec a:sp l:dia
-  elseif a:type == 't'
-    exec a:sp l:todo
-  elseif a:type == 'h'
-    exec a:sp l:todo
-    exec "sp" l:dia
-    wincmd j
-    resize 10
-    wincmd k
-  elseif a:type == 'v'
-    exec a:sp l:todo
-    exec "vsp" l:dia
-    wincmd l
-    vertical resize 40
-    wincmd h
-  endif
 endfunc
 
 func s:MyVimGrep(word)

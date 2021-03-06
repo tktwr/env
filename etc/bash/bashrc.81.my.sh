@@ -71,7 +71,7 @@ alias T='vim -c "MyTerm 0"'
 alias T1='vim -c "MyTerm 1"'
 alias T2='vim -c "MyTerm 2"'
 alias z='vim -c "DiaFull"'
-alias zh='vim -c "HDiaFull"'
+alias zh='vim -c "DiaFullH"'
 
 #------------------------------------------------------
 # misc

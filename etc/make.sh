@@ -2,7 +2,7 @@
 
 bin_name=`basename $0`
 
-source ./common_etc.sh
+source ./lib/common_etc.sh
 
 f_help() {
   echo "NAME"
@@ -13,6 +13,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help ... print help"
+  echo "  --init     ... init"
   echo "  --all      ... all"
   echo "  --min      ... min"
   echo "  --clean    ... clean"

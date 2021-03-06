@@ -2,7 +2,7 @@
 
 source $HOME/.my/hostname
 source $HOME/.bashrc.env
-source ../common_etc.sh
+source ../lib/common_etc.sh
 
 f_expand_dir() {
   local opt="$1"

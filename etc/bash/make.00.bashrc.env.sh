@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../common_etc.sh
+source ../lib/common_etc.sh
 
 _MY_CONFIG=../../../..
 _MY_REMOTE_FZY=$_MY_CONFIG/tktwr.github/env/etc/fzy

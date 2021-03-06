@@ -12,13 +12,14 @@ Google.Drive                | https://drive.google.com/drive/my-drive
 python                      | https://www.python.org/
 python.doc                  | https://docs.python.org/ja/3/index.html
 python.tutorial             | https://docs.python.org/ja/3/tutorial/
-python.基礎文法とサンプル集 | https://algorithm.joho.info/programming/python/sample-code-py/
 python.numpy                | https://algorithm.joho.info/programming/python/numpy-sample-code/
 python.pillow               | https://pillow.readthedocs.io/en/stable/
 python.matplotlib           | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
 python.scipy                | https://www.scipy.org/
 python.scikit-learn         | https://scikit-learn.org/stable/
 python.scikit-image         | https://scikit-image.org/
+python.基礎文法とサンプル集 | https://algorithm.joho.info/programming/python/sample-code-py/
+python.blog                 | https://note.nkmk.me/python/
 #                           |
 # pytorch                   |
 #                           |
@@ -62,13 +63,22 @@ Vulkan.raytracing           | https://developer.nvidia.com/rtx/raytracing/vkray
 # tutorial                  |
 #                           |
 Learn OpenGL                | https://learnopengl.com/
+Learn OpenGL (github)       | https://github.com/JoeyDeVries/LearnOpenGL
 OpenGL Tutorial             | http://www.opengl-tutorial.org/jp/
 PBRT                        | http://www.pbr-book.org/3ed-2018/contents.html
+glTF                        | https://www.khronos.org/gltf/
 #                           |
 # blender                   |
 #                           |
 Blender                     | https://docs.blender.org/
 Blender.py                  | https://docs.blender.org/api/current/index.html
 Blender.py.2.83             | https://docs.blender.org/api/2.83
+Blender.bake                | https://3dcg-school.pro/blender-bake/
+Blender.bake2               | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+#                           |
+# resources                 |
+#                           |
+hdrihaven                   | https://hdrihaven.com/
+PFM                         | http://www.pauldebevec.com/Research/HDR/PFM/
 
 # vim:set syntax=txt nowrap:
