@@ -9,6 +9,6 @@
 92.[memo] $MY_MEMO/my.md.html
 93.[papers] $MY_PAPERS/papers.md.html
 94.[cmdline] $MY_ETC/bmk/cmdline.txt
-95.[links] $MY_ETC/bmk/links.txt
+95.[links] $MY_ETC/bmk/links.md.html
 96.[dir] $MY_ETC/bmk/dir.txt
 99.[scratchpad] $MY_DIARY/scratchpad.md.html
