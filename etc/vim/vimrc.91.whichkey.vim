@@ -153,6 +153,7 @@ let g:which_key_map = { 'name' : '+top',
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }
 
+let g:which_key_map.x   = { 'name' : '+helper' }
 let g:which_key_map.T   = { 'name' : '+Term' }
 let g:which_key_map.w   = { 'name' : '+window' }
 let g:which_key_map.t   = { 'name' : '+tab' }
