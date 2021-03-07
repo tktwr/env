@@ -43,10 +43,10 @@ f_set_git_prompt() {
   source "$MY_ENV/etc/git/git-prompt.sh"
   source "$MY_ENV/etc/git/git-completion.bash"
 
-  GIT_BRANCH_FUNC='`__git_ps1`'
-  PS1_HOST=$(f_get_prompt_color_host)
-  PS1_SHELL=$(f_get_prompt_color_shell)
-  PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
+  local GIT_BRANCH_FUNC='`__git_ps1`'
+  local PS1_HOST=$(f_get_prompt_color_host)
+  local PS1_SHELL=$(f_get_prompt_color_shell)
+  local PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
 
   export PROMPT_DIRTRIM=2
   export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$ECO3[\w]$PS1_GIT$ECOD\$ "
@@ -79,14 +79,15 @@ f_set_git_prompt_fast() {
   source "$MY_ENV/etc/git/git-prompt.sh"
 
   PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
-  GIT_BRANCH_FUNC='`f_git_ps1`'
-  PS1_HOST=$(f_get_prompt_color_host)
-  PS1_SHELL=$(f_get_prompt_color_shell)
-  PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
+
+  local GIT_BRANCH_FUNC='`f_git_ps1`'
+  local PS1_HOST=$(f_get_prompt_color_host)
+  local PS1_SHELL=$ECOR$(f_get_prompt_color_shell)$ECOD
+  local PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
+  local dir="$ECO3[\w]"
 
   export PROMPT_DIRTRIM=3
-  local dir="$ECO3[\w]$ECOD"
-  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$PS1_GIT$ECOD\n$dir\$ "
+  export PS1="$PS1_HOST:$PS1_SHELL$PS1_GIT\n$dir$ECOD\$ "
 }
 
 alias g.='f_checkgit_force'
