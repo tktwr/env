@@ -7,7 +7,8 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'lib'))
 import expand_path
 
 
-def f_nerdtree_bmk(fname):
+def f_nerdtree_bmk(_fname):
+    fname = expand_path.f_expand_path("-w", _fname)
     try:
         with open(fname, "r") as f:
             for line in f:
@@ -24,4 +25,4 @@ def f_nerdtree_bmk(fname):
 
 if __name__ == "__main__":
     f_nerdtree_bmk(".NERDTreeBookmarks")
-    f_nerdtree_bmk("~/.my/nerdtree_bmk.txt")
+    f_nerdtree_bmk("$MY_HOME/.my.common/NERDTreeBookmarks")

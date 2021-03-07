@@ -2,29 +2,30 @@
 
 source ../lib/common_etc.sh
 
-_MY_CONFIG=../../../..
-_MY_REMOTE_FZY=$_MY_CONFIG/tktwr.github/env/etc/fzy
-_MY_LOCAL_FZY=$_MY_CONFIG/tktwr.local/env/etc/fzy
-_MY_PRIVATE_FZY=$_MY_CONFIG/tktwr.private/env/etc/fzy
-
 DIRS="\
-$_MY_REMOTE_FZY \
-$_MY_LOCAL_FZY \
-$_MY_PRIVATE_FZY \
-$HOME/.my \
+$MY_REMOTE_CONFIG/env/etc/fzy \
+$MY_LOCAL_CONFIG/env/etc/fzy \
+$MY_PRIVATE_CONFIG/env/etc/fzy \
+$MY_HOME/.my.common \
 "
 
-if [ ! -z "$USERPROFILE" ]; then
-  $MY_PYTHON_EXE ./make.dir.py $_MY_REMOTE_FZY/dir.00.msys.txt
-else
-  $MY_PYTHON_EXE ./make.dir.py $_MY_REMOTE_FZY/dir.00.unix.txt
-fi
+f_proc() {
+  local l_file="$1"
+  if [ -f "$l_file" ]; then
+    echoerr "processing... $l_file"
+    $MY_PYTHON_EXE ./make.dir.py "$l_file"
+  fi
+}
 
 for i in $DIRS; do
-  $MY_PYTHON_EXE ./make.dir.py $i/dir.01.usr.txt
+  f_proc $i/dir.00.$MY_OS_NAME.txt
 done
 
 for i in $DIRS; do
-  $MY_PYTHON_EXE ./make.dir.py $i/dir.txt
+  f_proc $i/dir.01.usr.txt
+done
+
+for i in $DIRS; do
+  f_proc $i/dir.txt
 done
 

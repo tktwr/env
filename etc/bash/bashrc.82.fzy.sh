@@ -53,7 +53,7 @@ fzy_cmd() {
 }
 
 alias links?='fzy_cmd "chrome.sh " fzy_arg_links'
-alias x?='fzy_cmd "x.sh " fzy_arg_dir'
+alias x?='fzy_cmd "explorer.sh " fzy_arg_dir'
 alias cd?='fzy_cmd "cd " fzy_arg_dir'
 alias .?='fzy_cmd "pushd " fzy_arg_dir'
 alias  findd?='fzy_cmd "cd " fzy_arg_find_dir'

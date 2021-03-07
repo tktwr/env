@@ -1,0 +1,52 @@
+#------------------------------------------------------
+# cmake
+#------------------------------------------------------
+mycmake.sh --set ninja Release
+mycmake.sh --set ninja Debug
+mycmake.sh --set make Release
+mycmake.sh --set make Debug
+mycmake.sh --set vs2017 Release
+mycmake.sh --set vs2017 Debug
+mycmake.sh --set vs2017 RelWithDebInfo
+mycmake.sh --set vs2019 Release
+mycmake.sh --set vs2019 Debug
+mycmake.sh --set vs2019 RelWithDebInfo
+
+#------------------------------------------------------
+# python
+#------------------------------------------------------
+mypython-set-python-anaconda torch
+mypython-set-python-miniconda torch
+mypython-set-python-win torch
+mypython-set-python torch
+mypython-venv-info
+
+#------------------------------------------------------
+# pip
+#------------------------------------------------------
+mypip-upgrade
+
+#------------------------------------------------------
+# git
+#------------------------------------------------------
+git-ls-track
+git-ls-untrack
+git-ls-no-x
+gls
+print-git-branch
+print-git-tag
+git update-git-for-windows
+
+#------------------------------------------------------
+# pacman
+#------------------------------------------------------
+pacman -Syu
+
+#------------------------------------------------------
+# make
+#------------------------------------------------------
+cd $MY_ETC; make
+cd $MY_ETC/bash; make
+cd $MY_ETC/vim; make
+
+# vim:set ft=txt syntax=txt nowrap:

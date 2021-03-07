@@ -39,6 +39,7 @@ syn match    myCitation         "^\s*>.*$"
 syn match    myHtml             "<[^>]*>"
 syn match    myHtml             "http://.*"
 syn match    myHtml             "https://.*"
+syn match    myVar              "\$\w\+"
 
 syn match    myDate             "\d\+/\d\+/\d\+"
 syn match    myTime             "\d\+:\d\+"
@@ -75,6 +76,7 @@ if !exists("did_my_general_syntax_inits")
   hi link myItem             MyOrange
   hi link myCitation         MyPurple
   hi link myHtml             MyPurple
+  hi link myVar              MyGreen
 
   hi link myDate             MyYellow
   hi link myTime             MyYellow

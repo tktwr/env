@@ -1,0 +1,71 @@
+#------------------------------------------------------
+# mru
+#------------------------------------------------------
+#------------------------------------------------------
+# bmk
+#------------------------------------------------------
+~/
+~/.my
+$SYS_WIN_HOME
+$SYS_MSYS2_HOME
+~/Desktop
+~/Downloads
+$MY_GITHUB_TKTWR
+
+$MY_DIARY/diary.md.html
+$MY_DIARY/todo.md.html
+$MY_MEMO/my.md.html
+$MY_PAPERS/papers.md.html
+$MY_ETC/bmk/links.txtlink
+$MY_ETC/bmk/cmdline.txtcmd
+$MY_ETC/bmk/dir.txtdir
+$MY_DIARY/scratchpad.md.html
+#------------------------------------------------------
+# home
+#------------------------------------------------------
+$MY_DOTMY
+$MY_BACKUP
+$MY_TMP
+#------------------------------------------------------
+# config
+#------------------------------------------------------
+$MY_REMOTE_CONFIG
+$MY_LOCAL_CONFIG
+$MY_PRIVATE_CONFIG
+#------------------------------------------------------
+# rconfig
+#------------------------------------------------------
+$MY_ENV
+$MY_ETC
+$MY_BASH
+$MY_VIM
+$MY_FZY
+$MY_BIN
+$MY_MEMO
+$MY_SAMPLES
+$MY_LIBTT
+#------------------------------------------------------
+# pconfig
+#------------------------------------------------------
+$MY_DIARY
+#------------------------------------------------------
+# private
+#------------------------------------------------------
+$MY_REPO
+$MY_WORK
+$MY_DOC
+$MY_OFFICE
+$MY_PROJ
+$MY_GITHUB
+$MY_GIT
+$MY_SVN
+#------------------------------------------------------
+# public
+#------------------------------------------------------
+$MY_DOWNLOADS2
+$MY_PAPERS
+$MY_OPT
+$MY_MAN
+$MY_DATA
+
+# vim:set ft=txt syntax=txt nowrap:

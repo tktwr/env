@@ -82,7 +82,7 @@ mypython-venv-deactivate() {
 # alias
 #------------------------------------------------------
 
-alias x='x.sh'
+alias x='explorer.sh'
 alias ls='ls.sh'
 
 #alias adb='winpty adb'

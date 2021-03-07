@@ -56,8 +56,6 @@ C:/aa/bb/cc c\dd
 \\aa\bb\cc c/dd
 //xx/yy/zz
 
-[LastChange] Tue Feb 23 17:21:22 JST 2021
-
 aaa 1   2
 bbb 10  20
 ccc 100 200
@@ -66,3 +64,6 @@ a | 1 | 2 | 3
 aa | 10 | 20 | 30
 aaa | 100 | 200 | 300
 
+[LastChange] Sun Mar  7 00:19:34     2021
+
+# vim:set syntax=txt nowrap:

@@ -84,8 +84,9 @@ f_set_git_prompt_fast() {
   PS1_SHELL=$(f_get_prompt_color_shell)
   PS1_GIT=$ECO6${GIT_BRANCH_FUNC}
 
-  export PROMPT_DIRTRIM=2
-  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$ECO3[\w]$PS1_GIT$ECOD\n\$ "
+  export PROMPT_DIRTRIM=3
+  local dir="$ECO3[\w]$ECOD"
+  export PS1="$PS1_HOST:$ECOR$PS1_SHELL$ECOD$PS1_GIT$ECOD\n$dir\$ "
 }
 
 alias g.='f_checkgit_force'

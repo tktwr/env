@@ -12,22 +12,24 @@ vmap     <leader>C            <plug>NERDCommenterToggle
 nnoremap <leader>0            <C-W>:MyTerm 0<CR>
 nnoremap <leader>1            <C-W>:Dia<CR>
 nnoremap <leader>2            <C-W>:Memo<CR>
-nnoremap <leader>3            <C-W>:Tips<CR>
-nnoremap <leader>4            <C-W>:Links<CR>
-nnoremap <leader>5            <C-W>:Papers<CR>
-nnoremap <leader>6            <C-W>:Scratchpad<CR>
 nnoremap <leader>7            :silent GgrepHere<CR><C-L>
 nnoremap <leader>8            :VimGrepHere<CR>
 nnoremap <leader>9            <C-W>:Trans<CR>
 nmap     <leader>E            <plug>(easymotion-overwin-line)
 nnoremap <leader>N            :MyNERDTreeToggle<CR>
 nnoremap <leader>S            :MyGstatusToggle<CR>
-nnoremap <leader>U            :OpenURL <cfile><CR><C-L>
+nnoremap <leader>U            :call MyOpenURL("")<CR>
+nnoremap <leader>O            :call MyOpenDir("")<CR>
 nnoremap <leader>K            :make<CR>:cw<CR>
 nnoremap <leader>R            :make run<CR>
 nnoremap <leader>Q            :confirm qall<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
+
+nnoremap <leader>xc           :call MyTermSendCmd("")<CR>
+nnoremap <leader>xu           :call MyOpenURL("")<CR>
+nnoremap <leader>xe           :call MyOpenDir("")<CR>
+nnoremap <leader>xn           :call MyOpenNERDTree("")<CR>
 
 nnoremap <leader>T0           <C-W>:MyTerm 0<CR>
 nnoremap <leader>T1           <C-W>:MyTerm 1<CR>
@@ -134,10 +136,6 @@ let g:which_key_map = { 'name' : '+top',
       \ '0' : 'Term',
       \ '1' : 'Dia',
       \ '2' : 'Memo',
-      \ '3' : 'Tips',
-      \ '4' : 'Links',
-      \ '5' : 'Papers',
-      \ '6' : 'Scratchpad',
       \ '7' : 'GgrepHere',
       \ '8' : 'VimGrepHere',
       \ '9' : 'Trans',
@@ -145,7 +143,8 @@ let g:which_key_map = { 'name' : '+top',
       \ 'E' : 'Easymotion (BS)',
       \ 'N' : 'NERDTree (TAB)',
       \ 'S' : 'GStatus',
-      \ 'U' : 'OpenURL',
+      \ 'U' : 'OpenURL (C-U)',
+      \ 'O' : 'OpenDir (C-O)',
       \ 'K' : 'Make',
       \ 'y' : 'yank',
       \ 'p' : 'paste',

@@ -2,8 +2,34 @@
 " func
 "======================================================
 
-func s:ClangFormat()
-  !clang-format -i %
+func MyOpenURL(url)
+  let l:url = expand(a:url)
+  if (l:url == "")
+    let l:url = expand("<cfile>")
+    "let l:url = getline('.')
+  endif
+  exec "silent !chrome.sh" l:url
+  redraw!
+endfunc
+
+func MyOpenDir(url)
+  let l:url = expand(a:url)
+  if (l:url == "")
+    let l:url = expand("<cfile>")
+    "let l:url = getline('.')
+  endif
+  exec "silent !explorer.sh" l:url
+  redraw!
+endfunc
+
+func MyOpenNERDTree(url)
+  let l:url = expand(a:url)
+  if (l:url == "")
+    let l:url = expand("<cfile>")
+    "let l:url = getline('.')
+  endif
+  exec "silent NERDTree" l:url
+  redraw!
 endfunc
 
 func s:Trans()
@@ -22,12 +48,6 @@ endfunc
 func s:MyLineNumberToggle()
   set invnumber
   set invlist
-endfunc
-
-func s:MyIDE()
-  NERDTree
-  wincmd l
-  Tagbar
 endfunc
 
 func s:MyCheckEnv()
@@ -54,50 +74,13 @@ func s:MyCheckEnv()
 endfunc
 
 "------------------------------------------------------
-" func: dev
+" command
 "------------------------------------------------------
 
-func s:MyEditAltSrc()
-  let ext = expand("%:e")
-  if (ext == "c" || ext == "cxx" || ext == "cpp")
-    let fname = expand("%:r") . ".h"
-  elseif (ext == "h")
-    let fname = expand("%:r") . ".cpp"
-  endif
-  exec "edit" fname
-endfunc
-
-func s:MyStartProf()
-  profile start prof.txt
-  profile func *
-  profile file *
-endfunc
-
-func s:MyEndProf()
-  profile pause
-  noautocmd qall!
-endfunc
-
-"------------------------------------------------------
-" func: diff
-"------------------------------------------------------
-
-set diffopt=filler,vertical,iwhite
-
-func s:MySetDiffMode()
-  if &diff
-    nnoremap <buffer> <C-P>   [c
-    nnoremap <buffer> <C-N>   ]c
-    nnoremap <buffer> <C-X>   :tabclose<CR>
-  endif
-endfunc
-
-"------------------------------------------------------
-" func: encoding
-"------------------------------------------------------
-func s:MySetJapanese()
-  " encoding
-  set fileencodings=japan
-  set termencoding=japan
-endfunc
+command Trans              call s:Trans()
+command -nargs=+ VimGrep   call s:MyVimGrep("<args>")
+command VimGrepHere        VimGrep <cword>
+command -nargs=1 MySetTab  call s:MySetTab("<args>")
+command MyLineNumberToggle call s:MyLineNumberToggle()
+command MyCheckEnv         call s:MyCheckEnv()
 

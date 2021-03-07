@@ -30,6 +30,8 @@ function! s:my_nerdtree_settings()
   nmap <buffer> h u
   nmap <buffer> l go
   nmap <buffer> <Space> goq
+  nmap <buffer> <C-J> <C-W>j
+  nmap <buffer> <C-K> <C-W>k
 endfunction
 
 Plug 'majutsushi/tagbar'
