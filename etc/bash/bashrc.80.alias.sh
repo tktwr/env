@@ -16,6 +16,7 @@ alias .c='dirs -c'
 alias .i='dirs -c; cd'
 
 # remap
+alias grep='grep -s'
 alias nm='nm -C'
 alias df='df -h'
 alias more='$PAGER'
