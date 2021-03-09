@@ -46,6 +46,12 @@ nnoremap <C-G>   <C-L><C-G>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
+nnoremap <C-A>   :call MyOpenNERDTree("")<CR>
+nnoremap <C-N>   :call MyTermSendCd("")<CR>
+nnoremap <C-O>   :call MyOpenDir("")<CR>
+nnoremap <C-U>   :call MyOpenURL("")<CR>
+nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
+
 " tag
 nnoremap <C-]>   g<C-]>
 
