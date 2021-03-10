@@ -29,6 +29,8 @@ function! s:my_nerdtree_settings()
   nmap <buffer> j +
   nmap <buffer> h u
   nmap <buffer> l go
+  nmap <buffer> D /\[dia\]<CR>
+  nmap <buffer> S /\[scratchpad\]<CR>
   nmap <buffer> <Space> goq
   nmap <buffer> <C-J> <C-W>j
   nmap <buffer> <C-K> <C-W>k

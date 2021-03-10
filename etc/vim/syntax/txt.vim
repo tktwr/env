@@ -69,9 +69,9 @@ if !exists("did_my_general_syntax_inits")
 
   hi link mySeparator        MyAqua
 
-  hi link mySection1         MyAqua
-  hi link mySection2         MyAqua
-  hi link mySection3         MyAqua
+  hi link mySection1         MyOrange
+  hi link mySection2         MyOrange
+  hi link mySection3         MyOrange
 
   hi link myItem             MyOrange
   hi link myCitation         MyPurple
