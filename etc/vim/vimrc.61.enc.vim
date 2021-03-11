@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" encoding.func
+" enc.func
 "------------------------------------------------------
 func s:MySetJapanese()
   " encoding
@@ -8,7 +8,7 @@ func s:MySetJapanese()
 endfunc
 
 "------------------------------------------------------
-" encoding.command
+" enc.command
 "------------------------------------------------------
 command JP       call s:MySetJapanese()
 

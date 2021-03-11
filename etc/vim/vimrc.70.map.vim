@@ -41,16 +41,18 @@ nnoremap <C-E>   :only<CR>
 nnoremap <C-X>   :close<CR>
 
 " redraw screen
-nnoremap <C-G>   <C-L><C-G>
+nnoremap <C-G>   :MyRedraw<CR>
 
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
-nnoremap <C-A>   :call MyOpenNERDTree("")<CR>
+nnoremap <C-O>   :call MyOpen("")<CR>
 nnoremap <C-N>   :call MyTermSendCd("")<CR>
-nnoremap <C-O>   :call MyOpenDir("")<CR>
-nnoremap <C-U>   :call MyOpenURL("")<CR>
 nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
+
+"nnoremap <C-A>   NONE
+"nnoremap <C-U>   NONE
+"nnoremap <C-Y>   NONE
 
 " tag
 nnoremap <C-]>   g<C-]>
@@ -69,8 +71,8 @@ nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nmap <BS>        <Plug>(easymotion-overwin-line)
 nmap <C-P>       <Plug>(quickhl-manual-this)
 xmap <C-P>       <Plug>(quickhl-manual-this)
-nmap <C-Y>       <Plug>(quickhl-manual-reset)
-xmap <C-Y>       <Plug>(quickhl-manual-reset)
+"nmap <C-Y>       <Plug>(quickhl-manual-reset)
+"xmap <C-Y>       <Plug>(quickhl-manual-reset)
 nnoremap <C-B>   :CocListResume<CR>
 imap <C-L>       <Plug>(coc-snippets-expand)
 

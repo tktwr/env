@@ -1,7 +1,6 @@
-"======================================================
-" edit
-"======================================================
-
+"------------------------------------------------------
+" edit.func
+"------------------------------------------------------
 " remove a linefeed NL (0x0A)
 func s:RemoveNL(str)
   return substitute(a:str, "[\xA]$", '', '')
@@ -69,9 +68,8 @@ func s:MyMakeLink(prefix)
 endfunc
 
 "------------------------------------------------------
-" command
+" edit.command
 "------------------------------------------------------
-
 command TogglePathFormat         call s:TogglePathFormat()
 command MyUpdateLastChange       call s:MyUpdateLastChange()
 command MyAddTime                call s:MyAddTime()
@@ -82,9 +80,8 @@ command MyMakeLink               call s:MyMakeLink('- ')
 command MyMakeImageLink          call s:MyMakeLink('!')
 
 "------------------------------------------------------
-" autocmd
+" edit.autocmd
 "------------------------------------------------------
-
 au BufWritePre,FileWritePre *.html  MyUpdateLastChange
 au BufWritePre,FileWritePre *.txt   MyUpdateLastChange
 

@@ -72,7 +72,8 @@ alias T1='vim -c "MyTerm 1"'
 alias T2='vim -c "MyTerm 2"'
 alias z='vim -c "DiaFull"'
 alias zh='vim -c "DiaFullH"'
-alias t='vimapi-nerdtree.sh'
+alias d='vimapi.sh -d'
+alias e='vimapi.sh -f'
 
 #------------------------------------------------------
 # misc
