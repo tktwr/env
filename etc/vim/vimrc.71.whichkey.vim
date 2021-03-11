@@ -17,9 +17,9 @@ nnoremap <leader>8            :VimGrepHere<CR>
 nnoremap <leader>9            <C-W>:Trans<CR>
 nmap     <leader>E            <plug>(easymotion-overwin-line)
 nnoremap <leader>N            :MyNERDTreeToggle<CR>
-nnoremap <leader>S            :MyGstatusToggle<CR>
-nnoremap <leader>U            :call MyOpenURL("")<CR>
-nnoremap <leader>O            :call MyOpenDir("")<CR>
+nnoremap <leader>S            :tabedit +MyGstatusToggle<CR>
+nnoremap <leader>G            :GV --all<CR>
+nnoremap <leader>O            :call MyOpen("")<CR>
 nnoremap <leader>K            :make<CR>:cw<CR>
 nnoremap <leader>R            :make run<CR>
 nnoremap <leader>Q            :confirm qall<CR>
@@ -139,16 +139,17 @@ let g:which_key_map = { 'name' : '+top',
       \ '7' : 'GgrepHere',
       \ '8' : 'VimGrepHere',
       \ '9' : 'Trans',
-      \ 'C' : 'Comment',
       \ 'E' : 'Easymotion (BS)',
       \ 'N' : 'NERDTree (TAB)',
       \ 'S' : 'GStatus',
-      \ 'U' : 'OpenURL (C-U)',
-      \ 'O' : 'OpenDir (C-O)',
+      \ 'G' : 'GV',
+      \ 'O' : 'Open (C-O)',
       \ 'K' : 'Make',
+      \ 'R' : 'Make Run',
+      \ 'Q' : 'Quit (Q)',
       \ 'y' : 'yank',
       \ 'p' : 'paste',
-      \ 'Q' : 'Quit (Q)',
+      \ 'C' : 'Comment',
       \ }
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }

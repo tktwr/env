@@ -22,20 +22,6 @@ let g:NERDTreeMinimalMenu=0
 let g:NERDTreeWinSize=31
 let g:NERDTreeIgnore=['NTUSER\.', 'ntuser\.', '\.lnk$', '\.url', 'desktop\.ini']
 
-autocmd FileType nerdtree call s:my_nerdtree_settings()
-function! s:my_nerdtree_settings()
-  nmap <buffer> . C
-  nmap <buffer> k -
-  nmap <buffer> j +
-  nmap <buffer> h u
-  nmap <buffer> l go
-  nmap <buffer> D /\[dia\]<CR>
-  nmap <buffer> S /\[scratchpad\]<CR>
-  nmap <buffer> <Space> goq
-  nmap <buffer> <C-J> <C-W>j
-  nmap <buffer> <C-K> <C-W>k
-endfunction
-
 Plug 'majutsushi/tagbar'
 
 Plug 'thinca/vim-ref'
@@ -88,10 +74,6 @@ if s:use_nerdtree_git_plugin
 endif
 
 Plug 'junegunn/gv.vim'
-autocmd FileType git call s:my_gv_settings()
-function! s:my_gv_settings()
-  nmap <buffer> D O
-endfunction
 
 "------------------------------------------------------
 " vim-plug: diff

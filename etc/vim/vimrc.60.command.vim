@@ -2,7 +2,7 @@
 " func & command
 "======================================================
 "------------------------------------------------------
-" private func
+" func
 "------------------------------------------------------
 func s:Trans()
   bot term ++rows=10 ++close trans -I -b
@@ -79,4 +79,13 @@ command MyCdHere           cd %:h
 command MyLcdHere          lcd %:h
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
+
+"------------------------------------------------------
+" coc
+"------------------------------------------------------
+func s:MyCocInstall()
+  CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
+endfunc
+
+command MyCocInstall     call s:MyCocInstall()
 

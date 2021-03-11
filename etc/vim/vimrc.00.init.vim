@@ -97,6 +97,10 @@ set foldnestmax=1
 set foldclose=all
 set nofoldenable
 "------------------------------------------------------
+" diff
+"------------------------------------------------------
+set diffopt=filler,vertical,iwhite
+"------------------------------------------------------
 " encoding
 "------------------------------------------------------
 set encoding=utf-8
@@ -117,8 +121,9 @@ endif
 " user settings
 "------------------------------------------------------
 set winheight=10
-let g:my_gstatus_winheight = 12
+let g:my_winheight = 10
 let g:my_term_winheight = 10
+let g:my_gstatus_winheight = 12
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 let g:my_scratchpad_file = "$MY_DIARY/scratchpad.md.html"

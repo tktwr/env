@@ -80,7 +80,7 @@ endfunc
 func Tapi_NERDTree(_, dir)
   exec "NERDTree" a:dir
   exec "wincmd p"
-  call MyTermPlace("J", g:my_term_winheight)
+  call MyWinPlace("J", g:my_term_winheight)
   exec "wincmd p"
 endfunc
 
@@ -92,6 +92,7 @@ endfunc
 func s:MyTerm(type)
   if a:type == 0
     exec "bot term ++rows=".g:my_term_winheight
+    set winfixheight
   elseif a:type == 1
     tabedit
     bot term
@@ -104,9 +105,27 @@ func s:MyTerm(type)
   endif
 endfunc
 
-func MyTermPlace(place, height)
+let g:win_layout = ""
+
+func MyWinResize(height)
+  exec "resize" a:height
+  let g:win_layout = ""
+endfunc
+
+func MyWinPlace(place, height)
   exec "wincmd " a:place
   exec "resize" a:height
+  let g:win_layout = ""
+endfunc
+
+func MyWinMaximizeToggle()
+  if (g:win_layout == "")
+    let g:win_layout = winrestcmd()
+    exec "resize"
+  else
+    exec g:win_layout
+    let g:win_layout = ""
+  endif
 endfunc
 
 "------------------------------------------------------
