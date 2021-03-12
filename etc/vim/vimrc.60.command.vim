@@ -5,7 +5,11 @@
 " func
 "------------------------------------------------------
 func s:Trans()
-  bot term ++rows=10 ++close trans -I -b
+  exec "bot term ++rows=".g:my_trans_winheight." ++close trans -I -b"
+endfunc
+
+func s:Dict()
+  exec "bot term ++rows=".g:my_trans_winheight." ++close trans -I"
 endfunc
 
 func s:MyVimGrep(word)
@@ -51,6 +55,7 @@ endfunc
 command MyRedraw call MyRedraw()
 
 command Trans              call s:Trans()
+command Dict               call s:Dict()
 command -nargs=1 MySetTab  call s:MySetTab("<args>")
 command MyLineNumberToggle call s:MyLineNumberToggle()
 command MyCheckEnv         call s:MyCheckEnv()
