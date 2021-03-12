@@ -155,12 +155,17 @@ endfunc
 
 func s:my_gv_settings()
   nnoremap <buffer> <C-X>   :tabclose<CR>
+endfunc
+
+func s:my_git_settings()
+  nnoremap <buffer> <C-X>   :tabclose<CR>
   nmap     <buffer> D       O
 endfunc
 
 au FileType fugitive call s:my_fugitive_settings()
 au FileType nerdtree call s:my_nerdtree_settings()
-au FileType git      call s:my_gv_settings()
+au FileType GV       call s:my_gv_settings()
+au FileType git      call s:my_git_settings()
 
 "------------------------------------------------------
 " diff.au
