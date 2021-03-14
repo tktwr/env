@@ -2,7 +2,8 @@
 
 bin_name=`basename $0`
 
-g_dir="$PWD"
+g_type=""
+g_args="$PWD"
 
 f_help() {
   echo "NAME"
@@ -26,10 +27,10 @@ f_edit() {
 f_vimapi() {
   case $g_type in
     dir)
-      f_nerdtree $g_dir
+      f_nerdtree $g_args
       ;;
     file)
-      f_edit $g_dir
+      f_edit $g_args
       ;;
   esac
 }
@@ -48,7 +49,7 @@ f_args() {
         g_type="file"
         ;;
       *)
-        g_dir="$i"
+        g_args="$(cygpath -au $i)"
         ;;
     esac
   done
