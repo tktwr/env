@@ -12,10 +12,11 @@ vmap     <leader>C            <plug>NERDCommenterToggle
 nnoremap <leader>0            <C-W>:MyTerm 0<CR>
 nnoremap <leader>1            <C-W>:Dia<CR>
 nnoremap <leader>2            <C-W>:Memo<CR>
+nnoremap <leader>3            <C-W>:Dict<CR>
+nnoremap <leader>4            <C-W>:Trans<CR>
 nnoremap <leader>6            :VimGrepHere<CR>
 nnoremap <leader>7            :silent GgrepHere<CR><C-L>
-nnoremap <leader>8            <C-W>:Dict<CR>
-nnoremap <leader>9            <C-W>:Trans<CR>
+nnoremap <leader>9            <C-W>:tabedit<CR>
 nmap     <leader>E            <plug>(easymotion-overwin-line)
 nnoremap <leader>N            :MyNERDTreeToggle<CR>
 nnoremap <leader>S            :tabedit +MyGstatusToggle<CR>
@@ -132,10 +133,11 @@ let g:which_key_map = { 'name' : '+top',
       \ '0' : 'Term',
       \ '1' : 'Dia',
       \ '2' : 'Memo',
+      \ '3' : 'Dict',
+      \ '4' : 'Trans',
       \ '6' : 'VimGrepHere',
       \ '7' : 'GgrepHere',
-      \ '8' : 'Dict',
-      \ '9' : 'Trans',
+      \ '9' : 'tabedit',
       \ 'E' : 'Easymotion (BS)',
       \ 'N' : 'NERDTree (TAB)',
       \ 'S' : 'GStatus',
