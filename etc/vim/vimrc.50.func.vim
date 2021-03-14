@@ -40,6 +40,10 @@ func MyRedraw()
   set invlist
   call quickhl#manual#reset()
   nohlsearch
-  file
+  let l:dir = getcwd()
+  let l:file = expand("%")
+  echo "cwd : ".l:dir
+  echo "file: ".l:file
+  "file
 endfunc
 

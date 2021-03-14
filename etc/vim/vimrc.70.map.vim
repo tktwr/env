@@ -34,13 +34,15 @@ nnoremap <C-D>   <C-B>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
+nnoremap <C-N>   :cn<CR>
+nnoremap <C-P>   :cp<CR>
+
 nnoremap <C-O>   :call MyOpen("")<CR>
-nnoremap <C-N>   :call MyTermSendCd("")<CR>
+nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
+nnoremap <C-.>   :MyCdHere<CR>
 
 "nnoremap <C-A>   NONE
-"nnoremap <C-U>   NONE
-"nnoremap <C-Y>   NONE
 
 " tag
 nnoremap <C-]>   g<C-]>
@@ -93,6 +95,16 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window.resize
 "------------------------------------------------------
+" cannot map <C-2>
+"nnoremap <C-2> :echo 2<CR>
+" cannot map <C-6>
+"nnoremap <C-6> :echo 6<CR>
+
+nnoremap <C-3> :echo 3<CR>
+nnoremap <C-4> :echo 4<CR>
+nnoremap <C-5> :echo 5<CR>
+nnoremap <C-7> :echo 7<CR>
+
 nnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_winheight)<CR>
 nnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_winheight)<CR>
 nnoremap <C-8> <C-W>:call MyWinMaximizeToggle()<CR>
@@ -128,8 +140,8 @@ tmap <Del>    <C-Down>
 nnoremap <C-B>   :CocListResume<CR>
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nmap <BS>        <Plug>(easymotion-overwin-line)
-nmap <C-P>       <Plug>(quickhl-manual-this)
-xmap <C-P>       <Plug>(quickhl-manual-this)
+nmap <C-U>       <Plug>(quickhl-manual-this)
+xmap <C-U>       <Plug>(quickhl-manual-this)
 imap <C-L>       <Plug>(coc-snippets-expand)
 
 "------------------------------------------------------
@@ -140,12 +152,13 @@ func s:my_fugitive_settings()
 endfunc
 
 func s:my_nerdtree_settings()
-  nmap <buffer> .       C
+  nmap <buffer> <C-.>   C
   nmap <buffer> k       -
   nmap <buffer> j       +
   nmap <buffer> h       u
   nmap <buffer> l       go
   nmap <buffer> E       /r.etc<CR>
+  nmap <buffer> M       /\[memo\]<CR>
   nmap <buffer> D       /\[dia\]<CR>
   nmap <buffer> S       /\[scratchpad\]<CR>
   nmap <buffer> <Space> goq

@@ -27,11 +27,6 @@ nnoremap <leader>Q            :confirm qall<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
 
-nnoremap <leader>xc           :call MyTermSendCmd("")<CR>
-nnoremap <leader>xu           :call MyOpenURL("")<CR>
-nnoremap <leader>xe           :call MyOpenDir("")<CR>
-nnoremap <leader>xn           :call MyOpenNERDTree("")<CR>
-
 nnoremap <leader>T0           <C-W>:MyTerm 0<CR>
 nnoremap <leader>T1           <C-W>:MyTerm 1<CR>
 nnoremap <leader>T2           <C-W>:MyTerm 2<CR>
@@ -156,7 +151,6 @@ let g:which_key_map = { 'name' : '+top',
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }
 
-let g:which_key_map.x   = { 'name' : '+helper' }
 let g:which_key_map.T   = { 'name' : '+Term' }
 let g:which_key_map.w   = { 'name' : '+window' }
 let g:which_key_map.t   = { 'name' : '+tab' }

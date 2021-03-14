@@ -57,21 +57,3 @@ let g:terminal_ansi_colors = [
 \ '#fe8019',
 \ ]
 
-"======================================================
-" statusline
-"======================================================
-"hi User1 ctermfg=0 ctermbg=2 guifg=#464646 guibg=#90A959 cterm=bold gui=bold
-"hi User2 ctermfg=0 ctermbg=2 guifg=#464646 guibg=#90A959 cterm=bold gui=bold
-hi! link User1   MyAquaRevBold
-hi! link User2   MyAquaRevBold
-hi! link User3   MyYellowRevBold
-
-if 1
-  set laststatus=2
-  set statusline=%1*%<%f%0*
-  set statusline+=\ %h%m%r%w%{'['.(&fenc!=''?&fenc:&enc).','.&ff.']'}
-  set statusline+=\ %{coc#status()}
-  set statusline+=%=%l/%L,%c%V%4p%%
-  set statusline+=\ %2*%{FugitiveStatusline()}%0*
-endif
-

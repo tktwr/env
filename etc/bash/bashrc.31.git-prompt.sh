@@ -78,7 +78,8 @@ f_git_ps1() {
 f_set_git_prompt_fast() {
   source "$MY_ENV/etc/git/git-prompt.sh"
 
-  PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
+  #PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
+  PROMPT_COMMAND='echo -ne "\033]0;${MY_SHELL_NAME}\007";f_checkgit'
 
   local GIT_BRANCH_FUNC='`f_git_ps1`'
   local PS1_HOST=$(f_get_prompt_color_host)
