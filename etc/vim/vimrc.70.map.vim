@@ -159,6 +159,7 @@ func s:my_nerdtree_settings()
   nmap <buffer> l       go
   nmap <buffer> E       /r.etc<CR>
   nmap <buffer> M       /\[memo\]<CR>
+  nmap <buffer> T       /\[todo\]<CR>
   nmap <buffer> D       /\[dia\]<CR>
   nmap <buffer> S       /\[scratchpad\]<CR>
   nmap <buffer> <Space> goq
