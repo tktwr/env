@@ -109,13 +109,17 @@ nnoremap <C-7> :echo 7<CR>
 
 nnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_winheight)<CR>
 nnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_winheight)<CR>
-nnoremap <C-8> <C-W>:call MyWinMaximizeToggle()<CR>
-nnoremap <C-9> <C-W>:call MyWinResize(2)<CR>
+nnoremap <C-3> <C-W>:call MyWinResize(2)<CR>
+nnoremap <C-7> <C-W>:call MyWinMaximizeToggle("x")<CR>
+nnoremap <C-8> <C-W>:call MyWinMaximizeToggle("xy")<CR>
+nnoremap <C-9> <C-W>:call MyWinMaximizeToggle("y")<CR>
 
 tnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_term_winheight)<CR>
 tnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_term_winheight)<CR>
-tnoremap <C-8> <C-W>:call MyWinMaximizeToggle()<CR>
-tnoremap <C-9> <C-W>:call MyWinResize(2)<CR>
+tnoremap <C-3> <C-W>:call MyWinResize(2)<CR>
+tnoremap <C-7> <C-W>:call MyWinMaximizeToggle("x")<CR>
+tnoremap <C-8> <C-W>:call MyWinMaximizeToggle("xy")<CR>
+tnoremap <C-9> <C-W>:call MyWinMaximizeToggle("y")<CR>
 
 "------------------------------------------------------
 " map.tab

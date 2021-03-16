@@ -55,7 +55,7 @@ func MyGstatusToggle()
 endfunc
 
 "------------------------------------------------------
-" Term
+" editor to terminal
 "------------------------------------------------------
 " send a cmd to a terminal
 func MyTermSendCmd(cmd)
@@ -76,6 +76,9 @@ func MyTermSendCd(dir)
   exec l:winnr."wincmd w"
 endfunc
 
+"------------------------------------------------------
+" terminal to editor
+"------------------------------------------------------
 " recieve a dir from a terminal
 func Tapi_NERDTree(_, dir)
   exec "NERDTree" a:dir
@@ -89,6 +92,9 @@ func Tapi_Edit(_, file)
   exec "edit" a:file
 endfunc
 
+"------------------------------------------------------
+" open terminal
+"------------------------------------------------------
 func s:MyTerm(type)
   if a:type == 0
     exec "bot term ++rows=".g:my_term_winheight
@@ -105,6 +111,9 @@ func s:MyTerm(type)
   endif
 endfunc
 
+"------------------------------------------------------
+" resize terminal
+"------------------------------------------------------
 let g:win_layout = ""
 
 func MyWinResize(height)
@@ -118,11 +127,17 @@ func MyWinPlace(place, height)
   let g:win_layout = ""
 endfunc
 
-func MyWinMaximizeToggle()
+func MyWinMaximizeToggle(type)
   if (g:win_layout == "")
     let g:win_layout = winrestcmd()
-    exec "resize"
-    exec "vertical resize"
+    if a:type == "xy"
+      exec "resize"
+      exec "vertical resize"
+    elseif a:type == "x"
+      exec "vertical resize"
+    elseif a:type == "y"
+      exec "resize"
+    endif
   else
     exec g:win_layout
     let g:win_layout = ""
