@@ -40,9 +40,9 @@ nnoremap <C-P>   :cp<CR>
 nnoremap <C-O>   :call MyOpen("")<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
+nnoremap <C-A>   :MyMakeLink<CR>
 nnoremap <C-.>   :MyCdHere<CR>
-
-"nnoremap <C-A>   NONE
+nnoremap <C-;>   <C-W>:
 
 " tag
 nnoremap <C-]>   g<C-]>
@@ -56,13 +56,15 @@ nnoremap ==      zi
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
-"tnoremap <Esc>      <C-W>N
-"tnoremap <Esc>      <C-\><C-n>
+"tnoremap <Esc>   <C-W>N
+"tnoremap <Esc>   <C-\><C-n>
 
 " go to Terminal-Normal
-tnoremap <C-O>      <C-W>N
+tnoremap <C-O>   <C-W>N
 " paste register
-tnoremap <C-V>      <C-W>""
+tnoremap <C-V>   <C-W>""
+
+tnoremap <C-;>   <C-W>:
 
 tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 

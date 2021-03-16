@@ -122,6 +122,7 @@ func MyWinMaximizeToggle()
   if (g:win_layout == "")
     let g:win_layout = winrestcmd()
     exec "resize"
+    exec "vertical resize"
   else
     exec g:win_layout
     let g:win_layout = ""

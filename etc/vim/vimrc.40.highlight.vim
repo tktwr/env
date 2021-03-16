@@ -35,6 +35,9 @@ hi! link WhichKeyFloating MyYellowSign
 hi! link TabLineSel       MyGreenRevBold
 hi! link TabLineFill      MyGreenSign
 
+hi! link StatusLineTerm   MyAquaRevBold
+hi! link StatusLineTermNC MyAquaRevBold
+
 hi! link IndentGuidesOdd  MyBg0
 hi! link IndentGuidesEven MyBg1
 

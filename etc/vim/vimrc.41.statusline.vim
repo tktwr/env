@@ -32,26 +32,19 @@ func MyStatusline()
 endfunc
 
 func MyStatuslineTerm()
-  let l:statusline = MyStatuslineFname()
-  let l:statusline.="\ %h%m%r%w%{MyStatuslineEnc()}"
-  "let l:statusline.="\ %{coc#status()}"
-
+  let l:statusline = "[terminal]"
   let l:cwd = getcwd()
+  let l:cwd = substitute(l:cwd, expand("$HOME"), '~', "")
   let l:statusline.="\ [cwd:".l:cwd."]"
-  "let l:statusline.="\ [terminal]"
-
-  let l:statusline.="\ %=%l/%L,%c%V%4p%%"
-  let l:statusline.="\ %2*%{FugitiveStatusline()}%0*"
   return l:statusline
 endfunc
-
-set laststatus=2
-set statusline=%!MyStatusline()
-
 
 func MySetTerm()
   setl statusline=%!MyStatuslineTerm()
 endfunc
+
+set laststatus=2
+set statusline=%!MyStatusline()
 
 au TerminalOpen * call MySetTerm()
 
