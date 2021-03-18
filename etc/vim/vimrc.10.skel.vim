@@ -9,14 +9,14 @@ func s:AfterH()
 endfunc
 command AfterH call s:AfterH()
 
-au BufNewFile Makefile        silent 0r $MY_VIM/skel/skel.make
-au BufNewFile CMakeLists.txt  silent 0r $MY_VIM/skel/skel.cmake
-au BufNewFile *.cxx,*.cpp     silent 0r $MY_VIM/skel/skel.cxx
-"au BufNewFile *.h             silent 0r $MY_VIM/skel/skel.h | AfterH
-au BufNewFile *.h             silent 0r $MY_VIM/skel/skel.h
-au BufNewFile *.html          silent 0r $MY_VIM/skel/skel.html
-au BufNewFile *.md.html       silent 0r $MY_VIM/skel/skel.md.html
-au BufNewFile *.tex           silent 0r $MY_VIM/skel/skel.tex
-au BufNewFile *.py            silent 0r $MY_VIM/skel/skel.py
-au BufNewFile *.sh            silent 0r $MY_VIM/skel/skel.sh
+autocmd BufNewFile Makefile        silent 0r $MY_VIM/skel/skel.make
+autocmd BufNewFile CMakeLists.txt  silent 0r $MY_VIM/skel/skel.cmake
+autocmd BufNewFile *.cxx,*.cpp     silent 0r $MY_VIM/skel/skel.cxx
+"autocmd BufNewFile *.h             silent 0r $MY_VIM/skel/skel.h | AfterH
+autocmd BufNewFile *.h             silent 0r $MY_VIM/skel/skel.h
+autocmd BufNewFile *.html          silent 0r $MY_VIM/skel/skel.html
+autocmd BufNewFile *.md.html       silent 0r $MY_VIM/skel/skel.md.html
+autocmd BufNewFile *.tex           silent 0r $MY_VIM/skel/skel.tex
+autocmd BufNewFile *.py            silent 0r $MY_VIM/skel/skel.py
+autocmd BufNewFile *.sh            silent 0r $MY_VIM/skel/skel.sh
 

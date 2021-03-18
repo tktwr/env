@@ -43,7 +43,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 "Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-fugitive'
 let g:fugitive_git_executable=$MY_GIT_EXE
-autocmd QuickFixCmdPost *grep* cwindow
+autocmd QuickFixCmdPost *grep* below cwindow
 
 if s:use_gitgutter
   if &term =~ "xterm"

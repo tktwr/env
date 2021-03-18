@@ -40,10 +40,21 @@ Tags
 =======================================================
 [TODO]
 [DONE]
+[CANCEL]
 [FIXED]
 [SOLVED]
 [OK]
 [FAIL]
+
+Colors
+=======================================================
+[ Red    ]
+[ Green  ]
+[ Yellow ]
+[ Blue   ]
+[ Purple ]
+[ Aqua   ]
+[ Orange ]
 
 Date & Time
 =======================================================
@@ -95,6 +106,6 @@ abc : 1
 1.0, 2.0, 3.0
 1.00, 2.00, 3.00
 
-[LastChange] Wed Mar 10 18:55:23     2021
+[LastChange] Thu Mar 18 13:48:32 JST 2021
 
 # vim:set syntax=txt nowrap:

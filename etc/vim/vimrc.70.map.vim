@@ -151,7 +151,7 @@ xmap <C-U>       <Plug>(quickhl-manual-this)
 imap <C-L>       <Plug>(coc-snippets-expand)
 
 "------------------------------------------------------
-" map.plugins.au
+" map.plugins.autocmd
 "------------------------------------------------------
 func s:my_fugitive_settings()
   nnoremap <buffer> <C-X>   :tabclose<CR>
@@ -182,13 +182,13 @@ func s:my_git_settings()
   nmap     <buffer> D       O
 endfunc
 
-au FileType fugitive call s:my_fugitive_settings()
-au FileType nerdtree call s:my_nerdtree_settings()
-au FileType GV       call s:my_gv_settings()
-au FileType git      call s:my_git_settings()
+autocmd FileType fugitive call s:my_fugitive_settings()
+autocmd FileType nerdtree call s:my_nerdtree_settings()
+autocmd FileType GV       call s:my_gv_settings()
+autocmd FileType git      call s:my_git_settings()
 
 "------------------------------------------------------
-" diff.au
+" diff.autocmd
 "------------------------------------------------------
 func s:my_diff_settings()
   if &diff
@@ -198,6 +198,6 @@ func s:my_diff_settings()
   endif
 endfunc
 
-au VimEnter,FilterWritePre * call s:my_diff_settings()
+autocmd VimEnter,FilterWritePre * call s:my_diff_settings()
 
 "------------------------------------------------------

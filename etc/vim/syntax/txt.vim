@@ -50,10 +50,19 @@ syn match    myHoliday          "½ËÆü"
 
 syn match    myTODO             "\[TODO\]"
 syn match    myDONE             "\[DONE\]"
+syn match    myCANCEL           "\[CANCEL\]"
 syn match    myFIXED            "\[FIXED\]"
 syn match    mySOLVED           "\[SOLVED\]"
 syn match    myOK               "\[OK\]"
 syn match    myFAIL             "\[FAIL\]"
+
+syn match    myRed              "\[ Red    \]"
+syn match    myGreen            "\[ Green  \]"
+syn match    myYellow           "\[ Yellow \]"
+syn match    myBlue             "\[ Blue   \]"
+syn match    myPurple           "\[ Purple \]"
+syn match    myAqua             "\[ Aqua   \]"
+syn match    myOrange           "\[ Orange \]"
 
 " Highlighting
 " ============
@@ -86,10 +95,19 @@ if !exists("did_my_general_syntax_inits")
 
   hi link myTODO             MyOrange
   hi link myDONE             MyGreen
+  hi link myCANCEL           MyRed
   hi link myFIXED            MyGreen
   hi link mySOLVED           MyGreen
   hi link myOK               MyGreen
   hi link myFAIL             MyRed
+
+  hi link myRed              MyRed  
+  hi link myGreen            MyGreen 
+  hi link myYellow           MyYellow
+  hi link myBlue             MyBlue  
+  hi link myPurple           MyPurple
+  hi link myAqua             MyAqua  
+  hi link myOrange           MyOrange
 endif
 
 set textwidth=0

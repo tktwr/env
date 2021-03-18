@@ -29,7 +29,17 @@ func s:MyDia(sp, type)
   endif
 endfunc
 
+func s:MyDiaFindTodo()
+  MyCdHere
+  vimgrep '\[TODO\]' %
+  below cw
+endfunc
+
+"------------------------------------------------------
+" command
+"------------------------------------------------------
 command Dia      call s:MyDia('top sp', 'v')
 command DiaFull  call s:MyDia('tabe', 'v')
 command DiaFullH call s:MyDia('tabe', 'h')
+command DiaTodo  call s:MyDiaFindTodo()
 

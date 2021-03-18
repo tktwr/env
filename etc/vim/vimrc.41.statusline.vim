@@ -46,5 +46,5 @@ endfunc
 set laststatus=2
 set statusline=%!MyStatusline()
 
-au TerminalOpen * call MySetTerm()
+autocmd TerminalOpen * call MySetTerm()
 
