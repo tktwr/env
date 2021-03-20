@@ -130,6 +130,7 @@ let g:my_todo_file = "$MY_DIARY/todo.md.html"
 let g:my_scratchpad_file = "$MY_DIARY/scratchpad.md.html"
 
 let g:mapleader = "\<Space>"
+"let g:mapleader = ','
 let g:maplocalleader = ','
 "------------------------------------------------------
 

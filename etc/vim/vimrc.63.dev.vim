@@ -5,6 +5,7 @@ func s:MyIDE()
   NERDTree
   wincmd l
   Tagbar
+  MyTerm 0
 endfunc
 
 func s:ClangFormat()

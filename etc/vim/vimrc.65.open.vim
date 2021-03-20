@@ -82,9 +82,13 @@ endfunc
 " recieve a dir from a terminal
 func Tapi_NERDTree(_, dir)
   exec "NERDTree" a:dir
-  exec "wincmd p"
-  call MyWinPlace("J", g:my_term_winheight)
-  exec "wincmd p"
+
+  let l:is_fullscreen = s:MyIsFullscreen()
+  if !l:is_fullscreen
+    exec "wincmd p"
+    call MyWinPlace("J", g:my_term_winheight)
+    exec "wincmd p"
+  endif
 endfunc
 
 func Tapi_Edit(_, file)
@@ -95,9 +99,22 @@ endfunc
 "------------------------------------------------------
 " open terminal
 "------------------------------------------------------
+func s:MyIsFullscreen()
+  let l:is_fullscreen = 0
+  if v:echospace > 150
+    let l:is_fullscreen = 1
+  endif
+  return l:is_fullscreen
+endfunc
+
 func s:MyTerm(type)
   if a:type == 0
-    exec "bot term ++rows=".g:my_term_winheight
+    let l:is_fullscreen = s:MyIsFullscreen()
+    if l:is_fullscreen
+      exec "below term ++rows=".g:my_term_winheight
+    else
+      exec "bot term ++rows=".g:my_term_winheight
+    endif
     set winfixheight
   elseif a:type == 1
     tabedit

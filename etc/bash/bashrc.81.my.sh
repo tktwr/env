@@ -67,6 +67,7 @@ alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 # vim
 #------------------------------------------------------
 alias V='vim -c "NERDTree"'
+alias I='vim -c "MyIDE"'
 alias T='vim -c "MyTerm 0"'
 alias T1='vim -c "MyTerm 1"'
 alias T2='vim -c "MyTerm 2"'

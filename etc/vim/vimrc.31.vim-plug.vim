@@ -12,17 +12,20 @@ let g:molokai_original = 1
 " vim-plug: IDE
 "------------------------------------------------------
 Plug 'scrooloose/nerdtree'
+let g:NERDTreeWinSize = 30
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeChDirMode=2
-let g:NERDTreeAutoDeleteBuffer=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeMinimalMenu=0
-let g:NERDTreeWinSize=31
-let g:NERDTreeIgnore=['NTUSER\.', 'ntuser\.', '\.lnk$', '\.url', 'desktop\.ini']
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeMinimalMenu = 0
+let g:NERDTreeIgnore = ['NTUSER\.', 'ntuser\.', '\.lnk$', '\.url', 'desktop\.ini']
 
 Plug 'majutsushi/tagbar'
+let g:tagbar_width = 30
+let g:tagbar_iconchars = ['+', '-']
+let g:tagbar_sort = 0
 
 Plug 'thinca/vim-ref'
 

@@ -34,8 +34,8 @@ nnoremap <C-D>   <C-B>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
-nnoremap <C-N>   :cn<CR>
 nnoremap <C-P>   :cp<CR>
+nnoremap <C-N>   :cn<CR>
 
 nnoremap <C-O>   :call MyOpen("")<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
@@ -145,18 +145,18 @@ tmap <Del>    <C-Down>
 "------------------------------------------------------
 nnoremap <C-B>   :CocListResume<CR>
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
-nmap <BS>        <Plug>(easymotion-overwin-line)
+nnoremap <BS>    :TagbarToggle<CR>
+"nmap <BS>        <Plug>(easymotion-overwin-line)
 nmap <C-U>       <Plug>(quickhl-manual-this)
 xmap <C-U>       <Plug>(quickhl-manual-this)
 imap <C-L>       <Plug>(coc-snippets-expand)
 
+"======================================================
+" autocmd
+"======================================================
 "------------------------------------------------------
-" map.plugins.autocmd
+" autocmd for NERDTree
 "------------------------------------------------------
-func s:my_fugitive_settings()
-  nnoremap <buffer> <C-X>   :tabclose<CR>
-endfunc
-
 func s:my_nerdtree_settings()
   nmap <buffer> <C-.>   C
   nmap <buffer> k       -
@@ -173,6 +173,21 @@ func s:my_nerdtree_settings()
   nmap <buffer> <C-K>   <C-W>W
 endfunc
 
+autocmd FileType nerdtree call s:my_nerdtree_settings()
+
+"------------------------------------------------------
+" autocmd for fugitive
+"------------------------------------------------------
+func s:my_fugitive_settings()
+  nnoremap <buffer> <C-X>   :tabclose<CR>
+  nmap     <buffer> D       dd
+endfunc
+
+autocmd FileType fugitive call s:my_fugitive_settings()
+
+"------------------------------------------------------
+" autocmd for GV
+"------------------------------------------------------
 func s:my_gv_settings()
   nnoremap <buffer> <C-X>   :tabclose<CR>
 endfunc
@@ -182,22 +197,24 @@ func s:my_git_settings()
   nmap     <buffer> D       O
 endfunc
 
-autocmd FileType fugitive call s:my_fugitive_settings()
-autocmd FileType nerdtree call s:my_nerdtree_settings()
 autocmd FileType GV       call s:my_gv_settings()
 autocmd FileType git      call s:my_git_settings()
 
 "------------------------------------------------------
-" diff.autocmd
+" autocmd for diff mode
 "------------------------------------------------------
 func s:my_diff_settings()
-  if &diff
+  if &diff == 1
+    nnoremap <buffer> <C-X>   :tabclose<CR>
     nnoremap <buffer> <C-P>   [c
     nnoremap <buffer> <C-N>   ]c
-    nnoremap <buffer> <C-X>   :tabclose<CR>
+  else
+    nnoremap <buffer> <C-X>   :close<CR>
+    nnoremap <buffer> <C-P>   :cp<CR>
+    nnoremap <buffer> <C-N>   :cn<CR>
   endif
 endfunc
 
-autocmd VimEnter,FilterWritePre * call s:my_diff_settings()
+autocmd WinEnter * call s:my_diff_settings()
 
 "------------------------------------------------------
