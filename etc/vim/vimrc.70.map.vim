@@ -97,29 +97,27 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window.resize
 "------------------------------------------------------
-" cannot map <C-2>
-"nnoremap <C-2> :echo 2<CR>
-" cannot map <C-6>
-"nnoremap <C-6> :echo 6<CR>
-
-nnoremap <C-3> :echo 3<CR>
-nnoremap <C-4> :echo 4<CR>
-nnoremap <C-5> :echo 5<CR>
-nnoremap <C-7> :echo 7<CR>
-
 nnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_winheight)<CR>
 nnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_winheight)<CR>
-nnoremap <C-3> <C-W>:call MyWinResize(2)<CR>
-nnoremap <C-7> <C-W>:call MyWinMaximizeToggle("x")<CR>
-nnoremap <C-8> <C-W>:call MyWinMaximizeToggle("xy")<CR>
-nnoremap <C-9> <C-W>:call MyWinMaximizeToggle("y")<CR>
+"nnoremap <C-2> :echo 2<CR>  " unable to map
+nnoremap <C-3> :echo<CR>
+nnoremap <C-4> :echo<CR>
+nnoremap <C-5> :echo<CR>
+"nnoremap <C-6> :echo 6<CR>  " unable to map
+nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
+nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
+nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle()<CR>
 
 tnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_term_winheight)<CR>
 tnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_term_winheight)<CR>
-tnoremap <C-3> <C-W>:call MyWinResize(2)<CR>
-tnoremap <C-7> <C-W>:call MyWinMaximizeToggle("x")<CR>
-tnoremap <C-8> <C-W>:call MyWinMaximizeToggle("xy")<CR>
-tnoremap <C-9> <C-W>:call MyWinMaximizeToggle("y")<CR>
+"tnoremap <C-2> :echo 2<CR>  " unable to map
+tnoremap <C-3> :echo<CR>
+tnoremap <C-4> :echo<CR>
+tnoremap <C-5> :echo<CR>
+"tnoremap <C-6> :echo 6<CR>  " unable to map
+tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
+tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
+tnoremap <C-9> <C-W>:call MyWinMaximizeYToggle()<CR>
 
 "------------------------------------------------------
 " map.tab
@@ -145,7 +143,7 @@ tmap <Del>    <C-Down>
 "------------------------------------------------------
 nnoremap <C-B>   :CocListResume<CR>
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
-nnoremap <BS>    :TagbarToggle<CR>
+nnoremap <BS>    :MyTagbarToggle<CR>
 "nmap <BS>        <Plug>(easymotion-overwin-line)
 nmap <C-U>       <Plug>(quickhl-manual-this)
 xmap <C-U>       <Plug>(quickhl-manual-this)

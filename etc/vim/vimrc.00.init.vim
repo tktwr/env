@@ -120,6 +120,7 @@ endif
 "------------------------------------------------------
 " user settings
 "------------------------------------------------------
+set eadirection=ver
 set winheight=10
 let g:my_winheight = 10
 let g:my_term_winheight = 10

@@ -13,7 +13,11 @@ f_help() {
   echo "  $bin_name [options]"
   echo
   echo "OPTIONS"
-  echo "  -h, --help ... print help"
+  echo "  -h, --help        ... print help"
+  echo "  --nerdtree <dir>  ... nerdtree"
+  echo "  --edit <file>     ... edit"
+  echo "  --tabedit <file>  ... tabedit"
+  echo "  --resize <height> ... tabedit"
 }
 
 f_nerdtree() {
@@ -24,13 +28,31 @@ f_edit() {
   printf '\e]51;["call","Tapi_Edit","%s"]\x07' "$1"
 }
 
+f_tabedit() {
+  printf '\e]51;["call","Tapi_TabEdit","%s"]\x07' "$1"
+}
+
+f_resize() {
+  printf '\e]51;["call","Tapi_Resize","%s"]\x07' "$1"
+}
+
+f_get_path() {
+  echo "$(cygpath -au $1)"
+}
+
 f_vimapi() {
   case $g_type in
-    dir)
-      f_nerdtree $g_args
+    nerdtree)
+      f_nerdtree $(f_get_path $g_args)
       ;;
-    file)
-      f_edit $g_args
+    edit)
+      f_edit $(f_get_path $g_args)
+      ;;
+    tabedit)
+      f_tabedit $(f_get_path $g_args)
+      ;;
+    resize)
+      f_resize $g_args
       ;;
   esac
 }
@@ -42,14 +64,20 @@ f_args() {
         f_help
         exit
         ;;
-      -d|--dir)
-        g_type="dir"
+      --nerdtree)
+        g_type="nerdtree"
         ;;
-      -f|--file)
-        g_type="file"
+      --edit)
+        g_type="edit"
+        ;;
+      --tabedit)
+        g_type="tabedit"
+        ;;
+      --resize)
+        g_type="resize"
         ;;
       *)
-        g_args="$(cygpath -au $i)"
+        g_args="$i"
         ;;
     esac
   done

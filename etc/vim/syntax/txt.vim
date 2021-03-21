@@ -35,6 +35,7 @@ syn match    myHoliday          "½ËÆü"
 
 syn match    myTag              "\[[^]]*\]"
 
+syn match    myINFO             "\[INFO\]"
 syn match    myTODO             "\[TODO\]"
 syn match    myDONE             "\[DONE\]"
 syn match    myCANCEL           "\[CANCEL\]"
@@ -43,13 +44,13 @@ syn match    mySOLVED           "\[SOLVED\]"
 syn match    myOK               "\[OK\]"
 syn match    myFAIL             "\[FAIL\]"
 
-syn match    myRed              "\[ Red    \]"
-syn match    myGreen            "\[ Green  \]"
-syn match    myYellow           "\[ Yellow \]"
-syn match    myBlue             "\[ Blue   \]"
-syn match    myPurple           "\[ Purple \]"
-syn match    myAqua             "\[ Aqua   \]"
-syn match    myOrange           "\[ Orange \]"
+syn match    myRed              "\[ *Red *\]"
+syn match    myGreen            "\[ *Green *\]"
+syn match    myYellow           "\[ *Yellow *\]"
+syn match    myBlue             "\[ *Blue *\]"
+syn match    myPurple           "\[ *Purple *\]"
+syn match    myAqua             "\[ *Aqua *\]"
+syn match    myOrange           "\[ *Orange *\]"
 
 syn match    myLowProgress      "\[ *.%\]"
 syn match    myLowProgress      "\[ *[1-2].%\]"
@@ -99,6 +100,7 @@ if !exists("did_my_general_syntax_inits")
 
   hi link myTag              MyPurple
 
+  hi link myINFO             MyYellow
   hi link myTODO             MyOrange
   hi link myDONE             MyGreen
   hi link myCANCEL           MyRed

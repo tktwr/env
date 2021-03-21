@@ -10,17 +10,18 @@ vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 vmap     <leader>C            <plug>NERDCommenterToggle
 
 nnoremap <leader>0            <C-W>:MyTerm 0<CR>
-nnoremap <leader>1            <C-W>:Dia<CR>
-nnoremap <leader>2            <C-W>:Memo<CR>
-nnoremap <leader>3            <C-W>:Dict<CR>
-nnoremap <leader>4            <C-W>:Trans<CR>
+nnoremap <leader>1            :MyNERDTreeToggle<CR>
+nnoremap <leader>2            <C-W>:Dia<CR>
+nnoremap <leader>3            <C-W>:Memo<CR>
+nnoremap <leader>4            <C-W>:Dict<CR>
+nnoremap <leader>5            <C-W>:Trans<CR>
 nnoremap <leader>6            :VimGrepHere<CR>
 nnoremap <leader>7            :silent GgrepHere<CR><C-L>
-nnoremap <leader>9            <C-W>:tabedit<CR>
+nnoremap <leader>8            <C-W>:tabedit<CR>
+nnoremap <leader>9            :MyTagbarToggle<CR>
 nmap     <leader>E            <plug>(easymotion-overwin-line)
-nnoremap <leader>N            :MyNERDTreeToggle<CR>
-nnoremap <leader>S            :tabedit +MyGstatusToggle<CR>
-nnoremap <leader>G            :GV --all<CR>
+nnoremap <leader>S            :MyTabGstatus<CR>
+nnoremap <leader>G            :MyTabGV<CR>
 nnoremap <leader>O            :call MyOpen("")<CR>
 nnoremap <leader>K            :make<CR>:cw<CR>
 nnoremap <leader>R            :make run<CR>
@@ -37,10 +38,15 @@ nnoremap <leader>w0           <C-W>:resize<CR>
 nnoremap <leader>w1           <C-W>:resize 10<CR>
 nnoremap <leader>w2           <C-W>:resize 20<CR>
 nnoremap <leader>w3           <C-W>:resize 30<CR>
+nnoremap <leader>wx           <C-W>x
 nnoremap <leader>wr           <C-W>r
 nnoremap <leader>wR           <C-W>R
 nnoremap <leader>wK           <C-W>K
 nnoremap <leader>wJ           <C-W>J
+nnoremap <leader>wT           <C-W>T
+nnoremap <leader>wX           <C-W>:call MyWinMaximizeXToggle()<CR>
+nnoremap <leader>wY           <C-W>:call MyWinMaximizeYToggle()<CR>
+nnoremap <leader>wZ           <C-W>:call MyWinMaximizeXYToggle()<CR>
 
 nnoremap <leader>te           <C-W>:tabedit<CR>
 nnoremap <leader>tc           :tabclose<CR>
@@ -79,7 +85,7 @@ nnoremap <leader>qd           :Cdo<CR>
 nnoremap <leader>qf           :Cfdo<CR>
 
 nnoremap <leader>oI           :MyIDE<CR>
-nnoremap <leader>oT           :TagbarToggle<CR>
+nnoremap <leader>oT           :MyTagbarToggle<CR>
 nnoremap <leader>oc           :ClangFormat<CR>
 nnoremap <leader>oM           :Ref man 
 nnoremap <leader>oP           :Ref pydoc 
@@ -131,15 +137,16 @@ let g:which_key_hspace = 1
 let g:which_key_exit = ["\<Space>", "\<Esc>"]
 let g:which_key_map = { 'name' : '+top',
       \ '0' : 'Term',
-      \ '1' : 'Dia',
-      \ '2' : 'Memo',
-      \ '3' : 'Dict',
-      \ '4' : 'Trans',
+      \ '1' : 'NERDTree (TAB)',
+      \ '2' : 'Dia',
+      \ '3' : 'Memo',
+      \ '4' : 'Dict',
+      \ '5' : 'Trans',
       \ '6' : 'VimGrepHere',
       \ '7' : 'GgrepHere',
-      \ '9' : 'tabedit',
-      \ 'E' : 'Easymotion (BS)',
-      \ 'N' : 'NERDTree (TAB)',
+      \ '8' : 'tabedit',
+      \ '9' : 'Tagbar (BS)',
+      \ 'E' : 'Easymotion',
       \ 'S' : 'GStatus',
       \ 'G' : 'GV',
       \ 'O' : 'Open (C-O)',

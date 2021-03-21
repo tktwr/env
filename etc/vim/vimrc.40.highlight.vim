@@ -25,8 +25,16 @@ hi MyPurpleSign    ctermfg=175 guifg=#d3869b ctermbg=237 guibg=#3c3836
 hi MyAquaSign      ctermfg=108 guifg=#8ec07c ctermbg=237 guibg=#3c3836
 hi MyOrangeSign    ctermfg=208 guifg=#fe8019 ctermbg=237 guibg=#3c3836
 
+hi MyBlack         ctermbg=0   guibg=#000000
+hi MyWhite         ctermbg=255 guibg=#ffffff
+
+hi MyFg0           ctermfg=229 guifg=#fbf1c7
+hi MyFg1           ctermfg=223 guifg=#ebdbb2
 hi MyBg0           ctermbg=236 guibg=#32302f
 hi MyBg1           ctermbg=237 guibg=#3c3836
+hi MyBg1a          ctermbg=237 guibg=#3c3c36
+
+hi MyNormal        ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
 
 hi! link Folded           MyYellowSign
 hi! link FoldColumn       MyYellowSign
@@ -34,12 +42,10 @@ hi! link WildMenu         MyYellowRevBold
 hi! link WhichKeyFloating MyYellowSign
 hi! link TabLineSel       MyGreenRevBold
 hi! link TabLineFill      MyGreenSign
-
 hi! link StatusLineTerm   MyAquaRevBold
 hi! link StatusLineTermNC MyAquaRevBold
-
 hi! link IndentGuidesOdd  MyBg0
-hi! link IndentGuidesEven MyBg1
+hi! link IndentGuidesEven MyBg1a
 
 let g:terminal_ansi_colors = [
 \ '#000000',

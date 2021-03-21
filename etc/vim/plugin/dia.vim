@@ -1,6 +1,6 @@
-"------------------------------------------------------
+"======================================================
 " Dia
-"------------------------------------------------------
+"======================================================
 if exists("loaded_dia")
   finish
 endif
@@ -8,6 +8,8 @@ endif
 let loaded_dia = 1
 let s:dia = g:my_dia_file
 let s:todo = g:my_todo_file
+let s:todo_winwidth = 40
+let s:todo_winheight = 10
 
 func s:MyDia(sp, type)
   if a:type == 'd'
@@ -18,20 +20,22 @@ func s:MyDia(sp, type)
     exec a:sp s:todo
     exec "sp" s:dia
     wincmd j
-    resize 10
+    exec "resize" s:todo_winheight
     wincmd k
   elseif a:type == 'v'
     exec a:sp s:todo
     exec "vsp" s:dia
     wincmd l
-    vertical resize 40
+    exec "vertical resize" s:todo_winwidth
     wincmd h
   endif
 endfunc
 
-func s:MyDiaFindTodo()
+func s:MyDiaFind(tag)
   MyCdHere
-  vimgrep '\[TODO\]' %
+  let l:tag = '/\['.a:tag.'\]/'
+  echo l:tag
+  exec "vimgrep" l:tag "%"
   below cw
 endfunc
 
@@ -41,5 +45,5 @@ endfunc
 command Dia      call s:MyDia('top sp', 'v')
 command DiaFull  call s:MyDia('tabe', 'v')
 command DiaFullH call s:MyDia('tabe', 'h')
-command DiaTodo  call s:MyDiaFindTodo()
+command -nargs=1 DiaFind  call s:MyDiaFind("<args>")
 
