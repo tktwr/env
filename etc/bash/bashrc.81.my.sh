@@ -73,10 +73,14 @@ alias T1='vim -c "MyTerm 1"'
 alias T2='vim -c "MyTerm 2"'
 alias z='vim -c "DiaFull"'
 alias zh='vim -c "DiaFullH"'
-alias ,nt='vimapi.sh --nerdtree'
-alias ,edit='vimapi.sh --edit'
-alias ,tabedit='vimapi.sh --tabedit'
-alias ,resize='vimapi.sh --resize'
+alias ,D='vimapi.sh MyNERDTreeT2E --filepath $PWD'
+alias ,nt='vimapi.sh MyNERDTreeT2E --filepath'
+alias ,edit='vimapi.sh MyEditT2E --filepath'
+alias ,tabedit='vimapi.sh tabedit --filepath'
+alias ,resize='vimapi.sh MyWinResize'
+alias ,gs='vimapi.sh MyTabGstatus'
+alias ,gv='vimapi.sh MyTabGV'
+alias ,dia='vimapi.sh DiaFull'
 
 #------------------------------------------------------
 # misc

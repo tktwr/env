@@ -137,8 +137,11 @@ endfunc
 "------------------------------------------------------
 " terminal to editor
 "------------------------------------------------------
-" recieve a dir from a terminal
-func Tapi_NERDTree(_, dir)
+func Tapi_Exec(_, cmdline)
+  exec a:cmdline
+endfunc
+
+func MyNERDTreeT2E(dir)
   exec "NERDTree" a:dir
 
   let l:is_fullscreen = MyIsFullscreen()
@@ -149,23 +152,18 @@ func Tapi_NERDTree(_, dir)
   endif
 endfunc
 
-func Tapi_Edit(_, file)
+func MyEditT2E(file)
   exec "wincmd p"
   exec "edit" a:file
-endfunc
-
-func Tapi_TabEdit(_, file)
-  exec "tabedit" a:file
-endfunc
-
-func Tapi_Resize(_, height)
-  call MyWinResize(a:height)
 endfunc
 
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=1 MyTerm  call MyTerm("<args>")
+command -nargs=1 MyNERDTreeT2E  call MyNERDTreeT2E("<args>")
+command -nargs=1 MyEditT2E      call MyEditT2E("<args>")
+command -nargs=1 MyWinResize    call MyWinResize("<args>")
+command -nargs=1 MyTerm         call MyTerm("<args>")
 
 command MyNERDTreeToggle call MyNERDTreeToggle()
 command MyGstatusToggle  call MyGstatusToggle()
