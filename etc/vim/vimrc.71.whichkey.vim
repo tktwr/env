@@ -11,7 +11,7 @@ vmap     <leader>C            <plug>NERDCommenterToggle
 
 nnoremap <leader>0            <C-W>:MyTerm 0<CR>
 nnoremap <leader>1            :MyNERDTreeToggle<CR>
-nnoremap <leader>2            <C-W>:Dia<CR>
+nnoremap <leader>2            <C-W>:DiaTop<CR>
 nnoremap <leader>3            <C-W>:Memo<CR>
 nnoremap <leader>4            <C-W>:Dict<CR>
 nnoremap <leader>5            <C-W>:Trans<CR>

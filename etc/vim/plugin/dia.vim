@@ -42,8 +42,13 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command Dia      call s:MyDia('top sp', 'v')
+command Dia      call s:MyDia('sp', 'd')
+command Todo     call s:MyDia('sp', 't')
+
+command DiaTop   call s:MyDia('top sp', 'v')
+
 command DiaFull  call s:MyDia('tabe', 'v')
 command DiaFullH call s:MyDia('tabe', 'h')
+
 command -nargs=1 DiaFind  call s:MyDiaFind("<args>")
 
