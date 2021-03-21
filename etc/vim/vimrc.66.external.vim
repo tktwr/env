@@ -23,3 +23,8 @@ func MyOpen(url)
   endif
 endfunc
 
+func MyEdit(url)
+  let l:result = MyExpand(a:url)
+  exec "edit" l:result["url"]
+endfunc
+

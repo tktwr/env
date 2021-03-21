@@ -16,8 +16,10 @@ func MyExpand(url)
     let l:result = {"type": "http", "url": l:url}
   elseif (isdirectory(l:url))
     let l:result = {"type": "dir", "url": l:url}
+  elseif (filereadable(l:url))
+    let l:result = {"type": "file", "url": l:url}
   else
-    let l:url = expand("%")
+    let l:url = expand("%:p")
     let l:result = {"type": "file", "url": l:url}
   endif
 
@@ -28,6 +30,8 @@ func MyExpandDir(url)
   let l:result = MyExpand(a:url)
   if (l:result["type"] == "dir")
     let l:dir = l:result["url"]
+  elseif (l:result["type"] == "file")
+    let l:dir = MyGetDirName(l:result["url"])
   else
     let l:dir = expand("%:p:h")
   endif

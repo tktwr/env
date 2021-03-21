@@ -37,6 +37,7 @@ nnoremap <C-Q>   @q
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-N>   :cn<CR>
 
+nnoremap <C-E>   :call MyEdit("")<CR>
 nnoremap <C-O>   :call MyOpen("")<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
@@ -71,7 +72,7 @@ tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-nnoremap <C-E>   :only<CR>
+"nnoremap <C-E>   :only<CR>
 nnoremap <C-X>   :close<CR>
 " redraw screen
 nnoremap <C-G>   :MyRedraw<CR>

@@ -129,7 +129,7 @@ endfunc
 func MyTermSendCd(dir)
   let l:nr = bufnr("!/usr/bin/bash")
   let l:dir = MyExpandDir(a:dir)
-	call term_sendkeys(l:nr, "cd ".l:dir."\<CR>")
+  call term_sendkeys(l:nr, "cd ".l:dir."\<CR>")
   let l:winnr = bufwinnr("!/usr/bin/bash")
   exec l:winnr."wincmd w"
 endfunc
