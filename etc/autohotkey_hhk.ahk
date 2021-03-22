@@ -39,10 +39,11 @@ F4::
   send,#+s
   return
 
-; vim tabprev
 F9::
-  IfWinActive ahk_exe mintty.exe
-    send,^{Left}
+  w = %A_ScreenWidth%
+  w_half = %A_ScreenWidth%
+  w_half /= 2
+  MsgBox, w = %w% w_half = %w_half%
   return
 
 ; vim tabnext
@@ -55,8 +56,9 @@ F10::
 F11::
   WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
   ;MsgBox, x y w h = %X% %Y% %W% %H%
-  half_screen_width := 1000
-  If (W < half_screen_width) {
+  screen_w_75 = %A_ScreenWidth%
+  screen_w_75 *= 0.75
+  If (W < screen_w_75) {
     WinMaximize,A
   } Else {
     IfWinActive ahk_exe mintty.exe
