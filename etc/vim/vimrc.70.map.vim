@@ -98,8 +98,8 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window.resize
 "------------------------------------------------------
-nnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_winheight)<CR>
-nnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_winheight)<CR>
+nnoremap <C-0> <C-W>:call MyWinPlace("J")<CR>
+nnoremap <C-1> <C-W>:call MyWinPlace("K")<CR>
 "nnoremap <C-2> :echo 2<CR>  " unable to map
 nnoremap <C-3> :echo<CR>
 nnoremap <C-4> :echo<CR>
@@ -109,8 +109,8 @@ nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
 nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
 nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle()<CR>
 
-tnoremap <C-0> <C-W>:call MyWinPlace("J", g:my_term_winheight)<CR>
-tnoremap <C-1> <C-W>:call MyWinPlace("K", g:my_term_winheight)<CR>
+tnoremap <C-0> <C-W>:call MyWinPlace("J")<CR>
+tnoremap <C-1> <C-W>:call MyWinPlace("K")<CR>
 "tnoremap <C-2> :echo 2<CR>  " unable to map
 tnoremap <C-3> :echo<CR>
 tnoremap <C-4> :echo<CR>

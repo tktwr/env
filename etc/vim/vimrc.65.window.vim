@@ -40,10 +40,8 @@ func MyWinResize(height)
   let w:orig_height = a:height
 endfunc
 
-func MyWinPlace(place, height)
+func MyWinPlace(place)
   exec "wincmd " a:place
-  exec "resize" a:height
-  let w:orig_height = a:height
 endfunc
 
 "------------------------------------------------------
@@ -147,7 +145,7 @@ func MyNERDTreeT2E(dir)
   let l:is_fullscreen = MyIsFullscreen()
   if !l:is_fullscreen
     exec "wincmd p"
-    call MyWinPlace("J", g:my_term_winheight)
+    call MyWinPlace("J")
     exec "wincmd p"
   endif
 endfunc
@@ -157,11 +155,17 @@ func MyEditT2E(file)
   exec "edit" a:file
 endfunc
 
+func MySplitT2E(file)
+  exec "wincmd p"
+  exec "split" a:file
+endfunc
+
 "------------------------------------------------------
 " command
 "------------------------------------------------------
 command -nargs=1 MyNERDTreeT2E  call MyNERDTreeT2E("<args>")
 command -nargs=1 MyEditT2E      call MyEditT2E("<args>")
+command -nargs=1 MySplitT2E     call MySplitT2E("<args>")
 command -nargs=1 MyWinResize    call MyWinResize("<args>")
 command -nargs=1 MyTerm         call MyTerm("<args>")
 
