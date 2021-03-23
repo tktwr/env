@@ -35,15 +35,21 @@ hi MyBg1           ctermbg=237 guibg=#3c3836
 hi MyBg1a          ctermbg=237 guibg=#3c3c36
 
 hi MyNormal        ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
+hi MyStatusLine    term=bold,reverse cterm=reverse ctermfg=239 ctermbg=223 gui=reverse guifg=#504945 guibg=#ebdbb2
+hi MyStatusLineNC  term=reverse cterm=reverse ctermfg=237 ctermbg=246 gui=reverse guifg=#3c3836 guibg=#a89984
+
+hi! link StatusLine       MyStatusLine
+hi! link StatusLineNC     MyStatusLineNC
+hi! link StatusLineTerm   MyAquaRevBold
+hi! link StatusLineTermNC MyAquaRevBold
+hi! link TabLineSel       MyGreenRevBold
+hi! link TabLine          MyStatusLine
+hi! link TabLineFill      MyStatusLineNC
 
 hi! link Folded           MyYellowSign
 hi! link FoldColumn       MyYellowSign
 hi! link WildMenu         MyYellowRevBold
 hi! link WhichKeyFloating MyYellowSign
-hi! link TabLineSel       MyGreenRevBold
-hi! link TabLineFill      MyGreenSign
-hi! link StatusLineTerm   MyAquaRevBold
-hi! link StatusLineTermNC MyAquaRevBold
 hi! link IndentGuidesOdd  MyBg0
 hi! link IndentGuidesEven MyBg1a
 
