@@ -73,6 +73,7 @@ alias T1='vim -c "MyTerm 1"'
 alias T2='vim -c "MyTerm 2"'
 alias z='vim -c "DiaFull"'
 alias zh='vim -c "DiaFullH"'
+
 alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
 alias ,CD='vimapi.sh cd --filepath $PWD'
@@ -85,7 +86,11 @@ alias ,tabe='vimapi.sh tabedit --filepath'
 alias ,resize='vimapi.sh MyWinResize'
 alias ,gs='vimapi.sh MyTabGstatus'
 alias ,gv='vimapi.sh MyTabGV'
+alias ,diff='vimapi.sh MyTabDiff'
+alias ,help='vimapi.sh "tabedit +help | only"'
+alias ,memo='vimapi.sh "tabedit +Memo | only"'
 alias ,dia='vimapi.sh DiaFull'
+alias ,vim='vimapi.sh'
 
 #------------------------------------------------------
 # misc

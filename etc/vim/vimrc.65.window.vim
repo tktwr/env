@@ -160,14 +160,20 @@ func MySplitT2E(file)
   exec "split" a:file
 endfunc
 
+func MyTabDiff(file1, file2)
+  exec "tabedit" a:file2
+  exec "vertical diffsplit" a:file1
+endfunc
+
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=1 MyNERDTreeT2E  call MyNERDTreeT2E("<args>")
-command -nargs=1 MyEditT2E      call MyEditT2E("<args>")
-command -nargs=1 MySplitT2E     call MySplitT2E("<args>")
-command -nargs=1 MyWinResize    call MyWinResize("<args>")
-command -nargs=1 MyTerm         call MyTerm("<args>")
+command -nargs=1 MyWinResize    call MyWinResize(<f-args>)
+command -nargs=1 MyTerm         call MyTerm(<f-args>)
+command -nargs=1 -complete=dir  MyNERDTreeT2E  call MyNERDTreeT2E(<f-args>)
+command -nargs=1 -complete=file MyEditT2E      call MyEditT2E(<f-args>)
+command -nargs=1 -complete=file MySplitT2E     call MySplitT2E(<f-args>)
+command -nargs=+ -complete=file MyTabDiff      call MyTabDiff(<f-args>)
 
 command MyNERDTreeToggle call MyNERDTreeToggle()
 command MyGstatusToggle  call MyGstatusToggle()
