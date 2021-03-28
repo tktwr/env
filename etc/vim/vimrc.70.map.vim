@@ -37,10 +37,10 @@ nnoremap <C-Q>   @q
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-N>   :cn<CR>
 
-nnoremap <C-E>   :call MyEdit("")<CR>
-nnoremap <C-O>   :call MyOpen("")<CR>
+nnoremap <CR>    :call MyEdit("")<CR>
+nnoremap <C-CR>  :call MyOpen("")<CR>
+"nnoremap <S-CR>  :call MyTermSendCmd("")<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
-nnoremap <C-CR>  :call MyTermSendCmd("")<CR>
 nnoremap <C-A>   :MyMakeLink<CR>
 nnoremap <C-.>   :MyCdHere<CR>
 nnoremap <C-;>   <C-W>:
@@ -72,7 +72,7 @@ tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-"nnoremap <C-E>   :only<CR>
+nnoremap <C-E>   :only<CR>
 nnoremap <C-X>   :close<CR>
 " redraw screen
 nnoremap <C-G>   :MyRedraw<CR>
@@ -162,11 +162,10 @@ func s:my_nerdtree_settings()
   nmap <buffer> j       +
   nmap <buffer> h       u
   nmap <buffer> l       go
-  nmap <buffer> E       /r.etc<CR>
-  nmap <buffer> M       /\[memo\]<CR>
-  nmap <buffer> T       /\[todo\]<CR>
-  nmap <buffer> D       /\[dia\]<CR>
   nmap <buffer> S       /\[scratchpad\]<CR>
+  nmap <buffer> B       :Bookmark<CR>
+  nmap <buffer> E       :EditBookmarks<CR>
+  "nmap <buffer> D       :echo D<CR>  "delete bookmark
   nmap <buffer> <Space> goq
   nmap <buffer> <C-J>   <C-W>w
   nmap <buffer> <C-K>   <C-W>W

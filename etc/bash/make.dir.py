@@ -63,6 +63,8 @@ def f_make_dir(fname):
                 print(f"export {env_name}_WIN=\"{dir_name_win}\"")
                 print(f"alias cd.{name}='cd \"{dir_name}\"'")
                 print(f"alias .{name}='pushd \"{dir_name}\"'")
+                print(f"alias d.{name}=',cd \"{dir_name}\"'")
+                print(f"alias D.{name}=',nt \"{dir_name}\"'")
     except FileNotFoundError as e:
         #print(f"FileNotFoundError: {e}")
         pass;

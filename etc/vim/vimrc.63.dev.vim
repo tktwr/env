@@ -1,13 +1,6 @@
 "------------------------------------------------------
 " dev.func
 "------------------------------------------------------
-func s:MyIDE()
-  NERDTree
-  wincmd l
-  Tagbar
-  MyTerm 0
-endfunc
-
 func s:ClangFormat()
   !clang-format -i %
 endfunc
@@ -36,7 +29,6 @@ endfunc
 "------------------------------------------------------
 " dev.command
 "------------------------------------------------------
-command MyIDE              call s:MyIDE()
 command ClangFormat        call s:ClangFormat()
 command MyEditAltSrc       call s:MyEditAltSrc()
 command MyStartProf        call s:MyStartProf()

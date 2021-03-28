@@ -41,7 +41,7 @@ hi MyStatusLineNC  term=reverse cterm=reverse ctermfg=237 ctermbg=246 gui=revers
 hi! link StatusLine       MyStatusLine
 hi! link StatusLineNC     MyStatusLineNC
 hi! link StatusLineTerm   MyAquaRevBold
-hi! link StatusLineTermNC MyAquaRevBold
+hi! link StatusLineTermNC MyStatusLineNC
 hi! link TabLineSel       MyGreenRevBold
 hi! link TabLine          MyStatusLine
 hi! link TabLineFill      MyStatusLineNC

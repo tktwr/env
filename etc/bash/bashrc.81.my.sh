@@ -64,35 +64,6 @@ alias mycmake-set-vs2019-debug='mycmake.sh --set vs2019 Debug'
 alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 
 #------------------------------------------------------
-# vim
-#------------------------------------------------------
-alias V='vim -c "NERDTree"'
-alias I='vim -c "MyIDE"'
-alias T='vim -c "MyTerm 0"'
-alias T1='vim -c "MyTerm 1"'
-alias T2='vim -c "MyTerm 2"'
-alias z='vim -c "DiaFull"'
-alias zh='vim -c "DiaFullH"'
-
-alias ,TCD='vimapi.sh tcd --filepath $PWD'
-alias ,tcd='vimapi.sh tcd --filepath'
-alias ,CD='vimapi.sh cd --filepath $PWD'
-alias ,cd='vimapi.sh cd --filepath'
-alias ,NT='vimapi.sh MyNERDTreeT2E --filepath $PWD'
-alias ,nt='vimapi.sh MyNERDTreeT2E --filepath'
-alias ,e='vimapi.sh MyEditT2E --filepath'
-alias ,sp='vimapi.sh MySplitT2E --filepath'
-alias ,tabe='vimapi.sh tabedit --filepath'
-alias ,resize='vimapi.sh MyWinResize'
-alias ,gs='vimapi.sh MyTabGstatus'
-alias ,gv='vimapi.sh MyTabGV'
-alias ,diff='vimapi.sh MyTabDiff'
-alias ,help='vimapi.sh "tabedit +help | only"'
-alias ,memo='vimapi.sh "tabedit +Memo | only"'
-alias ,dia='vimapi.sh DiaFull'
-alias ,vim='vimapi.sh'
-
-#------------------------------------------------------
 # misc
 #------------------------------------------------------
 print-env() {
@@ -105,4 +76,50 @@ print-env() {
 
 alias pe='print-env'
 alias pp='print-path.sh -p'
+
+#------------------------------------------------------
+# vim
+#------------------------------------------------------
+alias GS='vim -c "MyGstatusToggle"'
+alias GV='vim -c "MyTabGV"'
+alias I='vim -c "MyIDE"'
+alias T='vim -c "MyTerm"'
+alias z='vim -c "DiaFull"'
+alias zh='vim -c "DiaFullH"'
+
+#------------------------------------------------------
+# vimapi
+#------------------------------------------------------
+alias ,GS='vimapi.sh MyTabGstatus'
+alias ,GV='vimapi.sh MyTabGV'
+alias ,I='vimapi.sh --in-new-tab "MyIDE"'
+alias ,T='vimapi.sh MyTerm'
+alias ,V='vimapi.sh MyTermV'
+
+alias ,bmk='vimapi.sh --in-prev-win "Bmk bmk"'
+alias ,scratchpad='vimapi.sh --in-prev-win "Bmk scratchpad"'
+alias ,dia='vimapi.sh --in-prev-win "Bmk dia"'
+alias ,todo='vimapi.sh --in-prev-win "Bmk todo"'
+
+alias ,memo='vimapi.sh --in-prev-win "MyMemo"'
+alias ,help='vimapi.sh --in-prev-win "MyHelp"'
+alias ,man='vimapi.sh --in-prev-win "MyMan"'
+alias ,pydoc='vimapi.sh --in-prev-win "MyPydoc"'
+
+alias ,TCD='vimapi.sh tcd --filepath $PWD'
+alias ,tcd='vimapi.sh tcd --filepath'
+alias ,NERDTREE='vimapi.sh MyNERDTreeT2E --filepath $PWD'
+alias ,nerdtree='vimapi.sh MyNERDTreeT2E --filepath'
+alias ,resize='vimapi.sh MyWinResize'
+alias ,e='vimapi.sh --in-prev-win edit --filepath'
+alias ,sp='vimapi.sh --in-prev-win split --filepath'
+alias ,tabe='vimapi.sh tabedit --filepath'
+alias ,diff='vimapi.sh MyTabDiff'
+alias ,dirdiff='vimapi.sh "MyTabDirDiff"'
+alias ,vim='vimapi.sh'
+
+,cd() { cd "$@"; ,TCD; }
+,nt() { cd "$@"; ,NERDTREE; ,TCD; }
+alias d=',cd'
+alias D=',nt'
 

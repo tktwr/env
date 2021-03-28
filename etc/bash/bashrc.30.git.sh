@@ -141,10 +141,3 @@ gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 alias G='gg -15'
 
 #------------------------------------------------------
-# git-vim
-#------------------------------------------------------
-alias GG='vim -c "Agit"'
-alias GV='vim -c "GV --all"'
-alias S='vim -c "MyGstatusToggle"'
-
-#------------------------------------------------------

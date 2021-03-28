@@ -3,6 +3,7 @@
 bin_name=`basename $0`
 
 g_args=""
+g_where=""
 
 f_help() {
   echo "NAME"
@@ -17,8 +18,15 @@ f_help() {
 }
 
 f_vimapi_exec() {
-  #echo "$1"
   printf '\e]51;["call","Tapi_Exec","%s"]\x07' "$1"
+}
+
+f_vimapi_exec_in_prev_win() {
+  printf '\e]51;["call","Tapi_ExecInPrevWin","%s"]\x07' "$1"
+}
+
+f_vimapi_exec_in_new_tab() {
+  printf '\e]51;["call","Tapi_ExecInNewTab","%s"]\x07' "$1"
 }
 
 f_args() {
@@ -27,6 +35,12 @@ f_args() {
       -h|--help)
         f_help
         exit
+        ;;
+      --in-prev-win)
+        g_where="_in_prev_win"
+        ;;
+      --in-new-tab)
+        g_where="_in_new_tab"
         ;;
       --filepath)
         shift
@@ -42,5 +56,5 @@ f_args() {
 }
 
 f_args "$@"
-f_vimapi_exec "$g_args"
+eval "f_vimapi_exec$g_where \"$g_args\""
 

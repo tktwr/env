@@ -1,6 +1,6 @@
 00..my ~/.my
 01..my.common $SYS_WIN_HOME/.my.common
-10.r.etc(E) $MY_REMOTE_CONFIG/env/etc
+10.r.etc $MY_REMOTE_CONFIG/env/etc
 11.l.etc $MY_LOCAL_CONFIG/env/etc
 12.p.etc $MY_PRIVATE_CONFIG/env/etc
 50.git $MY_GIT
@@ -8,7 +8,7 @@
 72.[dir] $MY_ETC/bmk/dir.txt
 73.[links] $MY_ETC/bmk/links.md.html
 85.[papers] $MY_PAPERS/papers.md.html
-86.[memo](M) $MY_MEMO/my.md.html
-87.[todo](T) $MY_DIARY/todo.md.html
-88.[dia](D) $MY_DIARY/diary.md.html
+86.[memo] $MY_MEMO/my.md.html
+87.[todo] $MY_DIARY/todo.md.html
+88.[dia] $MY_DIARY/diary.md.html
 89.[scratchpad](S) $MY_DIARY/scratchpad.md.html

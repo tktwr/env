@@ -32,7 +32,7 @@ func s:Bmk(key)
   exec "edit" s:bmk[a:key]
 endfunc
 
-func s:BmkKeys(A,L,P)
+func s:CompleteBmkKeys(A,L,P)
   return s:keys
 endfunc
 
@@ -44,5 +44,5 @@ call s:BmkLoad()
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -complete=custom,s:BmkKeys -nargs=1 Bmk  call s:Bmk("<args>")
+command -complete=custom,s:CompleteBmkKeys -nargs=1 Bmk  call s:Bmk("<args>")
 
