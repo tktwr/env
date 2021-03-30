@@ -5,8 +5,6 @@ if exists("loaded_bmk")
   finish
 endif
 
-let g:bmk_file = "$MY_HOME/.my.common/bmk.txt"
-
 let loaded_bmk = 1
 let s:bmk_file = g:bmk_file
 let s:bmk = {}

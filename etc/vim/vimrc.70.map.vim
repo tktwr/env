@@ -42,7 +42,7 @@ nnoremap <C-CR>  :call MyOpen("")<CR>
 "nnoremap <S-CR>  :call MyTermSendCmd("")<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-A>   :MyMakeLink<CR>
-nnoremap <C-.>   :MyCdHere<CR>
+nnoremap <C-.>   :MyTcdHere<CR>
 nnoremap <C-;>   <C-W>:
 
 " tag

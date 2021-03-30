@@ -81,6 +81,7 @@ command TabDots            Tabularize /\.\.\.
 command TabComma           Tabularize /,
 
 command MyCdHere           cd %:h
+command MyTcdHere          tcd %:h
 command MyLcdHere          lcd %:h
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>

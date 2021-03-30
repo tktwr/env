@@ -32,7 +32,7 @@ func s:MyDia(sp, type)
 endfunc
 
 func s:MyDiaFind(tag)
-  MyCdHere
+  lcd %:h
   let l:tag = '/\['.a:tag.'\]/'
   echo l:tag
   exec "vimgrep" l:tag "%"

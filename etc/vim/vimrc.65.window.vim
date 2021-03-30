@@ -8,6 +8,7 @@ func MyMemo(...)
   else
     exec "above Memo" a:1
   endif
+
   wincmd p
   close
 endfunc
@@ -25,6 +26,7 @@ func MyHelp(...)
   else
     exec "above help" a:1
   endif
+
   if close_origwin
     wincmd p
     close
@@ -115,10 +117,15 @@ endfunc
 " MyIDE
 "------------------------------------------------------
 func MyIDE()
+  let l:is_fullscreen = MyIsFullscreen()
   NERDTree
-  wincmd l
-  "Tagbar
+  wincmd w
   MyTerm 0
+  wincmd W
+  if l:is_fullscreen
+    "Tagbar
+    vsp
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -270,13 +277,7 @@ func MyTabDirDiffQuit()
   tabclose
 endfunc
 
-func MyTabGstatus()
-  tabedit
-  call MyGstatusToggle()
-endfunc
-
-func MyTabGV()
-  tabedit
+func MyGV()
   GV --all
 endfunc
 
@@ -299,6 +300,7 @@ command MyIDE                   call MyIDE()
 command MyGstatusToggle         call MyGstatusToggle()
 command MyNERDTreeToggle        call MyNERDTreeToggle()
 command MyTagbarToggle          TagbarToggle
+command MyGV                    call MyGV()
 
 "------------------------------------------------------
 " command tab
@@ -306,6 +308,4 @@ command MyTagbarToggle          TagbarToggle
 command -nargs=+ -complete=file MyTabDiff      call MyTabDiff(<f-args>)
 command -nargs=+ -complete=dir  MyTabDirDiff   call MyTabDirDiff(<f-args>)
 command MyTabDirDiffQuit        call MyTabDirDiffQuit()
-command MyTabGstatus            call MyTabGstatus()
-command MyTabGV                 call MyTabGV()
 

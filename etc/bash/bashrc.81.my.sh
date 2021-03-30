@@ -81,7 +81,7 @@ alias pp='print-path.sh -p'
 # vim
 #------------------------------------------------------
 alias GS='vim -c "MyGstatusToggle"'
-alias GV='vim -c "MyTabGV"'
+alias GV='vim -c "MyGV"'
 alias I='vim -c "MyIDE"'
 alias T='vim -c "MyTerm"'
 alias z='vim -c "DiaFull"'
@@ -90,9 +90,9 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 # vimapi
 #------------------------------------------------------
-alias ,GS='vimapi.sh MyTabGstatus'
-alias ,GV='vimapi.sh MyTabGV'
-alias ,I='vimapi.sh --in-new-tab "MyIDE"'
+alias ,GS='vimapi.sh --in-new-tab MyGstatusToggle'
+alias ,GV='vimapi.sh --in-new-tab MyGV'
+alias ,I='vimapi.sh --in-new-tab MyIDE'
 alias ,T='vimapi.sh MyTerm'
 alias ,V='vimapi.sh MyTermV'
 
@@ -101,10 +101,10 @@ alias ,scratchpad='vimapi.sh --in-prev-win "Bmk scratchpad"'
 alias ,dia='vimapi.sh --in-prev-win "Bmk dia"'
 alias ,todo='vimapi.sh --in-prev-win "Bmk todo"'
 
-alias ,memo='vimapi.sh --in-prev-win "MyMemo"'
-alias ,help='vimapi.sh --in-prev-win "MyHelp"'
-alias ,man='vimapi.sh --in-prev-win "MyMan"'
-alias ,pydoc='vimapi.sh --in-prev-win "MyPydoc"'
+alias ,memo='vimapi.sh --in-prev-win MyMemo'
+alias ,help='vimapi.sh --in-prev-win MyHelp'
+alias ,man='vimapi.sh --in-prev-win MyMan'
+alias ,pydoc='vimapi.sh --in-prev-win MyPydoc'
 
 alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
@@ -115,7 +115,7 @@ alias ,e='vimapi.sh --in-prev-win edit --filepath'
 alias ,sp='vimapi.sh --in-prev-win split --filepath'
 alias ,tabe='vimapi.sh tabedit --filepath'
 alias ,diff='vimapi.sh MyTabDiff'
-alias ,dirdiff='vimapi.sh "MyTabDirDiff"'
+alias ,dirdiff='vimapi.sh MyTabDirDiff'
 alias ,vim='vimapi.sh'
 
 ,cd() { cd "$@"; ,TCD; }

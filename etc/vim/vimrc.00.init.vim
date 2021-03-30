@@ -129,7 +129,7 @@ let g:my_gstatus_winheight = 12
 let g:my_help_winwidth = 82
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
-let g:my_scratchpad_file = "$MY_DIARY/scratchpad.md.html"
+let g:bmk_file = "$MY_HOME/.my.common/bmk.txt"
 
 let g:mapleader = "\<Space>"
 "let g:mapleader = ','
