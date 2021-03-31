@@ -30,6 +30,8 @@ f_make() {
 f_install() {
 	cp $BUILD_DIR/.vimrc.env $HOME
 	cp $BUILD_DIR/.vimrc $HOME
+  cp min_gvimrc.vim $HOME/_vimrc
+  cp min_gvimrc.vim $MY_HOME/_vimrc
 }
 
 f_install_min() {
