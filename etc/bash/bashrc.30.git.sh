@@ -138,8 +138,4 @@ gg()   { git graph --color=always $* | less -EFRSX; }
 gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
 gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
-alias G='gg-d -15'
-alias GA='gg-d -15 --all'
-alias GM='gg-d -4; git status -s; git-submodule.sh'
-
 #------------------------------------------------------

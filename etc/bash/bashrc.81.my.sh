@@ -90,8 +90,8 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 # vimapi
 #------------------------------------------------------
-alias ,GS='vimapi.sh --in-new-tab MyGstatusToggle'
-alias ,GV='vimapi.sh --in-new-tab MyGV'
+alias ,GS=',TCD; vimapi.sh --in-new-tab MyGstatusToggle'
+alias ,GV=',TCD; vimapi.sh --in-new-tab MyGV'
 alias ,I='vimapi.sh --in-new-tab MyIDE'
 alias ,T='vimapi.sh MyTerm'
 alias ,V='vimapi.sh MyTermV'
@@ -110,7 +110,9 @@ alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
 alias ,NERDTREE='vimapi.sh MyNERDTreeT2E --filepath $PWD'
 alias ,nerdtree='vimapi.sh MyNERDTreeT2E --filepath'
+
 alias ,resize='vimapi.sh MyWinResize'
+
 alias ,e='vimapi.sh --in-above-win edit --filepath'
 alias ,sp='vimapi.sh --in-above-win split --filepath'
 alias ,tabe='vimapi.sh tabedit --filepath'
@@ -122,4 +124,11 @@ alias ,vim='vimapi.sh'
 ,nt() { cd "$@"; ,NERDTREE; ,TCD; }
 alias d=',cd'
 alias D=',nt'
+
+#------------------------------------------------------
+# git
+#------------------------------------------------------
+alias G='gg-d -6'
+alias GA='gg-d -6 --all'
+alias GM='git-submodule.sh'
 
