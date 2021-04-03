@@ -242,6 +242,11 @@ func Tapi_ExecInPrevWin(_, cmdline)
   exec a:cmdline
 endfunc
 
+func Tapi_ExecInAboveWin(_, cmdline)
+  wincmd k
+  exec a:cmdline
+endfunc
+
 func Tapi_ExecInNewTab(_, cmdline)
   tabedit
   exec a:cmdline

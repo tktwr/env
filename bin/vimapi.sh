@@ -15,6 +15,9 @@ f_help() {
   echo "OPTIONS"
   echo "  -h, --help            ... print help"
   echo "  --filepath <filepath> ... filepath"
+  echo "  --in-prev-win         ... exec in prev win"
+  echo "  --in-above-win        ... exec in above win"
+  echo "  --in-new-tab          ... exec in new tab"
 }
 
 f_vimapi_exec() {
@@ -23,6 +26,10 @@ f_vimapi_exec() {
 
 f_vimapi_exec_in_prev_win() {
   printf '\e]51;["call","Tapi_ExecInPrevWin","%s"]\x07' "$1"
+}
+
+f_vimapi_exec_in_above_win() {
+  printf '\e]51;["call","Tapi_ExecInAboveWin","%s"]\x07' "$1"
 }
 
 f_vimapi_exec_in_new_tab() {
@@ -38,6 +45,9 @@ f_args() {
         ;;
       --in-prev-win)
         g_where="_in_prev_win"
+        ;;
+      --in-above-win)
+        g_where="_in_above_win"
         ;;
       --in-new-tab)
         g_where="_in_new_tab"
