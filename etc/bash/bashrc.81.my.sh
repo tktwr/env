@@ -92,9 +92,11 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 alias ,GS=',TCD; vimapi.sh --in-new-tab MyGstatusToggle'
 alias ,GV=',TCD; vimapi.sh --in-new-tab MyGV'
-alias ,I='vimapi.sh --in-new-tab MyIDE'
-alias ,T='vimapi.sh MyTerm'
-alias ,V='vimapi.sh MyTermV'
+alias ,T=',TCD; vimapi.sh MyTerm'
+alias ,V=',TCD; vimapi.sh MyTermV'
+
+alias ,diff=',TCD; vimapi.sh MyTabDiff'
+alias ,dirdiff=',TCD; vimapi.sh MyTabDirDiff'
 
 alias ,bmk='vimapi.sh --in-above-win "Bmk bmk"'
 alias ,scratchpad='vimapi.sh --in-above-win "Bmk scratchpad"'
@@ -117,8 +119,6 @@ alias ,vresize='vimapi.sh MyWinVResize'
 alias ,e='vimapi.sh --in-above-win edit --filepath'
 alias ,sp='vimapi.sh --in-above-win split --filepath'
 alias ,tabe='vimapi.sh tabedit --filepath'
-alias ,diff='vimapi.sh MyTabDiff'
-alias ,dirdiff='vimapi.sh MyTabDirDiff'
 alias ,vim='vimapi.sh'
 
 ,cd() { cd "$@"; ,TCD; }

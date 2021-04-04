@@ -42,7 +42,7 @@ hi! link StatusLine       MyStatusLine
 hi! link StatusLineNC     MyStatusLineNC
 hi! link StatusLineTerm   MyAquaRevBold
 hi! link StatusLineTermNC MyStatusLineNC
-hi! link TabLineSel       MyGreenRevBold
+hi! link TabLineSel       MyAquaRevBold
 hi! link TabLine          MyStatusLine
 hi! link TabLineFill      MyStatusLineNC
 
