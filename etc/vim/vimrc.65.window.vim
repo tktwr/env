@@ -63,11 +63,47 @@ func MyWinInfo()
   echo "lines: ".&lines
   echo "current winwidth: ".winwidth(0)
   echo "current winheight: ".winheight(0)
-  echo "winnr: ".winnr('$')
+  echo "winnr: ".winnr()
+  echo "last winnr: ".winnr('$')
   echo "bufname: ".bufname('%')
   echo "bufnr: ".bufnr('%')
   echo "bufwinid: ".bufwinid('%')
   echo "bufwinnr: ".bufwinnr('%')
+endfunc
+
+"------------------------------------------------------
+" buffer exchange
+"------------------------------------------------------
+func MyWinBufExchange(winnr)
+  let src_bufnr = bufnr('%')
+  exec a:winnr."wincmd w"
+  let dst_bufnr = bufnr('%')
+  exec src_bufnr."b"
+  wincmd p
+  exec dst_bufnr."b"
+endfunc
+
+"------------------------------------------------------
+" window move
+"------------------------------------------------------
+func MyWinFindTerm()
+  let last_winnr = winnr('$')
+  let i = 1
+  while i <= last_winnr
+    exec i."wincmd w"
+    if &buftype == 'terminal'
+      return i
+    endif
+    let i = i + 1
+  endwhile
+  return -1
+endfunc
+
+func MyWinMoveTerm()
+  let winnr = MyWinFindTerm()
+  if winnr != -1
+    exec winnr."wincmd w"
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -109,6 +145,11 @@ func MyWinResize(height)
   let w:orig_height = a:height
 endfunc
 
+func MyWinVResize(width)
+  exec "vertical resize" a:width
+  let w:orig_width = a:width
+endfunc
+
 func MyWinPlace(place)
   exec "wincmd " a:place
 endfunc
@@ -143,20 +184,22 @@ endfunc
 "------------------------------------------------------
 " NERDTree
 "------------------------------------------------------
-func MyOpenNERDTree(url)
-  let l:dir = MyExpandDir(a:url)
-  exec "silent NERDTree" l:dir
-endfunc
-
-func MyNERDTreeToggle()
+func MyNERDTreeOpen()
   if (&filetype == "nerdtree")
     NERDTreeToggle
   elseif (&filetype == "")
     NERDTree
   else
-    call MyOpenNERDTree("")
     "NERDTreeFind
+    let l:dir = MyExpandDir("")
+    exec "silent NERDTree" l:dir
   endif
+endfunc
+
+func MyNERDTreeFileOpen(winnr)
+  exec a:winnr."wincmd w"
+  wincmd p
+  call nerdtree#ui_glue#invokeKeyMap("<CR>")
 endfunc
 
 "======================================================
@@ -166,11 +209,11 @@ endfunc
 " open terminal
 "------------------------------------------------------
 func MyIsFullscreen()
-  let l:is_fullscreen = 0
-  if v:echospace > 150
-    let l:is_fullscreen = 1
+  if &columns > 150
+    return 1
+  else
+    return 0
   endif
-  return l:is_fullscreen
 endfunc
 
 func MyTerm(...)
@@ -296,6 +339,7 @@ command -nargs=1 MyPydoc        call MyPydoc(<f-args>)
 
 command -nargs=0 MyWinInfo      call MyWinInfo()
 command -nargs=1 MyWinResize    call MyWinResize(<f-args>)
+command -nargs=1 MyWinVResize   call MyWinVResize(<f-args>)
 
 command -nargs=? MyTerm         call MyTerm(<f-args>)
 command -nargs=0 MyTermV        call MyTermV()
@@ -303,12 +347,13 @@ command -nargs=1 -complete=dir  MyNERDTreeT2E  call MyNERDTreeT2E(<f-args>)
 
 command MyIDE                   call MyIDE()
 command MyGstatusToggle         call MyGstatusToggle()
-command MyNERDTreeToggle        call MyNERDTreeToggle()
+command MyNERDTreeOpen          call MyNERDTreeOpen()
+command MyNERDTreeToggle        NERDTreeToggle
 command MyTagbarToggle          TagbarToggle
 command MyGV                    call MyGV()
 
 "------------------------------------------------------
-" command tab
+" command in new tab
 "------------------------------------------------------
 command -nargs=+ -complete=file MyTabDiff      call MyTabDiff(<f-args>)
 command -nargs=+ -complete=dir  MyTabDirDiff   call MyTabDirDiff(<f-args>)

@@ -5,6 +5,11 @@ hi! link User1   MyAquaRevBold
 hi! link User2   MyAquaRevBold
 hi! link User3   MyYellowRevBold
 
+func MyStatuslineWinInfo()
+  let l:winnr = winnr()
+  return '['.l:winnr.'] '
+endfunc
+
 func MyStatuslineFname()
   let l:cwd = getcwd()
   let l:dir = expand("%:p:h")
@@ -23,8 +28,9 @@ func MyStatuslineEnc()
 endfunc
 
 func MyStatusline()
-  let l:statusline = MyStatuslineFname()
-  let l:statusline.="\ %h%m%r%w%{MyStatuslineEnc()}"
+  let l:statusline = "%{MyStatuslineWinInfo()}"
+  let l:statusline.= MyStatuslineFname()
+  let l:statusline.="\ %y%h%w%q%m%r%{MyStatuslineEnc()}"
   "let l:statusline.="\ %{coc#status()}"
   let l:statusline.="\ %=%l/%L,%c%V%4p%%"
   let l:statusline.="\ %2*%{FugitiveStatusline()}%0*"

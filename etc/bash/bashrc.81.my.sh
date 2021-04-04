@@ -112,6 +112,7 @@ alias ,NERDTREE='vimapi.sh MyNERDTreeT2E --filepath $PWD'
 alias ,nerdtree='vimapi.sh MyNERDTreeT2E --filepath'
 
 alias ,resize='vimapi.sh MyWinResize'
+alias ,vresize='vimapi.sh MyWinVResize'
 
 alias ,e='vimapi.sh --in-above-win edit --filepath'
 alias ,sp='vimapi.sh --in-above-win split --filepath'
