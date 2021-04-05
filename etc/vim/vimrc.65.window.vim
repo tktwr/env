@@ -63,12 +63,13 @@ func MyWinInfo()
   echo "lines: ".&lines
   echo "current winwidth: ".winwidth(0)
   echo "current winheight: ".winheight(0)
-  echo "winnr: ".winnr()
+  echo "current winnr: ".winnr()
   echo "last winnr: ".winnr('$')
-  echo "bufname: ".bufname('%')
-  echo "bufnr: ".bufnr('%')
-  echo "bufwinid: ".bufwinid('%')
-  echo "bufwinnr: ".bufwinnr('%')
+  echo "bufnr of current win: ".winbufnr(0)
+  echo "bufnr of current buf: ".bufnr('%')
+  echo "bufname of current buf: ".bufname('%')
+  echo "winid of current buf: ".bufwinid('%')
+  echo "winnr of current buf: ".bufwinnr('%')
 endfunc
 
 "------------------------------------------------------
@@ -266,11 +267,10 @@ endfunc
 
 " send 'cd dir' to a terminal
 func MyTermSendCd(dir)
-  let l:nr = bufnr("!/usr/bin/bash")
   let l:dir = MyExpandDir(a:dir)
-  call term_sendkeys(l:nr, "cd ".l:dir."\<CR>")
-  let l:winnr = bufwinnr("!/usr/bin/bash")
-  exec l:winnr."wincmd w"
+  wincmd j
+  let l:bufnr = winbufnr(0)
+  call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
 endfunc
 
 "------------------------------------------------------
@@ -285,9 +285,14 @@ func Tapi_ExecInPrevWin(_, cmdline)
   exec a:cmdline
 endfunc
 
-func Tapi_ExecInAboveWin(_, cmdline)
+func Tapi_ExecInAboveWin(bufnr, cmdline)
   wincmd k
   exec a:cmdline
+  let width = winwidth(0)
+  let winnr = bufwinnr(a:bufnr)
+  exec winnr."wincmd w"
+  exec "vertical resize" width
+  wincmd p
 endfunc
 
 func Tapi_ExecInNewTab(_, cmdline)

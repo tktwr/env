@@ -90,13 +90,13 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 # vimapi
 #------------------------------------------------------
-alias ,GS=',TCD; vimapi.sh --in-new-tab MyGstatusToggle'
-alias ,GV=',TCD; vimapi.sh --in-new-tab MyGV'
-alias ,T=',TCD; vimapi.sh MyTerm'
-alias ,V=',TCD; vimapi.sh MyTermV'
+alias ,GS=',LCD; vimapi.sh --in-new-tab MyGstatusToggle'
+alias ,GV=',LCD; vimapi.sh --in-new-tab MyGV'
+alias ,T=',LCD; vimapi.sh MyTerm'
+alias ,V=',LCD; vimapi.sh MyTermV'
 
-alias ,diff=',TCD; vimapi.sh MyTabDiff'
-alias ,dirdiff=',TCD; vimapi.sh MyTabDirDiff'
+alias ,diff=',LCD; vimapi.sh MyTabDiff'
+alias ,dirdiff=',LCD; vimapi.sh MyTabDirDiff'
 
 alias ,bmk='vimapi.sh --in-above-win "Bmk bmk"'
 alias ,scratchpad='vimapi.sh --in-above-win "Bmk scratchpad"'
@@ -108,6 +108,8 @@ alias ,help='vimapi.sh --in-above-win MyHelp'
 alias ,man='vimapi.sh --in-above-win MyMan'
 alias ,pydoc='vimapi.sh --in-above-win MyPydoc'
 
+alias ,LCD='vimapi.sh lcd --filepath $PWD'
+alias ,lcd='vimapi.sh lcd --filepath'
 alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
 alias ,NERDTREE='vimapi.sh MyNERDTreeT2E --filepath $PWD'

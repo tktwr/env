@@ -37,20 +37,35 @@ func MyStatusline()
   return l:statusline
 endfunc
 
-func MyStatuslineTerm()
-  let l:statusline = "[terminal]"
-  let l:cwd = getcwd()
+func MyStatuslineTermCWD()
+  if haslocaldir() == 1
+    let l:type = "local"
+    let l:cwd = getcwd()
+  elseif haslocaldir() == 2
+    let l:type = "tab"
+    let l:cwd = getcwd(-1, 0)
+  else
+    let l:type = "global"
+    let l:cwd = getcwd(-1)
+  endif
   let l:cwd = substitute(l:cwd, expand("$HOME"), '~', "")
-  let l:statusline.="\ [cwd:".l:cwd."]"
-  return l:statusline
+  let l:cwd = substitute(l:cwd, expand("$MY_HOME"), '^', "")
+  return "[".l:type.":".l:cwd."]"
 endfunc
 
-func MySetTerm()
-  setl statusline=%!MyStatuslineTerm()
+func MyStatuslineTerm()
+  let l:statusline = "%{MyStatuslineWinInfo()}"
+  let l:statusline.= "[terminal]"
+  let l:statusline.="\ %{MyStatuslineTermCWD()}"
+  return l:statusline
 endfunc
 
 set laststatus=2
 set statusline=%!MyStatusline()
+
+func MySetTerm()
+  setl statusline=%!MyStatuslineTerm()
+endfunc
 
 autocmd TerminalOpen * call MySetTerm()
 
