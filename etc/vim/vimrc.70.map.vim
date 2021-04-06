@@ -52,7 +52,7 @@ nnoremap <C-N>   :cn<CR>
 nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-A>   :MyMakeLink<CR>
 
-nnoremap <C-.>   :MyTcdHere<CR>
+nnoremap <C-.>   :MyLcdHere<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
@@ -117,10 +117,10 @@ nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle()<CR>
 
 tnoremap <C-0> <C-W>:echo "C-0"<CR>
 tnoremap <C-1> <C-W>t
-tnoremap <C-@> <C-W>:echo "C-2"<CR>
-tnoremap <C-3> <C-W>:echo "C-3"<CR>
-tnoremap <C-4> <C-W>:echo "C-4"<CR>
-tnoremap <C-5> <C-W>:echo "C-5"<CR>
+tnoremap <C-@> <C-W>:call MyWinBufExchange(2)<CR>
+tnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
+tnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
+tnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
 tnoremap <C-^> <C-W>:echo "C-6"<CR>
 tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
 tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
