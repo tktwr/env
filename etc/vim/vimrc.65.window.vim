@@ -1,6 +1,14 @@
 "======================================================
 " window
 "======================================================
+func MyTrans()
+  exec "below term ++rows=".g:my_trans_winheight." ++close trans -I -b"
+endfunc
+
+func MyDict()
+  exec "below term ++rows=".g:my_trans_winheight." ++close trans -I"
+endfunc
+
 func MyMemo(...)
   exec "vertical resize" g:my_help_winwidth
   if a:0 == 0
@@ -155,6 +163,14 @@ func MyWinPlace(place)
   exec "wincmd " a:place
 endfunc
 
+func MyIsFullscreen()
+  if &columns > 150
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
 "------------------------------------------------------
 " MyIDE
 "------------------------------------------------------
@@ -203,114 +219,6 @@ func MyNERDTreeFileOpen(winnr)
   call nerdtree#ui_glue#invokeKeyMap("<CR>")
 endfunc
 
-"======================================================
-" terminal
-"======================================================
-"------------------------------------------------------
-" open terminal
-"------------------------------------------------------
-func MyIsFullscreen()
-  if &columns > 150
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
-func MyTerm(...)
-  if a:0 == 0
-    let l:type = 0
-  else
-    let l:type = a:1
-  endif
-  if l:type == 0
-    let l:is_fullscreen = MyIsFullscreen()
-    if l:is_fullscreen
-      exec "below term ++rows=".g:my_term_winheight
-    else
-      exec "bot term ++rows=".g:my_term_winheight
-    endif
-    set winfixheight
-  elseif l:type == 1
-    tabedit
-    bot term
-    only
-  elseif l:type == 2
-    tabedit
-    bot term
-    only
-    bot term
-  endif
-endfunc
-
-func MyTermV()
-  vnew
-  exec "term ++rows=1"
-  wincmd p
-  close
-  exec "resize".g:my_term_winheight
-  set winfixheight
-endfunc
-
-"------------------------------------------------------
-" editor to terminal
-"------------------------------------------------------
-" send a cmd to a terminal
-func MyTermSendCmd(cmd)
-  let l:nr = bufnr("!/usr/bin/bash")
-  let l:cmd = a:cmd
-  if (l:cmd == "")
-    let l:cmd = getline('.')
-  endif
-	call term_sendkeys(l:nr, l:cmd."\<CR>")
-endfunc
-
-" send 'cd dir' to a terminal
-func MyTermSendCd(dir)
-  let l:dir = MyExpandDir(a:dir)
-  wincmd j
-  let l:bufnr = winbufnr(0)
-  call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-endfunc
-
-"------------------------------------------------------
-" terminal to editor
-"------------------------------------------------------
-func Tapi_Exec(_, cmdline)
-  exec a:cmdline
-endfunc
-
-func Tapi_ExecInPrevWin(_, cmdline)
-  wincmd p
-  exec a:cmdline
-endfunc
-
-func Tapi_ExecInAboveWin(bufnr, cmdline)
-  wincmd k
-  exec a:cmdline
-  let width = winwidth(0)
-  let winnr = bufwinnr(a:bufnr)
-  exec winnr."wincmd w"
-  exec "vertical resize" width
-  wincmd p
-endfunc
-
-func Tapi_ExecInNewTab(_, cmdline)
-  tabedit
-  exec a:cmdline
-endfunc
-
-func MyNERDTreeT2E(dir)
-  exec "NERDTree" a:dir
-
-  let l:is_fullscreen = MyIsFullscreen()
-  if !l:is_fullscreen
-    exec "wincmd p"
-    call MyWinPlace("J")
-    exec "wincmd p"
-  endif
-endfunc
-
 "------------------------------------------------------
 " func tab
 "------------------------------------------------------
@@ -337,6 +245,9 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
+command MyTrans                 call MyTrans()
+command MyDict                  call MyDict()
+
 command -nargs=? MyMemo         call MyMemo(<f-args>)
 command -nargs=? MyHelp         call MyHelp(<f-args>)
 command -nargs=1 MyMan          call MyMan(<f-args>)
@@ -345,10 +256,6 @@ command -nargs=1 MyPydoc        call MyPydoc(<f-args>)
 command -nargs=0 MyWinInfo      call MyWinInfo()
 command -nargs=1 MyWinResize    call MyWinResize(<f-args>)
 command -nargs=1 MyWinVResize   call MyWinVResize(<f-args>)
-
-command -nargs=? MyTerm         call MyTerm(<f-args>)
-command -nargs=0 MyTermV        call MyTermV()
-command -nargs=1 -complete=dir  MyNERDTreeT2E  call MyNERDTreeT2E(<f-args>)
 
 command MyIDE                   call MyIDE()
 command MyGstatusToggle         call MyGstatusToggle()

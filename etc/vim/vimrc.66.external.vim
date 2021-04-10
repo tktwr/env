@@ -28,3 +28,18 @@ func MyEdit(url)
   exec "edit" l:result["url"]
 endfunc
 
+func s:ClangFormat()
+  !clang-format -i %
+endfunc
+
+"------------------------------------------------------
+" command
+"------------------------------------------------------
+command ClangFormat        call s:ClangFormat()
+
+command RunExplorer        silent !explorer.exe %:h
+command RunGvim            silent !gvim "%"
+command RunVscode          silent !vscode.sh "%"
+command RunChrome          silent !chrome.sh "%"
+command RunFirefox         silent !firefox "%"
+

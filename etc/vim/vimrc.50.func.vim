@@ -38,16 +38,3 @@ func MyExpandDir(url)
   return l:dir
 endfunc
 
-func MyRedraw()
-  redraw!
-  set invnumber
-  set invlist
-  call quickhl#manual#reset()
-  nohlsearch
-  let l:dir = getcwd()
-  let l:file = expand("%")
-  echo "cwd : ".l:dir
-  echo "file: ".l:file
-  "file
-endfunc
-

@@ -1,10 +1,6 @@
 "------------------------------------------------------
 " dev.func
 "------------------------------------------------------
-func s:ClangFormat()
-  !clang-format -i %
-endfunc
-
 func s:MyEditAltSrc()
   let ext = expand("%:e")
   if (ext == "c" || ext == "cxx" || ext == "cpp")
@@ -29,7 +25,6 @@ endfunc
 "------------------------------------------------------
 " dev.command
 "------------------------------------------------------
-command ClangFormat        call s:ClangFormat()
 command MyEditAltSrc       call s:MyEditAltSrc()
 command MyStartProf        call s:MyStartProf()
 command MyEndProf          call s:MyEndProf()

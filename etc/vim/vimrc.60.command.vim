@@ -4,16 +4,26 @@
 "------------------------------------------------------
 " func
 "------------------------------------------------------
-func s:Trans()
-  exec "bot term ++rows=".g:my_trans_winheight." ++close trans -I -b"
+func s:MyGrep(args)
+  lcd %:h
+  silent exec "vimgrep ".a:args
 endfunc
 
-func s:Dict()
-  exec "bot term ++rows=".g:my_trans_winheight." ++close trans -I"
+func s:MyGrepHere(args)
+  lcd %:h
+  silent exec "vimgrep <cword> ".a:args
 endfunc
 
-func s:MyVimGrep(word)
-  silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
+"func s:MyGrep(word)
+"  silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
+"endfunc
+
+func s:MyGgrep(word)
+  Ggrep -I a:word -- ':!*.dat'
+endfunc
+
+func s:MyGgrepHere()
+  Ggrep -I <cword> -- ':!*.dat'
 endfunc
 
 func s:MySetTab(nr)
@@ -49,40 +59,45 @@ func s:MyCheckEnv()
   pwd
 endfunc
 
+func s:MyRedraw()
+  redraw!
+  set invnumber
+  set invlist
+  call quickhl#manual#reset()
+  nohlsearch
+  let l:dir = getcwd()
+  let l:file = expand("%")
+  echo "cwd : ".l:dir
+  echo "file: ".l:file
+  "file
+endfunc
+
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command MyRedraw call MyRedraw()
+command -nargs=+ MyGrep      call s:MyGrep("<args>")
+command -nargs=+ MyGrepHere  call s:MyGrepHere("<args>")
+command -nargs=+ MyGgrep     call s:MyGgrep("<args>")
+command -nargs=0 MyGgrepHere call s:MyGgrepHere()
 
-command Trans              call s:Trans()
-command Dict               call s:Dict()
-command -nargs=1 MySetTab  call s:MySetTab("<args>")
-command MyLineNumberToggle call s:MyLineNumberToggle()
-command MyCheckEnv         call s:MyCheckEnv()
+command -nargs=1 MySetTab    call s:MySetTab("<args>")
+command MyLineNumberToggle   call s:MyLineNumberToggle()
+command MyCheckEnv           call s:MyCheckEnv()
 
-command -nargs=+ VimGrep   call s:MyVimGrep("<args>")
-command VimGrepHere        VimGrep <cword>
-
-command GgrepHere          Ggrep -I <cword> -- ':!*.dat'
+command MyRedraw             call s:MyRedraw()
 
 " apply the command to each entry in the quickfix list
-command Cdo      cdo execute "normal! @q" | w
+command MyCdo      cdo execute "normal! @q" | w
 " apply the command to each file in the quickfix list
-command Cfdo     cfdo execute "normal! @q" | w
+command MyCfdo     cfdo execute "normal! @q" | w
 
-command RunExplorer        silent !explorer.exe %:h
-command RunGvim            silent !gvim "%"
-command RunVscode          silent !vscode.sh "%"
-command RunChrome          silent !chrome.sh "%"
-command RunFirefox         silent !firefox "%"
+command MyTabBar             Tabularize /|
+command MyTabDots            Tabularize /\.\.\.
+command MyTabComma           Tabularize /,
 
-command TabBar             Tabularize /|
-command TabDots            Tabularize /\.\.\.
-command TabComma           Tabularize /,
-
-command MyCdHere           cd %:h
-command MyTcdHere          tcd %:h
-command MyLcdHere          lcd %:h
+command MyCdHere             cd %:h
+command MyTcdHere            tcd %:h
+command MyLcdHere            lcd %:h
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 

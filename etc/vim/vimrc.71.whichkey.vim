@@ -11,8 +11,6 @@ vmap     <leader>C            <plug>NERDCommenterToggle
 
 nnoremap <leader>0            <C-W>:MyTerm 0<CR>
 nnoremap <leader>1            :MyNERDTreeToggle<CR>
-nnoremap <leader>2            <C-W>:DiaTop<CR>
-nnoremap <leader>3            <C-W>:Memo<CR>
 nnoremap <leader>4            <C-W>:Dict<CR>
 nnoremap <leader>5            <C-W>:Trans<CR>
 nnoremap <leader>6            :VimGrepHere<CR>
@@ -28,6 +26,7 @@ nnoremap <leader>R            :make run<CR>
 nnoremap <leader>Q            :confirm qall<CR>
 vnoremap <leader>y            "*y
 nnoremap <leader>p            "*p
+nnoremap <leader>s            :source ~/.vimrc<CR>
 
 nnoremap <leader>T0           <C-W>:MyTerm 0<CR>
 nnoremap <leader>T1           <C-W>:MyTerm 1<CR>

@@ -104,7 +104,7 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window.resize
 "------------------------------------------------------
-nnoremap <C-0> <C-W>:echo "C-0"<CR>
+nnoremap <C-0> <C-W>b
 nnoremap <C-1> <C-W>t
 nnoremap <C-@> <C-W>:call MyWinBufExchange(2)<CR>
 nnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
@@ -115,7 +115,7 @@ nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
 nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
 nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle()<CR>
 
-tnoremap <C-0> <C-W>:echo "C-0"<CR>
+tnoremap <C-0> <C-W>b
 tnoremap <C-1> <C-W>t
 tnoremap <C-@> <C-W>:call MyWinBufExchange(2)<CR>
 tnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>

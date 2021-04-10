@@ -10,7 +10,7 @@ func s:MySystem(str)
   return s:RemoveNL(system(a:str))
 endfunc
 
-func s:TogglePathFormat()
+func s:MyTogglePathFormat()
   let l:path = getline('.')
   let l:ch = l:path[col('.')-1]
 
@@ -70,7 +70,7 @@ endfunc
 "------------------------------------------------------
 " edit.command
 "------------------------------------------------------
-command TogglePathFormat         call s:TogglePathFormat()
+command MyTogglePathFormat       call s:MyTogglePathFormat()
 command MyUpdateLastChange       call s:MyUpdateLastChange()
 command MyAddTime                call s:MyAddTime()
 command -nargs=? MyAddDate       call s:MyAddDate("<args>")
