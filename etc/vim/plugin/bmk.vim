@@ -17,6 +17,9 @@ func s:BmkLoad()
   endif
   let lines = readfile(bmk_file)
   for line in lines
+    if line[0] == '#'
+      continue
+    endif
     let mx='\(\w\+\)\s\+\(\f\+\)'
     let line = matchstr(line, mx)
     let key = substitute(line, mx, '\1', '')

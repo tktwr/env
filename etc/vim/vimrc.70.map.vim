@@ -42,7 +42,7 @@ nnoremap <C-D>   <C-B>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
-nnoremap <C-B>   :call MyWinMoveTerm()<CR>
+nnoremap <C-B>   :Bmk bmk<CR>
 nnoremap <C-X>   :close<CR>
 nnoremap <C-E>   :only<CR>
 
