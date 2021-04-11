@@ -30,6 +30,10 @@ vimdiff:
 vimdirdiff:
 	./dot.sh --all-files --vimdirdiff
 
+.PHONY: tags
+tags:
+	ctags bash/*.sh vim/*.vim
+
 #------------------------------------------------------
 
 help:

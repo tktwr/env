@@ -55,18 +55,24 @@ func BmkPreviewFileInWin(winnr)
 endfunc
 
 func BmkKeyCR()
-  let winnr = winnr()
-  if winnr == 1
+  let result = MyGetKeyFnameHere()
+  let key = result["key"]
+  let fname = result["fname"]
+
+  let result = MyExpand(fname)
+  let type = result["type"]
+  let url = result["url"]
+
+  if type == "dir"
     call BmkOpenDirInNERDTree()
   else
-    call BmkEditFileInWin(0)
+    call BmkEditFileInWin(2)
   endif
 endfunc
 
 func s:BmkMap()
   nnoremap <buffer> <C-B>   :b#<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>
-  "nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
   nnoremap <buffer> 2       :call BmkEditFileInWin(2)<CR>
   nnoremap <buffer> 3       :call BmkEditFileInWin(3)<CR>
   nnoremap <buffer> 4       :call BmkEditFileInWin(4)<CR>
@@ -80,7 +86,7 @@ func s:BmkMapWin()
 
   let winnr = winnr()
   if winnr == 1
-    nnoremap <buffer> <CR>    :call BmkOpenDirInNERDTree()<CR>
+    nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +
     nnoremap <buffer> h       :b#<CR>
