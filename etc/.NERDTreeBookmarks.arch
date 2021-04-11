@@ -4,6 +4,8 @@
 11.l.etc $MY_LOCAL_CONFIG/env/etc
 12.p.etc $MY_PRIVATE_CONFIG/env/etc
 50.git $MY_GIT
+71.[cmdline] $MY_ETC/bmk/cmdline.txt
+72.[dir] $MY_ETC/bmk/dir.txt
 73.[links] $MY_ETC/bmk/links.md.html
 85.[papers] $MY_PAPERS/papers.md.html
 86.[memo] $MY_MEMO/my.md.html

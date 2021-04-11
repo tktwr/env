@@ -24,6 +24,10 @@ f_init() {
   f_make --min
 }
 
+f_bmk() {
+  cp bmk/bmk.txt $MY_HOME/.my.common/bmk.txt
+}
+
 f_make() {
   ./dot.sh --common-files --cp
   $MY_PYTHON_EXE ./nerdtree_bmk.py > ~/.NERDTreeBookmarks
@@ -51,6 +55,9 @@ f_args() {
         ;;
       --min)
         f_make --min
+        ;;
+      --bmk)
+        f_bmk
         ;;
       --clean)
         f_make --clean

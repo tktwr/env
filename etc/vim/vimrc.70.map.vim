@@ -42,7 +42,7 @@ nnoremap <C-D>   <C-B>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
-nnoremap <C-B>   :Bmk bmk<CR>
+nnoremap <C-B>   :Bmk bmk.txt<CR>
 nnoremap <C-X>   :close<CR>
 nnoremap <C-E>   :only<CR>
 
@@ -56,10 +56,10 @@ nnoremap <C-.>   :MyLcdHere<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
-nnoremap <CR>    :call MyEdit("")<CR>
+nnoremap <CR>    :call MyEdit(0, "")<CR>
 
-nnoremap <C-CR>  :MyNERDTreeOpen<CR>
-nnoremap <S-CR>  :call MyOpen("")<CR>
+nnoremap <C-CR>  :call MyOpen("")<CR>
+nnoremap <S-CR>  :MyNERDTreeOpen<CR>
 
 "nnoremap <C-TAB> :echo "C-TAB"<CR>
 "nnoremap <C-BS>  :echo "C-BS"<CR>
@@ -134,14 +134,14 @@ nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 nnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
 nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-nnoremap <silent> <Del>      <C-W>:tabclose<CR>
+nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
 tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-tnoremap <silent> <Del>      <C-W>:tabclose<CR>
+tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 
 "======================================================
 " autocmd
@@ -162,10 +162,10 @@ func s:my_nerdtree_settings()
   nmap <buffer> <Space> goq
   nmap <buffer> <C-J>   <C-W>w
   nmap <buffer> <C-K>   <C-W>W
-  nmap <buffer> 2       :call MyNERDTreeFileOpen(2)<CR>
-  nmap <buffer> 3       :call MyNERDTreeFileOpen(3)<CR>
-  nmap <buffer> 4       :call MyNERDTreeFileOpen(4)<CR>
-  nmap <buffer> 5       :call MyNERDTreeFileOpen(5)<CR>
+  nmap <buffer> 2       :call MyNERDTreeEdit(2)<CR>
+  nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
+  nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
+  nmap <buffer> 5       :call MyNERDTreeEdit(5)<CR>
 endfunc
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()

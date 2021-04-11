@@ -20,6 +20,7 @@ DOT_FILES_DIFF="\
 .my/buildrc \
 .my/hostname \
 .my/pythonrc \
+bmk/bmk.txt \
 "
 DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 DOT_FILES=""

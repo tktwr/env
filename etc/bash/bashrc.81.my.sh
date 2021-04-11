@@ -123,6 +123,8 @@ alias ,sp='vimapi.sh --in-above-win split --filepath'
 alias ,tabe='vimapi.sh tabedit --filepath'
 alias ,vim='vimapi.sh'
 
+alias ,set_tab='vimapi.sh MyTabSetLabel'
+
 ,cd() { cd "$@"; ,TCD; }
 ,nt() { cd "$@"; ,NERDTREE; ,TCD; }
 alias d=',cd'

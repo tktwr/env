@@ -59,17 +59,8 @@ func s:MyCheckEnv()
   pwd
 endfunc
 
-func s:MyRedraw()
-  redraw!
-  set invnumber
-  set invlist
-  call quickhl#manual#reset()
-  nohlsearch
-  let l:dir = getcwd()
-  let l:file = expand("%")
-  echo "cwd : ".l:dir
-  echo "file: ".l:file
-  "file
+func s:MySourceVimrc()
+  source ~/.vimrc
 endfunc
 
 "------------------------------------------------------
@@ -84,7 +75,7 @@ command -nargs=1 MySetTab    call s:MySetTab("<args>")
 command MyLineNumberToggle   call s:MyLineNumberToggle()
 command MyCheckEnv           call s:MyCheckEnv()
 
-command MyRedraw             call s:MyRedraw()
+command MySourceVimrc        call s:MySourceVimrc()
 
 " apply the command to each entry in the quickfix list
 command MyCdo      cdo execute "normal! @q" | w

@@ -24,6 +24,7 @@ syn match    myString           "'[^']*'"
 syn match    myHtml             "<[^>]*>"
 syn match    myHtml             "http://.*"
 syn match    myHtml             "https://.*"
+syn match    myDir              "\f\+/"
 syn match    myVar              "\$\w\+"
 
 syn match    myDate             "\d\+/\d\+/\d\+"
@@ -90,6 +91,7 @@ if !exists("did_my_general_syntax_inits")
 
   hi link myString           MyAqua
   hi link myHtml             MyPurple
+  hi link myDir              MyAqua
   hi link myVar              MyGreen
 
   hi link myDate             MyYellow

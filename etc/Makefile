@@ -15,6 +15,10 @@ backup:
 init:
 	./make.sh --init
 
+.PHONY: bmk
+bmk:
+	./make.sh --bmk
+
 #------------------------------------------------------
 
 cmp:
