@@ -92,8 +92,8 @@ func s:BmkMapWin()
     nnoremap <buffer> h       :b#<CR>
     nnoremap <buffer> l       :call BmkPreviewFileInWin(2)<CR>
   else
+    nnoremap <buffer> <CR>    :call BmkEditFileInWin(0)<CR>
     if maparg('h') != ""
-      nnoremap <buffer> <CR>  :call BmkEditFileInWin(0)<CR>
       nunmap <buffer> k
       nunmap <buffer> j
       nunmap <buffer> h
