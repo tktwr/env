@@ -1,6 +1,5 @@
 " Vim syntax file
-" Language:   C
-" Maintainer: Takehiro Tawara
+" Language: C
 
 syn keyword glType      GLenum GLboolean GLbitfield
 syn keyword glType      GLbyte GLshort GLint GLsizei 
@@ -10,13 +9,6 @@ syn keyword glType      GLvoid
 syn match   glConstant  "GL_[A-Z0-9_]\+"
 syn keyword glLabel     glBegin glPushMatrix glPushAttrib
 syn keyword glLabel     glEnd glPopMatrix glPopAttrib
-
-if !exists("did_gl_syntax_inits")
-  let did_gl_syntax_inits = 1
-  hi link glType        Type
-  hi link glConstant    Constant
-  hi link glLabel       Label
-endif
 
 syn keyword cppType     uchar ushort uint ulong
 
@@ -46,8 +38,9 @@ syn keyword cppType     Image3uc Image3us Image3f
 syn keyword cppType     Image4uc Image4us Image4f
 syn keyword cppType     FileName Array Time
 
-if !exists("did_cpp_syntax_inits")
-  let did_cpp_syntax_inits = 1
-  hi link cppType	      Type
-endif
+hi link glType        Type
+hi link glConstant    Constant
+hi link glLabel       Label
+
+hi link cppType	      Type
 

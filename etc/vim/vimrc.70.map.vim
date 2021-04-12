@@ -42,6 +42,7 @@ nnoremap <C-D>   <C-B>
 " execute commands in the register q
 nnoremap <C-Q>   @q
 
+nnoremap <C-S>   :Bmk scratchpad.md<CR>
 nnoremap <C-B>   :Bmk bmk.txt<CR>
 nnoremap <C-X>   :close<CR>
 nnoremap <C-E>   :only<CR>

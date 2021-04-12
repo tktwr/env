@@ -1,13 +1,10 @@
 " Vim syntax file
 " Language: txt
-" Maintainer: Takehiro Tawara
+" see "help pattern"
 
-" Remove any old syntax stuff hanging around
 syn clear
 " syntax is case sensitive
 syn case match
-
-" see "help pattern"
 
 syn match    myComment          "#.*$"
 syn region   myComment          start="/\*" end="\*/"
@@ -74,60 +71,53 @@ else
   syn match myHyperTextEntry    "\*[#-)!+-~]\+\*$"
 endif
 
-" Highlighting
-" ============
-if !exists("did_my_general_syntax_inits")
- " The default methods for highlighting. Can be overridden later
-  let did_my_general_syntax_inits = 1
+hi link myComment          MyBlue
 
-  hi link myComment          MyBlue
+hi link mySection1         MyOrange
+hi link mySection2         MyOrange
+hi link mySection3         MyOrange
 
-  hi link mySection1         MyOrange
-  hi link mySection2         MyOrange
-  hi link mySection3         MyOrange
+hi link myItem             MyOrange
+hi link myCitation         MyPurple
 
-  hi link myItem             MyOrange
-  hi link myCitation         MyPurple
+hi link myString           MyAqua
+hi link myHtml             MyPurple
+hi link myDir              MyAqua
+hi link myVar              MyGreen
 
-  hi link myString           MyAqua
-  hi link myHtml             MyPurple
-  hi link myDir              MyAqua
-  hi link myVar              MyGreen
+hi link myDate             MyYellow
+hi link myTime             MyYellow
+hi link mySat              MyBlue
+hi link mySun              MyRed
+hi link myHoliday          MyRed
 
-  hi link myDate             MyYellow
-  hi link myTime             MyYellow
-  hi link mySat              MyBlue
-  hi link mySun              MyRed
-  hi link myHoliday          MyRed
+hi link myTag              MyPurple
 
-  hi link myTag              MyPurple
+hi link myINFO             MyYellow
+hi link myTODO             MyOrange
+hi link myDONE             MyGreen
+hi link myCANCEL           MyRed
+hi link myFIXED            MyGreen
+hi link mySOLVED           MyGreen
+hi link myOK               MyGreen
+hi link myFAIL             MyRed
 
-  hi link myINFO             MyYellow
-  hi link myTODO             MyOrange
-  hi link myDONE             MyGreen
-  hi link myCANCEL           MyRed
-  hi link myFIXED            MyGreen
-  hi link mySOLVED           MyGreen
-  hi link myOK               MyGreen
-  hi link myFAIL             MyRed
+hi link myRed              MyRed  
+hi link myGreen            MyGreen 
+hi link myYellow           MyYellow
+hi link myBlue             MyBlue  
+hi link myPurple           MyPurple
+hi link myAqua             MyAqua  
+hi link myOrange           MyOrange
 
-  hi link myRed              MyRed  
-  hi link myGreen            MyGreen 
-  hi link myYellow           MyYellow
-  hi link myBlue             MyBlue  
-  hi link myPurple           MyPurple
-  hi link myAqua             MyAqua  
-  hi link myOrange           MyOrange
+hi link myLowProgress      MyRed
+hi link myMidProgress      MyOrange
+hi link myHighProgress     MyGreen
 
-  hi link myLowProgress      MyRed
-  hi link myMidProgress      MyOrange
-  hi link myHighProgress     MyGreen
+hi link mySeparator        MyAqua
 
-  hi link mySeparator        MyAqua
-
-  hi link myHyperTextJump    MyYellow
-  hi link myHyperTextEntry   MyAqua
-endif
+hi link myHyperTextJump    MyYellow
+hi link myHyperTextEntry   MyAqua
 
 set textwidth=0
 
