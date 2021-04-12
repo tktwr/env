@@ -1,23 +1,23 @@
 [Bmk] ------------------------------  | ----------------------------------------
-- scratchpad.md                       | $MY_DIARY/scratchpad.md.html
-- dia.md                              | $MY_DIARY/diary.md.html
-- todo.md                             | $MY_DIARY/todo.md.html
+- scratchpad.md.html                  | $MY_DIARY/scratchpad.md.html
+- dia.md.html                         | $MY_DIARY/diary.md.html
+- todo.md.html                        | $MY_DIARY/todo.md.html
 - bmk.txt                             | $MY_HOME/.my.common/bmk.txt
 [proj] ------------------------------ | ----------------------------------------
 - work/                               | $MY_WORK
 - proj/                               | $MY_PROJ
 [memo] ------------------------------ | ----------------------------------------
-  - memo/my.md                        | $MY_MEMO/my.md.html
-  - memo/vim.md                       | $MY_MEMO/dev.md.html
-  - memo/git.md                       | $MY_MEMO/vcs.md.html
+  - memo/my.md.html                   | $MY_MEMO/my.md.html
+  - memo/vim.md.html                  | $MY_MEMO/dev.md.html
+  - memo/git.md.html                  | $MY_MEMO/vcs.md.html
 [etc] ------------------------------  | ----------------------------------------
   - bash/my.sh                        | $MY_BASH/bashrc.81.my.sh
   - vim/map.vim                       | $MY_VIM/vimrc.70.map.vim
   - etc/bmk.txt                       | $MY_ETC/bmk/bmk.txt
   - etc/dir.txt                       | $MY_ETC/bmk/dir.txt
   - etc/cmdline.txt                   | $MY_ETC/bmk/cmdline.txt
-  - etc/links.md                      | $MY_ETC/bmk/links.md.html
-  - papers/papers.md                  | $MY_PAPERS/papers.md.html
+  - etc/links.md.html                 | $MY_ETC/bmk/links.md.html
+  - papers/papers.md.html             | $MY_PAPERS/papers.md.html
 [dir] ------------------------------  | ----------------------------------------
   - .my/                              | $HOME/.my
   - .my.common/                       | $MY_HOME/.my.common
