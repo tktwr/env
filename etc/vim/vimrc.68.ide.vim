@@ -70,8 +70,16 @@ func MyTabDirDiffQuit()
 endfunc
 
 func MyTabClosePrev()
-  tabclose
-  tabprev
+  let winnr = MyWinFindTerm()
+  if winnr == -1
+    " terminal is not found in the tab
+    tabclose
+    if MyIsEmptyTab()
+      " close redundant empty tab
+      tabclose
+    endif
+    tabprev
+  endif
 endfunc
 
 "------------------------------------------------------

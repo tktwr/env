@@ -33,6 +33,14 @@ endfunc
 "------------------------------------------------------
 " window move
 "------------------------------------------------------
+func MyIsEmptyTab()
+  let last_winnr = winnr('$')
+  if last_winnr == 1 && &filetype == ""
+    return 1
+  endif
+  return 0
+endfunc
+
 func MyWinFindTerm()
   let last_winnr = winnr('$')
   let i = 1
