@@ -35,25 +35,19 @@ nnoremap Q       :confirm qall<CR>
 " fold on/off
 nnoremap ==      zi
 
-" tag
-nnoremap <C-]>   g<C-]>
-" scroll
-nnoremap <C-D>   <C-B>
-" execute commands in the register q
-nnoremap <C-Q>   @q
-
-nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
-nnoremap <C-B>   :Bmk bmk.txt<CR>
-nnoremap <C-X>   :close<CR>
-nnoremap <C-E>   :only<CR>
-
-nnoremap <C-P>   :cp<CR>
-nnoremap <C-N>   :cn<CR>
-
-nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 nnoremap <C-A>   :MyMakeLink<CR>
-
-nnoremap <C-.>   :MyLcdHere<CR>
+nnoremap <C-B>   :Bmk bmk.txt<CR>
+nnoremap <C-D>   <C-B>
+nnoremap <C-E>   :only<CR>
+nnoremap <C-G>   :MyRedraw<CR>
+nnoremap <C-N>   :cn<CR>
+nnoremap <C-P>   :cp<CR>
+nnoremap <C-Q>   @q
+nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
+nmap     <C-U>   <Plug>(quickhl-manual-this)
+xmap     <C-U>   <Plug>(quickhl-manual-this)
+nnoremap <C-X>   :close<CR>
+nnoremap <C-Y>   :call MyTermSendCd("")<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
@@ -61,6 +55,10 @@ nnoremap <CR>    :call MyEdit(0, "")<CR>
 
 nnoremap <C-CR>  :call MyOpen("")<CR>
 nnoremap <S-CR>  :MyNERDTreeOpen<CR>
+
+nnoremap <C-;>   <C-W>:
+nnoremap <C-.>   :MyLcdHere<CR>
+nnoremap <C-]>   g<C-]>
 
 "nnoremap <C-TAB> :echo "C-TAB"<CR>
 "nnoremap <C-BS>  :echo "C-BS"<CR>
@@ -70,24 +68,18 @@ nnoremap <S-CR>  :MyNERDTreeOpen<CR>
 "nnoremap <S-BS>  :echo "S-BS"<CR>
 "nnoremap <S-CR>  :echo "S-CR"<CR>
 
-nmap <C-U>       <Plug>(quickhl-manual-this)
-xmap <C-U>       <Plug>(quickhl-manual-this)
-
-nnoremap <C-;>   <C-W>:
-nnoremap <C-G>   :MyRedraw<CR>
-
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
+tnoremap <C-G>   <C-L>
 " go to Terminal-Normal
 tnoremap <C-O>   <C-W>N
 " paste register
 tnoremap <C-V>   <C-W>""
 
-tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
-
 tnoremap <C-;>   <C-W>:
-tnoremap <C-G>   <C-L>
+
+tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 
 "------------------------------------------------------
 " map.window.move
