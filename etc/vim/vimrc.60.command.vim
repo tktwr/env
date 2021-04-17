@@ -19,11 +19,13 @@ endfunc
 "endfunc
 
 func s:MyGgrep(word)
-  Ggrep -I a:word -- ':!*.dat'
+  "Ggrep -I a:word -- ':!*.dat'
+  exec "Ggrep -I" a:word
 endfunc
 
 func s:MyGgrepHere()
-  Ggrep -I <cword> -- ':!*.dat'
+  "Ggrep -I <cword> -- ':!*.dat'
+  Ggrep -I <cword>
 endfunc
 
 func s:MySetTab(nr)

@@ -105,6 +105,14 @@ func MyWinVResize(width)
   let w:orig_width = a:width
 endfunc
 
+func MyWinVResizeT2E(width)
+  wincmd k
+  exec "vertical resize" a:width
+  wincmd p
+  exec "vertical resize" a:width
+  let w:orig_width = a:width
+endfunc
+
 func MyWinPlace(place)
   exec "wincmd " a:place
 endfunc
@@ -133,9 +141,10 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=0 MyWinInfo      call MyWinInfo()
-command -nargs=1 MyWinResize    call MyWinResize(<f-args>)
-command -nargs=1 MyWinVResize   call MyWinVResize(<f-args>)
+command -nargs=0 MyWinInfo       call MyWinInfo()
+command -nargs=1 MyWinResize     call MyWinResize(<f-args>)
+command -nargs=1 MyWinVResize    call MyWinVResize(<f-args>)
+command -nargs=1 MyWinVResizeT2E call MyWinVResizeT2E(<f-args>)
 
-command MyRedraw                call MyRedraw()
+command MyRedraw                 call MyRedraw()
 

@@ -7,109 +7,124 @@ vnoremap <silent> <leader>      :<c-u>WhichKeyVisual '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 vnoremap <silent> <localleader> :<c-u>WhichKeyVisual ','<CR>
 
-vmap     <leader>C            <plug>NERDCommenterToggle
+vmap     <leader>C             <plug>NERDCommenterToggle
 
-nnoremap <leader>0            <C-W>:MyTerm<CR>
-nnoremap <leader>1            :silent MyGgrepHere<CR><C-L>
-nnoremap <leader>6            :RunExplorer<CR><C-L>
-nnoremap <leader>7            :RunGvim<CR><C-L>
-nnoremap <leader>8            :RunVscode<CR><C-L>
-nnoremap <leader>9            :RunChrome<CR><C-L>
-vnoremap <leader>y            "*y
-nnoremap <leader>p            "*p
-nmap     <leader>M            <plug>(easymotion-overwin-line)
-nnoremap <leader>O            :call MyOpen("")<CR>
-nnoremap <leader>K            :make<CR>:cw<CR>
-nnoremap <leader>R            :make run<CR>
-nnoremap <leader>S            <C-W>:source ~/.vimrc<CR>
-nnoremap <leader>Q            <C-W>:confirm qall<CR>
+nnoremap <leader>0             <C-W>:MyTerm<CR>
+nnoremap <leader>=             <C-W>=
+nmap     <leader>E             <plug>(easymotion-overwin-line)
+nnoremap <leader>G             :MyTagbarToggle<CR>
+nnoremap <leader>g             :silent MyGgrepHere<CR><C-L>
+nnoremap <leader>K             :make<CR>:cw<CR>
+nnoremap <leader>o             :call MyOpen("")<CR>
+nnoremap <leader>p             "*p
+nnoremap <leader>Q             <C-W>:confirm qall<CR>
+nnoremap <leader>R             :make run<CR>
+nnoremap <leader>S             <C-W>:source ~/.vimrc<CR>
+nnoremap <leader>T             :MyNERDTreeToggle<CR>
+nnoremap <leader>x             <C-W>x
+vnoremap <leader>y             "*y
 
-nnoremap <leader>T0           <C-W>:MyTerm 0<CR>
-nnoremap <leader>T1           <C-W>:MyTerm 1<CR>
-nnoremap <leader>T2           <C-W>:MyTerm 2<CR>
+nnoremap <leader>X6            :RunExplorer<CR><C-L>
+nnoremap <leader>X7            :RunGvim<CR><C-L>
+nnoremap <leader>X8            :RunVscode<CR><C-L>
+nnoremap <leader>X9            :RunChrome<CR><C-L>
+nnoremap <leader>Xb            <C-W>:Bmk bmk.txt<CR>
+nnoremap <leader>Xs            <C-W>:Bmk scratchpad.md.html<CR>
+nnoremap <leader>Xd            <C-W>:Bmk dia.md.html<CR>
+nnoremap <leader>Xt            <C-W>:Bmk todo.md.html<CR>
+nnoremap <leader>Xh            <C-W>:MyHelp<CR>
+nnoremap <leader>Xm            <C-W>:MyMemo<CR>
+nnoremap <leader>XM            <C-W>:MyMan
+nnoremap <leader>XP            <C-W>:MyPydoc
+nnoremap <leader>XT            <C-W>:MyTrans<CR>
+nnoremap <leader>XD            <C-W>:MyDict<CR>
 
-nnoremap <leader>w=           <C-W>=
-nnoremap <leader>wx           <C-W>x
-nnoremap <leader>wr           <C-W>r
-nnoremap <leader>wR           <C-W>R
-nnoremap <leader>wK           <C-W>K
-nnoremap <leader>wJ           <C-W>J
-nnoremap <leader>wT           <C-W>T
+nnoremap <leader>ZT0           <C-W>:MyTerm 0<CR>
+nnoremap <leader>ZT1           <C-W>:MyTerm 1<CR>
+nnoremap <leader>ZT2           <C-W>:MyTerm 2<CR>
 
-nnoremap <leader>te           <C-W>:tabedit<CR>
-nnoremap <leader>tc           <C-W>:tabclose<CR>
-nnoremap <leader>to           <C-W>:tabonly<CR>
-nnoremap <leader>tn           <C-W>:tabnext<CR>
-nnoremap <leader>tp           <C-W>:tabprev<CR>
+nnoremap <leader>Zw=           <C-W>=
+nnoremap <leader>Zwx           <C-W>x
+nnoremap <leader>Zwr           <C-W>r
+nnoremap <leader>ZwR           <C-W>R
+nnoremap <leader>ZwK           <C-W>K
+nnoremap <leader>ZwJ           <C-W>J
+nnoremap <leader>ZwT           <C-W>T
 
-nnoremap <leader>vE           :MyCheckEnv<CR>
-nnoremap <leader>vD           :MyCdHere<CR>
-nnoremap <leader>vd           :MyLcdHere<CR>
-nnoremap <leader>v2           :MySetTab 2<CR>
-nnoremap <leader>v4           :MySetTab 4<CR>
-nnoremap <leader>vL           :MyLineNumberToggle<CR>
-nnoremap <leader>vI           :IndentGuidesToggle<CR>
-nnoremap <leader>vf           zi
+nnoremap <leader>Zte           <C-W>:tabedit<CR>
+nnoremap <leader>Ztc           <C-W>:tabclose<CR>
+nnoremap <leader>Zto           <C-W>:tabonly<CR>
+nnoremap <leader>Ztn           <C-W>:tabnext<CR>
+nnoremap <leader>Ztp           <C-W>:tabprev<CR>
 
-nnoremap <leader>ep           :MyTogglePathFormat<CR>
-nnoremap <leader>eu           :MyUpdateDateHere<CR>
-nnoremap <leader>el           :MyMakeLink<CR>
-nnoremap <leader>ei           :MyMakeImageLink<CR>
-nnoremap <leader>etb          :MyTabBar<CR>
-nnoremap <leader>etd          :MyTabDots<CR>
-nnoremap <leader>etc          :MyTabComma<CR>
-nnoremap <leader>eD           :MyAddDate<CR>
-nnoremap <leader>eT           :MyAddTime<CR>
-vnoremap <leader>es1          y:'<,'>w !sumcol 1<CR>
-vnoremap <leader>es2          y:'<,'>w !sumcol 2<CR>
-vnoremap <leader>es3          y:'<,'>w !sumcol 3<CR>
+nnoremap <leader>ZvE           :MyCheckEnv<CR>
+nnoremap <leader>ZvD           :MyCdHere<CR>
+nnoremap <leader>Zvd           :MyLcdHere<CR>
+nnoremap <leader>Zv2           :MySetTab 2<CR>
+nnoremap <leader>Zv4           :MySetTab 4<CR>
+nnoremap <leader>ZvL           :MyLineNumberToggle<CR>
+nnoremap <leader>ZvI           :IndentGuidesToggle<CR>
+nnoremap <leader>Zvf           zi
 
-nnoremap <leader>ds           :vert diffsplit 
-nnoremap <leader>du           :diffupdate<CR>
+nnoremap <leader>Zep           :MyTogglePathFormat<CR>
+nnoremap <leader>Zeu           :MyUpdateDateHere<CR>
+nnoremap <leader>Zel           :MyMakeLink<CR>
+nnoremap <leader>Zei           :MyMakeImageLink<CR>
+nnoremap <leader>Zetb          :MyTabBar<CR>
+nnoremap <leader>Zetd          :MyTabDots<CR>
+nnoremap <leader>Zetc          :MyTabComma<CR>
+nnoremap <leader>ZeD           :MyAddDate<CR>
+nnoremap <leader>ZeT           :MyAddTime<CR>
+vnoremap <leader>Zes1          y:'<,'>w !sumcol 1<CR>
+vnoremap <leader>Zes2          y:'<,'>w !sumcol 2<CR>
+vnoremap <leader>Zes3          y:'<,'>w !sumcol 3<CR>
 
-nnoremap <leader>qd           :MyCdo<CR>
-nnoremap <leader>qf           :MyCfdo<CR>
+nnoremap <leader>Zds           :vert diffsplit 
+nnoremap <leader>Zdu           :diffupdate<CR>
 
-nnoremap <leader>oI           :MyIDE<CR>
-nnoremap <leader>oT           :MyTagbarToggle<CR>
-nnoremap <leader>oc           :MyClangFormat<CR>
-nnoremap <leader>odj          :DictJaHere<CR><C-L>
-nnoremap <leader>ode          :DictEnHere<CR><C-L>
-nnoremap <leader>odz          :DictZhHere<CR><C-L>
-vnoremap <leader>otj          y:TransJaVisual<CR><C-L>
-vnoremap <leader>ote          y:TransEnVisual<CR><C-L>
-vnoremap <leader>otz          y:TransZhVisual<CR><C-L>
-nnoremap <leader>oE           :RunExplorer<CR><C-L>
-nnoremap <leader>oG           :RunGvim<CR><C-L>
-nnoremap <leader>oV           :RunVscode<CR><C-L>
-nnoremap <leader>oC           :RunChrome<CR><C-L>
-nnoremap <leader>oF           :RunFirefox<CR><C-L>
+nnoremap <leader>Zqd           :MyCdo<CR>
+nnoremap <leader>Zqf           :MyCfdo<CR>
 
-nnoremap <leader>gS           :MyGstatusToggle<CR>
-nnoremap <leader>gV           :MyGV<CR>
+nnoremap <leader>ZoI           :MyIDE<CR>
+nnoremap <leader>ZoT           :MyTagbarToggle<CR>
+nnoremap <leader>Zoc           :MyClangFormat<CR>
+nnoremap <leader>Zodj          :DictJaHere<CR><C-L>
+nnoremap <leader>Zode          :DictEnHere<CR><C-L>
+nnoremap <leader>Zodz          :DictZhHere<CR><C-L>
+vnoremap <leader>Zotj          y:TransJaVisual<CR><C-L>
+vnoremap <leader>Zote          y:TransEnVisual<CR><C-L>
+vnoremap <leader>Zotz          y:TransZhVisual<CR><C-L>
+nnoremap <leader>ZoE           :RunExplorer<CR><C-L>
+nnoremap <leader>ZoG           :RunGvim<CR><C-L>
+nnoremap <leader>ZoV           :RunVscode<CR><C-L>
+nnoremap <leader>ZoC           :RunChrome<CR><C-L>
+nnoremap <leader>ZoF           :RunFirefox<CR><C-L>
 
-nmap     <leader>cI           :MyCocInstall<CR>
-nmap     <leader>cu           :CocUpdate<CR>
-nmap     <leader>ch           :call CocAction('doHover')<CR>
-nmap     <leader>cD           :CocDiagnostics<CR>
-nmap     <leader>c[           <Plug>(coc-diagnostic-prev)
-nmap     <leader>c]           <Plug>(coc-diagnostic-next)
-nmap     <leader>cd           <Plug>(coc-definition)
-nmap     <leader>cy           <Plug>(coc-type-definition)
-nmap     <leader>ci           <Plug>(coc-implementation)
-nmap     <leader>cr           <Plug>(coc-references)
-nmap     <leader>cR           <Plug>(coc-rename)
-xmap     <leader>cF           <Plug>(coc-format-selected)
-nmap     <leader>cF           <Plug>(coc-format-selected)
-nmap     <leader>cv           :CocList vimcommands<CR>
-nmap     <leader>cb           :CocList buffers<CR>
-nmap     <leader>cw           :CocList words<CR>
-nmap     <leader>co           :CocList outline<CR>
-nmap     <leader>c.           :CocListResume<CR>
+nnoremap <leader>ZgS           :MyGstatusToggle<CR>
+nnoremap <leader>ZgV           :MyGV<CR>
 
-nmap     <leader>PI           :PlugInstall<CR>
-nmap     <leader>Pu           :PlugUpdate<CR>
-nmap     <leader>PU           :PlugUpgrade<CR>
+nmap     <leader>ZcI           :MyCocInstall<CR>
+nmap     <leader>Zcu           :CocUpdate<CR>
+nmap     <leader>Zch           :call CocAction('doHover')<CR>
+nmap     <leader>ZcD           :CocDiagnostics<CR>
+nmap     <leader>Zc[           <Plug>(coc-diagnostic-prev)
+nmap     <leader>Zc]           <Plug>(coc-diagnostic-next)
+nmap     <leader>Zcd           <Plug>(coc-definition)
+nmap     <leader>Zcy           <Plug>(coc-type-definition)
+nmap     <leader>Zci           <Plug>(coc-implementation)
+nmap     <leader>Zcr           <Plug>(coc-references)
+nmap     <leader>ZcR           <Plug>(coc-rename)
+xmap     <leader>ZcF           <Plug>(coc-format-selected)
+nmap     <leader>ZcF           <Plug>(coc-format-selected)
+nmap     <leader>Zcv           :CocList vimcommands<CR>
+nmap     <leader>Zcb           :CocList buffers<CR>
+nmap     <leader>Zcw           :CocList words<CR>
+nmap     <leader>Zco           :CocList outline<CR>
+nmap     <leader>Zc.           :CocListResume<CR>
+
+nmap     <leader>ZPI           :PlugInstall<CR>
+nmap     <leader>ZPu           :PlugUpdate<CR>
+nmap     <leader>ZPU           :PlugUpgrade<CR>
 
 call which_key#register('<Space>', "g:which_key_map")
 "let g:which_key_vertical = 1
@@ -119,38 +134,55 @@ let g:which_key_hspace = 1
 let g:which_key_exit = ["\<Space>", "\<Esc>"]
 let g:which_key_map = { 'name' : '+top',
       \ '0' : 'MyTerm',
-      \ '1' : 'MyGgrepHere',
-      \ '6' : 'RunExplorer',
-      \ '7' : 'RunGvim',
-      \ '8' : 'RunVscode',
-      \ '9' : 'RunChrome',
-      \ 'y' : 'yank',
-      \ 'p' : 'paste',
-      \ 'S' : 'SourceVimrc',
-      \ 'M' : 'Easymotion',
-      \ 'O' : 'MyOpen (C-CR)',
+      \ '=' : 'Equal window',
+      \ 'E' : 'Easymotion',
+      \ 'G' : 'MyTagbarToggle (BS)',
+      \ 'g' : 'MyGgrepHere',
       \ 'K' : 'Make',
-      \ 'R' : 'Make Run',
+      \ 'o' : 'MyOpen (C-CR)',
+      \ 'p' : 'Paste',
       \ 'Q' : 'Quit (Q)',
+      \ 'R' : 'Make Run',
+      \ 'S' : 'Source vimrc',
+      \ 'T' : 'MyNERDTreeToggle (TAB)',
+      \ 'x' : 'Exchange window',
+      \ 'y' : 'Yank',
       \ }
 "let g:which_key_map.c = { 'name': 'which_key_ignore' }
 "let g:which_key_map.h = { 'name': 'which_key_ignore' }
 
-let g:which_key_map.T   = { 'name' : '+Term' }
-let g:which_key_map.w   = { 'name' : '+window' }
-let g:which_key_map.t   = { 'name' : '+tab' }
-let g:which_key_map.v   = { 'name' : '+vim' }
-let g:which_key_map.e   = { 'name' : '+edit' }
-let g:which_key_map.e.t = { 'name' : '+tabularize' }
-let g:which_key_map.e.s = { 'name' : '+sum' }
-let g:which_key_map.d   = { 'name' : '+diff' }
-let g:which_key_map.q   = { 'name' : '+q-command' }
-let g:which_key_map.o   = { 'name' : '+open' }
-let g:which_key_map.o.d = { 'name' : '+dict' }
-let g:which_key_map.o.t = { 'name' : '+trans' }
-let g:which_key_map.g   = { 'name' : '+git' }
-let g:which_key_map.c   = { 'name' : '+coc' }
-let g:which_key_map.P   = { 'name' : '+Plug' }
+let g:which_key_map.X = { 'name' : '+Open',
+      \ '6' : 'RunExplorer',
+      \ '7' : 'RunGvim',
+      \ '8' : 'RunVscode',
+      \ '9' : 'RunChrome',
+      \ 'b' : 'bmk',
+      \ 's' : 'scratchpad',
+      \ 'd' : 'dia',
+      \ 't' : 'todo',
+      \ 'h' : 'help',
+      \ 'm' : 'memo',
+      \ 'M' : 'man',
+      \ 'P' : 'pydoc',
+      \ 'T' : 'trans',
+      \ 'D' : 'dict',
+      \ }
+let g:which_key_map.Z     = { 'name' : '+Others' }
+let g:which_key_map.Z.T   = { 'name' : '+Term' }
+let g:which_key_map.Z.w   = { 'name' : '+window' }
+let g:which_key_map.Z.t   = { 'name' : '+tab' }
+let g:which_key_map.Z.v   = { 'name' : '+vim' }
+let g:which_key_map.Z.e   = { 'name' : '+edit' }
+let g:which_key_map.Z.e.t = { 'name' : '+tabularize' }
+let g:which_key_map.Z.e.s = { 'name' : '+sum' }
+let g:which_key_map.Z.d   = { 'name' : '+diff' }
+let g:which_key_map.Z.q   = { 'name' : '+q-command' }
+let g:which_key_map.Z.o   = { 'name' : '+open' }
+let g:which_key_map.Z.o.d = { 'name' : '+dict' }
+let g:which_key_map.Z.o.t = { 'name' : '+trans' }
+let g:which_key_map.Z.g   = { 'name' : '+git' }
+let g:which_key_map.Z.c   = { 'name' : '+coc' }
+let g:which_key_map.Z.P   = { 'name' : '+Plug' }
 
 "autocmd! FileType which_key
 "autocmd  FileType which_key set laststatus=0 noshowmode noruler

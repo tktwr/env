@@ -91,7 +91,7 @@ func s:MyPydoc(word)
 endfunc
 
 func s:MyTrans()
-  exec "below term ++rows=".g:my_trans_winheight." ++close trans -I -b"
+  exec "below term ++rows=".g:my_trans_winheight." trans -I -b"
 endfunc
 
 func s:MyDict()

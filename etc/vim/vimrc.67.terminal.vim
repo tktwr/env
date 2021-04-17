@@ -44,12 +44,13 @@ endfunc
 "------------------------------------------------------
 " send a cmd to a terminal
 func MyTermSendCmd(cmd)
-  let l:nr = bufnr("!/usr/bin/bash")
   let l:cmd = a:cmd
   if (l:cmd == "")
     let l:cmd = getline('.')
   endif
-	call term_sendkeys(l:nr, l:cmd."\<CR>")
+  wincmd j
+  let l:bufnr = winbufnr(0)
+	call term_sendkeys(l:bufnr, l:cmd."\<CR>")
 endfunc
 
 " send 'cd dir' to a terminal
@@ -58,6 +59,15 @@ func MyTermSendCd(dir)
   wincmd j
   let l:bufnr = winbufnr(0)
   call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
+endfunc
+
+func MyTermSendCdN2T()
+  let l:dir = getcwd()
+  let winnr = MyWinFindTerm()
+  if winnr != -1
+    let l:bufnr = winbufnr(0)
+    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
+  endif
 endfunc
 
 "------------------------------------------------------
