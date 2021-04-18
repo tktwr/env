@@ -30,12 +30,13 @@ func MyTabLine()
   " after the last tab fill with TabLineFill and reset tab page nr
   let s .= '%#TabLineFill#%T'
 
-  let s .= '   '.MyCWD().' '
-  let s .= "\ %{coc#status()}"
+  let s .= "%="
+  let s .= "\ [coc:%{coc#status()}]"
+  let s .= "\ %{MyCWD()}"
 
   " right-align the label to close the current tab page
   if tabpagenr('$') > 1
-    let s .= '%=%#TabLine#%999Xclose'
+    let s .= "\ %#TabLine#%999X[close]"
   endif
 
   return s

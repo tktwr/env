@@ -45,7 +45,7 @@ set statusline=%!MyStatusline()
 func MyStatuslineTerm()
   let l:statusline = "%{MyStatuslineWinNr()}"
   let l:statusline.= "[terminal]"
-  let l:statusline.="\ %{MyCWD()}"
+  let l:statusline.="\ %=%{MyCWD()}"
   return l:statusline
 endfunc
 
