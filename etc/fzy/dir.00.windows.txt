@@ -16,4 +16,5 @@ java-home           | JAVA_HOME           | C:\Program Files\Android\Android Stu
 sys-git             | SYS_GIT             | C:\Program Files\Git
 sys-cmake           | SYS_CMAKE           | C:\Program Files\CMake
 sys-vulkan-sdk      | SYS_VULKAN_SDK      | $VULKAN_SDK
+sys-cuda-sdk        | SYS_CUDA_SDK        | $CUDA_PATH
 my-home             | MY_HOME             | $USERPROFILE
