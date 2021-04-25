@@ -14,6 +14,7 @@ nnoremap <leader>=             <C-W>=
 nmap     <leader>E             <plug>(easymotion-overwin-line)
 nnoremap <leader>G             :MyTagbarToggle<CR>
 nnoremap <leader>g             :silent MyGgrepHere<CR><C-L>
+nnoremap <leader>I             <C-W>:MyWinInitSize<CR>
 nnoremap <leader>K             :make<CR>:cw<CR>
 nnoremap <leader>o             :call MyOpen("")<CR>
 nnoremap <leader>p             "*p
@@ -138,6 +139,7 @@ let g:which_key_map = { 'name' : '+top',
       \ 'E' : 'Easymotion',
       \ 'G' : 'MyTagbarToggle (BS)',
       \ 'g' : 'MyGgrepHere',
+      \ 'I' : 'MyWinInitSize',
       \ 'K' : 'Make',
       \ 'o' : 'MyOpen (C-CR)',
       \ 'p' : 'Paste',

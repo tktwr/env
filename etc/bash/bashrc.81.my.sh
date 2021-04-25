@@ -92,6 +92,7 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 alias ,GS=',LCD; vimapi.sh --in-new-tab MyGstatusToggle'
 alias ,GV=',LCD; vimapi.sh --in-new-tab MyGV'
+alias ,I=',LCD; vimapi.sh --in-new-tab MyIDE'
 alias ,T=',LCD; vimapi.sh MyTerm'
 alias ,V=',LCD; vimapi.sh MyTermV'
 
@@ -125,8 +126,8 @@ alias ,vim='vimapi.sh'
 
 alias ,set_tab='vimapi.sh MyTabSetLabel'
 
-,cd() { cd "$@"; ,TCD; }
-,nt() { cd "$@"; ,NERDTREE; ,TCD; }
+,cd() { cd "$@"; ,LCD; }
+,nt() { cd "$@"; ,LCD; ,NERDTREE; }
 alias d=',cd'
 alias D=',nt'
 

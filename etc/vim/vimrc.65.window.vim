@@ -18,6 +18,22 @@ func MyWinInfo()
   echo "winnr of current buf: ".bufwinnr('%')
 endfunc
 
+func MyIsEmptyTab()
+  let last_winnr = winnr('$')
+  if last_winnr == 1 && &filetype == ""
+    return 1
+  endif
+  return 0
+endfunc
+
+func MyIsFullscreen()
+  if &columns > 150
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
 "------------------------------------------------------
 " buffer exchange
 "------------------------------------------------------
@@ -33,14 +49,6 @@ endfunc
 "------------------------------------------------------
 " window move
 "------------------------------------------------------
-func MyIsEmptyTab()
-  let last_winnr = winnr('$')
-  if last_winnr == 1 && &filetype == ""
-    return 1
-  endif
-  return 0
-endfunc
-
 func MyWinFindTerm()
   let last_winnr = winnr('$')
   let i = 1
@@ -62,7 +70,7 @@ func MyWinMoveTerm()
 endfunc
 
 "------------------------------------------------------
-" resize window
+" maximize window
 "------------------------------------------------------
 func MyWinMaximizeXToggle()
   let l:width = winwidth(0)
@@ -77,13 +85,13 @@ func MyWinMaximizeXToggle()
   exec "vertical resize" l:width
 endfunc
 
-func MyWinMaximizeYToggle()
+func MyWinMaximizeYToggle(max_height)
   let l:height = winheight(0)
   if !exists('w:orig_height')
     let w:orig_height = l:height
   endif
   if l:height == w:orig_height
-    let l:height = ""
+    let l:height = a:max_height
   else
     let l:height = w:orig_height
   endif
@@ -95,6 +103,9 @@ func MyWinMaximizeXYToggle()
   call MyWinMaximizeYToggle()
 endfunc
 
+"------------------------------------------------------
+" resize window
+"------------------------------------------------------
 func MyWinResize(height)
   exec "resize" a:height
   let w:orig_height = a:height
@@ -113,16 +124,19 @@ func MyWinVResizeT2E(width)
   let w:orig_width = a:width
 endfunc
 
-func MyWinPlace(place)
-  exec "wincmd " a:place
+func MyWinInitSize()
+  NERDTree
+  wincmd w
+  exec "normal \<C-W>="
+  call MyWinMoveTerm()
+  exec "resize" g:my_term_winheight
 endfunc
 
-func MyIsFullscreen()
-  if &columns > 150
-    return 1
-  else
-    return 0
-  endif
+"------------------------------------------------------
+" place window
+"------------------------------------------------------
+func MyWinPlace(place)
+  exec "wincmd " a:place
 endfunc
 
 func MyRedraw()
@@ -146,5 +160,6 @@ command -nargs=1 MyWinResize     call MyWinResize(<f-args>)
 command -nargs=1 MyWinVResize    call MyWinVResize(<f-args>)
 command -nargs=1 MyWinVResizeT2E call MyWinVResizeT2E(<f-args>)
 
+command MyWinInitSize            call MyWinInitSize()
 command MyRedraw                 call MyRedraw()
 
