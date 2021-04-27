@@ -136,5 +136,5 @@ alias D=',nt'
 #------------------------------------------------------
 alias G='gg-d -6'
 alias GA='gg-d -6 --all'
-alias GM='git-submodule.sh'
+alias GM='git-log.sh --log 4 --log-submodule 2'
 
