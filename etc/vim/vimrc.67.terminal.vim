@@ -11,12 +11,7 @@ func MyTerm(...)
     let l:type = a:1
   endif
   if l:type == 0
-    let l:is_fullscreen = MyIsFullscreen()
-    if l:is_fullscreen
-      exec "below term ++rows=".g:my_term_winheight
-    else
-      exec "bot term ++rows=".g:my_term_winheight
-    endif
+    exec "below term ++rows=".g:my_term_winheight
     set winfixheight
   elseif l:type == 1
     tabedit
@@ -99,13 +94,6 @@ endfunc
 
 func MyNERDTreeT2E(dir)
   exec "NERDTree" a:dir
-
-  let l:is_fullscreen = MyIsFullscreen()
-  if !l:is_fullscreen
-    exec "wincmd p"
-    call MyWinPlace("J")
-    exec "wincmd p"
-  endif
 endfunc
 
 "------------------------------------------------------

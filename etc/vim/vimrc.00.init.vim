@@ -45,6 +45,7 @@ set nowritebackup
 set noundofile
 
 "set showcmd
+set showtabline=2
 
 set updatetime=300
 set signcolumn=yes
@@ -118,7 +119,7 @@ if has("win32unix") || has("win32") || has("win64")
   "behave mswin
 endif
 "------------------------------------------------------
-" user settings
+" window
 "------------------------------------------------------
 set eadirection=ver
 set winheight=10

@@ -92,6 +92,7 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 alias ,GS=',LCD; vimapi.sh --in-new-tab MyGstatusToggle'
 alias ,GV=',LCD; vimapi.sh --in-new-tab MyGV'
+alias ,GM=',LCD; vimapi.sh --in-above-win GitLog $PWD'
 alias ,I=',LCD; vimapi.sh --in-new-tab MyIDE'
 alias ,T=',LCD; vimapi.sh MyTerm'
 alias ,V=',LCD; vimapi.sh MyTermV'

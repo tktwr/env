@@ -129,7 +129,7 @@ endfunc
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command -complete=custom,s:BmkCompleteKeys -nargs=1 Bmk  call s:Bmk("<args>")
+command -nargs=1 -complete=custom,s:BmkCompleteKeys Bmk  call s:Bmk("<args>")
 
 autocmd FileType bmk    call s:BmkMap()
 autocmd BufWinEnter *   call s:BmkMapWin()
