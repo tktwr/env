@@ -4,7 +4,7 @@
 ; keymap
 ;------------------------------------------------------
 ; left meta
-SC07B::F11
+SC07B::PgUp
 
 ; left alt
 ;LAlt::LAlt
@@ -13,8 +13,7 @@ SC07B::F11
 RAlt::LWin
 
 ; right meta
-;SC079::RCtrl
-SC079::F10
+SC079::PgDn
 
 ; right shift to Hankaku/Zenkaku
 RShift::

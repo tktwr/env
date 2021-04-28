@@ -5,6 +5,19 @@ func MyIDE()
   let l:is_fullscreen = MyIsFullscreen()
   NERDTree
   wincmd w
+  if l:is_fullscreen
+    vsp
+    MyTerm
+    wincmd l
+  endif
+  MyTerm
+endfunc
+
+" [OBSOLETE]
+func MyIDE_old()
+  let l:is_fullscreen = MyIsFullscreen()
+  NERDTree
+  wincmd w
   MyTerm
   wincmd W
   if l:is_fullscreen

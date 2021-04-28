@@ -41,6 +41,7 @@ syn match    myFIXED            "\[FIXED\]"
 syn match    mySOLVED           "\[SOLVED\]"
 syn match    myOK               "\[OK\]"
 syn match    myFAIL             "\[FAIL\]"
+syn match    myOBSOLETE         "\[OBSOLETE\]"
 
 syn match    myRed              "\[ *Red *\]"
 syn match    myGreen            "\[ *Green *\]"
@@ -101,6 +102,7 @@ hi link myFIXED            MyGreen
 hi link mySOLVED           MyGreen
 hi link myOK               MyGreen
 hi link myFAIL             MyRed
+hi link myOBSOLETE         MyOrange
 
 hi link myRed              MyRed  
 hi link myGreen            MyGreen 

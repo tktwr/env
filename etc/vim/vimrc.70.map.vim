@@ -122,6 +122,8 @@ tnoremap <C-9> <C-W>:call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 "------------------------------------------------------
 " map.tab
 "------------------------------------------------------
+nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
+nnoremap <silent> <PageDown> <C-W>:tabnext<CR>
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
@@ -129,6 +131,8 @@ nnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
 nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
 nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 
+tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
+tnoremap <silent> <PageDown> <C-W>:tabnext<CR>
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
