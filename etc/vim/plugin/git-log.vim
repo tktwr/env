@@ -8,22 +8,24 @@ endif
 let loaded_gitlog = 1
 let s:gitlog_winname = '\[gitlog\]'
 
-func GitLogMakeWindow(title)
-  exec "edit" a:title
-  setlocal filetype=gitlog
-  setlocal buftype=nofile
-  setlocal bufhidden=hide
-  setlocal buflisted
-  setlocal noswapfile
-  setlocal nowrap
-  "setlocal readonly
+func GitLogClear()
+  silent %d _
+endfunc
+
+func GitLogToggleHelp()
+  let w:help = !w:help
+  if (w:help)
+    call GitLogHelp()
+  else
+    call GitLogUpdate("")
+  endif
 endfunc
 
 func GitLogHelp()
   call GitLogClear()
 
   let text = ""
-  let text = text."[HEAD] [All] [Help]\n"
+  let text = text."[HEAD] [All] [Help(?)]\n"
   let text = text."\n"
   let text = text."GitLog\n"
   let text = text."\n"
@@ -35,14 +37,42 @@ func GitLogHelp()
   silent 0put =text
 endfunc
 
+func GitLogUpdate(opts)
+  "setlocal modifiable
+
+  call GitLogClear()
+
+  let text = ""
+  let text = text.b:dir."\n"
+  let text = text."[HEAD] [All] [Gstatus] [GV] [Help(?)]\n"
+  let text = text."\n"
+  silent 0put =text
+
+  silent exec "r!git-log.sh --log 6 --log-submodule 4" a:opts
+  normal 1G
+
+  "setlocal nomodifiable
+endfunc
+
+func GitLogMakeWindow(title)
+  exec "edit" a:title
+  setlocal filetype=gitlog
+  setlocal buftype=nofile
+  setlocal bufhidden=hide
+  setlocal buflisted
+  setlocal noswapfile
+  setlocal nowrap
+  "setlocal readonly
+endfunc
+
 func GitLogAction(fname)
-  if (line(".") == 1)
+  if (line(".") == 2)
     if (a:fname == "HEAD")
       call GitLogUpdate("")
     elseif (a:fname == "All")
       call GitLogUpdate("--all")
     elseif (a:fname == "Help")
-      call GitLogHelp()
+      call GitLogToggleHelp()
     elseif (a:fname == "Gstatus")
       tabedit +MyGstatusToggle
     elseif (a:fname == "GV")
@@ -51,29 +81,20 @@ func GitLogAction(fname)
   endif
 endfunc
 
-func GitLogClear()
-  silent %d _
-endfunc
-
-func GitLogUpdate(opts)
-  "setlocal modifiable
-
-  call GitLogClear()
-
-  let text = ""
-  let text = text."[HEAD] [All] [Gstatus] [GV] [Help]\n"
-  let text = text."\n"
-  0put =text
-
-  exec "r!git-log.sh --log 6 --log-submodule 4" a:opts
-  normal 1G
-
-  "setlocal nomodifiable
+func GitLogMap()
+  nnoremap <buffer> <silent> <C-R>  :call GitLogUpdate("")<CR>
+  nnoremap <buffer> <silent> <C-A>  :call GitLogUpdate("--all")<CR>
+  nnoremap <buffer> <silent> <C-S>  :tabedit +MyGstatusToggle<CR>
+  nnoremap <buffer> <silent> <C-V>  :tabedit +MyGV<CR>
+  nnoremap <buffer> <silent> <CR>   :call GitLogAction(expand("<cword>"))<CR>
+  nnoremap <buffer> <silent> l      W
+  nnoremap <buffer> <silent> h      B
+  nnoremap <buffer> <silent> ?      :call GitLogToggleHelp()<CR>
 endfunc
 
 func GitLogSyntax()
   " syntax for git log
-  syn match myButton         "\[\f\+\]"
+  syn match myButton         "\[.\+\]"
   syn match myDir            "=\+ \[\f\+\] =\+"
   syn match myBranch         "(.*)" contains=myHead
   syn match myHead           "HEAD" contained containedin=myBranch
@@ -109,17 +130,6 @@ func GitLogSyntax()
   hi link myUntrack          MyBlue
 endfunc
 
-func GitLogMap()
-  nnoremap <buffer> <C-R>   :call GitLogUpdate("")<CR>
-  nnoremap <buffer> <C-A>   :call GitLogUpdate("--all")<CR>
-  nnoremap <buffer> <C-S>   :tabedit +MyGstatusToggle<CR>
-  nnoremap <buffer> <C-V>   :tabedit +MyGV<CR>
-  nnoremap <buffer> <silent> <CR> :call GitLogAction(expand("<cfile>"))<CR>
-  nnoremap <buffer> <silent> l W
-  nnoremap <buffer> <silent> h B
-  nnoremap <buffer> <silent> ? :call GitLogHelp()<CR>
-endfunc
-
 "------------------------------------------------------
 " public func
 "------------------------------------------------------
@@ -133,12 +143,22 @@ func GitLog(...)
 
   let title = s:gitlog_winname." ".dir
   call GitLogMakeWindow(title)
+  let b:dir = dir
   call GitLogUpdate("")
+  let w:help = 0
 endfunc
 
 func GitLogFileType()
-  call GitLogSyntax()
   call GitLogMap()
+  call GitLogSyntax()
+endfunc
+
+func GitLogBufEnter()
+  if &filetype != "gitlog"
+    return
+  endif
+
+  exec "lcd" b:dir
 endfunc
 
 "------------------------------------------------------
@@ -146,5 +166,9 @@ endfunc
 "------------------------------------------------------
 command -nargs=? -complete=dir GitLog call GitLog(<f-args>)
 
-autocmd FileType gitlog    call GitLogFileType()
+augroup gitlog
+  autocmd!
+  autocmd FileType gitlog  call GitLogFileType()
+  autocmd BufEnter *       call GitLogBufEnter()
+augroup END
 

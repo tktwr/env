@@ -41,7 +41,7 @@ f_log_submodule() {
   dirs=$(git submodule | awk '{print $2}')
   for i in $dirs; do
     echo "====== [$i] ======"
-    git submodule | grep "$i"
+    git diff --submodule "$i" | head -1
     cd $i
     git graph "$@"
     echo
