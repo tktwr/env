@@ -18,6 +18,9 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help            ... print help"
+  echo "  --status              ... print status"
+  echo "  --log n               ... print n logs"
+  echo "  --log-submodule n     ... print n submodule's logs"
 }
 
 f_git_status() {
@@ -28,21 +31,19 @@ f_git_status() {
 }
 
 f_log() {
-  num=$1
   echo "=== [$g_base_dir] ==="
-  git graph -$num
+  git graph "$@"
   echo
   f_git_status
 }
 
 f_log_submodule() {
-  num=$1
   dirs=$(git submodule | awk '{print $2}')
   for i in $dirs; do
     echo "====== [$i] ======"
     git submodule | grep "$i"
     cd $i
-    git graph -$num
+    git graph "$@"
     echo
     f_git_status
     cd $g_base_dir
@@ -61,11 +62,11 @@ f_args() {
         ;;
       --log)
         shift
-        g_opts["log"]=$1
+        g_opts["log"]=-$1
         ;;
       --log-submodule)
         shift
-        g_opts["log_submodule"]=$1
+        g_opts["log_submodule"]=-$1
         ;;
       *)
         g_opts["args"]="${g_opts["args"]} $1"
@@ -77,11 +78,11 @@ f_args() {
 
 f_args "$@"
 
-if [ ${g_opts["log"]} -gt 0 ]; then
-  f_log ${g_opts["log"]}
+if [ -n ${g_opts["log"]} ]; then
+  f_log ${g_opts["log"]} ${g_opts["args"]}
 fi
 
-if [ ${g_opts["log_submodule"]} -gt 0 ]; then
-  f_log_submodule ${g_opts["log_submodule"]}
+if [ -n ${g_opts["log_submodule"]} ]; then
+  f_log_submodule ${g_opts["log_submodule"]} ${g_opts["args"]}
 fi
 
