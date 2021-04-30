@@ -11,12 +11,14 @@ vmap     <leader>C             <plug>NERDCommenterToggle
 
 nnoremap <leader>0             <C-W>:MyTerm<CR>
 nnoremap <leader>=             <C-W>=
+nnoremap <leader>B             :MyTabBar<CR>
 nmap     <leader>E             <plug>(easymotion-overwin-line)
 nnoremap <leader>G             :MyTagbarToggle<CR>
 nnoremap <leader>g             :silent MyGgrepHere<CR><C-L>
 nnoremap <leader>I             <C-W>:MyWinInitSize<CR>
 nnoremap <leader>K             :make<CR>:cw<CR>
 nnoremap <leader>o             :call MyOpen("")<CR>
+nnoremap <leader>P             :MyTogglePathFormat<CR>
 nnoremap <leader>p             "*p
 nnoremap <leader>Q             <C-W>:confirm qall<CR>
 nnoremap <leader>R             :make run<CR>

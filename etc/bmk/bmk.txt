@@ -3,9 +3,6 @@
 - dia.md.html                         | $MY_DIARY/diary.md.html
 - todo.md.html                        | $MY_DIARY/todo.md.html
 - bmk.txt                             | $MY_HOME/.my.common/bmk.txt
-[proj] ------------------------------ | ----------------------------------------
-- work/                               | $MY_WORK
-- proj/                               | $MY_PROJ
 [memo] ------------------------------ | ----------------------------------------
   - memo/my.md.html                   | $MY_MEMO/my.md.html
   - memo/vim.md.html                  | $MY_MEMO/dev.md.html
@@ -18,6 +15,7 @@
   - etc/cmdline.txt                   | $MY_ETC/bmk/cmdline.txt
   - etc/links.md.html                 | $MY_ETC/bmk/links.md.html
   - papers/papers.md.html             | $MY_PAPERS/papers.md.html
+[git] ------------------------------  | ----------------------------------------
 [dir] ------------------------------  | ----------------------------------------
   - .my/                              | $HOME/.my
   - .my.common/                       | $MY_HOME/.my.common
@@ -29,6 +27,9 @@
   - r.etc/                            | $MY_REMOTE_CONFIG/env/etc
   - l.etc/                            | $MY_LOCAL_CONFIG/env/etc
   - p.etc/                            | $MY_PRIVATE_CONFIG/env/etc
+  - secret/                           | $MY_SECRET
+  - work/                             | $MY_WORK
+  - proj/                             | $MY_PROJ
   - git/                              | $MY_GIT
   - github/                           | $MY_GITHUB
 
