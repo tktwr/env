@@ -44,7 +44,7 @@ func GitLogUpdate(opts)
 
   let text = ""
   let text = text.b:dir."\n"
-  let text = text."[HEAD] [All] [Gstatus] [GV] [Help(?)]\n"
+  let text = text."[HEAD] [All] [Status] [Fetch] [Graph] [Help(?)]\n"
   let text = text."\n"
   silent 0put =text
 
@@ -68,15 +68,19 @@ endfunc
 func GitLogAction(fname)
   if (line(".") == 2)
     if (a:fname == "HEAD")
+      Git fetch
       call GitLogUpdate("")
     elseif (a:fname == "All")
+      Git fetch
       call GitLogUpdate("--all")
+    elseif (a:fname == "Status")
+      tabedit +MyGstatusToggle
+    elseif (a:fname == "Fetch")
+      Git fetch
+    elseif (a:fname == "Graph")
+      tabedit +MyGV
     elseif (a:fname == "Help")
       call GitLogToggleHelp()
-    elseif (a:fname == "Gstatus")
-      tabedit +MyGstatusToggle
-    elseif (a:fname == "GV")
-      tabedit +MyGV
     endif
   endif
 endfunc
