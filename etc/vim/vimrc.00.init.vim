@@ -122,13 +122,17 @@ endif
 " window
 "------------------------------------------------------
 set eadirection=ver
+
 set winheight=10
 let g:my_winheight = 10
 let g:my_term_winheight = 10
 let g:my_term_winheight_max = 22
 let g:my_trans_winheight = 10
 let g:my_gstatus_winheight = 12
+
+let g:my_winwidth_max = 110
 let g:my_help_winwidth = 82
+
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 let g:bmk_file = "$MY_HOME/.my.common/bmk.txt"

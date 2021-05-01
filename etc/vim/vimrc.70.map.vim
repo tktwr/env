@@ -104,8 +104,8 @@ nnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
 nnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
 nnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
 nnoremap <C-^> <C-W>:echo "C-6"<CR>
-nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
-nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
+nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
 nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle("")<CR>
 
 tnoremap <C-0> <C-W>b
@@ -115,8 +115,8 @@ tnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
 tnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
 tnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
 tnoremap <C-^> <C-W>:echo "C-6"<CR>
-tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle()<CR>
-tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle()<CR>
+tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
 tnoremap <C-9> <C-W>:call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 
 "------------------------------------------------------

@@ -72,13 +72,13 @@ endfunc
 "------------------------------------------------------
 " maximize window
 "------------------------------------------------------
-func MyWinMaximizeXToggle()
+func MyWinMaximizeXToggle(max_width)
   let l:width = winwidth(0)
   if !exists('w:orig_width')
     let w:orig_width = l:width
   endif
   if l:width == w:orig_width
-    let l:width = ""
+    let l:width = a:max_width
   else
     let l:width = w:orig_width
   endif
@@ -98,9 +98,9 @@ func MyWinMaximizeYToggle(max_height)
   exec "resize" l:height
 endfunc
 
-func MyWinMaximizeXYToggle()
-  call MyWinMaximizeXToggle()
-  call MyWinMaximizeYToggle()
+func MyWinMaximizeXYToggle(max_width, max_height)
+  call MyWinMaximizeXToggle(a:max_width)
+  call MyWinMaximizeYToggle(a:max_height)
 endfunc
 
 "------------------------------------------------------
@@ -124,12 +124,17 @@ func MyWinVResizeT2E(width)
   let w:orig_width = a:width
 endfunc
 
+func s:MyWinInitSizeForEachWin()
+  if &buftype == 'terminal'
+    exec "resize" g:my_term_winheight
+  else
+    exec "normal \<C-W>="
+  endif
+endfunc
+
 func MyWinInitSize()
   NERDTree
-  wincmd w
-  exec "normal \<C-W>="
-  call MyWinMoveTerm()
-  exec "resize" g:my_term_winheight
+  2,$windo call s:MyWinInitSizeForEachWin()
 endfunc
 
 "------------------------------------------------------
@@ -155,11 +160,12 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=0 MyWinInfo       call MyWinInfo()
-command -nargs=1 MyWinResize     call MyWinResize(<f-args>)
-command -nargs=1 MyWinVResize    call MyWinVResize(<f-args>)
-command -nargs=1 MyWinVResizeT2E call MyWinVResizeT2E(<f-args>)
+command -nargs=0 MyWinInfo        call MyWinInfo()
+command -nargs=1 MyWinResize      call MyWinResize(<f-args>)
+command -nargs=1 MyWinVResize     call MyWinVResize(<f-args>)
+command -nargs=1 MyWinVResizeT2E  call MyWinVResizeT2E(<f-args>)
+command -nargs=1 MyWinBufExchange call MyWinBufExchange(<f-args>)
 
-command MyWinInitSize            call MyWinInitSize()
-command MyRedraw                 call MyRedraw()
+command MyWinInitSize             call MyWinInitSize()
+command MyRedraw                  call MyRedraw()
 
