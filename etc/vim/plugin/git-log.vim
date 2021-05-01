@@ -17,23 +17,25 @@ func GitLogClear()
   silent %d _
 endfunc
 
-func GitLogApply()
-  normal 1G
-  let start = search('---')
-  let end = search('---')
-  let lines = getline(start+1, end-1)
-  for line in lines
-    exec line
-  endfor
+func GitLogPut0(text)
+  silent 0put =a:text
 endfunc
 
-func GitLogToggleHelp()
-  let b:help = !b:help
-  if (b:help)
-    call GitLogHelp()
-  else
-    call GitLogUpdate("")
-  endif
+func GitLogPut(text)
+  silent put =a:text
+endfunc
+
+func GitLogLines(text)
+  return split(a:text, '\n')
+endfunc
+
+func GitLogColumns(text, num)
+  let words = []
+  let lines = split(a:text, '\n')
+  for line in lines
+    let words += [split(line)[a:num]]
+  endfor
+  return words
 endfunc
 
 "------------------------------------------------------
@@ -55,6 +57,15 @@ func GitLogHelp()
   silent 0put =text
 endfunc
 
+func GitLogToggleHelp()
+  let b:help = !b:help
+  if (b:help)
+    call GitLogHelp()
+  else
+    call GitLogUpdate("")
+  endif
+endfunc
+
 func GitLogSetting()
   call GitLogClear()
 
@@ -72,19 +83,9 @@ func GitLogSetting()
   silent 0put =text
 endfunc
 
-func GitLogLines(text)
-  return split(a:text, '\n')
-endfunc
-
-func GitLogColumn(text, num)
-  let words = []
-  let lines = split(a:text, '\n')
-  for line in lines
-    let words += [split(line)[a:num]]
-  endfor
-  return words
-endfunc
-
+"------------------------------------------------------
+" log
+"------------------------------------------------------
 func GitLogLog(dir, opts)
   call GitLogPut("<".a:dir.">")
   exec "lcd" a:dir
@@ -106,28 +107,21 @@ func GitLogLogSubmodule(base_dir, opts)
   let out = system("git submodule")
   let lines = GitLogLines(out)
   for line in lines
-    exec "lcd" a:base_dir
     let lst = split(line)
     let commit = lst[0]
     let subdir = lst[1]
 
     if (commit[0] == '+')
-      let out = system("git diff --submodule ".subdir)
-      let out_lines = GitLogLines(out)
-      call GitLogPut(out_lines[0])
+      exec "lcd" a:base_dir
+      let diff_sm = system("git diff --submodule ".subdir)
+      let diff_sm_lines = GitLogLines(diff_sm)
+      call GitLogPut(diff_sm_lines[0])
     endif
 
     let dir = a:base_dir."/".subdir
     call GitLogLog(dir, a:opts)
   endfor
-endfunc
-
-func GitLogPut0(text)
-  silent 0put =a:text
-endfunc
-
-func GitLogPut(text)
-  silent put =a:text
+  exec "lcd" a:base_dir
 endfunc
 
 func GitLogUpdate(opts)
@@ -174,37 +168,47 @@ endfunc
 "------------------------------------------------------
 " action
 "------------------------------------------------------
+func GitLogFetch()
+  exec "lcd" b:base_dir
+  Git fetch
+endfunc
+
 func GitLogLcd()
   let l = search('^<', 'b')
   let dir = expand('<cfile>')
   exec "lcd" dir
 endfunc
 
+func GitLogApply()
+  normal 1G
+  let start = search('---')
+  let end = search('---')
+  let lines = getline(start+1, end-1)
+  for line in lines
+    exec line
+  endfor
+endfunc
+
 func GitLogAction(word)
-  if (getline(".")[0] == "[")
-    if (a:word == "HEAD")
-      Git fetch
-      call GitLogUpdate("")
-    elseif (a:word == "All")
-      Git fetch
-      call GitLogUpdate("--all")
-    elseif (a:word == "Fetch")
-      Git fetch
-    elseif (a:word == "Status")
-      call GitLogLcd()
-      tabedit +MyGstatusToggle
-    elseif (a:word == "Graph")
-      call GitLogLcd()
-      tabedit +MyGV
-    elseif (a:word == "Setting")
-      call GitLogSetting()
-    elseif (a:word == "Apply")
-      call GitLogApply()
-      Git fetch
-      call GitLogUpdate("")
-    elseif (a:word == "Help")
-      call GitLogToggleHelp()
-    endif
+  if (a:word == "HEAD")
+    call GitLogFetch()
+    call GitLogUpdate("")
+  elseif (a:word == "All")
+    call GitLogFetch()
+    call GitLogUpdate("--all")
+  elseif (a:word == "Graph")
+    call GitLogLcd()
+    tabedit +MyGV
+  elseif (a:word == "Status")
+    call GitLogLcd()
+    tabedit +MyGstatusToggle
+  elseif (a:word == "Setting")
+    call GitLogSetting()
+  elseif (a:word == "Apply")
+    call GitLogApply()
+    call GitLogUpdate("")
+  elseif (a:word == "Help")
+    call GitLogToggleHelp()
   endif
 endfunc
 
@@ -213,6 +217,7 @@ endfunc
 "------------------------------------------------------
 func GitLogMap()
   nnoremap <buffer> <silent> <CR>   :call GitLogAction(expand("<cword>"))<CR>
+  nnoremap <buffer> <silent> <C-R>  :call GitLogAction("HEAD")<CR>
   nnoremap <buffer> <silent> <C-N>  :call search('\[')<CR>
   nnoremap <buffer> <silent> <C-P>  :call search('\[', 'b')<CR>
 endfunc
@@ -267,10 +272,10 @@ func GitLog(...)
   else
     let dir = a:1
   endif
-  exec "lcd" dir
 
   let title = s:gitlog_winname." ".dir
   call GitLogMakeWindow(title)
+
   let b:base_dir = dir
   let b:help = 0
   let b:log = 6
