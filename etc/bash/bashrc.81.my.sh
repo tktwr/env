@@ -90,12 +90,16 @@ alias zh='vim -c "DiaFullH"'
 #------------------------------------------------------
 # vimapi
 #------------------------------------------------------
+alias ,G=',LCD; vimapi.sh --in-above-win GitLog $PWD'
 alias ,GS=',LCD; vimapi.sh --in-new-tab MyGstatusToggle'
 alias ,GV=',LCD; vimapi.sh --in-new-tab MyGV'
-alias ,GM=',LCD; vimapi.sh --in-above-win GitLog $PWD'
 alias ,I=',LCD; vimapi.sh --in-new-tab MyIDE'
 alias ,T=',LCD; vimapi.sh MyTerm'
 alias ,V=',LCD; vimapi.sh MyTermV'
+
+alias ,e=',LCD; vimapi.sh --in-above-win edit --filepath'
+alias ,sp=',LCD; vimapi.sh --in-above-win split --filepath'
+alias ,tabe=',LCD; vimapi.sh tabedit --filepath'
 
 alias ,diff=',LCD; vimapi.sh MyTabDiff'
 alias ,dirdiff=',LCD; vimapi.sh MyTabDirDiff'
@@ -120,9 +124,6 @@ alias ,nerdtree='vimapi.sh MyNERDTreeT2E --filepath'
 alias ,resize='vimapi.sh MyWinResize'
 alias ,vresize='vimapi.sh MyWinVResizeT2E'
 
-alias ,e='vimapi.sh --in-above-win edit --filepath'
-alias ,sp='vimapi.sh --in-above-win split --filepath'
-alias ,tabe='vimapi.sh tabedit --filepath'
 alias ,vim='vimapi.sh'
 
 alias ,set_tab='vimapi.sh MyTabSetLabel'

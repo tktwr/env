@@ -4,33 +4,36 @@
 - todo.md.html                        | $MY_DIARY/todo.md.html
 - bmk.txt                             | $MY_HOME/.my.common/bmk.txt
 [memo] ------------------------------ | ----------------------------------------
-  - memo/my.md.html                   | $MY_MEMO/my.md.html
-  - memo/vim.md.html                  | $MY_MEMO/dev.md.html
-  - memo/git.md.html                  | $MY_MEMO/vcs.md.html
+- memo/my.md.html                     | $MY_MEMO/my.md.html
+- memo/vim.md.html                    | $MY_MEMO/dev.md.html
+- memo/git.md.html                    | $MY_MEMO/vcs.md.html
 [etc] ------------------------------  | ----------------------------------------
-  - bash/my.sh                        | $MY_BASH/bashrc.81.my.sh
-  - vim/map.vim                       | $MY_VIM/vimrc.70.map.vim
-  - etc/bmk.txt                       | $MY_ETC/bmk/bmk.txt
-  - etc/dir.txt                       | $MY_ETC/bmk/dir.txt
-  - etc/cmdline.txt                   | $MY_ETC/bmk/cmdline.txt
-  - etc/links.md.html                 | $MY_ETC/bmk/links.md.html
-  - papers/papers.md.html             | $MY_PAPERS/papers.md.html
+- bash/my.sh                          | $MY_BASH/bashrc.81.my.sh
+- vim/map.vim                         | $MY_VIM/vimrc.70.map.vim
+- bmk/bmk.txt                         | $MY_ETC/bmk/bmk.txt
+- bmk/dir.txt                         | $MY_ETC/bmk/dir.txt
+- bmk/cmdline.txt                     | $MY_ETC/bmk/cmdline.txt
+- bmk/links.md.html                   | $MY_ETC/bmk/links.md.html
+- papers/papers.md.html               | $MY_PAPERS/papers.md.html
 [git] ------------------------------  | ----------------------------------------
 [dir] ------------------------------  | ----------------------------------------
-  - .my/                              | $HOME/.my
-  - .my.common/                       | $MY_HOME/.my.common
-  - env/                              | $MY_ENV
-    - bin/                            | $MY_BIN
-    - etc/                            | $MY_ETC
-    - bash/                           | $MY_BASH
-    - vim/                            | $MY_VIM
-  - r.etc/                            | $MY_REMOTE_CONFIG/env/etc
-  - l.etc/                            | $MY_LOCAL_CONFIG/env/etc
-  - p.etc/                            | $MY_PRIVATE_CONFIG/env/etc
-  - secret/                           | $MY_SECRET
-  - work/                             | $MY_WORK
-  - proj/                             | $MY_PROJ
-  - git/                              | $MY_GIT
-  - github/                           | $MY_GITHUB
+- .my/                                | $HOME/.my
+- .my.common/                         | $MY_HOME/.my.common
+- env/                                | $MY_ENV
+  - bin/                              | $MY_BIN
+  - etc/                              | $MY_ETC
+  - bash/                             | $MY_BASH
+  - vim/                              | $MY_VIM
+- r.etc/                              | $MY_REMOTE_CONFIG/env/etc
+- l.etc/                              | $MY_LOCAL_CONFIG/env/etc
+- p.etc/                              | $MY_PRIVATE_CONFIG/env/etc
+- secret/                             | $MY_SECRET
+- work/                               | $MY_WORK
+- proj/                               | $MY_PROJ
+- doc/                                | $MY_DOC
+- office/                             | $MY_OFFICE
+- papers/                             | $MY_PAPERS
+- git/                                | $MY_GIT
+- github/                             | $MY_GITHUB
 
 # vim:set ft=bmk syntax=txt nowrap:
