@@ -9,6 +9,7 @@ let loaded_gitlog = 1
 let s:gitlog_winname = '\[gitlog\]'
 let s:gitlog_log = {}
 let s:gitlog_status = {}
+let s:prev_screen = ""
 
 "------------------------------------------------------
 " private func
@@ -23,6 +24,16 @@ endfunc
 
 func GitLogPut(text)
   silent put =a:text
+endfunc
+
+func GitLogStoreBuf()
+  normal 1GyG
+  let s:prev_screen = @"
+endfunc
+
+func GitLogRestoreBuf()
+  call GitLogClear()
+  silent 0put =s:prev_screen
 endfunc
 
 func GitLogLines(text)
@@ -45,14 +56,17 @@ func GitLogHelp()
   call GitLogClear()
 
   let text = ""
-  let text = text."[HEAD] [All] [Help]\n"
+  let text = text."[Back]\n"
   let text = text."\n"
-  let text = text."GitLog\n"
+  let text = text."GitLog:Help\n"
   let text = text."\n"
-  let text = text."<c-a> ... All\n"
-  let text = text."<c-r> ... Redraw\n"
-  let text = text."<c-s> ... Gstatus\n"
-  let text = text."<c-v> ... GV\n"
+  let text = text."<CR>  ... action\n"
+  let text = text."<C-R> ... redraw\n"
+  let text = text."<C-A> ... all\n"
+  let text = text."<C-N> ... next button\n"
+  let text = text."<C-P> ... prev button\n"
+  let text = text."S     ... setting\n"
+  let text = text."?     ... help\n"
 
   silent 0put =text
 endfunc
@@ -60,9 +74,10 @@ endfunc
 func GitLogToggleHelp()
   let b:help = !b:help
   if (b:help)
+    call GitLogStoreBuf()
     call GitLogHelp()
   else
-    call GitLogUpdate("")
+    call GitLogRestoreBuf()
   endif
 endfunc
 
@@ -70,7 +85,7 @@ func GitLogSetting()
   call GitLogClear()
 
   let text = ""
-  let text = text."[HEAD] [Apply] [Help]\n"
+  let text = text."[Back] [Apply]\n"
   let text = text."\n"
   let text = text."GitLog:Setting\n"
   let text = text."\n"
@@ -78,9 +93,20 @@ func GitLogSetting()
   let text = text."let b:base_dir = \"".b:base_dir."\"\n"
   let text = text."let b:log = ".b:log."\n"
   let text = text."let b:log_submodule = ".b:log_submodule."\n"
+  let text = text."let b:log_all = \"".b:log_all."\"\n"
   let text = text."---\n"
 
   silent 0put =text
+endfunc
+
+func GitLogToggleSetting()
+  let b:setting = !b:setting
+  if (b:setting)
+    call GitLogStoreBuf()
+    call GitLogSetting()
+  else
+    call GitLogRestoreBuf()
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -106,6 +132,13 @@ endfunc
 func GitLogLogSubmodule(base_dir, opts)
   let out = system("git submodule")
   let lines = GitLogLines(out)
+  let n_lines = len(lines)
+
+  if (n_lines > 0)
+    call GitLogPut("\n")
+    call GitLogPut("--- Submodules ---")
+  endif
+
   for line in lines
     let lst = split(line)
     let commit = lst[0]
@@ -135,14 +168,11 @@ func GitLogUpdate(opts)
 
   call GitLogPut0(text)
 
-  let opts = "-".b:log." ".a:opts
+  let opts = b:log_all." -".b:log." ".a:opts
   call GitLogLog(b:base_dir, opts)
 
   if (b:log_submodule > 0)
-    call GitLogPut("\n")
-    call GitLogPut("--- Submodules ---")
-
-    let opts = "-".b:log_submodule." ".a:opts
+    let opts = b:log_all." -".b:log_submodule." ".a:opts
     call GitLogLogSubmodule(b:base_dir, opts)
   endif
 
@@ -191,11 +221,16 @@ endfunc
 
 func GitLogAction(word)
   if (a:word == "HEAD")
+    let b:log_all = ""
     call GitLogFetch()
     call GitLogUpdate("")
   elseif (a:word == "All")
+    let b:log_all = "--all"
     call GitLogFetch()
-    call GitLogUpdate("--all")
+    call GitLogUpdate("")
+  elseif (a:word == "Apply")
+    call GitLogApply()
+    call GitLogUpdate("")
   elseif (a:word == "Graph")
     call GitLogLcd()
     tabedit +MyGV
@@ -203,12 +238,13 @@ func GitLogAction(word)
     call GitLogLcd()
     tabedit +MyGstatusToggle
   elseif (a:word == "Setting")
+    call GitLogStoreBuf()
     call GitLogSetting()
-  elseif (a:word == "Apply")
-    call GitLogApply()
-    call GitLogUpdate("")
   elseif (a:word == "Help")
-    call GitLogToggleHelp()
+    call GitLogStoreBuf()
+    call GitLogHelp()
+  elseif (a:word == "Back")
+    call GitLogRestoreBuf()
   endif
 endfunc
 
@@ -218,8 +254,11 @@ endfunc
 func GitLogMap()
   nnoremap <buffer> <silent> <CR>   :call GitLogAction(expand("<cword>"))<CR>
   nnoremap <buffer> <silent> <C-R>  :call GitLogAction("HEAD")<CR>
+  nnoremap <buffer> <silent> <C-A>  :call GitLogAction("All")<CR>
   nnoremap <buffer> <silent> <C-N>  :call search('\[')<CR>
   nnoremap <buffer> <silent> <C-P>  :call search('\[', 'b')<CR>
+  nnoremap <buffer> <silent> S      :call GitLogToggleSetting()<CR>
+  nnoremap <buffer> <silent> ?      :call GitLogToggleHelp()<CR>
 endfunc
 
 "------------------------------------------------------
@@ -276,10 +315,12 @@ func GitLog(...)
   let title = s:gitlog_winname." ".dir
   call GitLogMakeWindow(title)
 
-  let b:base_dir = dir
   let b:help = 0
+  let b:setting = 0
+  let b:base_dir = dir
   let b:log = 6
   let b:log_submodule = 4
+  let b:log_all = ""
   call GitLogUpdate("")
 endfunc
 
