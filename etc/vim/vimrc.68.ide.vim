@@ -111,8 +111,10 @@ endfunc
 
 " send 'cd dir' to a terminal
 func MyIDESendCdE2T(dir)
-  wincmd j
   let l:dir = MyExpandDir(a:dir)
+
+  wincmd j
+
   exec "lcd" l:dir
   if &buftype == 'terminal'
     let l:bufnr = winbufnr(0)
@@ -125,8 +127,10 @@ endfunc
 "------------------------------------------------------
 " send 'cd dir' to a terminal
 func MyIDESendCdT2T(dir, winnr)
-  exec a:winnr."wincmd w"
   let l:dir = MyExpandDir(a:dir)
+
+  exec a:winnr."wincmd w"
+
   exec "lcd" l:dir
   if &buftype == 'terminal'
     let l:bufnr = winbufnr(0)
