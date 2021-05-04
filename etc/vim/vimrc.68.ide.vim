@@ -41,12 +41,6 @@ func MyNERDTreeOpen()
   endif
 endfunc
 
-func MyNERDTreeEdit(winnr)
-  exec a:winnr."wincmd w"
-  wincmd p
-  call nerdtree#ui_glue#invokeKeyMap("<CR>")
-endfunc
-
 "------------------------------------------------------
 " git
 "------------------------------------------------------
@@ -152,13 +146,31 @@ endfunc
 "------------------------------------------------------
 " nerdtree and terminal
 "------------------------------------------------------
-func MyIDESendCdN2T()
-  let l:dir = getcwd()
-  let winnr = MyWinFindTerm()
-  if winnr != -1
+func MyNERDTreeSelected()
+    let n = g:NERDTreeFileNode.GetSelected()
+    if n != {}
+        return n.path.str()
+    endif
+    return ""
+endfunc
+
+func MyNERDTreeEdit(winnr)
+  let selected = MyNERDTreeSelected()
+  if (selected == "")
+    let l:dir = getcwd()
+  else
+    let l:dir = MyExpandDir(selected)
+  endif
+
+  exec a:winnr."wincmd w"
+
+  exec "lcd" l:dir
+  if &buftype == 'terminal'
     let l:bufnr = winbufnr(0)
     call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-    exec "lcd" l:dir
+  else
+    wincmd p
+    call nerdtree#ui_glue#invokeKeyMap("<CR>")
   endif
 endfunc
 

@@ -163,7 +163,9 @@ func s:my_nerdtree_settings()
   nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
   nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
   nmap <buffer> 5       :call MyNERDTreeEdit(5)<CR>
-  nmap <buffer> <C-Y>   :call MyIDESendCdN2T()<CR>
+  nmap <buffer> 6       :call MyNERDTreeEdit(6)<CR>
+  nmap <buffer> 7       :call MyNERDTreeEdit(7)<CR>
+  nmap <buffer> 8       :call MyNERDTreeEdit(8)<CR>
 endfunc
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()
