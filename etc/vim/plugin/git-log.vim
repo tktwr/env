@@ -116,9 +116,9 @@ func GitLogLog(dir, opts)
   call GitLogPut("<".a:dir.">")
   exec "lcd" a:dir
 
-  let log_cmd = "Git graph ".a:opts
+  let log_cmd = "git graph ".a:opts
   let log = system(log_cmd)
-  let status = system("Git status -s")
+  let status = system("git status -s")
 
   call GitLogPut("[Graph]")
   call GitLogPut(log)
