@@ -46,8 +46,15 @@ func MyWinBufExchange(winnr)
   exec dst_bufnr."b"
 endfunc
 
+func MyWinBufCopy(winnr)
+  let src_bufnr = bufnr('%')
+  exec a:winnr."wincmd w"
+  exec src_bufnr."b"
+  wincmd p
+endfunc
+
 "------------------------------------------------------
-" window move
+" change active window
 "------------------------------------------------------
 func MyWinFindTerm()
   let last_winnr = winnr('$')
@@ -116,14 +123,6 @@ func MyWinVResize(width)
   let w:orig_width = a:width
 endfunc
 
-func MyWinVResizeT2E(width)
-  wincmd k
-  exec "vertical resize" a:width
-  wincmd p
-  exec "vertical resize" a:width
-  let w:orig_width = a:width
-endfunc
-
 func s:MyWinInitSizeForEachWin()
   if &buftype == 'terminal'
     exec "resize" g:my_term_winheight
@@ -144,6 +143,9 @@ func MyWinPlace(place)
   exec "wincmd " a:place
 endfunc
 
+"------------------------------------------------------
+" redraw
+"------------------------------------------------------
 func MyRedraw()
   redraw!
   set invnumber
@@ -163,8 +165,9 @@ endfunc
 command -nargs=0 MyWinInfo        call MyWinInfo()
 command -nargs=1 MyWinResize      call MyWinResize(<f-args>)
 command -nargs=1 MyWinVResize     call MyWinVResize(<f-args>)
-command -nargs=1 MyWinVResizeT2E  call MyWinVResizeT2E(<f-args>)
 command -nargs=1 MyWinBufExchange call MyWinBufExchange(<f-args>)
+command -nargs=1 Wx               call MyWinBufExchange(<f-args>)
+command -nargs=1 Wc               call MyWinBufCopy(<f-args>)
 
 command MyWinInitSize             call MyWinInitSize()
 command MyRedraw                  call MyRedraw()

@@ -118,11 +118,13 @@ alias ,LCD='vimapi.sh lcd --filepath $PWD'
 alias ,lcd='vimapi.sh lcd --filepath'
 alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
-alias ,NERDTREE='vimapi.sh MyNERDTreeT2E --filepath $PWD'
-alias ,nerdtree='vimapi.sh MyNERDTreeT2E --filepath'
+alias ,NERDTREE='vimapi.sh MyIDESendCdT2N --filepath $PWD'
+alias ,nerdtree='vimapi.sh MyIDESendCdT2N --filepath'
+
+alias ,termcd='vimapi.sh MyIDESendCdT2T --filepath $PWD'
 
 alias ,resize='vimapi.sh MyWinResize'
-alias ,vresize='vimapi.sh MyWinVResizeT2E'
+alias ,vresize='vimapi.sh MyIDEVResizeT2E'
 
 alias ,vim='vimapi.sh'
 

@@ -85,7 +85,7 @@ func s:BmkMapWin()
   endif
 
   let winnr = winnr()
-  if winnr == 1
+  if (winnr == 1 && winwidth(0) == g:NERDTreeWinSize)
     nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +

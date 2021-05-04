@@ -35,37 +35,6 @@ func MyTermV()
 endfunc
 
 "------------------------------------------------------
-" editor to terminal
-"------------------------------------------------------
-" send a cmd to a terminal
-func MyTermSendCmd(cmd)
-  let l:cmd = a:cmd
-  if (l:cmd == "")
-    let l:cmd = getline('.')
-  endif
-  wincmd j
-  let l:bufnr = winbufnr(0)
-	call term_sendkeys(l:bufnr, l:cmd."\<CR>")
-endfunc
-
-" send 'cd dir' to a terminal
-func MyTermSendCd(dir)
-  let l:dir = MyExpandDir(a:dir)
-  wincmd j
-  let l:bufnr = winbufnr(0)
-  call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-endfunc
-
-func MyTermSendCdN2T()
-  let l:dir = getcwd()
-  let winnr = MyWinFindTerm()
-  if winnr != -1
-    let l:bufnr = winbufnr(0)
-    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-  endif
-endfunc
-
-"------------------------------------------------------
 " terminal to editor
 "------------------------------------------------------
 func Tapi_Exec(_, cmdline)
@@ -92,14 +61,9 @@ func Tapi_ExecInNewTab(_, cmdline)
   exec a:cmdline
 endfunc
 
-func MyNERDTreeT2E(dir)
-  exec "NERDTree" a:dir
-endfunc
-
 "------------------------------------------------------
 " command
 "------------------------------------------------------
 command -nargs=? MyTerm         call MyTerm(<f-args>)
 command -nargs=0 MyTermV        call MyTermV()
-command -nargs=1 -complete=dir  MyNERDTreeT2E  call MyNERDTreeT2E(<f-args>)
 

@@ -47,7 +47,7 @@ nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
 nmap     <C-U>   <Plug>(quickhl-manual-this)
 xmap     <C-U>   <Plug>(quickhl-manual-this)
 nnoremap <C-X>   :close<CR>
-nnoremap <C-Y>   :call MyTermSendCd("")<CR>
+nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
@@ -163,7 +163,7 @@ func s:my_nerdtree_settings()
   nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
   nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
   nmap <buffer> 5       :call MyNERDTreeEdit(5)<CR>
-  nmap <buffer> <C-Y>   :call MyTermSendCdN2T()<CR>
+  nmap <buffer> <C-Y>   :call MyIDESendCdN2T()<CR>
 endfunc
 
 autocmd FileType nerdtree call s:my_nerdtree_settings()

@@ -2,7 +2,6 @@
 " nmap.unused
 "------------------------------------------------------
 "nmap <BS>        <Plug>(easymotion-overwin-line)
-"nnoremap <S-CR>  :call MyTermSendCmd("")<CR>
 "nnoremap <C-B>   :CocListResume<CR>
 "nnoremap --      :MyLineNumberToggle<CR>
 

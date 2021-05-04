@@ -96,6 +96,76 @@ func MyTabClosePrev()
 endfunc
 
 "------------------------------------------------------
+" editor to terminal
+"------------------------------------------------------
+" send a cmd to a terminal
+func MyIDESendCmdE2T(cmd)
+  let l:cmd = a:cmd
+  if (l:cmd == "")
+    let l:cmd = getline('.')
+  endif
+  wincmd j
+  let l:bufnr = winbufnr(0)
+	call term_sendkeys(l:bufnr, l:cmd."\<CR>")
+endfunc
+
+" send 'cd dir' to a terminal
+func MyIDESendCdE2T(dir)
+  wincmd j
+  let l:dir = MyExpandDir(a:dir)
+  exec "lcd" l:dir
+  if &buftype == 'terminal'
+    let l:bufnr = winbufnr(0)
+    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
+  endif
+endfunc
+
+"------------------------------------------------------
+" terminal to terminal
+"------------------------------------------------------
+" send 'cd dir' to a terminal
+func MyIDESendCdT2T(dir, winnr)
+  exec a:winnr."wincmd w"
+  let l:dir = MyExpandDir(a:dir)
+  exec "lcd" l:dir
+  if &buftype == 'terminal'
+    let l:bufnr = winbufnr(0)
+    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
+  endif
+endfunc
+
+"------------------------------------------------------
+" terminal to editor
+"------------------------------------------------------
+func MyIDEVResizeT2E(width)
+  wincmd k
+  exec "vertical resize" a:width
+  wincmd p
+  exec "vertical resize" a:width
+  let w:orig_width = a:width
+endfunc
+
+"------------------------------------------------------
+" nerdtree and terminal
+"------------------------------------------------------
+func MyIDESendCdN2T()
+  let l:dir = getcwd()
+  let winnr = MyWinFindTerm()
+  if winnr != -1
+    let l:bufnr = winbufnr(0)
+    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
+    exec "lcd" l:dir
+  endif
+endfunc
+
+"------------------------------------------------------
+" terminal to nerdtree
+"------------------------------------------------------
+func MyIDESendCdT2N(dir)
+  exec "NERDTree" a:dir
+endfunc
+
+"------------------------------------------------------
 " command
 "------------------------------------------------------
 command MyIDE                   call MyIDE()
@@ -104,6 +174,10 @@ command MyNERDTreeToggle        NERDTreeToggle
 command MyTagbarToggle          TagbarToggle
 command MyGstatusToggle         call MyGstatusToggle()
 command MyGV                    call MyGV()
+
+command -nargs=1                MyIDEVResizeT2E call MyIDEVResizeT2E(<f-args>)
+command -nargs=1 -complete=dir  MyIDESendCdT2N  call MyIDESendCdT2N(<f-args>)
+command -nargs=+ -complete=dir  MyIDESendCdT2T  call MyIDESendCdT2T(<f-args>)
 
 "------------------------------------------------------
 " command in new tab
