@@ -44,8 +44,8 @@ nnoremap <C-N>   :cn<CR>
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-Q>   @q
 nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
-nmap     <C-U>   <Plug>(quickhl-manual-this)
-xmap     <C-U>   <Plug>(quickhl-manual-this)
+nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
+xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 nnoremap <C-X>   :close<CR>
 nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
 

@@ -77,6 +77,9 @@ func s:BmkMap()
   nnoremap <buffer> 3       :call BmkEditFileInWin(3)<CR>
   nnoremap <buffer> 4       :call BmkEditFileInWin(4)<CR>
   nnoremap <buffer> 5       :call BmkEditFileInWin(5)<CR>
+  nnoremap <buffer> 6       :call BmkEditFileInWin(6)<CR>
+  nnoremap <buffer> 7       :call BmkEditFileInWin(7)<CR>
+  nnoremap <buffer> 8       :call BmkEditFileInWin(8)<CR>
 endfunc
 
 func s:BmkMapWin()
