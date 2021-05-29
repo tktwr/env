@@ -35,22 +35,29 @@ f_set_min_env() {
     export MY_PYTHON_EXE="python3"
     export MY_OS_NAME="linux"
   fi
-  export PATH="$MY_HOME/AppData/Local/Programs/Python/Python38:$PATH"
 
+  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python38"
   export MY_CONFIG="$MY_HOME/MyConfig"
   export MY_REMOTE_CONFIG="$MY_CONFIG/tktwr.github"
   export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
   export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
 
+  if [ -z "$SYS_PATH" ]; then
+    export SYS_PATH=$PATH
+  fi
+  export PATH="$SYS_PATH"
+
+  export PATH="$USER_PYTHON_HOME:$PATH"
+
   echoerr "======================================================="
-  echoerr "MY_PYTHON_EXE=$MY_PYTHON_EXE"
-  echoerr "$(which $MY_PYTHON_EXE)"
   echoerr "MY_HOME=$MY_HOME"
   echoerr "MY_CONFIG=$MY_CONFIG"
   echoerr "MY_REMOTE_CONFIG=$MY_REMOTE_CONFIG"
   echoerr "MY_LOCAL_CONFIG=$MY_LOCAL_CONFIG"
   echoerr "MY_PRIVATE_CONFIG=$MY_PRIVATE_CONFIG"
   echoerr "MY_OS_NAME=$MY_OS_NAME"
+  echoerr "MY_PYTHON_EXE=$MY_PYTHON_EXE"
+  echoerr "$(which $MY_PYTHON_EXE)"
   echoerr "-------------------------------------------------------"
 }
 

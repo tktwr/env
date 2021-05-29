@@ -38,21 +38,15 @@ F4::
   send,#+s
   return
 
-F9::
+F7::
   w = %A_ScreenWidth%
   w_half = %A_ScreenWidth%
   w_half /= 2
   MsgBox, w = %w% w_half = %w_half%
   return
 
-; vim tabnext
-F10::
-  IfWinActive ahk_exe mintty.exe
-    send,^{Right}
-  return
-
 ; toggle maximize / half maximize window
-F11::
+F8::
   WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
   ;MsgBox, x y w h = %X% %Y% %W% %H%
   screen_w_75 = %A_ScreenWidth%

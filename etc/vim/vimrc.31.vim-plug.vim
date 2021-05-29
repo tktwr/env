@@ -17,7 +17,7 @@ Plug 'scrooloose/nerdtree'
 let g:NERDTreeWinSize = 30
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
-let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeShowBookmarks = 0
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1

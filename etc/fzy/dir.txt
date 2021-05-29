@@ -3,6 +3,7 @@
 # home     |                   |
 #          |                   |
 my         | MY_DOTMY          | $HOME/.my
+my.common  | MY_DOTMY_COMMON   | $MY_HOME/.my.common
 backup     | MY_BACKUP         | $MY_PRIVATE/backup
 tmp        | MY_TMP            | $MY_PRIVATE/tmp
 #          |                   |

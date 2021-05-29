@@ -80,29 +80,29 @@ endfunc
 " maximize window
 "------------------------------------------------------
 func MyWinMaximizeXToggle(max_width)
-  let l:width = winwidth(0)
+  let w = winwidth(0)
   if !exists('w:orig_width')
-    let w:orig_width = l:width
+    let w:orig_width = w
   endif
-  if l:width == w:orig_width
-    let l:width = a:max_width
+  if w == w:orig_width
+    let w = a:max_width
   else
-    let l:width = w:orig_width
+    let w = w:orig_width
   endif
-  exec "vertical resize" l:width
+  exec "vertical resize" w
 endfunc
 
 func MyWinMaximizeYToggle(max_height)
-  let l:height = winheight(0)
+  let h = winheight(0)
   if !exists('w:orig_height')
-    let w:orig_height = l:height
+    let w:orig_height = h
   endif
-  if l:height == w:orig_height
-    let l:height = a:max_height
+  if h == w:orig_height
+    let h = a:max_height
   else
-    let l:height = w:orig_height
+    let h = w:orig_height
   endif
-  exec "resize" l:height
+  exec "resize" h
 endfunc
 
 func MyWinMaximizeXYToggle(max_width, max_height)

@@ -169,8 +169,9 @@ func MyNERDTreeEdit(winnr)
     let l:bufnr = winbufnr(0)
     call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
   else
-    wincmd p
-    call nerdtree#ui_glue#invokeKeyMap("<CR>")
+    "wincmd p
+    "call nerdtree#ui_glue#invokeKeyMap("<CR>")
+    exec "edit" selected
   endif
 endfunc
 

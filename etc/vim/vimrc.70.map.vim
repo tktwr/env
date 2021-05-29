@@ -95,7 +95,7 @@ tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
 
 "------------------------------------------------------
-" map.window.resize
+" map.window
 "------------------------------------------------------
 nnoremap <C-0> <C-W>b
 nnoremap <C-1> <C-W>t

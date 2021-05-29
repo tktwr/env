@@ -12,13 +12,20 @@ alias gf='git fetch'
 
 alias gA='git add'
 alias gAu='git add -u'
-alias gC-amend='git commit --amend -m'
 
+# gC-amend ["amend"]
+gC-amend() {
+  msg=${1:-"amend"}
+  git commit --amend -m "$msg"
+}
+
+# gC ["update"]
 gC() {
   msg=${1:-"update"}
   git commit -m "$msg"
 }
 
+# gAC ["update"]
 gAC() {
   msg=${1:-"update"}
   git commit -a -m "$msg"
@@ -71,6 +78,7 @@ git-reset-last() {
 #------------------------------------------------------
 alias git-pull-no-commit='git pull --no-commit'
 alias git-merge-no-commit='git merge --no-commit'
+alias git-merge-no-ff='git merge --no-ff'
 
 git-push-origin() {
   git push origin $(git-branch-name)
@@ -84,7 +92,7 @@ git-rebase-origin() {
   git rebase origin/$(git-branch-name)
 }
 
-git-merge-no-commit-origin() {
+git-merge-origin-no-commit() {
   git merge --no-commit origin/$(git-branch-name)
 }
 
@@ -124,6 +132,16 @@ print-git-tag() {
 
 alias gb='print-git-branch'
 alias gt='print-git-tag'
+
+git-branch-delete() {
+  br=$1
+  git branch -d $br
+}
+
+git-remote-branch-delete() {
+  br=$1
+  git push origin :$br
+}
 
 #------------------------------------------------------
 # git-graph
