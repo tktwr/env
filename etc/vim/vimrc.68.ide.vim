@@ -156,22 +156,15 @@ endfunc
 
 func MyNERDTreeEdit(winnr)
   let selected = MyNERDTreeSelected()
+
   if (selected == "")
-    let l:dir = getcwd()
-  else
-    let l:dir = MyExpandDir(selected)
+    return
   endif
 
-  exec a:winnr."wincmd w"
-
-  exec "lcd" l:dir
-  if &buftype == 'terminal'
-    let l:bufnr = winbufnr(0)
-    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-  else
-    "wincmd p
-    "call nerdtree#ui_glue#invokeKeyMap("<CR>")
-    exec "edit" selected
+  if (isdirectory(selected))
+    call MyOpenDirInTerm(a:winnr, selected)
+  elseif (filereadable(selected))
+    call MyEditFile(a:winnr, selected)
   endif
 endfunc
 

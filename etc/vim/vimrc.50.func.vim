@@ -29,36 +29,36 @@ func MyGetKeyFname(line)
 endfunc
 
 func MyExpand(url)
-  let l:url = a:url
-  if (l:url == "")
-    let l:url = expand("<cfile>")
+  let url = a:url
+  if (url == "")
+    let url = expand("<cfile>")
   endif
-  let l:url = expand(l:url)
+  let url = expand(url)
 
-  if (match(l:url, "http") == 0)
-    let l:result = {"type": "http", "url": l:url}
-  elseif (isdirectory(l:url))
-    let l:result = {"type": "dir", "url": l:url}
-  elseif (filereadable(l:url))
-    let l:result = {"type": "file", "url": l:url}
+  if (match(url, "http") == 0)
+    let type = "http"
+  elseif (isdirectory(url))
+    let type = "dir"
+  elseif (filereadable(url))
+    let type = "file"
   else
-    let l:url = expand("%:p")
-    let l:result = {"type": "file", "url": l:url}
+    let type = "file"
+    let url = expand("%:p")
   endif
 
-  return l:result
+  return {"type": type, "url": url}
 endfunc
 
 func MyExpandDir(url)
-  let l:result = MyExpand(a:url)
-  if (l:result["type"] == "dir")
-    let l:dir = l:result["url"]
-  elseif (l:result["type"] == "file")
-    let l:dir = MyGetDirName(l:result["url"])
+  let r = MyExpand(a:url)
+  if (r["type"] == "dir")
+    let dir = r["url"]
+  elseif (r["type"] == "file")
+    let dir = MyGetDirName(r["url"])
   else
-    let l:dir = expand("%:p:h")
+    let dir = expand("%:p:h")
   endif
-  return l:dir
+  return dir
 endfunc
 
 func MyUnexpand(dir)

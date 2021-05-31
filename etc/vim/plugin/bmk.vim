@@ -11,8 +11,35 @@ let s:bmk = {}
 let s:keys = ""
 
 "------------------------------------------------------
-" private func
+" get item
 "------------------------------------------------------
+func BmkGetKeyHere()
+  return BmkGetItemHere(1)
+endfunc
+
+func BmkGetValueHere()
+  return BmkGetItemHere(2)
+endfunc
+
+func BmkGetItemHere(idx)
+  let mx = '\(\f\+\)\s*|\s*\(\f\+\)'
+  let line = getline('.')
+  let line = matchstr(line, mx)
+  let item = substitute(line, mx, '\'.a:idx, '')
+  return item
+endfunc
+
+"------------------------------------------------------
+" load
+"------------------------------------------------------
+func s:BmkRegister(line)
+  let result = MyGetKeyFname(a:line)
+  let key = result["key"]
+  let fname = result["fname"]
+  let s:bmk[key] = fname
+  let s:keys = s:keys . key . "\n"
+endfunc
+
 func s:BmkLoad()
   let bmk_file = expand(s:bmk_file)
   if !filereadable(bmk_file)
@@ -24,29 +51,28 @@ func s:BmkLoad()
     if line == "" || line[0] == '#' || line[0] == '['
       continue
     endif
-    let result = MyGetKeyFname(line)
-    let key = result["key"]
-    let fname = result["fname"]
-    let s:bmk[key] = fname
-    let s:keys = s:keys . key . "\n"
+    call s:BmkRegister(line)
   endfor
 endfunc
 
+"------------------------------------------------------
+" action
+"------------------------------------------------------
 func BmkOpen()
-  let result = MyGetKeyFnameHere()
-  call MyOpen(result["fname"])
+  let val = BmkGetValueHere()
+  call MyOpen(val)
 endfunc
 
 func BmkOpenDirInNERDTree()
-  let result = MyGetKeyFnameHere()
-  let dir = MyExpandDir(result["fname"])
+  let val = BmkGetValueHere()
+  let dir = MyExpandDir(val)
   b#
   exec "NERDTree" dir
 endfunc
 
 func BmkEditFileInWin(winnr)
-  let result = MyGetKeyFnameHere()
-  call MyEdit(a:winnr, result["fname"])
+  let val = BmkGetValueHere()
+  call MyEdit(a:winnr, val)
 endfunc
 
 func BmkPreviewFileInWin(winnr)
@@ -55,11 +81,9 @@ func BmkPreviewFileInWin(winnr)
 endfunc
 
 func BmkKeyCR()
-  let result = MyGetKeyFnameHere()
-  let key = result["key"]
-  let fname = result["fname"]
+  let val = BmkGetValueHere()
 
-  let result = MyExpand(fname)
+  let result = MyExpand(val)
   let type = result["type"]
   let url = result["url"]
 
@@ -70,6 +94,9 @@ func BmkKeyCR()
   endif
 endfunc
 
+"------------------------------------------------------
+" map
+"------------------------------------------------------
 func s:BmkMap()
   nnoremap <buffer> <C-B>   :b#<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>

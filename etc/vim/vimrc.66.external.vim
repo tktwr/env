@@ -12,25 +12,48 @@ func MyOpenDir(url)
 endfunc
 
 func MyOpen(url)
-  let l:result = MyExpand(a:url)
+  let r = MyExpand(a:url)
 
-  if (l:result["type"] == "http")
-    call MyOpenURL(l:result["url"])
-  elseif (l:result["type"] == "dir")
-    call MyOpenDir(l:result["url"])
-  elseif (l:result["type"] == "file")
-    call MyOpenURL(l:result["url"])
+  if (r["type"] == "http")
+    call MyOpenURL(r["url"])
+  elseif (r["type"] == "dir")
+    call MyOpenDir(r["url"])
+  elseif (r["type"] == "file")
+    call MyOpenURL(r["url"])
   endif
 endfunc
 
-func MyEdit(winnr, url)
-  let l:result = MyExpand(a:url)
-
+func MyOpenDirInTerm(winnr, dir)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
 
-  exec "edit" l:result["url"]
+  if &buftype == 'terminal'
+    exec "lcd" a:dir
+    let bufnr = winbufnr(0)
+    call term_sendkeys(bufnr, "cd ".a:dir."\<CR>")
+  endif
+endfunc
+
+func MyEditFile(winnr, file)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  let dir = MyGetDirName(a:file)
+  exec "lcd" dir
+  exec "edit" a:file
+endfunc
+
+func MyEdit(winnr, url)
+  let r = MyExpand(a:url)
+  let selected = r["url"]
+
+  if (isdirectory(selected))
+    call MyOpenDirInTerm(a:winnr, selected)
+  elseif (filereadable(selected))
+    call MyEditFile(a:winnr, selected)
+  endif
 endfunc
 
 "------------------------------------------------------
