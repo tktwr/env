@@ -14,6 +14,7 @@
 - bmk/dir.txt                          | $MY_ETC/bmk/dir.txt
 - bmk/cmdline.txt                      | $MY_ETC/bmk/cmdline.txt
 - bmk/links.md.html                    | $MY_ETC/bmk/links.md.html
+- bmk/links.txt                        | $MY_ETC/bmk/links.txt
 - papers/papers.md.html                | $MY_PAPERS/papers.md.html
 [git] -------------------------------- | ----------------------------------------
 [private] ---------------------------- | ----------------------------------------

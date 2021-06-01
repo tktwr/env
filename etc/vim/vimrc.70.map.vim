@@ -43,7 +43,7 @@ nnoremap <C-G>   :MyRedraw<CR>
 nnoremap <C-N>   :cn<CR>
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-Q>   @q
-nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
+nnoremap <C-S>   :Bmk bmk/links.txt<CR>
 nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 nnoremap <C-X>   :close<CR>
@@ -98,9 +98,9 @@ tnoremap <C-L>   <C-W>l
 " map.window
 "------------------------------------------------------
 nnoremap <C-0> <C-W>b
-nnoremap <C-1> <C-W>t
-nnoremap <C-@> <C-W>:call MyWinBufExchange(2)<CR>
-nnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
+nnoremap <C-1> <C-W>:BmkRestore<CR>
+nnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
+nnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
 nnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
 nnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
 nnoremap <C-^> <C-W>:echo "C-6"<CR>
@@ -109,9 +109,9 @@ nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
 nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle("")<CR>
 
 tnoremap <C-0> <C-W>b
-tnoremap <C-1> <C-W>t
-tnoremap <C-@> <C-W>:call MyWinBufExchange(2)<CR>
-tnoremap <C-3> <C-W>:call MyWinBufExchange(3)<CR>
+tnoremap <C-1> <C-W>:BmkRestore<CR>
+tnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
+tnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
 tnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
 tnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
 tnoremap <C-^> <C-W>:echo "C-6"<CR>

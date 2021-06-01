@@ -22,7 +22,7 @@ func BmkGetValueHere()
 endfunc
 
 func BmkGetItemHere(idx)
-  let mx = '\(\f\+\)\s*|\s*\(\f\+\)'
+  let mx = '- \(.\+\)\s*|\s*\(.\+\)'
   let line = getline('.')
   let line = matchstr(line, mx)
   let item = substitute(line, mx, '\'.a:idx, '')
@@ -60,35 +60,57 @@ endfunc
 "------------------------------------------------------
 func BmkOpen()
   let val = BmkGetValueHere()
+  if val == ""
+    return
+  endif
+
   call MyOpen(val)
 endfunc
 
 func BmkOpenDirInNERDTree()
   let val = BmkGetValueHere()
+  if val == ""
+    return
+  endif
+
   let dir = MyExpandDir(val)
-  b#
+  call BmkRestore()
   exec "NERDTree" dir
 endfunc
 
 func BmkEditFileInWin(winnr)
   let val = BmkGetValueHere()
+  if val == ""
+    return
+  endif
+
   call MyEdit(a:winnr, val)
 endfunc
 
 func BmkPreviewFileInWin(winnr)
-  call BmkEditFileInWin(a:winnr)
+  let val = BmkGetValueHere()
+  if val == ""
+    return
+  endif
+
+  call MyEdit(a:winnr, val)
   wincmd p
 endfunc
 
 func BmkKeyCR()
   let val = BmkGetValueHere()
+  if val == ""
+    return
+  endif
 
-  let result = MyExpand(val)
-  let type = result["type"]
-  let url = result["url"]
+  let r = MyExpand(val)
+  let type = r["type"]
+  let url = r["url"]
 
   if type == "dir"
     call BmkOpenDirInNERDTree()
+  elseif (type == "http")
+    call MyOpenURL(url)
   else
     call BmkEditFileInWin(2)
   endif
@@ -98,7 +120,7 @@ endfunc
 " map
 "------------------------------------------------------
 func s:BmkMap()
-  nnoremap <buffer> <C-B>   :b#<CR>
+  nnoremap <buffer> <C-B>   :call BmkRestore()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>
   nnoremap <buffer> 2       :call BmkEditFileInWin(2)<CR>
   nnoremap <buffer> 3       :call BmkEditFileInWin(3)<CR>
@@ -119,7 +141,7 @@ func s:BmkMapWin()
     nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +
-    nnoremap <buffer> h       :b#<CR>
+    nnoremap <buffer> h       :call BmkRestore()<CR>
     nnoremap <buffer> l       :call BmkPreviewFileInWin(2)<CR>
   else
     nnoremap <buffer> <CR>    :call BmkEditFileInWin(0)<CR>
@@ -142,6 +164,19 @@ endfunc
 call s:BmkInit()
 
 "------------------------------------------------------
+" statusline
+"------------------------------------------------------
+func BmkStatusline()
+  let l:statusline = "%{MyStatuslineWinNr()}"
+  let l:statusline.= "%t"
+  return l:statusline
+endfunc
+
+func BmkSetStatusline()
+  setl statusline=%!BmkStatusline()
+endfunc
+
+"------------------------------------------------------
 " public func
 "------------------------------------------------------
 func BmkPrintCompleteKeys()
@@ -152,14 +187,25 @@ func s:BmkCompleteKeys(A,L,P)
   return s:keys
 endfunc
 
+func BmkRestore()
+  1wincmd w
+  exec w:orig_bufnr."b"
+endfunc
+
 func s:Bmk(key)
+  1wincmd w
+  if !exists("w:orig_bufnr")
+    let w:orig_bufnr = bufnr('%')
+  endif
   exec "edit" s:bmk[a:key]
+  call BmkSetStatusline()
 endfunc
 
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
 command -nargs=1 -complete=custom,s:BmkCompleteKeys Bmk  call s:Bmk("<args>")
+command BmkRestore      call BmkRestore()
 
 autocmd FileType bmk    call s:BmkMap()
 autocmd BufWinEnter *   call s:BmkMapWin()

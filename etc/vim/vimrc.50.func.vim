@@ -35,7 +35,7 @@ func MyExpand(url)
   endif
   let url = expand(url)
 
-  if (match(url, "http") == 0)
+  if (match(url, 'http\|https') == 0)
     let type = "http"
   elseif (isdirectory(url))
     let type = "dir"
