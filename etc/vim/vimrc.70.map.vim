@@ -36,14 +36,16 @@ nnoremap Q       :confirm qall<CR>
 nnoremap ==      zi
 
 nnoremap <C-A>   :MyMakeLink<CR>
-nnoremap <C-B>   :Bmk bmk.txt<CR>
+nnoremap <C-B>   :BmkHere bmk.txt<CR>
 nnoremap <C-D>   <C-B>
-nnoremap <C-E>   :only<CR>
+nnoremap <C-E>   :WinBufHistClear<CR>
 nnoremap <C-G>   :MyRedraw<CR>
+nnoremap <C-I>   :WinBufHistPrint<CR>
 nnoremap <C-N>   :cn<CR>
+nnoremap <C-O>   :WinBufHistPrev<CR>
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-Q>   @q
-nnoremap <C-S>   :Bmk bmk/links.txt<CR>
+nnoremap <C-S>   :BmkHere scratchpad.md.html<CR>
 nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 nnoremap <C-X>   :close<CR>
@@ -102,8 +104,8 @@ nnoremap <C-1> <C-W>:BmkRestore<CR>
 nnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
 nnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
 nnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
-nnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
-nnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
+nnoremap <C-4> <C-W>:echo '<C-4>'<CR>
+nnoremap <C-5> <C-W>:echo '<C-5>'<CR>
 nnoremap <C-6> <C-W>:echo '<C-6>'<CR>
 nnoremap <C-^> <C-W>:echo '<C-^>'<CR>
 nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
@@ -115,8 +117,8 @@ tnoremap <C-1> <C-W>:BmkRestore<CR>
 tnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
 tnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
 tnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
-tnoremap <C-4> <C-W>:call MyWinBufExchange(4)<CR>
-tnoremap <C-5> <C-W>:call MyWinBufExchange(5)<CR>
+tnoremap <C-4> <C-W>:echo '<C-4>'<CR>
+tnoremap <C-5> <C-W>:echo '<C-5>'<CR>
 tnoremap <C-6> <C-W>:echo '<C-6>'<CR>
 tnoremap <C-^> <C-W>:echo '<C-^>'<CR>
 tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>

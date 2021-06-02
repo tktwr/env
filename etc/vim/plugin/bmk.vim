@@ -4,8 +4,8 @@
 if exists("loaded_bmk")
   finish
 endif
-
 let loaded_bmk = 1
+
 let s:bmk_file = g:bmk_file
 let s:bmk = {}
 let s:keys = ""
@@ -120,7 +120,7 @@ endfunc
 " map
 "------------------------------------------------------
 func s:BmkMap()
-  nnoremap <buffer> <C-B>   :call BmkRestore()<CR>
+  nnoremap <buffer> <C-B>   :call BmkRestoreHere()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>
   nnoremap <buffer> 2       :call BmkEditFileInWin(2)<CR>
   nnoremap <buffer> 3       :call BmkEditFileInWin(3)<CR>
@@ -187,27 +187,43 @@ func s:BmkCompleteKeys(A,L,P)
   return s:keys
 endfunc
 
-func BmkRestore()
-  1wincmd w
+func BmkRestoreHere()
+  if !exists("w:orig_bufnr")
+    let w:orig_bufnr = bufnr('%')
+  endif
   exec w:orig_bufnr."b"
 endfunc
 
-func s:Bmk(key)
+func BmkRestore()
   1wincmd w
+  call BmkRestoreHere()
+endfunc
+
+func BmkHere(key)
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
   exec "edit" s:bmk[a:key]
+endfunc
+
+func Bmk(key)
+  1wincmd w
+  call BmkHere(a:key)
   call BmkSetStatusline()
 endfunc
 
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command -nargs=1 -complete=custom,s:BmkCompleteKeys Bmk  call s:Bmk("<args>")
+command -nargs=1 -complete=custom,s:BmkCompleteKeys Bmk      call Bmk("<args>")
+command -nargs=1 -complete=custom,s:BmkCompleteKeys BmkHere  call BmkHere("<args>")
 command BmkRestore      call BmkRestore()
+command BmkRestoreHere  call BmkRestoreHere()
 
-autocmd FileType bmk    call s:BmkMap()
-autocmd BufWinEnter *   call s:BmkMapWin()
-autocmd WinEnter *      call s:BmkMapWin()
+augroup bmk
+  autocmd!
+  autocmd FileType bmk    call s:BmkMap()
+  autocmd BufWinEnter *   call s:BmkMapWin()
+  autocmd WinEnter *      call s:BmkMapWin()
+augroup END
 
