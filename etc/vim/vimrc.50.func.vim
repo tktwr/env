@@ -28,33 +28,42 @@ func MyGetKeyFname(line)
   return result
 endfunc
 
+func MyUrlType(url)
+  let url = a:url
+
+  if (match(url, 'http\|https') == 0)
+    let type = "http"
+  elseif (match(url, '^//') == 0)
+    let type = "network"
+  elseif (match(url, '^\\') == 0)     " difficult to handle this format
+    let type = ""
+  elseif (isdirectory(url))
+    let type = "dir"
+  elseif (filereadable(url))
+    let type = "file"
+  else
+    let type = ""
+  endif
+
+  return type
+endfunc
+
 func MyExpand(url)
   let url = a:url
   if (url == "")
     let url = expand("<cfile>")
   endif
   let url = expand(url)
-
-  if (match(url, 'http\|https') == 0)
-    let type = "http"
-  elseif (isdirectory(url))
-    let type = "dir"
-  elseif (filereadable(url))
-    let type = "file"
-  else
-    let type = "file"
-    let url = expand("%:p")
-  endif
-
+  let type = MyUrlType(url)
   return {"type": type, "url": url}
 endfunc
 
 func MyExpandDir(url)
   let r = MyExpand(a:url)
-  if (r["type"] == "dir")
-    let dir = r["url"]
-  elseif (r["type"] == "file")
-    let dir = MyGetDirName(r["url"])
+  if (r.type == "dir")
+    let dir = r.url
+  elseif (r.type == "file")
+    let dir = MyGetDirName(r.url)
   else
     let dir = expand("%:p:h")
   endif

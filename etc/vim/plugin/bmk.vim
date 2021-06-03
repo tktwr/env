@@ -21,6 +21,10 @@ func BmkGetValueHere()
   return BmkGetItemHere(2)
 endfunc
 
+func BmkGetExpandedValueHere()
+  return expand(BmkGetItemHere(2))
+endfunc
+
 func BmkGetItemHere(idx)
   let mx = '- \(.\+\)\s*|\s*\(.\+\)'
   let line = getline('.')
@@ -98,28 +102,58 @@ func BmkPreviewFileInWin(winnr)
 endfunc
 
 func BmkKeyCR()
-  let val = BmkGetValueHere()
+  let val = BmkGetExpandedValueHere()
   if val == ""
     return
   endif
 
-  let r = MyExpand(val)
-  let type = r["type"]
-  let url = r["url"]
+  let type = BmkUrlType(val)
 
-  if type == "dir"
+  if (type == "http")
+    call MyOpenURL(val)
+  elseif (type == "network")
+    call MyOpenDir(val)
+  elseif type == "dir"
     call BmkOpenDirInNERDTree()
-  elseif (type == "http")
-    call MyOpenURL(url)
-  else
+  elseif type == "file"
     call BmkEditFileInWin(2)
+  else
+    echo "BmkKeyCR: not supported type: [".type."]"
   endif
+endfunc
+
+func BmkUrlType(url)
+  let url = a:url
+
+  if (match(url, 'http\|https') == 0)
+    let type = "http"
+  elseif (match(url, '^//') == 0)
+    let type = "network"
+  elseif (match(url, '^\\') == 0)     " difficult to handle this format
+    let type = ""
+  elseif (isdirectory(url))
+    let type = "dir"
+  elseif (filereadable(url))
+    let type = "file"
+  else
+    let type = ""
+  endif
+
+  return type
+endfunc
+
+func BmkDebug()
+  let val = BmkGetExpandedValueHere()
+  let type = BmkUrlType(val)
+  echo val
+  echo type
 endfunc
 
 "------------------------------------------------------
 " map
 "------------------------------------------------------
 func s:BmkMap()
+  nnoremap <buffer> <C-4>   :call BmkDebug()<CR>
   nnoremap <buffer> <C-B>   :call BmkRestoreHere()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>
   nnoremap <buffer> 2       :call BmkEditFileInWin(2)<CR>

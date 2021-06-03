@@ -11,15 +11,24 @@ func MyOpenDir(url)
   redraw!
 endfunc
 
+func MyOpenFile(url)
+  exec "silent !vscode.sh" a:url
+  redraw!
+endfunc
+
 func MyOpen(url)
   let r = MyExpand(a:url)
 
-  if (r["type"] == "http")
-    call MyOpenURL(r["url"])
-  elseif (r["type"] == "dir")
-    call MyOpenDir(r["url"])
-  elseif (r["type"] == "file")
-    call MyOpenURL(r["url"])
+  if (r.type == "http")
+    call MyOpenURL(r.url)
+  elseif (r.type == "network")
+    call MyOpenDir(r.url)
+  elseif (r.type == "dir")
+    call MyOpenDir(r.url)
+  elseif (r.type == "file")
+    call MyOpenFile(r.url)
+  else
+    echo "MyOpen: not supported type: [".r.type."]"
   endif
 endfunc
 

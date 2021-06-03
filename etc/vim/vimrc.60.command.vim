@@ -88,9 +88,9 @@ command MyTabBar             Tabularize /|
 command MyTabDots            Tabularize /\.\.\.
 command MyTabComma           Tabularize /,
 
-command MyCdHere             exec "cd" MyExpandDir("")
-command MyTcdHere            exec "tcd" MyExpandDir("")
-command MyLcdHere            exec "lcd" MyExpandDir("")
+command MyCdHere             exec "cd" expand("%:p:h")
+command MyTcdHere            exec "tcd" expand("%:p:h")
+command MyLcdHere            exec "lcd" expand("%:p:h")
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 

@@ -36,7 +36,7 @@ func MyNERDTreeOpen()
     NERDTree
   else
     "NERDTreeFind
-    let l:dir = MyExpandDir("")
+    let l:dir = expand("%:p:h")
     exec "silent NERDTree" l:dir
   endif
 endfunc
