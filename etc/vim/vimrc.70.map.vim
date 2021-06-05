@@ -99,31 +99,31 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-nnoremap <C-1> <C-W>:BmkRestore<CR>
-nnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
-nnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
-nnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
-nnoremap <C-4> <C-W>:echo '<C-4>'<CR>
-nnoremap <C-5> <C-W>:echo '<C-5>'<CR>
-nnoremap <C-6> <C-W>:echo '<C-6>'<CR>
-nnoremap <C-^> <C-W>:echo '<C-^>'<CR>
-nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
-nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle("")<CR>
-nnoremap <C-0> <C-W>t
+nnoremap <silent> <C-1> <C-W>:silent BmkRestore<CR>
+nnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt<CR>
+nnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt<CR>
+nnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt<CR>
+nnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
+nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
+nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
+nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
+nnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+nnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
+nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
+nnoremap <silent> <C-0> <C-W>t
 
-tnoremap <C-1> <C-W>:BmkRestore<CR>
-tnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
-tnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
-tnoremap <C-3> <C-W>:Bmk bmk/links.txt<CR>
-tnoremap <C-4> <C-W>:echo '<C-4>'<CR>
-tnoremap <C-5> <C-W>:echo '<C-5>'<CR>
-tnoremap <C-6> <C-W>:echo '<C-6>'<CR>
-tnoremap <C-^> <C-W>:echo '<C-^>'<CR>
-tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
-tnoremap <C-9> <C-W>:call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
-tnoremap <C-0> <C-W>t
+tnoremap <silent> <C-1> <C-W>:silent BmkRestore<CR>
+tnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt<CR>
+tnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt<CR>
+tnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt<CR>
+tnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
+tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
+tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
+tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
+tnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+tnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-0> <C-W>t
 
 "------------------------------------------------------
 " map.tab

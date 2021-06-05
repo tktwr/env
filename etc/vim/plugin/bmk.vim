@@ -168,17 +168,6 @@ endfunc
 "------------------------------------------------------
 " load
 "------------------------------------------------------
-func s:BmkRegister(line)
-  let line = a:line
-  let key = BmkGetItem(line, 1)
-  let val = BmkGetItem(line, 2)
-
-  let key = s:RemoveEndSpaces(key)
-
-  let s:bmk[key] = val
-  let s:keys = s:keys . key . "\n"
-endfunc
-
 func s:BmkLoad(bmk_file)
   let bmk_file = expand(a:bmk_file)
   if !filereadable(bmk_file)
@@ -191,6 +180,21 @@ func s:BmkLoad(bmk_file)
     endif
     call s:BmkRegister(line)
   endfor
+endfunc
+
+func s:BmkRegister(line)
+  let line = a:line
+  let key = BmkGetItem(line, 1)
+  let val = BmkGetItem(line, 2)
+
+  let key = s:RemoveEndSpaces(key)
+
+  let s:bmk[key] = val
+  let s:keys = s:keys . key . "\n"
+endfunc
+
+func s:BmkCompleteKeys(A,L,P)
+  return s:keys
 endfunc
 
 "------------------------------------------------------
@@ -270,13 +274,6 @@ func BmkKeyCRHere()
   endif
 endfunc
 
-func BmkDebug()
-  let val = BmkGetExpandedValueHere()
-  let type = BmkUrlType(val)
-  echo val
-  echo type
-endfunc
-
 "------------------------------------------------------
 " map
 "------------------------------------------------------
@@ -343,16 +340,22 @@ func BmkSetStatusline()
 endfunc
 
 "------------------------------------------------------
-" public func
+" public debug
 "------------------------------------------------------
+func BmkDebug()
+  let val = BmkGetExpandedValueHere()
+  let type = BmkUrlType(val)
+  echo val
+  echo type
+endfunc
+
 func BmkPrintCompleteKeys()
   echo s:keys
 endfunc
 
-func s:BmkCompleteKeys(A,L,P)
-  return s:keys
-endfunc
-
+"------------------------------------------------------
+" public func
+"------------------------------------------------------
 func BmkRestoreHere()
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
