@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" external
+" open
 "------------------------------------------------------
 func MyOpenURL(url)
   exec "silent !chrome.sh" a:url
@@ -32,6 +32,9 @@ func MyOpen(url)
   endif
 endfunc
 
+"------------------------------------------------------
+" edit
+"------------------------------------------------------
 func MyOpenDirInTerm(winnr, dir)
   if a:winnr > 0
     exec a:winnr."wincmd w"
@@ -54,14 +57,21 @@ func MyEditFile(winnr, file)
   exec "edit" a:file
 endfunc
 
+func MyExecVimCommand(winnr, cmd)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  exec a:cmd
+endfunc
+
 func MyEdit(winnr, url)
   let r = MyExpand(a:url)
-  let selected = r["url"]
 
-  if (isdirectory(selected))
-    call MyOpenDirInTerm(a:winnr, selected)
-  elseif (filereadable(selected))
-    call MyEditFile(a:winnr, selected)
+  if (r.type == "dir")
+    call MyOpenDirInTerm(a:winnr, r.url)
+  elseif (r.type == "file")
+    call MyEditFile(a:winnr, r.url)
   endif
 endfunc
 

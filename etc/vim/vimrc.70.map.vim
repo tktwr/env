@@ -99,7 +99,6 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-nnoremap <C-0> <C-W>b
 nnoremap <C-1> <C-W>:BmkRestore<CR>
 nnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
 nnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
@@ -111,8 +110,8 @@ nnoremap <C-^> <C-W>:echo '<C-^>'<CR>
 nnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
 nnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
 nnoremap <C-9> <C-W>:call MyWinMaximizeYToggle("")<CR>
+nnoremap <C-0> <C-W>t
 
-tnoremap <C-0> <C-W>b
 tnoremap <C-1> <C-W>:BmkRestore<CR>
 tnoremap <C-2> <C-W>:Bmk bmk.txt<CR>
 tnoremap <C-@> <C-W>:Bmk bmk.txt<CR>
@@ -124,6 +123,7 @@ tnoremap <C-^> <C-W>:echo '<C-^>'<CR>
 tnoremap <C-7> <C-W>:call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
 tnoremap <C-8> <C-W>:call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
 tnoremap <C-9> <C-W>:call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <C-0> <C-W>t
 
 "------------------------------------------------------
 " map.tab

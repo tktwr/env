@@ -60,6 +60,7 @@ endfunc
 
 func MyExpandDir(url)
   let r = MyExpand(a:url)
+
   if (r.type == "dir")
     let dir = r.url
   elseif (r.type == "file")
@@ -67,6 +68,7 @@ func MyExpandDir(url)
   else
     let dir = expand("%:p:h")
   endif
+
   return dir
 endfunc
 

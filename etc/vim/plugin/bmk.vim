@@ -11,48 +11,101 @@ let s:bmk = {}
 let s:keys = ""
 
 "------------------------------------------------------
+" private func
+"------------------------------------------------------
+func s:InSideBar()
+  let winnr = winnr()
+  if (winnr == 1 && winwidth(0) < 40)
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
+func s:RemoveBeginSpaces(line)
+  return substitute(a:line, '^\s*', '', '')
+endfunc
+
+func s:RemoveEndSpaces(line)
+  return substitute(a:line, '\s*$', '', '')
+endfunc
+
+func s:GetDirName(filepath)
+  return substitute(a:filepath, "/[^/]*$", "", "")
+endfunc
+
+func BmkUrlType(url)
+  let url = a:url
+
+  if (match(url, 'http\|https') == 0)
+    let type = "http"
+  elseif (match(url, '^//') == 0)
+    let type = "network"
+  elseif (match(url, '^\\') == 0)     " difficult to handle this format
+    let type = ""
+  elseif (match(url, '^:') == 0)
+    let type = "vim_command"
+  elseif (isdirectory(url))
+    let type = "dir"
+  elseif (filereadable(url))
+    let type = "file"
+  else
+    let type = ""
+  endif
+
+  return type
+endfunc
+
+"------------------------------------------------------
 " get item
 "------------------------------------------------------
-func BmkGetKeyHere()
-  return BmkGetItemHere(1)
-endfunc
-
-func BmkGetValueHere()
-  return BmkGetItemHere(2)
-endfunc
-
-func BmkGetExpandedValueHere()
-  return expand(BmkGetItemHere(2))
-endfunc
-
-func BmkGetItemHere(idx)
+" item format per line
+" - word word    | word
+func BmkGetItem(line, idx)
   let mx = '- \(.\+\)\s*|\s*\(.\+\)'
-  let line = getline('.')
+  let line = a:line
   let line = matchstr(line, mx)
   let item = substitute(line, mx, '\'.a:idx, '')
   return item
+endfunc
+
+func BmkGetKeyHere()
+  let line = getline('.')
+  return BmkGetItem(line, 1)
+endfunc
+
+func BmkGetValueHere()
+  let line = getline('.')
+  return BmkGetItem(line, 2)
+endfunc
+
+func BmkGetExpandedValueHere()
+  let line = getline('.')
+  return expand(BmkGetItem(line, 2))
 endfunc
 
 "------------------------------------------------------
 " load
 "------------------------------------------------------
 func s:BmkRegister(line)
-  let result = MyGetKeyFname(a:line)
-  let key = result["key"]
-  let fname = result["fname"]
-  let s:bmk[key] = fname
+  let line = a:line
+  let key = BmkGetItem(line, 1)
+  let val = BmkGetItem(line, 2)
+
+  let key = s:RemoveEndSpaces(key)
+
+  let s:bmk[key] = val
   let s:keys = s:keys . key . "\n"
 endfunc
 
-func s:BmkLoad()
-  let bmk_file = expand(s:bmk_file)
+func s:BmkLoad(bmk_file)
+  let bmk_file = expand(a:bmk_file)
   if !filereadable(bmk_file)
     return
   endif
   let lines = readfile(bmk_file)
   for line in lines
-    let line = MyCleanLine(line)
-    if line == "" || line[0] == '#' || line[0] == '['
+    if (match(line, '^\s*-') == -1)
       continue
     endif
     call s:BmkRegister(line)
@@ -62,8 +115,23 @@ endfunc
 "------------------------------------------------------
 " action
 "------------------------------------------------------
+func BmkGetDirName(val)
+  let val = a:val
+  let type = BmkUrlType(val)
+
+  if type == "dir"
+    let dir = val
+  elseif type == "file"
+    let dir = s:GetDirName(val)
+  else
+    let dir = ""
+  endif
+
+  return dir
+endfunc
+
 func BmkOpen()
-  let val = BmkGetValueHere()
+  let val = BmkGetExpandedValueHere()
   if val == ""
     return
   endif
@@ -72,32 +140,37 @@ func BmkOpen()
 endfunc
 
 func BmkOpenDirInNERDTree()
-  let val = BmkGetValueHere()
+  let val = BmkGetExpandedValueHere()
   if val == ""
     return
   endif
 
-  let dir = MyExpandDir(val)
+  let dir = BmkGetDirName(val)
+  if dir == ""
+    return
+  endif
+
   call BmkRestore()
   exec "NERDTree" dir
 endfunc
 
 func BmkEditFileInWin(winnr)
-  let val = BmkGetValueHere()
+  let val = BmkGetExpandedValueHere()
   if val == ""
     return
   endif
 
-  call MyEdit(a:winnr, val)
+  let type = BmkUrlType(val)
+
+  if (type == "vim_command")
+    call MyExecVimCommand(a:winnr, val[1:])
+  else
+    call MyEdit(a:winnr, val)
+  endif
 endfunc
 
 func BmkPreviewFileInWin(winnr)
-  let val = BmkGetValueHere()
-  if val == ""
-    return
-  endif
-
-  call MyEdit(a:winnr, val)
+  call BmkEditFileInWin(a:winnr)
   wincmd p
 endfunc
 
@@ -120,26 +193,6 @@ func BmkKeyCR()
   else
     echo "BmkKeyCR: not supported type: [".type."]"
   endif
-endfunc
-
-func BmkUrlType(url)
-  let url = a:url
-
-  if (match(url, 'http\|https') == 0)
-    let type = "http"
-  elseif (match(url, '^//') == 0)
-    let type = "network"
-  elseif (match(url, '^\\') == 0)     " difficult to handle this format
-    let type = ""
-  elseif (isdirectory(url))
-    let type = "dir"
-  elseif (filereadable(url))
-    let type = "file"
-  else
-    let type = ""
-  endif
-
-  return type
 endfunc
 
 func BmkDebug()
@@ -170,20 +223,19 @@ func s:BmkMapWin()
     return
   endif
 
-  let winnr = winnr()
-  if (winnr == 1 && winwidth(0) == g:NERDTreeWinSize)
+  if (s:InSideBar())
     nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
-    nnoremap <buffer> k       -
-    nnoremap <buffer> j       +
     nnoremap <buffer> h       :call BmkRestore()<CR>
     nnoremap <buffer> l       :call BmkPreviewFileInWin(2)<CR>
+    nnoremap <buffer> k       -
+    nnoremap <buffer> j       +
   else
     nnoremap <buffer> <CR>    :call BmkEditFileInWin(0)<CR>
     if maparg('h') != ""
-      nunmap <buffer> k
-      nunmap <buffer> j
       nunmap <buffer> h
       nunmap <buffer> l
+      nunmap <buffer> k
+      nunmap <buffer> j
     endif
   endif
 endfunc
@@ -192,7 +244,7 @@ endfunc
 " init
 "------------------------------------------------------
 func s:BmkInit()
-  call s:BmkLoad()
+  call s:BmkLoad(s:bmk_file)
 endfunc
 
 call s:BmkInit()
@@ -201,9 +253,9 @@ call s:BmkInit()
 " statusline
 "------------------------------------------------------
 func BmkStatusline()
-  let l:statusline = "%{MyStatuslineWinNr()}"
-  let l:statusline.= "%t"
-  return l:statusline
+  let stat = "%{MyStatuslineWinNr()}"
+  let stat.= "\ %t"
+  return stat
 endfunc
 
 func BmkSetStatusline()
@@ -228,16 +280,16 @@ func BmkRestoreHere()
   exec w:orig_bufnr."b"
 endfunc
 
-func BmkRestore()
-  1wincmd w
-  call BmkRestoreHere()
-endfunc
-
 func BmkHere(key)
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
   exec "edit" s:bmk[a:key]
+endfunc
+
+func BmkRestore()
+  1wincmd w
+  call BmkRestoreHere()
 endfunc
 
 func Bmk(key)

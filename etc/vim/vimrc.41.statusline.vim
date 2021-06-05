@@ -6,34 +6,33 @@ hi! link User2   MyAquaRevBold
 hi! link User3   MyYellowRevBold
 
 func MyStatuslineWinNr()
-  let l:winnr = winnr()
-  return '['.l:winnr.'] '
+  let winnr = winnr()
+  return '['.winnr.']'
 endfunc
 
 func MyStatuslineFname()
-  let l:cwd = getcwd()
-  let l:dir = expand("%:p:h")
-  let l:filepath = "%<%f"
-  let l:color = "%1*"
-  if (l:cwd != l:dir)
-    let l:color = "%3*"
+  let cwd = getcwd()
+  let dir = expand("%:p:h")
+  let color = "%1*"
+  if (cwd != dir)
+    let color = "%3*"
   endif
-  return l:color.l:filepath."%0*"
+  return color."%<%f"."%0*"
 endfunc
 
 func MyStatuslineEnc()
-  let l:fenc = &fenc != '' ? &fenc : &enc
-  let l:ff = &ff
-  return '['.l:fenc.','.l:ff.']'
+  let fenc = &fenc != '' ? &fenc : &enc
+  let ff = &ff
+  return '['.fenc.','.ff.']'
 endfunc
 
 func MyStatusline()
-  let l:statusline = "%{MyStatuslineWinNr()}"
-  let l:statusline.= MyStatuslineFname()
-  let l:statusline.="\ %y%h%w%q%m%r%{MyStatuslineEnc()}"
-  let l:statusline.="\ %=%l/%L,%c%V%4p%%"
-  let l:statusline.="\ %2*%{FugitiveStatusline()}%0*"
-  return l:statusline
+  let stat = "%{MyStatuslineWinNr()}"
+  let stat.= "\ ".MyStatuslineFname()
+  let stat.= "\ %y%h%w%q%m%r%{MyStatuslineEnc()}"
+  let stat.= "\ %=%l/%L,%c%V%4p%%"
+  let stat.= "\ %2*%{FugitiveStatusline()}%0*"
+  return stat
 endfunc
 
 set laststatus=2
@@ -43,10 +42,11 @@ set statusline=%!MyStatusline()
 " statusline for terminal
 "------------------------------------------------------
 func MyStatuslineTerm()
-  let l:statusline = "%{MyStatuslineWinNr()}"
-  let l:statusline.= "[terminal] %f"
-  let l:statusline.="\ %=%{MyCWD()}"
-  return l:statusline
+  let stat = "%{MyStatuslineWinNr()}"
+  let stat.= "\ [terminal]"
+  let stat.= "\ %<%f"
+  let stat.= "\ %=%{MyCWD()}"
+  return stat
 endfunc
 
 func MySetTerm()

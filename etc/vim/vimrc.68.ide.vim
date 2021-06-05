@@ -105,15 +105,10 @@ endfunc
 
 " send 'cd dir' to a terminal
 func MyIDESendCdE2T(dir)
-  let l:dir = MyExpandDir(a:dir)
-
+  let dir = MyExpandDir(a:dir)
   wincmd j
-
-  exec "lcd" l:dir
-  if &buftype == 'terminal'
-    let l:bufnr = winbufnr(0)
-    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-  endif
+  let winnr = winnr()
+  call MyOpenDirInTerm(winnr, dir)
 endfunc
 
 "------------------------------------------------------
@@ -121,15 +116,8 @@ endfunc
 "------------------------------------------------------
 " send 'cd dir' to a terminal
 func MyIDESendCdT2T(dir, winnr)
-  let l:dir = MyExpandDir(a:dir)
-
-  exec a:winnr."wincmd w"
-
-  exec "lcd" l:dir
-  if &buftype == 'terminal'
-    let l:bufnr = winbufnr(0)
-    call term_sendkeys(l:bufnr, "cd ".l:dir."\<CR>")
-  endif
+  let dir = MyExpandDir(a:dir)
+  call MyOpenDirInTerm(a:winnr, dir)
 endfunc
 
 "------------------------------------------------------
