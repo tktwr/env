@@ -1,11 +1,10 @@
 "======================================================
 " MyTest
 "======================================================
-"if exists("loaded_my_test")
+"if exists("g:loaded_my_test")
 "  finish
 "endif
-
-"let loaded_my_test = 1
+"let g:loaded_my_test = 1
 
 "------------------------------------------------------
 " private func

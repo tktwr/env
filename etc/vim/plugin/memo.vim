@@ -1,11 +1,11 @@
 "------------------------------------------------------
 " Memo
 "------------------------------------------------------
-if exists("loaded_memo")
+if exists("g:loaded_memo")
   finish
 endif
+let g:loaded_memo = 1
 
-let loaded_memo = 1
 let s:memo_winname = '\[memo\]'
 let s:memo_winwidth = 60
 let s:memo_winheight = 15

@@ -1,10 +1,10 @@
 "======================================================
 " Bmk
 "======================================================
-if exists("loaded_bmk")
+if exists("g:loaded_bmk")
   finish
 endif
-let loaded_bmk = 1
+let g:loaded_bmk = 1
 
 let s:bmk_file = g:bmk_file
 let s:bmk = {}
@@ -54,6 +54,87 @@ func BmkUrlType(url)
   endif
 
   return type
+endfunc
+
+"------------------------------------------------------
+" open
+"------------------------------------------------------
+func BmkOpenURL(url)
+  exec "silent !chrome.sh" a:url
+  redraw!
+endfunc
+
+func BmkOpenDir(url)
+  exec "silent !explorer.sh" a:url
+  redraw!
+endfunc
+
+func BmkOpenFile(url)
+  exec "silent !vscode.sh" a:url
+  redraw!
+endfunc
+
+func BmkOpen(url)
+  let url = a:url
+  let type = BmkUrlType(url)
+
+  if (type == "http")
+    call BmkOpenURL(url)
+  elseif (type == "network")
+    call BmkOpenDir(url)
+  elseif (type == "dir")
+    call BmkOpenDir(url)
+  elseif (type == "file")
+    call BmkOpenFile(url)
+  else
+    echo "BmkOpen: not supported type: [".type."]"
+  endif
+endfunc
+
+"------------------------------------------------------
+" edit
+"------------------------------------------------------
+func BmkOpenDirInTerm(winnr, dir)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  if &buftype == 'terminal'
+    exec "lcd" a:dir
+    let bufnr = winbufnr(0)
+    call term_sendkeys(bufnr, "cd ".a:dir."\<CR>")
+  endif
+endfunc
+
+func BmkEditFile(winnr, file)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  let dir = s:GetDirName(a:file)
+  exec "lcd" dir
+  exec "edit" a:file
+endfunc
+
+func BmkExecVimCommand(winnr, cmd)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  exec a:cmd
+endfunc
+
+func BmkEdit(winnr, url)
+  let url = a:url
+  let type = BmkUrlType(url)
+
+  if (type == "dir")
+    call BmkOpenDirInTerm(a:winnr, url)
+  elseif (type == "file")
+    call BmkEditFile(a:winnr, url)
+  elseif (type == "vim_command")
+    call BmkExecVimCommand(a:winnr, url[1:])
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -130,16 +211,7 @@ func BmkGetDirName(val)
   return dir
 endfunc
 
-func BmkOpen()
-  let val = BmkGetExpandedValueHere()
-  if val == ""
-    return
-  endif
-
-  call MyOpen(val)
-endfunc
-
-func BmkOpenDirInNERDTree()
+func BmkOpenDirInNERDTreeHere()
   let val = BmkGetExpandedValueHere()
   if val == ""
     return
@@ -150,31 +222,34 @@ func BmkOpenDirInNERDTree()
     return
   endif
 
-  call BmkRestore()
+  call BmkRestoreHere()
   exec "NERDTree" dir
 endfunc
 
-func BmkEditFileInWin(winnr)
+func BmkOpenHere()
   let val = BmkGetExpandedValueHere()
   if val == ""
     return
   endif
 
-  let type = BmkUrlType(val)
-
-  if (type == "vim_command")
-    call MyExecVimCommand(a:winnr, val[1:])
-  else
-    call MyEdit(a:winnr, val)
-  endif
+  call BmkOpen(val)
 endfunc
 
-func BmkPreviewFileInWin(winnr)
-  call BmkEditFileInWin(a:winnr)
+func BmkEditFileInWinHere(winnr)
+  let val = BmkGetExpandedValueHere()
+  if val == ""
+    return
+  endif
+
+  call BmkEdit(a:winnr, val)
+endfunc
+
+func BmkPreviewFileInWinHere(winnr)
+  call BmkEditFileInWinHere(a:winnr)
   wincmd p
 endfunc
 
-func BmkKeyCR()
+func BmkKeyCRHere()
   let val = BmkGetExpandedValueHere()
   if val == ""
     return
@@ -183,15 +258,15 @@ func BmkKeyCR()
   let type = BmkUrlType(val)
 
   if (type == "http")
-    call MyOpenURL(val)
+    call BmkOpenURL(val)
   elseif (type == "network")
-    call MyOpenDir(val)
+    call BmkOpenDir(val)
   elseif type == "dir"
-    call BmkOpenDirInNERDTree()
+    call BmkOpenDirInNERDTreeHere()
   elseif type == "file"
-    call BmkEditFileInWin(2)
+    call BmkEditFileInWinHere(2)
   else
-    echo "BmkKeyCR: not supported type: [".type."]"
+    echo "BmkKeyCRHere: not supported type: [".type."]"
   endif
 endfunc
 
@@ -208,14 +283,14 @@ endfunc
 func s:BmkMap()
   nnoremap <buffer> <C-4>   :call BmkDebug()<CR>
   nnoremap <buffer> <C-B>   :call BmkRestoreHere()<CR>
-  nnoremap <buffer> <C-CR>  :call BmkOpen()<CR>
-  nnoremap <buffer> 2       :call BmkEditFileInWin(2)<CR>
-  nnoremap <buffer> 3       :call BmkEditFileInWin(3)<CR>
-  nnoremap <buffer> 4       :call BmkEditFileInWin(4)<CR>
-  nnoremap <buffer> 5       :call BmkEditFileInWin(5)<CR>
-  nnoremap <buffer> 6       :call BmkEditFileInWin(6)<CR>
-  nnoremap <buffer> 7       :call BmkEditFileInWin(7)<CR>
-  nnoremap <buffer> 8       :call BmkEditFileInWin(8)<CR>
+  nnoremap <buffer> <C-CR>  :call BmkOpenHere()<CR>
+  nnoremap <buffer> 2       :call BmkEditFileInWinHere(2)<CR>
+  nnoremap <buffer> 3       :call BmkEditFileInWinHere(3)<CR>
+  nnoremap <buffer> 4       :call BmkEditFileInWinHere(4)<CR>
+  nnoremap <buffer> 5       :call BmkEditFileInWinHere(5)<CR>
+  nnoremap <buffer> 6       :call BmkEditFileInWinHere(6)<CR>
+  nnoremap <buffer> 7       :call BmkEditFileInWinHere(7)<CR>
+  nnoremap <buffer> 8       :call BmkEditFileInWinHere(8)<CR>
 endfunc
 
 func s:BmkMapWin()
@@ -224,13 +299,13 @@ func s:BmkMapWin()
   endif
 
   if (s:InSideBar())
-    nnoremap <buffer> <CR>    :call BmkKeyCR()<CR>
-    nnoremap <buffer> h       :call BmkRestore()<CR>
-    nnoremap <buffer> l       :call BmkPreviewFileInWin(2)<CR>
+    nnoremap <buffer> <CR>    :call BmkKeyCRHere()<CR>
+    nnoremap <buffer> h       :call BmkRestoreHere()<CR>
+    nnoremap <buffer> l       :call BmkPreviewFileInWinHere(2)<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +
   else
-    nnoremap <buffer> <CR>    :call BmkEditFileInWin(0)<CR>
+    nnoremap <buffer> <CR>    :call BmkEditFileInWinHere(0)<CR>
     if maparg('h') != ""
       nunmap <buffer> h
       nunmap <buffer> l
@@ -252,8 +327,13 @@ call s:BmkInit()
 "------------------------------------------------------
 " statusline
 "------------------------------------------------------
+func BmkStatuslineWinNr()
+  let winnr = winnr()
+  return '['.winnr.']'
+endfunc
+
 func BmkStatusline()
-  let stat = "%{MyStatuslineWinNr()}"
+  let stat = "%{BmkStatuslineWinNr()}"
   let stat.= "\ %t"
   return stat
 endfunc

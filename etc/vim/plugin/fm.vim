@@ -1,11 +1,11 @@
 "------------------------------------------------------
 " Fm - file manager
 "------------------------------------------------------
-if exists("loaded_fm")
+if exists("g:loaded_fm")
   finish
 endif
+let g:loaded_fm = 1
 
-let loaded_fm = 1
 let g:fm_encoding = 'euc-jp'
 let s:fm_winname = '\[fm\]'
 

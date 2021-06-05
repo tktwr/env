@@ -37,6 +37,8 @@ func MyUrlType(url)
     let type = "network"
   elseif (match(url, '^\\') == 0)     " difficult to handle this format
     let type = ""
+  elseif (match(url, '^:') == 0)
+    let type = "vim_command"
   elseif (isdirectory(url))
     let type = "dir"
   elseif (filereadable(url))

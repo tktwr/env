@@ -1,11 +1,11 @@
 "======================================================
 " Dia
 "======================================================
-if exists("loaded_dia")
+if exists("g:loaded_dia")
   finish
 endif
+let g:loaded_dia = 1
 
-let loaded_dia = 1
 let s:dia = g:my_dia_file
 let s:todo = g:my_todo_file
 let s:todo_winwidth = 40

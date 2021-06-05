@@ -1,10 +1,10 @@
 "======================================================
 " WinBufHist
 "======================================================
-if exists("loaded_winbufhist")
+if exists("g:loaded_winbufhist")
   finish
 endif
-let loaded_winbufhist = 1
+let g:loaded_winbufhist = 1
 
 "------------------------------------------------------
 " private func

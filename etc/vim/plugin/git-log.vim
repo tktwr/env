@@ -1,11 +1,11 @@
 "======================================================
 " GitLog
 "======================================================
-if exists("loaded_gitlog")
+if exists("g:loaded_gitlog")
   finish
 endif
+let g:loaded_gitlog = 1
 
-let loaded_gitlog = 1
 let s:gitlog_winname = '\[gitlog\]'
 let s:gitlog_log = {}
 let s:gitlog_status = {}

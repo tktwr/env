@@ -1,11 +1,11 @@
 "------------------------------------------------------
 " Lookup - lookup a keyword in the preview window
 "------------------------------------------------------
-if exists("loaded_lookup")
+if exists("g:loaded_lookup")
   finish
 endif
+let g:loaded_lookup = 1
 
-let loaded_lookup = 1
 let s:lookup_winname = '\[Lookup\]'
 let s:lookup_winheight = 12
 let s:tmpfile = tempname()
