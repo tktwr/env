@@ -31,10 +31,6 @@ nnoremap <leader>X6            :RunExplorer<CR><C-L>
 nnoremap <leader>X7            :RunGvim<CR><C-L>
 nnoremap <leader>X8            :RunVscode<CR><C-L>
 nnoremap <leader>X9            :RunChrome<CR><C-L>
-nnoremap <leader>Xb            <C-W>:Bmk bmk.txt<CR>
-nnoremap <leader>Xs            <C-W>:Bmk scratchpad.md.html<CR>
-nnoremap <leader>Xd            <C-W>:Bmk dia.md.html<CR>
-nnoremap <leader>Xt            <C-W>:Bmk todo.md.html<CR>
 nnoremap <leader>Xh            <C-W>:MyHelp<CR>
 nnoremap <leader>Xm            <C-W>:MyMemo<CR>
 nnoremap <leader>XM            <C-W>:MyMan

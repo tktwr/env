@@ -121,14 +121,12 @@ func BmkGetDirName(val)
 endfunc
 
 func BmkEditDirInNERDTree(url)
-  1wincmd w
-
   let dir = BmkGetDirName(a:url)
   if dir == ""
     return
   endif
 
-  call BmkRestoreHere()
+  call BmkRestore(1)
   exec "NERDTree" dir
 endfunc
 
@@ -267,32 +265,11 @@ func BmkKeyCRItem()
 endfunc
 
 "------------------------------------------------------
-" this
-"------------------------------------------------------
-func BmkOpenThis()
-  let val = expand(expand("<cfile>"))
-
-  let r = BmkOpen(val)
-  if !r
-    call BmkOpenFile(expand('%:p'))
-  endif
-endfunc
-
-func BmkKeyCRThis()
-  let val = expand(expand("<cfile>"))
-
-  let r = BmkKeyCR(0, val)
-  if !r
-    call BmkOpenURL(expand('%:p'))
-  endif
-endfunc
-
-"------------------------------------------------------
 " map
 "------------------------------------------------------
 func s:BmkMap()
   nnoremap <buffer> <C-4>   :call BmkDebug()<CR>
-  nnoremap <buffer> <C-B>   :call BmkRestoreHere()<CR>
+  nnoremap <buffer> <C-B>   :call BmkRestore()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
   nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
   nnoremap <buffer> 3       :call BmkEditItem(3)<CR>
@@ -310,7 +287,7 @@ func s:BmkMapWin()
 
   if (s:InSideBar())
     nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
-    nnoremap <buffer> h       :call BmkRestoreHere()<CR>
+    nnoremap <buffer> h       :call BmkRestore()<CR>
     nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +
@@ -357,6 +334,10 @@ func s:BmkCompleteKeys(A,L,P)
   return s:keys
 endfunc
 
+func BmkPrintCompleteKeys()
+  echo s:keys
+endfunc
+
 "------------------------------------------------------
 " init
 "------------------------------------------------------
@@ -394,45 +375,58 @@ func BmkDebug()
   echo type
 endfunc
 
-func BmkPrintCompleteKeys()
-  echo s:keys
-endfunc
-
 "------------------------------------------------------
 " public func
 "------------------------------------------------------
-func BmkRestoreHere()
+func BmkRestore(winnr=0)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
   exec w:orig_bufnr."b"
 endfunc
 
-func BmkHere(key)
+func Bmk(key, winnr=0)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
   exec "edit" s:bmk[a:key]
-endfunc
 
-func BmkRestore()
-  1wincmd w
-  call BmkRestoreHere()
-endfunc
-
-func Bmk(key)
-  1wincmd w
-  call BmkHere(a:key)
   call BmkSetStatusline()
+endfunc
+
+"------------------------------------------------------
+" public func this
+"------------------------------------------------------
+func BmkOpenThis()
+  let val = expand(expand("<cfile>"))
+
+  let r = BmkOpen(val)
+  if !r
+    call BmkOpenFile(expand('%:p'))
+  endif
+endfunc
+
+func BmkKeyCRThis()
+  let val = expand(expand("<cfile>"))
+
+  let r = BmkKeyCR(0, val)
+  if !r
+    call BmkOpenURL(expand('%:p'))
+  endif
 endfunc
 
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command -nargs=1 -complete=custom,s:BmkCompleteKeys Bmk      call Bmk("<args>")
-command -nargs=1 -complete=custom,s:BmkCompleteKeys BmkHere  call BmkHere("<args>")
-command BmkRestore      call BmkRestore()
-command BmkRestoreHere  call BmkRestoreHere()
+command -nargs=+ -complete=custom,s:BmkCompleteKeys Bmk  call Bmk(<f-args>)
 
 augroup bmk
   autocmd!

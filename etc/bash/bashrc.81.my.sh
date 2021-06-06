@@ -104,11 +104,6 @@ alias ,tabe=',LCD; vimapi.sh tabedit --filepath'
 alias ,diff=',LCD; vimapi.sh MyTabDiff'
 alias ,dirdiff=',LCD; vimapi.sh MyTabDirDiff'
 
-alias ,bmk='vimapi.sh --in-above-win "Bmk bmk.txt"'
-alias ,scratchpad='vimapi.sh --in-above-win "Bmk scratchpad.md.html"'
-alias ,dia='vimapi.sh --in-above-win "Bmk dia.md.html"'
-alias ,todo='vimapi.sh --in-above-win "Bmk todo.md.html"'
-
 alias ,memo='vimapi.sh --in-above-win MyMemo'
 alias ,help='vimapi.sh --in-above-win MyHelp'
 alias ,man='vimapi.sh --in-above-win MyMan'

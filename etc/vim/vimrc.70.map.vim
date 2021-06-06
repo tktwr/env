@@ -36,16 +36,16 @@ nnoremap Q       :confirm qall<CR>
 nnoremap ==      zi
 
 nnoremap <C-A>   :MyMakeLink<CR>
-nnoremap <C-B>   :BmkHere bmk.txt<CR>
+nnoremap <C-B>   :Bmk bmk.txt<CR>
 nnoremap <C-D>   <C-B>
 nnoremap <C-E>   :WinBufHistClear<CR>
 nnoremap <C-G>   :MyRedraw<CR>
 nnoremap <C-I>   :WinBufHistPrint<CR>
 nnoremap <C-N>   :cn<CR>
-nnoremap <C-O>   :WinBufHistPrev<CR>
+nnoremap <C-O>   :WinBufHistPop<CR>
 nnoremap <C-P>   :cp<CR>
 nnoremap <C-Q>   @q
-nnoremap <C-S>   :BmkHere scratchpad.md.html<CR>
+nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
 nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 nnoremap <C-X>   :close<CR>
@@ -100,10 +100,10 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-nnoremap <silent> <C-1> <C-W>:silent BmkRestore<CR>
-nnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt<CR>
-nnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt<CR>
-nnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt<CR>
+nnoremap <silent> <C-1> <C-W>:silent call BmkRestore(1)<CR>
+nnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt 1<CR>
+nnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt 1<CR>
+nnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt 1<CR>
 nnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
 nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
@@ -113,10 +113,10 @@ nnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_ma
 nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
 nnoremap <silent> <C-0> <C-W>t
 
-tnoremap <silent> <C-1> <C-W>:silent BmkRestore<CR>
-tnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt<CR>
-tnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt<CR>
-tnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt<CR>
+tnoremap <silent> <C-1> <C-W>:silent call BmkRestore(1)<CR>
+tnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt 1<CR>
+tnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt 1<CR>
+tnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt 1<CR>
 tnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
 tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>

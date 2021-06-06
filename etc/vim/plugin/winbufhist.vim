@@ -25,7 +25,7 @@ func s:Clear()
   let w:buflist = [bufnr, 0]
 endfunc
 
-func s:Prev()
+func s:Pop()
   if (len(w:buflist) > 2)
     call remove(w:buflist, 0)
     exec w:buflist[0]."b"
@@ -51,7 +51,7 @@ endfunc
 "------------------------------------------------------
 command WinBufHistPrint  call s:Print()
 command WinBufHistClear  call s:Clear()
-command WinBufHistPrev   call s:Prev()
+command WinBufHistPop    call s:Pop()
 
 augroup winbufhist
   autocmd!
