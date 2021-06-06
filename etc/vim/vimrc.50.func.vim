@@ -1,73 +1,19 @@
 "======================================================
 " func
 "======================================================
-func MyGetDirName(filepath)
-  return substitute(a:filepath, "/[^/]*$", "", "")
-endfunc
-
-func MyCleanLine(line)
-  let line = a:line
-  let line = substitute(line, '^\s*', '', '')
-  let line = substitute(line, '^-\s*', '', '')
-  return line
-endfunc
-
-func MyGetKeyFnameHere()
-  let line = getline('.')
-  let line = MyCleanLine(line)
-  return MyGetKeyFname(line)
-endfunc
-
-func MyGetKeyFname(line)
-  let line = a:line
-  let mx = '\(\f\+\)\s*|\s*\(\f\+\)'
-  let line = matchstr(line, mx)
-  let key = substitute(line, mx, '\1', '')
-  let fname = substitute(line, mx, '\2', '')
-  let result = {"key": key, "fname": fname}
-  return result
-endfunc
-
-func MyUrlType(url)
-  let url = a:url
-
-  if (match(url, 'http\|https') == 0)
-    let type = "http"
-  elseif (match(url, '^//') == 0)
-    let type = "network"
-  elseif (match(url, '^\\') == 0)     " difficult to handle this format
-    let type = ""
-  elseif (match(url, '^:') == 0)
-    let type = "vim_command"
-  elseif (isdirectory(url))
-    let type = "dir"
-  elseif (filereadable(url))
-    let type = "file"
-  else
-    let type = ""
-  endif
-
-  return type
-endfunc
-
 func MyExpand(url)
   let url = a:url
   if (url == "")
     let url = expand("<cfile>")
   endif
-  let url = expand(url)
-  let type = MyUrlType(url)
-  return {"type": type, "url": url}
+  return expand(url)
 endfunc
 
 func MyExpandDir(url)
-  let r = MyExpand(a:url)
+  let url = MyExpand(a:url)
+  let dir = BmkGetDirName(url)
 
-  if (r.type == "dir")
-    let dir = r.url
-  elseif (r.type == "file")
-    let dir = MyGetDirName(r.url)
-  else
+  if (dir == "")
     let dir = expand("%:p:h")
   endif
 

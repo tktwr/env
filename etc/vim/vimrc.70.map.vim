@@ -53,9 +53,9 @@ nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
-nnoremap <CR>    :call MyEdit(0, "")<CR>
+nnoremap <CR>    :call BmkKeyCRThis()<CR>
 
-nnoremap <C-CR>  :call MyOpen("")<CR>
+nnoremap <C-CR>  :call BmkOpenThis()<CR>
 nnoremap <S-CR>  :MyNERDTreeOpen<CR>
 
 nnoremap <C-;>   <C-W>:
@@ -74,6 +74,7 @@ nnoremap <C-]>   g<C-]>
 " tmap
 "------------------------------------------------------
 tnoremap <C-G>   <C-L>
+tnoremap <C-I>   <C-W>:MyWinInitSize<CR>
 " go to Terminal-Normal
 tnoremap <C-O>   <C-W>N
 " paste register

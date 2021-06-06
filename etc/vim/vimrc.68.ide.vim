@@ -13,19 +13,6 @@ func MyIDE()
   MyTerm
 endfunc
 
-" [OBSOLETE]
-func MyIDE_old()
-  let l:is_fullscreen = MyIsFullscreen()
-  NERDTree
-  wincmd w
-  MyTerm
-  wincmd W
-  if l:is_fullscreen
-    "Tagbar
-    vsp
-  endif
-endfunc
-
 "------------------------------------------------------
 " NERDTree
 "------------------------------------------------------
@@ -94,13 +81,13 @@ endfunc
 "------------------------------------------------------
 " send a cmd to a terminal
 func MyIDESendCmdE2T(cmd)
-  let l:cmd = a:cmd
-  if (l:cmd == "")
-    let l:cmd = getline('.')
+  let cmd = a:cmd
+  if (cmd == "")
+    let cmd = getline('.')
   endif
   wincmd j
-  let l:bufnr = winbufnr(0)
-	call term_sendkeys(l:bufnr, l:cmd."\<CR>")
+  let bufnr = winbufnr(0)
+	call term_sendkeys(bufnr, cmd."\<CR>")
 endfunc
 
 " send 'cd dir' to a terminal
@@ -108,7 +95,7 @@ func MyIDESendCdE2T(dir)
   let dir = MyExpandDir(a:dir)
   wincmd j
   let winnr = winnr()
-  call MyOpenDirInTerm(winnr, dir)
+  call BmkEditDir(winnr, dir)
 endfunc
 
 "------------------------------------------------------
@@ -117,7 +104,7 @@ endfunc
 " send 'cd dir' to a terminal
 func MyIDESendCdT2T(dir, winnr)
   let dir = MyExpandDir(a:dir)
-  call MyOpenDirInTerm(a:winnr, dir)
+  call BmkEditDir(a:winnr, dir)
 endfunc
 
 "------------------------------------------------------
@@ -149,11 +136,7 @@ func MyNERDTreeEdit(winnr)
     return
   endif
 
-  if (isdirectory(selected))
-    call MyOpenDirInTerm(a:winnr, selected)
-  elseif (filereadable(selected))
-    call MyEditFile(a:winnr, selected)
-  endif
+  call BmkEdit(a:winnr, selected)
 endfunc
 
 "------------------------------------------------------

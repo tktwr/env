@@ -17,7 +17,7 @@ nnoremap <leader>G             :MyTagbarToggle<CR>
 nnoremap <leader>g             :silent MyGgrepHere<CR><C-L>
 nnoremap <leader>I             <C-W>:MyWinInitSize<CR>
 nnoremap <leader>K             :make<CR>:cw<CR>
-nnoremap <leader>o             :call MyOpen("")<CR>
+nnoremap <leader>o             :call BmkOpenThis()<CR>
 nnoremap <leader>P             :MyTogglePathFormat<CR>
 nnoremap <leader>p             "*p
 nnoremap <leader>Q             <C-W>:confirm qall<CR>
@@ -141,9 +141,9 @@ let g:which_key_map = { 'name' : '+top',
       \ 'E' : 'Easymotion',
       \ 'G' : 'MyTagbarToggle (BS)',
       \ 'g' : 'MyGgrepHere',
-      \ 'I' : 'MyWinInitSize',
+      \ 'I' : 'MyWinInitSize (t:C-I)',
       \ 'K' : 'Make',
-      \ 'o' : 'MyOpen (C-CR)',
+      \ 'o' : 'BmkOpenThis (C-CR)',
       \ 'p' : 'Paste',
       \ 'Q' : 'Quit (Q)',
       \ 'R' : 'Make Run',
