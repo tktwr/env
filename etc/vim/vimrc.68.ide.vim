@@ -109,7 +109,7 @@ func MyIDESendCdE2T(dir="")
   let dir = MyExpandDir(a:dir)
   wincmd j
   let winnr = winnr()
-  call BmkEditDir(winnr, dir)
+  call BmkEditDir(dir, winnr)
 endfunc
 
 "------------------------------------------------------
@@ -118,7 +118,7 @@ endfunc
 " send 'cd dir' to a terminal
 func MyIDESendCdT2T(dir, winnr)
   let dir = MyExpandDir(a:dir)
-  call BmkEditDir(a:winnr, dir)
+  call BmkEditDir(dir, a:winnr)
 endfunc
 
 "------------------------------------------------------
@@ -150,7 +150,7 @@ func MyNERDTreeEdit(winnr)
     return
   endif
 
-  call BmkEdit(a:winnr, selected)
+  call BmkEdit(selected, a:winnr)
 endfunc
 
 "------------------------------------------------------

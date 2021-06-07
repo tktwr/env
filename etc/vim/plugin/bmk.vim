@@ -87,6 +87,21 @@ func BmkUrlType(url)
   return type
 endfunc
 
+func BmkGetDirName(val)
+  let val = a:val
+  let type = BmkUrlType(val)
+
+  if type == "dir"
+    let dir = val
+  elseif type == "file"
+    let dir = s:GetDirName(val)
+  else
+    let dir = ""
+  endif
+
+  return dir
+endfunc
+
 "------------------------------------------------------
 " external open
 "------------------------------------------------------
@@ -108,32 +123,12 @@ endfunc
 "------------------------------------------------------
 " internal open
 "------------------------------------------------------
-func BmkGetDirName(val)
-  let val = a:val
-  let type = BmkUrlType(val)
-
-  if type == "dir"
-    let dir = val
-  elseif type == "file"
-    let dir = s:GetDirName(val)
-  else
-    let dir = ""
-  endif
-
-  return dir
-endfunc
-
-func BmkEditDirInNERDTree(url)
-  let dir = BmkGetDirName(a:url)
-  if dir == ""
-    return
-  endif
-
+func BmkEditDirInNERDTree(dir)
   call BmkSide(1)
-  exec "NERDTree" dir
+  exec "NERDTree" a:dir
 endfunc
 
-func BmkEditDirInTerm(winnr, dir)
+func BmkEditDirInTerm(dir, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
@@ -145,15 +140,15 @@ func BmkEditDirInTerm(winnr, dir)
   endif
 endfunc
 
-func BmkEditDir(winnr, url)
+func BmkEditDir(dir, winnr)
   if a:winnr == 1
-    call BmkEditDirInNERDTree(a:url)
+    call BmkEditDirInNERDTree(a:dir)
   else
-    call BmkEditDirInTerm(a:winnr, a:url)
+    call BmkEditDirInTerm(a:dir, a:winnr)
   endif
 endfunc
 
-func BmkEditFile(winnr, file)
+func BmkEditFile(file, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
@@ -163,7 +158,7 @@ func BmkEditFile(winnr, file)
   exec "edit" a:file
 endfunc
 
-func BmkExecVimCommand(winnr, cmd)
+func BmkExecVimCommand(cmd, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
@@ -194,16 +189,16 @@ func BmkOpen(url)
   return 1
 endfunc
 
-func BmkEdit(winnr, url)
+func BmkEdit(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
   if (type == "dir")
-    call BmkEditDir(a:winnr, url)
+    call BmkEditDir(url, a:winnr)
   elseif (type == "file")
-    call BmkEditFile(a:winnr, url)
+    call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
-    call BmkExecVimCommand(a:winnr, url[1:])
+    call BmkExecVimCommand(url[1:], a:winnr)
   else
     echo "BmkEdit: not supported type: [".type."]"
     return 0
@@ -212,7 +207,7 @@ func BmkEdit(winnr, url)
   return 1
 endfunc
 
-func BmkKeyCR(winnr, url)
+func BmkKeyCR(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
@@ -223,9 +218,9 @@ func BmkKeyCR(winnr, url)
   elseif type == "dir"
     call BmkEditDir(1, url)
   elseif type == "file"
-    call BmkEditFile(a:winnr, url)
+    call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
-    call BmkExecVimCommand(a:winnr, url[1:])
+    call BmkExecVimCommand(url[1:], a:winnr)
   else
     echo "BmkKeyCR: not supported type: [".type."]"
     return 0
@@ -252,7 +247,7 @@ func BmkEditItem(winnr)
     return
   endif
 
-  call BmkEdit(a:winnr, val)
+  call BmkEdit(val, a:winnr)
 endfunc
 
 func BmkPreviewItem(winnr)
@@ -266,42 +261,27 @@ func BmkKeyCRItem()
     return
   endif
 
-  call BmkKeyCR(2, val)
+  call BmkKeyCR(val, 2)
 endfunc
 
 "------------------------------------------------------
-" map
+" action on <cfile> or the current buffer
 "------------------------------------------------------
-func s:BmkMap()
-  nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
-  nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
-  nnoremap <buffer> 3       :call BmkEditItem(3)<CR>
-  nnoremap <buffer> 4       :call BmkEditItem(4)<CR>
-  nnoremap <buffer> 5       :call BmkEditItem(5)<CR>
-  nnoremap <buffer> 6       :call BmkEditItem(6)<CR>
-  nnoremap <buffer> 7       :call BmkEditItem(7)<CR>
-  nnoremap <buffer> 8       :call BmkEditItem(8)<CR>
-endfunc
+func BmkOpenThis()
+  let val = expand(expand("<cfile>"))
 
-func s:BmkMapWin()
-  if &filetype != "bmk"
-    return
+  let r = BmkOpen(val)
+  if !r
+    call BmkOpenFile(expand('%:p'))
   endif
+endfunc
 
-  if (s:InSideBar())
-    nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
-    nnoremap <buffer> h       :call BmkSide(1)<CR>
-    nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
-    nnoremap <buffer> k       -
-    nnoremap <buffer> j       +
-  else
-    nnoremap <buffer> <CR>    :call BmkEditItem(0)<CR>
-    if maparg('h') != ""
-      nunmap <buffer> h
-      nunmap <buffer> l
-      nunmap <buffer> k
-      nunmap <buffer> j
-    endif
+func BmkKeyCRThis()
+  let val = expand(expand("<cfile>"))
+
+  let r = BmkKeyCR(val, 0)
+  if !r
+    call BmkOpenURL(expand('%:p'))
   endif
 endfunc
 
@@ -366,30 +346,44 @@ func BmkNr(idx, winnr)
 endfunc
 
 "------------------------------------------------------
-" public func this
+" map
 "------------------------------------------------------
-func BmkOpenThis()
-  let val = expand(expand("<cfile>"))
+func s:BmkMap()
+  nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
+  nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
+  nnoremap <buffer> 3       :call BmkEditItem(3)<CR>
+  nnoremap <buffer> 4       :call BmkEditItem(4)<CR>
+  nnoremap <buffer> 5       :call BmkEditItem(5)<CR>
+  nnoremap <buffer> 6       :call BmkEditItem(6)<CR>
+  nnoremap <buffer> 7       :call BmkEditItem(7)<CR>
+  nnoremap <buffer> 8       :call BmkEditItem(8)<CR>
+endfunc
 
-  let r = BmkOpen(val)
-  if !r
-    call BmkOpenFile(expand('%:p'))
+func s:BmkMapWin()
+  if &filetype != "bmk"
+    return
+  endif
+
+  if (s:InSideBar())
+    nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
+    nnoremap <buffer> h       :call BmkSide(1)<CR>
+    nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
+    nnoremap <buffer> k       -
+    nnoremap <buffer> j       +
+  else
+    nnoremap <buffer> <CR>    :call BmkEditItem(0)<CR>
+    if maparg('h') != ""
+      nunmap <buffer> h
+      nunmap <buffer> l
+      nunmap <buffer> k
+      nunmap <buffer> j
+    endif
   endif
 endfunc
 
-func BmkKeyCRThis()
-  let val = expand(expand("<cfile>"))
-
-  let r = BmkKeyCR(0, val)
-  if !r
-    call BmkOpenURL(expand('%:p'))
-  endif
-endfunc
-
 "------------------------------------------------------
-" public command
+" autocmd
 "------------------------------------------------------
-
 augroup bmk
   autocmd!
   autocmd FileType bmk    call s:BmkMap()
