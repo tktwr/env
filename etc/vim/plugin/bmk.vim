@@ -221,6 +221,8 @@ func BmkKeyCR(winnr, url)
     call BmkEditDir(1, url)
   elseif type == "file"
     call BmkEditFile(a:winnr, url)
+  elseif (type == "vim_command")
+    call BmkExecVimCommand(a:winnr, url[1:])
   else
     echo "BmkKeyCR: not supported type: [".type."]"
     return 0

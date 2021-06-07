@@ -123,19 +123,6 @@ func MyWinVResize(width)
   let w:orig_width = a:width
 endfunc
 
-func s:MyWinInitSizeForEachWin()
-  if &buftype == 'terminal'
-    exec "resize" g:my_term_winheight
-  else
-    exec "normal \<C-W>="
-  endif
-endfunc
-
-func MyWinInitSize()
-  NERDTree
-  2,$windo call s:MyWinInitSizeForEachWin()
-endfunc
-
 "------------------------------------------------------
 " place window
 "------------------------------------------------------
@@ -169,6 +156,5 @@ command -nargs=1 MyWinBufExchange call MyWinBufExchange(<f-args>)
 command -nargs=1 Wx               call MyWinBufExchange(<f-args>)
 command -nargs=1 Wc               call MyWinBufCopy(<f-args>)
 
-command MyWinInitSize             call MyWinInitSize()
 command MyRedraw                  call MyRedraw()
 

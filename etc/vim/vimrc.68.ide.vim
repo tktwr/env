@@ -13,6 +13,20 @@ func MyIDE()
   MyTerm
 endfunc
 
+func s:MyWinInitSizeForEachWin()
+  if &buftype == 'terminal'
+    exec "resize" g:my_term_winheight
+  else
+    exec "normal \<C-W>="
+  endif
+endfunc
+
+func MyWinInitSize()
+  1wincmd w
+  exec "vertical resize" g:my_left_winwidth
+  2,$windo call s:MyWinInitSizeForEachWin()
+endfunc
+
 "------------------------------------------------------
 " NERDTree
 "------------------------------------------------------
@@ -91,7 +105,7 @@ func MyIDESendCmdE2T(cmd)
 endfunc
 
 " send 'cd dir' to a terminal
-func MyIDESendCdE2T(dir)
+func MyIDESendCdE2T(dir="")
   let dir = MyExpandDir(a:dir)
   wincmd j
   let winnr = winnr()
@@ -151,6 +165,7 @@ endfunc
 " command
 "------------------------------------------------------
 command MyIDE                   call MyIDE()
+command MyWinInitSize           call MyWinInitSize()
 command MyNERDTreeOpen          call MyNERDTreeOpen()
 command MyNERDTreeToggle        NERDTreeToggle
 command MyTagbarToggle          TagbarToggle

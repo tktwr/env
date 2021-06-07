@@ -49,7 +49,7 @@ nnoremap <C-S>   :Bmk scratchpad.md.html<CR>
 nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
 nnoremap <C-X>   :close<CR>
-nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
+nnoremap <C-Y>   :call MyIDESendCdE2T()<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>

@@ -1,11 +1,20 @@
-[google] ----------------------------- | ----------------------------------------
-- google                               | https://www.google.com/
-  - gmail                              | https://mail.google.com/mail/u/0/#inbox
-  - calendar                           | https://www.google.com/calendar/render?hl=ja
-  - keep                               | https://keep.google.com/
-  - drive                              | https://drive.google.com/drive/my-drive
+[command] ---------------------------- | ----------------------------------------
+- MyWinInitSize                        | :MyWinInitSize
+- diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 [vim] -------------------------------- | ----------------------------------------
+- help                                 | :MyHelp
+  - index                              | :MyHelp index
+  - expression-syntax                  | :MyHelp expression-syntax
+  - pattern-overview                   | :MyHelp pattern-overview
 - vim script                           | https://knowledge.sakura.ad.jp/23436/
+[memo] ------------------------------- | ----------------------------------------
+- memo                                 | :MyMemo
+  - my                                 | :MyMemo my
+  - vim                                | :MyMemo vim
+  - git                                | :MyMemo git
+[c++] -------------------------------- | ----------------------------------------
+  - cppreference                       | https://ja.cppreference.com/w/
+  - cpprefjp                           | https://cpprefjp.github.io/
 [python] ----------------------------- | ----------------------------------------
 - python                               | https://www.python.org/
   - doc                                | https://docs.python.org/ja/3/index.html
@@ -22,9 +31,6 @@
 - pytorch                              | https://pytorch.org/
   - transfer_learning                  | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
   - tensorboard                        | https://pytorch.org/docs/stable/tensorboard.html
-[c++] -------------------------------- | ----------------------------------------
-  - cppreference                       | https://ja.cppreference.com/w/
-  - cpprefjp                           | https://cpprefjp.github.io/
 [lib] -------------------------------- | ----------------------------------------
   - glm                                | https://glm.g-truc.net/
     - doc                              | https://glm.g-truc.net/0.9.8/api/modules.html
@@ -60,5 +66,11 @@
 [resources] -------------------------- | ----------------------------------------
   - hdrihaven                          | https://hdrihaven.com/
   - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
+[google] ----------------------------- | ----------------------------------------
+- google                               | https://www.google.com/
+  - gmail                              | https://mail.google.com/mail/u/0/#inbox
+  - calendar                           | https://www.google.com/calendar/render?hl=ja
+  - keep                               | https://keep.google.com/
+  - drive                              | https://drive.google.com/drive/my-drive
 
 # vim:set ft=bmk syntax=txt nowrap:

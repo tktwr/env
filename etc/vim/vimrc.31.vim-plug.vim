@@ -14,7 +14,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 " vim-plug: IDE
 "------------------------------------------------------
 Plug 'scrooloose/nerdtree'
-let g:NERDTreeWinSize = 30
+let g:NERDTreeWinSize = g:my_left_winwidth
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeShowBookmarks = 0
@@ -25,7 +25,7 @@ let g:NERDTreeMinimalMenu = 0
 let g:NERDTreeIgnore = ['NTUSER\.', 'ntuser\.', '\.lnk$', '\.url', 'desktop\.ini']
 
 Plug 'majutsushi/tagbar'
-let g:tagbar_width = 30
+let g:tagbar_width = g:my_right_winwidth
 let g:tagbar_iconchars = ['+', '-']
 let g:tagbar_sort = 0
 
