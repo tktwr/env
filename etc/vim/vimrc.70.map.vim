@@ -104,8 +104,8 @@ nnoremap <silent> <C-1> <C-W>:silent call BmkRestore(1)<CR>
 nnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt 1<CR>
 nnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt 1<CR>
 nnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt 1<CR>
-nnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
-nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
+nnoremap <silent> <C-4> <C-W>:silent Bmk bmk/papers.txt 1<CR>
+nnoremap <silent> <C-5> <C-W>:silent Bmk bmk/cmd.txt 1<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
 nnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
@@ -117,8 +117,8 @@ tnoremap <silent> <C-1> <C-W>:silent call BmkRestore(1)<CR>
 tnoremap <silent> <C-2> <C-W>:silent Bmk bmk.txt 1<CR>
 tnoremap <silent> <C-@> <C-W>:silent Bmk bmk.txt 1<CR>
 tnoremap <silent> <C-3> <C-W>:silent Bmk bmk/links.txt 1<CR>
-tnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
-tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
+tnoremap <silent> <C-4> <C-W>:silent Bmk bmk/papers.txt 1<CR>
+tnoremap <silent> <C-5> <C-W>:silent Bmk bmk/cmd.txt 1<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
 tnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>

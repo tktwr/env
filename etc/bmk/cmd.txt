@@ -1,0 +1,9 @@
+[command] ---------------------------- | ----------------------------------------
+- MyCheckEnv                           | :MyCheckEnv
+- MySourceVimrc                        | :MySourceVimrc
+- MyWinInfo                            | :MyWinInfo
+- MyWinInitSize                        | :MyWinInitSize
+- diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
+- dirdiff .my                          | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+
+# vim:set ft=bmk syntax=txt nowrap:

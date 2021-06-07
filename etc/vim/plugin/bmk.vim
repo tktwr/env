@@ -9,6 +9,12 @@ let g:loaded_bmk = 1
 let s:bmk_file = g:bmk_file
 let s:bmk = {}
 let s:keys = ""
+let s:bmk_files = [
+  \ "$HOME/.my.common/bmk.txt",
+  \ "$MY_ETC/bmk/links.txt",
+  \ "$MY_ETC/bmk/papers.txt",
+  \ "$MY_ETC/bmk/cmd.txt"
+  \ ]
 
 "------------------------------------------------------
 " private func
@@ -270,7 +276,6 @@ endfunc
 " map
 "------------------------------------------------------
 func s:BmkMap()
-  nnoremap <buffer> <C-4>   :call BmkDebug()<CR>
   nnoremap <buffer> <C-B>   :call BmkRestore()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
   nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
@@ -373,8 +378,9 @@ endfunc
 func BmkDebug()
   let val = BmkGetExpandedValueItem()
   let type = BmkUrlType(val)
-  echo val
-  echo type
+  "echo val
+  "echo type
+  echo s:bmk_files
 endfunc
 
 "------------------------------------------------------
