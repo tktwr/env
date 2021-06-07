@@ -157,7 +157,7 @@ endfunc
 " terminal to nerdtree
 "------------------------------------------------------
 func MyIDESendCdT2N(dir)
-  call BmkRestore(1)
+  call BmkSide(1)
   exec "NERDTree" a:dir
 endfunc
 

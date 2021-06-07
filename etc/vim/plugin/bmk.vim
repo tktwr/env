@@ -6,9 +6,6 @@ if exists("g:loaded_bmk")
 endif
 let g:loaded_bmk = 1
 
-let s:bmk_file = g:bmk_file
-let s:bmk = {}
-let s:keys = ""
 let s:bmk_files = [
   \ "$HOME/.my.common/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",
@@ -132,7 +129,7 @@ func BmkEditDirInNERDTree(url)
     return
   endif
 
-  call BmkRestore(1)
+  call BmkSide(1)
   exec "NERDTree" dir
 endfunc
 
@@ -276,7 +273,6 @@ endfunc
 " map
 "------------------------------------------------------
 func s:BmkMap()
-  nnoremap <buffer> <C-B>   :call BmkRestore()<CR>
   nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
   nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
   nnoremap <buffer> 3       :call BmkEditItem(3)<CR>
@@ -294,7 +290,7 @@ func s:BmkMapWin()
 
   if (s:InSideBar())
     nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
-    nnoremap <buffer> h       :call BmkRestore()<CR>
+    nnoremap <buffer> h       :call BmkSide(1)<CR>
     nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <buffer> k       -
     nnoremap <buffer> j       +
@@ -308,51 +304,6 @@ func s:BmkMapWin()
     endif
   endif
 endfunc
-
-"------------------------------------------------------
-" load
-"------------------------------------------------------
-func s:BmkLoad(bmk_file)
-  let bmk_file = expand(a:bmk_file)
-  if !filereadable(bmk_file)
-    return
-  endif
-  let lines = readfile(bmk_file)
-  for line in lines
-    if (match(line, '^\s*-') == -1)
-      continue
-    endif
-    call s:BmkRegister(line)
-  endfor
-endfunc
-
-func s:BmkRegister(line)
-  let line = a:line
-  let key = BmkGetItem(line, 1)
-  let val = BmkGetItem(line, 2)
-
-  let key = s:RemoveEndSpaces(key)
-
-  let s:bmk[key] = val
-  let s:keys = s:keys . key . "\n"
-endfunc
-
-func s:BmkCompleteKeys(A,L,P)
-  return s:keys
-endfunc
-
-func BmkPrintCompleteKeys()
-  echo s:keys
-endfunc
-
-"------------------------------------------------------
-" init
-"------------------------------------------------------
-func s:BmkInit()
-  call s:BmkLoad(s:bmk_file)
-endfunc
-
-call s:BmkInit()
 
 "------------------------------------------------------
 " statusline
@@ -386,18 +337,15 @@ endfunc
 "------------------------------------------------------
 " public func
 "------------------------------------------------------
-func BmkRestore(winnr=0)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
-
-  if !exists("w:orig_bufnr")
-    let w:orig_bufnr = bufnr('%')
-  endif
-  exec w:orig_bufnr."b"
+func BmkHere(idx)
+  call BmkNr(a:idx, 0)
 endfunc
 
-func Bmk(key, winnr=0)
+func BmkSide(idx)
+  call BmkNr(a:idx, 1)
+endfunc
+
+func BmkNr(idx, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
@@ -405,7 +353,14 @@ func Bmk(key, winnr=0)
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
-  exec "edit" s:bmk[a:key]
+
+  if a:idx == 1
+    exec w:orig_bufnr."b"
+  elseif a:idx > 1
+    let i = a:idx - 2
+    let fname = expand(s:bmk_files[i])
+    exec "edit" fname
+  endif
 
   call BmkSetStatusline()
 endfunc
@@ -434,7 +389,6 @@ endfunc
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command -nargs=+ -complete=custom,s:BmkCompleteKeys Bmk  call Bmk(<f-args>)
 
 augroup bmk
   autocmd!
