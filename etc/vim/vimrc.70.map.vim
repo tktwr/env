@@ -53,10 +53,9 @@ nnoremap <C-Y>   :call MyIDESendCdE2T()<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
 nnoremap <BS>    :MyTagbarToggle<CR>
-nnoremap <CR>    :call BmkKeyCRThis()<CR>
 
 nnoremap <C-CR>  :call BmkOpenThis()<CR>
-nnoremap <S-CR>  :MyNERDTreeOpen<CR>
+nnoremap <S-CR>  :call BmkKeyCRThis()<CR>
 
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
@@ -175,16 +174,12 @@ func s:my_nerdtree_settings()
   nmap <buffer> 8       :call MyNERDTreeEdit(8)<CR>
 endfunc
 
-autocmd FileType nerdtree call s:my_nerdtree_settings()
-
 "------------------------------------------------------
 " autocmd for fugitive
 "------------------------------------------------------
 func s:my_fugitive_settings()
   nmap <buffer> D       dd
 endfunc
-
-autocmd FileType fugitive call s:my_fugitive_settings()
 
 "------------------------------------------------------
 " autocmd for GV
@@ -196,22 +191,28 @@ func s:my_git_settings()
   nmap <buffer> D       O
 endfunc
 
-autocmd FileType GV       call s:my_gv_settings()
-autocmd FileType git      call s:my_git_settings()
-
 "------------------------------------------------------
-" autocmd for diff mode
+" autocmd for my_map
 "------------------------------------------------------
-func s:my_diff_settings()
+func s:my_map_win()
   if &diff == 1
     nnoremap <buffer> <C-P>   [c
     nnoremap <buffer> <C-N>   ]c
+  elseif &filetype == "nerdtree"
+    nnoremap <silent> <buffer> <C-P>   :silent call BmkPrev()<CR>
+    nnoremap <silent> <buffer> <C-N>   :silent call BmkNext()<CR>
   else
     nnoremap <buffer> <C-P>   :cp<CR>
     nnoremap <buffer> <C-N>   :cn<CR>
   endif
 endfunc
 
-autocmd WinEnter * call s:my_diff_settings()
+augroup my
+  autocmd!
+  autocmd FileType nerdtree call s:my_nerdtree_settings()
+  autocmd FileType fugitive call s:my_fugitive_settings()
+  autocmd FileType GV       call s:my_gv_settings()
+  autocmd FileType git      call s:my_git_settings()
+  autocmd WinEnter *        call s:my_map_win()
+augroup END
 
-"------------------------------------------------------

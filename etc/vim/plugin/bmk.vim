@@ -7,7 +7,7 @@ endif
 let g:loaded_bmk = 1
 
 let s:bmk_files = [
-  \ "$HOME/.my.common/bmk.txt",
+  \ "$MY_DOTMY_COMMON/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",
   \ "$MY_ETC/bmk/papers.txt",
   \ "$MY_ETC/bmk/cmd.txt"
@@ -304,27 +304,8 @@ func BmkSetStatusline()
 endfunc
 
 "------------------------------------------------------
-" public debug
-"------------------------------------------------------
-func BmkDebug()
-  let val = BmkGetExpandedValueItem()
-  let type = BmkUrlType(val)
-  "echo val
-  "echo type
-  echo s:bmk_files
-endfunc
-
-"------------------------------------------------------
 " public func
 "------------------------------------------------------
-func BmkHere(idx)
-  call BmkNr(a:idx, 0)
-endfunc
-
-func BmkSide(idx)
-  call BmkNr(a:idx, 1)
-endfunc
-
 func BmkNr(idx, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
@@ -333,6 +314,8 @@ func BmkNr(idx, winnr)
   if !exists("w:orig_bufnr")
     let w:orig_bufnr = bufnr('%')
   endif
+
+  let w:idx = a:idx
 
   if a:idx == 1
     exec w:orig_bufnr."b"
@@ -343,6 +326,39 @@ func BmkNr(idx, winnr)
   endif
 
   call BmkSetStatusline()
+endfunc
+
+func BmkHere(idx)
+  call BmkNr(a:idx, 0)
+endfunc
+
+func BmkSide(idx)
+  call BmkNr(a:idx, 1)
+endfunc
+
+func BmkNext()
+  let n = len(s:bmk_files) + 1
+  let idx = w:idx - 1
+  let idx = (idx + 1) % n
+  call BmkSide(idx + 1)
+endfunc
+
+func BmkPrev()
+  let n = len(s:bmk_files) + 1
+  let idx = w:idx - 1
+  let idx = idx == 0 ? n - 1 : idx - 1
+  call BmkSide(idx + 1)
+endfunc
+
+"------------------------------------------------------
+" public debug
+"------------------------------------------------------
+func BmkDebug()
+  let val = BmkGetExpandedValueItem()
+  let type = BmkUrlType(val)
+  "echo val
+  "echo type
+  echo s:bmk_files
 endfunc
 
 "------------------------------------------------------
@@ -365,6 +381,8 @@ func s:BmkMapWin()
   endif
 
   if (s:InSideBar())
+    nnoremap <silent> <buffer> <C-N>   :silent call BmkNext()<CR>
+    nnoremap <silent> <buffer> <C-P>   :silent call BmkPrev()<CR>
     nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
     nnoremap <buffer> h       :call BmkSide(1)<CR>
     nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
