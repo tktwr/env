@@ -1,9 +1,13 @@
 "======================================================
 " statusline
 "======================================================
-hi! link User1   MyAquaRevBold
-hi! link User2   MyAquaRevBold
+hi! link User1   MyRedRevBold
+hi! link User2   MyGreenRevBold
 hi! link User3   MyYellowRevBold
+hi! link User4   MyBlueRevBold
+hi! link User5   MyPurpleRevBold
+hi! link User6   MyAquaRevBold
+hi! link User7   MyOrangeRevBold
 
 func MyStatuslineWinNr()
   let winnr = winnr()
@@ -13,7 +17,7 @@ endfunc
 func MyStatuslineFname()
   let cwd = getcwd()
   let dir = expand("%:p:h")
-  let color = "%1*"
+  let color = "%6*"
   if (cwd != dir)
     let color = "%3*"
   endif
@@ -31,7 +35,7 @@ func MyStatusline()
   let stat.= "\ ".MyStatuslineFname()
   let stat.= "\ %y%h%w%q%m%r%{MyStatuslineEnc()}"
   let stat.= "\ %=%l/%L,%c%V%4p%%"
-  let stat.= "\ %2*%{FugitiveStatusline()}%0*"
+  let stat.= "\ %6*%{FugitiveStatusline()}%0*"
   return stat
 endfunc
 

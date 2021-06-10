@@ -32,7 +32,7 @@ func MyTabLine()
 
   let s .= "%="
   let s .= "\ [coc:%{coc#status()}]"
-  let s .= "\ %{MyCWD()}"
+  let s .= "\ %6*%{MyCWD()}%0*"
 
   " right-align the label to close the current tab page
   if tabpagenr('$') > 1

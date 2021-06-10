@@ -153,6 +153,17 @@ func MyNERDTreeEdit(winnr)
   call BmkEdit(selected, a:winnr)
 endfunc
 
+func MyNERDTreePreview(winnr)
+  let selected = MyNERDTreeSelected()
+
+  if (selected == "")
+    return
+  endif
+
+  call BmkEdit(selected, a:winnr)
+  wincmd p
+endfunc
+
 "------------------------------------------------------
 " terminal to nerdtree
 "------------------------------------------------------

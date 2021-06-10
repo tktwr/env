@@ -153,18 +153,18 @@ tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 " autocmd for NERDTree
 "------------------------------------------------------
 func s:my_nerdtree_settings()
+  nmap <buffer> B       :Bookmark<CR>
+  nmap <buffer> E       :EditBookmarks<CR>
+  "nmap <buffer> D       :echo D<CR>  "delete bookmark
+
+  nmap <buffer> <Space> goq
+  nmap <buffer> <C-J>   <C-W>w
+  nmap <buffer> <C-K>   <C-W>W
   nmap <buffer> <C-.>   C
   nmap <buffer> k       -
   nmap <buffer> j       +
   nmap <buffer> h       u
-  nmap <buffer> l       go
-  nmap <buffer> S       /\[scratchpad\]<CR>
-  nmap <buffer> B       :Bookmark<CR>
-  nmap <buffer> E       :EditBookmarks<CR>
-  "nmap <buffer> D       :echo D<CR>  "delete bookmark
-  nmap <buffer> <Space> goq
-  nmap <buffer> <C-J>   <C-W>w
-  nmap <buffer> <C-K>   <C-W>W
+  nmap <buffer> l       :call MyNERDTreePreview(2)<CR>
   nmap <buffer> 2       :call MyNERDTreeEdit(2)<CR>
   nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
   nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
