@@ -306,6 +306,12 @@ endfunc
 "------------------------------------------------------
 " public func
 "------------------------------------------------------
+" idx
+"   1: the orig_bufnr
+"   2-: user defined bmks
+" winnr
+"   0: the current window
+"   1-: winnr
 func BmkNr(idx, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
@@ -337,6 +343,10 @@ func BmkSide(idx)
 endfunc
 
 func BmkNext()
+  if !exists("w:idx")
+    let w:idx = 1
+  endif
+
   let n = len(s:bmk_files) + 1
   let idx = w:idx - 1
   let idx = (idx + 1) % n
@@ -344,6 +354,10 @@ func BmkNext()
 endfunc
 
 func BmkPrev()
+  if !exists("w:idx")
+    let w:idx = 1
+  endif
+
   let n = len(s:bmk_files) + 1
   let idx = w:idx - 1
   let idx = idx == 0 ? n - 1 : idx - 1
@@ -400,12 +414,53 @@ func s:BmkMapWin()
 endfunc
 
 "------------------------------------------------------
+" nerdtree
+"------------------------------------------------------
+func BmkNERDTreeSelected()
+    let n = g:NERDTreeFileNode.GetSelected()
+    if n != {}
+        return n.path.str()
+    endif
+    return ""
+endfunc
+
+func BmkNERDTreeEdit(winnr)
+  let selected = BmkNERDTreeSelected()
+
+  if (selected == "")
+    return
+  endif
+
+  call BmkEdit(selected, a:winnr)
+endfunc
+
+func BmkNERDTreePreview(winnr)
+  call BmkNERDTreeEdit(a:winnr)
+  wincmd p
+endfunc
+
+func s:BmkNERDTreeMap()
+  nmap <buffer> k       -
+  nmap <buffer> j       +
+  nmap <buffer> h       u
+  nmap <buffer> l       :call BmkNERDTreePreview(2)<CR>
+  nmap <buffer> 2       :call BmkNERDTreeEdit(2)<CR>
+  nmap <buffer> 3       :call BmkNERDTreeEdit(3)<CR>
+  nmap <buffer> 4       :call BmkNERDTreeEdit(4)<CR>
+  nmap <buffer> 5       :call BmkNERDTreeEdit(5)<CR>
+  nmap <buffer> 6       :call BmkNERDTreeEdit(6)<CR>
+  nmap <buffer> 7       :call BmkNERDTreeEdit(7)<CR>
+  nmap <buffer> 8       :call BmkNERDTreeEdit(8)<CR>
+endfunc
+
+"------------------------------------------------------
 " autocmd
 "------------------------------------------------------
 augroup bmk
   autocmd!
-  autocmd FileType bmk    call s:BmkMap()
-  autocmd BufWinEnter *   call s:BmkMapWin()
-  autocmd WinEnter *      call s:BmkMapWin()
+  autocmd FileType nerdtree call s:BmkNERDTreeMap()
+  autocmd FileType bmk      call s:BmkMap()
+  autocmd BufWinEnter *     call s:BmkMapWin()
+  autocmd WinEnter *        call s:BmkMapWin()
 augroup END
 

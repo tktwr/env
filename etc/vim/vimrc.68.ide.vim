@@ -133,38 +133,6 @@ func MyIDEVResizeT2E(width)
 endfunc
 
 "------------------------------------------------------
-" nerdtree and terminal
-"------------------------------------------------------
-func MyNERDTreeSelected()
-    let n = g:NERDTreeFileNode.GetSelected()
-    if n != {}
-        return n.path.str()
-    endif
-    return ""
-endfunc
-
-func MyNERDTreeEdit(winnr)
-  let selected = MyNERDTreeSelected()
-
-  if (selected == "")
-    return
-  endif
-
-  call BmkEdit(selected, a:winnr)
-endfunc
-
-func MyNERDTreePreview(winnr)
-  let selected = MyNERDTreeSelected()
-
-  if (selected == "")
-    return
-  endif
-
-  call BmkEdit(selected, a:winnr)
-  wincmd p
-endfunc
-
-"------------------------------------------------------
 " terminal to nerdtree
 "------------------------------------------------------
 func MyIDESendCdT2N(dir)

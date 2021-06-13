@@ -161,17 +161,6 @@ func s:my_nerdtree_settings()
   nmap <buffer> <C-J>   <C-W>w
   nmap <buffer> <C-K>   <C-W>W
   nmap <buffer> <C-.>   C
-  nmap <buffer> k       -
-  nmap <buffer> j       +
-  nmap <buffer> h       u
-  nmap <buffer> l       :call MyNERDTreePreview(2)<CR>
-  nmap <buffer> 2       :call MyNERDTreeEdit(2)<CR>
-  nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
-  nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
-  nmap <buffer> 5       :call MyNERDTreeEdit(5)<CR>
-  nmap <buffer> 6       :call MyNERDTreeEdit(6)<CR>
-  nmap <buffer> 7       :call MyNERDTreeEdit(7)<CR>
-  nmap <buffer> 8       :call MyNERDTreeEdit(8)<CR>
 endfunc
 
 "------------------------------------------------------

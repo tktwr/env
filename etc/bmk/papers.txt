@@ -4,19 +4,23 @@
 - SIGGRAPH Courses                     | https://blog.selfshadow.com/publications/
 - SIGGRAPH Papers                      | http://kesen.realtimerendering.com/
 [BRDF] ------------------------------- | ----------------------------------------
-- Disney BSDF (SIG2015)                | https://blog.selfshadow.com/publications/s2015-shading-course/
-- Disney BSDF                          | http://project-asura.com/blog/archives/2175
-- Disney BRDF                          | http://project-asura.com/blog/archives/1972
-- Lafortune BRDF                       | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
+- Disney BSDF: SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice | https://blog.selfshadow.com/publications/s2015-shading-course/
+- Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering | http://project-asura.com/blog/archives/2175
+- Disney BRDF: 超雑訳 Physically Based Shading at Disney | http://project-asura.com/blog/archives/1972
+- Lafortune BRDF: Non-linear approximation of reflectance functions | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
 [skin] ------------------------------- | ----------------------------------------
-- Separable SSS                        | http://www.iryoku.com/separable-sss/
+- Separable Subsurface Scattering | http://www.iryoku.com/separable-sss/
 [shadow] ----------------------------- | ----------------------------------------
-- SS Soft Shadow                       | http://project-asura.com/blog/archives/4748
+- SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～ | http://project-asura.com/blog/archives/4748
 [raytrace] --------------------------- | ----------------------------------------
-- NVISII                               | https://github.com/owl-project/NVISII
+- NVISII - NVIDIA Scene Imaging Interface | https://github.com/owl-project/NVISII
 [DR] --------------------------------- | ----------------------------------------
 - Neural Radiosity                     | https://arxiv.org/abs/2105.12319
-- MATch                                | http://match.csail.mit.edu/
+- MATch: Differentiable Material Graphs for Procedural Material Capture | http://match.csail.mit.edu/
+[Relighting] ------------------------- | ----------------------------------------
+- Learning Physics-guided Face Relighting under Directional Light | https://arxiv.org/abs/1906.03355
+- Deep Single Image Portrait Relighting | https://zhhoper.github.io/dpr.html
+- Single Image Portrait Relighting | https://arxiv.org/abs/1905.00824
 [tutorial] --------------------------- | ----------------------------------------
 - Learn OpenGL                         | https://learnopengl.com/
 - Learn OpenGL (github)                | https://github.com/JoeyDeVries/LearnOpenGL
