@@ -6,12 +6,10 @@ if exists("g:loaded_bmk")
 endif
 let g:loaded_bmk = 1
 
-let s:bmk_files = [
-  \ "$MY_DOTMY_COMMON/bmk.txt",
-  \ "$MY_ETC/bmk/links.txt",
-  \ "$MY_ETC/bmk/papers.txt",
-  \ "$MY_ETC/bmk/cmd.txt"
-  \ ]
+let s:bmk_files = []
+if exists("g:bmk_files")
+  let s:bmk_files = g:bmk_files
+endif
 
 "------------------------------------------------------
 " private func
@@ -216,7 +214,7 @@ func BmkKeyCR(url, winnr)
   elseif (type == "network")
     call BmkOpenDir(url)
   elseif type == "dir"
-    call BmkEditDir(1, url)
+    call BmkEditDir(url, 1)
   elseif type == "file"
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
