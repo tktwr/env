@@ -17,7 +17,12 @@ set runtimepath-=~/.vim/after
 set runtimepath^=$MY_VIM
 set runtimepath+=$MY_VIM/after
 
-set tags=./tags,../tags,../../tags,../../../tags,tags
+set tags=./tags
+set tags+=../tags
+set tags+=../../tags
+set tags+=../../../tags
+set tags+=../../../../tags
+set tags+=tags
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
 set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
