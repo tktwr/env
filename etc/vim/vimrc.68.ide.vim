@@ -105,7 +105,7 @@ func MyIDESendCmdE2T(cmd)
 endfunc
 
 " send 'cd dir' to a terminal
-func MyIDESendCdE2T(dir="")
+func MyIDESendCdE2T(dir)
   let dir = MyExpandDir(a:dir)
   wincmd j
   let winnr = winnr()

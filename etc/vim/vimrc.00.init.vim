@@ -146,6 +146,8 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 let g:bmk_file = "$MY_HOME/.my.common/bmk.txt"
+
+let g:bmk_winwidth = g:my_left_winwidth
 let g:bmk_files = [
   \ "$MY_DOTMY_COMMON/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",

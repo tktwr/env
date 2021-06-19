@@ -331,8 +331,8 @@ command -nargs=? -complete=dir GitLog call GitLog(<f-args>)
 "------------------------------------------------------
 func GitLogStatusline()
   let l:statusline = "%{MyStatuslineWinNr()}"
-  let l:statusline.= "[gitlog]"
-  let l:statusline.="\ %=%{MyCWD()}"
+  let l:statusline.= "\ [gitlog]"
+  let l:statusline.= "\ %=%{MyCWD()}"
   return l:statusline
 endfunc
 

@@ -6,7 +6,13 @@ if exists("g:loaded_bmk")
 endif
 let g:loaded_bmk = 1
 
+let s:bmk_winwidth = 30
 let s:bmk_files = []
+
+if exists("g:bmk_winwidth")
+  let s:bmk_winwidth = g:bmk_winwidth
+endif
+
 if exists("g:bmk_files")
   let s:bmk_files = g:bmk_files
 endif
@@ -16,7 +22,7 @@ endif
 "------------------------------------------------------
 func s:InSideBar()
   let winnr = winnr()
-  if (winnr == 1 && winwidth(0) < 40)
+  if (winnr == 1 && winwidth(0) <= s:bmk_winwidth)
     return 1
   else
     return 0
@@ -33,6 +39,24 @@ endfunc
 
 func s:GetDirName(filepath)
   return substitute(a:filepath, "/[^/]*$", "", "")
+endfunc
+
+func s:BmkPrevItem()
+  normal -
+  let key = BmkGetKeyItem()
+  let key = s:RemoveEndSpaces(key)
+  if (len(key) > s:bmk_winwidth)
+    echo key
+  endif
+endfunc
+
+func s:BmkNextItem()
+  normal +
+  let key = BmkGetKeyItem()
+  let key = s:RemoveEndSpaces(key)
+  if (len(key) > s:bmk_winwidth)
+    echo key
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -395,11 +419,11 @@ func s:BmkMapWin()
   if (s:InSideBar())
     nnoremap <silent> <buffer> <C-N>   :silent call BmkNext()<CR>
     nnoremap <silent> <buffer> <C-P>   :silent call BmkPrev()<CR>
-    nnoremap <buffer> <CR>    :call BmkKeyCRItem()<CR>
-    nnoremap <buffer> h       :call BmkSide(1)<CR>
-    nnoremap <buffer> l       :call BmkPreviewItem(2)<CR>
-    nnoremap <buffer> k       -
-    nnoremap <buffer> j       +
+    nnoremap <silent> <buffer> <CR>    :call BmkKeyCRItem()<CR>
+    nnoremap <silent> <buffer> h       :call BmkSide(1)<CR>
+    nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
+    nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
+    nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
   else
     nnoremap <buffer> <CR>    :call BmkEditItem(0)<CR>
     if maparg('h') != ""

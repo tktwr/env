@@ -1,5 +1,8 @@
 [dir] -------------------------------- | ----------------------------------------
 - papers/                              | $MY_PAPERS
+  - BRDF/                              | $MY_PAPERS/BRDF
+  - Skin/                              | $MY_PAPERS/Skin
+  - PortraitRelighting/                | $MY_PAPERS/PortraitRelighting
 [links] ------------------------------ | ----------------------------------------
 - SIGGRAPH Courses                     | https://blog.selfshadow.com/publications/
 - SIGGRAPH Papers                      | http://kesen.realtimerendering.com/

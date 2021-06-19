@@ -1,14 +1,16 @@
+[memo] ------------------------------- | ----------------------------------------
+- memo                                 | :MyMemo
+  - my                                 | :MyMemo my
+  - vim                                | :MyMemo vim
+  - git                                | :MyMemo git
 [vim] -------------------------------- | ----------------------------------------
 - help                                 | :MyHelp
   - index                              | :MyHelp index
   - expression-syntax                  | :MyHelp expression-syntax
   - pattern-overview                   | :MyHelp pattern-overview
 - vim script                           | https://knowledge.sakura.ad.jp/23436/
-[memo] ------------------------------- | ----------------------------------------
-- memo                                 | :MyMemo
-  - my                                 | :MyMemo my
-  - vim                                | :MyMemo vim
-  - git                                | :MyMemo git
+[git] -------------------------------- | ----------------------------------------
+- git                                  | https://git-scm.com/docs
 [c++] -------------------------------- | ----------------------------------------
   - cppreference                       | https://ja.cppreference.com/w/
   - cpprefjp                           | https://cpprefjp.github.io/
@@ -16,28 +18,29 @@
 - python                               | https://www.python.org/
   - doc                                | https://docs.python.org/ja/3/index.html
   - tutorial                           | https://docs.python.org/ja/3/tutorial/
+  - 基礎文法とサンプル集               | https://algorithm.joho.info/programming/python/sample-code-py/
+  - blog                               | https://note.nkmk.me/python/
+- modules                              |
   - numpy                              | https://algorithm.joho.info/programming/python/numpy-sample-code/
   - pillow                             | https://pillow.readthedocs.io/en/stable/
   - matplotlib                         | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
   - scipy                              | https://www.scipy.org/
   - scikit-learn                       | https://scikit-learn.org/stable/
   - scikit-image                       | https://scikit-image.org/
-  - 基礎文法とサンプル集               | https://algorithm.joho.info/programming/python/sample-code-py/
-  - blog                               | https://note.nkmk.me/python/
 [pytorch] ---------------------------- | ----------------------------------------
 - pytorch                              | https://pytorch.org/
   - transfer_learning                  | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
   - tensorboard                        | https://pytorch.org/docs/stable/tensorboard.html
 [lib] -------------------------------- | ----------------------------------------
-  - glm                                | https://glm.g-truc.net/
-    - doc                              | https://glm.g-truc.net/0.9.8/api/modules.html
-    - howto                            | https://qiita.com/usagi/items/f34976a3d3011506ff7d
-  - Eigen                              | http://eigen.tuxfamily.org/
-    - howto                            | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
-  - glfw                               | http://www.glfw.org/
-  - glad                               | https://github.com/Dav1dde/glad
-  - imgui                              | https://github.com/ocornut/imgui
-  - stb                                | https://github.com/nothings/stb
+- glm                                  | https://glm.g-truc.net/
+  - doc                                | https://glm.g-truc.net/0.9.8/api/modules.html
+  - howto                              | https://qiita.com/usagi/items/f34976a3d3011506ff7d
+- Eigen                                | http://eigen.tuxfamily.org/
+  - howto                              | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
+- glfw                                 | http://www.glfw.org/
+- glad                                 | https://github.com/Dav1dde/glad
+- imgui                                | https://github.com/ocornut/imgui
+- stb                                  | https://github.com/nothings/stb
 [opencv] ----------------------------- | ----------------------------------------
 - OpenCV                               | https://opencv.org/
   - doc                                | https://docs.opencv.org/master/
