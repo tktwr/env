@@ -72,6 +72,14 @@ func s:Clear()
   endif
 endfunc
 
+func s:RemoveBufnr(list, bufnr)
+  let s = '\<'.a:bufnr.'\>'
+  let i = match(a:list, s)
+  if i != -1
+    call remove(a:list, i)
+  endif
+endfunc
+
 func s:Pop()
   if (len(w:buflist) > 1)
     call remove(w:buflist, 0)
@@ -84,12 +92,9 @@ func s:Push()
     let w:buflist = []
   endif
 
-  let fname = expand('%:p')
   let bufnr = bufnr('%')
-  let bufname = bufname('%')
-  if (len(w:buflist) == 0 || w:buflist[0] != bufnr)
-    call insert(w:buflist, bufnr)
-  endif
+  call s:RemoveBufnr(w:buflist, bufnr)
+  call insert(w:buflist, bufnr)
 
   if (len(w:buflist) > s:max_buflist)
     call remove(w:buflist, -1)

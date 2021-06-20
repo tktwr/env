@@ -38,7 +38,7 @@ nnoremap ==      zi
 nnoremap <C-A>   :MyMakeLink<CR>
 nnoremap <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
 nnoremap <C-D>   <C-B>
-nnoremap <C-E>   :WinBufHistClear<CR>
+nnoremap <C-E>   :MyGitLog<CR>
 nnoremap <C-G>   :MyRedraw<CR>
 nnoremap <C-I>   :WinBufHistPrint<CR>
 nnoremap <C-N>   :cn<CR>
