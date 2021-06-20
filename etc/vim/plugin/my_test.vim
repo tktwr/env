@@ -1,81 +1,79 @@
 "======================================================
 " MyTest
 "======================================================
-let g:loaded_my_test = 1
+"let g:loaded_my_test = 1
 if exists("g:loaded_my_test")
   finish
 endif
 let g:loaded_my_test = 1
 
 "------------------------------------------------------
-" private func
+" test args
 "------------------------------------------------------
-func MyTestEcho(msg)
+func MyTestFargs(arg)
+  echom "MyTestFargs: [".a:arg."]"
+endfunc
+
+func MyTestQargs(arg)
+  echom "MyTestQargs: [".a:arg."]"
+endfunc
+
+"------------------------------------------------------
+" test autocmd
+"------------------------------------------------------
+func EventMsg(msg)
   echo a:msg.": ".expand("%")
 endfunc
 
-func MyTestCloseHandler(channel)
-  let text = ""
-  let i = 1
-  while ch_status(a:channel, {'part': 'out'}) == 'buffered'
-    let text = ch_read(a:channel)
-    call setline(i, text)
-    let i = i + 1
-  endwhile
-endfunc
-
-func MyTestHandler(channel, msg)
-  call setline(1, a:msg)
-endfunc
-
-"------------------------------------------------------
-" autocmd
-"------------------------------------------------------
-func MyTestSetAutocmd()
+func MyTestAutocmd()
   augroup mytest
     autocmd!
-    autocmd WinEnter *       call MyTestEcho("WinEnter")
-    autocmd WinLeave *       call MyTestEcho("WinLeave")
-    autocmd BufRead *        call MyTestEcho("BufRead")
-    autocmd BufEnter *       call MyTestEcho("BufEnter")
-    autocmd BufLeave *       call MyTestEcho("BufLeave")
-    autocmd BufWinEnter *    call MyTestEcho("BufWinEnter")
-    autocmd BufWinLeave *    call MyTestEcho("BufWinLeave")
+    autocmd FileType txt     call EventMsg("FileType txt")
+    autocmd FileType bmk     call EventMsg("FileType bmk")
+    autocmd WinEnter *       call EventMsg("WinEnter")
+    autocmd WinLeave *       call EventMsg("WinLeave")
+    autocmd BufRead *        call EventMsg("BufRead")
+    autocmd BufEnter *       call EventMsg("BufEnter")
+    autocmd BufLeave *       call EventMsg("BufLeave")
+    autocmd BufWinEnter *    call EventMsg("BufWinEnter")
+    autocmd BufWinLeave *    call EventMsg("BufWinLeave")
   augroup END
 endfunc
 
 "------------------------------------------------------
-" popup: dialog
+" test popup_create
 "------------------------------------------------------
-func MyDialogHandler(id, result)
-  echo a:result
-  if a:result
-    " ... 'y' or 'Y' was pressed
-  endif
-endfunc
-
-func MyDialog()
-  call popup_dialog('Continue? y/n', #{
-    \ filter: 'popup_filter_yesno',
-    \ callback: 'MyDialogHandler',
-    \ })
-endfunc
-
-"------------------------------------------------------
-" popup: simple
-"------------------------------------------------------
-func MyPopupCreate()
+func MyTestPopupCreate()
   let s:popup_winid = popup_create("hello world", {})
 endfunc
 
-func MyPopupClose()
+func MyTestPopupClose()
   call popup_close(s:popup_winid)
 endfunc
 
 "------------------------------------------------------
-" popup: menu
+" test popup_dialog
 "------------------------------------------------------
-func MyMenuFilter(id, key)
+func MyTestPopupDialogHandler(id, result)
+  echom a:result
+  if a:result
+    echom "yes"
+  else
+    echom "no"
+  endif
+endfunc
+
+func MyTestPopupDialog()
+  call popup_dialog('Continue? y/n', #{
+    \ filter: 'popup_filter_yesno',
+    \ callback: 'MyTestPopupDialogHandler',
+    \ })
+endfunc
+
+"------------------------------------------------------
+" test popup_menu
+"------------------------------------------------------
+func MyTestPopupMenuFilter(id, key)
   " Handle shortcuts
   if a:key == 'S'
      call popup_close(a:id, 1)
@@ -94,7 +92,7 @@ func MyMenuFilter(id, key)
   return popup_filter_menu(a:id, a:key)
 endfunc
 
-func MyMenuHandler(id, result)
+func MyTestPopupMenuHandler(id, result)
   echo a:result
   if &buftype == 'terminal'
     let l:bufnr = winbufnr(0)
@@ -104,17 +102,11 @@ func MyMenuHandler(id, result)
   endif
 endfunc
 
-func MyPopupMenu2()
-  call popup_atcursor(s:cmd_list, #{
-    \ })
-endfunc
-
-let s:cmd_list = ['Save', 'Cancel', 'Discard']
-
-func MyPopupMenu()
-  call popup_menu(s:cmd_list, #{
-    \ filter: 'MyMenuFilter',
-    \ callback: 'MyMenuHandler',
+func MyTestPopupMenu()
+  let cmd_list = ['Save', 'Cancel', 'Discard']
+  call popup_menu(cmd_list, #{
+    \ filter: 'MyTestPopupMenuFilter',
+    \ callback: 'MyTestPopupMenuHandler',
     \ border: [0,0,0,0],
     \ padding: [0,0,0,0],
     \ pos: 'botleft',
@@ -125,13 +117,8 @@ func MyPopupMenu()
 endfunc
 
 "------------------------------------------------------
-" popup: balloon
+" test balloon
 "------------------------------------------------------
-set ballooneval balloonevalterm
-set balloonexpr=BalloonExpr()
-let s:winid = 0
-let s:last_text = ''
-
 func BalloonExpr()
   if s:winid && popup_getpos(s:winid) != {}
     " previous popup window still shows
@@ -145,32 +132,35 @@ func BalloonExpr()
   let s:last_text = v:beval_text
   return ''
 endfunc
-"------------------------------------------------------
-" public func
-"------------------------------------------------------
-func MyTestInit()
-  set cmdheight=10
-  call MyTestSetAutocmd()
+
+func MyTestSetBalloon()
+  set ballooneval balloonevalterm
+  set balloonexpr=BalloonExpr()
+  let s:winid = 0
+  let s:last_text = ''
 endfunc
 
-func MyTestStartClose()
+"------------------------------------------------------
+" test job
+"------------------------------------------------------
+func MyTestJobCloseHandler(channel)
+  let text = ""
+  let i = 1
+  while ch_status(a:channel, {'part': 'out'}) == 'buffered'
+    let text = ch_read(a:channel)
+    call setline(i, text)
+    let i = i + 1
+  endwhile
+endfunc
+
+func MyTestJobStartClose()
   let cmd = "ls -l"
-  let s:job = job_start(cmd, {"close_cb": "MyTestCloseHandler"})
+  let s:job = job_start(cmd, {"close_cb": "MyTestJobCloseHandler"})
 endfunc
 
-func MyTestStart()
-  "let s:job = job_start("hello", {"callback": "MyTestHandler"})
-  let s:job = job_start("MyTestHello", {"callback": "MyTestHandler"})
-endfunc
-
-func MyTestStop()
-  call job_stop(s:job)
-endfunc
-
-func MyTestStatus()
-  echom job_status(s:job)
-endfunc
-
+"------------------------------------------------------
+" test job
+"------------------------------------------------------
 func MyTestHello()
   let i = 1
   while i <= 20
@@ -182,9 +172,39 @@ func MyTestHello()
   endwhile
 endfunc
 
+func MyTestJobHandler(channel, msg)
+  call setline(1, a:msg)
+endfunc
+
+func MyTestJobStart()
+  let s:job = job_start("hello", {"callback": "MyTestJobHandler"})
+  "let s:job = job_start("MyTestHello", {"callback": "MyTestJobHandler"})
+endfunc
+
+func MyTestJobStop()
+  call job_stop(s:job)
+endfunc
+
+func MyTestJobStatus()
+  echom job_status(s:job)
+endfunc
+
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=0 MyTestInit call MyTestInit()
-command -nargs=1 MyTest     call MyTest(<f-args>)
+command -nargs=+ MyTestFargs     call MyTestFargs(<f-args>)
+command -nargs=+ MyTestQargs     call MyTestQargs(<q-args>)
+
+command MyTestAutocmd       call MyTestAutocmd()
+
+command MyTestPopupCreate   call MyTestPopupCreate()
+command MyTestPopupClose    call MyTestPopupClose()
+command MyTestPopupDialog   call MyTestPopupDialog()
+command MyTestPopupMenu     call MyTestPopupMenu()
+command MyTestSetBalloon    call MyTestSetBalloon()
+
+command MyTestJobStartClose call MyTestJobStartClose()
+command MyTestJobStart      call MyTestJobStart()
+command MyTestJobStop       call MyTestJobStop()
+command MyTestJobStatus     call MyTestJobStatus()
 

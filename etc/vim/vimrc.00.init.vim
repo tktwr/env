@@ -74,7 +74,7 @@ set listchars=tab:>-,trail:-,eol:$
 "set modelines=5
 
 if !has('nvim')
-  if version >= 700
+  if v:version >= 700
     " disable popup menu for completion
     "set completeopt=
     "set textwidth=0

@@ -9,11 +9,55 @@ let g:loaded_winbufhist = 1
 let s:max_buflist = 10
 
 "------------------------------------------------------
+" popup menu
+"------------------------------------------------------
+func WinBufHistPopupMenuFilter(id, key)
+  if a:key == 'c'
+     call popup_close(a:id, 0)
+     return 1
+  endif
+  return popup_filter_menu(a:id, a:key)
+endfunc
+
+func WinBufHistPopupMenuHandler(id, result)
+  if a:result == 0
+    call s:Clear()
+  elseif a:result > 0
+    let idx = a:result - 1
+    echo printf("%d, %d", idx, w:buflist[idx])
+    exec w:buflist[idx]."b"
+  endif
+endfunc
+
+func WinBufHistPopupMenu()
+  let l = []
+  for i in w:buflist
+    let s = printf("%3d %s ", i, bufname(i))
+    call add(l, s)
+  endfor
+  call popup_menu(l, #{
+    \ filter: 'WinBufHistPopupMenuFilter',
+    \ callback: 'WinBufHistPopupMenuHandler',
+    \ border: [0,0,0,0],
+    \ padding: [0,0,0,0],
+    \ pos: 'botleft',
+    \ line: 'cursor-1',
+    \ col: 'cursor',
+    \ moved: 'WORD',
+    \ })
+endfunc
+
+"------------------------------------------------------
 " private func
 "------------------------------------------------------
+func s:PrintMenu()
+  call WinBufHistPopupMenu()
+endfunc
+
 func s:Print()
   for i in w:buflist
-    echo "-" i bufname(i)
+    let s = printf("%3d %s ", i, bufname(i))
+    echo s
   endfor
 endfunc
 
@@ -57,7 +101,12 @@ endfunc
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command WinBufHistPrint  call s:Print()
+if v:version >= 802
+  command WinBufHistPrint  call s:PrintMenu()
+else
+  command WinBufHistPrint  call s:Print()
+endif
+
 command WinBufHistClear  call s:Clear()
 command WinBufHistPop    call s:Pop()
 

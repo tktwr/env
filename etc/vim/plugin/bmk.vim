@@ -41,24 +41,6 @@ func s:GetDirName(filepath)
   return substitute(a:filepath, "/[^/]*$", "", "")
 endfunc
 
-func s:BmkPrevItem()
-  normal -
-  let key = BmkGetKeyItem()
-  let key = s:RemoveEndSpaces(key)
-  if (len(key) > s:bmk_winwidth)
-    echo key
-  endif
-endfunc
-
-func s:BmkNextItem()
-  normal +
-  let key = BmkGetKeyItem()
-  let key = s:RemoveEndSpaces(key)
-  if (len(key) > s:bmk_winwidth)
-    echo key
-  endif
-endfunc
-
 "------------------------------------------------------
 " get item
 "------------------------------------------------------
@@ -122,6 +104,24 @@ func BmkGetDirName(val)
   endif
 
   return dir
+endfunc
+
+func s:BmkPrevItem()
+  normal -
+  let key = BmkGetKeyItem()
+  let key = s:RemoveEndSpaces(key)
+  if (len(key) > s:bmk_winwidth)
+    echo key
+  endif
+endfunc
+
+func s:BmkNextItem()
+  normal +
+  let key = BmkGetKeyItem()
+  let key = s:RemoveEndSpaces(key)
+  if (len(key) > s:bmk_winwidth)
+    echo key
+  endif
 endfunc
 
 "------------------------------------------------------
