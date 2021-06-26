@@ -59,7 +59,16 @@ func MyGV()
 endfunc
 
 "------------------------------------------------------
-" func tab
+" buffer
+"------------------------------------------------------
+func MyBufDelete()
+  let nr = bufnr('%')
+  enew
+  exec "bdelete" nr
+endfunc
+
+"------------------------------------------------------
+" tab
 "------------------------------------------------------
 func MyTabDiff(file1, file2)
   exec "tabedit" a:file2
@@ -151,9 +160,7 @@ command MyTagbarToggle          TagbarToggle
 command MyGstatusToggle         call MyGstatusToggle()
 command MyGV                    call MyGV()
 
-command -nargs=1                MyIDEVResizeT2E call MyIDEVResizeT2E(<f-args>)
-command -nargs=1 -complete=dir  MyIDESendCdT2N  call MyIDESendCdT2N(<f-args>)
-command -nargs=+ -complete=dir  MyIDESendCdT2T  call MyIDESendCdT2T(<f-args>)
+command MyBufDelete             call MyBufDelete()
 
 "------------------------------------------------------
 " command in new tab
@@ -162,4 +169,8 @@ command -nargs=+ -complete=file MyTabDiff      call MyTabDiff(<f-args>)
 command -nargs=+ -complete=dir  MyTabDirDiff   call MyTabDirDiff(<f-args>)
 command MyTabDirDiffQuit        call MyTabDirDiffQuit()
 command MyTabClosePrev          call MyTabClosePrev()
+
+command -nargs=1                MyIDEVResizeT2E call MyIDEVResizeT2E(<f-args>)
+command -nargs=1 -complete=dir  MyIDESendCdT2N  call MyIDESendCdT2N(<f-args>)
+command -nargs=+ -complete=dir  MyIDESendCdT2T  call MyIDESendCdT2T(<f-args>)
 

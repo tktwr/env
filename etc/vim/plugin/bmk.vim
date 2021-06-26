@@ -110,8 +110,10 @@ func s:BmkPrevItem()
   normal -
   let key = BmkGetKeyItem()
   let key = s:RemoveEndSpaces(key)
-  if (len(key) > s:bmk_winwidth)
+  if (len(key) > s:bmk_winwidth / 2)
     echo key
+  else
+    echo ""
   endif
 endfunc
 
@@ -119,8 +121,10 @@ func s:BmkNextItem()
   normal +
   let key = BmkGetKeyItem()
   let key = s:RemoveEndSpaces(key)
-  if (len(key) > s:bmk_winwidth)
+  if (len(key) > s:bmk_winwidth / 2)
     echo key
+  else
+    echo ""
   endif
 endfunc
 
