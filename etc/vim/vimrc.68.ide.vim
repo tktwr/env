@@ -134,9 +134,6 @@ endfunc
 " terminal to editor
 "------------------------------------------------------
 func MyIDEVResizeT2E(width)
-  wincmd k
-  exec "vertical resize" a:width
-  wincmd p
   exec "vertical resize" a:width
   let w:orig_width = a:width
 endfunc

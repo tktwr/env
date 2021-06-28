@@ -1,9 +1,36 @@
-[command] ---------------------------- | ----------------------------------------
+[terminal:git] ----------------------- | ----------------------------------------
+- G                                    | G
+- git status                           | git status
+- git fetch                            | git fetch
+[terminal:shell] --------------------- | ----------------------------------------
+- ,resize 40                           | ,resize 40
+- ,resize 10                           | ,resize 10
+[buffer:open] ------------------------ | ----------------------------------------
+- scratchpad                           | :edit $MY_DIARY/scratchpad.md.html
+- bmk                                  | :edit $MY_DOTMY_COMMON/bmk.txt
+- MyHelp                               | :MyHelp
+- MyMemo                               | :MyMemo
+- BmkOpenThis                          | :call BmkOpenThis()
+- BmkKeyCRThis                         | :call BmkKeyCRThis()
+[buffer:git] ------------------------- | ----------------------------------------
+- MyGitLog                             | :MyGitLog
+- MyGgrepHere                          | :silent MyGgrepHere
+- MyClangFormat                        | :MyClangFormat
+[buffer:edit] ------------------------ | ----------------------------------------
+- paste                                | "*p
+- yank                                 | "*y
+- MyTabBar                             | :MyTabBar
+- MyMakeLink                           | :MyMakeLink
+- MyTogglePathFormat                   | :MyTogglePathFormat
+[buffer] ----------------------------- | ----------------------------------------
+- MyLcdHere                            | :MyLcdHere
+- MyWinInitSize                        | :MyWinInitSize
+- MyIDESendCdE2T                       | :call MyIDESendCdE2T("")
 - MyCheckEnv                           | :MyCheckEnv
 - MySourceVimrc                        | :MySourceVimrc
 - MyWinInfo                            | :MyWinInfo
-- MyWinInitSize                        | :MyWinInitSize
 - diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 - dirdiff .my                          | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+- quit                                 | :confirm qall
 
 # vim:set ft=bmk syntax=txt nowrap:

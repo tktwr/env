@@ -84,6 +84,13 @@ tnoremap <C-;>   <C-W>:
 tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 
 "------------------------------------------------------
+" popup menu
+"------------------------------------------------------
+nnoremap <C-M>   :call MyMenuPopupMenu(0)<CR>
+
+tnoremap <C-M>   <C-W>:call MyMenuPopupMenu(0)<CR>
+
+"------------------------------------------------------
 " map.window.move
 "------------------------------------------------------
 nnoremap <C-H>   <C-W>h
@@ -100,30 +107,30 @@ tnoremap <C-L>   <C-W>l
 " map.window
 "------------------------------------------------------
 nnoremap <silent> <C-1> <C-W>:silent call BmkSide(1)<CR>
-nnoremap <silent> <C-2> <C-W>:silent call BmkSide(2)<CR>
-nnoremap <silent> <C-@> <C-W>:silent call BmkSide(2)<CR>
-nnoremap <silent> <C-3> <C-W>:silent call BmkSide(3)<CR>
-nnoremap <silent> <C-4> <C-W>:silent call BmkSide(4)<CR>
-nnoremap <silent> <C-5> <C-W>:silent call BmkSide(5)<CR>
+nnoremap <silent> <C-2> <C-W>:echo 'C-2'<CR>
+nnoremap <silent> <C-@> <C-W>:echo 'C-2'<CR>
+nnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
+nnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
+nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
 nnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
 nnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
 nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
-nnoremap <silent> <C-0> <C-W>t
+nnoremap <silent> <C-0> <C-W>b
 
 tnoremap <silent> <C-1> <C-W>:silent call BmkSide(1)<CR>
-tnoremap <silent> <C-2> <C-W>:silent call BmkSide(2)<CR>
-tnoremap <silent> <C-@> <C-W>:silent call BmkSide(2)<CR>
-tnoremap <silent> <C-3> <C-W>:silent call BmkSide(3)<CR>
-tnoremap <silent> <C-4> <C-W>:silent call BmkSide(4)<CR>
-tnoremap <silent> <C-5> <C-W>:silent call BmkSide(5)<CR>
+tnoremap <silent> <C-2> <C-W>:echo 'C-2'<CR>
+tnoremap <silent> <C-@> <C-W>:echo 'C-2'<CR>
+tnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
+tnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
+tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
 tnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
 tnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
 tnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
-tnoremap <silent> <C-0> <C-W>t
+tnoremap <silent> <C-0> <C-W>b
 
 "------------------------------------------------------
 " map.tab

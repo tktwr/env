@@ -29,11 +29,11 @@ func s:InSideBar()
   endif
 endfunc
 
-func s:RemoveBeginSpaces(line)
+func BmkRemoveBeginSpaces(line)
   return substitute(a:line, '^\s*', '', '')
 endfunc
 
-func s:RemoveEndSpaces(line)
+func BmkRemoveEndSpaces(line)
   return substitute(a:line, '\s*$', '', '')
 endfunc
 
@@ -44,6 +44,14 @@ endfunc
 "------------------------------------------------------
 " get item
 "------------------------------------------------------
+func BmkGetTitle(line)
+  let mx = '^\[\(.\+\)\].*'
+  let line = a:line
+  let line = matchstr(line, mx)
+  let item = substitute(line, mx, '\1', '')
+  return item
+endfunc
+
 " item format per line
 " - word word    | word
 func BmkGetItem(line, idx)
@@ -109,7 +117,7 @@ endfunc
 func s:BmkPrevItem()
   normal -
   let key = BmkGetKeyItem()
-  let key = s:RemoveEndSpaces(key)
+  let key = BmkRemoveEndSpaces(key)
   if (len(key) > s:bmk_winwidth / 2)
     echo key
   else
@@ -120,7 +128,7 @@ endfunc
 func s:BmkNextItem()
   normal +
   let key = BmkGetKeyItem()
-  let key = s:RemoveEndSpaces(key)
+  let key = BmkRemoveEndSpaces(key)
   if (len(key) > s:bmk_winwidth / 2)
     echo key
   else
@@ -184,12 +192,21 @@ func BmkEditFile(file, winnr)
   exec "edit" a:file
 endfunc
 
-func BmkExecVimCommand(cmd, winnr)
+func BmkExecCommand(cmd, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
 
-  exec a:cmd
+  if &buftype == 'terminal'
+    let bufnr = winbufnr(0)
+    call term_sendkeys(bufnr, a:cmd)
+  else
+    if (a:cmd[0] == ':')
+      exec a:cmd[1:]
+    else
+      exec "normal ".a:cmd
+    endif
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -224,10 +241,11 @@ func BmkEdit(url, winnr)
   elseif (type == "file")
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
-    call BmkExecVimCommand(url[1:], a:winnr)
+    call BmkExecCommand(url, a:winnr)
   else
-    echo "BmkEdit: not supported type: [".type."]"
-    return 0
+    call BmkExecCommand(url, a:winnr)
+    "echo "BmkEdit: not supported type: [".type."]"
+    "return 0
   endif
 
   return 1
@@ -246,7 +264,7 @@ func BmkKeyCR(url, winnr)
   elseif type == "file"
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
-    call BmkExecVimCommand(url[1:], a:winnr)
+    call BmkExecCommand(url, a:winnr)
   else
     echo "BmkKeyCR: not supported type: [".type."]"
     return 0
