@@ -86,9 +86,9 @@ tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-nnoremap <C-M>   :call MyMenuPopupMenu(0)<CR>
+nnoremap <Space>   :call MyMenuPopupMenu(0)<CR>
 
-tnoremap <C-M>   <C-W>:call MyMenuPopupMenu(0)<CR>
+tnoremap <C-Space>   <C-W>:call MyMenuPopupMenu(0)<CR>
 
 "------------------------------------------------------
 " map.window.move

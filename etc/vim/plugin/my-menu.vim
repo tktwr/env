@@ -55,7 +55,8 @@ endfunc
 func MyMenuExec(cmd)
   if &buftype == 'terminal'
     let bufnr = winbufnr(0)
-    call term_sendkeys(bufnr, a:cmd."\<CR>")
+    let cmd = substitute(a:cmd, '<CR>', "\<CR>", '')
+    call term_sendkeys(bufnr, cmd)
   else
     if (a:cmd[0] == ':')
       exec a:cmd[1:]

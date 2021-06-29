@@ -1,27 +1,37 @@
 [terminal:git] ----------------------- | ----------------------------------------
-- G                                    | G
-- git status                           | git status
-- git fetch                            | git fetch
+- G                                    | G<CR>
+- git status                           | git status<CR>
+- git fetch                            | git fetch<CR>
+- git rebase <branch>                  | git rebase 
+- git rebase --abort                   | git rebase --abort<CR>
+- git merge --no-ff <branch>           | git merge --no-ff 
+- git merge --abort                    | git merge --abort<CR>
+- git branch -d <branch>               | git branch -d 
+- git push origin :<branch>            | git push origin :
+- git push origin <branch>             | git push origin 
 [terminal:shell] --------------------- | ----------------------------------------
-- ,resize 40                           | ,resize 40
-- ,resize 10                           | ,resize 10
+- ,resize 40                           | ,resize 40<CR>
+- ,resize 10                           | ,resize 10<CR>
+- term (terminal)                      | ,T<CR>
 [buffer:open] ------------------------ | ----------------------------------------
 - scratchpad                           | :edit $MY_DIARY/scratchpad.md.html
+- dia                                  | :edit $MY_DIARY/diary.md.html
 - bmk                                  | :edit $MY_DOTMY_COMMON/bmk.txt
+- term                                 | :MyTerm
 - MyHelp                               | :MyHelp
 - MyMemo                               | :MyMemo
 - BmkOpenThis                          | :call BmkOpenThis()
 - BmkKeyCRThis                         | :call BmkKeyCRThis()
-[buffer:git] ------------------------- | ----------------------------------------
-- MyGitLog                             | :MyGitLog
-- MyGgrepHere                          | :silent MyGgrepHere
-- MyClangFormat                        | :MyClangFormat
 [buffer:edit] ------------------------ | ----------------------------------------
 - paste                                | "*p
 - yank                                 | "*y
 - MyTabBar                             | :MyTabBar
 - MyMakeLink                           | :MyMakeLink
 - MyTogglePathFormat                   | :MyTogglePathFormat
+[buffer:git] ------------------------- | ----------------------------------------
+- MyGitLog                             | :MyGitLog
+- MyGgrepHere                          | :silent MyGgrepHere
+- MyClangFormat                        | :MyClangFormat
 [buffer] ----------------------------- | ----------------------------------------
 - MyLcdHere                            | :MyLcdHere
 - MyWinInitSize                        | :MyWinInitSize
