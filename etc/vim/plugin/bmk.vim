@@ -197,14 +197,16 @@ func BmkExecCommand(cmd, winnr)
     exec a:winnr."wincmd w"
   endif
 
+  let cmd = a:cmd
   if &buftype == 'terminal'
     let bufnr = winbufnr(0)
-    call term_sendkeys(bufnr, a:cmd)
+    let cmd = substitute(cmd, '<CR>', "\<CR>", '')
+    call term_sendkeys(bufnr, cmd)
   else
-    if (a:cmd[0] == ':')
-      exec a:cmd[1:]
+    if (cmd[0] == ':')
+      exec cmd[1:]
     else
-      exec "normal ".a:cmd
+      exec "normal ".cmd
     endif
   endif
 endfunc

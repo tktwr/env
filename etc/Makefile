@@ -32,7 +32,7 @@ vimdirdiff:
 
 .PHONY: tags
 tags:
-	ctags bash/*.sh vim/*.vim
+	ctags bash/*.sh vim/*.vim vim/plugin/*.vim
 
 #------------------------------------------------------
 

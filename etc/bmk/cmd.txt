@@ -33,12 +33,12 @@
 - MyGgrepHere                          | :silent MyGgrepHere
 - MyClangFormat                        | :MyClangFormat
 [buffer] ----------------------------- | ----------------------------------------
-- MyLcdHere                            | :MyLcdHere
 - MyWinInitSize                        | :MyWinInitSize
+- MyWinInfo                            | :MyWinInfo
+- MyLcdHere                            | :MyLcdHere
 - MyIDESendCdE2T                       | :call MyIDESendCdE2T("")
 - MyCheckEnv                           | :MyCheckEnv
 - MySourceVimrc                        | :MySourceVimrc
-- MyWinInfo                            | :MyWinInfo
 - diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 - dirdiff .my                          | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 - quit                                 | :confirm qall
