@@ -2,13 +2,20 @@
 - G                                    | G<CR>
 - git status                           | git status<CR>
 - git fetch                            | git fetch<CR>
-- git rebase <branch>                  | git rebase 
+- git rebase <branch>                  | git rebase
 - git rebase --abort                   | git rebase --abort<CR>
-- git merge --no-ff <branch>           | git merge --no-ff 
+- git merge --no-ff <branch>           | git merge --no-ff
 - git merge --abort                    | git merge --abort<CR>
-- git branch -d <branch>               | git branch -d 
+- git branch -d <branch>               | git branch -d
 - git push origin :<branch>            | git push origin :
-- git push origin <branch>             | git push origin 
+- git push origin <branch>             | git push origin
+- git-clone-recursive <url>            | git clone --recurse-submodules
+- git-submodule-update-all             | git submodule update --init --recursive<CR>
+- git-untrack-file <file>              | git-untrack-file
+- git-untrack-dir <dir>                | git-untrack-dir
+- git-chmod-x <file>                   | git-chmod-x
+- git-chmod-x-all                      | git-chmod-x-all<CR>
+- git-ls-no-x                          | git-ls-no-x
 [terminal:shell] --------------------- | ----------------------------------------
 - ,resize 40                           | ,resize 40<CR>
 - ,resize 10                           | ,resize 10<CR>
