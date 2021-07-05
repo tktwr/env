@@ -125,18 +125,25 @@ endfunc
 
 func MyMenuPopupMenuFilter(id, key)
   if a:key == 'c'
-     call popup_close(a:id, 0)
-     return 1
+    call popup_close(a:id, 0)
+    return 1
+  elseif a:key == 'a'
+    call popup_move(a:id, #{
+    \ pos: 'botleft',
+    \ line: 'cursor-1',
+    \ col: 'cursor',
+    \ })
+    return 1
   elseif a:key == 'l'
-     call popup_close(a:id, 0)
-     let nr = MyMenuNext()
-     call MyMenuPopupMenu(nr)
-     return 1
+    call popup_close(a:id, 0)
+    let nr = MyMenuNext()
+    call MyMenuPopupMenu(nr)
+    return 1
   elseif a:key == 'h'
-     call popup_close(a:id, 0)
-     let nr = MyMenuPrev()
-     call MyMenuPopupMenu(nr)
-     return 1
+    call popup_close(a:id, 0)
+    let nr = MyMenuPrev()
+    call MyMenuPopupMenu(nr)
+    return 1
   endif
   return popup_filter_menu(a:id, a:key)
 endfunc
@@ -159,7 +166,7 @@ endfunc
 func MyMenuPopupMenu(menu_nr)
   let w:my_menu_nr = a:menu_nr
   let w:my_menu = MyMenuList(w:my_menu_nr)
-  call popup_menu(w:my_menu, #{
+  let winid = popup_menu(w:my_menu, #{
     \ filter: 'MyMenuPopupMenuFilter',
     \ callback: 'MyMenuPopupMenuHandler',
     \ border: [0,0,0,0],

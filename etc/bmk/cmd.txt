@@ -24,11 +24,14 @@
 - scratchpad                           | :edit $MY_DIARY/scratchpad.md.html
 - dia                                  | :edit $MY_DIARY/diary.md.html
 - bmk                                  | :edit $MY_DOTMY_COMMON/bmk.txt
-- term                                 | :MyTerm
+- MyTerm                               | :MyTerm
 - MyHelp                               | :MyHelp
 - MyMemo                               | :MyMemo
 - BmkOpenThis                          | :call BmkOpenThis()
 - BmkKeyCRThis                         | :call BmkKeyCRThis()
+- BmkOpenURL                           | :call BmkOpenURL(expand('%:p'))
+- BmkOpenDir                           | :call BmkOpenDir(expand('%:p:h'))
+- BmkOpenFile                          | :call BmkOpenFile(expand('%:p'))
 [buffer:edit] ------------------------ | ----------------------------------------
 - paste                                | "*p
 - yank                                 | "*y

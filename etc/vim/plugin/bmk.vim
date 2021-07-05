@@ -114,8 +114,7 @@ func BmkGetDirName(val)
   return dir
 endfunc
 
-func s:BmkPrevItem()
-  normal -
+func s:BmkPrintItem()
   let key = BmkGetKeyItem()
   let key = BmkRemoveEndSpaces(key)
   if (len(key) > s:bmk_winwidth / 2)
@@ -125,15 +124,14 @@ func s:BmkPrevItem()
   endif
 endfunc
 
+func s:BmkPrevItem()
+  normal -
+  call s:BmkPrintItem()
+endfunc
+
 func s:BmkNextItem()
   normal +
-  let key = BmkGetKeyItem()
-  let key = BmkRemoveEndSpaces(key)
-  if (len(key) > s:bmk_winwidth / 2)
-    echo key
-  else
-    echo ""
-  endif
+  call s:BmkPrintItem()
 endfunc
 
 "------------------------------------------------------
@@ -433,6 +431,7 @@ func s:BmkMap()
   nnoremap <buffer> 6       :call BmkEditItem(6)<CR>
   nnoremap <buffer> 7       :call BmkEditItem(7)<CR>
   nnoremap <buffer> 8       :call BmkEditItem(8)<CR>
+  nnoremap <buffer> 9       :call BmkEditItem(9)<CR>
 endfunc
 
 func s:BmkMapWin()
@@ -485,9 +484,28 @@ func BmkNERDTreePreview(winnr)
   wincmd p
 endfunc
 
+func BmkNERDTreePrintItem()
+  let key = BmkNERDTreeSelected()
+  if (len(key) > s:bmk_winwidth / 2)
+    echo key
+  else
+    echo ""
+  endif
+endfunc
+
+func BmkNERDTreePrevItem()
+  normal -
+  call BmkNERDTreePrintItem()
+endfunc
+
+func BmkNERDTreeNextItem()
+  normal +
+  call BmkNERDTreePrintItem()
+endfunc
+
 func s:BmkNERDTreeMap()
-  nmap <buffer> k       -
-  nmap <buffer> j       +
+  nmap <buffer> k       :call BmkNERDTreePrevItem()<CR>
+  nmap <buffer> j       :call BmkNERDTreeNextItem()<CR>
   nmap <buffer> h       u
   nmap <buffer> l       :call BmkNERDTreePreview(2)<CR>
   nmap <buffer> 2       :call BmkNERDTreeEdit(2)<CR>
@@ -497,6 +515,7 @@ func s:BmkNERDTreeMap()
   nmap <buffer> 6       :call BmkNERDTreeEdit(6)<CR>
   nmap <buffer> 7       :call BmkNERDTreeEdit(7)<CR>
   nmap <buffer> 8       :call BmkNERDTreeEdit(8)<CR>
+  nmap <buffer> 9       :call BmkNERDTreeEdit(9)<CR>
 endfunc
 
 "------------------------------------------------------
