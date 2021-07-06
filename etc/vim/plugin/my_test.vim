@@ -10,12 +10,16 @@ let g:loaded_my_test = 1
 "------------------------------------------------------
 " test args
 "------------------------------------------------------
-func MyTestFargs(arg)
-  echom "MyTestFargs: [".a:arg."]"
+func MyTestFargs(arg1, arg2)
+  echom "MyTestFargs: [".a:arg1." ".a:arg2."]"
 endfunc
 
 func MyTestQargs(arg)
   echom "MyTestQargs: [".a:arg."]"
+endfunc
+
+func MyTestRange(arg1, arg2)
+  echom "MyTestRange: [".a:arg1." ".a:arg2."]"
 endfunc
 
 "------------------------------------------------------
@@ -194,6 +198,7 @@ endfunc
 "------------------------------------------------------
 command -nargs=+ MyTestFargs     call MyTestFargs(<f-args>)
 command -nargs=+ MyTestQargs     call MyTestQargs(<q-args>)
+command -range   MyTestRange     call MyTestRange(<line1>, <line2>)
 
 command MyTestAutocmd       call MyTestAutocmd()
 
