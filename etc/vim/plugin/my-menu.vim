@@ -124,7 +124,7 @@ func MyMenuPrev()
 endfunc
 
 func MyMenuPopupMenuFilter(id, key)
-  if a:key == 'c'
+  if a:key == "\<Space>" || a:key == "\<C-Space>"
     call popup_close(a:id, 0)
     return 1
   elseif a:key == 'a'
