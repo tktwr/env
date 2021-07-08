@@ -52,6 +52,7 @@
 - MyIDESendCdE2T                       | :call MyIDESendCdE2T("")
 - MyCheckEnv                           | :MyCheckEnv
 - MySourceVimrc                        | :MySourceVimrc
+- MyMenuReload                         | :MyMenuReload
 - diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 - dirdiff .my                          | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 - quit                                 | :confirm qall

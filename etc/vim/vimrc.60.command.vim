@@ -37,6 +37,7 @@ endfunc
 func s:MyGgrepHere()
   "Ggrep -I <cword> -- ':!*.dat'
   Ggrep -I <cword>
+  redraw!
 endfunc
 
 func s:MySetTab(nr)

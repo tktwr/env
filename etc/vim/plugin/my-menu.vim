@@ -6,62 +6,14 @@ if exists("g:loaded_my_menu")
 endif
 let g:loaded_my_menu = 1
 
-let g:my_menu_edit = [
-  \ [
-  \ ':edit $MY_DIARY/scratchpad.md.html',
-  \ ':edit $MY_DOTMY_COMMON/bmk.txt',
-  \ '"*p',
-  \ '"*y',
-  \ ':silent MyGgrepHere',
-  \ ':MyClangFormat',
-  \ ':MyTabBar',
-  \ ':MyMakeLink',
-  \ ':MyTogglePathFormat',
-  \ ':confirm qall',
-  \ ],
-  \ [
-  \ ':MyGitLog',
-  \ ':MyHelp',
-  \ ':MyMemo',
-  \ ':MyLcdHere',
-  \ ':MyWinInitSize',
-  \ ':call MyIDESendCdE2T("")',
-  \ ':call BmkOpenThis()',
-  \ ':call BmkKeyCRThis()',
-  \ ],
-  \ ]
-let g:my_menu_term = [
-  \ [
-  \ 'G',
-  \ 'git status',
-  \ 'git fetch',
-  \ ],
-  \ [
-  \ ',resize 40',
-  \ ',resize 10',
-  \ ],
-  \ ]
-let s:my_menu_edit = g:my_menu_edit
-let s:my_menu_term = g:my_menu_term
-
-func MyMenuList(nr)
-  if &buftype == 'terminal'
-    return s:my_menu_term[a:nr]
-  else
-    return s:my_menu_edit[a:nr]
-  endif
-endfunc
-
-func MyMenuExec(cmd)
-  call BmkExecCommand(a:cmd, 0)
-endfunc
+let s:cmd_file = "$MY_ETC/bmk/cmd.txt"
+let s:cmd_dict = {}
+let s:my_menu_edit = []
+let s:my_menu_term = []
 
 "------------------------------------------------------
 " load
 "------------------------------------------------------
-let s:cmd_file = "$MY_ETC/bmk/cmd.txt"
-let s:cmd_dict = {}
-
 func s:MyMenuRegister(list, dict, line)
   let line = a:line
   let key = BmkGetItem(line, 1)
@@ -74,9 +26,6 @@ func s:MyMenuRegister(list, dict, line)
 endfunc
 
 func s:MyMenuLoad(cmd_file)
-  let s:my_menu_edit = []
-  let s:my_menu_term = []
-
   let cmd_file = expand(a:cmd_file)
   if !filereadable(cmd_file)
     return
@@ -102,8 +51,6 @@ func s:MyMenuLoad(cmd_file)
   endfor
 endfunc
 
-call s:MyMenuLoad(s:cmd_file)
-
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
@@ -121,6 +68,18 @@ func MyMenuPrev()
   else
     return w:my_menu_nr == 0 ? len(s:my_menu_edit) - 1 : w:my_menu_nr - 1
   endif
+endfunc
+
+func MyMenuList(nr)
+  if &buftype == 'terminal'
+    return s:my_menu_term[a:nr]
+  else
+    return s:my_menu_edit[a:nr]
+  endif
+endfunc
+
+func MyMenuExec(cmd)
+  call BmkExecCommand(a:cmd, 0)
 endfunc
 
 func MyMenuPopupMenuFilter(id, key)
@@ -177,4 +136,25 @@ func MyMenuPopupMenu(menu_nr)
     \ moved: 'WORD',
     \ })
 endfunc
+
+"------------------------------------------------------
+" init
+"------------------------------------------------------
+func s:MyMenuReload()
+  let s:cmd_dict = {}
+  let s:my_menu_edit = []
+  let s:my_menu_term = []
+  call s:MyMenuLoad(s:cmd_file)
+endfunc
+
+func s:MyMenuInit()
+  call s:MyMenuReload()
+endfunc
+
+call s:MyMenuInit()
+
+"------------------------------------------------------
+" public command
+"------------------------------------------------------
+command MyMenuReload  call s:MyMenuReload()
 
