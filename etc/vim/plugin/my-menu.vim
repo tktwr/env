@@ -6,7 +6,7 @@ if exists("g:loaded_my_menu")
 endif
 let g:loaded_my_menu = 1
 
-let s:cmd_file = "$MY_ETC/bmk/cmd.txt"
+let s:cmd_file = g:cmd_file
 let s:cmd_dict = {}
 let s:my_menu_edit = []
 let s:my_menu_term = []

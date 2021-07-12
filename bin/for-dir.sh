@@ -10,7 +10,7 @@ f_exec_in_dirs() {
 
   for i in $dirs; do
     if [ -d $i ]; then
-      echo "=== [$i] ==="
+      echo "=== [$i]($cmd) ==="
       cd "$i"
       eval "$cmd"
       echo

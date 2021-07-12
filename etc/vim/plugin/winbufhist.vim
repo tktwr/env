@@ -30,6 +30,10 @@ func WinBufHistPopupMenuHandler(id, result)
 endfunc
 
 func WinBufHistPopupMenu()
+  if !exists("w:buflist")
+    return
+  endif
+
   let l = []
   for i in w:buflist
     let s = printf("%3d %s ", i, bufname(i))

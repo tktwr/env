@@ -42,10 +42,12 @@
 - MyMakeLink                           | :MyMakeLink
 - MyTogglePathFormat                   | :MyTogglePathFormat
 [buffer:git] ------------------------- | ----------------------------------------
+- TODO                                 | :vimgrep "\[TODO\]" %
 - MyGitLog                             | :MyGitLog
 - MyGgrepHere                          | :silent MyGgrepHere
 - MyClangFormat                        | :MyClangFormat
 [buffer] ----------------------------- | ----------------------------------------
+- MyBufDelete                          | :MyBufDelete
 - MyWinInitSize                        | :MyWinInitSize
 - MyWinInfo                            | :MyWinInfo
 - MyLcdHere                            | :MyLcdHere
