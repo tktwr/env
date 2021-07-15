@@ -6,7 +6,7 @@ if exists("g:loaded_my_menu")
 endif
 let g:loaded_my_menu = 1
 
-let s:cmd_file = g:cmd_file
+let s:cmd_files = g:cmd_files
 let s:cmd_dict = {}
 let s:my_menu_edit = []
 let s:my_menu_term = []
@@ -144,7 +144,9 @@ func s:MyMenuReload()
   let s:cmd_dict = {}
   let s:my_menu_edit = []
   let s:my_menu_term = []
-  call s:MyMenuLoad(s:cmd_file)
+  for file in s:cmd_files
+    call s:MyMenuLoad(file)
+  endfor
 endfunc
 
 func s:MyMenuInit()
