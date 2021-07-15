@@ -17,6 +17,8 @@
 - git-chmod-x-all                      | git-chmod-x-all<CR>
 - git-ls-no-x                          | git-ls-no-x
 [terminal:shell] --------------------- | ----------------------------------------
+- mycmake.sh                           | mycmake.sh<CR>
+- mycmake.sh --build                   | mycmake.sh --build<CR>
 - ,resize 40                           | ,resize 40<CR>
 - ,resize 10                           | ,resize 10<CR>
 - term (terminal)                      | ,T<CR>
@@ -52,6 +54,7 @@
 - MyWinInfo                            | :MyWinInfo
 - MyLcdHere                            | :MyLcdHere
 - MyIDESendCdE2T                       | :call MyIDESendCdE2T("")
+- MyIDESendCmdE2T                      | :call MyIDESendCmdE2T("")
 - MyCheckEnv                           | :MyCheckEnv
 - MySourceVimrc                        | :MySourceVimrc
 - MyMenuReload                         | :MyMenuReload
