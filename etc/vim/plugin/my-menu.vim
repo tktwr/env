@@ -15,7 +15,6 @@ let s:my_menu_term = []
 " load
 "------------------------------------------------------
 let s:separator = "--------------------"
-let s:alphabet = "abcdefg"
 
 func Fill(str, separator)
   let n = len(a:str)
@@ -31,19 +30,13 @@ func s:MyMenuRegisterSeparator(list, dict, title)
   call add(a:list, key)
 endfunc
 
-func s:MyMenuRegister(list, dict, line, idx)
+func s:MyMenuRegister(list, dict, line)
   let line = a:line
   let key = BmkGetItem(line, 1)
   let val = BmkGetItem(line, 2)
 
-  if (a:idx < len(s:alphabet))
-    let alpha = s:alphabet[a:idx]
-  else
-    let alpha = ' '
-  endif
-
   let key = BmkRemoveEndSpaces(key)
-  let key = " ".alpha." ".key." "
+  let key = " ".key." "
 
   let a:dict[key] = val
   call add(a:list, key)
@@ -65,7 +58,6 @@ func s:MyMenuLoad(cmd_file)
       else
         let menu = s:my_menu_edit
       endif
-      let idx = 0
       call add(menu, [])
       call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "[".title."] ")
     elseif (match(line, '^\s*---') == 0)
@@ -73,8 +65,7 @@ func s:MyMenuLoad(cmd_file)
       call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
     elseif (match(line, '^\s*- ') == 0)
       " item
-      call s:MyMenuRegister(menu[-1], s:cmd_dict, line, idx)
-      let idx = idx + 1
+      call s:MyMenuRegister(menu[-1], s:cmd_dict, line)
     endif
   endfor
 endfunc
@@ -110,11 +101,22 @@ func MyMenuExec(cmd)
   call BmkExecCommand(a:cmd, 0)
 endfunc
 
+func Find(menu, pattern)
+  let idx = 0
+  for s in a:menu
+    if (match(s, a:pattern) == 0)
+      return idx
+    endif
+    let idx = idx + 1
+  endfor
+  return -1
+endfunc
+
 func MyMenuPopupMenuFilter(id, key)
   if a:key == "\<Space>" || a:key == "\<C-Space>"
     call popup_close(a:id, 0)
     return 1
-  elseif a:key == 'a'
+  elseif a:key == '0'
     call popup_move(a:id, #{
     \ pos: 'botleft',
     \ line: 'cursor-1',
@@ -131,6 +133,13 @@ func MyMenuPopupMenuFilter(id, key)
     let nr = MyMenuPrev()
     call MyMenuPopupMenu(nr)
     return 1
+  else
+    let idx = Find(w:my_menu, '^ '.a:key.' ')
+    if (idx != -1)
+      let idx = idx + 1
+      call popup_close(a:id, idx)
+      return 1
+    endif
   endif
   return popup_filter_menu(a:id, a:key)
 endfunc

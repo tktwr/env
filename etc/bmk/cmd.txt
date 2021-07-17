@@ -1,68 +1,71 @@
 [terminal:git] ----------------------- | ----------------------------------------
-- G                                    | G<CR>
-- git status                           | git status<CR>
-- git fetch                            | git fetch<CR>
-- git rebase <branch>                  | git rebase
-- git rebase --abort                   | git rebase --abort<CR>
-- git merge --no-ff <branch>           | git merge --no-ff
-- git merge --abort                    | git merge --abort<CR>
-- git branch -d <branch>               | git branch -d
-- git push origin :<branch>            | git push origin :
-- git push origin <branch>             | git push origin
-- git-clone-recursive <url>            | git clone --recurse-submodules
-- git-submodule-update-all             | git submodule update --init --recursive<CR>
-- git-untrack-file <file>              | git-untrack-file
-- git-untrack-dir <dir>                | git-untrack-dir
-- git-chmod-x <file>                   | git-chmod-x
-- git-chmod-x-all                      | git-chmod-x-all<CR>
-- git-ls-no-x                          | git-ls-no-x
+-   G                                  | G<CR>
+-   git status                         | git status<CR>
+-   git fetch                          | git fetch<CR>
+-   git rebase <branch>                | git rebase
+-   git rebase --abort                 | git rebase --abort<CR>
+-   git merge --no-ff <branch>         | git merge --no-ff
+-   git merge --abort                  | git merge --abort<CR>
+-   git branch -d <branch>             | git branch -d
+-   git push origin :<branch>          | git push origin :
+-   git push origin <branch>           | git push origin
+-   git-clone-recursive <url>          | git clone --recurse-submodules
+-   git-submodule-update-all           | git submodule update --init --recursive<CR>
+-   git-untrack-file <file>            | git-untrack-file
+-   git-untrack-dir <dir>              | git-untrack-dir
+-   git-chmod-x <file>                 | git-chmod-x
+-   git-chmod-x-all                    | git-chmod-x-all<CR>
+-   git-ls-no-x                        | git-ls-no-x
 [terminal:shell] --------------------- | ----------------------------------------
-- mycmake.sh                           | mycmake.sh<CR>
-- mycmake.sh --build                   | mycmake.sh --build<CR>
-- ,resize 40                           | ,resize 40<CR>
-- ,resize 10                           | ,resize 10<CR>
-- term (terminal)                      | ,T<CR>
-- pip-upgrade                          | python -m pip install --upgrade pip<CR>
-- git-upgrade                          | git update-git-for-windows<CR>
-[buffer:open] ------------------------ | ----------------------------------------
-- scratchpad                           | :edit $MY_DIARY/scratchpad.md.html
-- dia                                  | :edit $MY_DIARY/diary.md.html
-- todo                                 | :edit $MY_DIARY/todo.md.html
-- bmk                                  | :edit $MY_DOTMY_COMMON/bmk.txt
-  ------------------------------------ | ----------------------------------------
-- MyTerm                               | :MyTerm
-- MyIDE                                | :MyIDE
-- MyHelp                               | :MyHelp
-- MyMemo                               | :MyMemo
-  ------------------------------------ | ----------------------------------------
-- BmkOpenThis                          | :call BmkOpenThis()
-- BmkKeyCRThis                         | :call BmkKeyCRThis()
-- BmkOpenURL                           | :call BmkOpenURL(expand('%:p'))
-- BmkOpenDir                           | :call BmkOpenDir(expand('%:p:h'))
-- BmkOpenFile                          | :call BmkOpenFile(expand('%:p'))
+-   mycmake.sh                         | mycmake.sh<CR>
+-   mycmake.sh --build                 | mycmake.sh --build<CR>
+-   ,resize 40                         | ,resize 40<CR>
+-   ,resize 10                         | ,resize 10<CR>
+-   term (terminal)                    | ,T<CR>
+-   pip-upgrade                        | python -m pip install --upgrade pip<CR>
+-   git-upgrade                        | git update-git-for-windows<CR>
+[buffer:main] ------------------------ | ----------------------------------------
+- s scratchpad                         | :edit $MY_DIARY/scratchpad.md.html
+- d dia                                | :edit $MY_DIARY/diary.md.html
+- t todo                               | :edit $MY_DIARY/todo.md.html
+- b bmk                                | :edit $MY_DOTMY_COMMON/bmk.txt
+    ---------------------------------- | ----------------------------------------
+- T MyTerm                             | :MyTerm
+-   MyIDE                              | :MyIDE
+- M MyMemo                             | :MyMemo
+- H MyHelp                             | :MyHelp
+    ---------------------------------- | ----------------------------------------
+- p paste                              | "*p
+-   yank                               | "*y
+- B MyTabBar                           | :MyTabBar
+    ---------------------------------- | ----------------------------------------
+- g MyGgrepHere                        | :silent MyGgrepHere
+-   vimgrep TODO                       | :vimgrep "\[TODO\]" %
+    ---------------------------------- | ----------------------------------------
+- R MyMenuReload                       | :MyMenuReload
+    ---------------------------------- | ----------------------------------------
+-   BmkOpenThis                        | :call BmkOpenThis()
+-   BmkKeyCRThis                       | :call BmkKeyCRThis()
+-   BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
+-   BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
+-   BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
+    ---------------------------------- | ----------------------------------------
+- Q quit                               | :confirm qall
 [buffer:edit] ------------------------ | ----------------------------------------
-- paste                                | "*p
-- yank                                 | "*y
-- MyTabBar                             | :MyTabBar
-- MyMakeLink                           | :MyMakeLink
-- MyTogglePathFormat                   | :MyTogglePathFormat
-[buffer:git] ------------------------- | ----------------------------------------
-- TODO                                 | :vimgrep "\[TODO\]" %
-- MyGitLog                             | :MyGitLog
-- MyGgrepHere                          | :silent MyGgrepHere
-- MyClangFormat                        | :MyClangFormat
+-   MyMakeLink                         | :MyMakeLink
+-   MyTogglePathFormat                 | :MyTogglePathFormat
+    ---------------------------------- | ----------------------------------------
+-   MyGitLog                           | :MyGitLog
+- c MyClangFormat                      | :MyClangFormat
 [buffer] ----------------------------- | ----------------------------------------
-- MyBufDelete                          | :MyBufDelete
-- MyWinInitSize                        | :MyWinInitSize
-- MyWinInfo                            | :MyWinInfo
-- MyLcdHere                            | :MyLcdHere
-- MyIDESendCdE2T                       | :call MyIDESendCdE2T("")
-- MyIDESendCmdE2T                      | :call MyIDESendCmdE2T("")
-- MyCheckEnv                           | :MyCheckEnv
-- MySourceVimrc                        | :MySourceVimrc
-- MyMenuReload                         | :MyMenuReload
-- diff bmk.txt                         | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
-- dirdiff .my                          | :MyTabDirDiff $MY_ETC/.my $HOME/.my
-- quit                                 | :confirm qall
+-   MyBufDelete                        | :MyBufDelete
+-   MyWinInitSize                      | :MyWinInitSize
+-   MyWinInfo                          | :MyWinInfo
+-   MyIDESendCdE2T                     | :call MyIDESendCdE2T("")
+-   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
+-   MyCheckEnv                         | :MyCheckEnv
+-   MySourceVimrc                      | :MySourceVimrc
+-   diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
+-   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 
 # vim:set ft=bmk syntax=txt nowrap:
