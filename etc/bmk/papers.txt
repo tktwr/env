@@ -4,8 +4,9 @@
   - Skin/                              | $MY_PAPERS/Skin
   - PortraitRelighting/                | $MY_PAPERS/PortraitRelighting
 [links] ------------------------------ | ----------------------------------------
-- SIGGRAPH Courses                     | https://blog.selfshadow.com/publications/
 - SIGGRAPH Papers                      | http://kesen.realtimerendering.com/
+- SIGGRAPH Courses                     | https://blog.selfshadow.com/publications/
+- What Makes a (Graphics) Systems Paper Beautiful | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
 [BRDF] ------------------------------- | ----------------------------------------
 - Disney BSDF: SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice | https://blog.selfshadow.com/publications/s2015-shading-course/
 - Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering | http://project-asura.com/blog/archives/2175

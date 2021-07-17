@@ -97,7 +97,8 @@ alias ,I=',LCD; vimapi.sh --in-new-tab MyIDE'
 alias ,T=',LCD; vimapi.sh MyTerm'
 alias ,V=',LCD; vimapi.sh MyTermV'
 
-alias ,e=',LCD; vimapi.sh --in-above-win edit --filepath'
+alias ,e=',LCD; vimapi.sh BmkEditFile --filepath'
+#alias ,e=',LCD; vimapi.sh --in-above-win edit --filepath'
 alias ,sp=',LCD; vimapi.sh --in-above-win split --filepath'
 alias ,tabe=',LCD; vimapi.sh tabedit --filepath'
 

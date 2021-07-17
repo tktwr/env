@@ -424,14 +424,6 @@ endfunc
 "------------------------------------------------------
 func s:BmkMap()
   nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
-  nnoremap <buffer> 2       :call BmkEditItem(2)<CR>
-  nnoremap <buffer> 3       :call BmkEditItem(3)<CR>
-  nnoremap <buffer> 4       :call BmkEditItem(4)<CR>
-  nnoremap <buffer> 5       :call BmkEditItem(5)<CR>
-  nnoremap <buffer> 6       :call BmkEditItem(6)<CR>
-  nnoremap <buffer> 7       :call BmkEditItem(7)<CR>
-  nnoremap <buffer> 8       :call BmkEditItem(8)<CR>
-  nnoremap <buffer> 9       :call BmkEditItem(9)<CR>
 endfunc
 
 func s:BmkMapWin()
@@ -447,6 +439,14 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
     nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
+    nnoremap <silent> <buffer> 2       :call BmkEditItem(2)<CR>
+    nnoremap <silent> <buffer> 3       :call BmkEditItem(3)<CR>
+    nnoremap <silent> <buffer> 4       :call BmkEditItem(4)<CR>
+    nnoremap <silent> <buffer> 5       :call BmkEditItem(5)<CR>
+    nnoremap <silent> <buffer> 6       :call BmkEditItem(6)<CR>
+    nnoremap <silent> <buffer> 7       :call BmkEditItem(7)<CR>
+    nnoremap <silent> <buffer> 8       :call BmkEditItem(8)<CR>
+    nnoremap <silent> <buffer> 9       :call BmkEditItem(9)<CR>
   else
     nnoremap <buffer> <CR>    :call BmkEditItem(0)<CR>
     if maparg('h') != ""
@@ -454,6 +454,14 @@ func s:BmkMapWin()
       nunmap <buffer> l
       nunmap <buffer> k
       nunmap <buffer> j
+      nunmap <buffer> 2
+      nunmap <buffer> 3
+      nunmap <buffer> 4
+      nunmap <buffer> 5
+      nunmap <buffer> 6
+      nunmap <buffer> 7
+      nunmap <buffer> 8
+      nunmap <buffer> 9
     endif
   endif
 endfunc
@@ -528,4 +536,9 @@ augroup bmk
   autocmd BufWinEnter *     call s:BmkMapWin()
   autocmd WinEnter *        call s:BmkMapWin()
 augroup END
+
+"------------------------------------------------------
+" command
+"------------------------------------------------------
+command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
 
