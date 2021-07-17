@@ -14,12 +14,36 @@ let s:my_menu_term = []
 "------------------------------------------------------
 " load
 "------------------------------------------------------
-func s:MyMenuRegister(list, dict, line)
+let s:separator = "--------------------"
+let s:alphabet = "abcdefg"
+
+func Fill(str, separator)
+  let n = len(a:str)
+  let o = a:str.a:separator[n:]
+  return o
+endfunc
+
+func s:MyMenuRegisterSeparator(list, dict, title)
+  let key = Fill(a:title, s:separator)
+  let val = ":echo"
+
+  let a:dict[key] = val
+  call add(a:list, key)
+endfunc
+
+func s:MyMenuRegister(list, dict, line, idx)
   let line = a:line
   let key = BmkGetItem(line, 1)
   let val = BmkGetItem(line, 2)
 
+  if (a:idx < len(s:alphabet))
+    let alpha = s:alphabet[a:idx]
+  else
+    let alpha = ' '
+  endif
+
   let key = BmkRemoveEndSpaces(key)
+  let key = " ".alpha." ".key." "
 
   let a:dict[key] = val
   call add(a:list, key)
@@ -30,23 +54,27 @@ func s:MyMenuLoad(cmd_file)
   if !filereadable(cmd_file)
     return
   endif
+
   let lines = readfile(cmd_file)
   for line in lines
     if (match(line, '^\[.\+\]') == 0)
+      " title
       let title = BmkGetTitle(line)
       if (match(title, 'terminal') == 0)
-        call add(s:my_menu_term, [])
+        let menu = s:my_menu_term
       else
-        call add(s:my_menu_edit, [])
+        let menu = s:my_menu_edit
       endif
-      continue
-    elseif (match(line, '^\s*-') == -1)
-      continue
-    endif
-    if (match(title, 'terminal') == 0)
-      call s:MyMenuRegister(s:my_menu_term[-1], s:cmd_dict, line)
-    else
-      call s:MyMenuRegister(s:my_menu_edit[-1], s:cmd_dict, line)
+      let idx = 0
+      call add(menu, [])
+      call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "[".title."] ")
+    elseif (match(line, '^\s*---') == 0)
+      " separator
+      call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
+    elseif (match(line, '^\s*- ') == 0)
+      " item
+      call s:MyMenuRegister(menu[-1], s:cmd_dict, line, idx)
+      let idx = idx + 1
     endif
   endfor
 endfunc
@@ -111,9 +139,6 @@ func MyMenuPopupMenuHandler(id, result)
   if a:result == 0
   elseif a:result > 0
     let idx = a:result - 1
-
-    " command in menu
-    "let cmd = w:my_menu[idx]
 
     " key in menu
     let cmd = s:cmd_dict[w:my_menu[idx]]

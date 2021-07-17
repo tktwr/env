@@ -27,11 +27,14 @@
 [buffer:open] ------------------------ | ----------------------------------------
 - scratchpad                           | :edit $MY_DIARY/scratchpad.md.html
 - dia                                  | :edit $MY_DIARY/diary.md.html
+- todo                                 | :edit $MY_DIARY/todo.md.html
 - bmk                                  | :edit $MY_DOTMY_COMMON/bmk.txt
+  ------------------------------------ | ----------------------------------------
 - MyTerm                               | :MyTerm
 - MyIDE                                | :MyIDE
 - MyHelp                               | :MyHelp
 - MyMemo                               | :MyMemo
+  ------------------------------------ | ----------------------------------------
 - BmkOpenThis                          | :call BmkOpenThis()
 - BmkKeyCRThis                         | :call BmkKeyCRThis()
 - BmkOpenURL                           | :call BmkOpenURL(expand('%:p'))

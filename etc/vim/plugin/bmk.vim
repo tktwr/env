@@ -44,6 +44,8 @@ endfunc
 "------------------------------------------------------
 " get item
 "------------------------------------------------------
+" title format per line
+" [word]
 func BmkGetTitle(line)
   let mx = '^\[\(.\+\)\].*'
   let line = a:line
