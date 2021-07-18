@@ -434,8 +434,6 @@ func s:BmkMapWin()
   endif
 
   if (s:InSideBar())
-    nnoremap <silent> <buffer> <C-N>   :silent call BmkNext()<CR>
-    nnoremap <silent> <buffer> <C-P>   :silent call BmkPrev()<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkKeyCRItem()<CR>
     nnoremap <silent> <buffer> h       :call BmkSide(1)<CR>
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>

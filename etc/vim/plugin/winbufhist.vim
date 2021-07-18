@@ -6,22 +6,29 @@ if exists("g:loaded_winbufhist")
 endif
 let g:loaded_winbufhist = 1
 
-let s:max_buflist = 10
+let g:winbufhist_key = "\<C-I>"
+let g:winbufhist_max = 10
+
+let s:winbufhist_key = g:winbufhist_key
+let s:winbufhist_max = g:winbufhist_max
 
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
 func WinBufHistPopupMenuFilter(id, key)
-  if a:key == 'c'
-     call popup_close(a:id, 0)
-     return 1
+  if a:key == s:winbufhist_key
+    call popup_close(a:id, 0)
+    return 1
+  elseif a:key == "c"
+    call popup_close(a:id, 0)
+    call s:Clear()
+    return 1
   endif
   return popup_filter_menu(a:id, a:key)
 endfunc
 
 func WinBufHistPopupMenuHandler(id, result)
   if a:result == 0
-    call s:Clear()
   elseif a:result > 0
     let idx = a:result - 1
     echo printf("%d, %d", idx, w:buflist[idx])
@@ -77,8 +84,8 @@ func s:Clear()
 endfunc
 
 func s:RemoveBufnr(list, bufnr)
-  let s = '\<'.a:bufnr.'\>'
-  let i = match(a:list, s)
+  let pattern = '\<'.a:bufnr.'\>'
+  let i = match(a:list, pattern)
   if i != -1
     call remove(a:list, i)
   endif
@@ -100,11 +107,33 @@ func s:Push()
   call s:RemoveBufnr(w:buflist, bufnr)
   call insert(w:buflist, bufnr)
 
-  if (len(w:buflist) > s:max_buflist)
+  if (len(w:buflist) > s:winbufhist_max)
     call remove(w:buflist, -1)
   endif
 
   "call s:Print()
+endfunc
+
+func WinBufHistPrev()
+  if !exists("w:buflist") || (len(w:buflist) <= 1)
+    return
+  endif
+
+  let bufnr = w:buflist[0]
+  call remove(w:buflist, 0)
+  call add(w:buflist, bufnr)
+  exec w:buflist[0]."b"
+endfunc
+
+func WinBufHistNext()
+  if !exists("w:buflist") || (len(w:buflist) <= 1)
+    return
+  endif
+
+  let bufnr = w:buflist[-1]
+  call remove(w:buflist, -1)
+  call insert(w:buflist, bufnr)
+  exec w:buflist[0]."b"
 endfunc
 
 "------------------------------------------------------

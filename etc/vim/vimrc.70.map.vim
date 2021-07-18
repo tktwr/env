@@ -48,9 +48,9 @@ nnoremap ==      zi
 "nnoremap <C-K>   :echo
 "nnoremap <C-L>   :echo
 "nnoremap <C-M>   :echo
- nnoremap <C-N>   :cn<CR>
+ nnoremap <C-N>   :silent call WinBufHistNext()<CR>
  nnoremap <C-O>   :WinBufHistPop<CR>
- nnoremap <C-P>   :cp<CR>
+ nnoremap <C-P>   :silent call WinBufHistPrev()<CR>
  nnoremap <C-Q>   @q
 "nnoremap <C-R>   :echo
  nnoremap <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
@@ -214,12 +214,12 @@ func s:my_map_win()
   if &diff == 1
     nnoremap <buffer> <C-P>   [c
     nnoremap <buffer> <C-N>   ]c
-  elseif &filetype == "nerdtree"
-    nnoremap <silent> <buffer> <C-P>   :silent call BmkPrev()<CR>
-    nnoremap <silent> <buffer> <C-N>   :silent call BmkNext()<CR>
-  else
+  elseif &filetype == "cpp"
     nnoremap <buffer> <C-P>   :cp<CR>
     nnoremap <buffer> <C-N>   :cn<CR>
+  else
+    nnoremap <silent> <buffer> <C-P>   :silent call WinBufHistPrev()<CR>
+    nnoremap <silent> <buffer> <C-N>   :silent call WinBufHistNext()<CR>
   endif
 endfunc
 

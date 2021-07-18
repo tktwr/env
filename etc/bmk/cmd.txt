@@ -35,7 +35,11 @@
 - s scratchpad                         | :edit $MY_DIARY/scratchpad.md.html
 - d dia                                | :edit $MY_DIARY/diary.md.html
 - t todo                               | :edit $MY_DIARY/todo.md.html
+    ---------------------------------- | ----------------------------------------
 - b bmk (C-b)                          | :edit $MY_DOTMY_COMMON/bmk.txt
+- c cmd                                | :edit $MY_ETC/bmk/cmd.txt
+- L links                              | :edit $MY_ETC/bmk/links.txt
+- P papers                             | :edit $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
 - N MyNERDTreeToggle                   | :MyNERDTreeToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
@@ -80,5 +84,9 @@
     ---------------------------------- | ----------------------------------------
 -   diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+[dir] -------------------------------- | ----------------------------------------
+- R r.etc/                             | $MY_REMOTE_CONFIG/env/etc
+- L l.etc/                             | $MY_LOCAL_CONFIG/env/etc
+- P p.etc/                             | $MY_PRIVATE_CONFIG/env/etc
 
 # vim:set ft=bmk syntax=txt nowrap:
