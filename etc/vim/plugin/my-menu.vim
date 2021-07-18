@@ -10,12 +10,11 @@ let s:cmd_files = g:cmd_files
 let s:cmd_dict = {}
 let s:my_menu_edit = []
 let s:my_menu_term = []
+let s:separator = "------------------------------"
 
 "------------------------------------------------------
 " load
 "------------------------------------------------------
-let s:separator = "--------------------"
-
 func Fill(str, separator)
   let n = len(a:str)
   let o = a:str.a:separator[n:]
@@ -112,26 +111,32 @@ func Find(menu, pattern)
   return -1
 endfunc
 
+func MyMenuFixPos(id)
+  call popup_move(a:id, #{
+  \ pos: 'botleft',
+  \ line: 'cursor-1',
+  \ col: 'cursor',
+  \ })
+endfunc
+
 func MyMenuPopupMenuFilter(id, key)
   if a:key == "\<Space>" || a:key == "\<C-Space>"
     call popup_close(a:id, 0)
     return 1
   elseif a:key == '0'
-    call popup_move(a:id, #{
-    \ pos: 'botleft',
-    \ line: 'cursor-1',
-    \ col: 'cursor',
-    \ })
+    call MyMenuFixPos(a:id)
     return 1
   elseif a:key == 'l'
     call popup_close(a:id, 0)
     let nr = MyMenuNext()
-    call MyMenuPopupMenu(nr)
+    let id = MyMenuPopupMenu(nr)
+    call MyMenuFixPos(id)
     return 1
   elseif a:key == 'h'
     call popup_close(a:id, 0)
     let nr = MyMenuPrev()
-    call MyMenuPopupMenu(nr)
+    let id = MyMenuPopupMenu(nr)
+    call MyMenuFixPos(id)
     return 1
   else
     let idx = Find(w:my_menu, '^ '.a:key.' ')
@@ -169,6 +174,7 @@ func MyMenuPopupMenu(menu_nr)
     \ col: 'cursor',
     \ moved: 'WORD',
     \ })
+  return winid
 endfunc
 
 "------------------------------------------------------

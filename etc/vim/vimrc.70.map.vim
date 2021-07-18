@@ -35,24 +35,37 @@ nnoremap Q       :confirm qall<CR>
 " fold on/off
 nnoremap ==      zi
 
-nnoremap <C-A>   :MyMakeLink<CR>
-nnoremap <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
-nnoremap <C-D>   <C-B>
-nnoremap <C-E>   :MyGitLog<CR>
-nnoremap <C-G>   :MyRedraw<CR>
-nnoremap <C-I>   :WinBufHistPrint<CR>
-nnoremap <C-N>   :cn<CR>
-nnoremap <C-O>   :WinBufHistPop<CR>
-nnoremap <C-P>   :cp<CR>
-nnoremap <C-Q>   @q
-nnoremap <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
-nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
-xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
-nnoremap <C-X>   :close<CR>
-nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
+ nnoremap <C-A>   :MyMakeLink<CR>
+ nnoremap <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
+"nnoremap <C-C>   :echo
+ nnoremap <C-D>   <C-B>
+ nnoremap <C-E>   :MyGitLog<CR>
+"nnoremap <C-F>   :echo
+ nnoremap <C-G>   :MyRedraw<CR>
+"nnoremap <C-H>   :echo
+ nnoremap <C-I>   :WinBufHistPrint<CR>
+"nnoremap <C-J>   :echo
+"nnoremap <C-K>   :echo
+"nnoremap <C-L>   :echo
+"nnoremap <C-M>   :echo
+ nnoremap <C-N>   :cn<CR>
+ nnoremap <C-O>   :WinBufHistPop<CR>
+ nnoremap <C-P>   :cp<CR>
+ nnoremap <C-Q>   @q
+"nnoremap <C-R>   :echo
+ nnoremap <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
+"nnoremap <C-T>   :echo
+ nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
+ xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
+"nnoremap <C-V>   :echo
+"nnoremap <C-W>   :echo
+ nnoremap <C-X>   :close<CR>
+ nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
+"nnoremap <C-Z>   :echo
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
-nnoremap <BS>    :MyTagbarToggle<CR>
+nnoremap <BS>    <C-B>
+nnoremap <CR>    <C-F>
 
 nnoremap <C-CR>  :call BmkOpenThis()<CR>
 nnoremap <S-CR>  :call BmkKeyCRThis()<CR>

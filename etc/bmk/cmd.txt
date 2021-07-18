@@ -1,3 +1,15 @@
+[terminal:main] ---------------------- | ----------------------------------------
+- d D .                                | D .<CR>
+- g G                                  | G<CR>
+- a GA                                 | GA<CR>
+- s ,GS                                | ,GS<CR>
+- v ,GV                                | ,GV<CR>
+    ---------------------------------- | ----------------------------------------
+-   mycmake.sh                         | mycmake.sh<CR>
+-   mycmake.sh --build                 | mycmake.sh --build<CR>
+-   ,resize 40                         | ,resize 40<CR>
+-   ,resize 10                         | ,resize 10<CR>
+-   term (terminal)                    | ,T<CR>
 [terminal:git] ----------------------- | ----------------------------------------
 -   G                                  | G<CR>
 -   git status                         | git status<CR>
@@ -17,18 +29,17 @@
 -   git-chmod-x-all                    | git-chmod-x-all<CR>
 -   git-ls-no-x                        | git-ls-no-x
 [terminal:shell] --------------------- | ----------------------------------------
--   mycmake.sh                         | mycmake.sh<CR>
--   mycmake.sh --build                 | mycmake.sh --build<CR>
--   ,resize 40                         | ,resize 40<CR>
--   ,resize 10                         | ,resize 10<CR>
--   term (terminal)                    | ,T<CR>
 -   pip-upgrade                        | python -m pip install --upgrade pip<CR>
 -   git-upgrade                        | git update-git-for-windows<CR>
 [buffer:main] ------------------------ | ----------------------------------------
 - s scratchpad                         | :edit $MY_DIARY/scratchpad.md.html
 - d dia                                | :edit $MY_DIARY/diary.md.html
 - t todo                               | :edit $MY_DIARY/todo.md.html
-- b bmk                                | :edit $MY_DOTMY_COMMON/bmk.txt
+- b bmk (C-b)                          | :edit $MY_DOTMY_COMMON/bmk.txt
+    ---------------------------------- | ----------------------------------------
+- N MyNERDTreeToggle                   | :MyNERDTreeToggle
+- G MyTagbarToggle                     | :MyTagbarToggle
+- I MyWinInitSize                      | :MyWinInitSize
     ---------------------------------- | ----------------------------------------
 - T MyTerm                             | :MyTerm
 -   MyIDE                              | :MyIDE
@@ -44,27 +55,28 @@
     ---------------------------------- | ----------------------------------------
 - R MyMenuReload                       | :MyMenuReload
     ---------------------------------- | ----------------------------------------
+- Q quit (Q)                           | :confirm qall
+[buffer:sub] ------------------------- | ----------------------------------------
 -   BmkOpenThis                        | :call BmkOpenThis()
 -   BmkKeyCRThis                       | :call BmkKeyCRThis()
--   BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
--   BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
--   BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
+- U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
+- D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
+- E BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
     ---------------------------------- | ----------------------------------------
-- Q quit                               | :confirm qall
-[buffer:edit] ------------------------ | ----------------------------------------
 -   MyMakeLink                         | :MyMakeLink
 -   MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
 -   MyGitLog                           | :MyGitLog
-- c MyClangFormat                      | :MyClangFormat
-[buffer] ----------------------------- | ----------------------------------------
--   MyBufDelete                        | :MyBufDelete
--   MyWinInitSize                      | :MyWinInitSize
--   MyWinInfo                          | :MyWinInfo
+- C MyClangFormat                      | :MyClangFormat
+    ---------------------------------- | ----------------------------------------
 -   MyIDESendCdE2T                     | :call MyIDESendCdE2T("")
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
+-   MyBufDelete                        | :MyBufDelete
+-   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
+    ---------------------------------- | ----------------------------------------
 -   MySourceVimrc                      | :MySourceVimrc
+    ---------------------------------- | ----------------------------------------
 -   diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 

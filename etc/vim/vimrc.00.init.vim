@@ -147,8 +147,8 @@ let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 let g:bmk_file = "$MY_DOTMY_COMMON/bmk.txt"
 let g:cmd_files = [
-  \ "$MY_DOTMY_COMMON/cmd.txt",
-  \ "$MY_ETC/bmk/cmd.txt"
+  \ "$MY_ETC/bmk/cmd.txt",
+  \ "$MY_DOTMY_COMMON/cmd.txt"
   \ ]
 
 let g:bmk_winwidth = g:my_left_winwidth
