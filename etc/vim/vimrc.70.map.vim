@@ -184,7 +184,7 @@ func s:my_nerdtree_settings()
   nmap <buffer> E       :EditBookmarks<CR>
   "nmap <buffer> D       :echo D<CR>  "delete bookmark
 
-  nmap <buffer> <Space> goq
+  "nmap <buffer> <Space> goq
   nmap <buffer> <C-J>   <C-W>w
   nmap <buffer> <C-K>   <C-W>W
   nmap <buffer> <C-.>   C

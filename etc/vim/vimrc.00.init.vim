@@ -156,7 +156,7 @@ let g:bmk_files = [
   \ "$MY_DOTMY_COMMON/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",
   \ "$MY_ETC/bmk/papers.txt",
-  \ "$MY_ETC/bmk/cmd.txt"
+  \ "$MY_DIARY/todo.md.html"
   \ ]
 
 let g:mapleader = "\<Space>"
