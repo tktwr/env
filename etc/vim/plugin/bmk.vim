@@ -218,7 +218,7 @@ func BmkOpen(url)
   let type = BmkUrlType(url)
 
   if (type == "http")
-    call BmkOpenURL(url)
+    call BmkOpenFile(url)
   elseif (type == "network")
     call BmkOpenDir(url)
   elseif (type == "dir")
