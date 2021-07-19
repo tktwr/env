@@ -42,6 +42,12 @@ func MyNERDTreeOpen()
   endif
 endfunc
 
+func MyNERDTreeFind(dir)
+  let dir = expand(a:dir)
+  call WinBufHistFindNERDTree()
+  exec "NERDTreeFind" dir
+endfunc
+
 "------------------------------------------------------
 " git
 "------------------------------------------------------
@@ -142,8 +148,7 @@ endfunc
 " terminal to nerdtree
 "------------------------------------------------------
 func MyIDESendCdT2N(dir)
-  call BmkSide(1)
-  exec "NERDTree" a:dir
+  call MyNERDTreeFind(a:dir)
 endfunc
 
 "------------------------------------------------------
@@ -152,6 +157,7 @@ endfunc
 command MyIDE                   call MyIDE()
 command MyWinInitSize           call MyWinInitSize()
 command MyNERDTreeOpen          call MyNERDTreeOpen()
+command -nargs=1 MyNERDTreeFind call MyNERDTreeFind(<f-args>)
 command MyNERDTreeToggle        NERDTreeToggle
 command MyTagbarToggle          TagbarToggle
 command MyGstatusToggle         call MyGstatusToggle()

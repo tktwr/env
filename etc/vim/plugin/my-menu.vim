@@ -13,16 +13,30 @@ let s:my_menu_term = []
 let s:separator = "------------------------------"
 
 "------------------------------------------------------
-" load
+" util
 "------------------------------------------------------
-func Fill(str, separator)
+func MyMenuFill(str, separator)
   let n = len(a:str)
   let o = a:str.a:separator[n:]
   return o
 endfunc
 
+func MyMenuFind(list_of_str, pattern)
+  let idx = 0
+  for s in a:list_of_str
+    if (match(s, a:pattern) == 0)
+      return idx
+    endif
+    let idx = idx + 1
+  endfor
+  return -1
+endfunc
+
+"------------------------------------------------------
+" load
+"------------------------------------------------------
 func s:MyMenuRegisterSeparator(list, dict, title)
-  let key = Fill(a:title, s:separator)
+  let key = MyMenuFill(a:title, s:separator)
   let val = ":echo"
 
   let a:dict[key] = val
@@ -100,17 +114,6 @@ func MyMenuExec(cmd)
   call BmkExecCommand(a:cmd, 0)
 endfunc
 
-func Find(menu, pattern)
-  let idx = 0
-  for s in a:menu
-    if (match(s, a:pattern) == 0)
-      return idx
-    endif
-    let idx = idx + 1
-  endfor
-  return -1
-endfunc
-
 func MyMenuFixPos(id)
   call popup_move(a:id, #{
   \ pos: 'botleft',
@@ -139,7 +142,7 @@ func MyMenuPopupMenuFilter(id, key)
     call MyMenuFixPos(id)
     return 1
   else
-    let idx = Find(w:my_menu, '^ '.a:key.' ')
+    let idx = MyMenuFind(w:my_menu, '^ '.a:key.' ')
     if (idx != -1)
       let idx = idx + 1
       call popup_close(a:id, idx)

@@ -13,6 +13,29 @@ let s:winbufhist_key = g:winbufhist_key
 let s:winbufhist_max = g:winbufhist_max
 
 "------------------------------------------------------
+" util
+"------------------------------------------------------
+func WinBufHistFind(list_of_bufnr, pattern)
+  let idx = 0
+  for i in a:list_of_bufnr
+    let s = bufname(i)
+    if (match(s, a:pattern) == 0)
+      return idx
+    endif
+    let idx = idx + 1
+  endfor
+  return -1
+endfunc
+
+func WinBufHistFindNERDTree()
+  exec "1wincmd w"
+  let idx = WinBufHistFind(w:buflist, 'NERD_tree')
+  if (idx != -1)
+    exec w:buflist[idx]."b"
+  endif
+endfunc
+
+"------------------------------------------------------
 " popup menu
 "------------------------------------------------------
 func WinBufHistPopupMenuFilter(id, key)
@@ -21,7 +44,7 @@ func WinBufHistPopupMenuFilter(id, key)
     return 1
   elseif a:key == "c"
     call popup_close(a:id, 0)
-    call s:Clear()
+    call WinBufHistClear()
     return 1
   endif
   return popup_filter_menu(a:id, a:key)
@@ -61,18 +84,18 @@ endfunc
 "------------------------------------------------------
 " private func
 "------------------------------------------------------
-func s:PrintMenu()
+func WinBufHistPrintMenu()
   call WinBufHistPopupMenu()
 endfunc
 
-func s:Print()
+func WinBufHistPrint()
   for i in w:buflist
     let s = printf("%3d %s ", i, bufname(i))
     echo s
   endfor
 endfunc
 
-func s:Clear()
+func WinBufHistClear()
   if !exists("w:buflist")
     return
   endif
@@ -83,7 +106,7 @@ func s:Clear()
   endif
 endfunc
 
-func s:RemoveBufnr(list, bufnr)
+func WinBufHistRemoveBufnr(list, bufnr)
   let pattern = '\<'.a:bufnr.'\>'
   let i = match(a:list, pattern)
   if i != -1
@@ -91,27 +114,27 @@ func s:RemoveBufnr(list, bufnr)
   endif
 endfunc
 
-func s:Pop()
+func WinBufHistPop()
   if (len(w:buflist) > 1)
     call remove(w:buflist, 0)
     exec w:buflist[0]."b"
   endif
 endfunc
 
-func s:Push()
+func WinBufHistPush()
   if !exists("w:buflist")
     let w:buflist = []
   endif
 
   let bufnr = bufnr('%')
-  call s:RemoveBufnr(w:buflist, bufnr)
+  call WinBufHistRemoveBufnr(w:buflist, bufnr)
   call insert(w:buflist, bufnr)
 
   if (len(w:buflist) > s:winbufhist_max)
     call remove(w:buflist, -1)
   endif
 
-  "call s:Print()
+  "call WinBufHistPrint()
 endfunc
 
 func WinBufHistPrev()
@@ -140,16 +163,18 @@ endfunc
 " public command
 "------------------------------------------------------
 if v:version >= 802
-  command WinBufHistPrint  call s:PrintMenu()
+  command WinBufHistPrint  call WinBufHistPrintMenu()
 else
-  command WinBufHistPrint  call s:Print()
+  command WinBufHistPrint  call WinBufHistPrint()
 endif
 
-command WinBufHistClear  call s:Clear()
-command WinBufHistPop    call s:Pop()
+command WinBufHistPrev   call WinBufHistPrev()
+command WinBufHistNext   call WinBufHistNext()
+command WinBufHistClear  call WinBufHistClear()
+command WinBufHistPop    call WinBufHistPop()
 
 augroup winbufhist
   autocmd!
-  autocmd BufEnter *   call s:Push()
+  autocmd BufEnter *   call WinBufHistPush()
 augroup END
 

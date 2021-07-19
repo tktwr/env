@@ -18,7 +18,7 @@ if exists("g:bmk_files")
 endif
 
 "------------------------------------------------------
-" private func
+" util
 "------------------------------------------------------
 func s:InSideBar()
   let winnr = winnr()
@@ -158,8 +158,7 @@ endfunc
 " internal open
 "------------------------------------------------------
 func BmkEditDirInNERDTree(dir)
-  call BmkSide(1)
-  exec "NERDTree" a:dir
+  call MyNERDTreeFind(a:dir)
 endfunc
 
 func BmkEditDirInTerm(dir, winnr)

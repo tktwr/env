@@ -35,37 +35,37 @@ nnoremap Q       :confirm qall<CR>
 " fold on/off
 nnoremap ==      zi
 
- nnoremap <C-A>   :MyMakeLink<CR>
- nnoremap <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
-"nnoremap <C-C>   :echo
- nnoremap <C-D>   <C-B>
- nnoremap <C-E>   :MyGitLog<CR>
-"nnoremap <C-F>   :echo
- nnoremap <C-G>   :MyRedraw<CR>
-"nnoremap <C-H>   :echo
- nnoremap <C-I>   :WinBufHistPrint<CR>
-"nnoremap <C-J>   :echo
-"nnoremap <C-K>   :echo
-"nnoremap <C-L>   :echo
-"nnoremap <C-M>   :echo
- nnoremap <C-N>   :silent call WinBufHistNext()<CR>
- nnoremap <C-O>   :WinBufHistPop<CR>
- nnoremap <C-P>   :silent call WinBufHistPrev()<CR>
- nnoremap <C-Q>   @q
-"nnoremap <C-R>   :echo
- nnoremap <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
-"nnoremap <C-T>   :echo
- nmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
- xmap     <C-U>   <Plug>(quickhl-manual-this-whole-word)
-"nnoremap <C-V>   :echo
-"nnoremap <C-W>   :echo
- nnoremap <C-X>   :close<CR>
- nnoremap <C-Y>   :call MyIDESendCdE2T("")<CR>
-"nnoremap <C-Z>   :echo
+ nnoremap <silent> <C-A>   :call MyMenuPopupMenu(2)<CR>
+ nnoremap <silent> <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
+"nnoremap <silent> <C-C>   :echo
+ nnoremap <silent> <C-D>   <C-B>
+ nnoremap <silent> <C-E>   :MyGitLog<CR>
+"nnoremap <silent> <C-F>   :echo
+ nnoremap <silent> <C-G>   :MyRedraw<CR>
+"nnoremap <silent> <C-H>   :echo
+ nnoremap <silent> <C-I>   :silent WinBufHistPrint<CR>
+"nnoremap <silent> <C-J>   :echo
+"nnoremap <silent> <C-K>   :echo
+"nnoremap <silent> <C-L>   :echo
+"nnoremap <silent> <C-M>   :echo
+ nnoremap <silent> <C-N>   :silent WinBufHistNext<CR>
+ nnoremap <silent> <C-O>   :silent WinBufHistPop<CR>
+ nnoremap <silent> <C-P>   :silent WinBufHistPrev<CR>
+ nnoremap <silent> <C-Q>   @q
+"nnoremap <silent> <C-R>   :echo
+ nnoremap <silent> <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
+"nnoremap <silent> <C-T>   :echo
+ nmap     <silent> <C-U>   <Plug>(quickhl-manual-this-whole-word)
+ xmap     <silent> <C-U>   <Plug>(quickhl-manual-this-whole-word)
+"nnoremap <silent> <C-V>   :echo
+"nnoremap <silent> <C-W>   :echo
+ nnoremap <silent> <C-X>   :close<CR>
+ nnoremap <silent> <C-Y>   :call MyIDESendCdE2T("")<CR>
+"nnoremap <silent> <C-Z>   :echo
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
-nnoremap <BS>    <C-B>
-nnoremap <CR>    <C-F>
+"nnoremap <BS>    <C-B>
+"nnoremap <CR>    <C-F>
 
 nnoremap <C-CR>  :call BmkOpenThis()<CR>
 nnoremap <S-CR>  :call BmkKeyCRThis()<CR>
@@ -126,7 +126,7 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map.window
 "------------------------------------------------------
-nnoremap <silent> <C-1> <C-W>:silent call BmkSide(1)<CR>
+nnoremap <silent> <C-1> <C-W>t
 nnoremap <silent> <C-2> <C-W>:echo 'C-2'<CR>
 nnoremap <silent> <C-@> <C-W>:echo 'C-2'<CR>
 nnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
@@ -139,7 +139,7 @@ nnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_ma
 nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
 nnoremap <silent> <C-0> <C-W>b
 
-tnoremap <silent> <C-1> <C-W>:silent call BmkSide(1)<CR>
+tnoremap <silent> <C-1> <C-W>t
 tnoremap <silent> <C-2> <C-W>:echo 'C-2'<CR>
 tnoremap <silent> <C-@> <C-W>:echo 'C-2'<CR>
 tnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
@@ -218,8 +218,8 @@ func s:my_map_win()
     nnoremap <buffer> <C-P>   :cp<CR>
     nnoremap <buffer> <C-N>   :cn<CR>
   else
-    nnoremap <silent> <buffer> <C-P>   :silent call WinBufHistPrev()<CR>
-    nnoremap <silent> <buffer> <C-N>   :silent call WinBufHistNext()<CR>
+    nnoremap <silent> <buffer> <C-P>   :silent WinBufHistPrev<CR>
+    nnoremap <silent> <buffer> <C-N>   :silent WinBufHistNext<CR>
   endif
 endfunc
 
