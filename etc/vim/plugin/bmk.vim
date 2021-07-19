@@ -87,7 +87,7 @@ func BmkUrlType(url)
   elseif (match(url, '^//') == 0)
     let type = "network"
   elseif (match(url, '^\\') == 0)     " difficult to handle this format
-    let type = ""
+    let type = "network"
   elseif (match(url, '^:') == 0)
     let type = "vim_command"
   elseif (isdirectory(url))
@@ -95,7 +95,7 @@ func BmkUrlType(url)
   elseif (filereadable(url))
     let type = "file"
   else
-    let type = ""
+    let type = "term_command"
   endif
 
   return type
@@ -225,6 +225,10 @@ func BmkOpen(url)
     call BmkOpenDir(url)
   elseif (type == "file")
     call BmkOpenFile(url)
+  elseif (type == "vim_command")
+    call BmkExecCommand(url, a:winnr)
+  elseif (type == "term_command")
+    call BmkExecCommand(url, a:winnr)
   else
     echo "BmkOpen: not supported type: [".type."]"
     return 0
@@ -237,16 +241,21 @@ func BmkEdit(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
-  if (type == "dir")
+  if (type == "http")
+    call BmkEditFile(url, a:winnr)
+  elseif (type == "network")
+    call BmkOpenDir(url)
+  elseif (type == "dir")
     call BmkEditDir(url, a:winnr)
   elseif (type == "file")
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
-  else
+  elseif (type == "term_command")
     call BmkExecCommand(url, a:winnr)
-    "echo "BmkEdit: not supported type: [".type."]"
-    "return 0
+  else
+    echo "BmkEdit: not supported type: [".type."]"
+    return 0
   endif
 
   return 1
@@ -266,9 +275,10 @@ func BmkKeyCR(url, winnr)
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
-  else
+  elseif (type == "term_command")
     call BmkExecCommand(url, a:winnr)
-    "echo "BmkKeyCR: not supported type: [".type."]"
+  else
+    echo "BmkKeyCR: not supported type: [".type."]"
     return 0
   endif
 
@@ -448,7 +458,7 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> 8       :call BmkEditItem(8)<CR>
     nnoremap <silent> <buffer> 9       :call BmkEditItem(9)<CR>
   else
-    nnoremap <buffer> <CR>    :call BmkEditItem(0)<CR>
+    nnoremap <silent> <buffer> <CR>    :call BmkEditItem(0)<CR>
     if maparg('h') != ""
       nunmap <buffer> h
       nunmap <buffer> l

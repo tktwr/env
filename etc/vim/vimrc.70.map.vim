@@ -35,7 +35,8 @@ nnoremap Q       :confirm qall<CR>
 " fold on/off
 nnoremap ==      zi
 
- nnoremap <silent> <C-A>   :echo 'C-A'<CR>
+ nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
+ xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nnoremap <silent> <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
 "nnoremap <silent> <C-C>   :echo 'C-C'<CR>
  nnoremap <silent> <C-D>   <C-B>
@@ -48,19 +49,18 @@ nnoremap ==      zi
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>
- nnoremap <silent> <C-N>   :silent WinBufHistNext<CR>
+ nnoremap <silent> <C-N>   :cn<CR>
  nnoremap <silent> <C-O>   :silent WinBufHistPop<CR>
- nnoremap <silent> <C-P>   :silent WinBufHistPrev<CR>
+ nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
- nnoremap <silent> <C-S>   :edit $MY_DIARY/scratchpad.md.html<CR>
+ nnoremap <silent> <C-S>   :call MyIDESendCdE2T("")<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nmap     <silent> <C-U>   <Plug>(quickhl-manual-this-whole-word)
- xmap     <silent> <C-U>   <Plug>(quickhl-manual-this-whole-word)
+ nnoremap <silent> <C-U>   :silent WinBufHistNext<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :close<CR>
- nnoremap <silent> <C-Y>   :call MyIDESendCdE2T("")<CR>
+ nnoremap <silent> <C-Y>   :silent WinBufHistPrev<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
 nnoremap <TAB>   :MyNERDTreeToggle<CR>
@@ -214,12 +214,9 @@ func s:my_map_win()
   if &diff == 1
     nnoremap <buffer> <C-P>   [c
     nnoremap <buffer> <C-N>   ]c
-  elseif &filetype == "cpp"
+  else
     nnoremap <buffer> <C-P>   :cp<CR>
     nnoremap <buffer> <C-N>   :cn<CR>
-  else
-    nnoremap <silent> <buffer> <C-P>   :silent WinBufHistPrev<CR>
-    nnoremap <silent> <buffer> <C-N>   :silent WinBufHistNext<CR>
   endif
 endfunc
 
