@@ -21,22 +21,22 @@
 [shared] ----------------------------- | ----------------------------------------
 [private] ---------------------------- | ----------------------------------------
 [dir] -------------------------------- | ----------------------------------------
-- .my/                                 | $HOME/.my
-- .my.common/                          | $MY_DOTMY_COMMON
-- env/                                 | $MY_ENV
-  - bin/                               | $MY_BIN
-  - etc/                               | $MY_ETC
-  - bash/                              | $MY_BASH
-  - vim/                               | $MY_VIM
-- r.etc/                               | $MY_REMOTE_CONFIG/env/etc
-- l.etc/                               | $MY_LOCAL_CONFIG/env/etc
-- p.etc/                               | $MY_PRIVATE_CONFIG/env/etc
-- work/                                | $MY_WORK
-- proj/                                | $MY_PROJ
-- doc/                                 | $MY_DOC
-- office/                              | $MY_OFFICE
-- papers/                              | $MY_PAPERS
-- git/                                 | $MY_GIT
-- github/                              | $MY_GITHUB
+- .my/                                 | $HOME/.my/
+- .my.common/                          | $MY_DOTMY_COMMON/
+- env/                                 | $MY_ENV/
+  - bin/                               | $MY_BIN/
+  - etc/                               | $MY_ETC/
+  - bash/                              | $MY_BASH/
+  - vim/                               | $MY_VIM/
+- r.etc/                               | $MY_REMOTE_CONFIG/env/etc/
+- l.etc/                               | $MY_LOCAL_CONFIG/env/etc/
+- p.etc/                               | $MY_PRIVATE_CONFIG/env/etc/
+- work/                                | $MY_WORK/
+- proj/                                | $MY_PROJ/
+- doc/                                 | $MY_DOC/
+- office/                              | $MY_OFFICE/
+- papers/                              | $MY_PAPERS/
+- git/                                 | $MY_GIT/
+- github/                              | $MY_GITHUB/
 
 # vim:set ft=bmk syntax=txt nowrap:
