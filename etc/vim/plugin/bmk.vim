@@ -79,6 +79,8 @@ func BmkUrlType(url)
 
   if (match(url, 'http\|https') == 0)
     let type = "http"
+  elseif (match(url, '\.html$') != -1)
+    let type = "html"
   elseif (match(url, '^//') == 0)
     let type = "network"
   elseif (match(url, '^\\') == 0)     " difficult to handle this format
@@ -157,10 +159,6 @@ func BmkEditDirInNERDTree(dir)
 endfunc
 
 func BmkEditDirInTerm(dir, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
-
   if &buftype == 'terminal'
     exec "lcd" a:dir
     let bufnr = winbufnr(0)
@@ -169,6 +167,10 @@ func BmkEditDirInTerm(dir, winnr)
 endfunc
 
 func BmkEditDir(dir, winnr)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
   if &buftype == 'terminal'
     call BmkEditDirInTerm(a:dir, a:winnr)
   else
@@ -208,17 +210,19 @@ endfunc
 "------------------------------------------------------
 " action
 "------------------------------------------------------
-func BmkOpen(url)
+func BmkOpen(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
   if (type == "http")
-    call BmkOpenFile(url)
+    call BmkOpenURL(url)
   elseif (type == "network")
     call BmkOpenDir(url)
   elseif (type == "dir")
     call BmkOpenDir(url)
   elseif (type == "file")
+    call BmkOpenFile(url)
+  elseif type == "html"
     call BmkOpenFile(url)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
@@ -237,12 +241,14 @@ func BmkEdit(url, winnr)
   let type = BmkUrlType(url)
 
   if (type == "http")
-    call BmkEditFile(url, a:winnr)
+    call BmkOpenURL(url)
   elseif (type == "network")
     call BmkOpenDir(url)
   elseif (type == "dir")
     call BmkEditDir(url, a:winnr)
   elseif (type == "file")
+    call BmkEditFile(url, a:winnr)
+  elseif type == "html"
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
@@ -268,6 +274,8 @@ func BmkKeyCR(url, winnr)
     call BmkEditDir(url, a:winnr)
   elseif type == "file"
     call BmkEditFile(url, a:winnr)
+  elseif type == "html"
+    call BmkOpenURL(url)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
   elseif (type == "term_command")
@@ -283,13 +291,13 @@ endfunc
 "------------------------------------------------------
 " action on bmk item
 "------------------------------------------------------
-func BmkOpenItem()
+func BmkOpenItem(winnr)
   let val = BmkGetExpandedValueItem()
   if val == ""
     return
   endif
 
-  call BmkOpen(val)
+  call BmkOpen(val, a:winnr)
 endfunc
 
 func BmkEditItem(winnr)
@@ -306,13 +314,13 @@ func BmkPreviewItem(winnr)
   wincmd p
 endfunc
 
-func BmkKeyCRItem()
+func BmkKeyCRItem(winnr)
   let val = BmkGetExpandedValueItem()
   if val == ""
     return
   endif
 
-  call BmkKeyCR(val, 2)
+  call BmkKeyCR(val, a:winnr)
 endfunc
 
 "------------------------------------------------------
@@ -321,7 +329,7 @@ endfunc
 func BmkOpenThis()
   let val = expand(expand("<cfile>"))
 
-  let r = BmkOpen(val)
+  let r = BmkOpen(val, 0)
   if !r
     call BmkOpenFile(expand('%:p'))
   endif
@@ -358,7 +366,6 @@ endfunc
 " map
 "------------------------------------------------------
 func s:BmkMap()
-  nnoremap <buffer> <C-CR>  :call BmkOpenItem()<CR>
 endfunc
 
 func s:BmkMapWin()
@@ -367,7 +374,9 @@ func s:BmkMapWin()
   endif
 
   if (s:InSideBar())
-    nnoremap <silent> <buffer> <CR>    :call BmkKeyCRItem()<CR>
+    nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(2)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkKeyCRItem(2)<CR>
+    nnoremap <silent> <buffer> <CR>    :call BmkEditItem(2)<CR>
     nnoremap <silent> <buffer> h       :call WinBufHistFindNERDTree()<CR>
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
@@ -381,6 +390,8 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> 8       :call BmkEditItem(8)<CR>
     nnoremap <silent> <buffer> 9       :call BmkEditItem(9)<CR>
   else
+    nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(0)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkKeyCRItem(0)<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(0)<CR>
     if maparg('h') != ""
       nunmap <buffer> h
@@ -474,4 +485,11 @@ augroup END
 " command
 "------------------------------------------------------
 command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
+
+func BmkDebug()
+  let key = BmkGetKeyItem()
+  let val = BmkGetExpandedValueItem()
+  let type = BmkUrlType(val)
+  echo key.", ".val.", ".type
+endfunc
 
