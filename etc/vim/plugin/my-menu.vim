@@ -110,10 +110,6 @@ func MyMenuList(nr)
   endif
 endfunc
 
-func MyMenuExec(cmd)
-  call BmkExecCommand(a:cmd, 0)
-endfunc
-
 func MyMenuFixPos(id)
   call popup_move(a:id, #{
   \ pos: 'botleft',
@@ -159,8 +155,9 @@ func MyMenuPopupMenuHandler(id, result)
 
     " key in menu
     let cmd = s:cmd_dict[w:my_menu[idx]]
+    let cmd = expand(cmd)
 
-    call MyMenuExec(cmd)
+    call BmkKeyCR(cmd, 0)
   endif
 endfunc
 

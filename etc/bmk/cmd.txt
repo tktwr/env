@@ -32,14 +32,14 @@
 -   git-chmod-x-all                    | git-chmod-x-all<CR>
 -   git-ls-no-x                        | git-ls-no-x
 [buffer:main] ------------------------ | ----------------------------------------
-- s scratchpad                         | :edit $MY_DIARY/scratchpad.md.html
-- d dia                                | :edit $MY_DIARY/diary.md.html
-- t todo                               | :edit $MY_DIARY/todo.md.html
+- s scratchpad                         | $MY_DIARY/scratchpad.md.html
+- d dia                                | $MY_DIARY/diary.md.html
+- t todo                               | $MY_DIARY/todo.md.html
     ---------------------------------- | ----------------------------------------
-- b bmk (C-b)                          | :edit $MY_DOTMY_COMMON/bmk.txt
-- c cmd                                | :edit $MY_ETC/bmk/cmd.txt
-- L links                              | :edit $MY_ETC/bmk/links.txt
-- P papers                             | :edit $MY_ETC/bmk/papers.txt
+- b bmk (C-b)                          | $MY_DOTMY_COMMON/bmk.txt
+- c cmd                                | $MY_DOTMY_COMMON/cmd.txt
+- L links                              | $MY_ETC/bmk/links.txt
+- P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
 - N MyNERDTreeToggle                   | :MyNERDTreeToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
@@ -82,21 +82,27 @@
     ---------------------------------- | ----------------------------------------
 -   MySourceVimrc                      | :MySourceVimrc
     ---------------------------------- | ----------------------------------------
--   diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
+- c diff cmd.txt                       | :MyTabDiff $MY_ETC/bmk/cmd.txt $MY_DOTMY_COMMON/cmd.txt
+- b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 [bmk] -------------------------------- | ----------------------------------------
--   .my/                               | :MyNERDTreeFind $HOME/.my/
--   .my.common/                        | :MyNERDTreeFind $MY_DOTMY_COMMON/
-- R R.etc/                             | :MyNERDTreeFind $MY_REMOTE_CONFIG/env/etc/
-- L L.etc/                             | :MyNERDTreeFind $MY_LOCAL_CONFIG/env/etc/
-- P P.etc/                             | :MyNERDTreeFind $MY_PRIVATE_CONFIG/env/etc/
-- w work/                              | :MyNERDTreeFind $MY_WORK/
-- p proj/                              | :MyNERDTreeFind $MY_PROJ/
-- d doc/                               | :MyNERDTreeFind $MY_DOC/
-- o office/                            | :MyNERDTreeFind $MY_OFFICE/
--   papers/                            | :MyNERDTreeFind $MY_PAPERS/
-- g git/                               | :MyNERDTreeFind $MY_GIT/
-- h github/                            | :MyNERDTreeFind $MY_GITHUB/
+-   .my/                               | $HOME/.my/
+-   .my.common/                        | $MY_DOTMY_COMMON/
+- R R.etc/                             | $MY_REMOTE_CONFIG/env/etc/
+- L L.etc/                             | $MY_LOCAL_CONFIG/env/etc/
+- P P.etc/                             | $MY_PRIVATE_CONFIG/env/etc/
+- w work/                              | $MY_WORK/
+- p proj/                              | $MY_PROJ/
+- d doc/                               | $MY_DOC/
+- o office/                            | $MY_OFFICE/
+-   papers/                            | $MY_PAPERS/
+- g git/                               | $MY_GIT/
+- h github/                            | $MY_GITHUB/
+    ---------------------------------- | ----------------------------------------
+- C cppreference                       | https://ja.cppreference.com/w/
+-   cpprefjp                           | https://cpprefjp.github.io/
+    ---------------------------------- | ----------------------------------------
+-   python.doc                         | https://docs.python.org/ja/3/index.html
     ---------------------------------- | ----------------------------------------
 - M memo.my                            | :MyMemo my
 - V memo.vim                           | :MyMemo vim

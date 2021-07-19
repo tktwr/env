@@ -267,7 +267,8 @@ func BmkKeyCR(url, winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
   else
-    echo "BmkKeyCR: not supported type: [".type."]"
+    call BmkExecCommand(url, a:winnr)
+    "echo "BmkKeyCR: not supported type: [".type."]"
     return 0
   endif
 
