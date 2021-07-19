@@ -7,14 +7,9 @@ endif
 let g:loaded_bmk = 1
 
 let s:bmk_winwidth = 30
-let s:bmk_files = []
 
 if exists("g:bmk_winwidth")
   let s:bmk_winwidth = g:bmk_winwidth
-endif
-
-if exists("g:bmk_files")
-  let s:bmk_files = g:bmk_files
 endif
 
 "------------------------------------------------------
@@ -360,78 +355,6 @@ func BmkSetStatusline()
 endfunc
 
 "------------------------------------------------------
-" public func
-"------------------------------------------------------
-" idx
-"   1: the orig_bufnr
-"   2-: user defined bmks
-" winnr
-"   0: the current window
-"   1-: winnr
-func BmkNr(idx, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
-
-  if !exists("w:orig_bufnr")
-    let w:orig_bufnr = bufnr('%')
-  endif
-
-  let w:idx = a:idx
-
-  if a:idx == 1
-    exec w:orig_bufnr."b"
-  elseif a:idx > 1
-    let i = a:idx - 2
-    let fname = expand(s:bmk_files[i])
-    exec "edit" fname
-  endif
-
-  call BmkSetStatusline()
-endfunc
-
-func BmkHere(idx)
-  call BmkNr(a:idx, 0)
-endfunc
-
-func BmkSide(idx)
-  call BmkNr(a:idx, 1)
-endfunc
-
-func BmkNext()
-  if !exists("w:idx")
-    let w:idx = 1
-  endif
-
-  let n = len(s:bmk_files) + 1
-  let idx = w:idx - 1
-  let idx = (idx + 1) % n
-  call BmkSide(idx + 1)
-endfunc
-
-func BmkPrev()
-  if !exists("w:idx")
-    let w:idx = 1
-  endif
-
-  let n = len(s:bmk_files) + 1
-  let idx = w:idx - 1
-  let idx = idx == 0 ? n - 1 : idx - 1
-  call BmkSide(idx + 1)
-endfunc
-
-"------------------------------------------------------
-" public debug
-"------------------------------------------------------
-func BmkDebug()
-  let val = BmkGetExpandedValueItem()
-  let type = BmkUrlType(val)
-  "echo val
-  "echo type
-  echo s:bmk_files
-endfunc
-
-"------------------------------------------------------
 " map
 "------------------------------------------------------
 func s:BmkMap()
@@ -445,7 +368,7 @@ func s:BmkMapWin()
 
   if (s:InSideBar())
     nnoremap <silent> <buffer> <CR>    :call BmkKeyCRItem()<CR>
-    nnoremap <silent> <buffer> h       :call BmkSide(1)<CR>
+    nnoremap <silent> <buffer> h       :call WinBufHistFindNERDTree()<CR>
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
     nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
