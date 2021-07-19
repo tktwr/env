@@ -174,10 +174,10 @@ func BmkEditDirInTerm(dir, winnr)
 endfunc
 
 func BmkEditDir(dir, winnr)
-  if a:winnr == 1
-    call BmkEditDirInNERDTree(a:dir)
-  else
+  if &buftype == 'terminal'
     call BmkEditDirInTerm(a:dir, a:winnr)
+  else
+    call BmkEditDirInNERDTree(a:dir)
   endif
 endfunc
 
@@ -261,7 +261,7 @@ func BmkKeyCR(url, winnr)
   elseif (type == "network")
     call BmkOpenDir(url)
   elseif type == "dir"
-    call BmkEditDir(url, 1)
+    call BmkEditDir(url, a:winnr)
   elseif type == "file"
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")

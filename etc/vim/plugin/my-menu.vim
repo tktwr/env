@@ -67,18 +67,26 @@ func s:MyMenuLoad(cmd_file)
       " title
       let title = BmkGetTitle(line)
       if (match(title, 'terminal') == 0)
-        let menu = s:my_menu_term
+        let list_menu = [s:my_menu_term]
+      elseif (match(title, 'buffer') == 0)
+        let list_menu = [s:my_menu_edit]
       else
-        let menu = s:my_menu_edit
+        let list_menu = [s:my_menu_term, s:my_menu_edit]
       endif
-      call add(menu, [])
-      call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "[".title."] ")
+      for menu in list_menu
+        call add(menu, [])
+        call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "[".title."] ")
+      endfor
     elseif (match(line, '^\s*---') == 0)
       " separator
-      call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
+      for menu in list_menu
+        call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
+      endfor
     elseif (match(line, '^\s*- ') == 0)
       " item
-      call s:MyMenuRegister(menu[-1], s:cmd_dict, line)
+      for menu in list_menu
+        call s:MyMenuRegister(menu[-1], s:cmd_dict, line)
+      endfor
     endif
   endfor
 endfunc
