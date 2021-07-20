@@ -262,7 +262,7 @@ func BmkEdit(url, winnr)
   return 1
 endfunc
 
-func BmkKeyCR(url, winnr)
+func BmkView(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
@@ -281,7 +281,7 @@ func BmkKeyCR(url, winnr)
   elseif (type == "term_command")
     call BmkExecCommand(url, a:winnr)
   else
-    echo "BmkKeyCR: not supported type: [".type."]"
+    echo "BmkView: not supported type: [".type."]"
     return 0
   endif
 
@@ -314,13 +314,13 @@ func BmkPreviewItem(winnr)
   wincmd p
 endfunc
 
-func BmkKeyCRItem(winnr)
+func BmkViewItem(winnr)
   let val = BmkGetExpandedValueItem()
   if val == ""
     return
   endif
 
-  call BmkKeyCR(val, a:winnr)
+  call BmkView(val, a:winnr)
 endfunc
 
 "------------------------------------------------------
@@ -335,10 +335,10 @@ func BmkOpenThis()
   endif
 endfunc
 
-func BmkKeyCRThis()
+func BmkViewThis()
   let val = expand(expand("<cfile>"))
 
-  let r = BmkKeyCR(val, 0)
+  let r = BmkView(val, 0)
   if !r
     call BmkOpenURL(expand('%:p'))
   endif
@@ -375,7 +375,7 @@ func s:BmkMapWin()
 
   if (s:InSideBar())
     nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(2)<CR>
-    nnoremap <silent> <buffer> <S-CR>  :call BmkKeyCRItem(2)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkViewItem(2)<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(2)<CR>
     nnoremap <silent> <buffer> h       :call WinBufHistFindNERDTree()<CR>
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
@@ -391,7 +391,7 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> 9       :call BmkEditItem(9)<CR>
   else
     nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(0)<CR>
-    nnoremap <silent> <buffer> <S-CR>  :call BmkKeyCRItem(0)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkViewItem(0)<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(0)<CR>
     if maparg('h') != ""
       nunmap <buffer> h

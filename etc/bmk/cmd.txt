@@ -62,7 +62,7 @@
 - Q quit (Q)                           | :confirm qall
 [buffer:sub] ------------------------- | ----------------------------------------
 -   BmkOpenThis                        | :call BmkOpenThis()
--   BmkKeyCRThis                       | :call BmkKeyCRThis()
+-   BmkViewThis                        | :call BmkViewThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
 - E BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))

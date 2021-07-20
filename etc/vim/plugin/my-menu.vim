@@ -165,7 +165,7 @@ func MyMenuPopupMenuHandler(id, result)
     let cmd = s:cmd_dict[w:my_menu[idx]]
     let cmd = expand(cmd)
 
-    call BmkKeyCR(cmd, 0)
+    call BmkEdit(cmd, 0)
   endif
 endfunc
 

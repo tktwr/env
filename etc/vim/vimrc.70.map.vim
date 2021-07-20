@@ -68,7 +68,7 @@ nnoremap <TAB>   :MyNERDTreeToggle<CR>
 "nnoremap <CR>    <C-F>
 
 nnoremap <C-CR>  :call BmkOpenThis()<CR>
-nnoremap <S-CR>  :call BmkKeyCRThis()<CR>
+nnoremap <S-CR>  :call BmkViewThis()<CR>
 
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
