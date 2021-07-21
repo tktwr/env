@@ -33,7 +33,7 @@ endfunc
 func MyStatusline()
   let stat = "%{MyStatuslineWinNr()}"
   let stat.= "\ ".MyStatuslineFname()
-  let stat.= "\ %y%h%w%q%m%r%{MyStatuslineEnc()}"
+  let stat.= "\ %m%y%h%w%q%r%{MyStatuslineEnc()}"
   let stat.= "\ %=%l/%L,%c%V%4p%%"
   let stat.= "\ %6*%{FugitiveStatusline()}%0*"
   return stat

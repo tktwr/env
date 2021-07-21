@@ -44,9 +44,11 @@
 - N MyNERDTreeToggle                   | :MyNERDTreeToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
+- X Wx                                 | :Wx 0
+- C Wc                                 | :Wc 0
     ---------------------------------- | ----------------------------------------
 - T MyTerm                             | :MyTerm
--   MyIDE                              | :MyIDE
+- E MyIDE                              | :MyIDE
 - M MyMemo                             | :MyMemo
 - H MyHelp                             | :MyHelp
     ---------------------------------- | ----------------------------------------
@@ -85,12 +87,14 @@
 - c diff cmd.txt                       | :MyTabDiff $MY_ETC/bmk/cmd.txt $MY_DOTMY_COMMON/cmd.txt
 - b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+-   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [bmk] -------------------------------- | ----------------------------------------
 -   .my/                               | $HOME/.my/
 -   .my.common/                        | $MY_DOTMY_COMMON/
 - R R.etc/                             | $MY_REMOTE_CONFIG/env/etc/
 - L L.etc/                             | $MY_LOCAL_CONFIG/env/etc/
 - P P.etc/                             | $MY_PRIVATE_CONFIG/env/etc/
+    ---------------------------------- | ----------------------------------------
 - w work/                              | $MY_WORK/
 - p proj/                              | $MY_PROJ/
 - d doc/                               | $MY_DOC/

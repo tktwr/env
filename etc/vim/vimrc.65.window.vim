@@ -38,8 +38,17 @@ endfunc
 " buffer exchange
 "------------------------------------------------------
 func MyWinBufExchange(winnr)
+  let winnr = a:winnr
+  if winnr == 0
+    let winnr = input("winnr? ")
+  endif
+  if winnr == ""
+    echo "canceled"
+    return
+  endif
+
   let src_bufnr = bufnr('%')
-  exec a:winnr."wincmd w"
+  exec winnr."wincmd w"
   let dst_bufnr = bufnr('%')
   exec src_bufnr."b"
   wincmd p
@@ -47,8 +56,17 @@ func MyWinBufExchange(winnr)
 endfunc
 
 func MyWinBufCopy(winnr)
+  let winnr = a:winnr
+  if winnr == 0
+    let winnr = input("winnr? ")
+  endif
+  if winnr == ""
+    echo "canceled"
+    return
+  endif
+
   let src_bufnr = bufnr('%')
-  exec a:winnr."wincmd w"
+  exec winnr."wincmd w"
   exec src_bufnr."b"
   wincmd p
 endfunc
@@ -152,7 +170,6 @@ endfunc
 command -nargs=0 MyWinInfo        call MyWinInfo()
 command -nargs=1 MyWinResize      call MyWinResize(<f-args>)
 command -nargs=1 MyWinVResize     call MyWinVResize(<f-args>)
-command -nargs=1 MyWinBufExchange call MyWinBufExchange(<f-args>)
 command -nargs=1 Wx               call MyWinBufExchange(<f-args>)
 command -nargs=1 Wc               call MyWinBufCopy(<f-args>)
 

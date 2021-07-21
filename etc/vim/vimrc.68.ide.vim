@@ -145,35 +145,27 @@ func MyIDEVResizeT2E(width)
 endfunc
 
 "------------------------------------------------------
-" terminal to nerdtree
-"------------------------------------------------------
-func MyIDESendCdT2N(dir)
-  call MyNERDTreeFind(a:dir)
-endfunc
-
-"------------------------------------------------------
 " command
 "------------------------------------------------------
-command MyIDE                   call MyIDE()
-command MyWinInitSize           call MyWinInitSize()
-command MyNERDTreeOpen          call MyNERDTreeOpen()
-command -nargs=1 MyNERDTreeFind call MyNERDTreeFind(<f-args>)
-command MyNERDTreeToggle        NERDTreeToggle
-command MyTagbarToggle          TagbarToggle
-command MyGstatusToggle         call MyGstatusToggle()
-command MyGV                    call MyGV()
+command                         MyIDE            call MyIDE()
+command                         MyWinInitSize    call MyWinInitSize()
+command                         MyNERDTreeOpen   call MyNERDTreeOpen()
+command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)
+command                         MyNERDTreeToggle NERDTreeToggle
+command                         MyTagbarToggle   TagbarToggle
+command                         MyGstatusToggle  call MyGstatusToggle()
+command                         MyGV             call MyGV()
 
-command MyBufDelete             call MyBufDelete()
+command                         MyBufDelete      call MyBufDelete()
 
 "------------------------------------------------------
 " command in new tab
 "------------------------------------------------------
-command -nargs=+ -complete=file MyTabDiff      call MyTabDiff(<f-args>)
-command -nargs=+ -complete=dir  MyTabDirDiff   call MyTabDirDiff(<f-args>)
-command MyTabDirDiffQuit        call MyTabDirDiffQuit()
-command MyTabClosePrev          call MyTabClosePrev()
+command -nargs=+ -complete=file MyTabDiff        call MyTabDiff(<f-args>)
+command -nargs=+ -complete=dir  MyTabDirDiff     call MyTabDirDiff(<f-args>)
+command                         MyTabDirDiffQuit call MyTabDirDiffQuit()
+command                         MyTabClosePrev   call MyTabClosePrev()
 
-command -nargs=1                MyIDEVResizeT2E call MyIDEVResizeT2E(<f-args>)
-command -nargs=1 -complete=dir  MyIDESendCdT2N  call MyIDESendCdT2N(<f-args>)
-command -nargs=+ -complete=dir  MyIDESendCdT2T  call MyIDESendCdT2T(<f-args>)
+command -nargs=1                MyIDEVResizeT2E  call MyIDEVResizeT2E(<f-args>)
+command -nargs=+ -complete=dir  MyIDESendCdT2T   call MyIDESendCdT2T(<f-args>)
 
