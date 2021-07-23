@@ -3,7 +3,8 @@
 "------------------------------------------------------
 func MyIDE()
   let l:is_fullscreen = MyIsFullscreen()
-  NERDTree
+  "NERDTree
+  call MyFernToggle()
   wincmd w
   if l:is_fullscreen
     vsp
@@ -25,6 +26,20 @@ func MyWinInitSize()
   1wincmd w
   exec "vertical resize" g:my_left_winwidth
   2,$windo call s:MyWinInitSizeForEachWin()
+endfunc
+
+"------------------------------------------------------
+" Fern
+"------------------------------------------------------
+func MyFernToggle()
+  let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:my_left_winwidth)
+  exec cmd
+endfunc
+
+func MyFern(dir)
+  let dir = expand(a:dir)
+  let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:my_left_winwidth)
+  exec cmd
 endfunc
 
 "------------------------------------------------------
@@ -149,9 +164,14 @@ endfunc
 "------------------------------------------------------
 command                         MyIDE            call MyIDE()
 command                         MyWinInitSize    call MyWinInitSize()
+
+command                         MyFernToggle     call MyFernToggle()
+command -nargs=1 -complete=dir  MyFern           call MyFern(<f-args>)
+
 command                         MyNERDTreeOpen   call MyNERDTreeOpen()
 command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)
 command                         MyNERDTreeToggle NERDTreeToggle
+
 command                         MyTagbarToggle   TagbarToggle
 command                         MyGstatusToggle  call MyGstatusToggle()
 command                         MyGV             call MyGV()

@@ -154,10 +154,6 @@ endfunc
 "------------------------------------------------------
 " internal open
 "------------------------------------------------------
-func BmkEditDirInNERDTree(dir)
-  call MyNERDTreeFind(a:dir)
-endfunc
-
 func BmkEditDirInTerm(dir, winnr)
   if &buftype == 'terminal'
     exec "lcd" a:dir
@@ -174,7 +170,8 @@ func BmkEditDir(dir, winnr)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(a:dir, a:winnr)
   else
-    call BmkEditDirInNERDTree(a:dir)
+    "call MyNERDTreeFind(a:dir)
+    call MyFern(a:dir)
   endif
 endfunc
 
@@ -194,14 +191,20 @@ func BmkExecCommand(cmd, winnr)
   endif
 
   let cmd = a:cmd
+  let cmd = substitute(cmd, '<CR>', "\<CR>", '')
+  let cmd = substitute(cmd, '_Plug_', '\\<Plug>', '')
+  if (match(cmd, 'Plug') != -1)
+    let cmd = '"'.cmd.'"'
+  endif
+
   if &buftype == 'terminal'
     let bufnr = winbufnr(0)
-    let cmd = substitute(cmd, '<CR>', "\<CR>", '')
     call term_sendkeys(bufnr, cmd)
   else
     if (cmd[0] == ':')
       exec cmd[1:]
     else
+      echo "normal ".cmd
       exec "normal ".cmd
     endif
   endif

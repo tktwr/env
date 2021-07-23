@@ -11,6 +11,62 @@ let g:molokai_original = 1
 Plug 'octol/vim-cpp-enhanced-highlight'
 
 "------------------------------------------------------
+" vim-plug: fern
+"------------------------------------------------------
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-git-status.vim'
+Plug 'lambdalisue/nerdfont.vim'
+Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+Plug 'lambdalisue/glyph-palette.vim'
+
+let g:fern#disable_default_mappings = 1
+let g:fern#renderer = 'nerdfont'
+
+augroup my-glyph-palette
+  autocmd! *
+  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType nerdtree,startify call glyph_palette#apply()
+augroup END
+
+function! s:init_fern() abort
+  nmap <buffer><expr>
+        \ <Plug>(fern-my-open-expand-collapse)
+        \ fern#smart#leaf(
+        \   "\<Plug>(fern-action-open:select)",
+        \   "\<Plug>(fern-action-expand)",
+        \   "\<Plug>(fern-action-collapse)",
+        \ )
+
+  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> <CR>  <Plug>(fern-my-open-expand-collapse)
+
+  nmap <buffer> N     <Plug>(fern-action-new-path)
+  nmap <buffer> D     <Plug>(fern-action-remove)
+  nmap <buffer> M     <Plug>(fern-action-move)
+  nmap <buffer> R     <Plug>(fern-action-rename)
+
+  nmap <buffer> <C-G> <Plug>(fern-action-reload)
+  nmap <buffer> ?     <Plug>(fern-action-help)
+  nmap <buffer> !     <Plug>(fern-action-hidden)
+  nmap <buffer> m     <Plug>(fern-action-mark)
+  nmap <buffer> s     <Plug>(fern-action-open:split)
+  nmap <buffer> v     <Plug>(fern-action-open:vsplit)
+
+  nmap <buffer> h     <Plug>(fern-action-collapse)
+  nmap <buffer> l     <Plug>(fern-my-open-expand-collapse)
+  nmap <buffer> j     +
+  nmap <buffer> k     -
+
+  nmap <buffer><nowait> < <Plug>(fern-action-leave)
+  nmap <buffer><nowait> > <Plug>(fern-action-enter)
+endfunction
+
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
+
+"------------------------------------------------------
 " vim-plug: IDE
 "------------------------------------------------------
 Plug 'scrooloose/nerdtree'
@@ -127,18 +183,5 @@ if s:use_eskk
   let g:eskk#dictionary = { 'path': "~/.eskk/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', }
   let g:eskk#large_dictionary = { 'path': "~/.eskk/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': 'utf-8', }
 endif
-
-"------------------------------------------------------
-" vim-plug: icons
-"------------------------------------------------------
-if has("gui_running")
-  Plug 'ryanoasis/vim-devicons'
-  "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-endif
-
-"------------------------------------------------------
-" vim-plug: vim-which-key
-"------------------------------------------------------
-Plug 'liuchengxu/vim-which-key'
 
 "------------------------------------------------------

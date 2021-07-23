@@ -63,7 +63,8 @@ nnoremap ==      zi
  nnoremap <silent> <C-Y>   :silent WinBufHistPrev<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
-nnoremap <TAB>   :MyNERDTreeToggle<CR>
+nnoremap <TAB>   :MyFernToggle<CR>
+"nnoremap <TAB>   :MyNERDTreeToggle<CR>
 "nnoremap <BS>    <C-B>
 "nnoremap <CR>    <C-F>
 

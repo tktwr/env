@@ -18,11 +18,29 @@ if 0
 endif
 
 "------------------------------------------------------
+" vim-plug: vim-which-key
+"------------------------------------------------------
+Plug 'liuchengxu/vim-which-key'
+
+"------------------------------------------------------
+" vim-plug: icons
+"------------------------------------------------------
+if has("gui_running")
+  Plug 'ryanoasis/vim-devicons'
+  "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+endif
+
+"------------------------------------------------------
 " vim-plug: airline
 "------------------------------------------------------
 if 0
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+
+  Plug 'ryanoasis/vim-devicons'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline_theme = 'bubblegum'
 endif
 
 "------------------------------------------------------
