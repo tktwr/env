@@ -5,11 +5,13 @@
 - S ,GS                                | ,GS<CR>
 - V ,GV                                | ,GV<CR>
     ---------------------------------- | ----------------------------------------
--   mycmake.sh                         | mycmake.sh<CR>
--   mycmake.sh --build                 | mycmake.sh --build<CR>
--   ,resize 40                         | ,resize 40<CR>
--   ,resize 10                         | ,resize 10<CR>
--   term (terminal)                    | ,T<CR>
+- c mycmake.sh                         | mycmake.sh<CR>
+- b mycmake.sh --build                 | mycmake.sh --build<CR>
+- 1 ,resize 10                         | ,resize 10<CR>
+- 2 ,resize 20                         | ,resize 20<CR>
+- 3 ,resize 30                         | ,resize 30<CR>
+- 4 ,resize 40                         | ,resize 40<CR>
+- T ,T                                 | ,T<CR>
     ---------------------------------- | ----------------------------------------
 -   pip-upgrade                        | python -m pip install --upgrade pip<CR>
 -   git-upgrade                        | git update-git-for-windows<CR>
@@ -41,7 +43,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- N MyNERDTreeToggle                   | :MyNERDTreeToggle
+- F MyFernToggle (TAB)                 | :MyFernToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
 - X Wx                                 | :Wx 0
@@ -63,20 +65,20 @@
     ---------------------------------- | ----------------------------------------
 - Q quit (Q)                           | :confirm qall
 [buffer:sub] ------------------------- | ----------------------------------------
--   BmkOpenThis                        | :call BmkOpenThis()
--   BmkViewThis                        | :call BmkViewThis()
+- O BmkOpenThis (C-CR)                 | :call BmkOpenThis()
+- V BmkViewThis (S-CR)                 | :call BmkViewThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
 - E BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
     ---------------------------------- | ----------------------------------------
--   MyMakeLink                         | :MyMakeLink
--   MyMakeImageLink                    | :MyMakeImageLink
--   MyTogglePathFormat                 | :MyTogglePathFormat
+- L MyMakeLink                         | :MyMakeLink
+- I MyMakeImageLink                    | :MyMakeImageLink
+- P MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
--   MyGitLog                           | :MyGitLog
+- G MyGitLog                           | :MyGitLog
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
--   MyIDESendCdE2T                     | :call MyIDESendCdE2T("")
+-   MyIDESendCdE2T (C-S)               | :call MyIDESendCdE2T("")
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
 -   MyBufDelete                        | :MyBufDelete
 -   MyWinInfo                          | :MyWinInfo
@@ -99,9 +101,9 @@
 - p proj/                              | $MY_PROJ/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
--   papers/                            | $MY_PAPERS/
+- r papers/                            | $MY_PAPERS/
 - g git/                               | $MY_GIT/
-- h github/                            | $MY_GITHUB/
+- H github/                            | $MY_GITHUB/
     ---------------------------------- | ----------------------------------------
 - C cppreference                       | https://ja.cppreference.com/w/
 -   cpprefjp                           | https://cpprefjp.github.io/
@@ -111,5 +113,6 @@
 - M memo.my                            | :MyMemo my
 - V memo.vim                           | :MyMemo vim
 - G memo.git                           | :MyMemo git
+-   memo.links                         | :MyMemo links
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -3,6 +3,7 @@
   - my                                 | :MyMemo my
   - vim                                | :MyMemo vim
   - git                                | :MyMemo git
+  - links                              | :MyMemo links
 [vim] -------------------------------- | ----------------------------------------
 - help                                 | :MyHelp
   - index                              | :MyHelp index
