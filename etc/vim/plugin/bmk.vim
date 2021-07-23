@@ -106,6 +106,8 @@ func BmkGetDirName(val)
     let dir = val
   elseif type == "file"
     let dir = s:GetDirName(val)
+  elseif type == "html"
+    let dir = s:GetDirName(val)
   else
     let dir = ""
   endif
