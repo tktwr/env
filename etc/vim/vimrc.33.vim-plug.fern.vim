@@ -26,11 +26,7 @@ endfunc
 "------------------------------------------------------
 func MyFernSelected()
   exec "normal \<Plug>(fern-action-yank)"
-  if $MY_SHELL_NAME == "MINGW64"
-    return getreg('"')
-  elseif $MY_SHELL_NAME == "gitbash"
-    return getreg('*')
-  endif
+  return getreg(v:register)
 endfunc
 
 func MyFernEdit(winnr)
