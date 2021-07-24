@@ -18,8 +18,9 @@ source $MY_VIM/vim-plug/vim-gitgutter.vim
 source $MY_VIM/vim-plug/tabular.vim
 source $MY_VIM/vim-plug/tagbar.vim
 source $MY_VIM/vim-plug/gv.vim
-source $MY_VIM/vim-plug/coc.vim
 source $MY_VIM/vim-plug/fern.vim
+source $MY_VIM/vim-plug/coc.vim
+"source $MY_VIM/vim-plug/ultisnips.vim
 "source $MY_VIM/vim-plug/eskk.vim
 "source $MY_VIM/vim-plug/nerdtree.vim
 "source $MY_VIM/vim-plug/nerdtree-git.vim
