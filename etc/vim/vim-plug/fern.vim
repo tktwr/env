@@ -50,6 +50,7 @@ func MyFernPreview(winnr)
 
   let curr_winnr = winnr()
   if curr_winnr != prev_winnr
+    exec "lcd" expand('%:p:h')
     wincmd p
   endif
 endfunc

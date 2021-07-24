@@ -5,21 +5,21 @@
 "nnoremap <C-B>   :CocListResume<CR>
 "nnoremap --      :MyLineNumberToggle<CR>
 
-" msys
-" <C-TAB> [OK]
-" <C-BS>  [OK]
-" <C-CR>  [OK]
-" <S-TAB> [FAIL]
-" <S-BS>  [OK]
-" <S-CR>  [OK]
+"         | msys   | gitbash
+" <C-TAB> | [OK]   | [FAIL]
+" <C-BS>  | [OK]   | [OK]
+" <C-CR>  | [OK]   | [OK]
+" <S-TAB> | [FAIL] | [OK]
+" <S-BS>  | [OK]   | [FAIL]
+" <S-CR>  | [OK]   | [OK]
 
 " gitbash
-" <C-TAB> change to msys [FAIL]
-" <C-BS>                 [OK]
-" <C-CR>                 [OK]
-" <S-TAB>                [OK]
-" <S-BS> = <BS>          [FAIL]
-" <S-CR>                 [OK]
+" <C-TAB> change to msys 
+" <C-BS>                 
+" <C-CR>                 
+" <S-TAB>                
+" <S-BS> = <BS>          
+" <S-CR>                 
 "------------------------------------------------------
 " tmap.unused
 "------------------------------------------------------

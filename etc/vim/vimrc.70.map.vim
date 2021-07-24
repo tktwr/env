@@ -63,34 +63,15 @@ nnoremap ==      zi
  nnoremap <silent> <C-Y>   :silent WinBufHistPrev<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
-nnoremap <TAB>   :MyFernToggle<CR>
-"nnoremap <TAB>   :MyNERDTreeToggle<CR>
-"nnoremap <BS>    <C-B>
-"nnoremap <CR>    <C-F>
-
-nnoremap <C-CR>  :call BmkOpenThis()<CR>
-nnoremap <S-CR>  :call BmkViewThis()<CR>
-
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
 nnoremap <C-]>   g<C-]>
 
-"nnoremap <C-TAB> :echo "C-TAB"<CR>
-"nnoremap <C-BS>  :echo "C-BS"<CR>
-"nnoremap <C-CR>  :echo "C-CR"<CR>
-
-"nnoremap <S-TAB> :echo "S-TAB"<CR>
-"nnoremap <S-BS>  :echo "S-BS"<CR>
-"nnoremap <S-CR>  :echo "S-CR"<CR>
-
-"------------------------------------------------------
-" vmap
-"------------------------------------------------------
-vmap C  <Plug>NERDCommenterToggle
-
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
+tnoremap <C-;>   <C-W>:
+
 tnoremap <C-G>   <C-L>
 tnoremap <C-I>   <C-W>:MyWinInitSize<CR>
 " go to Terminal-Normal
@@ -98,9 +79,12 @@ tnoremap <C-O>   <C-W>N
 " paste register
 tnoremap <C-V>   <C-W>""
 
-tnoremap <C-;>   <C-W>:
-
 tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
+
+"------------------------------------------------------
+" vmap
+"------------------------------------------------------
+vmap C  <Plug>NERDCommenterToggle
 
 "------------------------------------------------------
 " clipboard
@@ -130,7 +114,7 @@ tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
 
 "------------------------------------------------------
-" map.window
+" C-Number
 "------------------------------------------------------
 nnoremap <silent> <C-1> <C-W>t
 nnoremap <silent> <C-2> <C-W>:call MyMenuPopupMenu(2)<CR>
@@ -159,26 +143,37 @@ tnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheig
 tnoremap <silent> <C-0> <C-W>b
 
 "------------------------------------------------------
-" map.tab
+" special keys
+"------------------------------------------------------
+nnoremap <TAB>   :MyFernToggle<CR>
+nnoremap <BS>    <C-B>
+nmap     <C-BS>  <Plug>(easymotion-overwin-line)
+
+nnoremap <C-CR>  :call BmkOpenThis()<CR>
+nnoremap <S-CR>  :call BmkViewThis()<CR>
 "------------------------------------------------------
 nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-nnoremap <silent> <PageDown> <C-W>:tabnext<CR>
+nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+
+tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
+tnoremap <silent> <PageDown> <C-W>:tabnext<CR>
+tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+"------------------------------------------------------
+nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
+
+tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
+"------------------------------------------------------
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 nnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
-nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 
-tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-tnoremap <silent> <PageDown> <C-W>:tabnext<CR>
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
-tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
-
 "======================================================
 " autocmd
 "======================================================
