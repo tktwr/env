@@ -29,41 +29,6 @@ func MyWinInitSize()
 endfunc
 
 "------------------------------------------------------
-" Fern
-"------------------------------------------------------
-func MyFernToggle()
-  let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:my_left_winwidth)
-  exec cmd
-endfunc
-
-func MyFern(dir)
-  let dir = expand(a:dir)
-  let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:my_left_winwidth)
-  exec cmd
-endfunc
-
-"------------------------------------------------------
-" NERDTree
-"------------------------------------------------------
-func MyNERDTreeOpen()
-  if (&filetype == "nerdtree")
-    NERDTreeToggle
-  elseif (&filetype == "")
-    NERDTree
-  else
-    "NERDTreeFind
-    let l:dir = expand("%:p:h")
-    exec "silent NERDTree" l:dir
-  endif
-endfunc
-
-func MyNERDTreeFind(dir)
-  let dir = expand(a:dir)
-  call WinBufHistFindNERDTree()
-  exec "NERDTreeFind" dir
-endfunc
-
-"------------------------------------------------------
 " git
 "------------------------------------------------------
 func MyGstatusToggle()
