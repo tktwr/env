@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" Fern
+" fern
 "------------------------------------------------------
 Plug 'lambdalisue/fern.vim'
 Plug 'lambdalisue/fern-git-status.vim'
@@ -116,4 +116,10 @@ augroup au-fern
   autocmd FileType fern call glyph_palette#apply()
   autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
+
+"------------------------------------------------------
+" command
+"------------------------------------------------------
+command                         MyFernToggle     call MyFernToggle()
+command -nargs=1 -complete=dir  MyFern           call MyFern(<f-args>)
 

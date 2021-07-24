@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" NERDTree
+" nerdtree
 "------------------------------------------------------
 Plug 'scrooloose/nerdtree'
 
@@ -106,4 +106,11 @@ augroup au-nerdtree
   autocmd!
   autocmd FileType nerdtree call s:BmkNERDTreeMap()
 augroup END
+
+"------------------------------------------------------
+" command
+"------------------------------------------------------
+command                         MyNERDTreeOpen   call MyNERDTreeOpen()
+command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)
+command                         MyNERDTreeToggle NERDTreeToggle
 

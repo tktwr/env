@@ -29,22 +29,6 @@ func MyWinInitSize()
 endfunc
 
 "------------------------------------------------------
-" git
-"------------------------------------------------------
-func MyGstatusToggle()
-  if (&filetype == "fugitive")
-    normal q
-  else
-    Git
-    exec "resize" g:my_gstatus_winheight
-  endif
-endfunc
-
-func MyGV()
-  GV --all
-endfunc
-
-"------------------------------------------------------
 " buffer
 "------------------------------------------------------
 func MyBufDelete()
@@ -129,17 +113,6 @@ endfunc
 "------------------------------------------------------
 command                         MyIDE            call MyIDE()
 command                         MyWinInitSize    call MyWinInitSize()
-
-command                         MyFernToggle     call MyFernToggle()
-command -nargs=1 -complete=dir  MyFern           call MyFern(<f-args>)
-
-command                         MyNERDTreeOpen   call MyNERDTreeOpen()
-command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)
-command                         MyNERDTreeToggle NERDTreeToggle
-
-command                         MyTagbarToggle   TagbarToggle
-command                         MyGstatusToggle  call MyGstatusToggle()
-command                         MyGV             call MyGV()
 
 command                         MyBufDelete      call MyBufDelete()
 

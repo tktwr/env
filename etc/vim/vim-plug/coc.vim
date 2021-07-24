@@ -1,5 +1,5 @@
 "------------------------------------------------------
-" vim-plug: coc
+" coc
 "------------------------------------------------------
 let $NVIM_COC_LOG_LEVEL='debug'
 
@@ -22,4 +22,11 @@ let g:coc_disable_startup_warning = 1
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+"------------------------------------------------------
+func s:MyCocInstall()
+  CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
+endfunc
+
+command MyCocInstall     call s:MyCocInstall()
 

@@ -182,26 +182,6 @@ tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 "======================================================
 " autocmd
 "======================================================
-"------------------------------------------------------
-" autocmd for fugitive
-"------------------------------------------------------
-func s:my_fugitive_settings()
-  nmap <buffer> D       dd
-endfunc
-
-"------------------------------------------------------
-" autocmd for GV
-"------------------------------------------------------
-func s:my_gv_settings()
-endfunc
-
-func s:my_git_settings()
-  nmap <buffer> D       O
-endfunc
-
-"------------------------------------------------------
-" autocmd for my_map
-"------------------------------------------------------
 func s:my_map_win()
   if &diff == 1
     nnoremap <buffer> <C-P>   [c
@@ -212,11 +192,8 @@ func s:my_map_win()
   endif
 endfunc
 
-augroup my
+augroup ag-my
   autocmd!
-  autocmd FileType fugitive call s:my_fugitive_settings()
-  autocmd FileType GV       call s:my_gv_settings()
-  autocmd FileType git      call s:my_git_settings()
   autocmd WinEnter *        call s:my_map_win()
 augroup END
 
