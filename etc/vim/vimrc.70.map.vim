@@ -84,6 +84,11 @@ nnoremap <C-]>   g<C-]>
 "nnoremap <S-CR>  :echo "S-CR"<CR>
 
 "------------------------------------------------------
+" vmap
+"------------------------------------------------------
+vnoremap C  <Plug>NERDCommenterToggle
+
+"------------------------------------------------------
 " tmap
 "------------------------------------------------------
 tnoremap <C-G>   <C-L>
@@ -178,20 +183,6 @@ tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
 " autocmd
 "======================================================
 "------------------------------------------------------
-" autocmd for NERDTree
-"------------------------------------------------------
-func s:my_nerdtree_settings()
-  nmap <buffer> B       :Bookmark<CR>
-  nmap <buffer> E       :EditBookmarks<CR>
-  "nmap <buffer> D       :echo D<CR>  "delete bookmark
-
-  "nmap <buffer> <Space> goq
-  nmap <buffer> <C-J>   <C-W>w
-  nmap <buffer> <C-K>   <C-W>W
-  nmap <buffer> <C-.>   C
-endfunc
-
-"------------------------------------------------------
 " autocmd for fugitive
 "------------------------------------------------------
 func s:my_fugitive_settings()
@@ -223,7 +214,6 @@ endfunc
 
 augroup my
   autocmd!
-  autocmd FileType nerdtree call s:my_nerdtree_settings()
   autocmd FileType fugitive call s:my_fugitive_settings()
   autocmd FileType GV       call s:my_gv_settings()
   autocmd FileType git      call s:my_git_settings()

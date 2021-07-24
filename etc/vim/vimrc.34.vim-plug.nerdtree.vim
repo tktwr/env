@@ -88,6 +88,15 @@ func s:BmkNERDTreeMap()
   nmap <buffer> 7       :call BmkNERDTreeEdit(7)<CR>
   nmap <buffer> 8       :call BmkNERDTreeEdit(8)<CR>
   nmap <buffer> 9       :call BmkNERDTreeEdit(9)<CR>
+
+  nmap <buffer> B       :Bookmark<CR>
+  nmap <buffer> E       :EditBookmarks<CR>
+  "nmap <buffer> D       :echo D<CR>  "delete bookmark
+
+  "nmap <buffer> <Space> goq
+  nmap <buffer> <C-J>   <C-W>w
+  nmap <buffer> <C-K>   <C-W>W
+  nmap <buffer> <C-.>   C
 endfunc
 
 "------------------------------------------------------
