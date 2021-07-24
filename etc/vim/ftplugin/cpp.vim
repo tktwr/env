@@ -11,9 +11,6 @@ setl shiftwidth=4
 setl cindent
 "setl keywordprg=man
 
-" c style comment
-nmap <buffer> com    I/*<ESC>A*/<ESC>
-nmap <buffer> moc    $xx^xx
 command -buffer -nargs=* CC  !$MY_CXX $MY_CXXFLAGS <args> % $MY_LDFLAGS
 "command -buffer          A   call EditAltSrc()
 
@@ -24,27 +21,27 @@ inoremap <buffer> <C-D>    <C-X><C-D>
 
 " abbrebiations
 iabclear
-if 0
-  iabbr #d     #define
-  iabbr #i     #include
-  iabbr IF     if ()<CR>{<CR>}<ESC>%kf(
-  iabbr ELIF   else if ()<CR>{<CR>}<ESC>%kf(
-  iabbr EL     else<CR>{<CR>}<ESC>%k
-  iabbr FOR    for (int i=0; i<3; i++)<CR>{<CR>}<ESC>%kf(
-  iabbr FORJ   for (int j=0; j<3; j++)<CR>{<CR>}<ESC>%kf(
-  iabbr FORJI  for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<ESC>%kf(
-  iabbr FORKJI for (k=0; k<nk; k++)<CR>{<CR>for (j=0; j<nj; j++)<CR>{<CR>for (i=0; i<ni; i++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
-  iabbr FORYX  for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<ESC>%kf(
-  iabbr FORZYX for (z=0; z<nz; z++)<CR>{<CR>for (y=0; y<ny; y++)<CR>{<CR>for (x=0; x<nx; x++)<CR>{<CR>}<CR>}<CR>}<ESC>%kf(
-  iabbr WH     while ()<CR>{<CR>}<ESC>%kf(
-  iabbr SW     switch ()<CR>{<CR>}<ESC>%ocase '':<CR>break;<CR>default:<CR>break;<ESC><CR>%kf(
-  iabbr CL     class<CR>{<CR>public:<CR>private:<CR>};<ESC>h%kA
-  iabbr ST     struct<CR>{<CR>};<ESC>h%kA
-  iabbr EN     enum<CR>{<CR>};<ESC>h%
-  iabbr FUNC   ()<CR>{<CR>}<ESC>%k
+if 1
+  iabbr #D     #define
+  iabbr #I     #include
+  iabbr IF     if () {<CR>}<ESC>%F(
+  iabbr ELIF   else if () {<CR>}<ESC>%F(
+  iabbr EL     else {<CR>}<ESC>%
+  iabbr FOR    for (int i=0; i<3; i++) {<CR>}<ESC>%F(
+  iabbr FORJ   for (int j=0; j<3; j++) {<CR>}<ESC>%F(
+  iabbr FORJI  for (j=0; j<nj; j++) {<CR>for (i=0; i<ni; i++) {<CR>}<CR>}<ESC>%F(
+  iabbr FORKJI for (k=0; k<nk; k++) {<CR>for (j=0; j<nj; j++) {<CR>for (i=0; i<ni; i++) {<CR>}<CR>}<CR>}<ESC>%F(
+  iabbr FORYX  for (y=0; y<ny; y++) {<CR>for (x=0; x<nx; x++) {<CR>}<CR>}<ESC>%F(
+  iabbr FORZYX for (z=0; z<nz; z++) {<CR>for (y=0; y<ny; y++) {<CR>for (x=0; x<nx; x++) {<CR>}<CR>}<CR>}<ESC>%F(
+  iabbr WH     while () {<CR>}<ESC>%F(
+  iabbr SW     switch () {<CR>}<ESC>%ocase '':<CR>break;<CR>default:<CR>break;<ESC>+%F(
+  iabbr CL     class ClassName {<CR>public:<CR>private:<CR>};<ESC>h%
+  iabbr ST     struct StructName {<CR>};<ESC>h%
+  iabbr EN     enum EnumName {<CR>};<ESC>h%
+  iabbr FUNC   void func_name() {<CR>}<ESC>%F(
 
-  iabbr COM    ///////////////////////////////////////////////////////////////////////////<CR>//<CR>//<CR>//<CR>///////////////////////////////////////////////////////////////////////////<ESC>2kA class
-  iabbr /**    /**<CR>*<CR>*/<ESC>-a
+  iabbr SEP=   //=========================================================================<ESC>^
+  iabbr SEP-   //-------------------------------------------------------------------------<ESC>^
 
   iabbr COUT   std::cout << " : " << x << std::endl;<ESC>0f"
   iabbr <<;;   << std::endl << std::flush;
