@@ -183,8 +183,12 @@ func BmkEditFile(file, winnr)
   endif
 
   let dir = s:GetDirName(a:file)
-  exec "lcd" dir
-  exec "edit" a:file
+  if &buftype == 'terminal'
+    call BmkEditDirInTerm(dir, a:winnr)
+  else
+    exec "lcd" dir
+    exec "edit" a:file
+  endif
 endfunc
 
 func BmkExecCommand(cmd, winnr)
