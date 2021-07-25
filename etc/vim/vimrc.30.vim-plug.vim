@@ -11,7 +11,9 @@ endif
 
 call plug#begin('$MY_VIM/plugged')
 
-"======================================================
+"------------------------------------------------------
+" include
+"------------------------------------------------------
 source $MY_VIM/vim-plug/vim-dirdiff.vim
 source $MY_VIM/vim-plug/vim-fugitive.vim
 source $MY_VIM/vim-plug/vim-gitgutter.vim
@@ -19,8 +21,11 @@ source $MY_VIM/vim-plug/tabular.vim
 source $MY_VIM/vim-plug/tagbar.vim
 source $MY_VIM/vim-plug/gv.vim
 source $MY_VIM/vim-plug/fern.vim
+
 source $MY_VIM/vim-plug/coc.vim
+"source $MY_VIM/vim-plug/vim-vsnip.vim
 "source $MY_VIM/vim-plug/ultisnips.vim
+
 "source $MY_VIM/vim-plug/eskk.vim
 "source $MY_VIM/vim-plug/nerdtree.vim
 "source $MY_VIM/vim-plug/nerdtree-git.vim
@@ -78,7 +83,8 @@ let g:NERDDefaultAlign='left'
 let g:NERDMenuMode=0
 let g:NERDCreateDefaultMappings=0
 
-"======================================================
+"------------------------------------------------------
+
 call plug#end()
 
 "------------------------------------------------------

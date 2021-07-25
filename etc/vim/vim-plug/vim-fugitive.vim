@@ -37,7 +37,7 @@ func MyGstatusToggle()
   if (&filetype == "fugitive")
     normal q
   else
-    Git
+    above Git
     exec "resize" g:my_gstatus_winheight
   endif
 endfunc

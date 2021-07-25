@@ -65,18 +65,20 @@
     ---------------------------------- | ----------------------------------------
 - Q quit (Q)                           | :confirm qall
 [buffer:sub] ------------------------- | ----------------------------------------
+- G Gllog                              | :Gllog
+- S MyGstatusToggle                    | :MyGstatusToggle
+- V MyGV                               | :MyGV
+- C MyClangFormat                      | :MyClangFormat
+    ---------------------------------- | ----------------------------------------
 - O BmkOpenThis (C-CR)                 | :call BmkOpenThis()
-- V BmkViewThis (S-CR)                 | :call BmkViewThis()
+-   BmkViewThis (S-CR)                 | :call BmkViewThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
-- E BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
+- F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
     ---------------------------------- | ----------------------------------------
 - L MyMakeLink                         | :MyMakeLink
 - I MyMakeImageLink                    | :MyMakeImageLink
 - P MyTogglePathFormat                 | :MyTogglePathFormat
-    ---------------------------------- | ----------------------------------------
-- G MyGitLog                           | :MyGitLog
-- C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
 -   MyIDESendCdE2T (C-S)               | :call MyIDESendCdE2T("")
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
