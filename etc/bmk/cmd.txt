@@ -70,6 +70,15 @@
 - V MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
+-   CocDiagnostics                     | :CocDiagnostics
+-   CocInfo                            | :CocInfo
+-   CocOpenLog                         | :CocOpenLog
+-   CocUpdate                          | :CocUpdate
+-   MyCocInstall                       | :MyCocInstall
+    ---------------------------------- | ----------------------------------------
+-   PlugInstall                        | :PlugInstall
+-   PlugUpdate                         | :PlugUpdate
+    ---------------------------------- | ----------------------------------------
 - O BmkOpenThis (C-CR)                 | :call BmkOpenThis()
 -   BmkViewThis (S-CR)                 | :call BmkViewThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
@@ -92,6 +101,27 @@
 - b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
+[buffer:fern] ------------------------ | ----------------------------------------
+-   select-expand-collapse <2-LMouse>  | _Plug_(fern-my-select-expand-collapse)
+-   select-expand-collapse <CR>        | _Plug_(fern-my-select-expand-collapse)
+    ---------------------------------- | ----------------------------------------
+- N new-path                           | _Plug_(fern-action-new-path)
+- D remove                             | _Plug_(fern-action-remove)
+- M move                               | _Plug_(fern-action-move)
+- R rename                             | _Plug_(fern-action-rename)
+    ---------------------------------- | ----------------------------------------
+-   reload <C-G>                       | _Plug_(fern-action-reload)
+- ? help                               | _Plug_(fern-action-help)
+- ! hidden                             | _Plug_(fern-action-hidden)
+- m mark                               | _Plug_(fern-action-mark)
+- s open:split                         | _Plug_(fern-action-open:split)
+- v open:vsplit                        | _Plug_(fern-action-open:vsplit)
+    ---------------------------------- | ----------------------------------------
+- h collapse                           | _Plug_(fern-action-collapse)
+- l MyFernPreview                      | :call MyFernPreview(2)
+    ---------------------------------- | ----------------------------------------
+- < leave                              | _Plug_(fern-action-leave)
+- > enter                              | _Plug_(fern-action-enter)
 [bmk] -------------------------------- | ----------------------------------------
 -   .my/                               | $HOME/.my/
 -   .my.common/                        | $MY_DOTMY_COMMON/

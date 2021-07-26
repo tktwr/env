@@ -19,6 +19,10 @@ init:
 bmk:
 	./make.sh --bmk
 
+bmk_rm_local:
+	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/bmk.txt > out/bmk.txt
+	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/cmd.txt > out/cmd.txt
+
 #------------------------------------------------------
 
 cmp:

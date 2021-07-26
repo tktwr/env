@@ -1,52 +1,59 @@
-[dir] -------------------------------- | ----------------------------------------
-- papers/                              | $MY_PAPERS
-  - BRDF/                              | $MY_PAPERS/BRDF
-  - Skin/                              | $MY_PAPERS/Skin
-  - PortraitRelighting/                | $MY_PAPERS/PortraitRelighting
-[links] ------------------------------ | ----------------------------------------
-- SIGGRAPH Papers                      | http://kesen.realtimerendering.com/
-- SIGGRAPH Courses                     | https://blog.selfshadow.com/publications/
-- What Makes a (Graphics) Systems Paper Beautiful | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
-[BRDF] ------------------------------- | ----------------------------------------
-- Disney BSDF: SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice | https://blog.selfshadow.com/publications/s2015-shading-course/
+[dir] --------------------------------                                                          | ----------------------------------------
+- papers/                                                                                       | $MY_PAPERS
+  - BRDF/                                                                                       | $MY_PAPERS/BRDF
+  - Skin/                                                                                       | $MY_PAPERS/Skin
+  - PortraitRelighting/                                                                         | $MY_PAPERS/PortraitRelighting
+[links] ------------------------------                                                          | ----------------------------------------
+- SIGGRAPH Papers                                                                               | http://kesen.realtimerendering.com/
+- SIGGRAPH Courses                                                                              | https://blog.selfshadow.com/publications/
+- What Makes a (Graphics) Systems Paper Beautiful                                               | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
+- Two Minute Papers                                                                             | https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg
+- Seamless                                                                                      | https://shiropen.com/
+- ゲームグラフィックス特論 A / B                                                                | https://tokoik.github.io/gg/
+[BRDF] -------------------------------                                                          | ----------------------------------------
+- Disney BSDF: SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice            | https://blog.selfshadow.com/publications/s2015-shading-course/
 - Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering | http://project-asura.com/blog/archives/2175
-- Disney BRDF: 超雑訳 Physically Based Shading at Disney | http://project-asura.com/blog/archives/1972
-- Lafortune BRDF: Non-linear approximation of reflectance functions | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
-[skin] ------------------------------- | ----------------------------------------
-- Separable Subsurface Scattering | http://www.iryoku.com/separable-sss/
-[shadow] ----------------------------- | ----------------------------------------
-- SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～ | http://project-asura.com/blog/archives/4748
-[raytrace] --------------------------- | ----------------------------------------
-- NVISII - NVIDIA Scene Imaging Interface | https://github.com/owl-project/NVISII
-[DR] --------------------------------- | ----------------------------------------
-- Neural Radiosity                     | https://arxiv.org/abs/2105.12319
-- MATch: Differentiable Material Graphs for Procedural Material Capture | http://match.csail.mit.edu/
-[Relighting] ------------------------- | ----------------------------------------
-- Learning Physics-guided Face Relighting under Directional Light | https://arxiv.org/abs/1906.03355
-- Deep Single Image Portrait Relighting | https://zhhoper.github.io/dpr.html
-- Single Image Portrait Relighting | https://arxiv.org/abs/1905.00824
-[tutorial] --------------------------- | ----------------------------------------
-- Learn OpenGL                         | https://learnopengl.com/
-- Learn OpenGL (github)                | https://github.com/JoeyDeVries/LearnOpenGL
-- OpenGL Tutorial                      | http://www.opengl-tutorial.org/jp/
-- GPU Gems 3                           | https://developer.nvidia.com/gpugems/gpugems3/foreword
-  - Linear                             | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
-- PBRT                                 | http://www.pbr-book.org/3ed-2018/contents.html
-[opengl] ----------------------------- | ----------------------------------------
-- OpenGL 4                             | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
-- OpenGL ES 3.0                        | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
-- glTF                                 | https://www.khronos.org/gltf/
-[vulkan] ----------------------------- | ----------------------------------------
-- VulkanSDK                            | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
-  - raytracing                         | https://developer.nvidia.com/rtx/raytracing/vkray
-[blender] ---------------------------- | ----------------------------------------
-- blender                              | https://docs.blender.org/
-  - api                                | https://docs.blender.org/api/current/index.html
-  - api 2.83                           | https://docs.blender.org/api/2.83
-  - bake                               | https://3dcg-school.pro/blender-bake/
-  - bake2                              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
-[resources] -------------------------- | ----------------------------------------
-  - hdrihaven                          | https://hdrihaven.com/
-  - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
+- Disney BRDF: 超雑訳 Physically Based Shading at Disney                                        | http://project-asura.com/blog/archives/1972
+- Lafortune BRDF: Non-linear approximation of reflectance functions                             | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
+  - Reflectance Data                                                                            | http://www.graphics.cornell.edu/online/measurements/reflectance/
+- Efficient BRDF Importance Sampling Using a Factored Representation | https://gfx.cs.princeton.edu/proj/brdf/
+- CS 431/636 - Advanced Rendering Techniques | https://www.cs.drexel.edu/~david/Classes/CS431/
+[skin] -------------------------------                                                          | ----------------------------------------
+- Separable Subsurface Scattering                                                               | http://www.iryoku.com/separable-sss/
+[shadow] -----------------------------                                                          | ----------------------------------------
+- SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～                       | http://project-asura.com/blog/archives/4748
+[raytrace] ---------------------------                                                          | ----------------------------------------
+- NVISII - NVIDIA Scene Imaging Interface                                                       | https://github.com/owl-project/NVISII
+[DR] ---------------------------------                                                          | ----------------------------------------
+- Neural Radiosity                                                                              | https://arxiv.org/abs/2105.12319
+- MATch: Differentiable Material Graphs for Procedural Material Capture                         | http://match.csail.mit.edu/
+- NeuMIP: Multi-Resolution Neural Materials                                                     | https://arxiv.org/abs/2104.02789
+[Relighting] -------------------------                                                          | ----------------------------------------
+- Learning Physics-guided Face Relighting under Directional Light                               | https://arxiv.org/abs/1906.03355
+- Deep Single Image Portrait Relighting                                                         | https://zhhoper.github.io/dpr.html
+- Single Image Portrait Relighting                                                              | https://arxiv.org/abs/1905.00824
+[tutorial] ---------------------------                                                          | ----------------------------------------
+- Learn OpenGL                                                                                  | https://learnopengl.com/
+- Learn OpenGL (github)                                                                         | https://github.com/JoeyDeVries/LearnOpenGL
+- OpenGL Tutorial                                                                               | http://www.opengl-tutorial.org/jp/
+- GPU Gems 3                                                                                    | https://developer.nvidia.com/gpugems/gpugems3/foreword
+  - Linear                                                                                      | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+- PBRT                                                                                          | http://www.pbr-book.org/3ed-2018/contents.html
+[opengl] -----------------------------                                                          | ----------------------------------------
+- OpenGL 4                                                                                      | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+- OpenGL ES 3.0                                                                                 | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+- glTF                                                                                          | https://www.khronos.org/gltf/
+[vulkan] -----------------------------                                                          | ----------------------------------------
+- VulkanSDK                                                                                     | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+  - raytracing                                                                                  | https://developer.nvidia.com/rtx/raytracing/vkray
+[blender] ----------------------------                                                          | ----------------------------------------
+- blender                                                                                       | https://docs.blender.org/
+  - api                                                                                         | https://docs.blender.org/api/current/index.html
+  - api 2.83                                                                                    | https://docs.blender.org/api/2.83
+  - bake                                                                                        | https://3dcg-school.pro/blender-bake/
+  - bake2                                                                                       | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+[resources] --------------------------                                                          | ----------------------------------------
+  - hdrihaven                                                                                   | https://hdrihaven.com/
+  - PFM                                                                                         | http://www.pauldebevec.com/Research/HDR/PFM/
 
 # vim:set ft=bmk syntax=txt nowrap:

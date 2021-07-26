@@ -25,7 +25,7 @@ endfunc
 
 "------------------------------------------------------
 func MyFernSelected()
-  exec "normal \<Plug>(fern-action-yank)"
+  exec "silent normal \<Plug>(fern-action-yank)"
   return getreg(v:register)
 endfunc
 
@@ -53,6 +53,26 @@ func MyFernPreview(winnr)
     exec "lcd" expand('%:p:h')
     wincmd p
   endif
+endfunc
+
+"------------------------------------------------------
+func MyFernPrintItem()
+  let key = MyFernSelected()
+  if (len(key) > g:fern#drawer_width / 2)
+    echo key
+  else
+    echo ""
+  endif
+endfunc
+
+func MyFernPrevItem()
+  normal -
+  call MyFernPrintItem()
+endfunc
+
+func MyFernNextItem()
+  normal +
+  call MyFernPrintItem()
 endfunc
 
 "------------------------------------------------------
@@ -90,8 +110,8 @@ function! s:init_fern() abort
   nmap <buffer> h     <Plug>(fern-action-collapse)
   "nmap <buffer> l     <Plug>(fern-my-edit-expand-collapse)
   nmap <buffer> l     :call MyFernPreview(2)<CR>
-  nmap <buffer> j     +
-  nmap <buffer> k     -
+  nmap <buffer> j     :call MyFernNextItem()<CR>
+  nmap <buffer> k     :call MyFernPrevItem()<CR>
 
   nmap <buffer> 2     :call MyFernEdit(2)<CR>
   nmap <buffer> 3     :call MyFernEdit(3)<CR>

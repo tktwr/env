@@ -2,7 +2,6 @@
 " func
 "------------------------------------------------------
 func s:MyMemo(...)
-  exec "vertical resize" g:my_help_winwidth
   if a:0 == 0
     exec "above Memo"
   else
