@@ -12,14 +12,20 @@ let g:fern#disable_default_mappings = 1
 let g:fern#renderer = 'nerdfont'
 
 "------------------------------------------------------
-func MyFernToggle()
-  let cmd = printf("Fern . -reveal=%% -drawer -toggle")
+func MyFernDrawerToggle()
+  let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:fern#drawer_width)
+  exec cmd
+endfunc
+
+func MyFernDrawer(dir)
+  let dir = expand(a:dir)
+  let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:fern#drawer_width)
   exec cmd
 endfunc
 
 func MyFern(dir)
   let dir = expand(a:dir)
-  let cmd = printf("Fern %s -reveal=%% -drawer", dir)
+  let cmd = printf("Fern %s -reveal=%%", dir)
   exec cmd
 endfunc
 
@@ -39,6 +45,29 @@ func MyFernEdit(winnr)
   call BmkEdit(selected, a:winnr)
 endfunc
 
+func MyFernFindFirstEditor()
+  let last_winnr = winnr('$')
+  let i = 1
+  while i <= last_winnr
+    exec i."wincmd w"
+    if &filetype != 'fern'
+      return i
+    endif
+    let i = i + 1
+  endwhile
+  return -1
+endfunc
+
+func MyFernPreviewInFirstEditor()
+  let prev_winnr = winnr()
+  let winnr = MyFernFindFirstEditor()
+  exec prev_winnr."wincmd w"
+  if winnr == -1
+    return
+  endif
+  call MyFernPreview(winnr)
+endfunc
+
 func MyFernPreview(winnr)
   let prev_winnr = winnr()
   if a:winnr > 0
@@ -46,7 +75,14 @@ func MyFernPreview(winnr)
     wincmd p
   endif
 
-  exec "normal \<Plug>(fern-my-edit-expand-collapse)"
+  let selected = MyFernSelected()
+  if (isdirectory(selected))
+    exec "normal \<Plug>(fern-action-expand)"
+  else
+    call MyFernEdit(a:winnr)
+  endif
+
+  "exec "normal \<Plug>(fern-my-edit-expand-collapse)"
 
   let curr_winnr = winnr()
   if curr_winnr != prev_winnr
@@ -109,7 +145,7 @@ function! s:init_fern() abort
 
   nmap <buffer> h     <Plug>(fern-action-collapse)
   "nmap <buffer> l     <Plug>(fern-my-edit-expand-collapse)
-  nmap <buffer> l     :call MyFernPreview(2)<CR>
+  nmap <buffer> l     :call MyFernPreviewInFirstEditor()<CR>
   nmap <buffer> j     :call MyFernNextItem()<CR>
   nmap <buffer> k     :call MyFernPrevItem()<CR>
 
@@ -141,6 +177,7 @@ augroup END
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command                         MyFernToggle     call MyFernToggle()
-command -nargs=1 -complete=dir  MyFern           call MyFern(<f-args>)
+command                         MyFernDrawerToggle call MyFernDrawerToggle()
+command -nargs=1 -complete=dir  MyFernDrawer       call MyFernDrawer(<f-args>)
+command -nargs=1 -complete=dir  MyFern             call MyFern(<f-args>)
 

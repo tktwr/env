@@ -10,6 +10,7 @@
   - expression-syntax                  | :MyHelp expression-syntax
   - pattern-overview                   | :MyHelp pattern-overview
 - vim script                           | https://knowledge.sakura.ad.jp/23436/
+- chrisatmachine                       | https://www.chrisatmachine.com/neovim
 [git] -------------------------------- | ----------------------------------------
 - git                                  | https://git-scm.com/docs
 [c++] -------------------------------- | ----------------------------------------

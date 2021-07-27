@@ -116,8 +116,8 @@ alias ,TCD='vimapi.sh tcd --filepath $PWD'
 alias ,tcd='vimapi.sh tcd --filepath'
 alias ,NERDTREE='vimapi.sh MyNERDTreeFind --filepath $PWD/'
 alias ,nerdtree='vimapi.sh MyNERDTreeFind --filepath'
-alias ,FERN='vimapi.sh MyFern --filepath $PWD/'
-alias ,fern='vimapi.sh MyFern --filepath'
+alias ,FERN='vimapi.sh MyFernDrawer --filepath $PWD/'
+alias ,fern='vimapi.sh MyFernDrawer --filepath'
 
 alias ,termcd='vimapi.sh MyIDESendCdT2T --filepath $PWD'
 

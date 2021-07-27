@@ -43,7 +43,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- F MyFernToggle (TAB)                 | :MyFernToggle
+- F MyFernDrawerToggle (TAB)           | :MyFernDrawerToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
 - X Wx                                 | :Wx 0

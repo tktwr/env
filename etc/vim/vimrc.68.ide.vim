@@ -4,7 +4,7 @@
 func MyIDE()
   let l:is_fullscreen = MyIsFullscreen()
   "NERDTree
-  call MyFernToggle()
+  call MyFernDrawerToggle()
   wincmd w
   if l:is_fullscreen
     vsp

@@ -145,7 +145,7 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <TAB>   :MyFernToggle<CR>
+nnoremap <TAB>   :MyFernDrawerToggle<CR>
 nnoremap <BS>    <C-B>
 nmap     <C-BS>  <Plug>(easymotion-overwin-line)
 
