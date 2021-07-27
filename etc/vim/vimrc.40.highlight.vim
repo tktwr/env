@@ -60,6 +60,8 @@ hi! link IndentGuidesEven MyBg1a
 
 hi! link Terminal         MyBgTerm
 
+hi! link CocErrorHighlight  MyRedRevBold
+
 let g:terminal_ansi_colors = [
 \ '#000000',
 \ '#fb4934',
