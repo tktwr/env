@@ -102,8 +102,10 @@
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buffer:fern] ------------------------ | ----------------------------------------
--   select-expand-collapse <2-LMouse>  | _Plug_(fern-my-select-expand-collapse)
--   select-expand-collapse <CR>        | _Plug_(fern-my-select-expand-collapse)
+-   below split                        | :below split
+    ---------------------------------- | ----------------------------------------
+-   select-expand <2-LMouse>           | _Plug_(fern-my-select-expand-collapse)
+-   select-expand <CR>                 | _Plug_(fern-my-select-expand-collapse)
     ---------------------------------- | ----------------------------------------
 - N new-path                           | _Plug_(fern-action-new-path)
 - D remove                             | _Plug_(fern-action-remove)
@@ -118,7 +120,7 @@
 - v open:vsplit                        | _Plug_(fern-action-open:vsplit)
     ---------------------------------- | ----------------------------------------
 - h collapse                           | _Plug_(fern-action-collapse)
-- l MyFernPreview                      | :call MyFernPreview(2)
+- l MyFernPreview                      | :call MyFernPreviewInFirstEditor()
     ---------------------------------- | ----------------------------------------
 - < leave                              | _Plug_(fern-action-leave)
 - > enter                              | _Plug_(fern-action-enter)
