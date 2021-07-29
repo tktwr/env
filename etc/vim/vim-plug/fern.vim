@@ -13,13 +13,15 @@ let g:fern#renderer = 'nerdfont'
 
 "------------------------------------------------------
 func MyFernDrawerToggle()
-  let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:fern#drawer_width)
+  "let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:fern#drawer_width)
+  let cmd = printf("Fern . -reveal=%% -drawer -toggle")
   exec cmd
 endfunc
 
 func MyFernDrawer(dir)
   let dir = expand(a:dir)
-  let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:fern#drawer_width)
+  "let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:fern#drawer_width)
+  let cmd = printf("Fern %s -reveal=%% -drawer", dir)
   exec cmd
 endfunc
 
@@ -112,6 +114,24 @@ func MyFernNextItem()
 endfunc
 
 "------------------------------------------------------
+" statusline
+"------------------------------------------------------
+func MyFernStatuslineWinNr()
+  let winnr = winnr()
+  return '['.winnr.']'
+endfunc
+
+func MyFernStatusline()
+  let stat = "%{MyFernStatuslineWinNr()}"
+  let stat.= "\ %t"
+  return stat
+endfunc
+
+func MyFernSetStatusline()
+  setl statusline=%!MyFernStatusline()
+endfunc
+
+"------------------------------------------------------
 function! s:init_fern() abort
   nmap <buffer><expr>
         \ <Plug>(fern-my-select-expand-collapse)
@@ -162,6 +182,8 @@ function! s:init_fern() abort
 
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
   nmap <buffer><nowait> > <Plug>(fern-action-enter)
+
+  setl statusline=%!MyFernStatusline()
 endfunction
 
 "------------------------------------------------------
