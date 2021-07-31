@@ -4,7 +4,7 @@
 # windows
 #======================================================
 
-export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
+export PYTHONPATH="$MY_BIN_WIN/py;$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
 
 #export MSYS_NO_PATHCONV=1
 #export MSYS2_ARG_CONV_EXCL="*"
@@ -87,6 +87,7 @@ mypython-venv-deactivate() {
 
 alias x='explorer.sh'
 alias ls='ls.sh'
+alias gvimdiff='gvim -d'
 
 #alias adb='winpty adb'
 alias net='winpty net'

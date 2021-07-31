@@ -2,7 +2,7 @@
 " gvim
 "======================================================
 
-set ambiwidth=double
+"set ambiwidth=double
 
 if has("gui_running")
   set guifont=Cica:h14

@@ -18,7 +18,7 @@ nnoremap Q     :confirm qall<CR>
 "------------------------------------------------------
 " gui
 "------------------------------------------------------
-set ambiwidth=double
+"set ambiwidth=double
 
 set guifont=Cica:h14
 "set guifont=Myrica_M:h14

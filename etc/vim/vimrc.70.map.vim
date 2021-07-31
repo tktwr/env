@@ -117,8 +117,8 @@ tnoremap <C-L>   <C-W>l
 " C-Number
 "------------------------------------------------------
 nnoremap <silent> <C-1> <C-W>t
-nnoremap <silent> <C-2> <C-W>:call MyMenuPopupMenu(2)<CR>
-nnoremap <silent> <C-@> <C-W>:call MyMenuPopupMenu(2)<CR>
+nnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
+nnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
 nnoremap <silent> <C-3> <C-W>:call MyMenuPopupMenu(0)<CR>
 nnoremap <silent> <C-4> <C-W>:call MyMenuPopupMenu(1)<CR>
 nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
@@ -130,8 +130,8 @@ nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
 nnoremap <silent> <C-0> <C-W>b
 
 tnoremap <silent> <C-1> <C-W>t
-tnoremap <silent> <C-2> <C-W>:call MyMenuPopupMenu(2)<CR>
-tnoremap <silent> <C-@> <C-W>:call MyMenuPopupMenu(2)<CR>
+tnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
+tnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
 tnoremap <silent> <C-3> <C-W>:call MyMenuPopupMenu(0)<CR>
 tnoremap <silent> <C-4> <C-W>:call MyMenuPopupMenu(1)<CR>
 tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
