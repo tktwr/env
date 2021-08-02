@@ -10,6 +10,7 @@ Plug 'lambdalisue/glyph-palette.vim'
 let g:fern#drawer_width = g:my_left_winwidth
 let g:fern#disable_default_mappings = 1
 let g:fern#renderer = 'nerdfont'
+"let g:fern#renderer#default#leading = "  "
 
 "------------------------------------------------------
 func MyFernDrawerToggle()

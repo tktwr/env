@@ -11,6 +11,8 @@ base-devel \
 mingw-w64-x86_64-toolchain \
 mingw-w64-x86_64-clang \
 mingw-w64-x86_64-clang-tools-extra \
+mingw-w64-x86_64-clang-analyzer \
+mingw-w64-x86_64-compiler-rt \
 mingw-w64-x86_64-universal-ctags-git \
 mingw-w64-x86_64-imagemagick \
 mingw-w64-x86_64-graphviz \

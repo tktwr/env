@@ -44,6 +44,7 @@
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
 - F MyFernDrawerToggle (TAB)           | :MyFernDrawerToggle
+- D MyFernDrawer                       | :MyFernDrawer %:p:h
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
 - X Wx                                 | :Wx 0
@@ -101,6 +102,27 @@
 - b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
 -   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
+[buffer:coc] ------------------------- | ----------------------------------------
+-   MyCocInstall                       | :MyCocInstall<CR>
+-   CocUpdate                          | :CocUpdate<CR>
+-   call CocAction('doHover')          | :call CocAction('doHover')<CR>
+-   CocDiagnostics                     | :CocDiagnostics<CR>
+    ---------------------------------- | ----------------------------------------
+-   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
+-   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
+-   coc-definition                     | _Plug_(coc-definition)
+-   coc-type-definition                | _Plug_(coc-type-definition)
+-   coc-implementation                 | _Plug_(coc-implementation)
+-   coc-references                     | _Plug_(coc-references)
+-   coc-rename                         | _Plug_(coc-rename)
+-   coc-format-selected                | _Plug_(coc-format-selected)
+-   coc-format-selected                | _Plug_(coc-format-selected)
+    ---------------------------------- | ----------------------------------------
+-   CocList vimcommands                | :CocList vimcommands<CR>
+-   CocList buffers                    | :CocList buffers<CR>
+-   CocList words                      | :CocList words<CR>
+-   CocList outline                    | :CocList outline<CR>
+-   CocListResume                      | :CocListResume<CR>
 [buffer:fern] ------------------------ | ----------------------------------------
 -   below split                        | :below split
     ---------------------------------- | ----------------------------------------

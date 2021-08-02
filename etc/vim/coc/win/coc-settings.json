@@ -22,5 +22,9 @@
   "python.linting.enabled": true,
 
   // clangd
-  "clangd.enabled": false
+  "clangd.enabled": false,
+  "clangd.fallbackFlags": [
+    "-I."
+  ],
+  "clangd.path": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\coc_data\\win\\extensions\\coc-clangd-data\\install\\12.0.0\\clangd_12.0.0\\bin\\clangd.exe"
 }
