@@ -47,8 +47,8 @@
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
-- X Wx                                 | :Wx 0
-- C Wc                                 | :Wc 0
+- X Wx (C-x)                           | :Wx 0
+- C Wc (C-c)                           | :Wc 0
     ---------------------------------- | ----------------------------------------
 - T MyTerm                             | :MyTerm
 - E MyIDE                              | :MyIDE
@@ -90,7 +90,7 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - P MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
--   MyIDESendCdE2T (C-S)               | :call MyIDESendCdE2T("")
+-   MyIDESendCdE2T (C-s)               | :call MyIDESendCdE2T("")
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
 -   MyBufDelete                        | :MyBufDelete
 -   MyWinInfo                          | :MyWinInfo

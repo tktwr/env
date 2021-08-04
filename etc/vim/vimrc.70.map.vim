@@ -38,9 +38,9 @@ nnoremap ==      zi
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nnoremap <silent> <C-B>   :edit $MY_DOTMY_COMMON/bmk.txt<CR>
-"nnoremap <silent> <C-C>   :echo 'C-C'<CR>
+ nnoremap <silent> <C-C>   :Wc 0<CR>
  nnoremap <silent> <C-D>   <C-B>
- nnoremap <silent> <C-E>   :MyGitLog<CR>
+ nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>
  nnoremap <silent> <C-G>   :MyRedraw<CR>
 "nnoremap <silent> <C-H>   :echo 'C-H'<CR>
@@ -59,7 +59,7 @@ nnoremap ==      zi
  nnoremap <silent> <C-U>   :silent WinBufHistNext<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
- nnoremap <silent> <C-X>   :close<CR>
+ nnoremap <silent> <C-X>   :Wx 0<CR>
  nnoremap <silent> <C-Y>   :silent WinBufHistPrev<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
@@ -156,8 +156,9 @@ nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
 nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 
 tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-tnoremap <silent> <PageDown> <C-W>:tabnext<CR>
 tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+
+tnoremap <silent> <PageDown> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 "------------------------------------------------------
 nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
 nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
