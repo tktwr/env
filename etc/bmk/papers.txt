@@ -16,8 +16,8 @@
 - Disney BRDF: 超雑訳 Physically Based Shading at Disney                                        | http://project-asura.com/blog/archives/1972
 - Lafortune BRDF: Non-linear approximation of reflectance functions                             | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
   - Reflectance Data                                                                            | http://www.graphics.cornell.edu/online/measurements/reflectance/
-- Efficient BRDF Importance Sampling Using a Factored Representation | https://gfx.cs.princeton.edu/proj/brdf/
-- CS 431/636 - Advanced Rendering Techniques | https://www.cs.drexel.edu/~david/Classes/CS431/
+- Efficient BRDF Importance Sampling Using a Factored Representation                            | https://gfx.cs.princeton.edu/proj/brdf/
+- CS 431/636 - Advanced Rendering Techniques                                                    | https://www.cs.drexel.edu/~david/Classes/CS431/
 [skin] -------------------------------                                                          | ----------------------------------------
 - Separable Subsurface Scattering                                                               | http://www.iryoku.com/separable-sss/
 [shadow] -----------------------------                                                          | ----------------------------------------
@@ -32,28 +32,5 @@
 - Learning Physics-guided Face Relighting under Directional Light                               | https://arxiv.org/abs/1906.03355
 - Deep Single Image Portrait Relighting                                                         | https://zhhoper.github.io/dpr.html
 - Single Image Portrait Relighting                                                              | https://arxiv.org/abs/1905.00824
-[tutorial] ---------------------------                                                          | ----------------------------------------
-- Learn OpenGL                                                                                  | https://learnopengl.com/
-- Learn OpenGL (github)                                                                         | https://github.com/JoeyDeVries/LearnOpenGL
-- OpenGL Tutorial                                                                               | http://www.opengl-tutorial.org/jp/
-- GPU Gems 3                                                                                    | https://developer.nvidia.com/gpugems/gpugems3/foreword
-  - Linear                                                                                      | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
-- PBRT                                                                                          | http://www.pbr-book.org/3ed-2018/contents.html
-[opengl] -----------------------------                                                          | ----------------------------------------
-- OpenGL 4                                                                                      | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
-- OpenGL ES 3.0                                                                                 | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
-- glTF                                                                                          | https://www.khronos.org/gltf/
-[vulkan] -----------------------------                                                          | ----------------------------------------
-- VulkanSDK                                                                                     | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
-  - raytracing                                                                                  | https://developer.nvidia.com/rtx/raytracing/vkray
-[blender] ----------------------------                                                          | ----------------------------------------
-- blender                                                                                       | https://docs.blender.org/
-  - api                                                                                         | https://docs.blender.org/api/current/index.html
-  - api 2.83                                                                                    | https://docs.blender.org/api/2.83
-  - bake                                                                                        | https://3dcg-school.pro/blender-bake/
-  - bake2                                                                                       | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
-[resources] --------------------------                                                          | ----------------------------------------
-  - hdrihaven                                                                                   | https://hdrihaven.com/
-  - PFM                                                                                         | http://www.pauldebevec.com/Research/HDR/PFM/
 
 # vim:set ft=bmk syntax=txt nowrap:

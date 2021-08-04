@@ -53,5 +53,29 @@
   - calendar                           | https://www.google.com/calendar/render?hl=ja
   - keep                               | https://keep.google.com/
   - drive                              | https://drive.google.com/drive/my-drive
+[cg] --------------------------------- | ----------------------------------------
+- GPU Gems 3                           | https://developer.nvidia.com/gpugems/gpugems3/foreword
+  - Linear                             | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+- PBRT                                 | http://www.pbr-book.org/3ed-2018/contents.html
+[opengl] ----------------------------- | ----------------------------------------
+- OpenGL 4                             | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+- OpenGL ES 3.0                        | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+- glTF                                 | https://www.khronos.org/gltf/
+- Learn OpenGL                         | https://learnopengl.com/
+- Learn OpenGL (github)                | https://github.com/JoeyDeVries/LearnOpenGL
+- OpenGL Tutorial                      | http://www.opengl-tutorial.org/jp/
+[vulkan] ----------------------------- | ----------------------------------------
+- VulkanSDK                            | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+  - raytracing                         | https://developer.nvidia.com/rtx/raytracing/vkray
+[blender] ---------------------------- | ----------------------------------------
+- blender                              | https://docs.blender.org/
+  - api                                | https://docs.blender.org/api/current/index.html
+  - api 2.83                           | https://docs.blender.org/api/2.83
+  - bake                               | https://3dcg-school.pro/blender-bake/
+  - bake2                              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+- Blender入門(2.8版)                   | https://blender3d.biz/
+[resources] -------------------------- | ----------------------------------------
+  - hdrihaven                          | https://hdrihaven.com/
+  - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
 
 # vim:set ft=bmk syntax=txt nowrap:
