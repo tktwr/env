@@ -96,7 +96,7 @@
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
--   MySourceVimrc                      | :MySourceVimrc
+- s MySourceVimrc                      | :MySourceVimrc
     ---------------------------------- | ----------------------------------------
 - c diff cmd.txt                       | :MyTabDiff $MY_ETC/bmk/cmd.txt $MY_DOTMY_COMMON/cmd.txt
 - b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
