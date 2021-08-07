@@ -77,7 +77,7 @@ command MyCdo      cdo execute "normal! @q" | w
 " apply the command to each file in the quickfix list
 command MyCfdo     cfdo execute "normal! @q" | w
 
-command MyCdHere             exec "cd" expand("%:p:h")
+command MyCdHere             exec "cd"  expand("%:p:h")
 command MyTcdHere            exec "tcd" expand("%:p:h")
 command MyLcdHere            exec "lcd" expand("%:p:h")
 
