@@ -5,7 +5,6 @@
 Plug 'tpope/vim-fugitive'
 
 let g:fugitive_git_executable=$MY_GIT_EXE
-autocmd QuickFixCmdPost *grep* below cwindow
 
 func s:my_fugitive_settings()
   nmap <buffer> D       dd

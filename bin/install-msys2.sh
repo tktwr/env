@@ -28,5 +28,20 @@ mingw-w64-x86_64-glm \
 mingw-w64-x86_64-opencv \
 "
 
+pkg_uninstalled="\
+tmux \
+ctags \
+git \
+subversion \
+vimpager \
+global \
+python \
+vifm \
+mingw-w64-x86_64-cmake \
+mingw-w64-x86_64-python3-pip \
+mingw-w64-x86_64-python2-pip \
+mingw-w64-x86_64-gnuplot \
+"
+
 pacman -S --needed $pkg $pkg_lib
 

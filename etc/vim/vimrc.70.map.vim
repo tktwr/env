@@ -119,8 +119,8 @@ tnoremap <C-L>   <C-W>l
 nnoremap <silent> <C-1> <C-W>t
 nnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
 nnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
-nnoremap <silent> <C-3> <C-W>:call MyMenuPopupMenu(0)<CR>
-nnoremap <silent> <C-4> <C-W>:call MyMenuPopupMenu(1)<CR>
+nnoremap <silent> <C-3> <C-W>:call 'C-3'<CR>
+nnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
@@ -132,8 +132,8 @@ nnoremap <silent> <C-0> <C-W>b
 tnoremap <silent> <C-1> <C-W>t
 tnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
 tnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
-tnoremap <silent> <C-3> <C-W>:call MyMenuPopupMenu(0)<CR>
-tnoremap <silent> <C-4> <C-W>:call MyMenuPopupMenu(1)<CR>
+tnoremap <silent> <C-3> <C-W>:call 'C-3'<CR>
+tnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
@@ -191,5 +191,7 @@ endfunc
 augroup ag-my
   autocmd!
   autocmd WinEnter *        call s:my_map_win()
+  autocmd QuickFixCmdPost *grep* below cwindow
+  autocmd QuickFixCmdPost *make* below cwindow
 augroup END
 

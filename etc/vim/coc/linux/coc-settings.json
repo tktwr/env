@@ -3,9 +3,9 @@
   "snippets.userSnippetsDirectory": "$MY_VIM/UltiSnips",
 
   "python.venvFolders": ["~/.python-venv"],
-  "python.pythonPath": "~/.python-venv/vim/bin/python",
-  "python.linting.pylintPath": "~/.python-venv/vim/bin/pylint",
-  "python.linting.flake8Path": "~/.python-venv/vim/bin/flake8",
+  "python.pythonPath": "~/.python-venv/torch/bin/python",
+  "python.linting.pylintPath": "~/.python-venv/torch/bin/pylint",
+  "python.linting.flake8Path": "~/.python-venv/torch/bin/flake8",
 
   //"python.jediEnabled": false
   "python.linting.pylintEnabled": false,
