@@ -20,3 +20,5 @@ sys-cmake           | SYS_CMAKE           | C:\Program Files\CMake
 sys-vulkan-sdk      | SYS_VULKAN_SDK      | $VULKAN_SDK
 sys-cuda-sdk        | SYS_CUDA_SDK        | $CUDA_PATH
 my-home             | MY_HOME             | $USERPROFILE
+
+# vim:set nowrap:

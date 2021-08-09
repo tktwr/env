@@ -7,6 +7,7 @@ cmake \
 fcitx-im fcitx-mozc fcitx-configtool \
 nodejs npm \
 clang \
+neovim \
 "
 
 pkg_lib="\

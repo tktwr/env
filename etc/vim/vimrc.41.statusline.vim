@@ -57,5 +57,12 @@ func MySetTerm()
   setl statusline=%!MyStatuslineTerm()
 endfunc
 
-autocmd TerminalOpen * call MySetTerm()
+augroup ag-my-term
+  autocmd!
+  if !has('nvim')
+    autocmd TerminalOpen * call MySetTerm()
+  else
+    autocmd TermOpen * call MySetTerm()
+  endif
+augroup END
 
