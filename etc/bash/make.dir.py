@@ -49,9 +49,10 @@ def f_make_dir(fname):
     try:
         with open(fname, "r") as f:
             for line in f:
-                if line[0] == "#":
-                    continue
                 line = line.rstrip('\n')
+                if line == "" or line[0] == "#":
+                    continue
+
                 lst = line.split('|')
 
                 name = lst[0].strip()

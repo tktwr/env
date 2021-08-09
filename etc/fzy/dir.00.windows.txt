@@ -1,5 +1,7 @@
 # for msys/cygwin/gitbash
+
 # name              | env var             | dir
+# ---               | ---                 | ---
 win-home            | SYS_WIN_HOME        | $USERPROFILE
 msys2-home          | SYS_MSYS2_HOME      | C:/msys64/home/$USERNAME
 cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME

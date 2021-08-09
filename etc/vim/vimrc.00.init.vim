@@ -65,6 +65,7 @@ set wildignore+=*/build*/**
 set hlsearch
 set incsearch
 "set ignorecase
+"set smartcase
 "set viminfo='50,\"50,%
 set listchars=tab:>-,trail:-,eol:$
 "set efm=%AERROR\ File\ =\ %f,\ Line\ =\ %l,%C%m

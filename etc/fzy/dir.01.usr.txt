@@ -1,8 +1,9 @@
 # name      | env var            | dir
-python-venv | MY_PYTHON_VENV_DIR | $HOME/.python-venv
-desktop     | MY_DESKTOP         | $HOME/Desktop
-downloads   | MY_DOWNLOADS       | $HOME/Downloads
-config      | MY_CONFIG          | $HOME/MyConfig
-private     | MY_PRIVATE         | $HOME/MyShare/private
-protected   | MY_PROTECTED       | $HOME/MyShare/protected
-public      | MY_PUBLIC          | $HOME/MyShare/public
+# ---       | ---                | ---
+python-venv | MY_PYTHON_VENV_DIR | $MY_HOME/.python-venv
+desktop     | MY_DESKTOP         | $MY_HOME/Desktop
+downloads   | MY_DOWNLOADS       | $MY_HOME/Downloads
+config      | MY_CONFIG          | $MY_HOME/MyConfig
+private     | MY_PRIVATE         | $MY_HOME/MyShare/private
+protected   | MY_PROTECTED       | $MY_HOME/MyShare/protected
+public      | MY_PUBLIC          | $MY_HOME/MyShare/public

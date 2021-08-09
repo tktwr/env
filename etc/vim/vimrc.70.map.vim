@@ -145,7 +145,7 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <TAB>   :MyFernDrawerToggle<CR>
+"nnoremap <TAB>   :MyFernDrawerToggle<CR>
 nnoremap <BS>    <C-B>
 nmap     <C-BS>  <Plug>(easymotion-overwin-line)
 
@@ -188,7 +188,7 @@ func s:my_map_win()
   endif
 endfunc
 
-augroup ag-my
+augroup ag-my-map
   autocmd!
   autocmd WinEnter *        call s:my_map_win()
   autocmd QuickFixCmdPost *grep* below cwindow

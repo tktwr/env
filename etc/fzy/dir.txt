@@ -1,5 +1,5 @@
 # name     | env var           | dir
-#          |                   |
+# ---      | ---               | ---
 # home     |                   |
 #          |                   |
 my         | MY_DOTMY          | $HOME/.my

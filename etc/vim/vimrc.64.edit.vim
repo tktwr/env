@@ -82,6 +82,9 @@ command MyMakeImageLink          call s:MyMakeLink('!')
 "------------------------------------------------------
 " edit.autocmd
 "------------------------------------------------------
-autocmd BufWritePre,FileWritePre *.html  MyUpdateLastChange
-autocmd BufWritePre,FileWritePre *.txt   MyUpdateLastChange
+augroup ag-my-edit
+  autocmd!
+  autocmd BufWritePre,FileWritePre *.html  MyUpdateLastChange
+  autocmd BufWritePre,FileWritePre *.txt   MyUpdateLastChange
+augroup END
 
