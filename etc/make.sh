@@ -36,9 +36,14 @@ f_bmk_pull() {
 	grep -v '^\+ ' $MY_DOTMY_COMMON/cmd.txt > bmk/cmd.txt
 }
 
+f_nerdtree_bmk() {
+  $MY_PYTHON_EXE ./nerdtree_bmk.py $MY_ETC/.NERDTreeBookmarks $MY_DOTMY_COMMON/NERDTreeBookmarks > ~/.NERDTreeBookmarks
+}
+
 f_make() {
   ./dot.sh --common-files --cp
-  $MY_PYTHON_EXE ./nerdtree_bmk.py > ~/.NERDTreeBookmarks
+
+  f_nerdtree_bmk
 
   cd bash
   ./make.sh "$@"

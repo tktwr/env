@@ -24,5 +24,5 @@ def f_nerdtree_bmk(_fname):
 
 
 if __name__ == "__main__":
-    f_nerdtree_bmk(".NERDTreeBookmarks")
-    f_nerdtree_bmk("$MY_HOME/.my.common/NERDTreeBookmarks")
+    for i in sys.argv[1:]:
+        f_nerdtree_bmk(i)
