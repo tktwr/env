@@ -52,10 +52,11 @@ endfunc
 " item format per line
 " - word word    | word
 func BmkGetItem(line, idx)
-  let mx = '- \(.\+\)\s*|\s*\(.\+\)'
+  let mx = '[-+] \(.\+\)\s*|\s*\(.\+\)'
   let line = a:line
   let line = matchstr(line, mx)
   let item = substitute(line, mx, '\'.a:idx, '')
+  let item = BmkRemoveEndSpaces(item)
   return item
 endfunc
 
@@ -117,7 +118,6 @@ endfunc
 
 func s:BmkPrintItem()
   let key = BmkGetKeyItem()
-  let key = BmkRemoveEndSpaces(key)
   if (len(key) > s:bmk_winwidth / 2)
     echo key
   else
@@ -440,6 +440,6 @@ func BmkDebug()
   let key = BmkGetKeyItem()
   let val = BmkGetExpandedValueItem()
   let type = BmkUrlType(val)
-  echo key.", ".val.", ".type
+  echo "key=[".key."], val=[".val."], type=[".type."]"
 endfunc
 

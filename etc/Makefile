@@ -20,8 +20,8 @@ bmk:
 	./make.sh --bmk
 
 bmk_rm_local:
-	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/bmk.txt > local/bmk.txt
-	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/cmd.txt > local/cmd.txt
+	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/bmk.txt > bmk/bmk.txt
+	./bmk_rm_local.sh $(MY_DOTMY_COMMON)/cmd.txt > bmk/cmd.txt
 
 #------------------------------------------------------
 

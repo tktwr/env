@@ -43,7 +43,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- F MyFernDrawerToggle (TAB)           | :MyFernDrawerToggle
+- F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
 - G MyTagbarToggle                     | :MyTagbarToggle
 - I MyWinInitSize                      | :MyWinInitSize
@@ -60,15 +60,15 @@
 - B MyTabBar                           | :MyTabBar
     ---------------------------------- | ----------------------------------------
 - g MyGgrepHere                        | :silent MyGgrepHere
--   vimgrep TODO                       | :vimgrep "\[TODO\]" %
+- v vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
 - R MyMenuReload                       | :MyMenuReload
     ---------------------------------- | ----------------------------------------
 - Q quit (Q)                           | :confirm qall
 [buffer:sub] ------------------------- | ----------------------------------------
-- G Gllog                              | :Gllog
-- S MyGstatusToggle                    | :MyGstatusToggle
-- V MyGV                               | :MyGV
+- g Gllog                              | :Gllog
+- s MyGstatusToggle                    | :MyGstatusToggle
+- v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
@@ -81,7 +81,7 @@
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
 - O BmkOpenThis (C-CR)                 | :call BmkOpenThis()
--   BmkViewThis (S-CR)                 | :call BmkViewThis()
+- V BmkViewThis (S-CR)                 | :call BmkViewThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
 - F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
@@ -96,7 +96,7 @@
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
-- s MySourceVimrc                      | :MySourceVimrc
+- S MySourceVimrc                      | :MySourceVimrc
     ---------------------------------- | ----------------------------------------
 - c diff cmd.txt                       | :MyTabDiff $MY_ETC/bmk/cmd.txt $MY_DOTMY_COMMON/cmd.txt
 - b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
@@ -147,6 +147,8 @@
 - < leave                              | _Plug_(fern-action-leave)
 - > enter                              | _Plug_(fern-action-enter)
 [bmk] -------------------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
 -   .my/                               | $HOME/.my/
 -   .my.common/                        | $MY_DOTMY_COMMON/
 - R R.etc/                             | $MY_REMOTE_CONFIG/env/etc/

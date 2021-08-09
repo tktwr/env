@@ -48,7 +48,6 @@ func s:MyMenuRegister(list, dict, line)
   let key = BmkGetItem(line, 1)
   let val = BmkGetItem(line, 2)
 
-  let key = BmkRemoveEndSpaces(key)
   let key = " ".key." "
 
   let a:dict[key] = val
