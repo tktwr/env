@@ -81,7 +81,7 @@ func s:MyMenuLoad(cmd_file)
       for menu in list_menu
         call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
       endfor
-    elseif (match(line, '^\s*- ') == 0)
+    elseif (match(line, '^\s*[-+] ') == 0)
       " item
       for menu in list_menu
         call s:MyMenuRegister(menu[-1], s:cmd_dict, line)
