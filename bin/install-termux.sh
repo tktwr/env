@@ -19,8 +19,5 @@ vim-python \
 openssh \
 "
 
-pkg_lib="\
-"
-
-pkg install $pkg $pkg_lib
+pkg install $pkg
 

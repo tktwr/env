@@ -8,9 +8,9 @@ flake8 \
 "
 
 pkg_lib="\
+numpy \
 opencv-python \
 matplotlib \
-numpy \
 scipy \
 sklearn \
 parse \

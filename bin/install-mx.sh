@@ -14,8 +14,5 @@ nodejs npm \
 fzf \
 "
 
-pkg_lib="\
-"
-
-sudo apt install $pkg $pkg_lib
+sudo apt install $pkg
 

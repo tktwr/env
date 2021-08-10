@@ -39,6 +39,7 @@ func! s:MakeMemoWindow(vert)
     else
       silent exec s:memo_winheight."new" s:memo_winname
     endif
+    setlocal filetype=memo
     setlocal buftype=nofile
     setlocal bufhidden=hide
     setlocal buflisted

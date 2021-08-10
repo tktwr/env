@@ -92,7 +92,8 @@ f_diff() {
   elif [ $? -eq 1 ]; then
     echo "[!=] $1 $2"
     if [ "$cmd" = "diff" -o "$cmd" = "vimdiff" ]; then
-      $cmd "$1" "$2"
+      #cmd="vimapi.sh MyTabDiff"
+      eval "$cmd $1 $2"
     fi
   fi
 }
