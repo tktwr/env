@@ -6,6 +6,7 @@ if exists("g:loaded_bmk")
 endif
 let g:loaded_bmk = 1
 
+let s:bmk_debug = 0
 let s:bmk_winwidth = 30
 
 if exists("g:bmk_winwidth")
@@ -117,11 +118,18 @@ func BmkGetDirName(val)
 endfunc
 
 func s:BmkPrintItem()
-  let key = BmkGetKeyItem()
-  if (len(key) > s:bmk_winwidth / 2)
-    echo key
+  if s:bmk_debug
+    let key = BmkGetKeyItem()
+    let val = BmkGetExpandedValueItem()
+    let type = BmkUrlType(val)
+    echo "key=[".key."], val=[".val."], type=[".type."]"
   else
-    echo ""
+    let key = BmkGetKeyItem()
+    if (len(key) > s:bmk_winwidth / 2)
+      echo key
+    else
+      echo ""
+    endif
   endif
 endfunc
 
@@ -436,10 +444,7 @@ augroup END
 "------------------------------------------------------
 command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
 
-func BmkDebug()
-  let key = BmkGetKeyItem()
-  let val = BmkGetExpandedValueItem()
-  let type = BmkUrlType(val)
-  echo "key=[".key."], val=[".val."], type=[".type."]"
+func BmkToggleDebug()
+  let s:bmk_debug = !s:bmk_debug
 endfunc
 
