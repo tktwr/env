@@ -40,7 +40,7 @@ endfunc
 " get item
 "------------------------------------------------------
 " title format per line
-" [word]
+" [str] str
 func BmkGetTitle(line)
   let mx = '^\[\(.\+\)\].*'
   let line = a:line
@@ -50,7 +50,7 @@ func BmkGetTitle(line)
 endfunc
 
 " item format per line
-" - word word    | word
+" space [-+] key str    | str
 func BmkGetItem(line, idx)
   let mx = '[-+] \(.\+\)\s*|\s*\(.\+\)'
   let line = a:line
@@ -233,7 +233,7 @@ func BmkOpen(url, winnr)
     call BmkOpenDir(url)
   elseif (type == "file")
     call BmkOpenFile(url)
-  elseif type == "html"
+  elseif (type == "html")
     call BmkOpenFile(url)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
@@ -259,7 +259,7 @@ func BmkEdit(url, winnr)
     call BmkEditDir(url, a:winnr)
   elseif (type == "file")
     call BmkEditFile(url, a:winnr)
-  elseif type == "html"
+  elseif (type == "html")
     call BmkEditFile(url, a:winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
@@ -281,11 +281,11 @@ func BmkView(url, winnr)
     call BmkOpenURL(url)
   elseif (type == "network")
     call BmkOpenDir(url)
-  elseif type == "dir"
+  elseif (type == "dir")
     call BmkEditDir(url, a:winnr)
-  elseif type == "file"
+  elseif (type == "file")
     call BmkEditFile(url, a:winnr)
-  elseif type == "html"
+  elseif (type == "html")
     call BmkOpenURL(url)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
