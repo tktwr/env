@@ -78,5 +78,8 @@
 - Resources                            |
   - hdrihaven                          | https://hdrihaven.com/
   - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
+  ------------------------------------ | ----------------------------------------
+- ArchWiki                             | https://wiki.archlinux.jp/
+  ------------------------------------ | ----------------------------------------
 
 # vim:set ft=bmk syntax=txt nowrap:

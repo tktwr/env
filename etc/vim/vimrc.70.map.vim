@@ -65,7 +65,14 @@ nnoremap ==      zi
 
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
-nnoremap <C-]>   g<C-]>
+
+func MyTjump()
+  let word = expand('<cWORD>')
+  exec "tjump ".word
+endfunc
+
+"nnoremap <C-]>   g<C-]>
+nnoremap <C-]>   :call MyTjump()<CR>
 
 "------------------------------------------------------
 " tmap

@@ -17,3 +17,7 @@ log.clean:
 	rm -f $(BUILD_DIR)/log.txt
 	rm -f $(BUILD_DIR)/log.zero.txt
 
+.PHONY: tags
+tags:
+	ctags *.vim plugin/*.vim vim-plug/*.vim
+

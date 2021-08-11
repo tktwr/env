@@ -7,3 +7,7 @@ all.min:
 clean:
 	./make.sh --clean
 
+.PHONY: tags
+tags:
+	ctags *.sh
+
