@@ -2,7 +2,7 @@
 " TagCatalog
 "======================================================
 if exists("g:loaded_tag_catalog")
-  "finish
+  finish
 endif
 let g:loaded_tag_catalog = 1
 
