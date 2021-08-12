@@ -78,60 +78,91 @@ alias pe='print-env'
 alias pp='print-path.sh -p'
 
 #------------------------------------------------------
-# vim
-#------------------------------------------------------
-alias GS='vim -c "MyGstatusToggle"'
-alias GV='vim -c "MyGV"'
-alias E='vim -c "MyIDE"'
-alias T='vim -c "MyTerm"'
-alias z='vim -c "DiaFull"'
-alias zh='vim -c "DiaFullH"'
-
-#------------------------------------------------------
 # vimapi
 #------------------------------------------------------
-alias ,G=',LCD; vimapi.sh --in-above-win GitLog $PWD'
-alias ,GS=',LCD; vimapi.sh --in-new-tab MyGstatusToggle'
-alias ,GV=',LCD; vimapi.sh --in-new-tab MyGV'
-alias ,E=',LCD; vimapi.sh --in-new-tab MyIDE'
-alias ,T=',LCD; vimapi.sh MyTerm'
-alias ,V=',LCD; vimapi.sh MyTermV'
+vimapi-lcd() {
+  local dir=${1:-$PWD}
+  vimapi.sh lcd --filepath $dir
+}
 
-alias ,e=',LCD; vimapi.sh BmkEditFile --filepath'
-#alias ,e=',LCD; vimapi.sh --in-above-win edit --filepath'
-alias ,sp=',LCD; vimapi.sh --in-above-win split --filepath'
-alias ,tabe=',LCD; vimapi.sh tabedit --filepath'
+vimapi-tcd() {
+  local dir=${1:-$PWD}
+  vimapi.sh tcd --filepath $dir
+}
 
-alias ,diff=',LCD; vimapi.sh MyTabDiff'
-alias ,dirdiff=',LCD; vimapi.sh MyTabDirDiff'
+vimapi-cd() {
+  local dir=${1:-$HOME}
+  cd $dir
+  vimapi-lcd
+}
 
-alias ,memo='vimapi.sh --in-above-win MyMemo'
-alias ,help='vimapi.sh --in-above-win MyHelp'
-alias ,man='vimapi.sh --in-above-win MyMan'
-alias ,pydoc='vimapi.sh --in-above-win MyPydoc'
+vimapi-tab-diff() {
+  vimapi.sh MyTabDiff "$1" "$2"
+  read -p "Enter to proceed. "
+}
 
-alias ,LCD='vimapi.sh lcd --filepath $PWD'
-alias ,lcd='vimapi.sh lcd --filepath'
-alias ,TCD='vimapi.sh tcd --filepath $PWD'
-alias ,tcd='vimapi.sh tcd --filepath'
-alias ,NERDTREE='vimapi.sh MyNERDTreeFind --filepath $PWD/'
-alias ,nerdtree='vimapi.sh MyNERDTreeFind --filepath'
-alias ,FERN='vimapi.sh MyFernDrawer --filepath $PWD/'
-alias ,fern='vimapi.sh MyFernDrawer --filepath'
+vimapi-tab-dirdiff() {
+  vimapi.sh MyTabDirDiff "$1" "$2"
+  read -p "Enter to proceed. "
+}
 
-alias ,termcd='vimapi.sh MyIDESendCdT2T --filepath $PWD'
+vimapi-nerdtree() {
+  local dir=${1:-$PWD}
+  vimapi.sh MyNERDTreeFind --filepath $dir/
+}
 
-alias ,resize='vimapi.sh MyWinResize'
-alias ,vresize='vimapi.sh MyIDEVResizeT2E'
+vimapi-fern() {
+  local dir=${1:-$PWD}
+  vimapi.sh MyFernDrawer --filepath $dir/
+}
 
-alias ,vim='vimapi.sh'
+vimapi-resize() {
+  local rows=${1:-10}
+  vimapi.sh MyWinResize $rows
+}
 
-alias ,set_tab='vimapi.sh MyTabSetLabel'
+vimapi-edit() {
+  local file="$1"
+  local winnr="$2"
+  vimapi.sh BmkEditFile --filepath "$file" "$winnr"
+  #vimapi.sh --in-above-win edit --filepath "$file"
+}
 
-,cd() { cd "$@"; ,LCD; }
-,nt() { cd "$@"; ,LCD; ,FERN; }
-alias d=',cd'
-alias D=',nt'
+#------------------------------------------------------
+# vim terminal
+#------------------------------------------------------
+if [ "$VIM_TERMINAL" ]; then
+  alias cd='vimapi-cd'
+  alias vimdiff='vimapi-tab-diff'
+  alias vimdirdiff='vimapi-tab-dirdiff'
+
+  alias D='vimapi-fern'
+
+  alias GL='vimapi.sh --in-above-win GitLog $PWD'
+
+  alias GS='vimapi.sh --in-new-tab MyGstatusToggle'
+  alias GV='vimapi.sh --in-new-tab MyGV'
+  alias E='vimapi.sh --in-new-tab MyIDE'
+  alias V='vimapi.sh MyFernDrawerToggle'
+  alias T='vimapi.sh MyTerm'
+  alias TV='vimapi.sh MyTermV'
+
+  alias ,e='vimapi-edit'
+  alias ,sp='vimapi.sh --in-above-win "below split" --filepath'
+  alias ,tabe='vimapi.sh tabedit --filepath'
+
+  alias ,termcd='vimapi.sh MyIDESendCdT2T --filepath $PWD'
+  alias ,resize='vimapi-resize'
+else
+  alias GS='vim -c "MyGstatusToggle"'
+  alias GV='vim -c "MyGV"'
+  alias E='vim -c "MyIDE"'
+  alias V='vim -c "MyFernDrawerToggle"'
+  alias T='vim -c "MyTerm"'
+
+  alias z='vim -c "DiaFull"'
+  alias zh='vim -c "DiaFullH"'
+fi
 
 #------------------------------------------------------
 # git

@@ -59,3 +59,21 @@ endfunc
 
 "command -nargs=2 -complete=file TagCatalog call TagCatalog(<f-args>)
 
+"------------------------------------------------------
+" autocmd
+"------------------------------------------------------
+func TgClogTjump(tag_name)
+  exec "tjump ".a:tag_name
+endfunc
+
+func s:init_tag_catalog()
+  nnoremap <buffer> <silent> <CR> :call TgClogTjump(expand("<cWORD>"))<CR>
+  nnoremap <buffer> <silent> l    W
+  nnoremap <buffer> <silent> h    B
+endfunc
+
+augroup au-tag-catalog
+  autocmd! *
+  autocmd FileType tag-catalog call s:init_tag_catalog()
+augroup END
+
