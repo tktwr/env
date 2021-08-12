@@ -33,11 +33,11 @@ dia          | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 # ---------- | ----------        | ----------
 repo         | MY_REPO           | $MY_PRIVATE/repo
 work         | MY_WORK           | $MY_PRIVATE/work
+proj         | MY_PROJ           | $MY_PRIVATE/proj
 doc          | MY_DOC            | $MY_PRIVATE/doc
 office       | MY_OFFICE         | $MY_PRIVATE/office
-proj         | MY_PROJ           | $MY_PRIVATE/proj
-github       | MY_GITHUB         | $MY_PRIVATE/work/github
 git          | MY_GIT            | $MY_PRIVATE/work/git
+github       | MY_GITHUB         | $MY_PRIVATE/work/github
 svn          | MY_SVN            | $MY_PRIVATE/work/svn
 # ---------- | ----------        | ----------
 # public     |                   |

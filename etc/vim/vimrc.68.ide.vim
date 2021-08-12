@@ -84,8 +84,8 @@ func MyIDESendCmdE2T(cmd)
 endfunc
 
 " send 'cd dir' to a terminal
-func MyIDESendCdE2T(dir)
-  let dir = MyExpandDir(a:dir)
+func MyIDESendCdE2T()
+  let dir = expand('%:p:h')
   wincmd j
   let winnr = winnr()
   call BmkEditDir(dir, winnr)

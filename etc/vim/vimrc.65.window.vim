@@ -162,6 +162,7 @@ func MyRedraw()
   echo "cwd : ".l:dir
   echo "file: ".l:file
   "file
+  IndentGuidesToggle
 endfunc
 
 "------------------------------------------------------

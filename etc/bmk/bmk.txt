@@ -16,11 +16,21 @@
 -   bash/bashrc.81.my.sh               | $MY_BASH/bashrc.81.my.sh
 -   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 [bmk:dir] ---------------------------- | ----------------------------------------
--   .my/                               | $HOME/.my/
+-   .my/                               | $MY_DOTMY/
 -   .my.common/                        | $MY_DOTMY_COMMON/
+-   backup/                            | $MY_BACKUP/
+-   tmp/                               | $MY_TMP/
+    ---------------------------------- | ----------------------------------------
 - R R.etc/                             | $MY_REMOTE_CONFIG/env/etc/
 - L L.etc/                             | $MY_LOCAL_CONFIG/env/etc/
 - P P.etc/                             | $MY_PRIVATE_CONFIG/env/etc/
+    ---------------------------------- | ----------------------------------------
+- b bin/                               | $MY_BIN/
+- v vim/                               | $MY_VIM/
+- B bash/                              | $MY_BASH/
+- m memo/                              | $MY_MEMO/
+- s samples/                           | $MY_SAMPLES/
+- t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
 - w work/                              | $MY_WORK/
 - p proj/                              | $MY_PROJ/

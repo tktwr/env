@@ -54,7 +54,7 @@ nnoremap ==      zi
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
- nnoremap <silent> <C-S>   :call MyIDESendCdE2T("")<CR>
+ nnoremap <silent> <C-S>   :call MyIDESendCdE2T()<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
  nnoremap <silent> <C-U>   :silent WinBufHistNext<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
