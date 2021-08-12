@@ -15,8 +15,8 @@ backup:
 init:
 	./make.sh --init
 
-bmk-push:
-	./make.sh --bmk-push
+#bmk-push:
+#	./make.sh --bmk-push
 
 bmk-pull:
 	./make.sh --bmk-pull

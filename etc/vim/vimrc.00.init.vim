@@ -152,6 +152,7 @@ let g:bmk_file = "$MY_DOTMY_COMMON/bmk.txt"
 
 let g:cmd_files = [
   \ "$MY_DOTMY_COMMON/cmd.txt",
+  \ "$MY_DOTMY_COMMON/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",
   \ "$MY_ETC/bmk/papers.txt"
   \ ]

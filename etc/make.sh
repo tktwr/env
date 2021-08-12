@@ -70,7 +70,7 @@ f_args() {
         f_make --min
         ;;
       --bmk-push)
-        f_bmk_push
+        #f_bmk_push
         ;;
       --bmk-pull)
         f_bmk_pull

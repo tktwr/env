@@ -152,12 +152,13 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-"nnoremap <TAB>   :MyFernDrawerToggle<CR>
-nnoremap <BS>    <C-B>
-nmap     <C-BS>  <Plug>(easymotion-overwin-line)
+"nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
+nnoremap <silent> <TAB>      :silent WinBufHistPrint<CR>
+nnoremap <silent> <BS>       <C-B>
+nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
 
-nnoremap <C-CR>  :call BmkOpenThis()<CR>
-nnoremap <S-CR>  :call BmkViewThis()<CR>
+nnoremap <silent> <C-CR>     :call BmkOpenThis()<CR>
+nnoremap <silent> <S-CR>     :call BmkViewThis()<CR>
 "------------------------------------------------------
 nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
 nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>

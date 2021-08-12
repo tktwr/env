@@ -1,40 +1,58 @@
-[bmk] -------------------------------- | ----------------------------------------
-- scratchpad                           | $MY_DIARY/scratchpad.md.html
-- dia                                  | $MY_DIARY/diary.md.html
-- todo                                 | $MY_DIARY/todo.md.html
-  ------------------------------------ | ----------------------------------------
-- bmk                                  | $MY_DOTMY_COMMON/bmk.txt
-- cmd                                  | $MY_DOTMY_COMMON/cmd.txt
-- links                                | $MY_ETC/bmk/links.txt
-- papers                               | $MY_ETC/bmk/papers.txt
-  ------------------------------------ | ----------------------------------------
-- memo/my.md.html                      | $MY_MEMO/my.md.html
-- memo/vim.md.html                     | $MY_MEMO/vim.md.html
-- memo/git.md.html                     | $MY_MEMO/git.md.html
-- memo/links.md.html                   | $MY_MEMO/links.md.html
-  ------------------------------------ | ----------------------------------------
-- bash/bashrc.81.my.sh                 | $MY_BASH/bashrc.81.my.sh
-- vim/vimrc.70.map.vim                 | $MY_VIM/vimrc.70.map.vim
-  ------------------------------------ | ----------------------------------------
-  ------------------------------------ | ----------------------------------------
-  ------------------------------------ | ----------------------------------------
-  ------------------------------------ | ----------------------------------------
-- .my/                                 | $HOME/.my/
-- .my.common/                          | $MY_DOTMY_COMMON/
-- env/                                 | $MY_ENV/
-  - bin/                               | $MY_BIN/
-  - etc/                               | $MY_ETC/
-  - bash/                              | $MY_BASH/
-  - vim/                               | $MY_VIM/
-- r.etc/                               | $MY_REMOTE_CONFIG/env/etc/
-- l.etc/                               | $MY_LOCAL_CONFIG/env/etc/
-- p.etc/                               | $MY_PRIVATE_CONFIG/env/etc/
-- work/                                | $MY_WORK/
-- proj/                                | $MY_PROJ/
-- doc/                                 | $MY_DOC/
-- office/                              | $MY_OFFICE/
-- papers/                              | $MY_PAPERS/
-- git/                                 | $MY_GIT/
-- github/                              | $MY_GITHUB/
+[bmk:file] --------------------------- | ----------------------------------------
+- s scratchpad                         | $MY_DIARY/scratchpad.md.html
+- d dia                                | $MY_DIARY/diary.md.html
+- t todo                               | $MY_DIARY/todo.md.html
+    ---------------------------------- | ----------------------------------------
+- b bmk (C-b)                          | $MY_DOTMY_COMMON/bmk.txt
+- c cmd                                | $MY_DOTMY_COMMON/cmd.txt
+- L links                              | $MY_ETC/bmk/links.txt
+- P papers                             | $MY_ETC/bmk/papers.txt
+    ---------------------------------- | ----------------------------------------
+-   memo/my.md.html                    | $MY_MEMO/my.md.html
+-   memo/vim.md.html                   | $MY_MEMO/vim.md.html
+-   memo/git.md.html                   | $MY_MEMO/git.md.html
+-   memo/links.md.html                 | $MY_MEMO/links.md.html
+    ---------------------------------- | ----------------------------------------
+-   bash/bashrc.81.my.sh               | $MY_BASH/bashrc.81.my.sh
+-   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
+[bmk:dir] ---------------------------- | ----------------------------------------
+-   .my/                               | $HOME/.my/
+-   .my.common/                        | $MY_DOTMY_COMMON/
+- R R.etc/                             | $MY_REMOTE_CONFIG/env/etc/
+- L L.etc/                             | $MY_LOCAL_CONFIG/env/etc/
+- P P.etc/                             | $MY_PRIVATE_CONFIG/env/etc/
+    ---------------------------------- | ----------------------------------------
+- w work/                              | $MY_WORK/
+- p proj/                              | $MY_PROJ/
+- d doc/                               | $MY_DOC/
+- o office/                            | $MY_OFFICE/
+- r papers/                            | $MY_PAPERS/
+- g git/                               | $MY_GIT/
+- H github/                            | $MY_GITHUB/
+    ---------------------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
+[bmk:ref] ---------------------------- | ----------------------------------------
+- H help                               | :MyHelp
+-   help.index                         | :MyHelp index
+-   help.expression-syntax             | :MyHelp expression-syntax
+-   help.pattern-overview              | :MyHelp pattern-overview
+-   vim script                         | https://knowledge.sakura.ad.jp/23436/
+-   chrisatmachine                     | https://www.chrisatmachine.com/neovim
+    ---------------------------------- | ----------------------------------------
+- M memo                               | :MyMemo
+- m memo.my                            | :MyMemo my
+- v memo.vim                           | :MyMemo vim
+- g memo.git                           | :MyMemo git
+- l memo.links                         | :MyMemo links
+    ---------------------------------- | ----------------------------------------
+-   tags.vim                           | :call TagCatalog(expand("$MY_VIM/tags"), "vim")
+-   tags.bash                          | :call TagCatalog(expand("$MY_BASH/tags"), "sh")
+-   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+-   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
+-   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
+-   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
+-   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+-   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
 
 # vim:set ft=bmk syntax=txt nowrap:
