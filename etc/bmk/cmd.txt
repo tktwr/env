@@ -162,15 +162,27 @@
 - r papers/                            | $MY_PAPERS/
 - g git/                               | $MY_GIT/
 - H github/                            | $MY_GITHUB/
+[bmk:sub] ---------------------------- | ----------------------------------------
+-   tags.vim                           | :call TagCatalog(expand("$MY_VIM/tags"), "vim")
+-   tags.bash                          | :call TagCatalog(expand("$MY_BASH/tags"), "sh")
+-   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+-   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
+-   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
+-   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
+-   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+-   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
     ---------------------------------- | ----------------------------------------
-- C cppreference                       | https://ja.cppreference.com/w/
--   cpprefjp                           | https://cpprefjp.github.io/
+- H help                               | :MyHelp
+-   help.index                         | :MyHelp index
+-   help.expression-syntax             | :MyHelp expression-syntax
+-   help.pattern-overview              | :MyHelp pattern-overview
+-   vim script                         | https://knowledge.sakura.ad.jp/23436/
+-   chrisatmachine                     | https://www.chrisatmachine.com/neovim
     ---------------------------------- | ----------------------------------------
--   python.doc                         | https://docs.python.org/ja/3/index.html
-    ---------------------------------- | ----------------------------------------
-- M memo.my                            | :MyMemo my
-- V memo.vim                           | :MyMemo vim
-- G memo.git                           | :MyMemo git
--   memo.links                         | :MyMemo links
+- M memo                               | :MyMemo
+- m memo.my                            | :MyMemo my
+- v memo.vim                           | :MyMemo vim
+- g memo.git                           | :MyMemo git
+- l memo.links                         | :MyMemo links
 
 # vim:set ft=bmk syntax=txt nowrap:
