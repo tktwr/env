@@ -54,5 +54,7 @@
 -   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
 -   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
 -   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
+    ---------------------------------- | ----------------------------------------
+-   BmkToggleDebug                     | :call BmkToggleDebug()
 
 # vim:set ft=bmk syntax=txt nowrap:

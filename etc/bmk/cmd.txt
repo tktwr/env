@@ -2,8 +2,8 @@
 - D D .                                | D .<CR>
 - G G                                  | G<CR>
 - A GA                                 | GA<CR>
-- S ,GS                                | ,GS<CR>
-- V ,GV                                | ,GV<CR>
+- S GS                                 | GS<CR>
+- V GV                                 | GV<CR>
     ---------------------------------- | ----------------------------------------
 - c mycmake.sh                         | mycmake.sh<CR>
 - b mycmake.sh --build                 | mycmake.sh --build<CR>
@@ -11,7 +11,7 @@
 - 2 ,resize 20                         | ,resize 20<CR>
 - 3 ,resize 30                         | ,resize 30<CR>
 - 4 ,resize 40                         | ,resize 40<CR>
-- T ,T                                 | ,T<CR>
+- T T                                  | T<CR>
     ---------------------------------- | ----------------------------------------
 -   pip-upgrade                        | python -m pip install --upgrade pip<CR>
 -   git-upgrade                        | git update-git-for-windows<CR>
