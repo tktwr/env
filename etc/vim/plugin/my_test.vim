@@ -39,7 +39,7 @@ func EventMsg(msg)
 endfunc
 
 func MyTestAutocmd()
-  augroup mytest
+  augroup ag_mytest
     autocmd!
     autocmd FileType txt     call EventMsg("FileType txt")
     autocmd FileType bmk     call EventMsg("FileType bmk")

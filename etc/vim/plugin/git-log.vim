@@ -350,7 +350,7 @@ func GitLogBufEnter()
   call GitLogMap()
 endfunc
 
-augroup gitlog
+augroup ag_gitlog
   autocmd!
   autocmd FileType gitlog  call GitLogFileType()
   autocmd BufEnter *       call GitLogBufEnter()

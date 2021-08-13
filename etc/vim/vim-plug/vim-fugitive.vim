@@ -10,7 +10,7 @@ func s:my_fugitive_settings()
   nmap <buffer> D       dd
 endfunc
 
-augroup ag-fugitive
+augroup ag_fugitive
   autocmd!
   autocmd FileType fugitive call s:my_fugitive_settings()
 augroup END

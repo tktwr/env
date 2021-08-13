@@ -185,7 +185,7 @@ command WinBufHistNext   call WinBufHistNext()
 command WinBufHistClear  call WinBufHistClear()
 command WinBufHistPop    call WinBufHistPop()
 
-augroup winbufhist
+augroup ag_winbufhist
   autocmd!
   autocmd BufEnter *   call WinBufHistPush()
 augroup END

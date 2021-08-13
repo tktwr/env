@@ -115,6 +115,21 @@ def print_memo_tags(fname, width):
     print_tags(fname, width, memo_types)
 
 
+def print_py_tags(fname, width):
+    py_types = {
+        'c': "classes",
+        'f': "functions",
+        'm': "class members",
+        'v': "variables",
+        'I': "name referring a module defined in other file",
+        'i': "modules",
+        'x': "name referring a class/variable/function/module defined in other module",
+        'z': "function parameters [off]",
+        'l': "local variables [off]",
+    }
+    print_tags(fname, width, py_types)
+
+
 def main(argv):
     fname = argv[1]
     width = int(argv[2])
@@ -128,6 +143,8 @@ def main(argv):
         print_sh_tags(fname, width)
     elif type == "memo":
         print_memo_tags(fname, width)
+    elif type == "py":
+        print_py_tags(fname, width)
 
 
 if __name__ == "__main__":

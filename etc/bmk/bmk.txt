@@ -56,14 +56,17 @@
 - g memo.git                           | :MyMemo git
 - l memo.links                         | :MyMemo links
     ---------------------------------- | ----------------------------------------
--   tags.vim                           | :call TagCatalog(expand("$MY_VIM/tags"), "vim")
--   tags.bash                          | :call TagCatalog(expand("$MY_BASH/tags"), "sh")
+-   tags.bin.sh                        | :call TagCatalog(expand("$MY_ENV/tags.bin.sh"), "sh")
+-   tags.bin.py                        | :call TagCatalog(expand("$MY_ENV/tags.bin.py"), "py")
+-   tags.etc.sh                        | :call TagCatalog(expand("$MY_ENV/tags.etc.sh"), "sh")
+-   tags.etc.vim                       | :call TagCatalog(expand("$MY_ENV/tags.etc.vim"), "vim")
+-   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
 -   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+    ---------------------------------- | ----------------------------------------
 -   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
 -   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
 -   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
 -   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
--   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
     ---------------------------------- | ----------------------------------------
 -   BmkToggleDebug                     | :call BmkToggleDebug()
 

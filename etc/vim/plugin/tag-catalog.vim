@@ -72,7 +72,7 @@ func s:init_tag_catalog()
   nnoremap <buffer> <silent> h    B
 endfunc
 
-augroup au-tag-catalog
+augroup ag_tag_catalog
   autocmd! *
   autocmd FileType tag-catalog call s:init_tag_catalog()
 augroup END

@@ -8,7 +8,12 @@ import numpy as np
 
 def spec_to_metalroughness(ifname, ofname):
     img = Image.open(ifname)
-    r, g, b, a = img.split()
+
+    if img.mode == "RGB":
+        r, g, b = img.split()
+    elif img.mode == "RGBA":
+        r, g, b, a = img.split()
+
     zero = Image.new('L', img.size)
     one = Image.new('L', img.size, 255)
 

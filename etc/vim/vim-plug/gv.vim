@@ -10,7 +10,7 @@ func s:my_git_settings()
   nmap <buffer> D       O
 endfunc
 
-augroup ag-gv
+augroup ag_gv
   autocmd!
   autocmd FileType GV       call s:my_gv_settings()
   autocmd FileType git      call s:my_git_settings()

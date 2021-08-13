@@ -102,7 +102,7 @@ endfunc
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------
-augroup au-nerdtree
+augroup ag_nerdtree
   autocmd!
   autocmd FileType nerdtree call s:BmkNERDTreeMap()
 augroup END

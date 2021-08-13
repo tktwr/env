@@ -9,7 +9,7 @@ func s:AfterH()
 endfunc
 command AfterH call s:AfterH()
 
-augroup ag-my-skel
+augroup ag_my_skel
   autocmd!
   autocmd BufNewFile Makefile        silent 0r $MY_VIM/skel/skel.make
   autocmd BufNewFile CMakeLists.txt  silent 0r $MY_VIM/skel/skel.cmake

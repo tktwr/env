@@ -430,7 +430,7 @@ endfunc
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------
-augroup bmk
+augroup ag_bmk
   autocmd!
   autocmd FileType bmk      call s:BmkMap()
   autocmd BufWinEnter *     call s:BmkMapWin()

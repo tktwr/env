@@ -101,10 +101,10 @@ vnoremap Y       "*y
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-nnoremap <Space>   :call MyMenuPopupMenu(0)<CR>
-vnoremap <Space>   :'<,'>MyTestRange<CR>
+nnoremap <silent> <Space>   :call MyMenuPopupMenu(0)<CR>
+vnoremap <silent> <Space>   :'<,'>MyTestRange<CR>
 
-tnoremap <C-Space> <C-W>:call MyMenuPopupMenu(0)<CR>
+tnoremap <silent> <C-Space> <C-W>:call MyMenuPopupMenu(0)<CR>
 
 "------------------------------------------------------
 " map.window.move
@@ -195,7 +195,7 @@ func s:my_map_win()
   endif
 endfunc
 
-augroup ag-my-map
+augroup ag_my_map
   autocmd!
   autocmd WinEnter *        call s:my_map_win()
   autocmd QuickFixCmdPost *grep* below cwindow
