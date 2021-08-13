@@ -3,7 +3,7 @@
 #------------------------------------------------------
 # env
 #------------------------------------------------------
-export MY_HOME="$HOME/WinHome"
+export MY_HOME="/c/Users/$USERNAME"
 export MY_ENV="$MY_HOME/MyConfig/tktwr.github/env"
 export MY_ETC="$MY_ENV/etc"
 export MY_BIN="$MY_ENV/bin"

@@ -16,7 +16,6 @@ call plug#begin('$MY_VIM/plugged')
 "------------------------------------------------------
 source $MY_VIM/vim-plug/vim-dirdiff.vim
 source $MY_VIM/vim-plug/vim-fugitive.vim
-source $MY_VIM/vim-plug/vim-gitgutter.vim
 source $MY_VIM/vim-plug/vim-indent-guides.vim
 source $MY_VIM/vim-plug/vim-easymotion.vim
 source $MY_VIM/vim-plug/tabular.vim
@@ -33,6 +32,10 @@ source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/nerdtree.vim
 "source $MY_VIM/vim-plug/nerdtree-git-plugin.vim
 "source $MY_VIM/vim-plug/fzf.vim
+
+if $MY_PROMPT_TYPE != "minimal"
+  source $MY_VIM/vim-plug/vim-gitgutter.vim
+endif
 
 "------------------------------------------------------
 " vim-plug: color

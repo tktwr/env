@@ -2,10 +2,13 @@
 " fern
 "------------------------------------------------------
 Plug 'lambdalisue/fern.vim'
-"Plug 'lambdalisue/fern-git-status.vim'
 Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
+
+if $MY_PROMPT_TYPE != "minimal"
+  Plug 'lambdalisue/fern-git-status.vim'
+endif
 
 let g:fern#drawer_width = g:my_left_winwidth
 let g:fern#disable_default_mappings = 1
