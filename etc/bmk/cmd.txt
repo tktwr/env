@@ -38,10 +38,12 @@
 - d dia                                | $MY_DIARY/diary.md.html
 - t todo                               | $MY_DIARY/todo.md.html
     ---------------------------------- | ----------------------------------------
-- b bmk (C-b)                          | $MY_DOTMY_COMMON/bmk.txt
-- c cmd                                | $MY_DOTMY_COMMON/cmd.txt
+- b bmk (C-b)                          | $MY_ETC/bmk/bmk.txt
+- c cmd                                | $MY_ETC/bmk/cmd.txt
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
+    ---------------------------------- | ----------------------------------------
+- B bmk_local                          | $MY_DOTMY_COMMON/bmk_local.txt
     ---------------------------------- | ----------------------------------------
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
@@ -57,7 +59,7 @@
     ---------------------------------- | ----------------------------------------
 - p paste                              | "*p
 -   yank                               | "*y
-- B MyTabBar                           | :MyTabBar
+- 1 MyTabBar                           | :MyTabBar
 - : MyTabColon                         | :MyTabColon
 - , MyTabComma                         | :MyTabComma
 - . MyTabDots                          | :MyTabDots
@@ -101,9 +103,7 @@
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
-- c diff cmd.txt                       | :MyTabDiff $MY_ETC/bmk/cmd.txt $MY_DOTMY_COMMON/cmd.txt
-- b diff bmk.txt                       | :MyTabDiff $MY_ETC/bmk/bmk.txt $MY_DOTMY_COMMON/bmk.txt
--   dirdiff .my                        | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+-   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buffer:coc] ------------------------- | ----------------------------------------
 -   MyCocInstall                       | :MyCocInstall<CR>
