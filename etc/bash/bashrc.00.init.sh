@@ -16,3 +16,4 @@ export EDITOR='vim'
 
 export WWW_HOME="https://tktwr.github.io/memo/"
 
+export MY_PROMPT_TYPE='minimal'

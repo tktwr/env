@@ -39,7 +39,7 @@ f_get_prompt_color_shell() {
   echo $CO$MY_SHELL_NAME
 }
 
-f_set_git_prompt() {
+f_set_prompt_git() {
   source "$MY_ENV/etc/git/git-prompt.sh"
   source "$MY_ENV/etc/git/git-completion.bash"
 
@@ -75,7 +75,7 @@ f_git_ps1() {
   echo "[$MY_PYTHON_TYPE,$MY_PYTHON_VENV][$MY_BUILD_SYS,$MY_BUILD_CONFIG]$GIT_BRANCH"
 }
 
-f_set_git_prompt_fast() {
+f_set_prompt_git_fast() {
   source "$MY_ENV/etc/git/git-prompt.sh"
 
   #PROMPT_COMMAND='echo -ne "\033]0;${USERNAME}@${HOSTNAME}: ${PWD}\007";f_checkgit'
