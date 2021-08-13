@@ -18,8 +18,8 @@ init:
 #bmk-push:
 #	./make.sh --bmk-push
 
-bmk-pull:
-	./make.sh --bmk-pull
+#bmk-pull:
+#	./make.sh --bmk-pull
 
 #------------------------------------------------------
 

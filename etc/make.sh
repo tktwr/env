@@ -73,7 +73,7 @@ f_args() {
         #f_bmk_push
         ;;
       --bmk-pull)
-        f_bmk_pull
+        #f_bmk_pull
         ;;
       --clean)
         f_make --clean
