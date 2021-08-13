@@ -78,12 +78,6 @@
 - v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
--   CocDiagnostics                     | :CocDiagnostics
--   CocInfo                            | :CocInfo
--   CocOpenLog                         | :CocOpenLog
--   CocUpdate                          | :CocUpdate
--   MyCocInstall                       | :MyCocInstall
-    ---------------------------------- | ----------------------------------------
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
@@ -106,10 +100,12 @@
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buffer:coc] ------------------------- | ----------------------------------------
--   MyCocInstall                       | :MyCocInstall<CR>
--   CocUpdate                          | :CocUpdate<CR>
--   call CocAction('doHover')          | :call CocAction('doHover')<CR>
--   CocDiagnostics                     | :CocDiagnostics<CR>
+-   CocDiagnostics                     | :CocDiagnostics
+-   CocInfo                            | :CocInfo
+-   CocOpenLog                         | :CocOpenLog
+-   CocUpdate                          | :CocUpdate
+-   MyCocInstall                       | :MyCocInstall
+-   CocAction('doHover')               | :call CocAction('doHover')
     ---------------------------------- | ----------------------------------------
 -   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
 -   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
@@ -121,11 +117,11 @@
 -   coc-format-selected                | _Plug_(coc-format-selected)
 -   coc-format-selected                | _Plug_(coc-format-selected)
     ---------------------------------- | ----------------------------------------
--   CocList vimcommands                | :CocList vimcommands<CR>
--   CocList buffers                    | :CocList buffers<CR>
--   CocList words                      | :CocList words<CR>
--   CocList outline                    | :CocList outline<CR>
--   CocListResume                      | :CocListResume<CR>
+-   CocList vimcommands                | :CocList vimcommands
+-   CocList buffers                    | :CocList buffers
+-   CocList words                      | :CocList words
+-   CocList outline                    | :CocList outline
+-   CocListResume                      | :CocListResume
 [buffer:fern] ------------------------ | ----------------------------------------
 -   below split                        | :below split
     ---------------------------------- | ----------------------------------------
