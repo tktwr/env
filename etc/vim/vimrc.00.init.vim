@@ -153,8 +153,8 @@ let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
 let g:cmd_files = [
   \ "$MY_ETC/bmk/cmd.txt",
-  \ "$MY_ETC/bmk/bmk.txt",
   \ "$MY_DOTMY_COMMON/bmk_local.txt",
+  \ "$MY_ETC/bmk/bmk.txt",
   \ ]
 
 let g:bmk_winwidth = g:my_left_winwidth

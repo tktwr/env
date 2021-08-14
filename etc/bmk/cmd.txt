@@ -1,38 +1,3 @@
-[terminal:main] ---------------------- | ----------------------------------------
-- D D .                                | D .<CR>
-- G G                                  | G<CR>
-- A GA                                 | GA<CR>
-- S GS                                 | GS<CR>
-- V GV                                 | GV<CR>
-    ---------------------------------- | ----------------------------------------
-- c mycmake.sh                         | mycmake.sh<CR>
-- b mycmake.sh --build                 | mycmake.sh --build<CR>
-- 1 ,resize 10                         | ,resize 10<CR>
-- 2 ,resize 20                         | ,resize 20<CR>
-- 3 ,resize 30                         | ,resize 30<CR>
-- 4 ,resize 40                         | ,resize 40<CR>
-- T T                                  | T<CR>
-    ---------------------------------- | ----------------------------------------
--   pip-upgrade                        | python -m pip install --upgrade pip<CR>
--   git-upgrade                        | git update-git-for-windows<CR>
-[terminal:git] ----------------------- | ----------------------------------------
-- G G                                  | G<CR>
--   git status                         | git status<CR>
--   git fetch                          | git fetch<CR>
--   git rebase <branch>                | git rebase
--   git rebase --abort                 | git rebase --abort<CR>
--   git merge --no-ff <branch>         | git merge --no-ff
--   git merge --abort                  | git merge --abort<CR>
--   git branch -d <branch>             | git branch -d
--   git push origin :<branch>          | git push origin :
--   git push origin <branch>           | git push origin
--   git-clone-recursive <url>          | git clone --recurse-submodules
--   git-submodule-update-all           | git submodule update --init --recursive<CR>
--   git-untrack-file <file>            | git-untrack-file
--   git-untrack-dir <dir>              | git-untrack-dir
--   git-chmod-x <file>                 | git-chmod-x
--   git-chmod-x-all                    | git-chmod-x-all<CR>
--   git-ls-no-x                        | git-ls-no-x
 [buffer:main] ------------------------ | ----------------------------------------
 - s scratchpad                         | $MY_DIARY/scratchpad.md.html
 - d dia                                | $MY_DIARY/diary.md.html
@@ -77,6 +42,8 @@
 - s MyGstatusToggle                    | :MyGstatusToggle
 - v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
+    ---------------------------------- | ----------------------------------------
+-   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
@@ -145,5 +112,40 @@
     ---------------------------------- | ----------------------------------------
 - < leave                              | _Plug_(fern-action-leave)
 - > enter                              | _Plug_(fern-action-enter)
+[terminal:main] ---------------------- | ----------------------------------------
+- D D                                  | D<CR>
+- G G                                  | G<CR>
+- A GA                                 | GA<CR>
+- S GS                                 | GS<CR>
+- V GV                                 | GV<CR>
+    ---------------------------------- | ----------------------------------------
+- c mycmake.sh                         | mycmake.sh<CR>
+- b mycmake.sh --build                 | mycmake.sh --build<CR>
+- 1 ,resize 10                         | ,resize 10<CR>
+- 2 ,resize 20                         | ,resize 20<CR>
+- 3 ,resize 30                         | ,resize 30<CR>
+- 4 ,resize 40                         | ,resize 40<CR>
+- T T                                  | T<CR>
+    ---------------------------------- | ----------------------------------------
+-   pip-upgrade                        | python -m pip install --upgrade pip<CR>
+-   git-upgrade                        | git update-git-for-windows<CR>
+[terminal:git] ----------------------- | ----------------------------------------
+- G G                                  | G<CR>
+-   git status                         | git status<CR>
+-   git fetch                          | git fetch<CR>
+-   git rebase <branch>                | git rebase
+-   git rebase --abort                 | git rebase --abort<CR>
+-   git merge --no-ff <branch>         | git merge --no-ff
+-   git merge --abort                  | git merge --abort<CR>
+-   git branch -d <branch>             | git branch -d
+-   git push origin :<branch>          | git push origin :
+-   git push origin <branch>           | git push origin
+-   git-clone-recursive <url>          | git clone --recurse-submodules
+-   git-submodule-update-all           | git submodule update --init --recursive<CR>
+-   git-untrack-file <file>            | git-untrack-file
+-   git-untrack-dir <dir>              | git-untrack-dir
+-   git-chmod-x <file>                 | git-chmod-x
+-   git-chmod-x-all                    | git-chmod-x-all<CR>
+-   git-ls-no-x                        | git-ls-no-x
 
 # vim:set ft=bmk syntax=txt nowrap:
