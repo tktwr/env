@@ -6,15 +6,6 @@ if exists("g:loaded_cpmenu")
 endif
 let g:loaded_cpmenu = 1
 
-let s:cpm_files = g:cpm_files
-let s:cpm_titles = g:cpm_titles
-
-" menu_entry: cmd/dir/url
-let s:cpm_cmd_dict = {}
-
-" title: menu_list
-let s:cpm_menu_all = {}
-
 let s:separator = "------------------------------"
 
 "------------------------------------------------------
@@ -190,8 +181,15 @@ endfunc
 " init
 "------------------------------------------------------
 func s:CpmReload()
+  let s:cpm_files = g:cpm_files
+  let s:cpm_titles = g:cpm_titles
+
+  " menu_entry: cmd/dir/url
   let s:cpm_cmd_dict = {}
+
+  " title: menu_list
   let s:cpm_menu_all = {}
+
   for file in s:cpm_files
     call s:CpmLoad(file)
   endfor
