@@ -182,7 +182,7 @@ function! s:init_fern() abort
   nmap <buffer> 8     :call MyFernEdit(8)<CR>
   nmap <buffer> 9     :call MyFernEdit(9)<CR>
 
-  nmap <silent> <buffer> <Space> :CpmPopupMenu 0<CR>
+  nmap <silent> <buffer> <Space> :CpmOpen 0<CR>
 
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
   nmap <buffer><nowait> > <Plug>(fern-action-enter)

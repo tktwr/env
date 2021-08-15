@@ -101,10 +101,10 @@ vnoremap Y       "*y
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-nnoremap <silent> <Space>   :CpmPopupMenu 0<CR>
+nnoremap <silent> <Space>   :CpmOpen 0<CR>
 vnoremap <silent> <Space>   :'<,'>MyTestRange<CR>
 
-tnoremap <silent> <C-Space> <C-W>:CpmPopupMenu 0<CR>
+tnoremap <silent> <C-Space> <C-W>:CpmOpen 0<CR>
 
 "------------------------------------------------------
 " map.window.move

@@ -7,6 +7,9 @@ all.min:
 clean:
 	./make.sh --clean
 
+tags:
+	cd ..; make tags
+
 #------------------------------------------------------
 
 backup:

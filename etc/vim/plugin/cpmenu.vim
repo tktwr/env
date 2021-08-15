@@ -20,13 +20,13 @@ let s:separator = "------------------------------"
 "------------------------------------------------------
 " util
 "------------------------------------------------------
-func s:CpmFill(str, separator)
+func s:CpmFillItem(str, separator)
   let n = len(a:str)
   let o = a:str.a:separator[n:]
   return o
 endfunc
 
-func s:CpmFind(list_of_str, pattern)
+func s:CpmFindByKey(list_of_str, pattern)
   let idx = 0
   for s in a:list_of_str
     if (match(s, a:pattern) == 0)
@@ -41,7 +41,7 @@ endfunc
 " load
 "------------------------------------------------------
 func s:CpmRegisterSeparator(list, dict, title)
-  let key = s:CpmFill(a:title, s:separator)
+  let key = s:CpmFillItem(a:title, s:separator)
   let val = ":echo"
 
   let a:dict[key] = val
@@ -87,7 +87,7 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-func s:CpmSize()
+func s:CpmGetNumTitles()
   if &buftype == 'terminal'
     let size = len(s:cpm_titles['terminal'])
   elseif &filetype == 'fern'
@@ -98,17 +98,17 @@ func s:CpmSize()
   return size
 endfunc
 
-func s:CpmNext()
-  let n = s:CpmSize()
+func s:CpmNextNr()
+  let n = s:CpmGetNumTitles()
   return (w:cpm_menu_nr + 1) % n
 endfunc
 
-func s:CpmPrev()
-  let n = s:CpmSize()
+func s:CpmPrevNr()
+  let n = s:CpmGetNumTitles()
   return w:cpm_menu_nr == 0 ? n - 1 : w:cpm_menu_nr - 1
 endfunc
 
-func s:CpmList(nr)
+func s:CpmGetMenu(nr)
   if &buftype == 'terminal'
     let title = s:cpm_titles['terminal'][a:nr]
   elseif &filetype == 'fern'
@@ -127,7 +127,7 @@ func s:CpmFixPos(id)
   \ })
 endfunc
 
-func CpmPopupMenuFilter(id, key)
+func CpmFilter(id, key)
   if a:key == "\<Space>" || a:key == "\<C-Space>"
     call popup_close(a:id, 0)
     return 1
@@ -136,18 +136,18 @@ func CpmPopupMenuFilter(id, key)
     return 1
   elseif a:key == 'l'
     call popup_close(a:id, 0)
-    let nr = s:CpmNext()
-    let id = s:CpmPopupMenu(nr)
+    let nr = s:CpmNextNr()
+    let id = s:CpmOpen(nr)
     call s:CpmFixPos(id)
     return 1
   elseif a:key == 'h'
     call popup_close(a:id, 0)
-    let nr = s:CpmPrev()
-    let id = s:CpmPopupMenu(nr)
+    let nr = s:CpmPrevNr()
+    let id = s:CpmOpen(nr)
     call s:CpmFixPos(id)
     return 1
   else
-    let idx = s:CpmFind(w:cpm_menu, '^ '.a:key.' ')
+    let idx = s:CpmFindByKey(w:cpm_menu, '^ '.a:key.' ')
     if (idx != -1)
       let idx = idx + 1
       call popup_close(a:id, idx)
@@ -157,7 +157,7 @@ func CpmPopupMenuFilter(id, key)
   return popup_filter_menu(a:id, a:key)
 endfunc
 
-func CpmPopupMenuHandler(id, result)
+func CpmHandler(id, result)
   if a:result == 0
   elseif a:result > 0
     let idx = a:result - 1
@@ -170,12 +170,12 @@ func CpmPopupMenuHandler(id, result)
   endif
 endfunc
 
-func s:CpmPopupMenu(menu_nr)
+func s:CpmOpen(menu_nr)
   let w:cpm_menu_nr = a:menu_nr
-  let w:cpm_menu = s:CpmList(w:cpm_menu_nr)
+  let w:cpm_menu = s:CpmGetMenu(w:cpm_menu_nr)
   let winid = popup_menu(w:cpm_menu, #{
-    \ filter: 'CpmPopupMenuFilter',
-    \ callback: 'CpmPopupMenuHandler',
+    \ filter: 'CpmFilter',
+    \ callback: 'CpmHandler',
     \ border: [0,0,0,0],
     \ padding: [0,0,0,0],
     \ pos: 'botleft',
@@ -206,6 +206,6 @@ call s:CpmInit()
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command          CpmReload     call s:CpmReload()
-command -nargs=1 CpmPopupMenu  call s:CpmPopupMenu(<f-args>)
+command          CpmReload    call s:CpmReload()
+command -nargs=1 CpmOpen      call s:CpmOpen(<f-args>)
 
