@@ -3,11 +3,17 @@
 #------------------------------------------------------
 # env
 #------------------------------------------------------
-export MY_HOME="/c/Users/$USERNAME"
+if [ -n "$USERPROFILE" ]; then
+  # gitbash/msys2
+  export MY_HOME="/c/Users/$USERNAME"
+else
+  # others
+  export MY_HOME="$HOME"
+fi
+
 export MY_ENV="$MY_HOME/MyConfig/tktwr.github/env"
 export MY_ETC="$MY_ENV/etc"
 export MY_BIN="$MY_ENV/bin"
-export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python38"
 
 #------------------------------------------------------
 # path
@@ -17,8 +23,13 @@ if [ -z "$SYS_PATH" ]; then
 fi
 export PATH="$SYS_PATH"
 
-export PATH="$USER_PYTHON_HOME:$PATH"
-export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+if [ -n "$USERPROFILE" ]; then
+  # gitbash/msys2
+  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python38"
+  export PATH="$USER_PYTHON_HOME:$PATH"
+  export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+fi
+
 export PATH="$MY_BIN:$PATH"
 
 #------------------------------------------------------
@@ -44,7 +55,7 @@ alias s='source $HOME/.bashrc'
 alias h='history 20'
 alias j='jobs -l'
 alias where='type -all'
-alias ls='ls -F --color=auto'
+alias ls='ls -F'
 alias vi='vim'
 
 alias cd.etc='cd $MY_ETC'

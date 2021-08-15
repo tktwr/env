@@ -11,8 +11,6 @@ DOT_FILES_COMMON="\
 .clang-format \
 .gitignore_global \
 .minttyrc \
-.NERDTreeBookmarks \
-.tmux.conf \
 .my/pushdrc \
 "
 DOT_FILES_DIFF="\

@@ -18,12 +18,6 @@ backup:
 init:
 	./make.sh --init
 
-#bmk-push:
-#	./make.sh --bmk-push
-
-#bmk-pull:
-#	./make.sh --bmk-pull
-
 #------------------------------------------------------
 
 cmp:
@@ -41,6 +35,7 @@ help:
 	@echo "all        ... all"
 	@echo "all.min    ... all.min"
 	@echo "clean      ... clean"
+	@echo "tags       ... tags"
 	@echo "backup     ... backup"
 	@echo "init       ... init"
 	@echo "cmp        ... compare"
