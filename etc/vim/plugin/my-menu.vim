@@ -1,15 +1,20 @@
 "======================================================
 " MyMenu
 "======================================================
-if exists("g:loaded_my_menu")
-  finish
+if exists("g:loaded_cpm")
+  "finish
 endif
-let g:loaded_my_menu = 1
+let g:loaded_cpm = 1
 
-let s:cmd_files = g:cmd_files
-let s:cmd_dict = {}
-let s:my_menu_edit = []
-let s:my_menu_term = []
+let s:cpm_files = g:cpm_files
+let s:cpm_titles = g:cpm_titles
+
+" menu_entry: cmd/dir/url
+let s:cpm_cmd_dict = {}
+
+" title: menu_list
+let s:cpm_menu_all = {}
+
 let s:separator = "------------------------------"
 
 "------------------------------------------------------
@@ -65,27 +70,16 @@ func s:MyMenuLoad(cmd_file)
     if (match(line, '^\[.\+\]') == 0)
       " title
       let title = BmkGetTitle(line)
-      if (match(title, 'terminal') == 0)
-        let list_menu = [s:my_menu_term]
-      elseif (match(title, 'buffer') == 0)
-        let list_menu = [s:my_menu_edit]
-      else
-        let list_menu = [s:my_menu_term, s:my_menu_edit]
-      endif
-      for menu in list_menu
-        call add(menu, [])
-        call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "[".title."] ")
-      endfor
+
+      let menu = []
+      let s:cpm_menu_all[title] = menu
+      call s:MyMenuRegisterSeparator(menu, s:cpm_cmd_dict, "[".title."] ")
     elseif (match(line, '^\s*---') == 0)
       " separator
-      for menu in list_menu
-        call s:MyMenuRegisterSeparator(menu[-1], s:cmd_dict, "   ")
-      endfor
+      call s:MyMenuRegisterSeparator(menu, s:cpm_cmd_dict, "   ")
     elseif (match(line, '^\s*[-+] ') == 0)
       " item
-      for menu in list_menu
-        call s:MyMenuRegister(menu[-1], s:cmd_dict, line)
-      endfor
+      call s:MyMenuRegister(menu, s:cpm_cmd_dict, line)
     endif
   endfor
 endfunc
@@ -93,28 +87,36 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-func MyMenuNext()
+func MyMenuSize()
   if &buftype == 'terminal'
-    return (w:my_menu_nr + 1) % len(s:my_menu_term)
+    let size = len(s:cpm_titles['terminal'])
+  elseif &filetype == 'fern'
+    let size = len(s:cpm_titles['fern'])
   else
-    return (w:my_menu_nr + 1) % len(s:my_menu_edit)
+    let size = len(s:cpm_titles['buffer'])
   endif
+  return size
+endfunc
+
+func MyMenuNext()
+  let n = MyMenuSize()
+  return (w:cpm_menu_nr + 1) % n
 endfunc
 
 func MyMenuPrev()
-  if &buftype == 'terminal'
-    return w:my_menu_nr == 0 ? len(s:my_menu_term) - 1 : w:my_menu_nr - 1
-  else
-    return w:my_menu_nr == 0 ? len(s:my_menu_edit) - 1 : w:my_menu_nr - 1
-  endif
+  let n = MyMenuSize()
+  return w:cpm_menu_nr == 0 ? n - 1 : w:cpm_menu_nr - 1
 endfunc
 
 func MyMenuList(nr)
   if &buftype == 'terminal'
-    return s:my_menu_term[a:nr]
+    let name = s:cpm_titles['terminal'][a:nr]
+  elseif &filetype == 'fern'
+    let name = s:cpm_titles['fern'][a:nr]
   else
-    return s:my_menu_edit[a:nr]
+    let name = s:cpm_titles['buffer'][a:nr]
   endif
+  return s:cpm_menu_all[name]
 endfunc
 
 func MyMenuFixPos(id)
@@ -145,7 +147,7 @@ func MyMenuPopupMenuFilter(id, key)
     call MyMenuFixPos(id)
     return 1
   else
-    let idx = MyMenuFind(w:my_menu, '^ '.a:key.' ')
+    let idx = MyMenuFind(w:cpm_menu, '^ '.a:key.' ')
     if (idx != -1)
       let idx = idx + 1
       call popup_close(a:id, idx)
@@ -161,7 +163,7 @@ func MyMenuPopupMenuHandler(id, result)
     let idx = a:result - 1
 
     " key in menu
-    let cmd = s:cmd_dict[w:my_menu[idx]]
+    let cmd = s:cpm_cmd_dict[w:cpm_menu[idx]]
     let cmd = expand(cmd)
 
     call BmkEdit(cmd, 0)
@@ -169,9 +171,9 @@ func MyMenuPopupMenuHandler(id, result)
 endfunc
 
 func MyMenuPopupMenu(menu_nr)
-  let w:my_menu_nr = a:menu_nr
-  let w:my_menu = MyMenuList(w:my_menu_nr)
-  let winid = popup_menu(w:my_menu, #{
+  let w:cpm_menu_nr = a:menu_nr
+  let w:cpm_menu = MyMenuList(w:cpm_menu_nr)
+  let winid = popup_menu(w:cpm_menu, #{
     \ filter: 'MyMenuPopupMenuFilter',
     \ callback: 'MyMenuPopupMenuHandler',
     \ border: [0,0,0,0],
@@ -188,10 +190,9 @@ endfunc
 " init
 "------------------------------------------------------
 func s:MyMenuReload()
-  let s:cmd_dict = {}
-  let s:my_menu_edit = []
-  let s:my_menu_term = []
-  for file in s:cmd_files
+  let s:cpm_cmd_dict = {}
+  let s:cpm_menu_all = {}
+  for file in s:cpm_files
     call s:MyMenuLoad(file)
   endfor
 endfunc

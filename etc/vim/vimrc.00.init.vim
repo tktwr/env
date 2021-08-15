@@ -151,11 +151,16 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
-let g:cmd_files = [
+let g:cpm_files = [
   \ "$MY_ETC/bmk/cmd.txt",
-  \ "$MY_DOTMY_COMMON/bmk_local.txt",
   \ "$MY_ETC/bmk/bmk.txt",
+  \ "$MY_DOTMY_COMMON/bmk_local.txt",
   \ ]
+let g:cpm_titles = {
+  \ 'terminal': ['terminal:main', 'terminal:git', 'bmk:dir', 'bmk:local'],
+  \ 'fern': ['buffer:fern', 'bmk:dir', 'bmk:local'],
+  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc'],
+  \ }
 
 let g:bmk_winwidth = g:my_left_winwidth
 
