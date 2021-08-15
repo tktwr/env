@@ -69,9 +69,9 @@ f_select_python	etc/bash/bashrc.40.python.sh	/^f_select_python() {$/;"	f
 f_set_DISPLAY	etc/bash/bashrc.20.func.sh	/^f_set_DISPLAY() { export DISPLAY="$*:0.0"; }$/;"	f
 f_set_core_off	etc/bash/bashrc.20.func.sh	/^f_set_core_off() { ulimit -S -c 0; }$/;"	f
 f_set_core_on	etc/bash/bashrc.20.func.sh	/^f_set_core_on() { ulimit -S -c unlimited; }$/;"	f
-f_set_git_prompt	etc/bash/bashrc.31.git-prompt.sh	/^f_set_git_prompt() {$/;"	f
-f_set_git_prompt_fast	etc/bash/bashrc.31.git-prompt.sh	/^f_set_git_prompt_fast() {$/;"	f
-f_set_prompt	etc/bash/bashrc.20.func.sh	/^f_set_prompt() {$/;"	f
+f_set_prompt_git	etc/bash/bashrc.31.git-prompt.sh	/^f_set_prompt_git() {$/;"	f
+f_set_prompt_git_fast	etc/bash/bashrc.31.git-prompt.sh	/^f_set_prompt_git_fast() {$/;"	f
+f_set_prompt_minimal	etc/bash/bashrc.21.prompt.sh	/^f_set_prompt_minimal() {$/;"	f
 f_set_python_anaconda	etc/bash/bashrc.50.os.windows.sh	/^f_set_python_anaconda() {$/;"	f
 f_set_python_miniconda	etc/bash/bashrc.50.os.windows.sh	/^f_set_python_miniconda() {$/;"	f
 f_set_python_win	etc/bash/bashrc.50.os.windows.sh	/^f_set_python_win() {$/;"	f
@@ -193,6 +193,7 @@ mypython-venv-info	etc/bash/bashrc.40.python.sh	/^mypython-venv-info() {$/;"	f
 net	etc/bash/bashrc.50.os.windows.sh	/^alias net='winpty net'$/;"	a
 net-info	etc/bash/bashrc.50.os.windows.sh	/^net-info() {$/;"	f
 nm	etc/bash/bashrc.80.alias.sh	/^alias nm='nm -C'$/;"	a
+p	etc/bash/bashrc.21.prompt.sh	/^alias p='f_set_prompt_minimal'$/;"	a
 p	etc/bash/bashrc.50.os.linux.sh	/^alias p='qpdfview --unique'$/;"	a
 pe	etc/bash/bashrc.81.my.sh	/^alias pe='print-env'$/;"	a
 ping	etc/bash/bashrc.50.os.windows.sh	/^alias ping='winpty ping'$/;"	a

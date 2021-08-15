@@ -64,7 +64,7 @@ $NVIM_COC_LOG_LEVEL	etc/vim/vim-plug/coc.vim	/^let $NVIM_COC_LOG_LEVEL='debug'$/
 <C-A>	etc/vim/vimrc.70.map.vim	/^ xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)$/;"	m
 <C-A>	etc/vim/vimrc.70.map.vim	/^cnoremap <C-A>   <Home>$/;"	m
 <C-A>	etc/vim/vimrc.70.map.vim	/^inoremap <C-A>   <Home>$/;"	m
-<C-B>	etc/vim/vimrc.70.map.vim	/^ nnoremap <silent> <C-B>   :edit $MY_DOTMY_COMMON\/bmk.txt<CR>$/;"	m
+<C-B>	etc/vim/vimrc.70.map.vim	/^ nnoremap <silent> <C-B>   :edit $MY_ETC\/bmk\/bmk.txt<CR>$/;"	m
 <C-B>	etc/vim/vimrc.70.map.vim	/^cnoremap <C-B>   <Left>$/;"	m
 <C-B>	etc/vim/vimrc.70.map.vim	/^inoremap <C-B>   <Left>$/;"	m
 <C-BS>	etc/vim/vimrc.70.map.vim	/^nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)$/;"	m
@@ -137,8 +137,8 @@ $NVIM_COC_LOG_LEVEL	etc/vim/vim-plug/coc.vim	/^let $NVIM_COC_LOG_LEVEL='debug'$/
 <S-PageUp>	etc/vim/vimrc.70.map.vim	/^nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>$/;"	m
 <S-Tab>	etc/vim/vim-plug/vim-vsnip.vim	/^imap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'$/;"	m
 <S-Tab>	etc/vim/vim-plug/vim-vsnip.vim	/^smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-Tab>'$/;"	m
-<Space>	etc/vim/vim-plug/fern.vim	/^  nmap <silent> <buffer> <Space> :call MyMenuPopupMenu(0)<CR>$/;"	m
-<Space>	etc/vim/vimrc.70.map.vim	/^nnoremap <silent> <Space>   :call MyMenuPopupMenu(0)<CR>$/;"	m
+<Space>	etc/vim/vim-plug/fern.vim	/^  nmap <silent> <buffer> <Space> :CpmPopupMenu 0<CR>$/;"	m
+<Space>	etc/vim/vimrc.70.map.vim	/^nnoremap <silent> <Space>   :CpmPopupMenu 0<CR>$/;"	m
 <Space>	etc/vim/vimrc.70.map.vim	/^vnoremap <silent> <Space>   :'<,'>MyTestRange<CR>$/;"	m
 <TAB>	etc/vim/vimrc.70.map.vim	/^nnoremap <silent> <TAB>      :silent WinBufHistPrint<CR>$/;"	m
 <Tab>	etc/vim/vim-plug/vim-vsnip.vim	/^imap <expr> <Tab>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<Tab>'$/;"	m
@@ -190,6 +190,10 @@ BmkViewItem	etc/vim/plugin/bmk.vim	/^func BmkViewItem(winnr)$/;"	f
 BmkViewThis	etc/vim/plugin/bmk.vim	/^func BmkViewThis()$/;"	f
 C	etc/vim/vimrc.70.map.vim	/^vmap C  <Plug>NERDCommenterToggle$/;"	m
 CD	etc/vim/plugin/fm.vim	/^command -nargs=* -complete=dir CD call Fm("cd", "<args>")$/;"	c
+CpmPopupMenu	etc/vim/plugin/cpmenu.vim	/^command -nargs=1 CpmPopupMenu  call s:CpmPopupMenu(<f-args>)$/;"	c
+CpmPopupMenuFilter	etc/vim/plugin/cpmenu.vim	/^func CpmPopupMenuFilter(id, key)$/;"	f
+CpmPopupMenuHandler	etc/vim/plugin/cpmenu.vim	/^func CpmPopupMenuHandler(id, result)$/;"	f
+CpmReload	etc/vim/plugin/cpmenu.vim	/^command          CpmReload     call s:CpmReload()$/;"	c
 D	etc/vim/vim-plug/fern.vim	/^  nmap <buffer> D     <Plug>(fern-action-remove)$/;"	m
 D	etc/vim/vim-plug/gv.vim	/^  nmap <buffer> D       O$/;"	m
 D	etc/vim/vim-plug/vim-fugitive.vim	/^  nmap <buffer> D       dd$/;"	m
@@ -318,16 +322,6 @@ MyMakeImageLink	etc/vim/vimrc.64.edit.vim	/^command MyMakeImageLink          cal
 MyMakeLink	etc/vim/vimrc.64.edit.vim	/^command MyMakeLink               call s:MyMakeLink('- ')$/;"	c
 MyMan	etc/vim/vimrc.66.external.vim	/^command -nargs=1 MyMan     call s:MyMan(<f-args>)$/;"	c
 MyMemo	etc/vim/vimrc.66.external.vim	/^command -nargs=? MyMemo    call s:MyMemo(<f-args>)$/;"	c
-MyMenuFill	etc/vim/plugin/my-menu.vim	/^func MyMenuFill(str, separator)$/;"	f
-MyMenuFind	etc/vim/plugin/my-menu.vim	/^func MyMenuFind(list_of_str, pattern)$/;"	f
-MyMenuFixPos	etc/vim/plugin/my-menu.vim	/^func MyMenuFixPos(id)$/;"	f
-MyMenuList	etc/vim/plugin/my-menu.vim	/^func MyMenuList(nr)$/;"	f
-MyMenuNext	etc/vim/plugin/my-menu.vim	/^func MyMenuNext()$/;"	f
-MyMenuPopupMenu	etc/vim/plugin/my-menu.vim	/^func MyMenuPopupMenu(menu_nr)$/;"	f
-MyMenuPopupMenuFilter	etc/vim/plugin/my-menu.vim	/^func MyMenuPopupMenuFilter(id, key)$/;"	f
-MyMenuPopupMenuHandler	etc/vim/plugin/my-menu.vim	/^func MyMenuPopupMenuHandler(id, result)$/;"	f
-MyMenuPrev	etc/vim/plugin/my-menu.vim	/^func MyMenuPrev()$/;"	f
-MyMenuReload	etc/vim/plugin/my-menu.vim	/^command MyMenuReload  call s:MyMenuReload()$/;"	c
 MyNERDTreeFind	etc/vim/vim-plug/nerdtree.vim	/^command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)$/;"	c
 MyNERDTreeFind	etc/vim/vim-plug/nerdtree.vim	/^func MyNERDTreeFind(dir)$/;"	f
 MyNERDTreeOpen	etc/vim/vim-plug/nerdtree.vim	/^command                         MyNERDTreeOpen   call MyNERDTreeOpen()$/;"	c
@@ -550,12 +544,13 @@ g:UltiSnipsExpandTrigger	etc/vim/vim-plug/ultisnips.vim	/^let g:UltiSnipsExpandT
 g:UltiSnipsJumpBackwardTrigger	etc/vim/vim-plug/ultisnips.vim	/^let g:UltiSnipsJumpBackwardTrigger="<c-z>"$/;"	v
 g:UltiSnipsJumpForwardTrigger	etc/vim/vim-plug/ultisnips.vim	/^let g:UltiSnipsJumpForwardTrigger="<c-b>"$/;"	v
 g:bmk_winwidth	etc/vim/vimrc.00.init.vim	/^let g:bmk_winwidth = g:my_left_winwidth$/;"	v
-g:cmd_files	etc/vim/vimrc.00.init.vim	/^let g:cmd_files = [$/;"	v
 g:coc_config_home	etc/vim/vim-plug/coc.vim	/^  let g:coc_config_home = expand('$MY_VIM\/coc\/linux')$/;"	v
 g:coc_config_home	etc/vim/vim-plug/coc.vim	/^  let g:coc_config_home = expand('$MY_VIM_WIN\/coc\/win')$/;"	v
 g:coc_config_home	etc/vim/vim-plug/coc.vim	/^  let g:coc_config_home = expand('~\/.vim')$/;"	v
 g:coc_data_home	etc/vim/vim-plug/coc.vim	/^  let g:coc_data_home = expand('$MY_VIM_WIN\/coc_data\/win')$/;"	v
 g:coc_disable_startup_warning	etc/vim/vim-plug/coc.vim	/^let g:coc_disable_startup_warning = 1$/;"	v
+g:cpm_files	etc/vim/vimrc.00.init.vim	/^let g:cpm_files = [$/;"	v
+g:cpm_titles	etc/vim/vimrc.00.init.vim	/^let g:cpm_titles = {$/;"	v
 g:eskk#dictionary	etc/vim/vim-plug/eskk.vim	/^let g:eskk#dictionary = { 'path': "~\/.eskk\/skk-jisyo.user", 'sorted': 0, 'encoding': 'utf-8', /;"	v
 g:eskk#directory	etc/vim/vim-plug/eskk.vim	/^let g:eskk#directory = "~\/.eskk"$/;"	v
 g:eskk#large_dictionary	etc/vim/vim-plug/eskk.vim	/^let g:eskk#large_dictionary = { 'path': "~\/.eskk\/SKK-JISYO.L.utf-8", 'sorted': 0, 'encoding': /;"	v
@@ -572,12 +567,12 @@ g:indent_guides_default_mapping	etc/vim/vim-plug/vim-indent-guides.vim	/^let g:i
 g:indent_guides_enable_on_vim_startup	etc/vim/vim-plug/vim-indent-guides.vim	/^let g:indent_guides_enable_on_vim_startup = 0$/;"	v
 g:indent_guides_exclude_filetypes	etc/vim/vim-plug/vim-indent-guides.vim	/^let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'bmk']$/;"	v
 g:loaded_bmk	etc/vim/plugin/bmk.vim	/^let g:loaded_bmk = 1$/;"	v
+g:loaded_cpmenu	etc/vim/plugin/cpmenu.vim	/^let g:loaded_cpmenu = 1$/;"	v
 g:loaded_dia	etc/vim/plugin/dia.vim	/^let g:loaded_dia = 1$/;"	v
 g:loaded_fm	etc/vim/plugin/fm.vim	/^let g:loaded_fm = 1$/;"	v
 g:loaded_gitlog	etc/vim/plugin/git-log.vim	/^let g:loaded_gitlog = 1$/;"	v
 g:loaded_lookup	etc/vim/plugin/lookup.vim	/^let g:loaded_lookup = 1$/;"	v
 g:loaded_memo	etc/vim/plugin/memo.vim	/^let g:loaded_memo = 1$/;"	v
-g:loaded_my_menu	etc/vim/plugin/my-menu.vim	/^let g:loaded_my_menu = 1$/;"	v
 g:loaded_my_test	etc/vim/plugin/my_test.vim	/^let g:loaded_my_test = 1$/;"	v
 g:loaded_tag_catalog	etc/vim/plugin/tag-catalog.vim	/^let g:loaded_tag_catalog = 1$/;"	v
 g:loaded_winbufhist	etc/vim/plugin/winbufhist.vim	/^let g:loaded_winbufhist = 1$/;"	v
@@ -642,6 +637,19 @@ s:BmkPrevItem	etc/vim/plugin/bmk.vim	/^func s:BmkPrevItem()$/;"	f
 s:BmkPrintItem	etc/vim/plugin/bmk.vim	/^func s:BmkPrintItem()$/;"	f
 s:CmdCd	etc/vim/plugin/fm.vim	/^func! s:CmdCd(dir)$/;"	f
 s:CmdLs	etc/vim/plugin/fm.vim	/^func! s:CmdLs(dir)$/;"	f
+s:CpmFill	etc/vim/plugin/cpmenu.vim	/^func s:CpmFill(str, separator)$/;"	f
+s:CpmFind	etc/vim/plugin/cpmenu.vim	/^func s:CpmFind(list_of_str, pattern)$/;"	f
+s:CpmFixPos	etc/vim/plugin/cpmenu.vim	/^func s:CpmFixPos(id)$/;"	f
+s:CpmInit	etc/vim/plugin/cpmenu.vim	/^func s:CpmInit()$/;"	f
+s:CpmList	etc/vim/plugin/cpmenu.vim	/^func s:CpmList(nr)$/;"	f
+s:CpmLoad	etc/vim/plugin/cpmenu.vim	/^func s:CpmLoad(cmd_file)$/;"	f
+s:CpmNext	etc/vim/plugin/cpmenu.vim	/^func s:CpmNext()$/;"	f
+s:CpmPopupMenu	etc/vim/plugin/cpmenu.vim	/^func s:CpmPopupMenu(menu_nr)$/;"	f
+s:CpmPrev	etc/vim/plugin/cpmenu.vim	/^func s:CpmPrev()$/;"	f
+s:CpmRegister	etc/vim/plugin/cpmenu.vim	/^func s:CpmRegister(list, dict, line)$/;"	f
+s:CpmRegisterSeparator	etc/vim/plugin/cpmenu.vim	/^func s:CpmRegisterSeparator(list, dict, title)$/;"	f
+s:CpmReload	etc/vim/plugin/cpmenu.vim	/^func s:CpmReload()$/;"	f
+s:CpmSize	etc/vim/plugin/cpmenu.vim	/^func s:CpmSize()$/;"	f
 s:DefineCommands	etc/vim/plugin/fm.vim	/^func! s:DefineCommands()$/;"	f
 s:DefineCommands	etc/vim/plugin/lookup.vim	/^func! s:DefineCommands ()$/;"	f
 s:DefineCommands	etc/vim/plugin/memo.vim	/^func! s:DefineCommands()$/;"	f
@@ -676,11 +684,6 @@ s:MyLineNumberToggle	etc/vim/vimrc.60.command.vim	/^func s:MyLineNumberToggle()$
 s:MyMakeLink	etc/vim/vimrc.64.edit.vim	/^func s:MyMakeLink(prefix)$/;"	f
 s:MyMan	etc/vim/vimrc.66.external.vim	/^func s:MyMan(word)$/;"	f
 s:MyMemo	etc/vim/vimrc.66.external.vim	/^func s:MyMemo(...)$/;"	f
-s:MyMenuInit	etc/vim/plugin/my-menu.vim	/^func s:MyMenuInit()$/;"	f
-s:MyMenuLoad	etc/vim/plugin/my-menu.vim	/^func s:MyMenuLoad(cmd_file)$/;"	f
-s:MyMenuRegister	etc/vim/plugin/my-menu.vim	/^func s:MyMenuRegister(list, dict, line)$/;"	f
-s:MyMenuRegisterSeparator	etc/vim/plugin/my-menu.vim	/^func s:MyMenuRegisterSeparator(list, dict, title)$/;"	f
-s:MyMenuReload	etc/vim/plugin/my-menu.vim	/^func s:MyMenuReload()$/;"	f
 s:MyPydoc	etc/vim/vimrc.66.external.vim	/^func s:MyPydoc(word)$/;"	f
 s:MySetJapanese	etc/vim/vimrc.61.enc.vim	/^func s:MySetJapanese()$/;"	f
 s:MySetTab	etc/vim/vimrc.60.command.vim	/^func s:MySetTab(nr)$/;"	f
@@ -706,8 +709,10 @@ s:VMemo	etc/vim/plugin/memo.vim	/^func! s:VMemo(tagname)$/;"	f
 s:bmk_debug	etc/vim/plugin/bmk.vim	/^let s:bmk_debug = 0$/;"	v
 s:bmk_winwidth	etc/vim/plugin/bmk.vim	/^  let s:bmk_winwidth = g:bmk_winwidth$/;"	v
 s:bmk_winwidth	etc/vim/plugin/bmk.vim	/^let s:bmk_winwidth = 30$/;"	v
-s:cmd_dict	etc/vim/plugin/my-menu.vim	/^let s:cmd_dict = {}$/;"	v
-s:cmd_files	etc/vim/plugin/my-menu.vim	/^let s:cmd_files = g:cmd_files$/;"	v
+s:cpm_cmd_dict	etc/vim/plugin/cpmenu.vim	/^let s:cpm_cmd_dict = {}$/;"	v
+s:cpm_files	etc/vim/plugin/cpmenu.vim	/^let s:cpm_files = g:cpm_files$/;"	v
+s:cpm_menu_all	etc/vim/plugin/cpmenu.vim	/^let s:cpm_menu_all = {}$/;"	v
+s:cpm_titles	etc/vim/plugin/cpmenu.vim	/^let s:cpm_titles = g:cpm_titles$/;"	v
 s:dia	etc/vim/plugin/dia.vim	/^let s:dia = g:my_dia_file$/;"	v
 s:dq	etc/vim/plugin/gtags.vim	/^        let s:dq = '"'$/;"	v
 s:fm_cmd_doc	etc/vim/plugin/fm.vim	/^let s:fm_cmd_doc = "ooffice"$/;"	v
@@ -733,10 +738,8 @@ s:my_fugitive_settings	etc/vim/vim-plug/vim-fugitive.vim	/^func s:my_fugitive_se
 s:my_git_settings	etc/vim/vim-plug/gv.vim	/^func s:my_git_settings()$/;"	f
 s:my_gv_settings	etc/vim/vim-plug/gv.vim	/^func s:my_gv_settings()$/;"	f
 s:my_map_win	etc/vim/vimrc.70.map.vim	/^func s:my_map_win()$/;"	f
-s:my_menu_edit	etc/vim/plugin/my-menu.vim	/^let s:my_menu_edit = []$/;"	v
-s:my_menu_term	etc/vim/plugin/my-menu.vim	/^let s:my_menu_term = []$/;"	v
 s:prev_screen	etc/vim/plugin/git-log.vim	/^let s:prev_screen = ""$/;"	v
-s:separator	etc/vim/plugin/my-menu.vim	/^let s:separator = "------------------------------"$/;"	v
+s:separator	etc/vim/plugin/cpmenu.vim	/^let s:separator = "------------------------------"$/;"	v
 s:sq	etc/vim/plugin/gtags.vim	/^        let s:sq = "'"$/;"	v
 s:tag_catalog_winname	etc/vim/plugin/tag-catalog.vim	/^let s:tag_catalog_winname = '\\[tag-catalog\\]'$/;"	v
 s:tmpfile	etc/vim/plugin/lookup.vim	/^let s:tmpfile = tempname()$/;"	v

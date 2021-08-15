@@ -33,7 +33,7 @@
 - g MyGgrepHere                        | :silent MyGgrepHere
 - v vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
-- R MyMenuReload                       | :MyMenuReload
+- R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
     ---------------------------------- | ----------------------------------------
 - Q quit (Q)                           | :confirm qall
