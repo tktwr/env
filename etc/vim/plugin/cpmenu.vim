@@ -2,7 +2,7 @@
 " Custom Popup Menu
 "======================================================
 if exists("g:loaded_cpmenu")
-  "finish
+  finish
 endif
 let g:loaded_cpmenu = 1
 
@@ -206,6 +206,6 @@ call s:CpmInit()
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command          CpmReload    call s:CpmReload()
-command -nargs=1 CpmOpen      call s:CpmOpen(<f-args>)
+command CpmReload    call s:CpmReload()
+command CpmOpen      call s:CpmOpen(0)
 
