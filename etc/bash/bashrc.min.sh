@@ -57,6 +57,11 @@ alias j='jobs -l'
 alias where='type -all'
 alias ls='ls -F'
 alias vi='vim'
+alias more='less'
+
+alias gs='git status'
+alias gf='git fetch'
+alias G='git graph -6'
 
 alias cd.etc='cd $MY_ETC'
 alias cd.bin='cd $MY_BIN'
