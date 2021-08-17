@@ -91,5 +91,3 @@ f_set_prompt_git_fast() {
   export PS1="$PS1_HOST:$PS1_SHELL$PS1_GIT\n$dir$ECOD\$ "
 }
 
-alias g.='f_checkgit_force'
-

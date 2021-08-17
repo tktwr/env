@@ -1,11 +1,8 @@
 all:
 	./make.sh --all
 
-all.min:
+min:
 	./make.sh --min
-
-clean:
-	./make.sh --clean
 
 tags:
 	cd ..; make tags
@@ -34,7 +31,6 @@ vimdirdiff:
 help:
 	@echo "all        ... all"
 	@echo "all.min    ... all.min"
-	@echo "clean      ... clean"
 	@echo "tags       ... tags"
 	@echo "backup     ... backup"
 	@echo "init       ... init"

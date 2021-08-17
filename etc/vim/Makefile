@@ -1,19 +1,14 @@
-BUILD_DIR=build
-
 all:
 	./make.sh --all
 
-all.min:
+min:
 	./make.sh --min
 
-clean:
-	./make.sh --clean
-
 log: log.clean
-	vim -c "q" --startuptime $(BUILD_DIR)/log.txt
-	vim -u NONE -c "q" --startuptime $(BUILD_DIR)/log.zero.txt
+	vim -c "q" --startuptime $(HOME)/vim_log.txt
+	vim -u NONE -c "q" --startuptime $(HOME)/vim_log_zero.txt
 
 log.clean:
-	rm -f $(BUILD_DIR)/log.txt
-	rm -f $(BUILD_DIR)/log.zero.txt
+	rm -f $(HOME)/vim_log.txt
+	rm -f $(HOME)/vim_log_zero.txt
 

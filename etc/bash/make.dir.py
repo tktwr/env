@@ -17,18 +17,6 @@ def f_expand_env(s):
     return s
 
 
-def f_expand_env2(fname):
-    if os.getenv('USERPROFILE') != None:
-        fname = fname.replace('$USERPROFILE', os.environ['USERPROFILE'])
-    if os.getenv('USERNAME') != None:
-        fname = fname.replace('$USERNAME', os.environ['USERNAME'])
-    if os.getenv('HOME') != None:
-        fname = fname.replace('$HOME', os.environ['HOME'])
-    if os.getenv('VULKAN_SDK') != None:
-        fname = fname.replace('$VULKAN_SDK', os.environ['VULKAN_SDK'])
-    return fname
-
-
 def f_expand_path_unix(fname):
     fname = f_expand_env(fname)
     fname = re.sub('^C:', '/c', fname)
@@ -64,8 +52,6 @@ def f_make_dir(fname):
                 print(f"export {env_name}_WIN=\"{dir_name_win}\"")
                 print(f"alias cd.{name}='cd \"{dir_name}\"'")
                 print(f"alias .{name}='pushd \"{dir_name}\"'")
-                print(f"alias d.{name}=',cd \"{dir_name}\"'")
-                print(f"alias D.{name}=',nt \"{dir_name}\"'")
     except FileNotFoundError as e:
         #print(f"FileNotFoundError: {e}")
         pass;

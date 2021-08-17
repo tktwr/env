@@ -11,12 +11,14 @@ f_activate_python $MY_PYTHON_TYPE $MY_PYTHON_VENV
 case $MY_PROMPT_TYPE in
   'minimal')
     f_set_prompt_minimal
+    alias g.='f_set_prompt_minimal'
     ;;
   'git')
     f_set_prompt_git
     ;;
   'git-fast')
     f_set_prompt_git_fast
+    alias g.='f_checkgit_force'
     ;;
 esac
 

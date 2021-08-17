@@ -1,8 +1,9 @@
 #!/bin/bash
 
 bin_name=`basename $0`
-cmd=cmp
-dir=$HOME
+
+CMD=cmp
+DST_DIR=$HOME
 
 DOT_DIRS_COMMON="\
 .mintty \
@@ -27,7 +28,7 @@ f_help() {
   echo "  $bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $bin_name [options] [dir=$HOME]"
+  echo "  $bin_name [options] [DST_DIR=$HOME]"
   echo
   echo "OPTIONS"
   echo "  -h, --help     ... print help"
@@ -40,7 +41,7 @@ f_help() {
   echo "  --cmp          ... compare files"
   echo "  --diff         ... diff files"
   echo "  --vimdiff      ... vimdiff files"
-  echo "  --vimdirdiff   ... vimdirdiff dir"
+  echo "  --vimdirdiff   ... vimdirdiff DST_DIR"
 }
 
 f_get_date() {
@@ -57,56 +58,17 @@ f_backup() {
   cd
 
   # backup original files
-  for i in $DOT_FILES_ALL; do
-    cp --parents $i $BACKUP_DIR
-  done
+  cp --parents $DOT_FILES_ALL $BACKUP_DIR
 }
 
 f_init() {
   # copy default dot files
-  for i in $DOT_FILES_ALL; do
-    cp --parents $i $HOME
-  done
-
+  cp --parents $DOT_FILES_ALL $HOME
   cp -a $DOT_DIRS_COMMON $HOME
 }
 
 #------------------------------------------------------
-# f_diff file1 file2
-#------------------------------------------------------
-f_diff() {
-  if [ ! -f "$1" ]; then
-    echo "[no file] $1"
-  fi
-  if [ ! -f "$2" ]; then
-    echo "[no file] $2"
-  fi
-  if [ ! \( -f "$1" -a -f "$2" \) ]; then
-    return
-  fi
-  cmp -s "$1" "$2"
-  if [ $? -eq 0 ]; then
-    echo "[==] $1 $2"
-  elif [ $? -eq 1 ]; then
-    echo "[!=] $1 $2"
-    if [ "$cmd" = "diff" -o "$cmd" = "vimdiff" ]; then
-      #cmd="vimapi.sh MyTabDiff"
-      eval "$cmd $1 $2"
-    fi
-  fi
-}
-
-#------------------------------------------------------
-# f_diff_files dir
-#------------------------------------------------------
-f_diff_files() {
-  for i in $DOT_FILES; do
-    f_diff $i $1/$i
-  done
-}
-
-#------------------------------------------------------
-# f_cp_files dir
+# f_cp_files DST_DIR
 #------------------------------------------------------
 f_cp_files() {
   if [ -n "$DOT_FILES" ]; then
@@ -116,7 +78,7 @@ f_cp_files() {
 }
 
 #------------------------------------------------------
-# f_diff_dir dir
+# f_diff_dir DST_DIR
 #------------------------------------------------------
 f_diff_dir() {
   vimdirdiff . $1
@@ -150,35 +112,35 @@ f_args() {
         DOT_FILES="$DOT_FILES $DOT_FILES_DIFF"
         ;;
       --cp)
-        cmd=cp
+        CMD=cp
         ;;
       --cmp)
-        cmd=cmp
+        CMD=cmp
         ;;
       --diff)
-        cmd=diff
+        CMD=diff
         ;;
       --vimdiff)
-        cmd=vimdiff
+        CMD=vimdiff
         ;;
       --vimdirdiff)
-        cmd=vimdirdiff
+        CMD=vimdirdiff
         ;;
       *)
-        dir="$i"
+        DST_DIR="$i"
         ;;
     esac
   done
 
-  case $cmd in
+  case $CMD in
     cmp|diff|vimdiff)
-      f_diff_files $dir
+      diff-files.sh -c $CMD -d $DST_DIR $DOT_FILES
       ;;
     cp)
-      f_cp_files $dir
+      f_cp_files $DST_DIR
       ;;
     vimdirdiff)
-      f_diff_dir $dir
+      f_diff_dir $DST_DIR
       ;;
   esac
 }

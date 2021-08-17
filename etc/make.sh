@@ -1,8 +1,8 @@
 #!/bin/bash
 
-bin_name=`basename $0`
+source bash/bashrc.min.sh
 
-source ./lib/common_etc.sh
+bin_name=`basename $0`
 
 f_help() {
   echo "NAME"
@@ -16,7 +16,6 @@ f_help() {
   echo "  --init     ... init"
   echo "  --all      ... all"
   echo "  --min      ... min"
-  echo "  --clean    ... clean"
 }
 
 f_init() {
@@ -50,9 +49,6 @@ f_args() {
         ;;
       --min)
         f_make --min
-        ;;
-      --clean)
-        f_make --clean
         ;;
     esac
   done

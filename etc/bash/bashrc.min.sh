@@ -6,12 +6,21 @@
 if [ -n "$USERPROFILE" ]; then
   # gitbash/msys2
   export MY_HOME="/c/Users/$USERNAME"
+  export MY_PYTHON_EXE="python"
+  export MY_OS_NAME="windows"
 else
-  # others
+  # linux
   export MY_HOME="$HOME"
+  export MY_PYTHON_EXE="python3"
+  export MY_OS_NAME="linux"
 fi
 
-export MY_ENV="$MY_HOME/MyConfig/tktwr.github/env"
+export MY_CONFIG="$MY_HOME/MyConfig"
+export MY_REMOTE_CONFIG="$MY_CONFIG/tktwr.github"
+export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
+export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
+
+export MY_ENV="$MY_REMOTE_CONFIG/env"
 export MY_ETC="$MY_ENV/etc"
 export MY_BIN="$MY_ENV/bin"
 
@@ -40,6 +49,8 @@ export PS1="[\w]$ "
 #------------------------------------------------------
 # alias
 #------------------------------------------------------
+unalias -a
+
 # directory stack
 alias .='pushd'
 alias ..='pushd +2'
@@ -68,4 +79,17 @@ alias cd.bin='cd $MY_BIN'
 
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
+
+print-env() {
+  echo "======================================================="
+  echo "MY_HOME           = $MY_HOME"
+  echo "MY_CONFIG         = $MY_CONFIG"
+  echo "MY_REMOTE_CONFIG  = $MY_REMOTE_CONFIG"
+  echo "MY_LOCAL_CONFIG   = $MY_LOCAL_CONFIG"
+  echo "MY_PRIVATE_CONFIG = $MY_PRIVATE_CONFIG"
+  echo "MY_OS_NAME        = $MY_OS_NAME"
+  echo "MY_PYTHON_EXE     = $MY_PYTHON_EXE"
+  echo "$(which $MY_PYTHON_EXE)"
+  echo "======================================================="
+}
 

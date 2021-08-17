@@ -4,7 +4,7 @@
 "Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-fugitive'
 
-let g:fugitive_git_executable=$MY_GIT_EXE
+"let g:fugitive_git_executable=git
 
 func s:my_fugitive_settings()
   nmap <buffer> D       dd

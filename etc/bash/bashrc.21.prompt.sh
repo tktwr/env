@@ -6,4 +6,3 @@ f_set_prompt_minimal() {
   export PS1="$ECOR$ECO2${MY_SHELL_NAME}$ECOD$ECO3[\w](${MY_GIT_BRANCH})$ECOD\$ "
 }
 
-alias p='f_set_prompt_minimal'

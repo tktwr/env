@@ -1,9 +1,6 @@
 all:
 	./make.sh --all
 
-all.min:
+min:
 	./make.sh --min
-
-clean:
-	./make.sh --clean
 
