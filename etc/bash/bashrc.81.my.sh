@@ -66,12 +66,27 @@ alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
 #------------------------------------------------------
 # misc
 #------------------------------------------------------
+print-env() {
+  echo "======================================================="
+  echo "MY_HOME           = $MY_HOME"
+  echo "MY_CONFIG         = $MY_CONFIG"
+  echo "MY_REMOTE_CONFIG  = $MY_REMOTE_CONFIG"
+  echo "MY_LOCAL_CONFIG   = $MY_LOCAL_CONFIG"
+  echo "MY_PRIVATE_CONFIG = $MY_PRIVATE_CONFIG"
+  echo "MY_OS_NAME        = $MY_OS_NAME"
+  echo "MY_PYTHON_EXE     = $MY_PYTHON_EXE"
+  echo "$(which $MY_PYTHON_EXE)"
+  echo "======================================================="
+}
+
 print-env-build() {
+  echo "======================================================="
   echo "MY_PUSHD_DIR    = $MY_PUSHD_DIR"
   echo "MY_PYTHON_TYPE  = $MY_PYTHON_TYPE"
   echo "MY_PYTHON_VENV  = $MY_PYTHON_VENV"
   echo "MY_BUILD_SYS    = $MY_BUILD_SYS"
   echo "MY_BUILD_CONFIG = $MY_BUILD_CONFIG"
+  echo "======================================================="
 }
 
 alias pp='print-path.sh -p'
