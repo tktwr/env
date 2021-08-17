@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export MY_BASH=$HOME/MyConfig/tktwr.github/env/etc/bash
+export MY_CONFIG=$HOME/MyConfig
+export MY_BASH=$MY_CONFIG/tktwr.github/env/etc/bash
 
 source $MY_BASH/bashrc.00.init.sh
 source $MY_BASH/bashrc.10.colors.sh
@@ -16,3 +17,6 @@ source $MY_BASH/bashrc.80.alias.sh
 source $MY_BASH/bashrc.81.my.sh
 source $MY_BASH/bashrc.82.fzy.sh
 source $MY_BASH/bashrc.90.setup.sh
+
+source_file $MY_CONFIG/common/bashrc.local.sh
+

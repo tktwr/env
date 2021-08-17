@@ -80,16 +80,3 @@ alias cd.bin='cd $MY_BIN'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
-print-env() {
-  echo "======================================================="
-  echo "MY_HOME           = $MY_HOME"
-  echo "MY_CONFIG         = $MY_CONFIG"
-  echo "MY_REMOTE_CONFIG  = $MY_REMOTE_CONFIG"
-  echo "MY_LOCAL_CONFIG   = $MY_LOCAL_CONFIG"
-  echo "MY_PRIVATE_CONFIG = $MY_PRIVATE_CONFIG"
-  echo "MY_OS_NAME        = $MY_OS_NAME"
-  echo "MY_PYTHON_EXE     = $MY_PYTHON_EXE"
-  echo "$(which $MY_PYTHON_EXE)"
-  echo "======================================================="
-}
-

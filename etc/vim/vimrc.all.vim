@@ -1,4 +1,5 @@
-let $MY_VIM=expand("$HOME/MyConfig/tktwr.github/env/etc/vim")
+let $MY_CONFIG=expand("$HOME/MyConfig")
+let $MY_VIM=expand("$MY_CONFIG/tktwr.github/env/etc/vim")
 
 source $MY_VIM/vimrc.00.init.vim
 source $MY_VIM/vimrc.10.skel.vim
@@ -19,3 +20,6 @@ source $MY_VIM/vimrc.70.map.vim
 source $MY_VIM/vimrc.72.menu.vim
 source $MY_VIM/vimrc.80.term.vim
 source $MY_VIM/vimrc.81.gui.vim
+
+SourceFile $MY_CONFIG/common/vimrc.local.vim
+
