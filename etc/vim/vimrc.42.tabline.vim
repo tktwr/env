@@ -31,7 +31,9 @@ func MyTabLine()
   let s .= '%#TabLineFill#%T'
 
   let s .= "%="
-  let s .= "\ [coc:%{coc#status()}]"
+  if $MY_PROMPT_TYPE != "minimal"
+    let s .= "\ [coc:%{coc#status()}]"
+  endif
   let s .= "\ %6*%{MyCWD()}%0*"
 
   " right-align the label to close the current tab page

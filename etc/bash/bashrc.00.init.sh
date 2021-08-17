@@ -5,6 +5,9 @@
 #======================================================
 
 export MY_DEBUG=0
+export MY_PROMPT_TYPE='minimal'
+
+#------------------------------------------------------
 
 echo_err() {
   echo "$@" 1>&2
@@ -32,8 +35,6 @@ export EDITOR='vim'
 #export GIT_PAGER='less'
 #export GIT_EDITOR='vim'
 export WWW_HOME="https://tktwr.github.io/memo/"
-
-export MY_PROMPT_TYPE='minimal'
 
 source $HOME/.my/hostname
 source $HOME/.my/buildrc
