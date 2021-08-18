@@ -3,12 +3,12 @@
 # home       |                   |
 # ---------- | ----------        | ----------
 my           | MY_DOTMY          | $HOME/.my
-my.common    | MY_DOTMY_COMMON   | $MY_HOME/.my.common
 backup       | MY_BACKUP         | $MY_PRIVATE/backup
 tmp          | MY_TMP            | $MY_PRIVATE/tmp
 # ---------- | ----------        | ----------
 # config     |                   |
 # ---------- | ----------        | ----------
+cconfig      | MY_COMMON_CONFIG  | $MY_CONFIG/common
 rconfig      | MY_REMOTE_CONFIG  | $MY_CONFIG/tktwr.github
 lconfig      | MY_LOCAL_CONFIG   | $MY_CONFIG/tktwr.local
 pconfig      | MY_PRIVATE_CONFIG | $MY_CONFIG/tktwr.private
