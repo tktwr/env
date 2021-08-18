@@ -7,3 +7,5 @@ config      | MY_CONFIG          | $MY_HOME/MyConfig
 private     | MY_PRIVATE         | $MY_HOME/MyShare/private
 protected   | MY_PROTECTED       | $MY_HOME/MyShare/protected
 public      | MY_PUBLIC          | $MY_HOME/MyShare/public
+
+# vim:set nowrap:

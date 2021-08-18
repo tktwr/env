@@ -47,3 +47,5 @@ papers       | MY_PAPERS         | $MY_PUBLIC/Papers
 opt          | MY_OPT            | $MY_PUBLIC/opt
 man          | MY_MAN            | $MY_PUBLIC/man
 data         | MY_DATA           | $MY_PUBLIC/data
+
+# vim:set nowrap:

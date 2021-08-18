@@ -44,7 +44,7 @@ nnoremap ==      zi
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>
  nnoremap <silent> <C-G>   :MyRedraw<CR>
 "nnoremap <silent> <C-H>   :echo 'C-H'<CR>
- nnoremap <silent> <C-I>   :silent WinBufHistPrint<CR>
+"nnoremap <silent> <C-I>   :silent WinBufHistPrint<CR>
 "nnoremap <silent> <C-J>   :echo 'C-J'<CR>
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>
@@ -79,7 +79,7 @@ nnoremap <C-]>   :call MyTjump(expand('<cword>'))<CR>
 tnoremap <C-;>   <C-W>:
 
 tnoremap <C-G>   <C-L>
-tnoremap <C-I>   <C-W>:MyWinInitSize<CR>
+"tnoremap <C-I>   <C-W>:MyWinInitSize<CR>
 " go to Terminal-Normal
 tnoremap <C-O>   <C-W>N
 " paste register
@@ -152,7 +152,7 @@ tnoremap <silent> <C-0> <C-W>b
 " special keys
 "------------------------------------------------------
 "nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
-nnoremap <silent> <TAB>      :silent WinBufHistPrint<CR>
+"nnoremap <silent> <TAB>      :silent WinBufHistPrint<CR>
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
 

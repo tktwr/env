@@ -4,3 +4,5 @@
 # ---    | ---          | ---
 win-home | SYS_WIN_HOME | $HOME/WinHome
 my-home  | MY_HOME      | $HOME
+
+# vim:set nowrap:
