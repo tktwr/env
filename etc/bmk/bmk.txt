@@ -19,7 +19,7 @@
 -   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 [bmk:dir] ---------------------------- | ----------------------------------------
 -   .my/                               | $MY_DOTMY/
--   .my.common/                        | $MY_DOTMY_COMMON/
+-   MyConfig/common/                   | $MY_CONFIG/common/
 -   backup/                            | $MY_BACKUP/
 -   tmp/                               | $MY_TMP/
     ---------------------------------- | ----------------------------------------
