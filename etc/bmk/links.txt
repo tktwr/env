@@ -1,4 +1,4 @@
-[ref] -------------------------------- | ----------------------------------------
+[ref:main] --------------------------- | ----------------------------------------
 - H help                               | :MyHelp
 -   help.index                         | :MyHelp index
 -   help.expression-syntax             | :MyHelp expression-syntax

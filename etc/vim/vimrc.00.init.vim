@@ -159,7 +159,7 @@ let g:cpm_files = [
   \ "$MY_COMMON_CONFIG/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref'],
+  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
   \ 'terminal': ['terminal:main', 'terminal:git', 'bmk:dir', 'bmk:local'],
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
   \ }
