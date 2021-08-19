@@ -7,8 +7,6 @@ endif
 let g:loaded_memo = 1
 
 let s:memo_winname = '\[memo\]'
-let s:memo_winwidth = 60
-let s:memo_winheight = 15
 
 "------------------------------------------------------
 " private func
@@ -27,21 +25,11 @@ func! s:OpenTag(tagname)
   exec "normal z\<CR>"
 endfunc
 
-func! s:DefineCommands()
-  nnoremap <buffer> <silent> <CR> :call <SID>OpenTag(expand("<cWORD>"))<CR>
-  nnoremap <buffer> <silent> l W
-  nnoremap <buffer> <silent> h B
-endfunc
-
 " make a [memo] window
-func! s:MakeMemoWindow(vert)
+func! s:MakeMemoWindow()
   let s:memo_winnr = bufwinnr(s:memo_winname)
   if s:memo_winnr == -1
-    if (a:vert)
-      silent exec "rightbelow" s:memo_winwidth."vnew" s:memo_winname
-    else
-      silent exec s:memo_winheight."new" s:memo_winname
-    endif
+    silent exec "edit" s:memo_winname
     setlocal filetype=memo
     setlocal buftype=nofile
     setlocal bufhidden=hide
@@ -50,7 +38,6 @@ func! s:MakeMemoWindow(vert)
     setlocal readonly
     setlocal tabstop=8
     let s:memo_winnr = bufwinnr(s:memo_winname)
-    call s:DefineCommands()
   else
     exec s:memo_winnr . "wincmd w"
   endif
@@ -60,15 +47,7 @@ endfunc
 " s:Memo()
 "------------------------------------------------------
 func! s:Memo(tagname)
-  call s:MakeMemoWindow(0)
-  call s:ListTags()
-  if (!empty(a:tagname))
-    call s:OpenTag(a:tagname)
-  endif
-endfunc
-
-func! s:VMemo(tagname)
-  call s:MakeMemoWindow(1)
+  call s:MakeMemoWindow()
   call s:ListTags()
   if (!empty(a:tagname))
     call s:OpenTag(a:tagname)
@@ -79,5 +58,18 @@ endfunc
 " command
 "------------------------------------------------------
 command -nargs=? Memo call s:Memo(<q-args>)
-command -nargs=? VMemo call s:VMemo(<q-args>)
+
+"------------------------------------------------------
+" autocmd
+"------------------------------------------------------
+func! s:DefineCommands()
+  nnoremap <buffer> <silent> <CR> :call <SID>OpenTag(expand("<cWORD>"))<CR>
+  nnoremap <buffer> <silent> l W
+  nnoremap <buffer> <silent> h B
+endfunc
+
+augroup ag_memo
+  autocmd!
+  autocmd FileType memo    call s:DefineCommands()
+augroup END
 

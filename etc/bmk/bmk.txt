@@ -8,7 +8,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_CONFIG/common/bmk_local.txt
+- B bmk_local                          | $MY_COMMON_CONFIG/bmk_local.txt
     ---------------------------------- | ----------------------------------------
 -   memo/my.md.html                    | $MY_MEMO/my.md.html
 -   memo/vim.md.html                   | $MY_MEMO/vim.md.html

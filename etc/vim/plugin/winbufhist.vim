@@ -6,9 +6,7 @@ if exists("g:loaded_winbufhist")
 endif
 let g:loaded_winbufhist = 1
 
-let g:winbufhist_key = "\<C-U>"
-let g:winbufhist_max = 10
-
+" user defined key
 let s:winbufhist_key = g:winbufhist_key
 let s:winbufhist_max = g:winbufhist_max
 

@@ -10,7 +10,8 @@ SC07B::PgUp
 ;LAlt::LAlt
 
 ; right alt
-RAlt::LWin
+;RAlt::LWin
+RAlt::End
 
 ; right meta
 SC079::PgDn

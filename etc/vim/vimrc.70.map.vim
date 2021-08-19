@@ -56,7 +56,7 @@ nnoremap ==      zi
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
  nnoremap <silent> <C-S>   :call MyIDESendCdE2T()<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nnoremap <silent> <C-U>   :silent WinBufHistPrint<CR>
+ nnoremap <silent> <C-U>   :silent WinBufHistNext<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :Wx 0<CR>
@@ -101,6 +101,7 @@ vnoremap Y       "*y
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
+nnoremap <silent> <End>     :silent WinBufHistPrint<CR>
 nnoremap <silent> <Space>   :CpmOpen<CR>
 vnoremap <silent> <Space>   :'<,'>MyTestRange<CR>
 

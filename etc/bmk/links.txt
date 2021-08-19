@@ -1,14 +1,14 @@
 [ref:main] --------------------------- | ----------------------------------------
-- H help                               | :MyHelp
--   help.index                         | :MyHelp index
--   help.expression-syntax             | :MyHelp expression-syntax
--   help.pattern-overview              | :MyHelp pattern-overview
+- H Help                               | :MyHelp
+-   Help.index                         | :MyHelp index
+-   Help.expression-syntax             | :MyHelp expression-syntax
+-   Help.pattern-overview              | :MyHelp pattern-overview
     ---------------------------------- | ----------------------------------------
-- M memo                               | :MyMemo
-- m memo.my                            | :MyMemo my
-- v memo.vim                           | :MyMemo vim
-- g memo.git                           | :MyMemo git
-- l memo.links                         | :MyMemo links
+- M Memo                               | :Memo
+- m Memo.my                            | :Memo my
+- v Memo.vim                           | :Memo vim
+- g Memo.git                           | :Memo git
+- l Memo.links                         | :Memo links
     ---------------------------------- | ----------------------------------------
 -   tags.bin.sh                        | :call TagCatalog(expand("$MY_ENV/tags.bin.sh"), "sh")
 -   tags.bin.py                        | :call TagCatalog(expand("$MY_ENV/tags.bin.py"), "py")

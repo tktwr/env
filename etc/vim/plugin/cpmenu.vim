@@ -6,6 +6,10 @@ if exists("g:loaded_cpmenu")
 endif
 let g:loaded_cpmenu = 1
 
+" user defined key
+let s:cpm_key = g:cpm_key
+let s:cpm_term_key = g:cpm_term_key
+
 let s:separator = "------------------------------"
 
 "------------------------------------------------------
@@ -119,7 +123,7 @@ func s:CpmFixPos(id)
 endfunc
 
 func CpmFilter(id, key)
-  if a:key == "\<Space>" || a:key == "\<C-Space>"
+  if a:key == s:cpm_key || a:key == s:cpm_term_key
     call popup_close(a:id, 0)
     return 1
   elseif a:key == '0'

@@ -10,17 +10,17 @@
     ---------------------------------- | ----------------------------------------
 - B bmk_local                          | $MY_COMMON_CONFIG/bmk_local.txt
     ---------------------------------- | ----------------------------------------
-- F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
+- F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
-- I MyWinInitSize                      | :MyWinInitSize
+- T Term                               | :MyTerm
+- M Memo                               | :Memo
+- H Help                               | :MyHelp
+    ---------------------------------- | ----------------------------------------
+- E IDE                                | :MyIDE
+- I WinInitSize                        | :MyWinInitSize
 - X Wx (C-x)                           | :Wx 0
 - C Wc (C-c)                           | :Wc 0
-    ---------------------------------- | ----------------------------------------
-- T MyTerm                             | :MyTerm
-- E MyIDE                              | :MyIDE
-- M MyMemo                             | :MyMemo
-- H MyHelp                             | :MyHelp
     ---------------------------------- | ----------------------------------------
 - p paste                              | "*p
 -   yank                               | "*y

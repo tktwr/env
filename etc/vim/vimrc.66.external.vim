@@ -1,17 +1,6 @@
 "------------------------------------------------------
 " func
 "------------------------------------------------------
-func s:MyMemo(...)
-  if a:0 == 0
-    exec "above Memo"
-  else
-    exec "above Memo" a:1
-  endif
-
-  wincmd p
-  close
-endfunc
-
 func s:MyHelp(...)
   if &filetype == "help"
     let close_origwin=0
@@ -69,7 +58,6 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=? MyMemo    call s:MyMemo(<f-args>)
 command -nargs=? MyHelp    call s:MyHelp(<f-args>)
 command -nargs=1 MyMan     call s:MyMan(<f-args>)
 command -nargs=1 MyPydoc   call s:MyPydoc(<f-args>)

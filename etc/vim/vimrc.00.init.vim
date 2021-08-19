@@ -137,6 +137,10 @@ endif
 set eadirection=ver
 
 set winheight=10
+
+let g:mapleader = ','
+let g:maplocalleader = ','
+
 let g:my_winheight = 10
 let g:my_term_winheight = 10
 let g:my_term_winheight_max = 20
@@ -151,6 +155,16 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
+let g:bmk_winwidth = g:my_left_winwidth
+
+" winbufhist
+let g:winbufhist_key = "\<End>"
+let g:winbufhist_max = 10
+
+" cpm
+let g:cpm_key = "\<Space>"
+let g:cpm_term_key = "\<C-Space>"
+
 let g:cpm_files = [
   \ "$MY_ETC/bmk/cmd.txt",
   \ "$MY_ETC/bmk/bmk.txt",
@@ -164,11 +178,6 @@ let g:cpm_titles = {
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
   \ }
 
-let g:bmk_winwidth = g:my_left_winwidth
-
-let g:mapleader = "\<Space>"
-"let g:mapleader = ','
-let g:maplocalleader = ','
 "------------------------------------------------------
 func SourceFile(fname)
   let fname = expand(a:fname)
