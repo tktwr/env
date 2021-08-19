@@ -193,6 +193,20 @@ func s:CpmReload()
   for file in s:cpm_files
     call s:CpmLoad(file)
   endfor
+
+  " check wether titles exist in cpm_menu_all
+  let loaded_titles = keys(s:cpm_menu_all)
+  for menu_type in keys(s:cpm_titles)
+    let titles = s:cpm_titles[menu_type]
+    let valid_titles = []
+    for i in titles
+      let r = match(loaded_titles, i)
+      if r != -1
+        call add(valid_titles, i)
+      endif
+    endfor
+    let s:cpm_titles[menu_type] = valid_titles
+  endfor
 endfunc
 
 func s:CpmInit()
