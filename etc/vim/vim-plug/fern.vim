@@ -6,7 +6,7 @@ Plug 'lambdalisue/nerdfont.vim'
 Plug 'lambdalisue/fern-renderer-nerdfont.vim'
 Plug 'lambdalisue/glyph-palette.vim'
 
-if $MY_PROMPT_TYPE != "minimal"
+if $MY_PROMPT_TYPE >= 4
   Plug 'lambdalisue/fern-git-status.vim'
 endif
 

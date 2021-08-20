@@ -9,6 +9,18 @@ func MyTabLabel(nr)
   "return g:my_tab_labels[a:nr-1]
 endfunc
 
+func MyTabLineEnv()
+  let python_type = expand("$MY_PYTHON_TYPE")
+  let python_venv = expand("$MY_PYTHON_VENV")
+  let python_info = "[".python_type.",".python_venv."]"
+
+  let build_sys = expand("$MY_BUILD_SYS")
+  let build_config = expand("$MY_BUILD_CONFIG")
+  let build_info = "[".build_sys.",".build_config."]"
+
+  return python_info.build_info
+endfunc
+
 func MyTabLine()
   let s = ''
 
@@ -31,14 +43,15 @@ func MyTabLine()
   let s .= '%#TabLineFill#%T'
 
   let s .= "%="
-  if $MY_PROMPT_TYPE != "minimal"
+  if $MY_PROMPT_TYPE >= 3
     let s .= "\ [coc:%{coc#status()}]"
   endif
   let s .= "\ %6*%{MyCWD()}%0*"
+  let s .= "\ %6*%{MyTabLineEnv()}%0*"
 
   " right-align the label to close the current tab page
   if tabpagenr('$') > 1
-    let s .= "\ %#TabLine#%999X[close]"
+    let s .= "\ %#TabLine#%999X[x]"
   endif
 
   return s

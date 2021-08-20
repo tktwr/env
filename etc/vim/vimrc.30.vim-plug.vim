@@ -33,7 +33,7 @@ source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/nerdtree-git-plugin.vim
 "source $MY_VIM/vim-plug/fzf.vim
 
-if $MY_PROMPT_TYPE != "minimal"
+if $MY_PROMPT_TYPE >= 1
   source $MY_VIM/vim-plug/vim-gitgutter.vim
 endif
 

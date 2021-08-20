@@ -35,7 +35,7 @@ func MyStatusline()
   let stat.= "\ ".MyStatuslineFname()
   let stat.= "\ %m%y%h%w%q%r%{MyStatuslineEnc()}"
   let stat.= "\ %=%l/%L,%c%V%4p%%"
-  if $MY_PROMPT_TYPE != "minimal"
+  if $MY_PROMPT_TYPE >= 3
     let stat.= "\ %6*%{FugitiveStatusline()}"
   endif
   let stat.= "\ %0*"
