@@ -119,6 +119,16 @@ vimapi-cd() {
   vimapi-lcd
 }
 
+vimapi-pushd() {
+  pushd "$@"
+  vimapi-lcd
+}
+
+vimapi-popd() {
+  popd "$@"
+  vimapi-lcd
+}
+
 vimapi-tab-diff() {
   vimapi.sh MyTabDiff "$1" "$2"
   read -p "Enter to proceed. "
@@ -146,7 +156,7 @@ vimapi-resize() {
 
 vimapi-edit() {
   local file="$1"
-  local winnr="$2"
+  local winnr="${2:--1}"
   vimapi.sh BmkEditFile --filepath "$file" "$winnr"
   #vimapi.sh --in-above-win edit --filepath "$file"
 }
@@ -156,6 +166,8 @@ vimapi-edit() {
 #------------------------------------------------------
 if [ "$VIM_TERMINAL" ]; then
   alias cd='vimapi-cd'
+  alias pushd='vimapi-pushd'
+  alias popd='vimapi-popd'
   alias vimdiff='vimapi-tab-diff'
   alias vimdirdiff='vimapi-tab-dirdiff'
 

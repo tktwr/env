@@ -27,9 +27,9 @@
 - L lconfig/                           | $MY_LOCAL_CONFIG/
 - P pconfig/                           | $MY_PRIVATE_CONFIG/
     ---------------------------------- | ----------------------------------------
+- B bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
-- b bin/                               | $MY_BIN/
-- B bash/                              | $MY_BASH/
+- b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/

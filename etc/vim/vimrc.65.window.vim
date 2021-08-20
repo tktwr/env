@@ -72,7 +72,7 @@ func MyWinBufCopy(winnr)
 endfunc
 
 "------------------------------------------------------
-" change active window
+" find a terminal window from the first window
 "------------------------------------------------------
 func MyWinFindTerm()
   let last_winnr = winnr('$')

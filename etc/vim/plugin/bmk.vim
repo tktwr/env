@@ -38,6 +38,22 @@ func s:GetDirName(filepath)
 endfunc
 
 "------------------------------------------------------
+" find a editor window from the current window
+"------------------------------------------------------
+func BmkWinFindEditor()
+  let curr_winnr = winnr()
+  let i = curr_winnr
+  while i > 0
+    exec i."wincmd w"
+    if &buftype != 'terminal'
+      return i
+    endif
+    let i = i - 1
+  endwhile
+  return -1
+endfunc
+
+"------------------------------------------------------
 " get item
 "------------------------------------------------------
 " title format per line
@@ -186,13 +202,17 @@ func BmkEditDir(dir, winnr)
 endfunc
 
 func BmkEditFile(file, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
+  let winnr = a:winnr
+  if winnr == -1
+    let winnr = BmkWinFindEditor()
+  endif
+  if winnr > 0
+    exec winnr."wincmd w"
   endif
 
   let dir = s:GetDirName(a:file)
   if &buftype == 'terminal'
-    call BmkEditDirInTerm(dir, a:winnr)
+    call BmkEditDirInTerm(dir, winnr)
   else
     exec "lcd" dir
     exec "edit" a:file
