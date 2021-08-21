@@ -170,6 +170,7 @@ if [ "$VIM_TERMINAL" ]; then
   alias popd='vimapi-popd'
   alias vimdiff='vimapi-tab-diff'
   alias vimdirdiff='vimapi-tab-dirdiff'
+  vim() { vimapi-edit "$@"; }
 
   alias D='vimapi-fern'
 

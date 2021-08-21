@@ -37,11 +37,11 @@ endfunc
 "------------------------------------------------------
 " terminal to editor
 "------------------------------------------------------
-func Tapi_Exec(_, cmdline)
+func Tapi_Exec(bufnr, cmdline)
   exec a:cmdline
 endfunc
 
-func Tapi_ExecInPrevWin(_, cmdline)
+func Tapi_ExecInPrevWin(bufnr, cmdline)
   wincmd p
   exec a:cmdline
 endfunc
@@ -49,14 +49,9 @@ endfunc
 func Tapi_ExecInAboveWin(bufnr, cmdline)
   wincmd k
   exec a:cmdline
-  let width = winwidth(0)
-  let winnr = bufwinnr(a:bufnr)
-  exec winnr."wincmd w"
-  exec "vertical resize" width
-  wincmd p
 endfunc
 
-func Tapi_ExecInNewTab(_, cmdline)
+func Tapi_ExecInNewTab(bufnr, cmdline)
   tabedit
   exec a:cmdline
 endfunc

@@ -37,9 +37,9 @@ ff() { find . -name "$*" -print; }
 # vim
 alias vi='vim'
 alias vim-zero='/usr/bin/vim -u NONE'
-alias vim-min='/usr/bin/vim -u $MY_VIM/min_vimrc.vim'
-alias gvim-min='gvim -u $MY_VIM/min_gvimrc.vim'
-alias vim-tags='vim -e -c "helptags . | quit"'
+alias vim-min='/usr/bin/vim -u $MY_VIM/vimrc_min.vim'
+alias vim-tags='/usr/bin/vim -e -c "helptags . | quit"'
+alias gvim-min='gvim -u $MY_VIM/gvimrc_min.vim'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
