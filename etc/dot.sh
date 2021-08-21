@@ -63,8 +63,8 @@ f_backup() {
 
 f_init() {
   # copy default dot files
-  cp --parents $DOT_FILES_ALL $HOME
-  cp -a $DOT_DIRS_COMMON $HOME
+  cp -n --parents $DOT_FILES_ALL $HOME
+  cp -n -a $DOT_DIRS_COMMON $HOME
 }
 
 #------------------------------------------------------
