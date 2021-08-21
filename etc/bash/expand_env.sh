@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source bashrc.min.sh
+source bashrc_min.sh
 
 FILES="\
 $MY_ETC/fzy/dir.00.$MY_OS_NAME.txt \
@@ -16,5 +16,5 @@ $MY_COMMON_CONFIG/dir.txt \
 $HOME/.my/dir.txt \
 "
 
-$MY_PYTHON_EXE ./make.dir.py $FILES
+$MY_PYTHON_EXE ./expand_env.py $FILES
 

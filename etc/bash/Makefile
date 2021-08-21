@@ -1,6 +1,6 @@
 all:
-	./make.sh --all
+	./make.sh
 
 min:
-	./make.sh --min
+	./make_min.sh
 

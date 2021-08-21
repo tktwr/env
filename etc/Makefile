@@ -1,19 +1,19 @@
 all:
-	./make.sh --all
+	./make.sh
 
 min:
-	./make.sh --min
+	./make_min.sh
 
 tags:
 	cd ..; make tags
 
 #------------------------------------------------------
 
+init:
+	./make_init.sh
+
 backup:
 	./dot.sh --backup
-
-init:
-	./make.sh --init
 
 #------------------------------------------------------
 
@@ -30,10 +30,10 @@ vimdirdiff:
 
 help:
 	@echo "all        ... all"
-	@echo "all.min    ... all.min"
+	@echo "min        ... min"
 	@echo "tags       ... tags"
-	@echo "backup     ... backup"
 	@echo "init       ... init"
+	@echo "backup     ... backup"
 	@echo "cmp        ... compare"
 	@echo "vimdiff    ... vimdiff"
 	@echo "vimdirdiff ... vimdirdiff"

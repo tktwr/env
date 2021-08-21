@@ -131,19 +131,19 @@ f_args() {
         ;;
     esac
   done
-
-  case $CMD in
-    cmp|diff|vimdiff)
-      diff-files.sh -c $CMD -d $DST_DIR $DOT_FILES
-      ;;
-    cp)
-      f_cp_files $DST_DIR
-      ;;
-    vimdirdiff)
-      f_diff_dir $DST_DIR
-      ;;
-  esac
 }
 
 f_args "$@"
+
+case $CMD in
+  cmp|diff|vimdiff)
+    diff-files.sh -c $CMD -d $DST_DIR $DOT_FILES
+    ;;
+  cp)
+    f_cp_files $DST_DIR
+    ;;
+  vimdirdiff)
+    f_diff_dir $DST_DIR
+    ;;
+esac
 

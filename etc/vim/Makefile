@@ -1,8 +1,8 @@
 all:
-	./make.sh --all
+	./make.sh
 
 min:
-	./make.sh --min
+	./make_min.sh
 
 log: log.clean
 	vim -c "q" --startuptime $(HOME)/vim_log.txt

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cp bash/bashrc.min.sh $HOME/.bashrc
-cp vim/min_vimrc.vim $HOME/.vimrc
+cp bash/bashrc_min.sh $HOME/.bashrc
+cp vim/vimrc_min.vim $HOME/.vimrc
 
