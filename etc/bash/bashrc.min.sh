@@ -16,6 +16,7 @@ else
 fi
 
 export MY_CONFIG="$MY_HOME/MyConfig"
+export MY_COMMON_CONFIG="$MY_CONFIG/common"
 export MY_REMOTE_CONFIG="$MY_CONFIG/tktwr.github"
 export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
 export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"

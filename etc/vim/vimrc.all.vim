@@ -21,5 +21,5 @@ source $MY_VIM/vimrc.72.menu.vim
 source $MY_VIM/vimrc.80.term.vim
 source $MY_VIM/vimrc.81.gui.vim
 
-SourceFile $MY_CONFIG/common/vimrc.local.vim
+SourceFile $MY_COMMON_CONFIG/vimrc.local.vim
 
