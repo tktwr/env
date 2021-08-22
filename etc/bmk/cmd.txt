@@ -127,9 +127,6 @@
 - 4 ,resize 40                         | ,resize 40<CR>
 - T T                                  | T<CR>
     ---------------------------------- | ----------------------------------------
--   pip-upgrade                        | python -m pip install --upgrade pip<CR>
--   git-upgrade                        | git update-git-for-windows<CR>
-    ---------------------------------- | ----------------------------------------
 -   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
 -   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>
 - m mycmake-set-make-release           | mycmake-set-make-release<CR>
@@ -140,6 +137,29 @@
 - v mycmake-set-vs2019-release         | mycmake-set-vs2019-release<CR>
 -   mycmake-set-vs2019-debug           | mycmake-set-vs2019-debug<CR>
 -   mycmake-set-vs2019-reldeb          | mycmake-set-vs2019-reldeb<CR>
+[terminal:system] -------------------- | ----------------------------------------
+-   pacman -S -h                       | pacman -S -h<CR>
+-   pacman -Syu                        | pacman -Syu<CR>
+-   pacman -S <pkg>                    | pacman -S
+-   pacman -R <pkg>                    | pacman -R
+-   pacman -Ss [pattern]               | pacman -Ss
+-   pacman -Sg [pkg_group]             | pacman -Sg
+-   pacman -Si [pkg]                   | pacman -Si
+-   pacman -Sl                         | pacman -Sl<CR>
+-   pacman -Qi <installed_pkg>         | pacman -Qi
+-   pacman -Ql <installed_pkg>         | pacman -Ql
+    ---------------------------------- | ----------------------------------------
+-   apt list <pkg>                     | apt list
+-   apt show <pkg>                     | apt show
+-   apt install <pkg>                  | apt install
+-   apt remove <pkg>                   | apt remove
+-   apt search <pkg>                   | apt search
+    ---------------------------------- | ----------------------------------------
+-   pip list                           | pip list<CR>
+-   pip search <pkg>                   | pip search
+-   pip install <pkg>                  | pip install
+-   pip uninstall <pkg>                | pip uninstall
+-   pip-upgrade                        | python -m pip install --upgrade pip<CR>
 [terminal:git] ----------------------- | ----------------------------------------
 - G G                                  | G<CR>
 -   git status                         | git status<CR>
@@ -158,5 +178,6 @@
 -   git-chmod-x <file>                 | git-chmod-x
 -   git-chmod-x-all                    | git-chmod-x-all<CR>
 -   git-ls-no-x                        | git-ls-no-x
+-   git-upgrade                        | git update-git-for-windows<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:

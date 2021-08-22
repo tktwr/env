@@ -174,7 +174,7 @@ let g:cpm_files = [
   \ ]
 let g:cpm_titles = {
   \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
-  \ 'terminal': ['terminal:main', 'terminal:git', 'bmk:dir', 'bmk:local'],
+  \ 'terminal': ['terminal:main', 'terminal:system', 'terminal:git', 'bmk:dir', 'bmk:local'],
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
   \ }
 
