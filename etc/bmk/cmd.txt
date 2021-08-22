@@ -129,6 +129,17 @@
     ---------------------------------- | ----------------------------------------
 -   pip-upgrade                        | python -m pip install --upgrade pip<CR>
 -   git-upgrade                        | git update-git-for-windows<CR>
+    ---------------------------------- | ----------------------------------------
+-   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
+-   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>
+- m mycmake-set-make-release           | mycmake-set-make-release<CR>
+-   mycmake-set-make-debug             | mycmake-set-make-debug<CR>
+-   mycmake-set-vs2017-release         | mycmake-set-vs2017-release<CR>
+-   mycmake-set-vs2017-debug           | mycmake-set-vs2017-debug<CR>
+-   mycmake-set-vs2017-reldeb          | mycmake-set-vs2017-reldeb<CR>
+- v mycmake-set-vs2019-release         | mycmake-set-vs2019-release<CR>
+-   mycmake-set-vs2019-debug           | mycmake-set-vs2019-debug<CR>
+-   mycmake-set-vs2019-reldeb          | mycmake-set-vs2019-reldeb<CR>
 [terminal:git] ----------------------- | ----------------------------------------
 - G G                                  | G<CR>
 -   git status                         | git status<CR>

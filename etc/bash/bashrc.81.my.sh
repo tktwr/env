@@ -29,39 +29,73 @@ alias cd.G='cd `mypushd.sh --get`'
 mv.G()          { mv "$@" `mypushd.sh --get`; }
 cp.G()          { cp "$@" `mypushd.sh --get`; }
 
+update-env() {
+  source $HOME/.bashrc
+}
+
 #------------------------------------------------------
 # mypython.sh
 #------------------------------------------------------
 mypython-set-python-anaconda() {
   mypython.sh --set python-anaconda $1
-  source $HOME/.bashrc
+  update-env
 }
 mypython-set-python-miniconda() {
   mypython.sh --set python-miniconda $1
-  source $HOME/.bashrc
+  update-env
 }
 mypython-set-python-win() {
   mypython.sh --set python-win $1
-  source $HOME/.bashrc
+  update-env
 }
 mypython-set-python() {
   mypython.sh --set python $1
-  source $HOME/.bashrc
+  update-env
 }
 
 #------------------------------------------------------
 # mycmake.sh
 #------------------------------------------------------
-alias mycmake-set-ninja-release='mycmake.sh --set ninja Release'
-alias mycmake-set-ninja-debug='mycmake.sh --set ninja Debug'
-alias mycmake-set-make-release='mycmake.sh --set make Release'
-alias mycmake-set-make-debug='mycmake.sh --set make Debug'
-alias mycmake-set-vs2017-release='mycmake.sh --set vs2017 Release'
-alias mycmake-set-vs2017-debug='mycmake.sh --set vs2017 Debug'
-alias mycmake-set-vs2017-reldeb='mycmake.sh --set vs2017 RelWithDebInfo'
-alias mycmake-set-vs2019-release='mycmake.sh --set vs2019 Release'
-alias mycmake-set-vs2019-debug='mycmake.sh --set vs2019 Debug'
-alias mycmake-set-vs2019-reldeb='mycmake.sh --set vs2019 RelWithDebInfo'
+mycmake-set-ninja-release() {
+  mycmake.sh --set ninja Release
+  update-env
+}
+mycmake-set-ninja-debug() {
+  mycmake.sh --set ninja Debug
+  update-env
+}
+mycmake-set-make-release() {
+  mycmake.sh --set make Release
+  update-env
+}
+mycmake-set-make-debug() {
+  mycmake.sh --set make Debug
+  update-env
+}
+mycmake-set-vs2017-release() {
+  mycmake.sh --set vs2017 Release
+  update-env
+}
+mycmake-set-vs2017-debug() {
+  mycmake.sh --set vs2017 Debug
+  update-env
+}
+mycmake-set-vs2017-reldeb() {
+  mycmake.sh --set vs2017 RelWithDebInfo
+  update-env
+}
+mycmake-set-vs2019-release() {
+  mycmake.sh --set vs2019 Release
+  update-env
+}
+mycmake-set-vs2019-debug() {
+  mycmake.sh --set vs2019 Debug
+  update-env
+}
+mycmake-set-vs2019-reldeb() {
+  mycmake.sh --set vs2019 RelWithDebInfo
+  update-env
+}
 
 #------------------------------------------------------
 # misc
@@ -74,15 +108,15 @@ print-env-config() {
   echo "MY_PRIVATE_CONFIG  = $MY_PRIVATE_CONFIG"
   echo "MY_OS_NAME         = $MY_OS_NAME"
   echo "MY_PYTHON_EXE      = $MY_PYTHON_EXE"
-  echo "$(which $MY_PYTHON_EXE)"
+  echo "                   = $(which $MY_PYTHON_EXE)"
 }
 
 print-env-build() {
-  echo "MY_PUSHD_DIR    = $MY_PUSHD_DIR"
-  echo "MY_PYTHON_TYPE  = $MY_PYTHON_TYPE"
-  echo "MY_PYTHON_VENV  = $MY_PYTHON_VENV"
-  echo "MY_BUILD_SYS    = $MY_BUILD_SYS"
-  echo "MY_BUILD_CONFIG = $MY_BUILD_CONFIG"
+  echo "MY_PUSHD_DIR       = $MY_PUSHD_DIR"
+  echo "MY_PYTHON_TYPE     = $MY_PYTHON_TYPE"
+  echo "MY_PYTHON_VENV     = $MY_PYTHON_VENV"
+  echo "MY_BUILD_SYS       = $MY_BUILD_SYS"
+  echo "MY_BUILD_CONFIG    = $MY_BUILD_CONFIG"
 }
 
 print-env-proxy() {
@@ -97,8 +131,6 @@ print-env() {
   print-env-build
   print-env-proxy
 }
-
-alias pp='print-path.sh -p'
 
 #------------------------------------------------------
 # vimapi
@@ -161,6 +193,17 @@ vimapi-edit() {
   #vimapi.sh --in-above-win edit --filepath "$file"
 }
 
+vimapi-tabline-set-label() {
+  vimapi.sh MyTabLineSetLabel "$*"
+}
+
+vimapi-tabline-set-info() {
+  info=""
+  info="$info[$MY_PYTHON_TYPE,$MY_PYTHON_VENV]"
+  info="$info[$MY_BUILD_SYS,$MY_BUILD_CONFIG]"
+  vimapi.sh MyTabLineSetInfo "$info"
+}
+
 #------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
@@ -206,4 +249,7 @@ fi
 alias G='gg-d -6'
 alias GA='gg-d -6 --all'
 alias GM='git-log.sh --log 4 --log-submodule 2'
+
+#------------------------------------------------------
+alias pp='print-path.sh -p'
 

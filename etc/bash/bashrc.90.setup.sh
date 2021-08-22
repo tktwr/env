@@ -20,3 +20,7 @@ else
   f_set_prompt_none
 fi
 
+if [ "$VIM_TERMINAL" ]; then
+  vimapi-tabline-set-info
+fi
+
