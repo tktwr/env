@@ -8,7 +8,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_CONFIG/bmk_local.txt
+- B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
     ---------------------------------- | ----------------------------------------
 -   memo/my.md.html                    | $MY_MEMO/my.md.html
 -   memo/vim.md.html                   | $MY_MEMO/vim.md.html
@@ -19,10 +19,11 @@
 -   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 [bmk:dir] ---------------------------- | ----------------------------------------
 -   .my/                               | $MY_DOTMY/
+-   common/                            | $MY_COMMON_SETTING/
 -   backup/                            | $MY_BACKUP/
 -   tmp/                               | $MY_TMP/
     ---------------------------------- | ----------------------------------------
-- C cconfig/                           | $MY_COMMON_CONFIG/
+- C config/                            | $MY_CONFIG/
 - R rconfig/                           | $MY_REMOTE_CONFIG/
 - L lconfig/                           | $MY_LOCAL_CONFIG/
 - P pconfig/                           | $MY_PRIVATE_CONFIG/

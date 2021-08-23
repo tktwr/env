@@ -8,7 +8,7 @@
 - L links                              | $MY_ETC/bmk/links.txt
 - P papers                             | $MY_ETC/bmk/papers.txt
     ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_CONFIG/bmk_local.txt
+- B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
     ---------------------------------- | ----------------------------------------
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle

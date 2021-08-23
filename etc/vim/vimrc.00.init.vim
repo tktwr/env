@@ -170,7 +170,7 @@ let g:cpm_files = [
   \ "$MY_ETC/bmk/bmk.txt",
   \ "$MY_ETC/bmk/links.txt",
   \ "$MY_ETC/bmk/papers.txt",
-  \ "$MY_COMMON_CONFIG/bmk_local.txt",
+  \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
   \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
