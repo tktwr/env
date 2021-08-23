@@ -6,7 +6,7 @@ from PIL import Image
 import numpy as np
 
 
-def spec_to_metalroughness(ifname, ofname):
+def spec_to_metalrough(ifname, ofname):
     img = Image.open(ifname)
 
     if img.mode == "RGB":
@@ -19,11 +19,11 @@ def spec_to_metalroughness(ifname, ofname):
 
     ar = np.asarray(r, 'f')
     ar = 255 - ar
-    roughness = Image.fromarray(np.uint8(ar))
+    rough = Image.fromarray(np.uint8(ar))
 
-    o = Image.merge("RGBA", (zero, roughness, zero, one))
+    o = Image.merge("RGBA", (zero, rough, zero, one))
     o.save(ofname)
 
 
 if __name__ == "__main__":
-    spec_to_metalroughness(sys.argv[1], sys.argv[2])
+    spec_to_metalrough(sys.argv[1], sys.argv[2])
