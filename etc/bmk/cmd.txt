@@ -119,13 +119,14 @@
 - S GS                                 | GS<CR>
 - V GV                                 | GV<CR>
     ---------------------------------- | ----------------------------------------
-- c mycmake.sh                         | mycmake.sh<CR>
-- b mycmake.sh --build                 | mycmake.sh --build<CR>
 - 1 ,resize 10                         | ,resize 10<CR>
 - 2 ,resize 20                         | ,resize 20<CR>
 - 3 ,resize 30                         | ,resize 30<CR>
 - 4 ,resize 40                         | ,resize 40<CR>
 - T T                                  | T<CR>
+    ---------------------------------- | ----------------------------------------
+- c mycmake.sh                         | mycmake.sh<CR>
+- b mycmake.sh --build                 | mycmake.sh --build<CR>
     ---------------------------------- | ----------------------------------------
 -   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
 -   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>
@@ -142,18 +143,20 @@
 -   pacman -Syu                        | pacman -Syu<CR>
 -   pacman -S <pkg>                    | pacman -S
 -   pacman -R <pkg>                    | pacman -R
--   pacman -Ss [pattern]               | pacman -Ss
--   pacman -Sg [pkg_group]             | pacman -Sg
--   pacman -Si [pkg]                   | pacman -Si
+-   pacman -Ss <pattern>               | pacman -Ss
+-   pacman -Si <pkg>                   | pacman -Si
 -   pacman -Sl                         | pacman -Sl<CR>
+-   pacman -Sg [pkg_group]             | pacman -Sg
 -   pacman -Qi <installed_pkg>         | pacman -Qi
 -   pacman -Ql <installed_pkg>         | pacman -Ql
     ---------------------------------- | ----------------------------------------
 -   apt list <pkg>                     | apt list
+-   apt search <pkg>                   | apt search
 -   apt show <pkg>                     | apt show
 -   apt install <pkg>                  | apt install
 -   apt remove <pkg>                   | apt remove
--   apt search <pkg>                   | apt search
+-   apt update                         | apt update
+-   apt upgrade                        | apt upgrade
     ---------------------------------- | ----------------------------------------
 -   pip list                           | pip list<CR>
 -   pip search <pkg>                   | pip search
