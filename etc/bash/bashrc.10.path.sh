@@ -31,6 +31,8 @@ done
 
 for i in $MY_REMOTE_CONFIG/env $MY_LOCAL_CONFIG/env; do
   PATH="$i/bin:$PATH"
+  PATH="$i/bin/sys:$PATH"
+  PATH="$i/bin/gfx:$PATH"
   PATH="$i/bin/os.$MY_OS_NAME:$PATH"
   PATH="$i/bin/shell.$MY_SHELL_NAME:$PATH"
   PATH="$i/bin/site.$MY_SITE_NAME:$PATH"
