@@ -84,6 +84,7 @@
   - bake                               | https://3dcg-school.pro/blender-bake/
   - bake2                              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 - Blender入門(2.8版)                   | https://blender3d.biz/
+- Environment                          | https://reflectorange.net/archives/041.html
   ------------------------------------ | ----------------------------------------
 - Resources                            |
   - hdrihaven                          | https://hdrihaven.com/
