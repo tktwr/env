@@ -1,18 +1,16 @@
 #!/bin/bash
 
-pkg="\
+pkg_min="\
 winpty \
 vim \
 bc \
-fzy \
 zip unzip \
+openssh \
+"
+
+pkg_ext="\
+fzy \
 man-pages-posix \
-base-devel \
-mingw-w64-x86_64-toolchain \
-mingw-w64-x86_64-clang \
-mingw-w64-x86_64-clang-tools-extra \
-mingw-w64-x86_64-clang-analyzer \
-mingw-w64-x86_64-compiler-rt \
 mingw-w64-x86_64-universal-ctags-git \
 mingw-w64-x86_64-imagemagick \
 mingw-w64-x86_64-graphviz \
@@ -20,7 +18,13 @@ mingw-w64-x86_64-qpdf \
 mingw-w64-x86_64-ghostscript \
 "
 
-pkg_lib="\
+pkg_dev="\
+base-devel \
+mingw-w64-x86_64-toolchain \
+mingw-w64-x86_64-clang \
+mingw-w64-x86_64-clang-tools-extra \
+mingw-w64-x86_64-clang-analyzer \
+mingw-w64-x86_64-compiler-rt \
 mingw-w64-x86_64-glfw \
 mingw-w64-x86_64-glew \
 mingw-w64-x86_64-freeglut \
@@ -43,5 +47,7 @@ mingw-w64-x86_64-python2-pip \
 mingw-w64-x86_64-gnuplot \
 "
 
-pacman -S --needed $pkg $pkg_lib
+pkg="$pkg_min $pkg_ext $pkg_dev"
+
+pacman -S --needed $pkg
 

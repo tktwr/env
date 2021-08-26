@@ -8,7 +8,7 @@ vim \
 nodejs npm \
 "
 
-pkg_default="\
+pkg_ext="\
 neovim \
 make \
 cmake \
@@ -16,7 +16,7 @@ clang \
 ctags \
 "
 
-pkg="$pkg_min $pkg_default"
+pkg="$pkg_min $pkg_ext"
 
 sudo pacman -S --needed $pkg
 
