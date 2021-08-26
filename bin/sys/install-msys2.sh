@@ -9,8 +9,14 @@ openssh \
 "
 
 pkg_ext="\
-fzy \
+make \
+diffstat \
+diffutils \
+patch \
+patchutils \
+man-db \
 man-pages-posix \
+fzy \
 mingw-w64-x86_64-universal-ctags-git \
 mingw-w64-x86_64-imagemagick \
 mingw-w64-x86_64-graphviz \
@@ -19,7 +25,6 @@ mingw-w64-x86_64-ghostscript \
 "
 
 pkg_dev="\
-base-devel \
 mingw-w64-x86_64-toolchain \
 mingw-w64-x86_64-clang \
 mingw-w64-x86_64-clang-tools-extra \
@@ -41,6 +46,7 @@ vimpager \
 global \
 python \
 vifm \
+base-devel \
 mingw-w64-x86_64-cmake \
 mingw-w64-x86_64-python3-pip \
 mingw-w64-x86_64-python2-pip \
