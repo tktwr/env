@@ -9,8 +9,10 @@ mklink /d Downloads WinHome\Downloads
 mklink /d MyConfig WinHome\MyConfig
 mklink /d MyShare WinHome\MyShare
 
+REM for coc-settings.json
+mklink /d .vim WinHome\.vim
+
 REM mklink /d Dropbox WinHome\Dropbox
 REM mklink /d GoogleDrive WinHome\GoogleDrive
-REM mklink /d .vim MyConfig\tktwr.github\env\etc\vim
 
 pause
