@@ -1,6 +1,10 @@
 "======================================================
 " WinBufHist
 "======================================================
+if v:version < 802
+  finish
+endif
+
 if exists("g:loaded_winbufhist")
   finish
 endif

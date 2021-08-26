@@ -15,3 +15,9 @@ set background=dark
 
 nnoremap Q     :confirm qall<CR>
 
+nnoremap <C-H>   <C-W>h
+nnoremap <C-J>   <C-W>w
+nnoremap <C-K>   <C-W>W
+nnoremap <C-L>   <C-W>l
+nnoremap <C-G>   <C-L>
+

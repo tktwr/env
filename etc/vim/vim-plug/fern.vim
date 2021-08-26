@@ -37,8 +37,9 @@ endfunc
 
 "------------------------------------------------------
 func MyFernSelected()
-  exec "silent normal \<Plug>(fern-action-yank)"
-  return getreg(v:register)
+  let helper = fern#helper#new()
+  let node = helper.sync.get_cursor_node()
+  return node._path
 endfunc
 
 func MyFernEdit(winnr)

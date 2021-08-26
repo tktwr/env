@@ -226,10 +226,7 @@ func BmkExecCommand(cmd, winnr)
 
   let cmd = a:cmd
   let cmd = substitute(cmd, '<CR>', "\<CR>", '')
-  let cmd = substitute(cmd, '_Plug_', '\\<Plug>', '')
-  if (match(cmd, 'Plug') != -1)
-    let cmd = '"'.cmd.'"'
-  endif
+  let cmd = substitute(cmd, '_Plug_', "\<Plug>", '')
 
   if &buftype == 'terminal'
     let bufnr = winbufnr(0)
@@ -238,10 +235,7 @@ func BmkExecCommand(cmd, winnr)
     if (cmd[0] == ':')
       exec cmd[1:]
     else
-      echo "normal ".cmd
-      exec "normal ".cmd
-      "echo cmd
-      "exec cmd
+      call feedkeys(cmd)
     endif
   endif
 endfunc

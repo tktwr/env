@@ -22,6 +22,7 @@ mingw-w64-x86_64-imagemagick \
 mingw-w64-x86_64-graphviz \
 mingw-w64-x86_64-qpdf \
 mingw-w64-x86_64-ghostscript \
+mingw-w64-x86_64-ffmpeg \
 "
 
 pkg_dev="\

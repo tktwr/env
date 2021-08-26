@@ -1,6 +1,10 @@
 "======================================================
 " Custom Popup Menu
 "======================================================
+if v:version < 802
+  finish
+endif
+
 if exists("g:loaded_cpmenu")
   finish
 endif
