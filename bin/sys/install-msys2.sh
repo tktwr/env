@@ -25,7 +25,6 @@ mingw-w64-x86_64-ghostscript \
 "
 
 pkg_dev="\
-mingw-w64-x86_64-toolchain \
 mingw-w64-x86_64-clang \
 mingw-w64-x86_64-clang-tools-extra \
 mingw-w64-x86_64-clang-analyzer \
@@ -47,6 +46,7 @@ global \
 python \
 vifm \
 base-devel \
+mingw-w64-x86_64-toolchain \
 mingw-w64-x86_64-cmake \
 mingw-w64-x86_64-python3-pip \
 mingw-w64-x86_64-python2-pip \
