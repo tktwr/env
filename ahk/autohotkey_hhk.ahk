@@ -24,6 +24,9 @@ RShift::
 ;------------------------------------------------------
 ; Function Keys
 ;------------------------------------------------------
+; help
+;F1
+
 ; virtual desktop left
 F2::
   send,#^{Left}
@@ -38,6 +41,11 @@ F3::
 F4::
   send,#+s
   return
+
+; reload
+;F5
+
+;F6
 
 F7::
   w = %A_ScreenWidth%
@@ -61,4 +69,11 @@ F8::
       send,#{Left}
   }
   return
+
+;F9
+;F10
+;F11
+
+; system
+;F12
 
