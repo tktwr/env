@@ -2,6 +2,7 @@ let $MY_CONFIG=expand("$HOME/MyConfig")
 let $MY_VIM=expand("$MY_CONFIG/tktwr.github/env/etc/vim")
 
 source $MY_VIM/vimrc.00.init.vim
+source $MY_VIM/vimrc.01.my.vim
 source $MY_VIM/vimrc.10.skel.vim
 source $MY_VIM/vimrc.30.vim-plug.vim
 source $MY_VIM/vimrc.40.highlight.vim
