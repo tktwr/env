@@ -175,9 +175,9 @@ func CpmHandler(id, result)
     if w:edit_type == 0
       call BmkEdit(cmd, 0)
     elseif w:edit_type == 1
-      call BmkOpen(cmd, 0)
-    elseif w:edit_type == 2
       call BmkView(cmd, 0)
+    elseif w:edit_type == 2
+      call BmkOpen(cmd, 0)
     endif
   endif
 endfunc

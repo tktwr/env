@@ -407,9 +407,9 @@ func s:BmkMapWin()
   endif
 
   if (s:InSideBar())
-    nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(2)<CR>
-    nnoremap <silent> <buffer> <S-CR>  :call BmkViewItem(2)<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(2)<CR>
+    nnoremap <silent> <buffer> <C-CR>  :call BmkViewItem(2)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkOpenItem(2)<CR>
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
     nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
     nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
@@ -422,9 +422,9 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> 8       :call BmkEditItem(8)<CR>
     nnoremap <silent> <buffer> 9       :call BmkEditItem(9)<CR>
   else
-    nnoremap <silent> <buffer> <C-CR>  :call BmkOpenItem(0)<CR>
-    nnoremap <silent> <buffer> <S-CR>  :call BmkViewItem(0)<CR>
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(0)<CR>
+    nnoremap <silent> <buffer> <C-CR>  :call BmkViewItem(0)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkOpenItem(0)<CR>
     if maparg('l') != ""
       nunmap <buffer> l
       nunmap <buffer> k
