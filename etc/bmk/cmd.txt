@@ -48,8 +48,8 @@
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
-- O BmkOpenThis (C-CR)                 | :call BmkOpenThis()
-- V BmkViewThis (S-CR)                 | :call BmkViewThis()
+- V BmkViewThis (C-CR)                 | :call BmkViewThis()
+- O BmkOpenThis (S-CR)                 | :call BmkOpenThis()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
 - F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
