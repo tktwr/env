@@ -127,6 +127,7 @@ func s:CpmFixPos(id)
 endfunc
 
 func CpmFilter(id, key)
+  let w:edit_type = 0
   if a:key == s:cpm_key || a:key == s:cpm_term_key
     call popup_close(a:id, 0)
     return 1
@@ -145,6 +146,12 @@ func CpmFilter(id, key)
     let id = s:CpmOpen(nr)
     call s:CpmFixPos(id)
     return 1
+  elseif a:key == "\<C-CR>"
+    let w:edit_type = 1
+    return popup_filter_menu(a:id, "\<CR>")
+  elseif a:key == "\<S-CR>"
+    let w:edit_type = 2
+    return popup_filter_menu(a:id, "\<CR>")
   else
     let idx = s:CpmFindByKey(w:cpm_menu, '^ '.a:key.' ')
     if (idx != -1)
@@ -165,7 +172,13 @@ func CpmHandler(id, result)
     let cmd = s:cpm_cmd_dict[w:cpm_menu[idx]]
     let cmd = expand(cmd)
 
-    call BmkEdit(cmd, 0)
+    if w:edit_type == 0
+      call BmkEdit(cmd, 0)
+    elseif w:edit_type == 1
+      call BmkOpen(cmd, 0)
+    elseif w:edit_type == 2
+      call BmkView(cmd, 0)
+    endif
   endif
 endfunc
 

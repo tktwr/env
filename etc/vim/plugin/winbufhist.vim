@@ -51,24 +51,23 @@ func WinBufHistPopupMenuFilter(id, key)
     return 1
   elseif match(a:key, "[1-9]") == 0
     let w:dst_winnr = a:key + 0
-    return popup_filter_menu(a:id, "\<Enter>")
+    return popup_filter_menu(a:id, "\<CR>")
   endif
   return popup_filter_menu(a:id, a:key)
 endfunc
 
 func WinBufHistPopupMenuHandler(id, result)
-  echo "result:".a:result
   if a:result == 0
   elseif a:result > 0
     let idx = a:result - 1
+
     let bufnr = w:buflist[idx]
-    "echo printf("%d, %d", idx, bufnr)
     if w:dst_winnr == 0
       exec bufnr."b"
     else
       let bufname = bufname(bufnr)
       let absname = fnamemodify(bufname, ":p")
-      exec BmkEdit(absname, w:dst_winnr)
+      call BmkEdit(absname, w:dst_winnr)
     endif
   endif
 endfunc
