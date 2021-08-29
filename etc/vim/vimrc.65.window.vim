@@ -159,8 +159,7 @@ func MyRedraw()
   nohlsearch
   let l:dir = getcwd()
   let l:file = expand("%")
-  echo "cwd : ".l:dir
-  echo "file: ".l:file
+  echo printf("%s [%s]", l:file, l:dir)
   "file
   IndentGuidesToggle
 endfunc

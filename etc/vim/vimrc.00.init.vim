@@ -31,29 +31,25 @@ set dictionary=$MY_VIM/words
 " basic
 "------------------------------------------------------
 set hidden
-
 set autowrite
-
 set noswapfile
 set nobackup
 set nowritebackup
 set noundofile
 
-set showtabline=2
-
 set updatetime=300
 set signcolumn=yes
-set cmdheight=2
 set scrolloff=0
 set backspace=2
+set cmdheight=1
+set showtabline=2
+set winheight=10
+set eadirection=ver
+set listchars=tab:>-,trail:-,eol:$
 
 set wildignore+=*/build*/**
 set hlsearch
 set incsearch
-set listchars=tab:>-,trail:-,eol:$
-
-set eadirection=ver
-set winheight=10
 
 "set showcmd
 "set ignorecase
@@ -64,17 +60,6 @@ set winheight=10
 
 "set modeline
 "set modelines=5
-
-if !has('nvim')
-  if v:version >= 700
-    " disable popup menu for completion
-    "set completeopt=
-    "set textwidth=0
-    "set paste
-    "set ambiwidth=double
-    set cm=blowfish2
-  endif
-endif
 
 "------------------------------------------------------
 " color
@@ -102,6 +87,19 @@ set nofoldenable
 "------------------------------------------------------
 set diffopt=filler,vertical,iwhite
 "------------------------------------------------------
+" vim >= 700
+"------------------------------------------------------
+if !has('nvim')
+  if v:version >= 700
+    " disable popup menu for completion
+    "set completeopt=
+    "set textwidth=0
+    "set paste
+    "set ambiwidth=double
+    set cm=blowfish2
+  endif
+endif
+"------------------------------------------------------
 " encoding
 "------------------------------------------------------
 set encoding=utf-8
@@ -118,7 +116,8 @@ if has("win32unix") || has("win32") || has("win64")
   "source $VIMRUNTIME/mswin.vim
   "behave mswin
 endif
-
+"------------------------------------------------------
+" SourceFile
 "------------------------------------------------------
 func SourceFile(fname)
   let fname = expand(a:fname)
