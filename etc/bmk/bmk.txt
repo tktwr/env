@@ -19,7 +19,7 @@
 -   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 [bmk:dir] ---------------------------- | ----------------------------------------
 -   .my/                               | $MY_DOTMY/
--   common/                            | $MY_COMMON_SETTING/
+- c common/                            | $MY_COMMON_SETTING/
 -   backup/                            | $MY_BACKUP/
 -   tmp/                               | $MY_TMP/
     ---------------------------------- | ----------------------------------------
@@ -28,7 +28,7 @@
 - L lconfig/                           | $MY_LOCAL_CONFIG/
 - P pconfig/                           | $MY_PRIVATE_CONFIG/
     ---------------------------------- | ----------------------------------------
-- B bin/                               | $MY_BIN/
+- i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/

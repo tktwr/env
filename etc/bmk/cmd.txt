@@ -17,10 +17,9 @@
 - M Memo                               | :Memo
 - H Help                               | :MyHelp
     ---------------------------------- | ----------------------------------------
-- E IDE                                | :MyIDE
-- I WinInitSize                        | :MyWinInitSize
-- X Wx (C-x)                           | :Wx 0
-- C Wc (C-c)                           | :Wc 0
+- E MyIDE                              | :MyIDE
+- C MyIDESendCdE2T (C-s)               | :call MyIDESendCdE2T()
+- I MyWinInitSize                      | :MyWinInitSize
     ---------------------------------- | ----------------------------------------
 - p paste                              | "*p
 -   yank                               | "*y
@@ -35,8 +34,6 @@
     ---------------------------------- | ----------------------------------------
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
-    ---------------------------------- | ----------------------------------------
-- Q quit (Q)                           | :confirm qall
 [buffer:sub] ------------------------- | ----------------------------------------
 - g Gllog                              | :Gllog
 - s MyGstatusToggle                    | :MyGstatusToggle
@@ -58,7 +55,6 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - P MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
--   MyIDESendCdE2T (C-s)               | :call MyIDESendCdE2T()
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
 -   MyBufDelete                        | :MyBufDelete
 -   MyWinInfo                          | :MyWinInfo
@@ -66,13 +62,19 @@
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
+[buffer:subsub] ---------------------- | ----------------------------------------
+- X Wx (C-x)                           | :Wx 0
+- C Wc (C-c)                           | :Wc 0
+    ---------------------------------- | ----------------------------------------
+- Q quit (Q)                           | :confirm qall
 [buffer:coc] ------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
 -   CocInfo                            | :CocInfo
 -   CocOpenLog                         | :CocOpenLog
--   CocUpdate                          | :CocUpdate
--   MyCocInstall                       | :MyCocInstall
 -   CocAction('doHover')               | :call CocAction('doHover')
+    ---------------------------------- | ----------------------------------------
+-   MyCocInstall                       | :MyCocInstall
+-   CocUpdate                          | :CocUpdate
     ---------------------------------- | ----------------------------------------
 -   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
 -   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
