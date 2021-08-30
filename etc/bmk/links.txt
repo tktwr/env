@@ -2,7 +2,7 @@
 -   Memo                               | $MY_LOCAL_CONFIG/memo/index.html
 -   Diary                              | $MY_PRIVATE_CONFIG/diary/index.html
 -   Google翻訳                         | https://translate.google.co.jp/
--   DeepL                              | https://www.deepl.com/ja/translator
+-   DeepL翻訳                          | https://www.deepl.com/ja/translator
     ---------------------------------- | ----------------------------------------
 - H Help                               | :MyHelp
 -   Help.index                         | :MyHelp index

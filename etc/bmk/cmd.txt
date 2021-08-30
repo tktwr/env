@@ -21,8 +21,8 @@
 - C MyIDESendCdE2T (C-s)               | :call MyIDESendCdE2T()
 - I MyWinInitSize                      | :MyWinInitSize
     ---------------------------------- | ----------------------------------------
-- p paste                              | "*p
--   yank                               | "*y
+- p paste (,p)                         | "*p
+-   yank (Y)                           | "*y
 - 1 MyTabBar                           | :MyTabBar
 - : MyTabColon                         | :MyTabColon
 - , MyTabComma                         | :MyTabComma
