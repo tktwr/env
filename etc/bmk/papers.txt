@@ -32,5 +32,9 @@
 - Learning Physics-guided Face Relighting under Directional Light                               | https://arxiv.org/abs/1906.03355
 - Deep Single Image Portrait Relighting                                                         | https://zhhoper.github.io/dpr.html
 - Single Image Portrait Relighting                                                              | https://arxiv.org/abs/1905.00824
+  ------------------------------------                                                          | ----------------------------------------
+- Total Relighting: Learning to Relight Portraits for Background Replacement                    | https://augmentedperception.github.io/total_relighting/
+- NeRF-Tex: Neural Reflectance Field Textures                                                   | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
+- Mixture of Volumetric Primitives for Efficient Neural Rendering                               | https://arxiv.org/abs/2103.01954
 
 # vim:set ft=bmk syntax=txt nowrap:
