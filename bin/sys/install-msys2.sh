@@ -10,6 +10,7 @@ openssh \
 
 pkg_ext="\
 make \
+rsync \
 diffstat \
 diffutils \
 patch \

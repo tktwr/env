@@ -92,7 +92,8 @@
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
 [buffer:fern] ------------------------ | ----------------------------------------
--   below split                        | :below split
+- - below split                        | :below split
+- Y yank an abs path                   | _Plug_(fern-action-yank)
     ---------------------------------- | ----------------------------------------
 -   select-expand <2-LMouse>           | _Plug_(fern-my-select-expand-collapse)
 -   select-expand <CR>                 | _Plug_(fern-my-select-expand-collapse)
