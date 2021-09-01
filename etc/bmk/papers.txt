@@ -36,5 +36,10 @@
 - Total Relighting: Learning to Relight Portraits for Background Replacement                    | https://augmentedperception.github.io/total_relighting/
 - NeRF-Tex: Neural Reflectance Field Textures                                                   | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
 - Mixture of Volumetric Primitives for Efficient Neural Rendering                               | https://arxiv.org/abs/2103.01954
+  ------------------------------------                                                          | ----------------------------------------
+- Real-Time, All-Frequency Shadows in Dynamic Scenes | https://discovery.ucl.ac.uk/id/eprint/10005/1/10005.pdf
+- Real-time Rendering of Dynamic Scenes under All-frequency Lighting using Integral Spherical Gaussian | http://web.wakayama-u.ac.jp/~iwasaki/project/ibl/eg2012.pdf
+- Moment Shadow Mapping | https://cg.cs.uni-bonn.de/en/publications/paper-details/peters-2015-msm/
+- Real-Time Rendering Resources | http://www.realtimerendering.com/
 
 # vim:set ft=bmk syntax=txt nowrap:
