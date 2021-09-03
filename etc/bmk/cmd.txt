@@ -36,6 +36,7 @@
 - S MySourceVimrc                      | :MySourceVimrc
 [buffer:sub] ------------------------- | ----------------------------------------
 - g Gllog                              | :Gllog
+-   Gllog %                            | :Gllog %
 - s MyGstatusToggle                    | :MyGstatusToggle
 - v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
