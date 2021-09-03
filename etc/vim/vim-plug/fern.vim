@@ -99,6 +99,17 @@ func MyFernPreview(winnr)
 endfunc
 
 "------------------------------------------------------
+func MyFernViewItem()
+  let selected = MyFernSelected()
+  call BmkView(selected, 0)
+endfunc
+
+func MyFernOpenItem()
+  let selected = MyFernSelected()
+  call BmkOpen(selected, 0)
+endfunc
+
+"------------------------------------------------------
 func MyFernPrintItem()
   let key = MyFernSelected()
   if (len(key) > g:fern#drawer_width / 2)
@@ -154,7 +165,9 @@ function! s:init_fern() abort
         \ )
 
   nmap <buffer> <2-LeftMouse> <Plug>(fern-my-select-expand-collapse)
-  nmap <buffer> <CR>  <Plug>(fern-my-select-expand-collapse)
+  nmap <buffer> <CR>    <Plug>(fern-my-select-expand-collapse)
+  nmap <buffer> <C-CR>  :call MyFernViewItem()<CR>
+  nmap <buffer> <S-CR>  :call MyFernOpenItem()<CR>
 
   nmap <buffer> N     <Plug>(fern-action-new-path)
   nmap <buffer> D     <Plug>(fern-action-remove)
