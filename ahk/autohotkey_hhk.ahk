@@ -25,7 +25,7 @@ RShift::
 ; Function Keys
 ;------------------------------------------------------
 ; help
-;F1
+;F1::
 
 ; virtual desktop left
 F2::
@@ -43,19 +43,33 @@ F4::
   return
 
 ; reload
-;F5
+;F5::
 
-;F6
-
-F7::
+F6::
   w = %A_ScreenWidth%
   w_half = %A_ScreenWidth%
   w_half /= 2
   MsgBox, w = %w% w_half = %w_half%
   return
 
-; toggle maximize / half maximize window
+F7::
+  send,#{Left}
+  return
+
 F8::
+  send,#{Up}
+  return
+
+F9::
+  send,#{Right}
+  return
+
+F10::
+  send,#d
+  return
+
+; toggle maximize / half maximize window
+F11::
   WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
   ;MsgBox, x y w h = %X% %Y% %W% %H%
   screen_w_75 = %A_ScreenWidth%
@@ -70,10 +84,6 @@ F8::
   }
   return
 
-;F9
-;F10
-;F11
-
 ; system
-;F12
+;F12::
 

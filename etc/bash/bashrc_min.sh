@@ -16,7 +16,6 @@ else
 fi
 
 export MY_CONFIG="$MY_HOME/MyConfig"
-export MY_COMMON_SETTING="$MY_CONFIG/local/common"
 export MY_REMOTE_CONFIG="$MY_CONFIG/tktwr.github"
 export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
 export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
@@ -24,6 +23,10 @@ export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
 export MY_ENV="$MY_REMOTE_CONFIG/env"
 export MY_ETC="$MY_ENV/etc"
 export MY_BIN="$MY_ENV/bin"
+
+export MY_FZY="$MY_ETC/fzy"
+export MY_COMMON_SETTING="$MY_CONFIG/local/common"
+export MY_DOTMY="$HOME/.my"
 
 #------------------------------------------------------
 # path

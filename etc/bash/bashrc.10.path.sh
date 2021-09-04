@@ -29,7 +29,7 @@ for i in $MY_OPT/usr/local; do
   INFOPATH="$i/share/info:$INFOPATH"
 done
 
-for i in $MY_REMOTE_CONFIG/env $MY_LOCAL_CONFIG/env; do
+for i in $MY_REMOTE_CONFIG/env; do
   PATH="$i/bin:$PATH"
   PATH="$i/bin/sys:$PATH"
   PATH="$i/bin/gfx:$PATH"
@@ -37,6 +37,5 @@ for i in $MY_REMOTE_CONFIG/env $MY_LOCAL_CONFIG/env; do
   PATH="$i/bin/shell.$MY_SHELL_NAME:$PATH"
   PATH="$i/bin/site.$MY_SITE_NAME:$PATH"
   PATH="$i/bin/host.$MY_HOST_NAME:$PATH"
-  PATH="$i/share/dict:$PATH"
 done
 

@@ -5,23 +5,23 @@
 #======================================================
 
 fzy_arg_links() {
-  local files="$HOME/.my/links.txt \
+  local files="$MY_DOTMY/links.txt \
                $MY_COMMON_SETTING/links.txt \
-               $MY_ETC/fzy/links.txt \
+               $MY_FZY/links.txt \
                "
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
 }
 fzy_arg_dir() {
-  local files="$HOME/.my/dir.txt \
+  local files="$MY_DOTMY/dir.txt \
                $MY_COMMON_SETTING/dir.txt \
-               $MY_ETC/fzy/dir.txt \
+               $MY_FZY/dir.txt \
                "
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $3}')
 }
 fzy_arg_cmd() {
-  local files="$HOME/.my/cmd.txt \
+  local files="$MY_DOTMY/cmd.txt \
                $MY_COMMON_SETTING/cmd.txt \
-               $MY_ETC/fzy/cmd.txt \
+               $MY_FZY/cmd.txt \
                "
   echo $(grep -s -h -v '^#' $files | fzy | awk -F '|' '{print $2}')
 }
