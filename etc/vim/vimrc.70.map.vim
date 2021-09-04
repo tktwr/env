@@ -37,7 +37,7 @@ nnoremap ==      zi
 
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
- nnoremap <silent> <C-B>   :edit $MY_ETC/bmk/bmk.txt<CR>
+ nnoremap <silent> <C-B>   :edit $MY_BMK/bmk.txt<CR>
  nnoremap <silent> <C-C>   :Wc 0<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>

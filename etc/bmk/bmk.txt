@@ -3,10 +3,10 @@
 - d dia                                | $MY_DIARY/diary.md.html
 - t todo                               | $MY_DIARY/todo.md.html
     ---------------------------------- | ----------------------------------------
-- b bmk (C-b)                          | $MY_ETC/bmk/bmk.txt
-- c cmd                                | $MY_ETC/bmk/cmd.txt
-- L links                              | $MY_ETC/bmk/links.txt
-- P papers                             | $MY_ETC/bmk/papers.txt
+- b bmk (C-b)                          | $MY_BMK/bmk.txt
+- c cmd                                | $MY_BMK/cmd.txt
+- L links                              | $MY_BMK/links.txt
+- P papers                             | $MY_BMK/papers.txt
     ---------------------------------- | ----------------------------------------
 - B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
     ---------------------------------- | ----------------------------------------

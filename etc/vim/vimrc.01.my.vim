@@ -48,10 +48,10 @@ let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
 
 let g:cpm_files = [
-  \ "$MY_ETC/bmk/cmd.txt",
-  \ "$MY_ETC/bmk/bmk.txt",
-  \ "$MY_ETC/bmk/links.txt",
-  \ "$MY_ETC/bmk/papers.txt",
+  \ "$MY_BMK/cmd.txt",
+  \ "$MY_BMK/bmk.txt",
+  \ "$MY_BMK/links.txt",
+  \ "$MY_BMK/papers.txt",
   \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
