@@ -1,36 +1,36 @@
 "======================================================
-" WinBufHist
+" Window Buffer List
 "======================================================
 if v:version < 802
   finish
 endif
 
-if exists("g:loaded_winbufhist")
+if exists("g:loaded_wbl")
   finish
 endif
-let g:loaded_winbufhist = 1
+let g:loaded_wbl = 1
 
 "------------------------------------------------------
 " set global variables
 "------------------------------------------------------
 func s:SetGlobalVars()
   " set defaults
-  let s:winbufhist_key = "\<End>"
-  let s:winbufhist_max = 10
+  let s:wbl_key = "\<End>"
+  let s:wbl_max = 10
 
   " set global variables
-  if exists("g:winbufhist_key")
-    let s:winbufhist_key = g:winbufhist_key
+  if exists("g:wbl_key")
+    let s:wbl_key = g:wbl_key
   endif
-  if exists("g:winbufhist_max")
-    let s:winbufhist_max = g:winbufhist_max
+  if exists("g:wbl_max")
+    let s:wbl_max = g:wbl_max
   endif
 endfunc
 
 "------------------------------------------------------
 " util
 "------------------------------------------------------
-func WinBufHistFind(list_of_bufnr, pattern)
+func WblFind(list_of_bufnr, pattern)
   let idx = 0
   for i in a:list_of_bufnr
     let s = bufname(i)
@@ -42,12 +42,12 @@ func WinBufHistFind(list_of_bufnr, pattern)
   return -1
 endfunc
 
-func WinBufHistSelect(pattern, winnr)
+func WblSelect(pattern, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
   endif
 
-  let idx = WinBufHistFind(w:buflist, a:pattern)
+  let idx = WblFind(w:buflist, a:pattern)
   if (idx != -1)
     exec w:buflist[idx]."b"
   endif
@@ -56,14 +56,14 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-func WinBufHistPopupMenuFilter(id, key)
+func WblPopupMenuFilter(id, key)
   let w:dst_winnr = 0
-  if a:key == s:winbufhist_key
+  if a:key == s:wbl_key
     call popup_close(a:id, 0)
     return 1
   elseif a:key == "c"
     call popup_close(a:id, 0)
-    call WinBufHistClear()
+    call WblClear()
     return 1
   elseif match(a:key, "[1-9]") == 0
     let w:dst_winnr = a:key + 0
@@ -72,7 +72,7 @@ func WinBufHistPopupMenuFilter(id, key)
   return popup_filter_menu(a:id, a:key)
 endfunc
 
-func WinBufHistPopupMenuHandler(id, result)
+func WblPopupMenuHandler(id, result)
   if a:result == 0
   elseif a:result > 0
     let idx = a:result - 1
@@ -88,7 +88,7 @@ func WinBufHistPopupMenuHandler(id, result)
   endif
 endfunc
 
-func WinBufHistPopupMenu()
+func WblPopupMenu()
   if !exists("w:buflist")
     return
   endif
@@ -99,8 +99,8 @@ func WinBufHistPopupMenu()
     call add(l, s)
   endfor
   call popup_menu(l, #{
-    \ filter: 'WinBufHistPopupMenuFilter',
-    \ callback: 'WinBufHistPopupMenuHandler',
+    \ filter: 'WblPopupMenuFilter',
+    \ callback: 'WblPopupMenuHandler',
     \ border: [0,0,0,0],
     \ padding: [0,0,0,0],
     \ pos: 'botleft',
@@ -113,18 +113,18 @@ endfunc
 "------------------------------------------------------
 " private func
 "------------------------------------------------------
-func WinBufHistPrintMenu()
-  call WinBufHistPopupMenu()
+func WblPrintMenu()
+  call WblPopupMenu()
 endfunc
 
-func WinBufHistPrint()
+func WblPrint()
   for i in w:buflist
     let s = printf("%3d %s ", i, bufname(i))
     echo s
   endfor
 endfunc
 
-func WinBufHistClear()
+func WblClear()
   if !exists("w:buflist")
     return
   endif
@@ -135,7 +135,7 @@ func WinBufHistClear()
   endif
 endfunc
 
-func WinBufHistRemoveBufnr(list, bufnr)
+func WblRemoveBufnr(list, bufnr)
   let pattern = '\<'.a:bufnr.'\>'
   let i = match(a:list, pattern)
   if i != -1
@@ -143,30 +143,30 @@ func WinBufHistRemoveBufnr(list, bufnr)
   endif
 endfunc
 
-func WinBufHistPop()
+func WblPop()
   if (len(w:buflist) > 1)
     call remove(w:buflist, 0)
     exec w:buflist[0]."b"
   endif
 endfunc
 
-func WinBufHistPush()
+func WblPush()
   if !exists("w:buflist")
     let w:buflist = []
   endif
 
   let bufnr = bufnr('%')
-  call WinBufHistRemoveBufnr(w:buflist, bufnr)
+  call WblRemoveBufnr(w:buflist, bufnr)
   call insert(w:buflist, bufnr)
 
-  if (len(w:buflist) > s:winbufhist_max)
+  if (len(w:buflist) > s:wbl_max)
     call remove(w:buflist, -1)
   endif
 
-  "call WinBufHistPrint()
+  "call WblPrint()
 endfunc
 
-func WinBufHistPrev()
+func WblPrev()
   if !exists("w:buflist") || (len(w:buflist) <= 1)
     return
   endif
@@ -177,7 +177,7 @@ func WinBufHistPrev()
   exec w:buflist[0]."b"
 endfunc
 
-func WinBufHistNext()
+func WblNext()
   if !exists("w:buflist") || (len(w:buflist) <= 1)
     return
   endif
@@ -192,19 +192,19 @@ endfunc
 " public command
 "------------------------------------------------------
 if v:version >= 802
-  command WinBufHistPrint  call WinBufHistPrintMenu()
+  command WblPrint  call WblPrintMenu()
 else
-  command WinBufHistPrint  call WinBufHistPrint()
+  command WblPrint  call WblPrint()
 endif
 
-command WinBufHistPrev   call WinBufHistPrev()
-command WinBufHistNext   call WinBufHistNext()
-command WinBufHistClear  call WinBufHistClear()
-command WinBufHistPop    call WinBufHistPop()
+command WblPrev   call WblPrev()
+command WblNext   call WblNext()
+command WblClear  call WblClear()
+command WblPop    call WblPop()
 
-augroup ag_winbufhist
+augroup ag_wbl
   autocmd!
-  autocmd BufEnter *   call WinBufHistPush()
+  autocmd BufEnter *   call WblPush()
 augroup END
 
 "------------------------------------------------------

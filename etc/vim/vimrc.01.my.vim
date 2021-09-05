@@ -40,9 +40,9 @@ let g:my_todo_file = "$MY_DIARY/todo.md.html"
 " bmk
 let g:bmk_winwidth = g:my_left_winwidth
 
-" winbufhist
-let g:winbufhist_key = "\<End>"
-let g:winbufhist_max = 10
+" wbl
+let g:wbl_key = "\<End>"
+let g:wbl_max = 10
 
 " cpm
 let g:cpm_key = "\<Space>"
