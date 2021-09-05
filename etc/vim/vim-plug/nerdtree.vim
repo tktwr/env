@@ -28,7 +28,7 @@ endfunc
 
 func MyNERDTreeFind(dir)
   let dir = expand(a:dir)
-  call WinBufHistSelect('NERD_tree', 1)
+  call WblSelect('NERD_tree', 1)
   exec "NERDTreeFind" dir
 endfunc
 
