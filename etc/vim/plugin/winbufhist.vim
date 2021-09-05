@@ -10,9 +10,22 @@ if exists("g:loaded_winbufhist")
 endif
 let g:loaded_winbufhist = 1
 
-" user defined key
-let s:winbufhist_key = g:winbufhist_key
-let s:winbufhist_max = g:winbufhist_max
+"------------------------------------------------------
+" set global variables
+"------------------------------------------------------
+func s:SetGlobalVars()
+  " set defaults
+  let s:winbufhist_key = "\<End>"
+  let s:winbufhist_max = 10
+
+  " set global variables
+  if exists("g:winbufhist_key")
+    let s:winbufhist_key = g:winbufhist_key
+  endif
+  if exists("g:winbufhist_max")
+    let s:winbufhist_max = g:winbufhist_max
+  endif
+endfunc
 
 "------------------------------------------------------
 " util
@@ -29,9 +42,12 @@ func WinBufHistFind(list_of_bufnr, pattern)
   return -1
 endfunc
 
-func WinBufHistFindNERDTree()
-  exec "1wincmd w"
-  let idx = WinBufHistFind(w:buflist, 'NERD_tree')
+func WinBufHistSelect(pattern, winnr)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  let idx = WinBufHistFind(w:buflist, a:pattern)
   if (idx != -1)
     exec w:buflist[idx]."b"
   endif
@@ -190,4 +206,13 @@ augroup ag_winbufhist
   autocmd!
   autocmd BufEnter *   call WinBufHistPush()
 augroup END
+
+"------------------------------------------------------
+" init
+"------------------------------------------------------
+func s:Init()
+  call s:SetGlobalVars()
+endfunc
+
+call s:Init()
 

@@ -6,12 +6,19 @@ if exists("g:loaded_bmk")
 endif
 let g:loaded_bmk = 1
 
-let s:bmk_debug = 0
-let s:bmk_winwidth = 30
+"------------------------------------------------------
+" set global variables
+"------------------------------------------------------
+func s:SetGlobalVars()
+  " set defaults
+  let s:bmk_debug = 0
+  let s:bmk_winwidth = 30
 
-if exists("g:bmk_winwidth")
-  let s:bmk_winwidth = g:bmk_winwidth
-endif
+  " set global variables
+  if exists("g:bmk_winwidth")
+    let s:bmk_winwidth = g:bmk_winwidth
+  endif
+endfunc
 
 "------------------------------------------------------
 " util
@@ -25,16 +32,16 @@ func s:InSideBar()
   endif
 endfunc
 
+func s:GetDirName(filepath)
+  return substitute(a:filepath, "/[^/]*$", "", "")
+endfunc
+
 func BmkRemoveBeginSpaces(line)
   return substitute(a:line, '^\s*', '', '')
 endfunc
 
 func BmkRemoveEndSpaces(line)
   return substitute(a:line, '\s*$', '', '')
-endfunc
-
-func s:GetDirName(filepath)
-  return substitute(a:filepath, "/[^/]*$", "", "")
 endfunc
 
 "------------------------------------------------------
@@ -54,44 +61,8 @@ func BmkWinFindEditor()
 endfunc
 
 "------------------------------------------------------
-" get item
+" type
 "------------------------------------------------------
-" title format per line
-" [str] str
-func BmkGetTitle(line)
-  let mx = '^\[\(.\+\)\].*'
-  let line = a:line
-  let line = matchstr(line, mx)
-  let item = substitute(line, mx, '\1', '')
-  return item
-endfunc
-
-" item format per line
-" space [-+] key str    | str
-func BmkGetItem(line, idx)
-  let mx = '[-+] \(.\+\)\s*|\s*\(.\+\)'
-  let line = a:line
-  let line = matchstr(line, mx)
-  let item = substitute(line, mx, '\'.a:idx, '')
-  let item = BmkRemoveEndSpaces(item)
-  return item
-endfunc
-
-func BmkGetKeyItem()
-  let line = getline('.')
-  return BmkGetItem(line, 1)
-endfunc
-
-func BmkGetValueItem()
-  let line = getline('.')
-  return BmkGetItem(line, 2)
-endfunc
-
-func BmkGetExpandedValueItem()
-  let line = getline('.')
-  return expand(BmkGetItem(line, 2))
-endfunc
-
 func BmkUrlType(url)
   let url = a:url
 
@@ -133,6 +104,52 @@ func BmkGetDirName(val)
   return dir
 endfunc
 
+"------------------------------------------------------
+" get item
+"------------------------------------------------------
+" bmk format
+"   [title] str
+"   space [-+] shortcut key    | val
+
+" return "title"
+func BmkGetTitle(line)
+  let mx = '^\[\(.\+\)\].*'
+  let line = a:line
+  let line = matchstr(line, mx)
+  let item = substitute(line, mx, '\1', '')
+  return item
+endfunc
+
+" return indexed item
+func BmkGetItem(line, idx)
+  let mx = '[-+] \(.\+\)\s*|\s*\(.\+\)'
+  let line = a:line
+  let line = matchstr(line, mx)
+  let item = substitute(line, mx, '\'.a:idx, '')
+  let item = BmkRemoveEndSpaces(item)
+  return item
+endfunc
+
+" return "shortcut key"
+func BmkGetKeyItem()
+  let line = getline('.')
+  return BmkGetItem(line, 1)
+endfunc
+
+" return "val"
+func BmkGetValueItem()
+  let line = getline('.')
+  return BmkGetItem(line, 2)
+endfunc
+
+func BmkGetExpandedValueItem()
+  let line = getline('.')
+  return expand(BmkGetItem(line, 2))
+endfunc
+
+"------------------------------------------------------
+" print item
+"------------------------------------------------------
 func s:BmkPrintItem()
   if s:bmk_debug
     let key = BmkGetKeyItem()
@@ -459,4 +476,13 @@ command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
 func BmkToggleDebug()
   let s:bmk_debug = !s:bmk_debug
 endfunc
+
+"------------------------------------------------------
+" init
+"------------------------------------------------------
+func s:Init()
+  call s:SetGlobalVars()
+endfunc
+
+call s:Init()
 

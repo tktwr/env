@@ -37,6 +37,7 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
+" bmk
 let g:bmk_winwidth = g:my_left_winwidth
 
 " winbufhist
@@ -46,7 +47,6 @@ let g:winbufhist_max = 10
 " cpm
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
-
 let g:cpm_files = [
   \ "$MY_BMK/cmd.txt",
   \ "$MY_BMK/bmk.txt",
@@ -55,8 +55,8 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
   \ 'terminal': ['terminal:main', 'terminal:system', 'terminal:git', 'bmk:dir', 'bmk:local'],
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
+  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
   \ }
 

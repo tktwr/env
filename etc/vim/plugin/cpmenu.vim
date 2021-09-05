@@ -10,11 +10,35 @@ if exists("g:loaded_cpmenu")
 endif
 let g:loaded_cpmenu = 1
 
-" user defined key
-let s:cpm_key = g:cpm_key
-let s:cpm_term_key = g:cpm_term_key
+"------------------------------------------------------
+" set global variables
+"------------------------------------------------------
+func s:SetGlobalVars()
+  " set defaults
+  let s:separator = "------------------------------"
+  let s:cpm_key = "\<Space>"
+  let s:cpm_term_key = "\<C-Space>"
+  let s:cpm_files = []
+  let s:cpm_titles = {
+    \ 'terminal': [],
+    \ 'fern': [],
+    \ 'buffer': [],
+    \ }
 
-let s:separator = "------------------------------"
+  " set global variables
+  if exists("g:cpm_key")
+    let s:cpm_key = g:cpm_key
+  endif
+  if exists("g:cpm_term_key")
+    let s:cpm_term_key = g:cpm_term_key
+  endif
+  if exists("g:cpm_files")
+    let s:cpm_files = g:cpm_files
+  endif
+  if exists("g:cpm_titles")
+    let s:cpm_titles = g:cpm_titles
+  endif
+endfunc
 
 "------------------------------------------------------
 " util
@@ -199,11 +223,10 @@ func s:CpmOpen(menu_nr)
 endfunc
 
 "------------------------------------------------------
-" init
+" reload
 "------------------------------------------------------
 func s:CpmReload()
-  let s:cpm_files = g:cpm_files
-  let s:cpm_titles = g:cpm_titles
+  call s:SetGlobalVars()
 
   " menu_entry: cmd/dir/url
   let s:cpm_cmd_dict = {}
@@ -230,15 +253,18 @@ func s:CpmReload()
   endfor
 endfunc
 
-func s:CpmInit()
-  call s:CpmReload()
-endfunc
-
-call s:CpmInit()
-
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
 command CpmReload    call s:CpmReload()
 command CpmOpen      call s:CpmOpen(0)
+
+"------------------------------------------------------
+" init
+"------------------------------------------------------
+func s:Init()
+  call s:CpmReload()
+endfunc
+
+call s:Init()
 
