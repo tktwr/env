@@ -57,7 +57,7 @@
 - P MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
 -   MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
--   MyBufDelete                        | :MyBufDelete
+- x MyBufDelete                        | :MyBufDelete
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------

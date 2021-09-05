@@ -61,6 +61,9 @@ func WblPopupMenuFilter(id, key)
   if a:key == s:wbl_key
     call popup_close(a:id, 0)
     return 1
+  elseif a:key == "d"
+    let w:dst_winnr = -1
+    return popup_filter_menu(a:id, "\<CR>")
   elseif a:key == "c"
     call popup_close(a:id, 0)
     call WblClear()
@@ -80,6 +83,8 @@ func WblPopupMenuHandler(id, result)
     let bufnr = w:buflist[idx]
     if w:dst_winnr == 0
       exec bufnr."b"
+    elseif w:dst_winnr == -1
+      call WblRemoveBufnr(w:buflist, bufnr)
     else
       let bufname = bufname(bufnr)
       let absname = fnamemodify(bufname, ":p")
