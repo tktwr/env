@@ -30,7 +30,7 @@ alias where='type -all'
 alias lsd='\ls -d --color=auto */'
 alias psu='ps -u $USER'
 ll() { ls -l --color $* | $PAGER; }
-lst() { ls -lt --color $* | grep -v "/$" | head -15; }
+lst() { ls -lt --color $* | grep -v "/$" | head -5; }
 psall() { ps -aef | grep $*; }
 ff() { find . -name "$*" -print; }
 

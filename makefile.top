@@ -21,7 +21,7 @@ samples/mycmake.test \
 all: status
 
 graph:
-	@for-dir.sh "git graph -3" $(GIT_DIRS)
+	@for-dir.sh "git graph -1" $(GIT_DIRS)
 
 status:
 	@for-dir.sh "git status -s" $(GIT_DIRS)

@@ -1,13 +1,7 @@
 all: help
 
-min-tar:
-	git-tar.sh bin etc
-
-tar:
-	git-tar.sh
-
-zip:
-	git-zip.sh
+snap:
+	git-tar.sh $(MY_SNAP)
 
 .PHONY: tags
 tags:
@@ -18,7 +12,5 @@ tags:
 
 help:
 	@echo "all     ... help"
-	@echo "min-tar ... tar bin etc directories"
-	@echo "tar     ... tar the current directories"
-	@echo "zip     ... zip the current directories"
+	@echo "snap    ... make a snapshot"
 	@echo "help    ... print help"
