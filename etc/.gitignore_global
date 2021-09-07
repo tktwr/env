@@ -1,7 +1,7 @@
 # vim
 *.swp
 .netrwhist
-tags
+tags*
 
 # emacs
 *~
