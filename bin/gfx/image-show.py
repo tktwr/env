@@ -8,9 +8,10 @@ import cv2
 def img_show(fname):
     img = cv2.imread(fname)
     cv2.imshow(f"{fname}", img)
-    cv2.waitKey()
 
 
 if __name__ == "__main__":
-    img_show(sys.argv[1])
+    for fname in sys.argv[1:]:
+        img_show(fname)
+    cv2.waitKey()
 

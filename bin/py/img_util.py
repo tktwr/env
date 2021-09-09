@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
-from PIL import Image, ImageDraw
 import numpy as np
+from PIL import Image, ImageDraw
+from ttpy import ImageSize
 
 
 def img_info(fname):
@@ -11,8 +12,8 @@ def img_info(fname):
     print(f"format: {img.format}")
     print(f"mode: {img.mode}")
     print(f"size: {img.size}")
-    print(f"img.getextrema(): {img.getextrema()}") 
-    print(f"img.getbands(): {img.getbands()}")
+    print(f"getextrema(): {img.getextrema()}") 
+    print(f"getbands(): {img.getbands()}")
 
 
 def img_query(fname, pos):
@@ -53,5 +54,17 @@ def img_create_tile(fname, size, colors):
     draw.rectangle((0  , h2 , w2-1 , h-1)  , fill=colors[2])
     draw.rectangle((w2 , h2 , w-1  , h-1)  , fill=colors[3])
     img.save(fname)
+
+
+def img_resize(ifname, ofname, dst_size):
+    img = Image.open(ifname)
+
+    img_size = ImageSize(img.size)
+    new_size = img_size.getSize(dst_size)
+
+    oimg = img.resize(new_size)
+    oimg.save(ofname)
+
+    print(f"img_resize {ifname} {ofname} {new_size}")
 
 

@@ -2,53 +2,27 @@
 # -*- coding: utf-8 -*-
 #
 # USAGE
-#     conv.py w h dst_ext image_file...
+#     conv.py [--width width] [--height height] -e dst_ext image_file...
 #
 # EXAMPLES
 #
 # - same size as each input
-#     conv.py   0   0 jpg a.png b.png...
+#     conv.py -e jpg a.png b.png...
 #
 # - fixed width
-#     conv.py 200   0 jpg a.png b.png...
+#     conv.py -w 200 -e jpg a.png b.png...
 #
 # - fixed height
-#     conv.py   0 200 jpg a.png b.png...
+#     conv.py --height 200 -e jpg a.png b.png...
 #
 # - fixed width and height
-#     conv.py 200 100 jpg a.png b.png...
+#     conv.py --width 200 --height 100 -e jpg a.png b.png...
 
 import sys
-import cv2
-from PIL import Image
-from ttpy import FileName
-from ttpy import ImageSize
 import argparse
-
-
-def cv_resize_image(ifname, ofname, dst_size):
-    img = cv2.imread(ifname, cv2.IMREAD_COLOR)
-    h, w = img.shape[:2]
-
-    img_size = ImageSize((w, h))
-    new_size = img_size.getSize(dst_size)
-
-    oimg = cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
-    cv2.imwrite(ofname, oimg)
-
-    print(f"cv_resize_image {ifname} {ofname} {new_size}")
-
-
-def pil_resize_image(ifname, ofname, dst_size):
-    img = Image.open(ifname)
-
-    img_size = ImageSize(img.size)
-    new_size = img_size.getSize(dst_size)
-
-    oimg = img.resize(new_size)
-    oimg.save(ofname)
-
-    print(f"pil_resize_image {ifname} {ofname} {new_size}")
+from ttpy import FileName
+import cv_util as cu
+import img_util as iu
 
 
 def f_conv_images(dst_size, dst_ext, files):
@@ -57,8 +31,8 @@ def f_conv_images(dst_size, dst_ext, files):
         name = fname.name()
         ofname = f"{name}.{dst_ext}"
 
-        cv_resize_image(ifname, ofname, dst_size)
-        #pil_resize_image(ifname, ofname, dst_size)
+        cu.cv_resize(ifname, ofname, dst_size)
+        #iu.img_resize(ifname, ofname, dst_size)
 
 
 def parse_args(argv):
@@ -66,11 +40,14 @@ def parse_args(argv):
     parser.add_argument('-v', '--verbose',
                         action='store_true',
                         help='show verbose message')
-    parser.add_argument('-s', '--size',
-                        nargs='+',
+    parser.add_argument('-w', '--width',
                         type=int,
-                        default=[0, 0],
-                        help='set image size')
+                        default=0,
+                        help='set width')
+    parser.add_argument('--height',
+                        type=int,
+                        default=0,
+                        help='set height')
     parser.add_argument('-e', '--ext',
                         type=str,
                         default='jpg',
@@ -92,6 +69,6 @@ if __name__ == "__main__":
         print(f"args.files: {args.files}")
         print()
 
-    f_conv_images(args.size, args.ext, args.files)
+    f_conv_images((args.width, args.height), args.ext, args.files)
 
 

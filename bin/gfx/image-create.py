@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import img_util as iu
 import argparse
+import img_util as iu
 
 
 def parse_args(argv):
