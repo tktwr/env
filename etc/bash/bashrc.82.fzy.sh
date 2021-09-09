@@ -43,7 +43,7 @@ fzy_arg_memo() {
 fzy_cmd() {
   cmd="$1"
   arg=`$2`
-  if [ ! -z "$arg" ]; then
+  if [ -n "$arg" ]; then
     eval "$cmd$arg"
   fi
 }
