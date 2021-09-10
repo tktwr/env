@@ -1,46 +1,104 @@
-[papers] --------------------------------                                                              | ----------------------------------------
-- papers/                                                                                              | $MY_PAPERS
-  - BRDF/                                                                                              | $MY_PAPERS/BRDF
-  - Skin/                                                                                              | $MY_PAPERS/Skin
-  - PortraitRelighting/                                                                                | $MY_PAPERS/PortraitRelighting
-  ------------------------------------                                                                 | ----------------------------------------
-- SIGGRAPH Papers                                                                                      | http://kesen.realtimerendering.com/
-- SIGGRAPH Courses                                                                                     | https://blog.selfshadow.com/publications/
-- What Makes a (Graphics) Systems Paper Beautiful                                                      | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
-- Two Minute Papers                                                                                    | https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg
-- Seamless                                                                                             | https://shiropen.com/
-- ゲームグラフィックス特論 A / B                                                                       | https://tokoik.github.io/gg/
-  ------------------------------------                                                                 | ----------------------------------------
-- Disney BSDF: SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                   | https://blog.selfshadow.com/publications/s2015-shading-course/
-- Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering        | http://project-asura.com/blog/archives/2175
-- Disney BRDF: 超雑訳 Physically Based Shading at Disney                                               | http://project-asura.com/blog/archives/1972
-- Lafortune BRDF: Non-linear approximation of reflectance functions                                    | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
-  - Reflectance Data                                                                                   | http://www.graphics.cornell.edu/online/measurements/reflectance/
-- Efficient BRDF Importance Sampling Using a Factored Representation                                   | https://gfx.cs.princeton.edu/proj/brdf/
-- CS 431/636 - Advanced Rendering Techniques                                                           | https://www.cs.drexel.edu/~david/Classes/CS431/
-  ------------------------------------                                                                 | ----------------------------------------
-- Separable Subsurface Scattering                                                                      | http://www.iryoku.com/separable-sss/
-  ------------------------------------                                                                 | ----------------------------------------
-- SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～                              | http://project-asura.com/blog/archives/4748
-  ------------------------------------                                                                 | ----------------------------------------
-- NVISII - NVIDIA Scene Imaging Interface                                                              | https://github.com/owl-project/NVISII
-  ------------------------------------                                                                 | ----------------------------------------
-- Neural Radiosity                                                                                     | https://arxiv.org/abs/2105.12319
-- MATch: Differentiable Material Graphs for Procedural Material Capture                                | http://match.csail.mit.edu/
-- NeuMIP: Multi-Resolution Neural Materials                                                            | https://arxiv.org/abs/2104.02789
-  ------------------------------------                                                                 | ----------------------------------------
-- Learning Physics-guided Face Relighting under Directional Light                                      | https://arxiv.org/abs/1906.03355
-- Deep Single Image Portrait Relighting                                                                | https://zhhoper.github.io/dpr.html
-- Single Image Portrait Relighting                                                                     | https://arxiv.org/abs/1905.00824
-  ------------------------------------                                                                 | ----------------------------------------
-- Total Relighting: Learning to Relight Portraits for Background Replacement                           | https://augmentedperception.github.io/total_relighting/
-- NeRF-Tex: Neural Reflectance Field Textures                                                          | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
-- Mixture of Volumetric Primitives for Efficient Neural Rendering                                      | https://arxiv.org/abs/2103.01954
-  ------------------------------------                                                                 | ----------------------------------------
-- Real-Time Rendering Resources                                                                        | http://www.realtimerendering.com/
-- Real-Time, All-Frequency Shadows in Dynamic Scenes                                                   | https://discovery.ucl.ac.uk/id/eprint/10005/1/10005.pdf
-- Real-time Rendering of Dynamic Scenes under All-frequency Lighting using Integral Spherical Gaussian | http://web.wakayama-u.ac.jp/~iwasaki/project/ibl/eg2012.pdf
-- Moment Shadow Mapping                                                                                | https://cg.cs.uni-bonn.de/en/publications/paper-details/peters-2015-msm/
-- Robust High-Resolution Video Matting with Temporal Guidance                                          | https://arxiv.org/abs/2108.11515
+[papers] --------------------------------                                                                            | ----------------------------------------
+- papers/                                                                                                            | $MY_PAPERS
+  - BRDF/                                                                                                            | $MY_PAPERS/BRDF
+  - Skin/                                                                                                            | $MY_PAPERS/Skin
+  - PortraitRelighting/                                                                                              | $MY_PAPERS/PortraitRelighting
+[Resources] ------------------------                                                                                 | ----------------------------------------
+- Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
+- SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
+- SIGGRAPH Courses                                                                                                   | https://blog.selfshadow.com/publications/
+- SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                              | https://blog.selfshadow.com/publications/s2015-shading-course/
+- What Makes a (Graphics) Systems Paper Beautiful                                                                    | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
+- Two Minute Papers                                                                                                  | https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg
+- Seamless                                                                                                           | https://shiropen.com/
+- SelfShadow                                                                                                         | https://blog.selfshadow.com/
+- ゲームグラフィックス特論 A / B                                                                                     | https://tokoik.github.io/gg/
+- NVISII - NVIDIA Scene Imaging Interface                                                                            | https://github.com/owl-project/NVISII
+- PFM Portable FloatMap Image Format                                                                                 | http://www.pauldebevec.com/Research/HDR/PFM/
+- GPU Gems 3                                                                                                         | https://developer.nvidia.com/gpugems/gpugems3/foreword
+- GPU Gems 3 Chapter 24. The Importance of Being Linear                                                              | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+[SDK] ------------------------                                                                                       | ----------------------------------------
+- 4dface                                                                                                             | https://www.4dface.io/
+- 4dface (github)                                                                                                    | https://github.com/patrikhuber/4dface
+- 6d.ai                                                                                                              | https://www.6d.ai/
+[People] ------------------------                                                                                    | ----------------------------------------
+- Ravi Ramamoorthi                                                                                                   | https://cseweb.ucsd.edu/~ravir/
+- Kun Zhou                                                                                                           | http://www.kunzhou.net/
+- Jonas Unger                                                                                                        | http://weber.itn.liu.se/~jonun48/web/Home.php
+[BSDF] -----------------------------                                                                                 | ----------------------------------------
+- Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering                      | http://project-asura.com/blog/archives/2175
+- Disney BRDF: 超雑訳 Physically Based Shading at Disney                                                             | http://project-asura.com/blog/archives/1972
+- Lafortune BRDF: Non-linear approximation of reflectance functions                                                  | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
+  - Reflectance Data                                                                                                 | http://www.graphics.cornell.edu/online/measurements/reflectance/
+- Efficient BRDF Importance Sampling Using a Factored Representation                                                 | https://gfx.cs.princeton.edu/proj/brdf/
+- CS 431/636 - Advanced Rendering Techniques                                                                         | https://www.cs.drexel.edu/~david/Classes/CS431/
+[SSS] ------------------------------                                                                                 | ----------------------------------------
+- Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
+[Skin Estimation] ------------------------------                                                                     | ----------------------------------------
+- A Biophysical 3D Morphable Model of Face Appearance                                                                |
+- BioFaceNet: Deep Biophysical Face Image Interpretation                                                             |
+- DECOMPOSING MULTISPECTRAL FACE IMAGES INTO DIFFUSE AND SPECULAR SHADING AND BIOPHYSICAL PARAMETERS                 | http://www-users.cs.york.ac.uk/~wsmith/
+- Image-based skin color and texture analysis/synthesis by extracting hemoglobin and melanin information in the skin |
+- Monte Carlo Simulation of Spectral Reflectance Using a Multilayered Skin Tissue Model                              |
+- Monte Carlo simulation of light reflection from cosmetic powder particles near the human skin surface              |
+- The Appearance of Human Skin: A Survey                                                                             |
+[Light] ---------------------------                                                                                  | ----------------------------------------
+- Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                                | https://eheitzresearch.wordpress.com/415-2/
+[Shadow] ---------------------------                                                                                 | ----------------------------------------
+- SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～                                            | http://project-asura.com/blog/archives/4748
+- Real-Time, All-Frequency Shadows in Dynamic Scenes                                                                 | https://discovery.ucl.ac.uk/id/eprint/10005/1/10005.pdf
+- Real-time Rendering of Dynamic Scenes under All-frequency Lighting using Integral Spherical Gaussian               | http://web.wakayama-u.ac.jp/~iwasaki/project/ibl/eg2012.pdf
+- Moment Shadow Mapping                                                                                              | https://cg.cs.uni-bonn.de/en/publications/paper-details/peters-2015-msm/
+[Material] -------------------------                                                                                 | ----------------------------------------
+- Neural Radiosity                                                                                                   | https://arxiv.org/abs/2105.12319
+- MATch: Differentiable Material Graphs for Procedural Material Capture                                              | http://match.csail.mit.edu/
+- NeuMIP: Multi-Resolution Neural Materials                                                                          | https://arxiv.org/abs/2104.02789
+[Face Estimation] ------------------------                                                                           | ----------------------------------------
+- SfSNet: Learning Shape, Reflectance and Illuminance of Faces in the Wild                                           | https://arxiv.org/abs/1712.01261
+[Hair Estimation] ------------------------                                                                           | ----------------------------------------
+- HairGANs                                                                                                           | https://github.com/MengZephyr/HairGANs
+[Portrait] -------------------------                                                                                 | ----------------------------------------
+- Learning Physics-guided Face Relighting under Directional Light                                                    | https://arxiv.org/abs/1906.03355
+- Deep Single Image Portrait Relighting                                                                              | https://zhhoper.github.io/dpr.html
+- Single Image Portrait Relighting                                                                                   | https://arxiv.org/abs/1905.00824
+[Segmentation] ---------------------                                                                                 | ----------------------------------------
+- Robust High-Resolution Video Matting with Temporal Guidance                                                        | https://arxiv.org/abs/2108.11515
+- Deep Automatic Portrait Matting                                                                                    | http://xiaoyongshen.me/webpages/webpage_automatting/
+- Automatic Portrait Segmentation for Image Stylization                                                              | http://xiaoyongshen.me/webpage_portrait/index.html
+[AI Filter] ------------------------                                                                                 | ----------------------------------------
+- Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/
+[CycleGAN] ------------------------                                                                                  | ----------------------------------------
+- CycleGAN and pix2pix in PyTorch                                                                                    | https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+- CycleGAN                                                                                                           | https://github.com/junyanz/CycleGAN
+- pix2pix                                                                                                            | https://github.com/phillipi/pix2pix
+[Style Transfer] ------------------------                                                                            | ----------------------------------------
+- Style Transfer for Headshot Portraits                                                                              | http://people.csail.mit.edu/yichangshih/portrait_web/
+- A Neural Algorithm of Artistic Style                                                                               | https://arxiv.org/abs/1508.06576
+[Deep Learning] ------------------------                                                                             | ----------------------------------------
+- Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks                                    | https://arxiv.org/abs/1703.10593
+- Image-to-Image Translation with Conditional Adversarial Networks                                                   | https://arxiv.org/abs/1611.07004
+- Deep Depth Completion of a Single RGB-D Image                                                                      | https://arxiv.org/abs/1803.09326
+[Relighting] ------------------------                                                                                | ----------------------------------------
+- Single Image Portrait Relighting                                                                                   |
+- DeepLight: Learning Illumination for Unconstrained Mobile Mixed Reality                                            |
+- From Faces to Outdoor Light Probes                                                                                 |
+- Faces as Lighting Probes via Unsupervised Deep Highlight Extraction                                                | https://arxiv.org/abs/1803.06340
+[Separating Illumination] ------------------------                                                                   | ----------------------------------------
+- CGIntrinsics: Better Intrinsic Image Decomposition through Physically-Based Rendering                              | http://www.cs.cornell.edu/projects/cgintrinsics/
+- A Dataset of Flash and Ambient Illumination Pairs from the Crowd                                                   | http://people.inf.ethz.ch/aksoyy/flashambient/
+[CV:Reconstruction] ------------------------                                                                         | ----------------------------------------
+- Semantic Scene Completion from a Single Depth Image                                                                | https://github.com/shurans/sscnet
+[DR] ------------------------                                                                                        | ----------------------------------------
+- Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                    | https://arxiv.org/abs/1904.01786
+- Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                   | https://github.com/ShichenLiu/SoftRas
+- Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                           | https://arxiv.org/abs/2011.03277
+- Modular Primitives for High-Performance Differentiable Rendering [github]                                          | https://github.com/NVlabs/nvdiffrast
+[Photography] ------------------------                                                                               | ----------------------------------------
+- Casual 3D Photography                                                                                              | http://visual.cs.ucl.ac.uk/pubs/casual3d/
+[TechSalon] ------------------------                                                                                 | ----------------------------------------
+- Total Relighting: Learning to Relight Portraits for Background Replacement                                         | https://augmentedperception.github.io/total_relighting/
+- NeRF-Tex: Neural Reflectance Field Textures                                                                        | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
+- Mixture of Volumetric Primitives for Efficient Neural Rendering                                                    | https://arxiv.org/abs/2103.01954
 
 # vim:set ft=bmk syntax=txt nowrap:
+

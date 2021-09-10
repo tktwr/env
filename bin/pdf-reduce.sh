@@ -14,7 +14,7 @@ opt="-dPDFSETTINGS=//prepress"
 # default:
 #opt="-dPDFSETTINGS=//default"
 
-files=$*
+files="$@"
 
 for i in $files; do
   fname=`f_get_fname $i`
