@@ -17,12 +17,29 @@ function f_get_fname() {
 
 function f_get_name() {
   local fname=`f_get_fname $1`
-  echo ${fname%%.*}
+  case $fname in
+    *.tar.gz)
+      fname=${fname%.*}
+      fname=${fname%.*}
+      ;;
+    *)
+      fname=${fname%.*}
+      ;;
+  esac
+  echo $fname
 }
 
 function f_get_ext() {
   local fname=`f_get_fname $1`
-  local ext=${fname#*.}
+  local ext=""
+  case $fname in
+    *.tar.gz)
+      ext="tar.gz"
+      ;;
+    *)
+      ext=${fname##*.}
+      ;;
+  esac
   if [ $ext == $fname ]; then
     echo
   else
