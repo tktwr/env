@@ -7,6 +7,21 @@ endif
 let g:loaded_bmk = 1
 
 "------------------------------------------------------
+" private func
+"------------------------------------------------------
+func! BmkClear()
+  silent %d _
+endfunc
+
+func! BmkPut0(text)
+  silent 0put =a:text
+endfunc
+
+func! BmkPut(text)
+  silent put =a:text
+endfunc
+
+"------------------------------------------------------
 " set global variables
 "------------------------------------------------------
 func s:SetGlobalVars()
@@ -238,6 +253,33 @@ func BmkEditFile(file, winnr)
   endif
 endfunc
 
+func BmkEditPDF(file, winnr)
+  let winnr = a:winnr
+  if winnr == -1
+    let winnr = BmkWinFindEditor()
+  endif
+  if winnr > 0
+    exec winnr."wincmd w"
+  endif
+
+  let dir = s:GetDirName(a:file)
+  if &buftype == 'terminal'
+    call BmkEditDirInTerm(dir, winnr)
+  else
+    exec "lcd" dir
+    let cmd = printf("pdftotext %s -", a:file)
+    let out = system(cmd)
+    let cmd = printf("edit %s.txt", a:file)
+    exec cmd
+    setlocal buftype=nofile
+    setlocal bufhidden=hide
+    setlocal buflisted
+    setlocal noswapfile
+    call BmkPut0(out)
+    normal 1G
+  endif
+endfunc
+
 func BmkExecCommand(cmd, winnr)
   if a:winnr > 0
     exec a:winnr."wincmd w"
@@ -305,7 +347,7 @@ func BmkEdit(url, winnr)
   elseif (type == "html")
     call BmkEditFile(url, a:winnr)
   elseif (type == "pdf")
-    call BmkOpenURL(url)
+    call BmkEditPDF(url, a:winnr)
   elseif (type == "vim_command")
     call BmkExecCommand(url, a:winnr)
   elseif (type == "term_command")
