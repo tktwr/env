@@ -7,8 +7,22 @@ endif
 let g:loaded_lookup = 1
 
 let s:lookup_winname = '\[Lookup\]'
-let s:lookup_winheight = 12
-let s:tmpfile = tempname()
+let s:lookup_winheight = 10
+
+"------------------------------------------------------
+" private func
+"------------------------------------------------------
+func! LookupClear()
+  silent %d _
+endfunc
+
+func! LookupPut0(text)
+  silent 0put =a:text
+endfunc
+
+func! LookupPut(text)
+  silent put =a:text
+endfunc
 
 "------------------------------------------------------
 " s:PrintHelp ()
@@ -22,8 +36,8 @@ func! s:PrintHelp ()
   let text = text."  q ....... close the window\n"
 
   setlocal modifiable
-  silent 1,$d _
-  silent 0put =text
+  call LookupClear()
+  call LookupPut0(text)
   setlocal nomodifiable
 endfunc
 
@@ -65,14 +79,14 @@ endfunc
 " Lookup (prg, opt, word)
 "------------------------------------------------------
 " remove a linefeed NL (0x0A)
-func s:RemoveNL(str)
+func! s:RemoveNL(str)
   let l:str = a:str
   let l:str = substitute(l:str, '\n', '', 'g')
   let l:str = substitute(l:str, "[\xA]", '', 'g')
   return l:str
 endfunc
 
-func! Lookup (prg, opt, word) range
+func! Lookup(prg, opt, word) range
   " check the window where the command is invoked
   if (!&previewwindow)
     let from_outside = 1
@@ -96,7 +110,7 @@ func! Lookup (prg, opt, word) range
   let s:word = s:RemoveNL(s:word)
   let s:word = '\"'.s:word.'\"'
 
-  silent botright pedit s:lookup_winname
+  silent below pedit s:lookup_winname
   wincmd P
   exec "resize" s:lookup_winheight
 
@@ -107,8 +121,9 @@ func! Lookup (prg, opt, word) range
 
   call s:DefineCommands()
 
-  silent exec "!" s:prg s:opt s:word ">" s:tmpfile
-  silent exec "0read" s:tmpfile
+  let cmd = printf("%s %s %s", s:prg, s:opt, s:word)
+  let out = system(cmd)
+  call LookupPut0(out)
 
   setlocal nomodifiable
 
@@ -122,34 +137,34 @@ endfunc
 " command
 "------------------------------------------------------
 " dictionary
-command -range -nargs=+ EJ  call Lookup("ej", "", <q-args>)
-command -range -nargs=+ EE  call Lookup("ee", "", <q-args>)
-command -range -nargs=+ GJ  call Lookup("gj", "", <q-args>)
+command! -range -nargs=+ EJ  call Lookup("ej", "", <q-args>)
+command! -range -nargs=+ EE  call Lookup("ee", "", <q-args>)
+command! -range -nargs=+ GJ  call Lookup("gj", "", <q-args>)
 
 " dictionary
-command -range -nargs=* DictJa call Lookup("trans", ":ja -w 60 -no-ansi", <q-args>)
-command -range -nargs=* DictEn call Lookup("trans", ":en -w 60 -no-ansi", <q-args>)
-command -range -nargs=* DictZh call Lookup("trans", ":zh -w 60 -no-ansi", <q-args>)
+command! -range -nargs=* DictJa call Lookup("trans", ":ja -w 60 -no-ansi", <q-args>)
+command! -range -nargs=* DictEn call Lookup("trans", ":en -w 60 -no-ansi", <q-args>)
+command! -range -nargs=* DictZh call Lookup("trans", ":zh -w 60 -no-ansi", <q-args>)
 
 " translation
-command -range -nargs=* TransJa call Lookup("trans", ":ja -w 60 -b", <q-args>)
-command -range -nargs=* TransEn call Lookup("trans", ":en -w 60 -b", <q-args>)
-command -range -nargs=* TransZh call Lookup("trans", ":zh -w 60 -b", <q-args>)
+command! -range -nargs=* TransJa call Lookup("trans", ":ja -w 60 -b", <q-args>)
+command! -range -nargs=* TransEn call Lookup("trans", ":en -w 60 -b", <q-args>)
+command! -range -nargs=* TransZh call Lookup("trans", ":zh -w 60 -b", <q-args>)
 
-command DictJaHere     DictJa <cword>
-command DictEnHere     DictEn <cword>
-command DictZhHere     DictZh <cword>
+command! DictJaHere     DictJa <cword>
+command! DictEnHere     DictEn <cword>
+command! DictZhHere     DictZh <cword>
 
-command TransJaVisual  TransJa
-command TransEnVisual  TransEn
-command TransZhVisual  TransZh
+command! TransJaVisual  TransJa
+command! TransEnVisual  TransEn
+command! TransZhVisual  TransZh
 
-"command TransJaVisual  TransJa "<C-R>""
-"command TransEnVisual  TransEn "<C-R>""
-"command TransZhVisual  TransZh "<C-R>""
+"command! TransJaVisual  TransJa "<C-R>""
+"command! TransEnVisual  TransEn "<C-R>""
+"command! TransZhVisual  TransZh "<C-R>""
 
 "------------------------------------------------------
 " map
 "------------------------------------------------------
-"nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
+nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
 

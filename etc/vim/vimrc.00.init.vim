@@ -44,6 +44,8 @@ set backspace=2
 set cmdheight=1
 set showtabline=2
 set winheight=10
+set previewheight=10
+"set previewpopup=height:10,width:60
 set eadirection=ver
 set listchars=tab:>-,trail:-,eol:$
 
