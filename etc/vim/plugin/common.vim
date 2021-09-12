@@ -1,15 +1,16 @@
+"======================================================
+" common
+"======================================================
 "------------------------------------------------------
 " util
 "------------------------------------------------------
-func TtInSideBar()
-  let winnr = winnr()
-  if (winnr <= 2 && winwidth(0) <= g:my_left_winwidth)
-    return 1
-  else
-    return 0
-  endif
+func TtGetDirName(filepath)
+  return substitute(a:filepath, "/[^/]*$", "", "")
 endfunc
 
+"------------------------------------------------------
+" buffer
+"------------------------------------------------------
 func TtClear()
   silent %d _
 endfunc
@@ -22,16 +23,45 @@ func TtPut(text)
   silent put =a:text
 endfunc
 
-func TtGetDirName(filepath)
-  return substitute(a:filepath, "/[^/]*$", "", "")
-endfunc
-
 func TtRemoveBeginSpaces(line)
   return substitute(a:line, '^\s*', '', '')
 endfunc
 
 func TtRemoveEndSpaces(line)
   return substitute(a:line, '\s*$', '', '')
+endfunc
+
+func TtSystem(cmd)
+  let out = system(a:cmd)
+  return substitute(out, "\<CR>", '', 'g')
+endfunc
+
+"------------------------------------------------------
+" window
+"------------------------------------------------------
+func TtInSideBar()
+  let winnr = winnr()
+  if (winnr <= 2 && winwidth(0) <= g:my_left_winwidth)
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
+func TtIsFullscreen()
+  if &columns > 150
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
+func TtIsEmptyTab()
+  let last_winnr = winnr('$')
+  if last_winnr == 1 && &filetype == ""
+    return 1
+  endif
+  return 0
 endfunc
 
 "------------------------------------------------------

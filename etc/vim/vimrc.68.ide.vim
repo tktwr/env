@@ -2,7 +2,7 @@
 " MyIDE
 "------------------------------------------------------
 func MyIDE()
-  let l:is_fullscreen = MyIsFullscreen()
+  let l:is_fullscreen = TtIsFullscreen()
   call MyLeftWin()
   wincmd w
   if l:is_fullscreen
@@ -60,7 +60,7 @@ func MyTabClosePrev()
   if winnr == -1
     " terminal is not found in the tab
     tabclose
-    if MyIsEmptyTab()
+    if TtIsEmptyTab()
       " close redundant empty tab
       tabclose
     endif

@@ -180,7 +180,7 @@ func BmkEditDir(dir, winnr)
     call BmkEditDirInTerm(a:dir, a:winnr)
   else
     if s:bmk_edit_dir_func != ""
-      exec printf("call %s(%s)", s:bmk_edit_dir_func, a:dir)
+      exec printf('call %s("%s")', s:bmk_edit_dir_func, a:dir)
     endif
   endif
 endfunc
@@ -226,7 +226,7 @@ func BmkEditPDF(file, winnr)
   else
     exec "lcd" dir
     let cmd = printf("pdftotext %s -", a:file)
-    let out = system(cmd)
+    let out = TtSystem(cmd)
     let cmd = printf("edit %s.txt", a:file)
     exec cmd
     setlocal buftype=nofile

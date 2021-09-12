@@ -18,22 +18,6 @@ func MyWinInfo()
   echo "winnr of current buf: ".bufwinnr('%')
 endfunc
 
-func MyIsEmptyTab()
-  let last_winnr = winnr('$')
-  if last_winnr == 1 && &filetype == ""
-    return 1
-  endif
-  return 0
-endfunc
-
-func MyIsFullscreen()
-  if &columns > 150
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
 "------------------------------------------------------
 " buffer exchange
 "------------------------------------------------------
