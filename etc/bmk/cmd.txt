@@ -96,8 +96,8 @@
 - - below split                        | :below split
 - Y yank an abs path                   | _Plug_(fern-action-yank)
     ---------------------------------- | ----------------------------------------
--   select-expand <2-LMouse>           | _Plug_(fern-my-select-expand-collapse)
--   select-expand <CR>                 | _Plug_(fern-my-select-expand-collapse)
+-   select-expand <2-LMouse>           | _Plug_(my-fern-select-expand-collapse)
+-   select-expand <CR>                 | _Plug_(my-fern-select-expand-collapse)
     ---------------------------------- | ----------------------------------------
 - N new-path                           | _Plug_(fern-action-new-path)
 - D remove                             | _Plug_(fern-action-remove)
@@ -117,17 +117,22 @@
 - < leave                              | _Plug_(fern-action-leave)
 - > enter                              | _Plug_(fern-action-enter)
 [terminal:main] ---------------------- | ----------------------------------------
-- D D                                  | D<CR>
-- G G                                  | G<CR>
-- A GA                                 | GA<CR>
-- S GS                                 | GS<CR>
-- V GV                                 | GV<CR>
+-   git graph (G)                      | G<CR>
+-   git graph --all (GA)               | GA<CR>
+-   MyGstatusToggle (GS)               | GS<CR>
+-   MyGV (GV)                          | GV<CR>
+    ---------------------------------- | ----------------------------------------
+-   MyIDE (E)                          | E<CR>
+-   MyFernDrawer (D)                   | D<CR>
+-   MyFernDrawerToggle (F)             | F<CR>
+-   MyTerm (T)                         | T<CR>
+-   MyTermV (TV)                       | TV<CR>
+-   MyWinInitSize (I)                  | I<CR>
     ---------------------------------- | ----------------------------------------
 - 1 ,resize 10                         | ,resize 10<CR>
 - 2 ,resize 20                         | ,resize 20<CR>
 - 3 ,resize 30                         | ,resize 30<CR>
 - 4 ,resize 40                         | ,resize 40<CR>
-- T T                                  | T<CR>
     ---------------------------------- | ----------------------------------------
 - c mycmake.sh                         | mycmake.sh<CR>
 - b mycmake.sh --build                 | mycmake.sh --build<CR>

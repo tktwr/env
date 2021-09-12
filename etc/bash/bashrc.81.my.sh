@@ -216,15 +216,15 @@ if [ "$VIM_TERMINAL" ]; then
   vim() { vimapi-edit "$@"; }
 
   alias D='vimapi-fern'
-
+  alias I='vimapi.sh MyWinInitSize'
+  alias TV='vimapi.sh MyTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
 
   alias GS='vimapi.sh --in-new-tab MyGstatusToggle'
   alias GV='vimapi.sh --in-new-tab MyGV'
   alias E='vimapi.sh --in-new-tab MyIDE'
-  alias V='vimapi.sh MyFernDrawerToggle'
+  alias F='vimapi.sh MyFernDrawerToggle'
   alias T='vimapi.sh MyTerm'
-  alias TV='vimapi.sh MyTermV'
 
   alias ,e='vimapi-edit'
   alias ,sp='vimapi.sh --in-above-win "below split" --filepath'
@@ -236,7 +236,7 @@ else
   alias GS='vim -c "MyGstatusToggle"'
   alias GV='vim -c "MyGV"'
   alias E='vim -c "MyIDE"'
-  alias V='vim -c "MyFernDrawerToggle"'
+  alias F='vim -c "MyFernDrawerToggle"'
   alias T='vim -c "MyTerm"'
 
   alias z='vim -c "DiaFull"'

@@ -61,13 +61,13 @@ func WblPopupMenuFilter(id, key)
   if a:key == s:wbl_key
     call popup_close(a:id, 0)
     return 1
-  elseif a:key == "d"
-    let w:dst_winnr = -1
-    return popup_filter_menu(a:id, "\<CR>")
   elseif a:key == "c"
     call popup_close(a:id, 0)
     call WblClear()
     return 1
+  elseif a:key == "d"
+    let w:dst_winnr = -1
+    return popup_filter_menu(a:id, "\<CR>")
   elseif match(a:key, "[1-9]") == 0
     let w:dst_winnr = a:key + 0
     return popup_filter_menu(a:id, "\<CR>")
@@ -84,7 +84,13 @@ func WblPopupMenuHandler(id, result)
     if w:dst_winnr == 0
       exec bufnr."b"
     elseif w:dst_winnr == -1
-      call WblRemoveBufnr(w:buflist, bufnr)
+      if len(w:buflist) > 1
+        call WblBufDelete(bufnr)
+      else
+        enew
+        call WblPush()
+        call WblBufDelete(bufnr)
+      endif
     else
       let bufname = bufname(bufnr)
       let absname = fnamemodify(bufname, ":p")
@@ -129,6 +135,7 @@ func WblPrint()
   endfor
 endfunc
 
+"------------------------------------------------------
 func WblClear()
   if !exists("w:buflist")
     return
@@ -141,8 +148,7 @@ func WblClear()
 endfunc
 
 func WblRemoveBufnr(list, bufnr)
-  let pattern = '\<'.a:bufnr.'\>'
-  let i = match(a:list, pattern)
+  let i = match(a:list, a:bufnr)
   if i != -1
     call remove(a:list, i)
   endif
@@ -171,6 +177,13 @@ func WblPush()
   "call WblPrint()
 endfunc
 
+func WblBufDelete(bufnr)
+  call WblRemoveBufnr(w:buflist, a:bufnr)
+  exec w:buflist[0]."b"
+  exec "bdelete" a:bufnr
+endfunc
+
+"------------------------------------------------------
 func WblPrev()
   if !exists("w:buflist") || (len(w:buflist) <= 1)
     return

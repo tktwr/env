@@ -33,7 +33,7 @@ func MyNERDTreeFind(dir)
 endfunc
 
 "------------------------------------------------------
-func BmkNERDTreeSelected()
+func MyNERDTreeSelected()
     let n = g:NERDTreeFileNode.GetSelected()
     if n != {}
         return n.path.str()
@@ -41,8 +41,8 @@ func BmkNERDTreeSelected()
     return ""
 endfunc
 
-func BmkNERDTreeEdit(winnr)
-  let selected = BmkNERDTreeSelected()
+func MyNERDTreeEdit(winnr)
+  let selected = MyNERDTreeSelected()
 
   if (selected == "")
     return
@@ -51,13 +51,13 @@ func BmkNERDTreeEdit(winnr)
   call BmkEdit(selected, a:winnr)
 endfunc
 
-func BmkNERDTreePreview(winnr)
-  call BmkNERDTreeEdit(a:winnr)
+func MyNERDTreePreview(winnr)
+  call MyNERDTreeEdit(a:winnr)
   wincmd p
 endfunc
 
-func BmkNERDTreePrintItem()
-  let key = BmkNERDTreeSelected()
+func MyNERDTreePrintItem()
+  let key = MyNERDTreeSelected()
   if (len(key) > s:bmk_winwidth / 2)
     echo key
   else
@@ -65,29 +65,29 @@ func BmkNERDTreePrintItem()
   endif
 endfunc
 
-func BmkNERDTreePrevItem()
+func MyNERDTreePrevItem()
   normal -
-  call BmkNERDTreePrintItem()
+  call MyNERDTreePrintItem()
 endfunc
 
-func BmkNERDTreeNextItem()
+func MyNERDTreeNextItem()
   normal +
-  call BmkNERDTreePrintItem()
+  call MyNERDTreePrintItem()
 endfunc
 
-func s:BmkNERDTreeMap()
-  nmap <buffer> k       :call BmkNERDTreePrevItem()<CR>
-  nmap <buffer> j       :call BmkNERDTreeNextItem()<CR>
+func s:MyNERDTreeMap()
+  nmap <buffer> k       :call MyNERDTreePrevItem()<CR>
+  nmap <buffer> j       :call MyNERDTreeNextItem()<CR>
   nmap <buffer> h       u
-  nmap <buffer> l       :call BmkNERDTreePreview(2)<CR>
-  nmap <buffer> 2       :call BmkNERDTreeEdit(2)<CR>
-  nmap <buffer> 3       :call BmkNERDTreeEdit(3)<CR>
-  nmap <buffer> 4       :call BmkNERDTreeEdit(4)<CR>
-  nmap <buffer> 5       :call BmkNERDTreeEdit(5)<CR>
-  nmap <buffer> 6       :call BmkNERDTreeEdit(6)<CR>
-  nmap <buffer> 7       :call BmkNERDTreeEdit(7)<CR>
-  nmap <buffer> 8       :call BmkNERDTreeEdit(8)<CR>
-  nmap <buffer> 9       :call BmkNERDTreeEdit(9)<CR>
+  nmap <buffer> l       :call MyNERDTreePreview(2)<CR>
+  nmap <buffer> 2       :call MyNERDTreeEdit(2)<CR>
+  nmap <buffer> 3       :call MyNERDTreeEdit(3)<CR>
+  nmap <buffer> 4       :call MyNERDTreeEdit(4)<CR>
+  nmap <buffer> 5       :call MyNERDTreeEdit(5)<CR>
+  nmap <buffer> 6       :call MyNERDTreeEdit(6)<CR>
+  nmap <buffer> 7       :call MyNERDTreeEdit(7)<CR>
+  nmap <buffer> 8       :call MyNERDTreeEdit(8)<CR>
+  nmap <buffer> 9       :call MyNERDTreeEdit(9)<CR>
 
   nmap <buffer> B       :Bookmark<CR>
   nmap <buffer> E       :EditBookmarks<CR>
@@ -104,7 +104,7 @@ endfunc
 "------------------------------------------------------
 augroup ag_nerdtree
   autocmd!
-  autocmd FileType nerdtree call s:BmkNERDTreeMap()
+  autocmd FileType nerdtree call s:MyNERDTreeMap()
 augroup END
 
 "------------------------------------------------------

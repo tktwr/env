@@ -72,29 +72,6 @@ func MyWinBufCopy(winnr)
 endfunc
 
 "------------------------------------------------------
-" find a terminal window from the first window
-"------------------------------------------------------
-func MyWinFindTerm()
-  let last_winnr = winnr('$')
-  let i = 1
-  while i <= last_winnr
-    exec i."wincmd w"
-    if &buftype == 'terminal'
-      return i
-    endif
-    let i = i + 1
-  endwhile
-  return -1
-endfunc
-
-func MyWinMoveTerm()
-  let winnr = MyWinFindTerm()
-  if winnr != -1
-    exec winnr."wincmd w"
-  endif
-endfunc
-
-"------------------------------------------------------
 " maximize window
 "------------------------------------------------------
 func MyWinMaximizeXToggle(max_width)

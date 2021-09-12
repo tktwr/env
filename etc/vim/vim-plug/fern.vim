@@ -42,9 +42,8 @@ func MyFernSelected()
   return node._path
 endfunc
 
-func MyFernEdit(winnr)
+func MyFernEditItem(winnr)
   let selected = MyFernSelected()
-
   if (selected == "")
     return
   endif
@@ -52,61 +51,26 @@ func MyFernEdit(winnr)
   call BmkEdit(selected, a:winnr)
 endfunc
 
-func MyFernFindFirstEditor()
-  let last_winnr = winnr('$')
-  let i = 1
-  while i <= last_winnr
-    exec i."wincmd w"
-    if &filetype != 'fern'
-      return i
-    endif
-    let i = i + 1
-  endwhile
-  return -1
-endfunc
-
-func MyFernPreviewInFirstEditor()
-  let prev_winnr = winnr()
-  let winnr = MyFernFindFirstEditor()
-  exec prev_winnr."wincmd w"
-  if winnr == -1
-    return
-  endif
-  call MyFernPreview(winnr)
-endfunc
-
-func MyFernPreview(winnr)
-  let prev_winnr = winnr()
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-    wincmd p
-  endif
-
+func MyFernPreviewItem(winnr)
   let selected = MyFernSelected()
   if (isdirectory(selected))
     exec "normal \<Plug>(fern-action-expand)"
-  else
-    call MyFernEdit(a:winnr)
-  endif
-
-  "exec "normal \<Plug>(fern-my-edit-expand-collapse)"
-
-  let curr_winnr = winnr()
-  if curr_winnr != prev_winnr
-    exec "lcd" expand('%:p:h')
-    wincmd p
+  elseif selected != ""
+    let prev_winnr = winnr()
+    call BmkEdit(selected, a:winnr)
+    exec prev_winnr."wincmd w"
   endif
 endfunc
 
 "------------------------------------------------------
-func MyFernViewItem()
-  let selected = MyFernSelected()
-  call BmkView(selected, 0)
-endfunc
-
 func MyFernOpenItem()
   let selected = MyFernSelected()
   call BmkOpen(selected, 0)
+endfunc
+
+func MyFernViewItem()
+  let selected = MyFernSelected()
+  call BmkView(selected, 0)
 endfunc
 
 "------------------------------------------------------
@@ -130,42 +94,17 @@ func MyFernNextItem()
 endfunc
 
 "------------------------------------------------------
-" statusline
-"------------------------------------------------------
-func MyFernStatuslineWinNr()
-  let winnr = winnr()
-  return '['.winnr.']'
-endfunc
-
-func MyFernStatusline()
-  let stat = "%{MyFernStatuslineWinNr()}"
-  let stat.= "\ %t"
-  return stat
-endfunc
-
-func MyFernSetStatusline()
-  setl statusline=%!MyFernStatusline()
-endfunc
-
-"------------------------------------------------------
 function! s:init_fern() abort
   nmap <buffer><expr>
-        \ <Plug>(fern-my-select-expand-collapse)
+        \ <Plug>(my-fern-select-expand-collapse)
         \ fern#smart#leaf(
         \   "\<Plug>(fern-action-open:select)",
         \   "\<Plug>(fern-action-expand)",
         \   "\<Plug>(fern-action-collapse)",
         \ )
-  nmap <buffer><expr>
-        \ <Plug>(fern-my-edit-expand-collapse)
-        \ fern#smart#leaf(
-        \   "\<Plug>(fern-action-open:edit)",
-        \   "\<Plug>(fern-action-expand)",
-        \   "\<Plug>(fern-action-collapse)",
-        \ )
 
-  nmap <buffer> <2-LeftMouse> <Plug>(fern-my-select-expand-collapse)
-  nmap <buffer> <CR>    <Plug>(fern-my-select-expand-collapse)
+  nmap <buffer> <2-LeftMouse> <Plug>(my-fern-select-expand-collapse)
+  nmap <buffer> <CR>    <Plug>(my-fern-select-expand-collapse)
   nmap <buffer> <C-CR>  :call MyFernViewItem()<CR>
   nmap <buffer> <S-CR>  :call MyFernOpenItem()<CR>
 
@@ -182,26 +121,25 @@ function! s:init_fern() abort
   nmap <buffer> v     <Plug>(fern-action-open:vsplit)
 
   nmap <buffer> h     <Plug>(fern-action-collapse)
-  "nmap <buffer> l     <Plug>(fern-my-edit-expand-collapse)
-  nmap <buffer> l     :call MyFernPreviewInFirstEditor()<CR>
+  nmap <buffer> l     :call MyFernPreviewItem(-2)<CR>
   nmap <buffer> j     :call MyFernNextItem()<CR>
   nmap <buffer> k     :call MyFernPrevItem()<CR>
 
-  nmap <buffer> 2     :call MyFernEdit(2)<CR>
-  nmap <buffer> 3     :call MyFernEdit(3)<CR>
-  nmap <buffer> 4     :call MyFernEdit(4)<CR>
-  nmap <buffer> 5     :call MyFernEdit(5)<CR>
-  nmap <buffer> 6     :call MyFernEdit(6)<CR>
-  nmap <buffer> 7     :call MyFernEdit(7)<CR>
-  nmap <buffer> 8     :call MyFernEdit(8)<CR>
-  nmap <buffer> 9     :call MyFernEdit(9)<CR>
+  nmap <buffer> 2     :call MyFernEditItem(2)<CR>
+  nmap <buffer> 3     :call MyFernEditItem(3)<CR>
+  nmap <buffer> 4     :call MyFernEditItem(4)<CR>
+  nmap <buffer> 5     :call MyFernEditItem(5)<CR>
+  nmap <buffer> 6     :call MyFernEditItem(6)<CR>
+  nmap <buffer> 7     :call MyFernEditItem(7)<CR>
+  nmap <buffer> 8     :call MyFernEditItem(8)<CR>
+  nmap <buffer> 9     :call MyFernEditItem(9)<CR>
 
   nmap <silent> <buffer> <Space> :CpmOpen<CR>
 
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
   nmap <buffer><nowait> > <Plug>(fern-action-enter)
 
-  setl statusline=%!MyFernStatusline()
+  call TtSetStatusline()
 endfunction
 
 "------------------------------------------------------
@@ -211,13 +149,12 @@ augroup ag_fern
   autocmd! *
   autocmd FileType fern call s:init_fern()
   autocmd FileType fern call glyph_palette#apply()
-  autocmd FileType nerdtree,startify call glyph_palette#apply()
 augroup END
 
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command                         MyFernDrawerToggle call MyFernDrawerToggle()
-command -nargs=1 -complete=dir  MyFernDrawer       call MyFernDrawer(<f-args>)
-command -nargs=1 -complete=dir  MyFern             call MyFern(<f-args>)
+command                        MyFernDrawerToggle call MyFernDrawerToggle()
+command -nargs=1 -complete=dir MyFernDrawer       call MyFernDrawer(<f-args>)
+command -nargs=1 -complete=dir MyFern             call MyFern(<f-args>)
 

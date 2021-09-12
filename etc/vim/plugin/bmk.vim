@@ -7,21 +7,6 @@ endif
 let g:loaded_bmk = 1
 
 "------------------------------------------------------
-" private func
-"------------------------------------------------------
-func! BmkClear()
-  silent %d _
-endfunc
-
-func! BmkPut0(text)
-  silent 0put =a:text
-endfunc
-
-func! BmkPut(text)
-  silent put =a:text
-endfunc
-
-"------------------------------------------------------
 " set global variables
 "------------------------------------------------------
 func s:SetGlobalVars()
@@ -33,46 +18,6 @@ func s:SetGlobalVars()
   if exists("g:bmk_winwidth")
     let s:bmk_winwidth = g:bmk_winwidth
   endif
-endfunc
-
-"------------------------------------------------------
-" util
-"------------------------------------------------------
-func s:InSideBar()
-  let winnr = winnr()
-  if (winnr == 1 && winwidth(0) <= s:bmk_winwidth)
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
-func s:GetDirName(filepath)
-  return substitute(a:filepath, "/[^/]*$", "", "")
-endfunc
-
-func BmkRemoveBeginSpaces(line)
-  return substitute(a:line, '^\s*', '', '')
-endfunc
-
-func BmkRemoveEndSpaces(line)
-  return substitute(a:line, '\s*$', '', '')
-endfunc
-
-"------------------------------------------------------
-" find a editor window from the current window
-"------------------------------------------------------
-func BmkWinFindEditor()
-  let curr_winnr = winnr()
-  let i = curr_winnr
-  while i > 0
-    exec i."wincmd w"
-    if &buftype != 'terminal'
-      return i
-    endif
-    let i = i - 1
-  endwhile
-  return -1
 endfunc
 
 "------------------------------------------------------
@@ -111,9 +56,9 @@ func BmkGetDirName(val)
   if type == "dir"
     let dir = val
   elseif type == "file"
-    let dir = s:GetDirName(val)
+    let dir = TtGetDirName(val)
   elseif type == "html"
-    let dir = s:GetDirName(val)
+    let dir = TtGetDirName(val)
   else
     let dir = ""
   endif
@@ -143,7 +88,7 @@ func BmkGetItem(line, idx)
   let line = a:line
   let line = matchstr(line, mx)
   let item = substitute(line, mx, '\'.a:idx, '')
-  let item = BmkRemoveEndSpaces(item)
+  let item = TtRemoveEndSpaces(item)
   return item
 endfunc
 
@@ -235,16 +180,22 @@ func BmkEditDir(dir, winnr)
   endif
 endfunc
 
+" winnr == -2: the first editor window
+" winnr == -1: the last editor window
+" winnr ==  0: the current window
+" winnr >=  1: the specified window
 func BmkEditFile(file, winnr)
   let winnr = a:winnr
-  if winnr == -1
-    let winnr = BmkWinFindEditor()
+  if winnr == -2
+    let winnr = TtFindFirstEditor()
+  elseif winnr == -1
+    let winnr = TtFindLastEditor()
   endif
   if winnr > 0
     exec winnr."wincmd w"
   endif
 
-  let dir = s:GetDirName(a:file)
+  let dir = TtGetDirName(a:file)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(dir, winnr)
   else
@@ -255,14 +206,16 @@ endfunc
 
 func BmkEditPDF(file, winnr)
   let winnr = a:winnr
-  if winnr == -1
-    let winnr = BmkWinFindEditor()
+  if winnr == -2
+    let winnr = TtFindFirstEditor()
+  elseif winnr == -1
+    let winnr = TtFindLastEditor()
   endif
   if winnr > 0
     exec winnr."wincmd w"
   endif
 
-  let dir = s:GetDirName(a:file)
+  let dir = TtGetDirName(a:file)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(dir, winnr)
   else
@@ -275,7 +228,7 @@ func BmkEditPDF(file, winnr)
     setlocal bufhidden=hide
     setlocal buflisted
     setlocal noswapfile
-    call BmkPut0(out)
+    call TtPut0(out)
     normal 1G
   endif
 endfunc
@@ -332,34 +285,6 @@ func BmkOpen(url, winnr)
   return 1
 endfunc
 
-func BmkEdit(url, winnr)
-  let url = a:url
-  let type = BmkUrlType(url)
-
-  if (type == "http")
-    call BmkOpenURL(url)
-  elseif (type == "network")
-    call BmkOpenDir(url)
-  elseif (type == "dir")
-    call BmkEditDir(url, a:winnr)
-  elseif (type == "file")
-    call BmkEditFile(url, a:winnr)
-  elseif (type == "html")
-    call BmkEditFile(url, a:winnr)
-  elseif (type == "pdf")
-    call BmkEditPDF(url, a:winnr)
-  elseif (type == "vim_command")
-    call BmkExecCommand(url, a:winnr)
-  elseif (type == "term_command")
-    call BmkExecCommand(url, a:winnr)
-  else
-    echo "BmkEdit: not supported type: [".type."]"
-    return 0
-  endif
-
-  return 1
-endfunc
-
 func BmkView(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
@@ -388,6 +313,34 @@ func BmkView(url, winnr)
   return 1
 endfunc
 
+func BmkEdit(url, winnr)
+  let url = a:url
+  let type = BmkUrlType(url)
+
+  if (type == "http")
+    call BmkOpenURL(url)
+  elseif (type == "network")
+    call BmkOpenDir(url)
+  elseif (type == "dir")
+    call BmkEditDir(url, a:winnr)
+  elseif (type == "file")
+    call BmkEditFile(url, a:winnr)
+  elseif (type == "html")
+    call BmkEditFile(url, a:winnr)
+  elseif (type == "pdf")
+    call BmkEditPDF(url, a:winnr)
+  elseif (type == "vim_command")
+    call BmkExecCommand(url, a:winnr)
+  elseif (type == "term_command")
+    call BmkExecCommand(url, a:winnr)
+  else
+    echo "BmkEdit: not supported type: [".type."]"
+    return 0
+  endif
+
+  return 1
+endfunc
+
 "------------------------------------------------------
 " action on bmk item
 "------------------------------------------------------
@@ -400,6 +353,15 @@ func BmkOpenItem(winnr)
   call BmkOpen(val, a:winnr)
 endfunc
 
+func BmkViewItem(winnr)
+  let val = BmkGetExpandedValueItem()
+  if val == ""
+    return
+  endif
+
+  call BmkView(val, a:winnr)
+endfunc
+
 func BmkEditItem(winnr)
   let val = BmkGetExpandedValueItem()
   if val == ""
@@ -410,17 +372,9 @@ func BmkEditItem(winnr)
 endfunc
 
 func BmkPreviewItem(winnr)
+  let prev_winnr = winnr()
   call BmkEditItem(a:winnr)
-  wincmd p
-endfunc
-
-func BmkViewItem(winnr)
-  let val = BmkGetExpandedValueItem()
-  if val == ""
-    return
-  endif
-
-  call BmkView(val, a:winnr)
+  exec prev_winnr."wincmd w"
 endfunc
 
 "------------------------------------------------------
@@ -445,27 +399,10 @@ func BmkViewThis()
 endfunc
 
 "------------------------------------------------------
-" statusline
-"------------------------------------------------------
-func BmkStatuslineWinNr()
-  let winnr = winnr()
-  return '['.winnr.']'
-endfunc
-
-func BmkStatusline()
-  let stat = "%{BmkStatuslineWinNr()}"
-  let stat.= "\ %t"
-  return stat
-endfunc
-
-func BmkSetStatusline()
-  setl statusline=%!BmkStatusline()
-endfunc
-
-"------------------------------------------------------
 " map
 "------------------------------------------------------
-func s:BmkMap()
+func s:init_bmk()
+  call TtSetStatusline()
 endfunc
 
 func s:BmkMapWin()
@@ -473,11 +410,11 @@ func s:BmkMapWin()
     return
   endif
 
-  if (s:InSideBar())
-    nnoremap <silent> <buffer> <CR>    :call BmkEditItem(2)<CR>
-    nnoremap <silent> <buffer> <C-CR>  :call BmkViewItem(2)<CR>
-    nnoremap <silent> <buffer> <S-CR>  :call BmkOpenItem(2)<CR>
-    nnoremap <silent> <buffer> l       :call BmkPreviewItem(2)<CR>
+  if (TtInSideBar())
+    nnoremap <silent> <buffer> <CR>    :call BmkEditItem(-2)<CR>
+    nnoremap <silent> <buffer> <C-CR>  :call BmkViewItem(-2)<CR>
+    nnoremap <silent> <buffer> <S-CR>  :call BmkOpenItem(-2)<CR>
+    nnoremap <silent> <buffer> l       :call BmkPreviewItem(-2)<CR>
     nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
     nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
     nnoremap <silent> <buffer> 2       :call BmkEditItem(2)<CR>
@@ -513,7 +450,7 @@ endfunc
 "------------------------------------------------------
 augroup ag_bmk
   autocmd!
-  autocmd FileType bmk      call s:BmkMap()
+  autocmd FileType bmk      call s:init_bmk()
   autocmd BufWinEnter *     call s:BmkMapWin()
   autocmd WinEnter *        call s:BmkMapWin()
 augroup END

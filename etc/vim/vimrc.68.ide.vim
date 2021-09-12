@@ -57,7 +57,7 @@ func MyTabDirDiffQuit()
 endfunc
 
 func MyTabClosePrev()
-  let winnr = MyWinFindTerm()
+  let winnr = TtFindFirstTerm()
   if winnr == -1
     " terminal is not found in the tab
     tabclose
