@@ -22,6 +22,7 @@ func s:SetGlobalVars()
   let s:cpm_titles = {
     \ 'terminal': [],
     \ 'fern': [],
+    \ 'nerdtree': [],
     \ 'buffer': [],
     \ }
 
@@ -115,6 +116,8 @@ func s:CpmGetNumTitles()
     let size = len(s:cpm_titles['terminal'])
   elseif &filetype == 'fern'
     let size = len(s:cpm_titles['fern'])
+  elseif &filetype == 'nerdtree'
+    let size = len(s:cpm_titles['nerdtree'])
   else
     let size = len(s:cpm_titles['buffer'])
   endif
@@ -136,6 +139,8 @@ func s:CpmGetMenu(nr)
     let title = s:cpm_titles['terminal'][a:nr]
   elseif &filetype == 'fern'
     let title = s:cpm_titles['fern'][a:nr]
+  elseif &filetype == 'nerdtree'
+    let title = s:cpm_titles['nerdtree'][a:nr]
   else
     let title = s:cpm_titles['buffer'][a:nr]
   endif

@@ -19,15 +19,13 @@ if exists("g:bmk_winwidth")
 endif
 
 "------------------------------------------------------
-func MyNERDTreeOpen()
+func MyNERDTreeToggle()
   if (&filetype == "nerdtree")
     NERDTreeToggle
   elseif (&filetype == "")
     NERDTree
   else
-    "NERDTreeFind
-    let l:dir = expand("%:p:h")
-    exec "silent NERDTree" l:dir
+    MyNERDTreeFind("%:p:h")
   endif
 endfunc
 
@@ -118,7 +116,6 @@ augroup END
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command                         MyNERDTreeToggle NERDTreeToggle
-command                         MyNERDTreeOpen   call MyNERDTreeOpen()
+command                         MyNERDTreeToggle call MyNERDTreeToggle()
 command -nargs=1 -complete=dir  MyNERDTreeFind   call MyNERDTreeFind(<f-args>)
 

@@ -43,7 +43,7 @@ func MyLeftWin()
   if g:my_use_fern
     call MyFernDrawerToggle()
   else
-    NERDTree
+    call MyNERDTreeToggle()
   endif
 endfunc
 
@@ -72,6 +72,7 @@ let g:cpm_files = [
 let g:cpm_titles = {
   \ 'terminal': ['terminal:main', 'terminal:system', 'terminal:git', 'bmk:dir', 'bmk:local'],
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
+  \ 'nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
   \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
   \ }
 
