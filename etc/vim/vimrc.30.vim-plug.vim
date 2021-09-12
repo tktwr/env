@@ -21,15 +21,19 @@ source $MY_VIM/vim-plug/vim-easymotion.vim
 source $MY_VIM/vim-plug/tabular.vim
 source $MY_VIM/vim-plug/tagbar.vim
 source $MY_VIM/vim-plug/gv.vim
-source $MY_VIM/vim-plug/fern.vim
 source $MY_VIM/vim-plug/nerdcommenter.vim
+
+if g:my_use_fern
+  source $MY_VIM/vim-plug/fern.vim
+else
+  source $MY_VIM/vim-plug/nerdtree.vim
+endif
 
 source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/vim-vsnip.vim
 "source $MY_VIM/vim-plug/ultisnips.vim
 
 "source $MY_VIM/vim-plug/eskk.vim
-"source $MY_VIM/vim-plug/nerdtree.vim
 "source $MY_VIM/vim-plug/nerdtree-git-plugin.vim
 "source $MY_VIM/vim-plug/fzf.vim
 

@@ -13,10 +13,14 @@ func s:SetGlobalVars()
   " set defaults
   let s:bmk_debug = 0
   let s:bmk_winwidth = 30
+  let s:bmk_edit_dir_func = ""
 
   " set global variables
   if exists("g:bmk_winwidth")
     let s:bmk_winwidth = g:bmk_winwidth
+  endif
+  if exists("g:bmk_edit_dir_func")
+    let s:bmk_edit_dir_func = g:bmk_edit_dir_func
   endif
 endfunc
 
@@ -175,8 +179,9 @@ func BmkEditDir(dir, winnr)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(a:dir, a:winnr)
   else
-    "call MyNERDTreeFind(a:dir)
-    call MyFern(a:dir)
+    if s:bmk_edit_dir_func != ""
+      exec printf("call %s(%s)", s:bmk_edit_dir_func, a:dir)
+    endif
   endif
 endfunc
 
@@ -414,9 +419,11 @@ func s:BmkMapWin()
     nnoremap <silent> <buffer> <CR>    :call BmkEditItem(-2)<CR>
     nnoremap <silent> <buffer> <C-CR>  :call BmkViewItem(-2)<CR>
     nnoremap <silent> <buffer> <S-CR>  :call BmkOpenItem(-2)<CR>
+
     nnoremap <silent> <buffer> l       :call BmkPreviewItem(-2)<CR>
-    nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
     nnoremap <silent> <buffer> j       :call <SID>BmkNextItem()<CR>
+    nnoremap <silent> <buffer> k       :call <SID>BmkPrevItem()<CR>
+
     nnoremap <silent> <buffer> 2       :call BmkEditItem(2)<CR>
     nnoremap <silent> <buffer> 3       :call BmkEditItem(3)<CR>
     nnoremap <silent> <buffer> 4       :call BmkEditItem(4)<CR>

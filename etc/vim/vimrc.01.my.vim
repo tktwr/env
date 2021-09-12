@@ -37,8 +37,23 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
+let g:my_use_fern = 1
+
+func MyLeftWin()
+  if g:my_use_fern
+    call MyFernDrawerToggle()
+  else
+    NERDTree
+  endif
+endfunc
+
 " bmk
 let g:bmk_winwidth = g:my_left_winwidth
+if g:my_use_fern
+  let g:bmk_edit_dir_func = "MyFern"
+else
+  let g:bmk_edit_dir_func = "MyNERDTreeFind"
+endif
 
 " wbl
 let g:wbl_key = "\<End>"

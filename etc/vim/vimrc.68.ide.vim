@@ -3,13 +3,12 @@
 "------------------------------------------------------
 func MyIDE()
   let l:is_fullscreen = MyIsFullscreen()
-  "NERDTree
-  call MyFernDrawerToggle()
+  call MyLeftWin()
   wincmd w
   if l:is_fullscreen
     vsp
     MyTerm
-    wincmd l
+    wincmd w
   endif
   MyTerm
 endfunc

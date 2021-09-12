@@ -104,9 +104,9 @@ function! s:init_fern() abort
         \ )
 
   nmap <buffer> <2-LeftMouse> <Plug>(my-fern-select-expand-collapse)
-  nmap <buffer> <CR>    <Plug>(my-fern-select-expand-collapse)
-  nmap <buffer> <C-CR>  :call MyFernViewItem()<CR>
-  nmap <buffer> <S-CR>  :call MyFernOpenItem()<CR>
+  nmap <buffer> <CR>          <Plug>(my-fern-select-expand-collapse)
+  nmap <buffer> <C-CR>        :call MyFernViewItem()<CR>
+  nmap <buffer> <S-CR>        :call MyFernOpenItem()<CR>
 
   nmap <buffer> N     <Plug>(fern-action-new-path)
   nmap <buffer> D     <Plug>(fern-action-remove)
