@@ -207,6 +207,8 @@ vimapi-tabline-set-info() {
 #------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
+export MY_VIM_USE_FERN=1
+
 if [ "$VIM_TERMINAL" ]; then
   alias cd='vimapi-cd'
   alias pushd='vimapi-pushd'
@@ -215,7 +217,6 @@ if [ "$VIM_TERMINAL" ]; then
   alias vimdirdiff='vimapi-tab-dirdiff'
   vim() { vimapi-edit "$@"; }
 
-  alias D='vimapi-fern'
   alias I='vimapi.sh MyWinInitSize'
   alias TV='vimapi.sh MyTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
@@ -223,8 +224,15 @@ if [ "$VIM_TERMINAL" ]; then
   alias GS='vimapi.sh --in-new-tab MyGstatusToggle'
   alias GV='vimapi.sh --in-new-tab MyGV'
   alias E='vimapi.sh --in-new-tab MyIDE'
-  alias F='vimapi.sh MyFernDrawerToggle'
   alias T='vimapi.sh MyTerm'
+
+  if [ $MY_VIM_USE_FERN -eq 1 ]; then
+    alias D='vimapi-fern'
+    alias F='vimapi.sh MyFernDrawerToggle'
+  else
+    alias D='vimapi-nerdtree'
+    alias F='vimapi.sh MyNERDTreeToggle'
+  fi
 
   alias ,e='vimapi-edit'
   alias ,sp='vimapi.sh --in-above-win "below split" --filepath'
@@ -236,8 +244,13 @@ else
   alias GS='vim -c "MyGstatusToggle"'
   alias GV='vim -c "MyGV"'
   alias E='vim -c "MyIDE"'
-  alias F='vim -c "MyFernDrawerToggle"'
   alias T='vim -c "MyTerm"'
+
+  if [ $MY_VIM_USE_FERN -eq 1 ]; then
+    alias F='vim -c "MyFernDrawerToggle"'
+  else
+    alias F='vim -c "MyNERDTreeToggle"'
+  fi
 
   alias z='vim -c "DiaFull"'
   alias zh='vim -c "DiaFullH"'

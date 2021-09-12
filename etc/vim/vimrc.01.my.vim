@@ -37,7 +37,7 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
-let g:my_use_fern = 1
+let g:my_use_fern = $MY_VIM_USE_FERN
 
 func MyLeftWin()
   if g:my_use_fern
