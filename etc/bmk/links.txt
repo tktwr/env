@@ -39,6 +39,7 @@
   ------------------------------------ | ----------------------------------------
 - cppreference                         | https://ja.cppreference.com/w/
 - cpprefjp                             | https://cpprefjp.github.io/
+- clang-format style options           | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
   ------------------------------------ | ----------------------------------------
 - python                               | https://www.python.org/
   - doc                                | https://docs.python.org/ja/3/index.html

@@ -12,3 +12,11 @@ AccessModifierOffset: -4
 #AllowShortFunctionsOnASingleLine: All
 #AllowShortIfStatementsOnASingleLine: true
 #AllowShortLoopsOnASingleLine: true
+
+---
+Language: Cpp
+Standard: Cpp11
+## Force pointers to the type for C++.
+DerivePointerAlignment: false
+PointerAlignment: Left
+---
