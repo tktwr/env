@@ -66,6 +66,8 @@
 - glad                                 | https://github.com/Dav1dde/glad
 - imgui                                | https://github.com/ocornut/imgui
 - stb                                  | https://github.com/nothings/stb
+- kissnet                              | https://github.com/Ybalrid/kissnet
+- miniaudio                            | https://github.com/mackron/miniaudio
   ------------------------------------ | ----------------------------------------
 - OpenCV                               | https://opencv.org/
   - doc                                | https://docs.opencv.org/master/

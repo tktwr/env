@@ -75,7 +75,7 @@ endfunc
 func MyIDESendCmdE2T(cmd)
   let cmd = a:cmd
   if (cmd == "")
-    let cmd = getline('.')
+    let cmd = TtRemoveBeginEndSpaces(getline('.'))
   endif
   wincmd j
   let bufnr = winbufnr(0)

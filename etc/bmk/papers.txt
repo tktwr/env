@@ -93,6 +93,8 @@
 - Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                   | https://github.com/ShichenLiu/SoftRas
 - Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                           | https://arxiv.org/abs/2011.03277
 - Modular Primitives for High-Performance Differentiable Rendering [github]                                          | https://github.com/NVlabs/nvdiffrast
+[Neural Rendering] ------------------------                                                                               | ----------------------------------------
+- NeRF: Neural Radiance Fields                                                                                       | https://www.matthewtancik.com/nerf
 [Photography] ------------------------                                                                               | ----------------------------------------
 - Casual 3D Photography                                                                                              | http://visual.cs.ucl.ac.uk/pubs/casual3d/
 [TechSalon] ------------------------                                                                                 | ----------------------------------------

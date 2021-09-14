@@ -31,6 +31,10 @@ func TtRemoveEndSpaces(line)
   return substitute(a:line, '\s*$', '', '')
 endfunc
 
+func TtRemoveBeginEndSpaces(line)
+  return TtRemoveBeginSpaces(TtRemoveEndSpaces(a:line))
+endfunc
+
 func TtSystem(cmd)
   let out = system(a:cmd)
   return substitute(out, "\<CR>", '', 'g')

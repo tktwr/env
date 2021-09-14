@@ -6,6 +6,7 @@ EXCLUDES="\
   --exclude 'imgui.ini' \
   --exclude '*.blend1'  \
   --exclude 'build*'  \
+  --exclude 'output*'  \
   "
 
 echo "=== [mymirrorfat.sh $@] ==="
