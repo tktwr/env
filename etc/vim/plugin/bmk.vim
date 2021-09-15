@@ -407,7 +407,7 @@ endfunc
 " map
 "------------------------------------------------------
 func s:init_bmk()
-  call TtSetStatusline()
+  call TtSetStatuslineForSideBar()
 endfunc
 
 func s:BmkMapWin()

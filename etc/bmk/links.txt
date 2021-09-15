@@ -57,6 +57,7 @@
 - pytorch                              | https://pytorch.org/
   - transfer_learning                  | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
   - tensorboard                        | https://pytorch.org/docs/stable/tensorboard.html
+- PyTorch3D                            | https://github.com/facebookresearch/pytorch3d
   ------------------------------------ | ----------------------------------------
 - glm                                  | https://glm.g-truc.net/
   - doc                                | https://glm.g-truc.net/0.9.8/api/modules.html

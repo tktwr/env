@@ -65,8 +65,6 @@
 - Robust High-Resolution Video Matting with Temporal Guidance                                                        | https://arxiv.org/abs/2108.11515
 - Deep Automatic Portrait Matting                                                                                    | http://xiaoyongshen.me/webpages/webpage_automatting/
 - Automatic Portrait Segmentation for Image Stylization                                                              | http://xiaoyongshen.me/webpage_portrait/index.html
-[AI Filter] ------------------------                                                                                 | ----------------------------------------
-- Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/
 [CycleGAN] ------------------------                                                                                  | ----------------------------------------
 - CycleGAN and pix2pix in PyTorch                                                                                    | https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 - CycleGAN                                                                                                           | https://github.com/junyanz/CycleGAN
@@ -90,11 +88,15 @@
 - Semantic Scene Completion from a Single Depth Image                                                                | https://github.com/shurans/sscnet
 [DR] ------------------------                                                                                        | ----------------------------------------
 - Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                    | https://arxiv.org/abs/1904.01786
-- Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                   | https://github.com/ShichenLiu/SoftRas
+  - Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                 | https://github.com/ShichenLiu/SoftRas
+- Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                               | https://arxiv.org/abs/2007.08501
+  - PyTorch3D [github]                                                                                               | https://github.com/facebookresearch/pytorch3d
 - Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                           | https://arxiv.org/abs/2011.03277
-- Modular Primitives for High-Performance Differentiable Rendering [github]                                          | https://github.com/NVlabs/nvdiffrast
-[Neural Rendering] ------------------------                                                                               | ----------------------------------------
+  - Modular Primitives for High-Performance Differentiable Rendering [github]                                        | https://github.com/NVlabs/nvdiffrast
+[Neural Rendering] ------------------------                                                                          | ----------------------------------------
 - NeRF: Neural Radiance Fields                                                                                       | https://www.matthewtancik.com/nerf
+[AI Filter] ------------------------                                                                                 | ----------------------------------------
+- Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/
 [Photography] ------------------------                                                                               | ----------------------------------------
 - Casual 3D Photography                                                                                              | http://visual.cs.ucl.ac.uk/pubs/casual3d/
 [TechSalon] ------------------------                                                                                 | ----------------------------------------

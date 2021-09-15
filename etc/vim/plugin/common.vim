@@ -124,13 +124,31 @@ func TtStatuslineWinNr()
   return '['.winnr.']'
 endfunc
 
-func TtStatusline()
+func TtStatuslineFname()
+  let cwd = getcwd()
+  let dir = expand("%:p:h")
+  let color = "%6*"
+  if (cwd != dir)
+    let color = "%3*"
+  endif
+  "return color."%<%f"."%0*"
+  return color."%t"."%0*"
+endfunc
+
+func TtStatuslineEnc()
+  let fenc = &fenc != '' ? &fenc : &enc
+  let ff = &ff
+  return '['.fenc.','.ff.']'
+endfunc
+
+func TtStatuslineForSideBar()
   let stat = "%{TtStatuslineWinNr()}"
   let stat.= "\ %t"
+  let stat.= "\ %m%y"
   return stat
 endfunc
 
-func TtSetStatusline()
-  setl statusline=%!TtStatusline()
+func TtSetStatuslineForSideBar()
+  setl statusline=%!TtStatuslineForSideBar()
 endfunc
 

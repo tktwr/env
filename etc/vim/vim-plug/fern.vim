@@ -139,7 +139,7 @@ function! s:init_fern() abort
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
   nmap <buffer><nowait> > <Plug>(fern-action-enter)
 
-  call TtSetStatusline()
+  call TtSetStatuslineForSideBar()
 endfunction
 
 "------------------------------------------------------
