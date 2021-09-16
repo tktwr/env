@@ -117,6 +117,14 @@ git-branch-name() {
   #git branch --show-current 2>/dev/null
 }
 
+git-commit-hash() {
+  git rev-parse --short HEAD 2>/dev/null
+}
+
+git-commit-hash-long() {
+  git rev-parse HEAD 2>/dev/null
+}
+
 print-git-branch() {
   echo "[REMOTE]"
   git remote -v
