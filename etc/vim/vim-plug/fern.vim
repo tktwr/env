@@ -148,13 +148,38 @@ function! s:init_fern() abort
   call TtSetStatuslineForSideBar()
 endfunction
 
+function! s:on_syntax() abort
+  syn match  fernCMakeLists   ".*CMakeLists.txt\ze.*$"
+  syn match  fernMakefile     ".*Makefile\ze.*$"
+  syn match  fernCPP          ".*.cpp\ze.*$"
+  syn match  fernC            ".*.c\ze.*$"
+  syn match  fernH            ".*.h\ze.*$"
+  syn match  fernGLB          ".*.glb\ze.*$"
+
+  hi link fernCMakeLists myRed
+  hi link fernMakefile   myRed
+  hi link fernCPP        myRed
+  hi link fernC          myRed
+  hi link fernH          myGreen
+  hi link fernGLB        myPurple
+endfunction
+
+function! s:on_highlight() abort
+  hi link FernRootSymbol     myAqua
+  hi link FernRootText       myAqua
+  hi link FernBranchSymbol   myAqua
+  hi link FernBranchText     myAqua
+endfunction
+
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------
 augroup ag_fern
   autocmd! *
-  autocmd FileType fern call s:init_fern()
-  autocmd FileType fern call glyph_palette#apply()
+  autocmd FileType fern          call s:init_fern()
+  autocmd FileType fern          call glyph_palette#apply()
+  autocmd User     FernSyntax    call s:on_syntax()
+  autocmd User     FernHighlight call s:on_highlight()
 augroup END
 
 "------------------------------------------------------
