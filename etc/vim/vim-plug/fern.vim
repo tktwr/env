@@ -154,27 +154,27 @@ function! s:on_syntax() abort
   syn match  fernCPP          ".*.cpp\ze.*$"
   syn match  fernC            ".*.c\ze.*$"
   syn match  fernH            ".*.h\ze.*$"
+  syn match  fernPY           ".*.py\ze.*$"
   syn match  fernSH           ".*.sh\ze.*$"
   syn match  fernVIM          ".*.vim\ze.*$"
-  syn match  fernPY           ".*.py\ze.*$"
   syn match  fernGLB          ".*.glb\ze.*$"
 
-  hi link fernCMakeLists myRed
-  hi link fernMakefile   myRed
-  hi link fernCPP        myRed
-  hi link fernC          myRed
-  hi link fernH          myGreen
+  hi link fernCMakeLists myOrange
+  hi link fernMakefile   myOrange
+  hi link fernCPP        myBlue
+  hi link fernC          myBlue
+  hi link fernH          myOrange
+  hi link fernPY         myYellow
   hi link fernSH         myPurple
-  hi link fernVIM        myOrange
-  hi link fernPY         myRed
-  hi link fernGLB        myPurple
+  "hi link fernVIM        myGreen
+  hi link fernGLB        myGreen
 endfunction
 
 function! s:on_highlight() abort
-  hi link FernRootSymbol     myAqua
-  hi link FernRootText       myAqua
-  hi link FernBranchSymbol   myAqua
-  hi link FernBranchText     myAqua
+  hi link FernRootSymbol     myRed
+  hi link FernRootText       myRed
+  hi link FernBranchSymbol   myRed
+  hi link FernBranchText     myRed
 endfunction
 
 "------------------------------------------------------

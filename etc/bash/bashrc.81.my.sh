@@ -163,12 +163,10 @@ vimapi-popd() {
 
 vimapi-tab-diff() {
   vimapi.sh MyTabDiff "$1" "$2"
-  read -p "Enter to proceed. "
 }
 
 vimapi-tab-dirdiff() {
   vimapi.sh MyTabDirDiff "$1" "$2"
-  read -p "Enter to proceed. "
 }
 
 vimapi-nerdtree() {

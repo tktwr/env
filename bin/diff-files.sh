@@ -37,9 +37,19 @@ f_diff() {
     echo "[==] $1 $2"
   elif [ $? -eq 1 ]; then
     echo "[!=] $1 $2"
-    if [ "$DIFF_CMD" = "diff" -o "$DIFF_CMD" = "vimdiff" ]; then
-      eval "$DIFF_CMD $1 $2"
-    fi
+    case $DIFF_CMD in
+      diff)
+        eval "$DIFF_CMD $1 $2"
+        ;;
+      vimdiff)
+        if [ $VIM_TERMINAL ]; then
+          eval "vimapi.sh MyTabDiff $1 $2"
+          read -p "Enter to proceed. "
+        else
+          eval "$DIFF_CMD $1 $2"
+        fi
+        ;;
+    esac
   fi
 }
 
