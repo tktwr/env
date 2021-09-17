@@ -36,6 +36,12 @@ func MyFern(dir)
 endfunc
 
 "------------------------------------------------------
+func MyFernRoot()
+  let helper = fern#helper#new()
+  let node = helper.sync.get_root_node()
+  return node._path
+endfunc
+
 func MyFernSelected()
   let helper = fern#helper#new()
   let node = helper.sync.get_cursor_node()

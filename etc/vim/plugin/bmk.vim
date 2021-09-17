@@ -185,17 +185,8 @@ func BmkEditDir(dir, winnr)
   endif
 endfunc
 
-" winnr == -2: the first editor window
-" winnr == -1: the last editor window
-" winnr ==  0: the current window
-" winnr >=  1: the specified window
 func BmkEditFile(file, winnr)
-  let winnr = a:winnr
-  if winnr == -2
-    let winnr = TtFindFirstEditor()
-  elseif winnr == -1
-    let winnr = TtFindLastEditor()
-  endif
+  let winnr = TtFindEditor(a:winnr)
   if winnr > 0
     exec winnr."wincmd w"
   endif
@@ -210,12 +201,7 @@ func BmkEditFile(file, winnr)
 endfunc
 
 func BmkEditPDF(file, winnr)
-  let winnr = a:winnr
-  if winnr == -2
-    let winnr = TtFindFirstEditor()
-  elseif winnr == -1
-    let winnr = TtFindLastEditor()
-  endif
+  let winnr = TtFindEditor(a:winnr)
   if winnr > 0
     exec winnr."wincmd w"
   endif

@@ -117,6 +117,23 @@ func TtFindLastEditor()
 endfunc
 
 "------------------------------------------------------
+" find an editor
+"------------------------------------------------------
+" winnr == -2: the first editor window
+" winnr == -1: the last editor window
+" winnr ==  0: the current window
+" winnr >=  1: the specified window
+func TtFindEditor(winnr)
+  let winnr = a:winnr
+  if winnr == -2
+    let winnr = TtFindFirstEditor()
+  elseif winnr == -1
+    let winnr = TtFindLastEditor()
+  endif
+  return winnr
+endfunc
+
+"------------------------------------------------------
 " statusline
 "------------------------------------------------------
 func TtStatuslineWinNr()

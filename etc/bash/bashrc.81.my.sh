@@ -189,8 +189,34 @@ vimapi-resize() {
 vimapi-edit() {
   local file="$1"
   local winnr="${2:--1}"
-  vimapi.sh BmkEditFile --filepath "$file" "$winnr"
-  #vimapi.sh --in-above-win edit --filepath "$file"
+  if [ -n "$file" ]; then
+    vimapi.sh BmkEditFile --filepath "$file" "$winnr"
+  fi
+}
+
+vimapi-split() {
+  local file="$1"
+  if [ -n "$file" ]; then
+    vimapi.sh --in-above-win "below split" --filepath $file
+  else
+    vimapi.sh --in-above-win "below split"
+  fi
+}
+
+vimapi-tabedit() {
+  local file="$1"
+  if [ -n "$file" ]; then
+    vimapi.sh tabedit --filepath $file
+  else
+    vimapi.sh tabedit
+  fi
+}
+
+vimapi-termcd() {
+  local winnr="$1"
+  if [ -n "$winnr" ]; then
+    vimapi.sh MyIDESendCdT2T --filepath "$PWD" $winnr
+  fi
 }
 
 vimapi-tabline-set-label() {
@@ -235,10 +261,11 @@ if [ "$VIM_TERMINAL" ]; then
   fi
 
   alias ,e='vimapi-edit'
-  alias ,sp='vimapi.sh --in-above-win "below split" --filepath'
-  alias ,tabe='vimapi.sh tabedit --filepath'
+  alias ,sp='vimapi-split'
+  alias ,new='vimapi.sh "new"'
+  alias ,tabe='vimapi-tabedit'
 
-  alias ,termcd='vimapi.sh MyIDESendCdT2T --filepath $PWD'
+  alias ,termcd='vimapi-termcd'
   alias ,resize='vimapi-resize'
 else
   alias GS='vim -c "MyGstatusToggle"'
