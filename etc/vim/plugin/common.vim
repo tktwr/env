@@ -137,31 +137,48 @@ endfunc
 " statusline
 "------------------------------------------------------
 func TtStatuslineWinNr()
-  let winnr = winnr()
-  return '['.winnr.']'
+  return printf("[%s] ", winnr())
 endfunc
 
 func TtStatuslineFname()
   let cwd = getcwd()
   let dir = expand("%:p:h")
-  let color = "%6*"
+  let color = ""
   if (cwd != dir)
     let color = "%3*"
+  else
+    let color = "%6*"
   endif
-  "return color."%<%f"."%0*"
-  return color."%t"."%0*"
+  "return color."%f"."%0* "
+  return color."%t"."%0* "
 endfunc
 
-func TtStatuslineEnc()
-  let fenc = &fenc != '' ? &fenc : &enc
-  let ff = &ff
-  return '['.fenc.','.ff.']'
+func TtStatuslineIndicator()
+  return "%m%r%h%w%q%y"
+endfunc
+
+func TtStatuslineFileEnc()
+  let stat = ""
+  if winwidth(0) >= 60
+    let fenc = &fenc != '' ? &fenc : &enc
+    let ff = &ff
+    let stat = printf("[%s,%s]", fenc, ff)
+  endif
+  return stat
+endfunc
+
+func TtStatuslineLineInfo()
+  let stat = ""
+  if winwidth(0) >= 60
+    let stat = "[%c%V,%l/%L,%p%%]"
+  endif
+  return stat
 endfunc
 
 func TtStatuslineForSideBar()
   let stat = "%{TtStatuslineWinNr()}"
-  let stat.= "\ %t"
-  let stat.= "\ %m%y"
+  let stat.= "%t "
+  let stat.= "%m%y"
   return stat
 endfunc
 

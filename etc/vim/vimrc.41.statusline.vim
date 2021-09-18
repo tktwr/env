@@ -11,13 +11,15 @@ hi! link User7   MyOrangeRevBold
 
 func MyStatusline()
   let stat = "%{TtStatuslineWinNr()}"
-  let stat.= "\ ".TtStatuslineFname()
-  let stat.= "\ %m%y%h%w%q%r%{TtStatuslineEnc()}"
-  let stat.= "\ %=%l/%L,%c%V%4p%%"
+  let stat.= TtStatuslineFname()
+  let stat.= TtStatuslineIndicator()
+  let stat.= "%{TtStatuslineFileEnc()}"
+  let stat.= "%<%="
+  let stat.= TtStatuslineLineInfo()
+
   if $MY_PROMPT_TYPE >= 3
-    let stat.= "\ %6*%{FugitiveStatusline()}"
+    let stat.= "%6*%{FugitiveStatusline()}%0*"
   endif
-  let stat.= "\ %0*"
   return stat
 endfunc
 
@@ -29,9 +31,9 @@ set statusline=%!MyStatusline()
 "------------------------------------------------------
 func MyStatuslineTerm()
   let stat = "%{TtStatuslineWinNr()}"
-  let stat.= "\ [terminal]"
-  let stat.= "\ %<%f"
-  let stat.= "\ %=%{MyCWD()}"
+  let stat.= "terminal:%n"
+  let stat.= "%<%="
+  let stat.= "%{MyCWD()}"
   return stat
 endfunc
 
