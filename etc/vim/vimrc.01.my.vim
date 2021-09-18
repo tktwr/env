@@ -71,8 +71,8 @@ let g:cpm_files = [
   \ ]
 let g:cpm_titles = {
   \ 'terminal': ['terminal:main', 'terminal:system', 'terminal:git', 'bmk:dir', 'bmk:local'],
-  \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
-  \ 'nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
+  \ 'fern': ['buffer:fern', 'bmk:dir', 'bmk:local'],
+  \ 'nerdtree': ['buffer:nerdtree', 'bmk:dir', 'bmk:local'],
   \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
   \ }
 
