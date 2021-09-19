@@ -63,6 +63,14 @@ func WblPopupMenuFilter(id, key)
     return 1
   elseif a:key == "c"
     call popup_close(a:id, 0)
+    call WblCopy()
+    return 1
+  elseif a:key == "p"
+    call popup_close(a:id, 0)
+    call WblPaste()
+    return 1
+  elseif a:key == "C"
+    call popup_close(a:id, 0)
     call WblClear()
     return 1
   elseif a:key == "d"
@@ -133,6 +141,17 @@ func WblPrint()
     let s = printf("%3d %s ", i, bufname(i))
     echo s
   endfor
+endfunc
+
+func WblCopy()
+  let s:buflist = w:buflist
+endfunc
+
+func WblPaste()
+  let w:buflist += s:buflist
+  if (len(w:buflist) > s:wbl_max)
+    call remove(w:buflist, s:wbl_max, -1)
+  endif
 endfunc
 
 "------------------------------------------------------
@@ -223,6 +242,7 @@ command WblPop    call WblPop()
 augroup ag_wbl
   autocmd!
   autocmd BufEnter *   call WblPush()
+  autocmd WinEnter *   call WblPush()
 augroup END
 
 "------------------------------------------------------

@@ -103,7 +103,7 @@ vnoremap Y       "*y
 "------------------------------------------------------
 nnoremap <silent> <End>     :silent WblPrint<CR>
 nnoremap <silent> <Space>   :CpmOpen<CR>
-vnoremap <silent> <Space>   :'<,'>MyTestRange<CR>
+vnoremap <silent> <Space>   :'<,'>VimTestRange<CR>
 
 tnoremap <silent> <C-Space> <C-W>:CpmOpen<CR>
 

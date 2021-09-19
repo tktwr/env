@@ -3,9 +3,9 @@
 "------------------------------------------------------
 func s:MyHelp(...)
   if &filetype == "help"
-    let close_origwin=0
+    let start_from_help_win=1
   else
-    let close_origwin=1
+    let start_from_help_win=0
   endif
 
   exec "vertical resize" g:my_help_winwidth
@@ -14,10 +14,14 @@ func s:MyHelp(...)
   else
     exec "above help" a:1
   endif
+  let help_winnr = winnr()
 
-  if close_origwin
+  if !start_from_help_win
     wincmd p
+    call WblCopy()
     close
+    exec help_winnr."wincmd w"
+    call WblPaste()
   endif
 endfunc
 
