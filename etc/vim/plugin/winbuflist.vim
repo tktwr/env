@@ -185,7 +185,7 @@ func WblPopupMenuFilter(id, key)
     call popup_close(a:id, 0)
     call WblClear()
     return 1
-  elseif a:key == "d"
+  elseif a:key == "x"
     let w:dst_winnr = -1
     return popup_filter_menu(a:id, "\<CR>")
   elseif match(a:key, "[1-9]") == 0
