@@ -44,23 +44,23 @@ nnoremap ==      zi
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>
  nnoremap <silent> <C-G>   :MyRedraw<CR>
 "nnoremap <silent> <C-H>   :echo 'C-H'<CR>
-"nnoremap <silent> <C-I>   :silent WblPrint<CR>
+"nnoremap <silent> <C-I>   :silent call WblPrint()<CR>
 "nnoremap <silent> <C-J>   :echo 'C-J'<CR>
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>
  nnoremap <silent> <C-N>   :cn<CR>
- nnoremap <silent> <C-O>   :silent WblPop<CR>
+ nnoremap <silent> <C-O>   :silent call WblPop()<CR>
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
  nnoremap <silent> <C-S>   :call MyIDESendCdE2T()<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nnoremap <silent> <C-U>   :silent WblNext<CR>
+ nnoremap <silent> <C-U>   :silent call WblNext()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :Wx 0<CR>
- nnoremap <silent> <C-Y>   :silent WblPrev<CR>
+ nnoremap <silent> <C-Y>   :silent call WblPrev()<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
 nnoremap <C-;>   <C-W>:
@@ -101,7 +101,7 @@ vnoremap Y       "*y
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-nnoremap <silent> <End>     :silent WblPrint<CR>
+nnoremap <silent> <End>     :silent call WblPrint()<CR>
 nnoremap <silent> <Space>   :CpmOpen<CR>
 vnoremap <silent> <Space>   :'<,'>VimTestRange<CR>
 
@@ -153,7 +153,7 @@ tnoremap <silent> <C-0> <C-W>b
 " special keys
 "------------------------------------------------------
 "nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
-"nnoremap <silent> <TAB>      :silent WblPrint<CR>
+"nnoremap <silent> <TAB>      :silent call WblPrint()<CR>
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
 

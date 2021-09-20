@@ -58,15 +58,15 @@ endfunc
 "------------------------------------------------------
 " public func
 "------------------------------------------------------
-func WblPrintMenu()
-  call WblPopupMenu()
-endfunc
-
 func WblPrint()
-  for i in w:buflist
-    let s = printf("%3d %s ", i, bufname(i))
-    echo s
-  endfor
+  if v:version >= 802
+    call WblPopupMenu()
+  else
+    for i in w:buflist
+      let s = printf("%3d %s ", i, bufname(i))
+      echo s
+    endfor
+  endif
 endfunc
 
 func WblCopy()
@@ -236,19 +236,8 @@ func WblPopupMenu()
 endfunc
 
 "------------------------------------------------------
-" public command
+" autocmd
 "------------------------------------------------------
-if v:version >= 802
-  command WblPrint  call WblPrintMenu()
-else
-  command WblPrint  call WblPrint()
-endif
-
-command WblPrev   call WblPrev()
-command WblNext   call WblNext()
-command WblClear  call WblClear()
-command WblPop    call WblPop()
-
 augroup ag_wbl
   autocmd!
   autocmd BufEnter *   call WblPush(bufnr('%'))
