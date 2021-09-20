@@ -31,7 +31,7 @@ endfunc
 
 func MyNERDTreeFind(dir)
   let dir = expand(a:dir)
-  call WblSelect('NERD_tree', 1)
+  call WblFind('NERD_tree', 1)
   exec "NERDTreeFind" dir
 endfunc
 
