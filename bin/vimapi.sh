@@ -54,7 +54,7 @@ f_args() {
         ;;
       --filepath)
         shift
-        p=$(cygpath -au $1)
+        p=$(cygpath -au "$1")
         g_args="$g_args $p"
         ;;
       *)

@@ -18,6 +18,7 @@ patchutils \
 man-db \
 man-pages-posix \
 fzy \
+mingw-w64-x86_64-ninja \
 mingw-w64-x86_64-universal-ctags-git \
 mingw-w64-x86_64-imagemagick \
 mingw-w64-x86_64-graphviz \
@@ -39,6 +40,7 @@ mingw-w64-x86_64-opencv \
 "
 
 pkg_uninstalled="\
+ninja \
 tmux \
 ctags \
 git \

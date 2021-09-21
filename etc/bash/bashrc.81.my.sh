@@ -136,18 +136,18 @@ print-env() {
 # vimapi
 #------------------------------------------------------
 vimapi-lcd() {
-  local dir=${1:-$PWD}
-  vimapi.sh lcd --filepath $dir
+  local dir=${*:-$PWD}
+  vimapi.sh lcd --filepath "$dir"
 }
 
 vimapi-tcd() {
-  local dir=${1:-$PWD}
-  vimapi.sh tcd --filepath $dir
+  local dir=${*:-$PWD}
+  vimapi.sh tcd --filepath "$dir"
 }
 
 vimapi-cd() {
-  local dir=${1:-$HOME}
-  cd $dir
+  local dir=${*:-$HOME}
+  cd "$dir"
   vimapi-lcd
 }
 
@@ -170,13 +170,13 @@ vimapi-tab-dirdiff() {
 }
 
 vimapi-nerdtree() {
-  local dir=${1:-$PWD}
-  vimapi.sh MyNERDTreeFind --filepath $dir/
+  local dir=${*:-$PWD}
+  vimapi.sh MyNERDTreeFind --filepath "$dir"/
 }
 
 vimapi-fern() {
-  local dir=${1:-$PWD}
-  vimapi.sh MyFernDrawer --filepath $dir/
+  local dir=${*:-$PWD}
+  vimapi.sh MyFernDrawer --filepath "$dir"/
 }
 
 vimapi-resize() {
@@ -195,7 +195,7 @@ vimapi-edit() {
 vimapi-split() {
   local file="$1"
   if [ -n "$file" ]; then
-    vimapi.sh --in-above-win "below split" --filepath $file
+    vimapi.sh --in-above-win "below split" --filepath "$file"
   else
     vimapi.sh --in-above-win "below split"
   fi
@@ -204,7 +204,7 @@ vimapi-split() {
 vimapi-tabedit() {
   local file="$1"
   if [ -n "$file" ]; then
-    vimapi.sh tabedit --filepath $file
+    vimapi.sh tabedit --filepath "$file"
   else
     vimapi.sh tabedit
   fi
