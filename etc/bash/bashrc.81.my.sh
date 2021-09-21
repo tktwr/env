@@ -161,6 +161,11 @@ vimapi-popd() {
   vimapi-lcd
 }
 
+vimapi-resize() {
+  local rows=${1:-10}
+  vimapi.sh MyWinResize $rows
+}
+
 vimapi-tab-diff() {
   vimapi.sh MyTabDiff "$1" "$2"
 }
@@ -179,9 +184,12 @@ vimapi-fern() {
   vimapi.sh MyFernDrawer --filepath "$dir"/
 }
 
-vimapi-resize() {
-  local rows=${1:-10}
-  vimapi.sh MyWinResize $rows
+vimapi-dir() {
+  local dir="${1:-$PWD}"
+  local winnr=${2:-1}
+  if [ -n "$dir" ]; then
+    vimapi.sh BmkEditDir --filepath "$dir"/ $winnr
+  fi
 }
 
 vimapi-edit() {
@@ -251,7 +259,8 @@ if [ "$VIM_TERMINAL" ]; then
   alias T='vimapi.sh MyTerm'
 
   if [ $MY_VIM_USE_FERN -eq 1 ]; then
-    alias D='vimapi-fern'
+    #alias D='vimapi-fern'
+    alias D='vimapi-dir "$PWD"'
     alias F='vimapi.sh MyFernDrawerToggle'
   else
     alias D='vimapi-nerdtree'

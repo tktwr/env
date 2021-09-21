@@ -163,7 +163,7 @@ endfunc
 "------------------------------------------------------
 " internal open
 "------------------------------------------------------
-func BmkEditDirInTerm(dir, winnr)
+func BmkEditDirInTerm(dir)
   if &buftype == 'terminal'
     exec "lcd" a:dir
     let bufnr = winbufnr(0)
@@ -172,12 +172,10 @@ func BmkEditDirInTerm(dir, winnr)
 endfunc
 
 func BmkEditDir(dir, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
+  call TtGotoWinnr(a:winnr)
 
   if &buftype == 'terminal'
-    call BmkEditDirInTerm(a:dir, a:winnr)
+    call BmkEditDirInTerm(a:dir)
   else
     if s:bmk_edit_dir_func != ""
       exec printf('call %s("%s")', s:bmk_edit_dir_func, a:dir)
@@ -187,13 +185,11 @@ endfunc
 
 func BmkEditFile(file, winnr)
   let winnr = TtFindEditor(a:winnr)
-  if winnr > 0
-    exec winnr."wincmd w"
-  endif
+  call TtGotoWinnr(winnr)
 
   let dir = TtGetDirName(a:file)
   if &buftype == 'terminal'
-    call BmkEditDirInTerm(dir, winnr)
+    call BmkEditDirInTerm(dir)
   else
     exec "lcd" dir
     exec "edit" a:file
@@ -202,13 +198,11 @@ endfunc
 
 func BmkEditPDF(file, winnr)
   let winnr = TtFindEditor(a:winnr)
-  if winnr > 0
-    exec winnr."wincmd w"
-  endif
+  call TtGotoWinnr(winnr)
 
   let dir = TtGetDirName(a:file)
   if &buftype == 'terminal'
-    call BmkEditDirInTerm(dir, winnr)
+    call BmkEditDirInTerm(dir)
   else
     exec "lcd" dir
     let cmd = printf("pdftotext %s -", a:file)
@@ -225,9 +219,7 @@ func BmkEditPDF(file, winnr)
 endfunc
 
 func BmkExecCommand(cmd, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
+  call TtGotoWinnr(a:winnr)
 
   let cmd = a:cmd
   let cmd = substitute(cmd, '<CR>', "\<CR>", '')
@@ -451,6 +443,7 @@ augroup END
 "------------------------------------------------------
 " command
 "------------------------------------------------------
+command -nargs=+ BmkEditDir   call BmkEditDir(<f-args>)
 command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
 
 func BmkToggleDebug()

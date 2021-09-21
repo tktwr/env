@@ -68,6 +68,12 @@ func TtIsEmptyTab()
   return 0
 endfunc
 
+func TtGotoWinnr(winnr)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+endfunc
+
 "------------------------------------------------------
 " find the first terminal window
 "------------------------------------------------------

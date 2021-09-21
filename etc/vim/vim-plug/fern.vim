@@ -17,14 +17,12 @@ let g:fern#renderer = 'nerdfont'
 
 "------------------------------------------------------
 func MyFernDrawerToggle()
-  "let cmd = printf("Fern . -reveal=%% -drawer -width=%d -toggle", g:fern#drawer_width)
   let cmd = printf("Fern . -reveal=%% -drawer -toggle")
   exec cmd
 endfunc
 
 func MyFernDrawer(dir)
   let dir = expand(a:dir)
-  "let cmd = printf("Fern %s -reveal=%% -drawer -width=%d", dir, g:fern#drawer_width)
   let cmd = printf("Fern %s -reveal=%% -drawer", dir)
   exec cmd
 endfunc
