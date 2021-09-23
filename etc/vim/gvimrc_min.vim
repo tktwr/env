@@ -10,6 +10,7 @@ set fileencodings=utf-8,cp932,euc-jp,cp936
 set noswapfile
 set nobackup
 set noundofile
+set viminfo=
 
 set background=dark
 
