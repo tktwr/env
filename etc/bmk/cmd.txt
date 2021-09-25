@@ -10,25 +10,24 @@
 - P papers                             | $MY_BMK/papers.txt
     ---------------------------------- | ----------------------------------------
 - B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
+- e eng                                | $MY_CONFIG/local/eng/eng.txt
     ---------------------------------- | ----------------------------------------
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
+- C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
+- U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
+- x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
+    ---------------------------------- | ----------------------------------------
+- I MyWinInitSize                      | :MyWinInitSize
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
 - T Term                               | :MyTerm
 - M Memo                               | :Memo
 - H Help                               | :MyHelp
-    ---------------------------------- | ----------------------------------------
-- E MyIDE                              | :MyIDE
-- C MyIDESendCdE2T       (C-s)         | :call MyIDESendCdE2T()
-- I MyWinInitSize                      | :MyWinInitSize
+- X Wx                                 | :Wx 0
     ---------------------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
 - 1 MyTabBar                           | :MyTabBar
-- : MyTabColon                         | :MyTabColon
-- , MyTabComma                         | :MyTabComma
-- . MyTabDots                          | :MyTabDots
-- = MyTabEqual                         | :MyTabEqual
     ---------------------------------- | ----------------------------------------
 - g MyGgrepHere                        | :silent MyGgrepHere
 - v vimgrep TODO                       | :vimgrep 'TODO' %
@@ -42,33 +41,35 @@
 - v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
--   BmkToggleDebug                     | :call BmkToggleDebug()
-    ---------------------------------- | ----------------------------------------
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
 - V BmkViewThis         (C-CR)         | :call BmkViewThis()
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
-- U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
-- D BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
 - F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
+-   BmkToggleDebug                     | :call BmkToggleDebug()
+    ---------------------------------- | ----------------------------------------
+- : MyTabColon                         | :MyTabColon
+- , MyTabComma                         | :MyTabComma
+- . MyTabDots                          | :MyTabDots
+- = MyTabEqual                         | :MyTabEqual
     ---------------------------------- | ----------------------------------------
 - L MyMakeLink                         | :MyMakeLink
 - I MyMakeImageLink                    | :MyMakeImageLink
 - P MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
+- E MyIDE                              | :MyIDE
 - c MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
-- x MyBufDelete                        | :MyBufDelete
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buffer:subsub] ---------------------- | ----------------------------------------
-- X Wx                   (C-x)         | :Wx 0
-- C Wc                   (C-c)         | :Wc 0
+-   Wc                                 | :Wc 0
+-   MyBufDelete                        | :MyBufDelete
     ---------------------------------- | ----------------------------------------
-- Q quit                   (Q)         | :confirm qall
+-   quit                   (Q)         | :confirm qall
 [buffer:coc] ------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
 -   CocInfo                            | :CocInfo

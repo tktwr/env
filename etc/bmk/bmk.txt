@@ -4,12 +4,13 @@
 - d dia                                | $MY_DIARY/diary.md.html
 - t todo                               | $MY_DIARY/todo.md.html
     ---------------------------------- | ----------------------------------------
-- b bmk (C-b)                          | $MY_BMK/bmk.txt
+- b bmk                  (C-b)         | $MY_BMK/bmk.txt
 - c cmd                                | $MY_BMK/cmd.txt
 - L links                              | $MY_BMK/links.txt
 - P papers                             | $MY_BMK/papers.txt
     ---------------------------------- | ----------------------------------------
 - B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
+- e eng                                | $MY_CONFIG/local/eng/eng.txt
     ---------------------------------- | ----------------------------------------
 -   memo/my.md.html                    | $MY_MEMO/my.md.html
 -   memo/vim.md.html                   | $MY_MEMO/vim.md.html

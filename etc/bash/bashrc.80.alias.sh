@@ -20,7 +20,6 @@ alias grep='grep -s'
 alias nm='nm -C'
 alias df='df -h'
 alias more='$PAGER'
-alias make='make --no-print-directory'
 
 # shell
 alias s='source $HOME/.bashrc'

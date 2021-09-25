@@ -94,6 +94,7 @@
   - api 2.83                           | https://docs.blender.org/api/2.83
   - bake                               | https://3dcg-school.pro/blender-bake/
   - bake2                              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+- Develop Add-ons                      | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
 - Blender入門(2.8版)                   | https://blender3d.biz/
 - Environment                          | https://reflectorange.net/archives/041.html
   ------------------------------------ | ----------------------------------------

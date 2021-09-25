@@ -38,13 +38,13 @@ nnoremap ==      zi
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nnoremap <silent> <C-B>   :edit $MY_BMK/bmk.txt<CR>
- nnoremap <silent> <C-C>   :Wc 0<CR>
+"nnoremap <silent> <C-C>   :echo 'C-C'<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>
  nnoremap <silent> <C-G>   :MyRedraw<CR>
 "nnoremap <silent> <C-H>   :echo 'C-H'<CR>
-"nnoremap <silent> <C-I>   :silent call WblPrint()<CR>
+"nnoremap <silent> <C-I>   :echo 'C-I'<CR>
 "nnoremap <silent> <C-J>   :echo 'C-J'<CR>
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>
@@ -54,12 +54,12 @@ nnoremap ==      zi
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
- nnoremap <silent> <C-S>   :call MyIDESendCdE2T()<CR>
+ nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
  nnoremap <silent> <C-U>   :silent call WblNext()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
- nnoremap <silent> <C-X>   :Wx 0<CR>
+ nnoremap <silent> <C-X>   :echo<CR>
  nnoremap <silent> <C-Y>   :silent call WblPrev()<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
