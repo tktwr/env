@@ -8,20 +8,21 @@ f_default() {
 }
 
 f_snap() {
-	git-tar.sh ${MY_SNAP}
+  git-tar.sh ${MY_SNAP}
 }
 
 f_tags() {
-	ctags -f tags.bin.sh  bin/*.sh
-	ctags -f tags.bin.py  bin/py/*.py
-	ctags -f tags.etc.sh  etc/bash/*.sh
-	ctags -f tags.etc.vim etc/vim/*.vim etc/vim/plugin/*.vim etc/vim/vim-plug/*.vim
+  cd tags
+  myctags.sh $MY_BIN/*.sh > tags.bin_sh
+  myctags.sh $MY_BIN/py/*.py > tags.bin_py
+  myctags.sh $MY_BASH/*.sh > tags.bash
+  myctags.sh $MY_VIM/*.vim $MY_VIM/plugin/*.vim $MY_VIM/vim-plug/*.vim > tags.vim
 }
 
 f_help() {
-	echo "snap    ... make a snapshot"
-	echo "tags    ... make tags"
-	echo "help    ... print help"
+  echo "snap    ... make a snapshot"
+  echo "tags    ... make tags"
+  echo "help    ... print help"
 }
 
 #======================================================

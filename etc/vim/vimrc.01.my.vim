@@ -3,10 +3,10 @@
 "======================================================
 set path+=$QTDIR/include
 
-set tags+=$MY_ENV/tags.bin.sh
-set tags+=$MY_ENV/tags.bin.py
-set tags+=$MY_ENV/tags.etc.sh
-set tags+=$MY_ENV/tags.etc.vim
+set tags+=$MY_ENV/tags/tags.bin_sh
+set tags+=$MY_ENV/tags/tags.bin_py
+set tags+=$MY_ENV/tags/tags.bash
+set tags+=$MY_ENV/tags/tags.vim
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
 set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
