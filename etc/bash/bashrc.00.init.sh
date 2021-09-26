@@ -16,6 +16,7 @@ export MY_PROMPT_TYPE=2
 #umask 022
 unalias -a
 
+export LANG=C
 export HISTCONTROL=ignoreboth
 export PAGER='less -FRX'
 export EDITOR='vim'
