@@ -90,18 +90,21 @@
   - raytracing                         | https://developer.nvidia.com/rtx/raytracing/vkray
   ------------------------------------ | ----------------------------------------
 - Blender                              | https://docs.blender.org/
+  - doc                                | https://docs.blender.org/manual/en/latest/
+    - Open Shading Language            | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
   - api                                | https://docs.blender.org/api/current/index.html
-  - api 2.83                           | https://docs.blender.org/api/2.83
-  - bake                               | https://3dcg-school.pro/blender-bake/
-  - bake2                              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+    - UILayout                         | https://docs.blender.org/api/current/bpy.types.UILayout.html
 - Develop Add-ons                      | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
 - Blender入門(2.8版)                   | https://blender3d.biz/
+- bake                                 | https://3dcg-school.pro/blender-bake/
+- bake2                                | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 - Environment                          | https://reflectorange.net/archives/041.html
   ------------------------------------ | ----------------------------------------
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/
   ------------------------------------ | ----------------------------------------
 - Resources                            |
+  - sketchfab                          | https://sketchfab.com/
   - Poly Haven                         | https://polyhaven.com/
   - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
   ------------------------------------ | ----------------------------------------
