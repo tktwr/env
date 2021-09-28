@@ -27,7 +27,8 @@ __pycache__
 *.model
 
 # local
-local/
+_output/
+_local/
 local.cmake
 local.mk
 
