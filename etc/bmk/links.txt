@@ -99,6 +99,7 @@
 - bake                                 | https://3dcg-school.pro/blender-bake/
 - bake2                                | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 - Environment                          | https://reflectorange.net/archives/041.html
+- Blenderではじめる画像処理            | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
   ------------------------------------ | ----------------------------------------
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/

@@ -103,6 +103,8 @@
 - Total Relighting: Learning to Relight Portraits for Background Replacement                                         | https://augmentedperception.github.io/total_relighting/
 - NeRF-Tex: Neural Reflectance Field Textures                                                                        | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
 - Mixture of Volumetric Primitives for Efficient Neural Rendering                                                    | https://arxiv.org/abs/2103.01954
+[Recent] ------------------------                                                                                    | ----------------------------------------
+- FabSoften: Face Beautification via Dynamic Skin Smoothing, Guided Feathering, and Texture Restoration              | https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Velusamy_FabSoften_Face_Beautification_via_Dynamic_Skin_Smoothing_Guided_Feathering_and_CVPRW_2020_paper.pdf
 
 # vim:set ft=bmk syntax=txt nowrap:
 
