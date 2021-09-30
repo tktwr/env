@@ -207,28 +207,17 @@ endsnippet
 
 snippet if "if"
 if (${1:true}) {
-    ${0:statement};
-}
-endsnippet
-
-snippet ifel "if else"
-if (${1:true}) {
-    ${0:statement};
+} else if (${2:true}) {
 } else {
-    statement;
 }
 endsnippet
 
 snippet elif "else if"
-else if (${1:true}) {
-    ${0:statement};
-}
+} else if (${1:true}) {
 endsnippet
 
 snippet el "else"
-else {
-    ${0:statement};
-}
+} else {
 endsnippet
 
 #======================================================

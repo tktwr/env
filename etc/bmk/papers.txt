@@ -105,6 +105,8 @@
 - Mixture of Volumetric Primitives for Efficient Neural Rendering                                                    | https://arxiv.org/abs/2103.01954
 [Recent] ------------------------                                                                                    | ----------------------------------------
 - FabSoften: Face Beautification via Dynamic Skin Smoothing, Guided Feathering, and Texture Restoration              | https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Velusamy_FabSoften_Face_Beautification_via_Dynamic_Skin_Smoothing_Guided_Feathering_and_CVPRW_2020_paper.pdf
+- ICT-FaceKit                                                                                                        | https://github.com/ICT-VGL/ICT-FaceKit
+- Learning Formation of Physically-Based Face Attributes                                                             | https://arxiv.org/abs/2004.03458
 
 # vim:set ft=bmk syntax=txt nowrap:
 

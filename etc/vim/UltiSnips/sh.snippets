@@ -10,16 +10,18 @@ snippet --
 
 endsnippet
 
-snippet if
-if [ $0 ]; then
+snippet if "if"
+if [ ${1:expr} ]; then
+elif [ ${2:expr} ]; then
+else
 fi
 endsnippet
 
-snippet elif
-elif [ $0 ]; then
+snippet elif "elif"
+elif [ ${1:expr} ]; then
 endsnippet
 
-snippet el
+snippet el "else"
 else
 endsnippet
 

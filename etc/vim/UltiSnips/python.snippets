@@ -48,26 +48,25 @@ endsnippet
 
 snippet if "if"
 if ${1:True}:
-    ${0:pass}
+elif ${2:True}:
+else:
 endsnippet
 
 snippet elif "elif"
 elif ${1:True}:
-    ${0:pass}
 endsnippet
 
-snippet else "else"
+snippet el "else"
 else:
+endsnippet
+
+snippet for "for"
+for ${1:i} in ${2:list}:
     ${0:pass}
 endsnippet
 
 snippet wh "while"
 while ${1:True}:
-    ${0:pass}
-endsnippet
-
-snippet for "for"
-for ${1:i} in ${2:list}:
     ${0:pass}
 endsnippet
 
