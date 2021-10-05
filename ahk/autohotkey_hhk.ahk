@@ -37,14 +37,15 @@ F3::
   send,#^{Right}
   return
 
-; screenshot
+; display desktop
 F4::
-  send,#+s
+  send,#d
   return
 
 ; reload
 ;F5::
 
+; screen info
 F6::
   w = %A_ScreenWidth%
   w_half = %A_ScreenWidth%
@@ -52,24 +53,23 @@ F6::
   MsgBox, w = %w% w_half = %w_half%
   return
 
+; maximize window in left
 F7::
   send,#{Left}
   return
 
+; maximize window
 F8::
   send,#{Up}
   return
 
+; maximize window in right
 F9::
   send,#{Right}
   return
 
-F10::
-  send,#d
-  return
-
 ; toggle maximize / half maximize window
-F11::
+F10::
   WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
   ;MsgBox, x y w h = %X% %Y% %W% %H%
   screen_w_75 = %A_ScreenWidth%
@@ -82,6 +82,11 @@ F11::
     Else
       send,#{Left}
   }
+  return
+
+; screenshot
+F11::
+  send,#+s
   return
 
 ; system
