@@ -1,6 +1,15 @@
 "------------------------------------------------------
 " func
 "------------------------------------------------------
+func s:MyClosePrevWin()
+  let curr_winnr = winnr()
+  wincmd p
+  call WblCopy()
+  close
+  exec curr_winnr."wincmd w"
+  call WblPaste()
+endfunc
+
 func s:MyHelp(...)
   if &filetype == "help"
     let start_from_help_win=1
@@ -14,36 +23,28 @@ func s:MyHelp(...)
   else
     exec "above help" a:1
   endif
-  let help_winnr = winnr()
 
   if !start_from_help_win
-    wincmd p
-    call WblCopy()
-    close
-    exec help_winnr."wincmd w"
-    call WblPaste()
+    call s:MyClosePrevWin()
   endif
 endfunc
 
-func s:MyMan(word)
-  exec "vertical resize" g:my_help_winwidth
-  if &filetype == "ref-man"
-    exec "above Ref man" a:word
-  else
-    exec "above Ref man" a:word
-    wincmd p
-    close
+func s:MyRef(cmd, word)
+  let word = a:word
+  if word == "?"
+    let word = input("word? ")
   endif
-endfunc
+  if word == ""
+    echo "canceled"
+    return
+  endif
 
-func s:MyPydoc(word)
   exec "vertical resize" g:my_help_winwidth
-  if &filetype == "ref-pydoc"
-    exec "above Ref pydoc" a:word
+  if &filetype =~ "ref-*"
+    exec "above Ref" a:cmd word
   else
-    exec "above Ref pydoc" a:word
-    wincmd p
-    close
+    exec "above Ref" a:cmd word
+    call s:MyClosePrevWin()
   endif
 endfunc
 
@@ -63,8 +64,8 @@ endfunc
 " command
 "------------------------------------------------------
 command -nargs=? MyHelp    call s:MyHelp(<f-args>)
-command -nargs=1 MyMan     call s:MyMan(<f-args>)
-command -nargs=1 MyPydoc   call s:MyPydoc(<f-args>)
+command -nargs=+ MyMan     call s:MyRef("man", <q-args>)
+command -nargs=+ MyPydoc   call s:MyRef("pydoc", <q-args>)
 
 command MyTrans            call s:MyTrans()
 command MyDict             call s:MyDict()

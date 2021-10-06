@@ -44,6 +44,9 @@
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
+- M Man                                | :MyMan ?
+- P Pydoc                              | :MyPydoc ?
+    ---------------------------------- | ----------------------------------------
 - V BmkViewThis         (C-CR)         | :call BmkViewThis()
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
 - F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
@@ -56,7 +59,7 @@
     ---------------------------------- | ----------------------------------------
 - L MyMakeLink                         | :MyMakeLink
 - I MyMakeImageLink                    | :MyMakeImageLink
-- P MyTogglePathFormat                 | :MyTogglePathFormat
+- p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
 - E MyIDE                              | :MyIDE
 - c MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")

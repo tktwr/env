@@ -1,14 +1,18 @@
 #!/bin/bash
 
+WINOPT="\
+  --size-only -O --no-g --no-p \
+  "
 EXCLUDES="\
-  -C \
-  --include 'build.gradle'  \
+  --include 'build.gradle' \
   --exclude 'imgui.ini' \
-  --exclude '*.blend1'  \
-  --exclude 'build*'  \
-  --exclude 'output*'  \
+  --exclude '*.blend1' \
+  --exclude '*.BLEND1' \
+  --exclude 'build*' \
+  --exclude '_output' \
+  --exclude '_local' \
   "
 
 echo "=== [mymirrorfat.sh $@] ==="
-eval "rsync -avR --delete --size-only -O --no-g --no-p $EXCLUDES $@"
+eval "rsync -avRC --delete $WINOPT $EXCLUDES $@"
 

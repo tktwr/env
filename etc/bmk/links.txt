@@ -104,6 +104,12 @@
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/
   ------------------------------------ | ----------------------------------------
+- Character Creator 3                  | https://www.reallusion.com/jp/character-creator/
+- Character Creator 3 (blender addon)  | https://www.youtube.com/watch?v=Nt1MuyPjkiI
+- Daz3d                                | https://www.daz3d.com/
+- Human Generator                      | https://www.humgen3d.com/
+- Human Generator (blendermarket)      | https://blendermarket.com/products/humgen3d?ref=311
+  ------------------------------------ | ----------------------------------------
 - Resources                            |
   - sketchfab                          | https://sketchfab.com/
   - Poly Haven                         | https://polyhaven.com/
