@@ -6,7 +6,7 @@ export MY_BASH=$MY_CONFIG/tktwr.github/env/etc/bash
 source $MY_BASH/bashrc_start.sh
 
 source_file $MY_BASH/bashrc.00.init.sh
-source_file $MY_BASH/bashrc.01.colors.sh
+source_file $MY_BASH/bashrc.01.colors_gruvbox.sh
 source_file $MY_BASH/bashrc.10.path.sh
 source_file $MY_BASH/bashrc.11.func.sh
 source_file $MY_BASH/bashrc.20.prompt.sh

@@ -1,8 +1,6 @@
 #[home] ---    | ----------        | ----------
 my             | MY_DOTMY          | $HOME/.my
 common         | MY_COMMON_SETTING | $MY_CONFIG/local/common
-backup         | MY_BACKUP         | $MY_PRIVATE/backup
-tmp            | MY_TMP            | $MY_PRIVATE/tmp
 #[config] ---  | ----------        | ----------
 rconfig        | MY_REMOTE_CONFIG  | $MY_CONFIG/tktwr.github
 lconfig        | MY_LOCAL_CONFIG   | $MY_CONFIG/tktwr.local
@@ -21,6 +19,8 @@ libtt          | MY_LIBTT          | $MY_REMOTE_CONFIG/libtt
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------
+backup         | MY_BACKUP         | $MY_PRIVATE/backup
+tmp            | MY_TMP            | $MY_PRIVATE/tmp
 repo           | MY_REPO           | $MY_PRIVATE/repo
 work           | MY_WORK           | $MY_PRIVATE/work
 proj           | MY_PROJ           | $MY_PRIVATE/proj
@@ -30,7 +30,7 @@ git            | MY_GIT            | $MY_PRIVATE/work/git
 github         | MY_GITHUB         | $MY_PRIVATE/work/github
 svn            | MY_SVN            | $MY_PRIVATE/work/svn
 #[public] ---  | ----------        | ----------
-downloads2     | MY_DOWNLOADS2     | $MY_PUBLIC/Downloads
+arch           | MY_ARCH           | $MY_PUBLIC/arch
 papers         | MY_PAPERS         | $MY_PUBLIC/Papers
 opt            | MY_OPT            | $MY_PUBLIC/opt
 man            | MY_MAN            | $MY_PUBLIC/man

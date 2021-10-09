@@ -147,8 +147,6 @@ function! s:init_fern() abort
 endfunction
 
 function! s:on_syntax() abort
-  syn match  fernCMakeLists   ".*CMakeLists.txt\ze.*$"
-  syn match  fernMakefile     ".*Makefile\ze.*$"
   syn match  fernCPP          ".*.cpp\ze.*$"
   syn match  fernC            ".*.c\ze.*$"
   syn match  fernH            ".*.h\ze.*$"
@@ -156,17 +154,19 @@ function! s:on_syntax() abort
   syn match  fernSH           ".*.sh\ze.*$"
   syn match  fernVIM          ".*.vim\ze.*$"
   syn match  fernGLB          ".*.glb\ze.*$"
+  syn match  fernCMakeLists   ".*CMakeLists.txt\ze.*$"
+  syn match  fernMakefile     ".*Makefile\ze.*$"
   syn match  fernMakeSH       ".*make.*.sh\ze.*$"
 
-  hi link fernCMakeLists MyOrange
-  hi link fernMakefile   MyOrange
-  hi link fernCPP        MyGreen
+  hi link fernCPP        MyAqua
   hi link fernC          MyAqua
   "hi link fernH          MyOrange
   hi link fernPY         MyYellow
   hi link fernSH         MyPurple
   "hi link fernVIM        MyGreen
   hi link fernGLB        MyAqua
+  hi link fernCMakeLists MyOrange
+  hi link fernMakefile   MyOrange
   hi link fernMakeSH     MyOrange
 endfunction
 
