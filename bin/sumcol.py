@@ -10,21 +10,26 @@ def str_to_val(s):
     return int(s)
 
 
-def sumcol(fp, col):
+def sumcol(fp, col, sep):
     total = 0
     for line in fp:
-        l = line.strip().split('|')
+        l = line.strip().split(sep)
         total += str_to_val(l[col])
-    print(total)
+    return total
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('filenames', nargs='*')
+    parser.add_argument('file', nargs='*')
+    parser.add_argument('-s', '--separator',
+                        type=str,
+                        default='|',
+                        help="set separator (default='|')")
     args = parser.parse_args()
 
-    with fileinput.input(args.filenames) as f:
-        sumcol(f, 1)
+    with fileinput.input(args.file) as f:
+        total = sumcol(f, 1, args.separator)
+        print(f"{total:,d}")
 
 
 if __name__ == "__main__":

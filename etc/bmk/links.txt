@@ -1,6 +1,6 @@
 [ref:main] --------------------------- | ----------------------------------------
--   Memo                               | $MY_LOCAL_CONFIG/memo/index.html
--   Diary                              | $MY_PRIVATE_CONFIG/diary/index.html
+-   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
 -   Google翻訳                         | https://translate.google.co.jp/
 -   DeepL翻訳                          | https://www.deepl.com/ja/translator
     ---------------------------------- | ----------------------------------------

@@ -97,6 +97,7 @@ vmap C  <Plug>NERDCommenterToggle
 "------------------------------------------------------
 nnoremap ,p      "*p
 vnoremap Y       "*y
+vnoremap A       y:'<,'>w !sumcol.py<CR>
 
 "------------------------------------------------------
 " popup menu
