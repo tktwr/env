@@ -100,6 +100,7 @@
 - bake2                                | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 - Environment                          | https://reflectorange.net/archives/041.html
 - Blenderではじめる画像処理            | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
+- gimp-normalmap                       | https://code.google.com/archive/p/gimp-normalmap/
   ------------------------------------ | ----------------------------------------
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/
@@ -114,6 +115,7 @@
   - sketchfab                          | https://sketchfab.com/
   - Poly Haven                         | https://polyhaven.com/
   - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
+  - ambientcg                          | https://ambientcg.com/
   ------------------------------------ | ----------------------------------------
 - ArchWiki                             | https://wiki.archlinux.jp/
 - SSL Certificate Verification         | https://curl.se/docs/sslcerts.html
