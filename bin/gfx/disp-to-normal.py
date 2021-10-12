@@ -23,7 +23,8 @@ def depth_to_normal(ifname, ofname):
     gray_img = gray_img.astype('float')
 
     # exr: if value is [0, 1]
-    gray_img *= 65536.0
+    #gray_img *= 65536.0
+    gray_img *= 256.0
 
     nml_img = np.zeros((h, w, 3), dtype=float)
 

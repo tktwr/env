@@ -35,7 +35,7 @@ def cv_pick(fname, x, y):
 
 
 def cv_resize(ifname, ofname, dst_size):
-    img = cv2.imread(ifname, cv2.IMREAD_COLOR)
+    img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
     h, w = img.shape[:2]
 
     img_size = ImageSize((w, h))
