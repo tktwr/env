@@ -6,20 +6,32 @@ import cv2
 from ttpy import ImageSize
 
 
+def cv_size(img):
+    if len(img.shape) == 3:
+        h, w, ch = img.shape[:3]
+    else:
+        h, w = img.shape[:2]
+        ch = 1
+    return (h, w, ch)
+
+
 def cv_info(fname):
     img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
-    if len(img.shape) == 3:
-        height, width, channels = img.shape[:3]
-    else:
-        height, width = img.shape[:2]
-        channels = 1
+    h, w, ch = cv_size(img)
 
+    print(f'filename  = {fname}')
     print(f"img.shape = {img.shape}")
-    print(f"height    = {height}")
-    print(f"width     = {width}")
-    print(f"channels  = {channels}")
+    print(f"height    = {h}")
+    print(f"width     = {w}")
+    print(f"channels  = {ch}")
     print(f"img.dtype = {img.dtype}")
     print(f"type(img) = {type(img)}")
+    print(f'---')
+
+
+def cv_pick(fname, x, y):
+    img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    return img[y, x]
 
 
 def cv_resize(ifname, ofname, dst_size):

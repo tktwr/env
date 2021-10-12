@@ -6,7 +6,7 @@ import cv2
 
 
 def img_show(fname):
-    img = cv2.imread(fname)
+    img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
     cv2.imshow(f"{fname}", img)
 
 
