@@ -91,6 +91,7 @@
   ------------------------------------ | ----------------------------------------
 - Blender                              | https://docs.blender.org/
   - doc                                | https://docs.blender.org/manual/en/latest/
+    - PrincipledBSDF                   | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
     - Open Shading Language            | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
   - api                                | https://docs.blender.org/api/current/index.html
     - UILayout                         | https://docs.blender.org/api/current/bpy.types.UILayout.html
@@ -101,6 +102,8 @@
 - Environment                          | https://reflectorange.net/archives/041.html
 - Blenderではじめる画像処理            | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
 - gimp-normalmap                       | https://code.google.com/archive/p/gimp-normalmap/
+  ------------------------------------ | ----------------------------------------
+- Wrap3                                | https://www.russian3dscanner.com/
   ------------------------------------ | ----------------------------------------
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/
