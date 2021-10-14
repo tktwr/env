@@ -7,7 +7,7 @@ import cv_util as cu
 
 
 def img_show(fname):
-    img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    img = cu.cv_load(fname)
     h, w = img.shape[:2]
     pos = (w//2, h//2)
     val = img[pos[1], pos[0]]
@@ -30,9 +30,14 @@ def img_show(fname):
         img_crop = cu.cv_crop_center_img(img, pos, crop_size)
         cv2.imshow(f"crop: {fname} {pos}, {crop_size}", img_crop)
 
+    key = cv2.waitKey()
+    if key == 115: # 's'
+        cu.cv_save(f"out.png", oimg)
+        if dst_size != (0, 0):
+            cu.cv_save(f"out_crop.png", img_crop)
+
 
 if __name__ == "__main__":
     for fname in sys.argv[1:]:
         img_show(fname)
-    cv2.waitKey()
 

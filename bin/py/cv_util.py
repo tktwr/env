@@ -3,7 +3,9 @@
 
 import sys
 import cv2
+import numpy as np
 from ttpy import ImageSize
+from ttpy import FileName
 
 
 #======================================================
@@ -72,6 +74,28 @@ def cv_resize(ifname, ofname, dst_size):
     cv2.imwrite(ofname, oimg)
 
     print(f"cv_resize {ifname} {ofname} {new_size}")
+
+
+def cv_load(ifname):
+    return cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+
+
+def cv_save(ifname, img):
+    fname = FileName(ifname)
+    ext = fname.ext()
+
+    if img.dtype == np.uint8:
+        if ext == ".png":
+            print(f"cv_save: {ifname}:")
+            cv2.imwrite(ifname, img)
+    elif img.dtype == np.uint16:
+        if ext == ".png":
+            print(f"cv_save: {ifname}: convert uint16 to png")
+    elif img.dtype == np.float32:
+        if ext == ".png":
+            print(f"cv_save: {ifname}: convert float32 to png")
+            oimg = np.clip(img * 255, 0, 255).astype(np.uint8)
+            cv2.imwrite(ifname, oimg)
 
 
 #======================================================
