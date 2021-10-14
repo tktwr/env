@@ -22,7 +22,6 @@ import sys
 import argparse
 from ttpy import FileName
 import cv_util as cu
-import img_util as iu
 
 
 def f_conv_images(dst_size, dst_ext, files):
@@ -32,7 +31,6 @@ def f_conv_images(dst_size, dst_ext, files):
         ofname = f"{name}.{dst_ext}"
 
         cu.cv_resize(ifname, ofname, dst_size)
-        #iu.img_resize(ifname, ofname, dst_size)
 
 
 def parse_args(argv):
@@ -51,7 +49,7 @@ def parse_args(argv):
     parser.add_argument('-e', '--ext',
                         type=str,
                         default='jpg',
-                        help='set ext')
+                        help='set ext (default=jpg)')
     parser.add_argument('files',
                         nargs='+',
                         type=str,

@@ -11,7 +11,7 @@ def normalize_vector(v):
     return v / l
 
 
-def depth_to_normal(ifname, ofname):
+def disp_to_normal(ifname, ofname):
     gray_img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
     if len(gray_img.shape) == 3:
         h, w, ch = gray_img.shape[:3]
@@ -41,10 +41,6 @@ def depth_to_normal(ifname, ofname):
     cv2.imwrite(f"{ofname}", nml_img)
 
 
-def main(argv):
-    depth_to_normal(argv[1], argv[2])
-
-
 if __name__ == "__main__":
-    main(sys.argv)
+    disp_to_normal(sys.argv[1], sys.argv[2])
 
