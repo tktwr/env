@@ -13,6 +13,7 @@ def img_show(fname):
     val = img[pos[1], pos[0]]
     h_max = 500
     w_max = 500
+
     if h >= w and h > h_max:
         dst_size = (0, h_max)
         oimg = cu.cv_resize_img(img, dst_size)
@@ -22,7 +23,12 @@ def img_show(fname):
     else:
         dst_size = (0, 0)
         oimg = img
+
     cv2.imshow(f"{fname}, orig={(w, h)}, dst={dst_size}, pos={pos}, val={val}", oimg)
+    if dst_size != (0, 0):
+        crop_size = (500, 500)
+        img_crop = cu.cv_crop_center_img(img, pos, crop_size)
+        cv2.imshow(f"crop: {fname} {pos}, {crop_size}", img_crop)
 
 
 if __name__ == "__main__":

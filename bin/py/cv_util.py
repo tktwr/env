@@ -6,6 +6,10 @@ import cv2
 from ttpy import ImageSize
 
 
+#======================================================
+# interface for image
+#======================================================
+
 def cv_size(img):
     if len(img.shape) == 3:
         h, w, ch = img.shape[:3]
@@ -14,6 +18,34 @@ def cv_size(img):
         ch = 1
     return (h, w, ch)
 
+
+def cv_crop_img(img, pos, size):
+    top    = pos[1]
+    bottom = pos[1] + size[1]
+    left   = pos[0]
+    right  = pos[0] + size[0]
+    return img[top:bottom, left:right]
+
+
+def cv_crop_center_img(img, center, size):
+    pos = [0, 0]
+    pos[0] = center[0] - (size[0] // 2)
+    pos[1] = center[1] - (size[1] // 2)
+    return cv_crop_img(img, pos, size)
+
+
+def cv_resize_img(img, dst_size):
+    h, w = img.shape[:2]
+
+    img_size = ImageSize((w, h))
+    new_size = img_size.getSize(dst_size)
+
+    return cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+
+
+#======================================================
+# interface for file
+#======================================================
 
 def cv_info(fname):
     img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
@@ -34,15 +66,6 @@ def cv_pick(fname, x, y):
     return img[y, x]
 
 
-def cv_resize_img(img, dst_size):
-    h, w = img.shape[:2]
-
-    img_size = ImageSize((w, h))
-    new_size = img_size.getSize(dst_size)
-
-    return cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
-
-
 def cv_resize(ifname, ofname, dst_size):
     img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
     oimg = cv_resize_img(img, dst_size)
@@ -50,6 +73,10 @@ def cv_resize(ifname, ofname, dst_size):
 
     print(f"cv_resize {ifname} {ofname} {new_size}")
 
+
+#======================================================
+# tiling image
+#======================================================
 
 class ImageTile():
     def __init__(self):
