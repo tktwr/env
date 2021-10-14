@@ -31,8 +31,8 @@ def make_tile(width, cols, ifnames, ofname):
     cv2.imwrite(ofname, img_all)
 
 
-def main():
-    parser = argparse.ArgumentParser()
+def parse_args():
+    parser = argparse.ArgumentParser(description='tiling images')
     parser.add_argument('file', nargs='*')
     parser.add_argument('-w', '--width',
                         type=int,
@@ -41,9 +41,12 @@ def main():
     parser.add_argument('-c', '--cols',
                         type=int,
                         default=2,
-                        help="set width")
-    args = parser.parse_args()
+                        help="set columns")
+    return parser.parse_args()
 
+
+def main():
+    args = parse_args()
     make_tile(args.width, args.cols, args.file, "out.png")
 
 

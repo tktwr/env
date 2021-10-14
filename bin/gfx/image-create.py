@@ -1,25 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import argparse
-import img_util as iu
+import numpy as np
+import cv_util as cu
 
 
-def parse_args(argv):
-    parser = argparse.ArgumentParser(description='description')
-    parser.add_argument('-v', '--verbose',
-                        action='store_true',
-                        help='show verbose message')
-    parser.add_argument('-a', '--action',
-                        choices=['create_color', 'create_nml', 'create_metalroughness', 'query', 'info'],
-                        type=str,
-                        default="create_color",
-                        help='set action')
-    parser.add_argument('-i', '--ifname',
-                        type=str,
-                        default="input.png",
-                        help='set input filename')
+def parse_args():
+    parser = argparse.ArgumentParser(description='create an image')
     parser.add_argument('-o', '--ofname',
                         type=str,
                         default="output.png",
@@ -29,39 +17,42 @@ def parse_args(argv):
                         type=int,
                         default=[256, 256],
                         help='set image size')
-    parser.add_argument('-p', '--pos',
-                        nargs='+',
+    parser.add_argument('-c', '--channels',
                         type=int,
-                        default=[0, 0],
-                        help='set position')
-    parser.add_argument('-c', '--color',
+                        default=3,
+                        help="set channels")
+    parser.add_argument('-t', '--dtype',
+                        choices=['uint8', 'uint16', 'float32'],
+                        type=str,
+                        default="uint8",
+                        help='set dtype')
+    parser.add_argument('--bgr',
                         nargs='+',
                         type=float,
                         default=[1.0, 1.0, 1.0],
-                        help='set color')
+                        help='set bgr color')
+    return parser.parse_args()
 
-    args = parser.parse_args()
-    return args
+
+def f_create(fname, shape, dtype, val):
+    img = np.ones(shape, dtype=dtype)
+    img *= val
+    cu.cv_save(fname, img)
 
 
 if __name__ == "__main__":
-    args = parse_args(sys.argv)
-    if args.verbose:
-        print(f"args.verbose: {args.verbose}")
-        print(f"args.action: {args.action}")
-        print(f"args.ifname: {args.ifname}")
-        print(f"args.ofname: {args.ofname}")
-        print(f"args.size: {args.size}")
-        print(f"args.pos: {args.pos}")
-        print(f"args.color: {args.color}")
-        print();
+    args = parse_args()
 
-    if args.action == 'create_color':
-        iu.img_create_color(args.ofname, args.size, "RGB", args.color)
-    elif args.action == 'create_nml':
-        iu.img_create_nml(args.ofname, args.size, args.color)
-    elif args.action == 'query':
-        iu.img_query(args.ifname, args.pos)
-    elif args.action == 'info':
-        iu.img_info(args.ifname)
+    w = args.size[0]
+    h = args.size[1]
+    c = args.channels
+    shape = (h, w, c)
+    dtype = args.dtype
+    bgr = np.array(args.bgr)
+    if dtype == 'uint8':
+        bgr = (bgr * 255).astype('uint8')
+    elif dtype == 'uint16':
+        bgr = (bgr * 65535).astype('uint16')
+
+    f_create(args.ofname, shape, dtype, bgr)
 

@@ -18,7 +18,6 @@
 # - fixed width and height
 #     conv.py --width 200 --height 100 -e jpg a.png b.png...
 
-import sys
 import argparse
 from ttpy import FileName
 import cv_util as cu
@@ -33,7 +32,7 @@ def f_conv_images(dst_size, dst_ext, files):
         cu.cv_resize(ifname, ofname, dst_size)
 
 
-def parse_args(argv):
+def parse_args():
     parser = argparse.ArgumentParser(description='convert images')
     parser.add_argument('-v', '--verbose',
                         action='store_true',
@@ -55,12 +54,11 @@ def parse_args(argv):
                         type=str,
                         help='input files')
 
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    args = parse_args(sys.argv)
+    args = parse_args()
     if args.verbose:
         print(f"args.size: {args.size}")
         print(f"args.ext: {args.ext}")

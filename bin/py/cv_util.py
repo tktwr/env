@@ -71,9 +71,7 @@ def cv_pick(fname, x, y):
 def cv_resize(ifname, ofname, dst_size):
     img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
     oimg = cv_resize_img(img, dst_size)
-    cv2.imwrite(ofname, oimg)
-
-    print(f"cv_resize {ifname} {ofname} {new_size}")
+    cv_save(ofname, oimg)
 
 
 def cv_load(ifname):
@@ -84,18 +82,14 @@ def cv_save(ifname, img):
     fname = FileName(ifname)
     ext = fname.ext()
 
-    if img.dtype == np.uint8:
-        if ext == ".png":
-            print(f"cv_save: {ifname}:")
-            cv2.imwrite(ifname, img)
-    elif img.dtype == np.uint16:
-        if ext == ".png":
-            print(f"cv_save: {ifname}: convert uint16 to png")
-    elif img.dtype == np.float32:
-        if ext == ".png":
-            print(f"cv_save: {ifname}: convert float32 to png")
-            oimg = np.clip(img * 255, 0, 255).astype(np.uint8)
-            cv2.imwrite(ifname, oimg)
+    if img.dtype == np.float32 and ext == ".png":
+        print(f"cv_save: {ifname}: convert float32 to png")
+        oimg = np.clip(img * 255, 0, 255).astype(np.uint8)
+        cv2.imwrite(ifname, oimg)
+        return
+
+    print(f"cv_save: {ifname}:")
+    cv2.imwrite(ifname, img)
 
 
 #======================================================

@@ -14,18 +14,26 @@ def f_image_split(ifname):
     ext = fname.ext()
     ext = ".png"
 
-    img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    img = cu.cv_load(ifname)
     h, w, ch = cu.cv_size(img)
-    if ch == 3:
+
+    if ch >= 3:
         img_b = img[:, :, 0]
-        img_g = img[:, :, 1]
-        img_r = img[:, :, 2]
         ofname_b = f"{name}_b{ext}"
-        cv2.imwrite(ofname_b, img_b)
+        cu.cv_save(ofname_b, img_b)
+
+        img_g = img[:, :, 1]
         ofname_g = f"{name}_g{ext}"
-        cv2.imwrite(ofname_g, img_g)
+        cu.cv_save(ofname_g, img_g)
+
+        img_r = img[:, :, 2]
         ofname_r = f"{name}_r{ext}"
-        cv2.imwrite(ofname_r, img_r)
+        cu.cv_save(ofname_r, img_r)
+
+    if ch >= 4:
+        img_a = img[:, :, 3]
+        ofname_a = f"{name}_a{ext}"
+        cu.cv_save(ofname_a, img_a)
 
 
 if __name__ == "__main__":

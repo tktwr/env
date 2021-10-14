@@ -23,14 +23,14 @@ def f_image_merge(ofname, ifnames):
         elif i == "one":
             img = np.ones((h, w, ch), dtype)
         else:
-            img = cv2.imread(i, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+            img = cu.cv_load(i)
             h, w, ch = cu.cv_size(img)
             dtype = img.dtype
 
         img_list.append(img)
 
     img_out = cv2.merge(img_list)
-    cv2.imwrite(ofname, img_out)
+    cu.cv_save(ofname, img_out)
 
 
 if __name__ == "__main__":
