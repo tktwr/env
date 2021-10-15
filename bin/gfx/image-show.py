@@ -4,6 +4,7 @@
 import sys
 import cv2
 import cv_util as cu
+from ttpy import FileName
 
 
 def img_show(fname):
@@ -32,9 +33,12 @@ def img_show(fname):
 
     key = cv2.waitKey()
     if key == 115: # 's'
-        cu.cv_save(f"out.png", oimg)
+        fn = FileName(fname)
+        ofname = f"small_{fn.name()}.png"
+        cu.cv_save(ofname, oimg)
         if dst_size != (0, 0):
-            cu.cv_save(f"out_crop.png", img_crop)
+            ofname = f"crop_{fn.name()}.png"
+            cu.cv_save(ofname, img_crop)
 
 
 if __name__ == "__main__":
