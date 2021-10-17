@@ -8,6 +8,11 @@ import cv_util as cu
 
 def parse_args():
     parser = argparse.ArgumentParser(description='create an image')
+    parser.add_argument('-a', '--action',
+                        choices=['new', 'hgrad', 'vgrad'],
+                        type=str,
+                        default="new",
+                        help='set action (default=new)')
     parser.add_argument('-o', '--ofname',
                         type=str,
                         default="output.png",
@@ -16,28 +21,27 @@ def parse_args():
                         nargs='+',
                         type=int,
                         default=[256, 256],
-                        help='set image size')
+                        help='set image size (default=256 256)')
     parser.add_argument('-c', '--channels',
                         type=int,
                         default=3,
-                        help="set channels")
+                        help="set channels (default=3)")
     parser.add_argument('-t', '--dtype',
                         choices=['uint8', 'uint16', 'float32'],
                         type=str,
                         default="uint8",
-                        help='set dtype')
-    parser.add_argument('--bgr',
+                        help='set dtype (default=uint8)')
+    parser.add_argument('--bgr0',
                         nargs='+',
                         type=float,
                         default=[1.0, 1.0, 1.0],
-                        help='set bgr color')
+                        help='set bgr color (default=1.0 1.0 1.0)')
+    parser.add_argument('--bgr1',
+                        nargs='+',
+                        type=float,
+                        default=[1.0, 1.0, 1.0],
+                        help='set bgr color (default=1.0 1.0 1.0)')
     return parser.parse_args()
-
-
-def f_create(fname, shape, dtype, val):
-    img = np.ones(shape, dtype=dtype)
-    img *= val
-    cu.cv_save(fname, img)
 
 
 if __name__ == "__main__":
@@ -46,13 +50,23 @@ if __name__ == "__main__":
     w = args.size[0]
     h = args.size[1]
     c = args.channels
+
     shape = (h, w, c)
     dtype = args.dtype
-    bgr = np.array(args.bgr)
-    if dtype == 'uint8':
-        bgr = (bgr * 255).astype('uint8')
-    elif dtype == 'uint16':
-        bgr = (bgr * 65535).astype('uint16')
+    bgr0 = np.array(args.bgr0)
+    bgr0 = cu.cv_color(bgr0, dtype)
+    bgr1 = np.array(args.bgr1)
+    bgr1 = cu.cv_color(bgr1, dtype)
 
-    f_create(args.ofname, shape, dtype, bgr)
+    print(f"shape = {shape}")
+    print(f"dtype = {dtype}")
+    print(f"bgr0 = {bgr0}")
+    print(f"bgr1 = {bgr1}")
+
+    if args.action == 'new':
+        cu.cv_create(args.ofname, shape, dtype, bgr0)
+    elif args.action == 'hgrad':
+        cu.cv_create_hgrad(args.ofname, shape, dtype, bgr0, bgr1)
+    elif args.action == 'vgrad':
+        cu.cv_create_vgrad(args.ofname, shape, dtype, bgr0, bgr1)
 

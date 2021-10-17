@@ -44,10 +44,14 @@
 - python                               | https://www.python.org/
   - doc                                | https://docs.python.org/ja/3/index.html
   - tutorial                           | https://docs.python.org/ja/3/tutorial/
-  - 基礎文法とサンプル集               | https://algorithm.joho.info/programming/python/sample-code-py/
-  - blog                               | https://note.nkmk.me/python/
-- python modules                       |
+- nkmk                                 | https://note.nkmk.me/
+  - nkmk.python                        | https://note.nkmk.me/python/
+  - nkmk.numpy                         | https://note.nkmk.me/numpy/
+- 基礎文法とサンプル集                 | https://algorithm.joho.info/programming/python/sample-code-py/
   - numpy                              | https://algorithm.joho.info/programming/python/numpy-sample-code/
+- python modules                       |
+  - numpy                              | https://numpy.org/
+  - numpy.reference                    | https://numpy.org/doc/stable/reference/index.html
   - pillow                             | https://pillow.readthedocs.io/en/stable/
   - matplotlib                         | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
   - scipy                              | https://www.scipy.org/

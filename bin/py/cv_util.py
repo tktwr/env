@@ -12,6 +12,17 @@ from ttpy import FileName
 # interface for image
 #======================================================
 
+# color32f: [0, 1]
+def cv_color(color32f, dtype):
+    if dtype == 'uint8':
+        color32f = (color32f * 255).astype('uint8')
+    elif dtype == 'uint16':
+        color32f = (color32f * 65535).astype('uint16')
+    elif dtype == 'float32':
+        color32f = color32f.astype('float32')
+    return color32f
+
+
 def cv_size(img):
     if len(img.shape) == 3:
         h, w, ch = img.shape[:3]
@@ -31,6 +42,8 @@ def cv_crop_img_simple(img, pos, size):
     return img[top:bottom, left:right]
 
 
+# pos  : [x, y]
+# size : [w, h]
 def cv_crop_img(img, pos, size):
     # region in the img
     h, w = img.shape[:2]
@@ -84,37 +97,80 @@ def cv_resize_img(img, dst_size):
     return cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
 
 
+def cv_create_img(shape, dtype, val):
+    return (np.ones(shape) * val).astype(dtype)
+
+
+def cv_create_hgrad_img(shape, dtype, co0, co1):
+    img = np.ones(shape)
+    h, w = shape[:2]
+    for y in range(0, h):
+        for x in range(0, w):
+            t = float(x) / (w - 1)
+            img[y, x] = (1 - t) * co0 + t * co1
+    return img.astype(dtype)
+
+
+def cv_create_vgrad_img(shape, dtype, co0, co1):
+    img = np.ones(shape)
+    h, w = shape[:2]
+    for y in range(0, h):
+        for x in range(0, w):
+            t = float(y) / (h - 1)
+            img[y, x] = (1 - t) * co0 + t * co1
+    return img.astype(dtype)
+
+
 #======================================================
 # interface for file
 #======================================================
 
 def cv_info(fname):
-    img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    img = cv_load(fname)
     h, w, ch = cv_size(img)
+    min = img.min(axis=(0, 1))
+    max = img.max(axis=(0, 1))
 
     print(f'filename  = {fname}')
-    print(f"img.shape = {img.shape}")
     print(f"height    = {h}")
     print(f"width     = {w}")
     print(f"channels  = {ch}")
+    print(f"img.shape = {img.shape}")
     print(f"img.dtype = {img.dtype}")
     print(f"type(img) = {type(img)}")
+    print(f"min       = {min}")
+    print(f"max       = {max}")
     print(f'---')
 
 
 def cv_pick(fname, x, y):
-    img = cv2.imread(fname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    img = cv_load(fname)
     return img[y, x]
 
 
+def cv_create(fname, shape, dtype, val):
+    img = cv_create_img(shape, dtype, val)
+    cv_save(fname, img)
+
+
+def cv_create_hgrad(ofname, shape, dtype, co0, co1):
+    img = cv_create_hgrad_img(shape, dtype, co0, co1)
+    cv_save(ofname, img)
+
+
+def cv_create_vgrad(ofname, shape, dtype, co0, co1):
+    img = cv_create_vgrad_img(shape, dtype, co0, co1)
+    cv_save(ofname, img)
+
+
 def cv_resize(ifname, ofname, dst_size):
-    img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    img = cv_load(ifname)
     oimg = cv_resize_img(img, dst_size)
     cv_save(ofname, oimg)
 
 
 def cv_load(ifname):
-    return cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    return cv2.imread(ifname, cv2.IMREAD_UNCHANGED)
 
 
 def cv_save(ifname, img):
