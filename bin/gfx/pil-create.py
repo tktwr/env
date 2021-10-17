@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import img_util as iu
+import pil_util as pu
 
 
 def parse_args():
@@ -55,11 +55,11 @@ if __name__ == "__main__":
         print();
 
     if args.action == 'create_color':
-        iu.img_create_color(args.ofname, args.size, "RGB", args.color)
+        pu.img_create_color(args.ofname, args.size, "RGB", args.color)
     elif args.action == 'create_nml':
-        iu.img_create_nml(args.ofname, args.size, args.color)
+        pu.img_create_nml(args.ofname, args.size, args.color)
     elif args.action == 'query':
-        iu.img_query(args.ifname, args.pos)
+        pu.img_query(args.ifname, args.pos)
     elif args.action == 'info':
-        iu.img_info(args.ifname)
+        pu.img_info(args.ifname)
 

@@ -3,6 +3,7 @@
 
 import sys
 import cv2
+import cv_util as cu
 import numpy as np
 
 
@@ -12,7 +13,7 @@ def normalize_vector(v):
 
 
 def disp_to_normal(ifname, ofname):
-    gray_img = cv2.imread(ifname, cv2.IMREAD_ANYCOLOR|cv2.IMREAD_ANYDEPTH)
+    gray_img = cu.cv_load(ifname)
     if len(gray_img.shape) == 3:
         h, w, ch = gray_img.shape[:3]
         gray_img = gray_img[:, :, 0]
@@ -38,7 +39,7 @@ def disp_to_normal(ifname, ofname):
     nml_img *= 255
     nml_img = nml_img.astype('uint8')
     nml_img = cv2.cvtColor(nml_img, cv2.COLOR_RGB2BGR)
-    cv2.imwrite(f"{ofname}", nml_img)
+    cu.cv_save(ofname, nml_img)
 
 
 if __name__ == "__main__":

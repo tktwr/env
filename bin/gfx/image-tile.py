@@ -3,7 +3,7 @@
 
 import argparse
 import cv2
-import cv_util
+import cv_util as cu
 import numpy as np
 
 
@@ -21,14 +21,14 @@ def make_tile(width, cols, ifnames, ofname):
         if i == "None":
             img = blank_img
         else:
-            img = cv2.imread(i)
+            img = cu.cv_load(i)
         l1.append(img)
 
     l2 = convert_1d_to_2d(l1, cols)
 
-    mycv = cv_util.ImageTile()
+    mycv = cu.ImageTile()
     img_all = mycv.tile(l2)
-    cv2.imwrite(ofname, img_all)
+    cu.cv_save(ofname, img_all)
 
 
 def parse_args():
