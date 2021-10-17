@@ -21,7 +21,9 @@ def cv_size(img):
     return (h, w, ch)
 
 
-def cv_crop_img(img, pos, size):
+# pos  : [x, y]
+# size : [w, h]
+def cv_crop_img_simple(img, pos, size):
     top    = pos[1]
     bottom = pos[1] + size[1]
     left   = pos[0]
@@ -29,6 +31,43 @@ def cv_crop_img(img, pos, size):
     return img[top:bottom, left:right]
 
 
+def cv_crop_img(img, pos, size):
+    # region in the img
+    h, w = img.shape[:2]
+
+    top    = pos[1]
+    bottom = pos[1] + size[1]
+    left   = pos[0]
+    right  = pos[0] + size[0]
+
+    top = 0 if top < 0 else top
+    left = 0 if left < 0 else left
+    bottom = h-1 if bottom > h-1 else bottom
+    right = w-1 if right > w-1 else right
+
+    crop_img = img[top:bottom, left:right]
+
+    # regin in the dst_img
+    shape = list(img.shape)
+    shape[0] = size[1]
+    shape[1] = size[0]
+    dst_img = np.zeros(shape, dtype=img.dtype)
+
+    dx = 0
+    dy = 0
+    dh = bottom - top
+    dw = right - left
+    if top == 0:
+        dy = size[1] - dh
+    if left == 0:
+        dx = size[0] - dw
+
+    dst_img[dy:dy+dh, dx:dx+dw] = crop_img
+    return dst_img
+
+
+# center : [x, y]
+# size   : [w, h]
 def cv_crop_center_img(img, center, size):
     pos = [0, 0]
     pos[0] = center[0] - (size[0] // 2)
