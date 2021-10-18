@@ -6,5 +6,6 @@ augroup ag_filetype
   au! BufNewFile,BufRead *.md           setf txt
   "au! BufNewFile,BufRead *.md.html      setf txt
   au! BufNewFile,BufRead *.md.html      setf markdown
+  au! BufNewFile,BufRead *.glsl         setf cpp
 augroup END
 

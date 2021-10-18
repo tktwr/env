@@ -109,6 +109,9 @@
 - gimp-normalmap                       | https://code.google.com/archive/p/gimp-normalmap/
   ------------------------------------ | ----------------------------------------
 - Wrap3                                | https://www.russian3dscanner.com/
+- OpenMVS                              | https://github.com/cdcseacave/openMVS
+- colmap                               | https://github.com/colmap/colmap
+- assimp                               | https://github.com/assimp/assimp
   ------------------------------------ | ----------------------------------------
 - UnrealEngine                         |
   - doc                                | https://docs.unrealengine.com/4.27/en-US/
