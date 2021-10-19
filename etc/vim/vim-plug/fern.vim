@@ -153,17 +153,19 @@ function! s:on_syntax() abort
   syn match  fernPY           ".*.py\ze.*$"
   syn match  fernSH           ".*.sh\ze.*$"
   syn match  fernVIM          ".*.vim\ze.*$"
+  syn match  fernHTML         ".*.html\ze.*$"
   syn match  fernGLB          ".*.glb\ze.*$"
   syn match  fernCMakeLists   ".*CMakeLists.txt\ze.*$"
   syn match  fernMakefile     ".*Makefile\ze.*$"
   syn match  fernMakeSH       ".*make.*.sh\ze.*$"
 
-  hi link fernCPP        MyAqua
-  hi link fernC          MyAqua
-  "hi link fernH          MyOrange
+  hi link fernCPP        MyGreen
+  hi link fernC          MyGreen
+  hi link fernH          MyAqua
   hi link fernPY         MyYellow
   hi link fernSH         MyPurple
   "hi link fernVIM        MyGreen
+  hi link fernHTML       MyYellow
   hi link fernGLB        MyAqua
   hi link fernCMakeLists MyOrange
   hi link fernMakefile   MyOrange
