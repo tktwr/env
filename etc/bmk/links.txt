@@ -1,138 +1,143 @@
-[ref:main] --------------------------- | ----------------------------------------
--   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
--   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
--   Google翻訳                         | https://translate.google.co.jp/
--   DeepL翻訳                          | https://www.deepl.com/ja/translator
-    ---------------------------------- | ----------------------------------------
-- H Help                               | :MyHelp
--   Help.index                         | :MyHelp index
--   Help.expression-syntax             | :MyHelp expression-syntax
--   Help.pattern-overview              | :MyHelp pattern-overview
-    ---------------------------------- | ----------------------------------------
-- M Memo                               | :Memo
-- m Memo.my                            | :Memo my
-- v Memo.vim                           | :Memo vim
-- g Memo.git                           | :Memo git
-- l Memo.links                         | :Memo links
-    ---------------------------------- | ----------------------------------------
--   tags.bin_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_sh"), "sh")
--   tags.bin_py                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_py"), "py")
--   tags.etc_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bash"), "sh")
--   tags.etc_vim                       | :call TagCatalog(expand("$MY_ENV/tags/tags.vim"), "vim")
--   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
--   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
-    ---------------------------------- | ----------------------------------------
--   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
--   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
--   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
--   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
-[links] ------------------------------ | ----------------------------------------
-- Google                               | https://www.google.com/
-  - gmail                              | https://mail.google.com/mail/u/0/#inbox
-  - calendar                           | https://www.google.com/calendar/render?hl=ja
-  - keep                               | https://keep.google.com/
-  - drive                              | https://drive.google.com/drive/my-drive
-  - translate                          | https://translate.google.co.jp/
-- DeepL                                | https://www.deepl.com/ja/translator
-  ------------------------------------ | ----------------------------------------
-- git                                  | https://git-scm.com/docs
-  ------------------------------------ | ----------------------------------------
-- cppreference                         | https://ja.cppreference.com/w/
-- cpprefjp                             | https://cpprefjp.github.io/
-- clang-format style options           | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-  ------------------------------------ | ----------------------------------------
-- python                               | https://www.python.org/
-  - doc                                | https://docs.python.org/ja/3/index.html
-  - tutorial                           | https://docs.python.org/ja/3/tutorial/
-- nkmk                                 | https://note.nkmk.me/
-  - nkmk.python                        | https://note.nkmk.me/python/
-  - nkmk.numpy                         | https://note.nkmk.me/numpy/
-- 基礎文法とサンプル集                 | https://algorithm.joho.info/programming/python/sample-code-py/
-  - numpy                              | https://algorithm.joho.info/programming/python/numpy-sample-code/
-- python modules                       |
-  - numpy                              | https://numpy.org/
-  - numpy.reference                    | https://numpy.org/doc/stable/reference/index.html
-  - pillow                             | https://pillow.readthedocs.io/en/stable/
-  - matplotlib                         | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
-  - scipy                              | https://www.scipy.org/
-  - scikit-learn                       | https://scikit-learn.org/stable/
-  - scikit-image                       | https://scikit-image.org/
-  - tkinter                            | https://note.com/npaka/n/nfa8d16c3624e
-  ------------------------------------ | ----------------------------------------
-- pytorch                              | https://pytorch.org/
-  - transfer_learning                  | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
-  - tensorboard                        | https://pytorch.org/docs/stable/tensorboard.html
-- PyTorch3D                            | https://github.com/facebookresearch/pytorch3d
-  ------------------------------------ | ----------------------------------------
-- glm                                  | https://glm.g-truc.net/
-  - doc                                | https://glm.g-truc.net/0.9.8/api/modules.html
-  - howto                              | https://qiita.com/usagi/items/f34976a3d3011506ff7d
-- Eigen                                | http://eigen.tuxfamily.org/
-  - howto                              | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
-- glfw                                 | http://www.glfw.org/
-- glad                                 | https://github.com/Dav1dde/glad
-- imgui                                | https://github.com/ocornut/imgui
-- stb                                  | https://github.com/nothings/stb
-- kissnet                              | https://github.com/Ybalrid/kissnet
-- miniaudio                            | https://github.com/mackron/miniaudio
-  ------------------------------------ | ----------------------------------------
-- OpenCV                               | https://opencv.org/
-  - doc                                | https://docs.opencv.org/master/
-  - cookbook                           | http://opencv.jp/cookbook/index.html
-  ------------------------------------ | ----------------------------------------
-- GPU Gems 3                           | https://developer.nvidia.com/gpugems/gpugems3/foreword
-  - Linear                             | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
-- PBRT                                 | http://www.pbr-book.org/3ed-2018/contents.html
-  ------------------------------------ | ----------------------------------------
-- OpenGL 4                             | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
-- OpenGL ES 3.0                        | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
-- glTF                                 | https://www.khronos.org/gltf/
-- Learn OpenGL                         | https://learnopengl.com/
-- Learn OpenGL (github)                | https://github.com/JoeyDeVries/LearnOpenGL
-- OpenGL Tutorial                      | http://www.opengl-tutorial.org/jp/
-  ------------------------------------ | ----------------------------------------
-- VulkanSDK                            | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
-  - raytracing                         | https://developer.nvidia.com/rtx/raytracing/vkray
-  ------------------------------------ | ----------------------------------------
-- Blender                              | https://docs.blender.org/
-  - doc                                | https://docs.blender.org/manual/en/latest/
-    - PrincipledBSDF                   | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
-    - Open Shading Language            | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
-  - api                                | https://docs.blender.org/api/current/index.html
-    - UILayout                         | https://docs.blender.org/api/current/bpy.types.UILayout.html
-- Develop Add-ons                      | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
-- Blender入門(2.8版)                   | https://blender3d.biz/
-- Bake texture                         | https://3dcg-school.pro/blender-bake/
-- Bake texture (TexTools)              | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
-- Environment                          | https://reflectorange.net/archives/041.html
-- Blenderではじめる画像処理            | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
-- gimp-normalmap                       | https://code.google.com/archive/p/gimp-normalmap/
-  ------------------------------------ | ----------------------------------------
-- Wrap3                                | https://www.russian3dscanner.com/
-- OpenMVS                              | https://github.com/cdcseacave/openMVS
-- colmap                               | https://github.com/colmap/colmap
-- assimp                               | https://github.com/assimp/assimp
-  ------------------------------------ | ----------------------------------------
-- UnrealEngine                         |
-  - doc                                | https://docs.unrealengine.com/4.27/en-US/
-  ------------------------------------ | ----------------------------------------
-- Character Creator 3                  | https://www.reallusion.com/jp/character-creator/
-- Character Creator 3 (blender addon)  | https://www.youtube.com/watch?v=Nt1MuyPjkiI
-- Daz3d                                | https://www.daz3d.com/
-- Human Generator                      | https://www.humgen3d.com/
-- Human Generator (blendermarket)      | https://blendermarket.com/products/humgen3d?ref=311
-  ------------------------------------ | ----------------------------------------
-- Resources                            |
-  - sketchfab                          | https://sketchfab.com/
-  - Poly Haven                         | https://polyhaven.com/
-  - PFM                                | http://www.pauldebevec.com/Research/HDR/PFM/
-  - ambientcg                          | https://ambientcg.com/
-  ------------------------------------ | ----------------------------------------
-- ArchWiki                             | https://wiki.archlinux.jp/
-- SSL Certificate Verification         | https://curl.se/docs/sslcerts.html
-  ------------------------------------ | ----------------------------------------
-- vim                                  | https://www.vim.org/
-  - vim script                         | https://knowledge.sakura.ad.jp/23436/
-  - chrisatmachine                     | https://www.chrisatmachine.com/neovim
+[ref:main] ---------------------------            | ----------------------------------------
+-   Memo Index                                    | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                                   | $MY_PRIVATE_CONFIG/diary/index.html
+-   Google翻訳                                    | https://translate.google.co.jp/
+-   DeepL翻訳                                     | https://www.deepl.com/ja/translator
+    ----------------------------------            | ----------------------------------------
+- H Help                                          | :MyHelp
+-   Help.index                                    | :MyHelp index
+-   Help.expression-syntax                        | :MyHelp expression-syntax
+-   Help.pattern-overview                         | :MyHelp pattern-overview
+    ----------------------------------            | ----------------------------------------
+- M Memo                                          | :Memo
+- m Memo.my                                       | :Memo my
+- v Memo.vim                                      | :Memo vim
+- g Memo.git                                      | :Memo git
+- l Memo.links                                    | :Memo links
+    ----------------------------------            | ----------------------------------------
+-   tags.bin_sh                                   | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_sh"), "sh")
+-   tags.bin_py                                   | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_py"), "py")
+-   tags.etc_sh                                   | :call TagCatalog(expand("$MY_ENV/tags/tags.bash"), "sh")
+-   tags.etc_vim                                  | :call TagCatalog(expand("$MY_ENV/tags/tags.vim"), "vim")
+-   tags.memo                                     | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
+-   tags.libtt                                    | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+    ----------------------------------            | ----------------------------------------
+-   tags.imgui                                    | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
+-   tags.eigen                                    | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
+-   tags.glm                                      | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
+-   tags.opencv2                                  | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+[links] ------------------------------            | ----------------------------------------
+- Google                                          | https://www.google.com/
+  - gmail                                         | https://mail.google.com/mail/u/0/#inbox
+  - calendar                                      | https://www.google.com/calendar/render?hl=ja
+  - keep                                          | https://keep.google.com/
+  - drive                                         | https://drive.google.com/drive/my-drive
+  - translate                                     | https://translate.google.co.jp/
+- DeepL                                           | https://www.deepl.com/ja/translator
+  ------------------------------------            | ----------------------------------------
+- git                                             | https://git-scm.com/docs
+  ------------------------------------            | ----------------------------------------
+- cppreference                                    | https://ja.cppreference.com/w/
+- cpprefjp                                        | https://cpprefjp.github.io/
+- clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+  ------------------------------------            | ----------------------------------------
+- python                                          | https://www.python.org/
+  - doc                                           | https://docs.python.org/ja/3/index.html
+  - tutorial                                      | https://docs.python.org/ja/3/tutorial/
+- nkmk                                            | https://note.nkmk.me/
+  - nkmk.python                                   | https://note.nkmk.me/python/
+  - nkmk.numpy                                    | https://note.nkmk.me/numpy/
+- 基礎文法とサンプル集                            | https://algorithm.joho.info/programming/python/sample-code-py/
+  - numpy                                         | https://algorithm.joho.info/programming/python/numpy-sample-code/
+- python modules                                  |
+  - numpy                                         | https://numpy.org/
+  - numpy.reference                               | https://numpy.org/doc/stable/reference/index.html
+  - pillow                                        | https://pillow.readthedocs.io/en/stable/
+  - matplotlib                                    | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
+  - scipy                                         | https://www.scipy.org/
+  - scikit-learn                                  | https://scikit-learn.org/stable/
+  - scikit-image                                  | https://scikit-image.org/
+  - tkinter                                       | https://note.com/npaka/n/nfa8d16c3624e
+  ------------------------------------            | ----------------------------------------
+- pytorch                                         | https://pytorch.org/
+  - transfer_learning                             | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+  - tensorboard                                   | https://pytorch.org/docs/stable/tensorboard.html
+- PyTorch3D                                       | https://github.com/facebookresearch/pytorch3d
+  ------------------------------------            | ----------------------------------------
+- glm                                             | https://glm.g-truc.net/
+  - doc                                           | https://glm.g-truc.net/0.9.8/api/modules.html
+  - howto                                         | https://qiita.com/usagi/items/f34976a3d3011506ff7d
+- Eigen                                           | http://eigen.tuxfamily.org/
+  - howto                                         | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
+- glfw                                            | http://www.glfw.org/
+- glad                                            | https://github.com/Dav1dde/glad
+- imgui                                           | https://github.com/ocornut/imgui
+- stb                                             | https://github.com/nothings/stb
+- kissnet                                         | https://github.com/Ybalrid/kissnet
+- miniaudio                                       | https://github.com/mackron/miniaudio
+  ------------------------------------            | ----------------------------------------
+- OpenCV                                          | https://opencv.org/
+  - doc                                           | https://docs.opencv.org/master/
+  - cookbook                                      | http://opencv.jp/cookbook/index.html
+  ------------------------------------            | ----------------------------------------
+- GPU Gems 3                                      | https://developer.nvidia.com/gpugems/gpugems3/foreword
+  - Linear                                        | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+- PBRT                                            | http://www.pbr-book.org/3ed-2018/contents.html
+  ------------------------------------            | ----------------------------------------
+- OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+- OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+- glTF                                            | https://www.khronos.org/gltf/
+- Learn OpenGL                                    | https://learnopengl.com/
+- Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
+- OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
+  ------------------------------------            | ----------------------------------------
+- VulkanSDK                                       | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+  - raytracing                                    | https://developer.nvidia.com/rtx/raytracing/vkray
+  ------------------------------------            | ----------------------------------------
+- Blender                                         | https://docs.blender.org/
+  - doc                                           | https://docs.blender.org/manual/en/latest/
+    - PrincipledBSDF                              | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
+    - Open Shading Language                       | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
+  - api                                           | https://docs.blender.org/api/current/index.html
+    - UILayout                                    | https://docs.blender.org/api/current/bpy.types.UILayout.html
+- Develop Add-ons                                 | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
+- Blender入門(2.8版)                              | https://blender3d.biz/
+- Bake texture                                    | https://3dcg-school.pro/blender-bake/
+- Bake texture (TexTools)                         | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+- Environment                                     | https://reflectorange.net/archives/041.html
+- Blenderではじめる画像処理                       | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
+- gimp-normalmap                                  | https://code.google.com/archive/p/gimp-normalmap/
+  ------------------------------------            | ----------------------------------------
+- Wrap3                                           | https://www.russian3dscanner.com/
+- OpenMVS                                         | https://github.com/cdcseacave/openMVS
+- colmap                                          | https://github.com/colmap/colmap
+- assimp                                          | https://github.com/assimp/assimp
+  ------------------------------------            | ----------------------------------------
+- UnrealEngine                                    |
+  - doc                                           | https://docs.unrealengine.com/4.27/en-US/
+  ------------------------------------            | ----------------------------------------
+- Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
+- Character Creator 3 (blender addon)             | https://www.youtube.com/watch?v=Nt1MuyPjkiI
+- Daz3d                                           | https://www.daz3d.com/
+- Human Generator                                 | https://www.humgen3d.com/
+- Human Generator (blendermarket)                 | https://blendermarket.com/products/humgen3d?ref=311
+  ------------------------------------            | ----------------------------------------
+- Resources                                       |
+  - sketchfab                                     | https://sketchfab.com/
+  - Poly Haven                                    | https://polyhaven.com/
+  - PFM                                           | http://www.pauldebevec.com/Research/HDR/PFM/
+  - ambientcg                                     | https://ambientcg.com/
+  ------------------------------------            | ----------------------------------------
+- ArchWiki                                        | https://wiki.archlinux.jp/
+- SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
+  ------------------------------------            | ----------------------------------------
+- vim                                             | https://www.vim.org/
+  - vim script                                    | https://knowledge.sakura.ad.jp/23436/
+  - chrisatmachine                                | https://www.chrisatmachine.com/neovim
+  ------------------------------------            | ----------------------------------------
+- Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
+- A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
+- DANIEL BOSCHUNG – Face Cartography             | https://www.danielboschung.com/
+- USC ICT                                         | https://vgl.ict.usc.edu/
 
 # vim:set ft=bmk syntax=txt nowrap:
