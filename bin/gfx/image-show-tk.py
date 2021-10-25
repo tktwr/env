@@ -34,13 +34,26 @@ class Image():
         img = cu.cv_load(fname)
         self.set_img(img, fname)
 
+    def save(self, fname):
+        cu.cv_save(fname, self.img)
+
     def pick_xy(self, xy):
         x, y = xy
         return self.img[y, x]
 
+    def pick_uv(self, uv):
+        xy = uv_to_xy(uv)
+        return pick_xy(xy)
+
     def uv_to_xy(self, uv):
+        u, v = uv
         w, h = self.wh
-        return (int(uv[0] * (w-1)), int(uv[1] * (h-1)))
+        return (int(u * (w-1)), int(v * (h-1)))
+
+    def xy_to_uv(self, xy):
+        x, y = xy
+        w, h = self.wh
+        return (float(x)/(w-1), float(y)/(h-1))
 
     def size_wh(self):
         return self.wh
@@ -119,14 +132,25 @@ class App():
     #------------------------------------------------------
     # image command
     #------------------------------------------------------
-    def img_open(self, nr):
+    def img_load(self, nr, fname):
+        I = Image(fname)
+        self.I[nr] = I
+
+    def img_load_dlg(self, nr):
         fname = filedialog.askopenfilename() 
         self.img_load(nr, fname)
         self.img_show(nr)
 
-    def img_load(self, nr, fname):
-        I = Image(fname)
-        self.I[nr] = I
+    def img_save(self, nr, fname):
+        I = self.I[nr]
+        I.save(fname)
+
+    def img_save_dlg(self, nr):
+        fname = filedialog.asksaveasfilename(
+            filetypes = [("PNG", ".png"), ("EXR", ".exr"), ("HDR", ".hdr") ],
+            defaultextension = "png"
+            )
+        self.img_save(nr, fname)
 
     def img_info(self, nr=1):
         img = self.img_get(nr)
@@ -222,8 +246,10 @@ class App():
         quit()
 
     def help(self):
-        self.add_line(f"img_open(nr)             ... open an image to the image nr")
         self.add_line(f"img_load(nr, fname)      ... load an image to the image nr")
+        self.add_line(f"img_load_dlg(nr)         ... load an image by dialog to the image nr")
+        self.add_line(f"img_save(nr, fname)      ... save an image to the image nr")
+        self.add_line(f"img_save_dlg(nr)         ... save an image by dialog to the image nr")
         self.add_line(f"img_info(nr=1)           ... info the image nr")
         self.add_line(f"img_show(nr)             ... show the image nr")
         self.add_line(f"img_show_crop(nr, uv)    ... show the cropped image nr")
@@ -247,9 +273,11 @@ class App():
         # File Menu
         filemenu = Menu(menubar, tearoff=0)
         filemenu.add_command(label='Open Image 1',
-                command=lambda: self.eval_cmd(f"img_open(1)"))
+                command=lambda: self.eval_cmd(f"img_load_dlg(1)"))
         filemenu.add_command(label='Open Image 2',
-                command=lambda: self.eval_cmd(f"img_open(2)"))
+                command=lambda: self.eval_cmd(f"img_load_dlg(2)"))
+        filemenu.add_command(label='Save Image 0',
+                command=lambda: self.eval_cmd(f"img_save_dlg(0)"))
         filemenu.add_command(label='Clear Text',
                 command=lambda: self.eval_cmd(f"clear_text()"))
         filemenu.add_separator()

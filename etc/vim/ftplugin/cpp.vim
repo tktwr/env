@@ -6,7 +6,9 @@ if exists("b:did_ftplugin")
 endif
 let b:did_ftplugin = 1
 
+setl nowrap
 setl tabstop=4
+setl softtabstop=4
 setl shiftwidth=4
 setl cindent
 "setl keywordprg=man
