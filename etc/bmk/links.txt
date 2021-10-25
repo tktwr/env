@@ -96,6 +96,8 @@
 - glTF                                            | https://www.khronos.org/gltf/
   - glTF extensions                               | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
   - KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
+  - glTF viewer (old)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
+  - glTF viewer (new)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer
 - Learn OpenGL                                    | https://learnopengl.com/
 - Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
 - OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/

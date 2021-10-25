@@ -16,7 +16,8 @@
 - NVISII - NVIDIA Scene Imaging Interface                                                                            | https://github.com/owl-project/NVISII
 - PFM Portable FloatMap Image Format                                                                                 | http://www.pauldebevec.com/Research/HDR/PFM/
 - GPU Gems 3                                                                                                         | https://developer.nvidia.com/gpugems/gpugems3/foreword
-- GPU Gems 3 Chapter 24. The Importance of Being Linear                                                              | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+  - Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                                           | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
+  - Chapter 24. The Importance of Being Linear                                                                       | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 [SDK] ------------------------                                                                                       | ----------------------------------------
 - 4dface                                                                                                             | https://www.4dface.io/
 - 4dface (github)                                                                                                    | https://github.com/patrikhuber/4dface
