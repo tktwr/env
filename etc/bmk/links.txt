@@ -37,6 +37,13 @@
   ------------------------------------            | ----------------------------------------
 - git                                             | https://git-scm.com/docs
   ------------------------------------            | ----------------------------------------
+- vim                                             | https://www.vim.org/
+  - vim script                                    | https://knowledge.sakura.ad.jp/23436/
+  - chrisatmachine                                | https://www.chrisatmachine.com/neovim
+  ------------------------------------            | ----------------------------------------
+- ArchWiki                                        | https://wiki.archlinux.jp/
+- SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
+  ------------------------------------            | ----------------------------------------
 - cppreference                                    | https://ja.cppreference.com/w/
 - cpprefjp                                        | https://cpprefjp.github.io/
 - clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
@@ -87,6 +94,8 @@
 - OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 - OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 - glTF                                            | https://www.khronos.org/gltf/
+  - glTF extensions                               | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
+  - KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
 - Learn OpenGL                                    | https://learnopengl.com/
 - Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
 - OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
@@ -122,22 +131,15 @@
 - Human Generator                                 | https://www.humgen3d.com/
 - Human Generator (blendermarket)                 | https://blendermarket.com/products/humgen3d?ref=311
   ------------------------------------            | ----------------------------------------
+- Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
+- A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
+- DANIEL BOSCHUNG – Face Cartography             | https://www.danielboschung.com/
+- USC ICT                                         | https://vgl.ict.usc.edu/
+  ------------------------------------            | ----------------------------------------
 - Resources                                       |
   - sketchfab                                     | https://sketchfab.com/
   - Poly Haven                                    | https://polyhaven.com/
   - PFM                                           | http://www.pauldebevec.com/Research/HDR/PFM/
   - ambientcg                                     | https://ambientcg.com/
-  ------------------------------------            | ----------------------------------------
-- ArchWiki                                        | https://wiki.archlinux.jp/
-- SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
-  ------------------------------------            | ----------------------------------------
-- vim                                             | https://www.vim.org/
-  - vim script                                    | https://knowledge.sakura.ad.jp/23436/
-  - chrisatmachine                                | https://www.chrisatmachine.com/neovim
-  ------------------------------------            | ----------------------------------------
-- Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
-- A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
-- DANIEL BOSCHUNG – Face Cartography             | https://www.danielboschung.com/
-- USC ICT                                         | https://vgl.ict.usc.edu/
 
 # vim:set ft=bmk syntax=txt nowrap:

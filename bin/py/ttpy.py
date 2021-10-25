@@ -29,20 +29,26 @@ class FileName():
 
 
 class ImageSize():
+    # size: [w, h]
     def __init__(self, size):
         self.size = size
 
+    # dst_size: [w, h]
     def getSize(self, dst_size):
         sw, sh = self.size
         w, h = dst_size
 
         if w == 0 and h == 0:
+            # return the src size
             return (sw, sh)
         elif w > 0 and h == 0:
+            # set width, keep aspect ratio
             return (w, int(w * (sh / sw)))
         elif w == 0 and h > 0:
+            # set height, keep aspect ratio
             return (int(h * (sw / sh)), h)
         else:
+            # set width and height, not keep aspect ratio
             return (w, h)
 
 
