@@ -10,6 +10,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from tkinter.scrolledtext import ScrolledText
+from tkinter import font
 
 
 class Image():
@@ -194,17 +195,27 @@ class App():
         self.add_line(f"crop_wh   = {crop_wh}")
         self.add_line(f"val       = {val}")
 
+    def img_new(self, nr, shape, dtype, val):
+        img = cu.cv_create_img(shape, dtype, val)
+        self.img_set(nr, img, "new")
+        self.img_show(nr)
+
+    def img_channel(self, nr, ch):
+        img = self.img_get(nr)
+        oimg = img[:, :, ch]
+        self.img_set(0, oimg, f"channel_{ch}")
+        self.img_show(0)
+
     def img_mult(self, nr1, val):
         img1 = self.img_get(nr1)
         oimg = img1 * val
         self.img_set(0, oimg, "mult")
         self.img_show(0)
 
-    def img_diff(self, nr1=1, nr2=2):
-        img1 = self.img_get(nr1)
-        img2 = self.img_get(nr2)
-        oimg = np.abs(img1 - img2)
-        self.img_set(0, oimg, "diff")
+    def img_power(self, nr, val):
+        img = self.img_get(nr)
+        oimg = np.power(img, val)
+        self.img_set(0, oimg, "power")
         self.img_show(0)
 
     def img_add(self, nr1=1, nr2=2):
@@ -212,6 +223,13 @@ class App():
         img2 = self.img_get(nr2)
         oimg = img1 + img2
         self.img_set(0, oimg, "add")
+        self.img_show(0)
+
+    def img_diff(self, nr1=1, nr2=2):
+        img1 = self.img_get(nr1)
+        img2 = self.img_get(nr2)
+        oimg = np.abs(img1 - img2)
+        self.img_set(0, oimg, "diff")
         self.img_show(0)
 
     def img_switch(self, nr1=1, nr2=2):
@@ -232,12 +250,6 @@ class App():
         self.img_set(0, oimg, "range")
         self.img_show(0)
 
-    def img_power(self, nr, val):
-        img = self.img_get(nr)
-        oimg = np.power(img, val)
-        self.img_set(0, oimg, "power")
-        self.img_show(0)
-
     def img_get(self, nr):
         return self.I[nr].img
 
@@ -250,27 +262,31 @@ class App():
         quit()
 
     def help(self):
-        self.add_line(f"img_load(nr, fname)      ... load an image to the image nr")
-        self.add_line(f"img_load_dlg(nr)         ... load an image by dialog to the image nr")
-        self.add_line(f"img_save(nr, fname)      ... save an image to the image nr")
-        self.add_line(f"img_save_dlg(nr)         ... save an image by dialog to the image nr")
-        self.add_line(f"img_info(nr=1)           ... info the image nr")
-        self.add_line(f"img_show(nr)             ... show the image nr")
-        self.add_line(f"img_show_crop(nr, uv)    ... show the cropped image nr")
-        self.add_line(f"img_mult(nr, val)        ... multiply val to the image nr")
-        self.add_line(f"img_diff(nr1=1, nr2=2)   ... diff between image nr1 and nr2")
-        self.add_line(f"img_add(nr1=1, nr2=2)    ... add the image nr1 to the image nr2")
-        self.add_line(f"img_switch(nr1=1, nr2=2) ... switch image nr1 and nr2")
-        self.add_line(f"img_range(nr, min, max)  ... range from min to max")
-        self.add_line(f"img_power(nr, val)       ... power")
-        self.add_line(f"quit()                   ... quit this app")
-        self.add_line(f"help()                   ... print help")
+        self.add_line(f"img_load(nr, fname)            ... load an image to the image nr")
+        self.add_line(f"img_load_dlg(nr)               ... load an image by dialog to the image nr")
+        self.add_line(f"img_save(nr, fname)            ... save an image to the image nr")
+        self.add_line(f"img_save_dlg(nr)               ... save an image by dialog to the image nr")
+        self.add_line(f"img_info(nr=1)                 ... info the image nr")
+        self.add_line(f"img_show(nr)                   ... show the image nr")
+        self.add_line(f"img_show_crop(nr, uv)          ... show the cropped image nr")
+        self.add_line(f"img_new(nr, shape, dtype, val) ... create a new image")
+        self.add_line(f"img_channel(nr, ch)            ... get a channel")
+        self.add_line(f"img_mult(nr, val)              ... multiply val to the image nr")
+        self.add_line(f"img_power(nr, val)             ... power")
+        self.add_line(f"img_add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
+        self.add_line(f"img_diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
+        self.add_line(f"img_switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
+        self.add_line(f"img_range(nr, min, max)        ... range from min to max")
+        self.add_line(f"quit()                         ... quit this app")
+        self.add_line(f"help()                         ... print help")
 
     #------------------------------------------------------
     # run gui
     #------------------------------------------------------
     def run(self):
         root = Tk()
+        text_font = font.Font(family="FixedSys", size=12)
+        #print(font.families())
 
         menubar = Menu(root)
 
@@ -310,7 +326,7 @@ class App():
         frame1.columnconfigure(0,weight=1)
         frame1.grid(sticky=(E, W, S, N))
 
-        text_field = ScrolledText(frame1)
+        text_field = ScrolledText(frame1, font=text_font)
         text_field.place(x=0, y=0, width=self.w, height=self.h)
         text_field.grid(row=0, column=0, sticky=(E, W, S, N))
 
@@ -325,6 +341,7 @@ class App():
         input_text = ttk.Entry(
             frame2,
             textvariable=input_var,
+            font=text_font,
             width=20)
         input_text.grid(row=0, column=0, sticky=(E, W, S, N))
 

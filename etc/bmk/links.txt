@@ -98,6 +98,7 @@
   - KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
   - glTF viewer (old)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
   - glTF viewer (new)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer
+  - glTF-Sample-Models                            | https://github.com/KhronosGroup/glTF-Sample-Models
 - Learn OpenGL                                    | https://learnopengl.com/
 - Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
 - OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
