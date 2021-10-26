@@ -42,8 +42,8 @@ class Image():
         return self.img[y, x]
 
     def pick_uv(self, uv):
-        xy = uv_to_xy(uv)
-        return pick_xy(xy)
+        xy = self.uv_to_xy(uv)
+        return self.pick_xy(xy)
 
     def uv_to_xy(self, uv):
         u, v = uv
@@ -76,10 +76,14 @@ class Image():
         self.disp_img = oimg
         return oimg
 
-    def make_crop_img(self, xy, wh):
+    def make_crop_xy_img(self, xy, wh):
         oimg = cu.cv_crop_center_img(self.img, xy, wh)
         self.crop_img = oimg
         return oimg
+
+    def make_crop_uv_img(self, uv, wh):
+        xy = self.uv_to_xy(uv)
+        return self.make_crop_xy_img(xy, wh)
 
 class App():
     def __init__(self, name="App", w=500, h=500):
@@ -180,8 +184,8 @@ class App():
         crop_xy = I.uv_to_xy(uv)
         crop_wh = self.args.crop_size
 
-        I.make_crop_img(crop_xy, crop_wh)
-        val = I.pick_xy(crop_xy)
+        I.make_crop_uv_img(uv, crop_wh)
+        val = I.pick_uv(uv)
 
         cv2.imshow(f"Crop {nr}", I.crop_img)
 
