@@ -353,6 +353,7 @@ class App():
 
         nr = 1
         for fname in self.args.file:
+            fname = fname.replace('\\', '/')
             self.eval_cmd(f"img_load({nr}, '{fname}')")
             self.eval_cmd(f"img_show({nr})")
             nr += 1
