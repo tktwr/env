@@ -9,6 +9,8 @@
 alias gs='git status'
 alias gd='git diff'
 alias gf='git fetch'
+alias gb='git branch'
+alias gt='git tag'
 
 alias gA='git add'
 alias gAu='git add -u'
@@ -125,21 +127,21 @@ git-commit-hash-long() {
   git rev-parse HEAD 2>/dev/null
 }
 
-print-git-branch() {
+print-git-branch-all() {
   echo "[REMOTE]"
   git remote -v
   echo "[BRANCH]"
   git branch -a -vv
 }
 
-print-git-tag() {
+print-git-tag-all() {
   echo "[TAG]"
   git tag
   git ls-remote --tags
 }
 
-alias gb='print-git-branch'
-alias gt='print-git-tag'
+alias gb-all='print-git-branch-all'
+alias gt-all='print-git-tag-all'
 
 git-branch-delete() {
   br=$1
