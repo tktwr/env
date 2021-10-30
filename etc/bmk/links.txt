@@ -65,6 +65,7 @@
   - scikit-learn                                  | https://scikit-learn.org/stable/
   - scikit-image                                  | https://scikit-image.org/
   - tkinter                                       | https://note.com/npaka/n/nfa8d16c3624e
+    - pack                                        | https://imagingsolution.net/program/python/tkinter/widget_layout_pack/
   ------------------------------------            | ----------------------------------------
 - pytorch                                         | https://pytorch.org/
   - transfer_learning                             | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html

@@ -6,22 +6,23 @@ import cv2
 import cv_util as cu
 import numpy as np
 from ttpy import FileName
-from tkinter import *
+import tkinter as tk
 from tkinter import ttk
+from tkinter import font
 from tkinter import filedialog
 from tkinter.scrolledtext import ScrolledText
-from tkinter import font
+from PIL import Image, ImageTk
 
 
-class Image():
+class ImagePkg():
     def __init__(self, fname=""):
-        print(f"Image::__init__")
+        print(f"ImagePkg::__init__")
         self.disp_max_wh = [500, 500]
         if fname != "":
             self.load(fname)
 
     def __del__(self):
-        print(f"Image::__del__")
+        print(f"ImagePkg::__del__")
 
     def set_img(self, img, fname):
         h, w = img.shape[:2]
@@ -86,6 +87,149 @@ class Image():
         xy = self.uv_to_xy(uv)
         return self.make_crop_xy_img(xy, wh)
 
+
+class MainWin(tk.Frame):
+    def __init__(self, root, app):
+        super().__init__(root)
+        self.pack()
+        self.root = root
+        self.app = app
+
+        menubar = tk.Menu(root)
+
+        # File Menu
+        filemenu = tk.Menu(menubar, tearoff=0)
+        filemenu.add_command(label='Open Image 1',
+                command=lambda: self.app.eval_cmd(f"img_load_dlg(1)"))
+        filemenu.add_command(label='Open Image 2',
+                command=lambda: self.app.eval_cmd(f"img_load_dlg(2)"))
+        filemenu.add_command(label='Save Image 0',
+                command=lambda: self.app.eval_cmd(f"img_save_dlg(0)"))
+        filemenu.add_command(label='Clear Text',
+                command=lambda: self.app.eval_cmd(f"clear_text()"))
+        filemenu.add_separator()
+        filemenu.add_command(label='Exit',
+                command=lambda: self.app.eval_cmd(f"quit()"))
+
+        # Help
+        helpmenu = tk.Menu(menubar, tearoff=0)
+        helpmenu.add_command(label='Help',
+                command=lambda: self.app.eval_cmd(f"help()"))
+        
+        # Add
+        menubar.add_cascade(label='File', menu=filemenu)
+        menubar.add_cascade(label='Help', menu=helpmenu)
+        
+        root.config(menu=menubar)
+        root.title(self.app.name)
+        
+        self.create_text_field()
+        self.create_input()
+
+    def create_text_field(self):
+        frame = ttk.Frame(self.root)
+        frame.pack(expand = True, fill = tk.BOTH)
+
+        text_field = ScrolledText(frame, font=self.app.text_font)
+        text_field.place(x=0, y=0, width=self.app.w, height=self.app.h)
+        text_field.pack(expand = True, fill = tk.BOTH)
+        text_field.configure(fg='gray80', bg='gray20')
+
+        self.app.text_field = text_field
+
+    def create_input(self):
+        frame = ttk.Frame(self.root)
+        frame.pack(fill = tk.X)
+
+        #style = ttk.Style()
+        #style.configure("Dark.TLabel", foreground="gold", background="gray20")
+
+        input_var = tk.StringVar()
+        input_text = ttk.Entry(frame,
+            textvariable=input_var,
+            #style="Dark.TLabel",
+            font=self.app.text_font
+            )
+        input_text.pack(side = tk.LEFT, expand = True, fill = tk.X)
+
+        button1 = ttk.Button(frame,
+            text='Enter',
+            command=lambda: self.app.eval_cmd(f"{input_var.get()}")
+            )
+        button1.pack(side = tk.RIGHT)
+
+
+class ImageWin(tk.Frame):
+    def __init__(self, root, app, nr, type, uv=(0.5, 0.5)):
+        super().__init__(root)
+        self.I = app.I[nr]
+        if type == "disp":
+            self.img = self.I.disp_img
+        elif type == "crop":
+            self.img = self.I.crop_img
+        title = f"Image {nr}: {type}"
+
+        self.pack()
+
+        self.root = root
+        self.app = app
+        self.nr = nr
+        self.type = type
+
+        self.root.geometry("500x500")
+        self.root.title(title)
+        self.set_img(self.img)
+
+        orig_h, orig_w = self.I.img.shape[:2]
+        val = self.I.pick_uv(uv)
+
+        self.status_text = tk.StringVar()
+        self.status_text.set(f"wh=[{orig_w} {orig_h}] uv={uv} bgr={val}")
+
+        label = ttk.Label(root,
+            textvariable=self.status_text,
+            relief='sunken',
+            font=self.app.text_font
+            )
+        label.pack(fill = tk.X)
+
+        h, w = self.img.shape[:2]
+        win_h = h + 30
+        win_w = w
+        self.root.geometry(f"{win_w}x{win_h}")
+
+    def set_img(self, img):
+        if img.dtype == np.float32:
+            img = np.clip(img * 255, 0, 255).astype(np.uint8)
+
+        self.img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        self.img_pil = Image.fromarray(self.img_rgb)
+        self.img_tk  = ImageTk.PhotoImage(self.img_pil)
+
+        h, w = img.shape[:2]
+        self.canvas = tk.Canvas(self.root, width=w, height=h)
+        self.canvas.bind('<Button-1>', self.mouse_canvas)
+        self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
+        self.canvas.pack()
+
+    def mouse_canvas(self, event):
+        # original image size
+        H, W = self.I.img.shape[:2]
+        # window image size
+        h, w = self.img.shape[:2]
+        xy = (event.x, event.y)
+        x, y = xy
+        uv = (x/w, y/h)
+        u, v = uv
+        XY = (int(u * W), int(v * H))
+        val = self.I.pick_uv(uv)
+        text = f"xy={xy}, uv={uv}, XY={XY}, bgr={val}"
+        self.status_text.set(text)
+        #self.root.update()
+
+        self.app.img_show_crop(self.nr, uv)
+
+
 class App():
     def __init__(self, name="App", w=500, h=500):
         print(f"App::__init__")
@@ -138,7 +282,7 @@ class App():
     # image command
     #------------------------------------------------------
     def img_load(self, nr, fname):
-        I = Image(fname)
+        I = ImagePkg(fname)
         self.I[nr] = I
 
     def img_load_dlg(self, nr):
@@ -175,7 +319,8 @@ class App():
     def img_show(self, nr):
         I = self.I[nr]
 
-        cv2.imshow(f"Image {nr}", I.disp_img)
+        #cv2.imshow(f"Image {nr}", I.disp_img)
+        ImageWin(tk.Toplevel(), self, nr, "disp")
 
         self.add_line(f"fname     = {I.fname}")
         self.img_info(nr)
@@ -188,7 +333,8 @@ class App():
         I.make_crop_uv_img(uv, crop_wh)
         val = I.pick_uv(uv)
 
-        cv2.imshow(f"Crop {nr}", I.crop_img)
+        #cv2.imshow(f"Crop {nr}", I.crop_img)
+        ImageWin(tk.Toplevel(), self, nr, "crop", uv)
 
         self.add_line(f"uv        = {uv}")
         self.add_line(f"crop_xy   = {crop_xy}")
@@ -254,7 +400,7 @@ class App():
         return self.I[nr].img
 
     def img_set(self, nr, img, name):
-        I = Image()
+        I = ImagePkg()
         I.set_img(img, name)
         self.I[nr] = I
 
@@ -284,72 +430,12 @@ class App():
     # run gui
     #------------------------------------------------------
     def run(self):
-        root = Tk()
-        text_font = font.Font(family="FixedSys", size=12)
+        root = tk.Tk()
+
+        self.text_font = font.Font(family="Cica", size=14)
         #print(font.families())
 
-        menubar = Menu(root)
-
-        # File Menu
-        filemenu = Menu(menubar, tearoff=0)
-        filemenu.add_command(label='Open Image 1',
-                command=lambda: self.eval_cmd(f"img_load_dlg(1)"))
-        filemenu.add_command(label='Open Image 2',
-                command=lambda: self.eval_cmd(f"img_load_dlg(2)"))
-        filemenu.add_command(label='Save Image 0',
-                command=lambda: self.eval_cmd(f"img_save_dlg(0)"))
-        filemenu.add_command(label='Clear Text',
-                command=lambda: self.eval_cmd(f"clear_text()"))
-        filemenu.add_separator()
-        filemenu.add_command(label='Exit',
-                command=lambda: self.eval_cmd(f"quit()"))
-
-        # Help
-        helpmenu = Menu(menubar, tearoff=0)
-        helpmenu.add_command(label='Help',
-                command=lambda: self.eval_cmd(f"help()"))
-        
-        # Add
-        menubar.add_cascade(label='File', menu=filemenu)
-        menubar.add_cascade(label='Help', menu=helpmenu)
-        
-        root.config(menu=menubar)
-
-        root.title(self.name)
-        root.minsize(self.w, self.h)
-        root.rowconfigure(0, weight=1)
-        root.columnconfigure(0, weight=1)
-        root.grid()
-        
-        frame1 = ttk.Frame(root)
-        frame1.rowconfigure(0, weight=1)
-        frame1.columnconfigure(0,weight=1)
-        frame1.grid(sticky=(E, W, S, N))
-
-        text_field = ScrolledText(frame1, font=text_font)
-        text_field.place(x=0, y=0, width=self.w, height=self.h)
-        text_field.grid(row=0, column=0, sticky=(E, W, S, N))
-
-        self.text_field = text_field
-
-        frame2 = ttk.Frame(root)
-        frame2.rowconfigure(0, weight=1)
-        frame2.columnconfigure(0,weight=1)
-        frame2.grid(sticky=(E, W, S, N))
-
-        input_var = StringVar()
-        input_text = ttk.Entry(
-            frame2,
-            textvariable=input_var,
-            font=text_font,
-            width=20)
-        input_text.grid(row=0, column=0, sticky=(E, W, S, N))
-
-        button1 = ttk.Button(
-            frame2, text='Enter',
-            command=lambda: self.eval_cmd(f"{input_var.get()}")
-            )
-        button1.grid(row=0, column=1, sticky=(E, W, S, N))
+        MainWin(root, self)
 
         nr = 1
         for fname in self.args.file:
