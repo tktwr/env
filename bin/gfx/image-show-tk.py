@@ -259,8 +259,9 @@ class App():
         self.w = w
         self.h = h
         self.I = {}
+        self.disp_win = {}
+        self.crop_win = {}
         self.switch_nr = 0
-        self.crop_win = None
 
     def __del__(self):
         print(f"App::__del__")
@@ -317,12 +318,12 @@ class App():
 
         I.make_crop_uv_img(uv, crop_wh)
 
-        if self.crop_win is None:
-            self.crop_win = ImageWin(tk.Toplevel(), self, nr, "crop", uv)
+        if nr not in self.crop_win:
+            self.crop_win[nr] = ImageWin(tk.Toplevel(), self, nr, "crop", uv)
         else:
-            self.crop_win.update_status(uv)
             img_tk = cvimg_to_imgtk(I.crop_img)
-            self.crop_win.update_canvas(img_tk)
+            self.crop_win[nr].update_canvas(img_tk)
+            self.crop_win[nr].update_status(uv)
 
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
