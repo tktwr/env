@@ -162,7 +162,7 @@ class ImageWin(tk.Frame):
         text = f"xy={xy}, uv={uv_str}, XY={XY}, bgr={val}"
         self.status_text.set(text)
 
-        self.app.img_show_crop(self.nr, uv)
+        self.app.cmd_show_crop(self.nr, uv)
 
 
 class MainWin(tk.Frame):
@@ -177,11 +177,11 @@ class MainWin(tk.Frame):
         # File Menu
         filemenu = tk.Menu(menubar, tearoff=0)
         filemenu.add_command(label='Open Image 1',
-                command=lambda: self.app.eval_cmd(f"img_load_dlg(1)"))
+                command=lambda: self.app.eval_cmd(f"cmd_load_dlg(1)"))
         filemenu.add_command(label='Open Image 2',
-                command=lambda: self.app.eval_cmd(f"img_load_dlg(2)"))
+                command=lambda: self.app.eval_cmd(f"cmd_load_dlg(2)"))
         filemenu.add_command(label='Save Image 0',
-                command=lambda: self.app.eval_cmd(f"img_save_dlg(0)"))
+                command=lambda: self.app.eval_cmd(f"cmd_save_dlg(0)"))
         filemenu.add_command(label='Clear Text',
                 command=lambda: self.app.eval_cmd(f"clear_text()"))
         filemenu.add_separator()
@@ -287,28 +287,28 @@ class App():
     #------------------------------------------------------
     # image command
     #------------------------------------------------------
-    def img_load(self, nr, fname):
+    def cmd_load(self, nr, fname):
         I = ImagePkg(fname)
         self.I[nr] = I
 
-    def img_load_dlg(self, nr):
+    def cmd_load_dlg(self, nr):
         fname = filedialog.askopenfilename() 
-        self.img_load(nr, fname)
-        self.img_show(nr)
+        self.cmd_load(nr, fname)
+        self.cmd_show(nr)
 
-    def img_save(self, nr, fname):
+    def cmd_save(self, nr, fname):
         I = self.I[nr]
         I.save(fname)
 
-    def img_save_dlg(self, nr):
+    def cmd_save_dlg(self, nr):
         fname = filedialog.asksaveasfilename(
             filetypes = [("PNG", ".png"), ("EXR", ".exr"), ("HDR", ".hdr") ],
             defaultextension = "png"
             )
-        self.img_save(nr, fname)
+        self.cmd_save(nr, fname)
 
-    def img_info(self, nr=1):
-        img = self.img_get(nr)
+    def cmd_info(self, nr=1):
+        img = self.cmd_get(nr)
         h, w, c = cu.cv_size(img)
         min = img.min(axis=(0, 1))
         max = img.max(axis=(0, 1))
@@ -322,16 +322,16 @@ class App():
         self.add_line(f"min       = {min}")
         self.add_line(f"max       = {max}")
 
-    def img_show(self, nr):
+    def cmd_show(self, nr):
         I = self.I[nr]
 
         #cv2.imshow(f"Image {nr}", I.disp_img)
         ImageWin(tk.Toplevel(), self, nr, "disp")
 
         self.add_line(f"fname     = {I.fname}")
-        self.img_info(nr)
+        self.cmd_info(nr)
 
-    def img_show_crop(self, nr, uv):
+    def cmd_show_crop(self, nr, uv):
         I = self.I[nr]
         crop_xy = I.uv_to_xy(uv)
         crop_wh = self.args.crop_size
@@ -347,65 +347,65 @@ class App():
         self.add_line(f"crop_wh   = {crop_wh}")
         self.add_line(f"val       = {val}")
 
-    def img_new(self, nr, shape, dtype, val):
+    def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
-        self.img_set(nr, img, "new")
-        self.img_show(nr)
+        self.cmd_set(nr, img, "new")
+        self.cmd_show(nr)
 
-    def img_channel(self, nr, ch):
-        img = self.img_get(nr)
+    def cmd_channel(self, nr, ch):
+        img = self.cmd_get(nr)
         oimg = img[:, :, ch]
-        self.img_set(0, oimg, f"channel_{ch}")
-        self.img_show(0)
+        self.cmd_set(0, oimg, f"channel_{ch}")
+        self.cmd_show(0)
 
-    def img_mult(self, nr1, val):
-        img1 = self.img_get(nr1)
+    def cmd_mult(self, nr1, val):
+        img1 = self.cmd_get(nr1)
         oimg = img1 * val
-        self.img_set(0, oimg, "mult")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "mult")
+        self.cmd_show(0)
 
-    def img_power(self, nr, val):
-        img = self.img_get(nr)
+    def cmd_power(self, nr, val):
+        img = self.cmd_get(nr)
         oimg = np.power(img, val)
-        self.img_set(0, oimg, "power")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "power")
+        self.cmd_show(0)
 
-    def img_add(self, nr1=1, nr2=2):
-        img1 = self.img_get(nr1)
-        img2 = self.img_get(nr2)
+    def cmd_add(self, nr1=1, nr2=2):
+        img1 = self.cmd_get(nr1)
+        img2 = self.cmd_get(nr2)
         oimg = img1 + img2
-        self.img_set(0, oimg, "add")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "add")
+        self.cmd_show(0)
 
-    def img_diff(self, nr1=1, nr2=2):
-        img1 = self.img_get(nr1)
-        img2 = self.img_get(nr2)
+    def cmd_diff(self, nr1=1, nr2=2):
+        img1 = self.cmd_get(nr1)
+        img2 = self.cmd_get(nr2)
         oimg = np.abs(img1 - img2)
-        self.img_set(0, oimg, "diff")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "diff")
+        self.cmd_show(0)
 
-    def img_switch(self, nr1=1, nr2=2):
-        img1 = self.img_get(nr1)
-        img2 = self.img_get(nr2)
+    def cmd_switch(self, nr1=1, nr2=2):
+        img1 = self.cmd_get(nr1)
+        img2 = self.cmd_get(nr2)
         if self.switch_nr == nr1:
             oimg = img2
             self.switch_nr = nr2
         else:
             oimg = img1
             self.switch_nr = nr1
-        self.img_set(0, oimg, "switch")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "switch")
+        self.cmd_show(0)
 
-    def img_range(self, nr, min, max):
-        img = self.img_get(nr)
+    def cmd_range(self, nr, min, max):
+        img = self.cmd_get(nr)
         oimg = np.clip((img - min) / (max - min), 0.0, 1.0)
-        self.img_set(0, oimg, "range")
-        self.img_show(0)
+        self.cmd_set(0, oimg, "range")
+        self.cmd_show(0)
 
-    def img_get(self, nr):
+    def cmd_get(self, nr):
         return self.I[nr].img
 
-    def img_set(self, nr, img, name):
+    def cmd_set(self, nr, img, name):
         I = ImagePkg()
         I.set_img(img, name)
         self.I[nr] = I
@@ -414,21 +414,21 @@ class App():
         quit()
 
     def help(self):
-        self.add_line(f"img_load(nr, fname)            ... load an image to the image nr")
-        self.add_line(f"img_load_dlg(nr)               ... load an image by dialog to the image nr")
-        self.add_line(f"img_save(nr, fname)            ... save an image to the image nr")
-        self.add_line(f"img_save_dlg(nr)               ... save an image by dialog to the image nr")
-        self.add_line(f"img_info(nr=1)                 ... info the image nr")
-        self.add_line(f"img_show(nr)                   ... show the image nr")
-        self.add_line(f"img_show_crop(nr, uv)          ... show the cropped image nr")
-        self.add_line(f"img_new(nr, shape, dtype, val) ... create a new image")
-        self.add_line(f"img_channel(nr, ch)            ... get a channel")
-        self.add_line(f"img_mult(nr, val)              ... multiply val to the image nr")
-        self.add_line(f"img_power(nr, val)             ... power")
-        self.add_line(f"img_add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
-        self.add_line(f"img_diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
-        self.add_line(f"img_switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
-        self.add_line(f"img_range(nr, min, max)        ... range from min to max")
+        self.add_line(f"cmd_load(nr, fname)            ... load an image to the image nr")
+        self.add_line(f"cmd_load_dlg(nr)               ... load an image by dialog to the image nr")
+        self.add_line(f"cmd_save(nr, fname)            ... save an image to the image nr")
+        self.add_line(f"cmd_save_dlg(nr)               ... save an image by dialog to the image nr")
+        self.add_line(f"cmd_info(nr=1)                 ... info the image nr")
+        self.add_line(f"cmd_show(nr)                   ... show the image nr")
+        self.add_line(f"cmd_show_crop(nr, uv)          ... show the cropped image nr")
+        self.add_line(f"cmd_new(nr, shape, dtype, val) ... create a new image")
+        self.add_line(f"cmd_channel(nr, ch)            ... get a channel")
+        self.add_line(f"cmd_mult(nr, val)              ... multiply val to the image nr")
+        self.add_line(f"cmd_power(nr, val)             ... power")
+        self.add_line(f"cmd_add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
+        self.add_line(f"cmd_diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
+        self.add_line(f"cmd_switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
+        self.add_line(f"cmd_range(nr, min, max)        ... range from min to max")
         self.add_line(f"quit()                         ... quit this app")
         self.add_line(f"help()                         ... print help")
 
@@ -446,8 +446,8 @@ class App():
         nr = 1
         for fname in self.args.file:
             fname = fname.replace('\\', '/')
-            self.eval_cmd(f"img_load({nr}, '{fname}')")
-            self.eval_cmd(f"img_show({nr})")
+            self.eval_cmd(f"cmd_load({nr}, '{fname}')")
+            self.eval_cmd(f"cmd_show({nr})")
             nr += 1
 
         root.mainloop()
