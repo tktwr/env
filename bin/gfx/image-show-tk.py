@@ -289,7 +289,7 @@ class App():
         self.cmd_save(nr, fname)
 
     def cmd_info(self, nr=1):
-        img = self.cmd_get(nr)
+        img = self.cmd_get_img(nr)
         h, w, c = cu.cv_size(img)
         min = img.min(axis=(0, 1))
         max = img.max(axis=(0, 1))
@@ -326,66 +326,66 @@ class App():
 
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
-        self.cmd_set(nr, img, "new")
+        self.cmd_set_img(nr, img, "new")
         self.cmd_show(nr)
 
     def cmd_channel(self, nr, ch):
-        img = self.cmd_get(nr)
+        img = self.cmd_get_img(nr)
         oimg = img[:, :, ch]
-        self.cmd_set(0, oimg, f"channel_{ch}")
+        self.cmd_set_img(0, oimg, f"channel_{ch}")
         self.cmd_show(0)
 
     def cmd_mult(self, nr1, val):
-        img1 = self.cmd_get(nr1)
+        img1 = self.cmd_get_img(nr1)
         oimg = img1 * val
-        self.cmd_set(0, oimg, "mult")
+        self.cmd_set_img(0, oimg, "mult")
         self.cmd_show(0)
 
     def cmd_power(self, nr, val):
-        img = self.cmd_get(nr)
+        img = self.cmd_get_img(nr)
         oimg = np.power(img, val)
-        self.cmd_set(0, oimg, "power")
+        self.cmd_set_img(0, oimg, "power")
         self.cmd_show(0)
 
     def cmd_add(self, nr1=1, nr2=2):
-        img1 = self.cmd_get(nr1)
-        img2 = self.cmd_get(nr2)
+        img1 = self.cmd_get_img(nr1)
+        img2 = self.cmd_get_img(nr2)
         oimg = img1 + img2
-        self.cmd_set(0, oimg, "add")
+        self.cmd_set_img(0, oimg, "add")
         self.cmd_show(0)
 
     def cmd_diff(self, nr1=1, nr2=2):
-        img1 = self.cmd_get(nr1)
-        img2 = self.cmd_get(nr2)
+        img1 = self.cmd_get_img(nr1)
+        img2 = self.cmd_get_img(nr2)
         oimg = np.abs(img1 - img2)
-        self.cmd_set(0, oimg, "diff")
+        self.cmd_set_img(0, oimg, "diff")
         self.cmd_show(0)
 
     def cmd_switch(self, nr1=1, nr2=2):
-        img1 = self.cmd_get(nr1)
-        img2 = self.cmd_get(nr2)
+        img1 = self.cmd_get_img(nr1)
+        img2 = self.cmd_get_img(nr2)
         if self.switch_nr == nr1:
             oimg = img2
             self.switch_nr = nr2
         else:
             oimg = img1
             self.switch_nr = nr1
-        self.cmd_set(0, oimg, "switch")
+        self.cmd_set_img(0, oimg, "switch")
         self.cmd_show(0)
 
     def cmd_range(self, nr, min, max):
-        img = self.cmd_get(nr)
+        img = self.cmd_get_img(nr)
         oimg = np.clip((img - min) / (max - min), 0.0, 1.0)
-        self.cmd_set(0, oimg, "range")
+        self.cmd_set_img(0, oimg, "range")
         self.cmd_show(0)
 
     #------------------------------------------------------
     # command
     #------------------------------------------------------
-    def cmd_get(self, nr):
+    def cmd_get_img(self, nr):
         return self.I[nr].img
 
-    def cmd_set(self, nr, img, name):
+    def cmd_set_img(self, nr, img, name):
         I = ImagePkg()
         I.set_img(img, name)
         self.I[nr] = I
