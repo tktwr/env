@@ -14,6 +14,15 @@ from tkinter.scrolledtext import ScrolledText
 from PIL import Image, ImageTk
 
 
+def cvimg_to_imgtk(img):
+    if img.dtype == np.float32:
+        img = np.clip(img * 255, 0, 255).astype(np.uint8)
+
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img_pil = Image.fromarray(img_rgb)
+    img_tk  = ImageTk.PhotoImage(img_pil)
+    return img_tk
+
 class ImagePkg():
     def __init__(self, fname=""):
         print(f"ImagePkg::__init__")
@@ -93,76 +102,83 @@ class ImageWin(tk.Frame):
         super().__init__(root)
         self.pack()
 
-        self.I = app.I[nr]
-
-        if type == "disp":
-            self.img = self.I.disp_img
-        elif type == "crop":
-            self.img = self.I.crop_img
-        title = f"Image {nr}: {type}"
-
         self.root = root
         self.app = app
         self.nr = nr
         self.type = type
 
-        self.root.geometry("500x500")
-        self.root.title(title)
-        self.set_img(self.img)
+        self.I = app.I[nr]
+        if type == "disp":
+            self.img = self.I.disp_img
+        elif type == "crop":
+            self.img = self.I.crop_img
 
-        orig_h, orig_w = self.I.img.shape[:2]
-        val = self.I.pick_uv(uv)
-
-        self.status_text = tk.StringVar()
-        self.status_text.set(f"wh=[{orig_w} {orig_h}] uv={uv} bgr={val}")
-
-        label = ttk.Label(root,
-            textvariable=self.status_text,
-            relief='sunken',
-            font=self.app.text_font
-            )
-        label.pack(fill = tk.X)
+        img_tk = cvimg_to_imgtk(self.img)
+        self.create_canvas(img_tk)
+        self.create_status()
+        self.update_status(uv)
 
         h, w = self.img.shape[:2]
         win_h = h + 30
         win_w = w
+
         self.root.geometry(f"{win_w}x{win_h}")
+        self.root.title(f"Image {nr}: {type}")
 
-    def set_img(self, img):
-        if img.dtype == np.float32:
-            img = np.clip(img * 255, 0, 255).astype(np.uint8)
-
-        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        img_pil = Image.fromarray(img_rgb)
-        self.img_tk  = ImageTk.PhotoImage(img_pil)
-
-        h, w = img.shape[:2]
-        self.canvas = tk.Canvas(self.root, width=w, height=h)
+    def create_canvas(self, img_tk):
+        self.img_tk = img_tk
+        self.canvas = tk.Canvas(self.root, width=img_tk.width(), height=img_tk.height())
         self.canvas.bind('<Button-1>', self.mouse_canvas)
+        self.canvas.bind('<B1-Motion>', self.mouse_canvas)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
         self.canvas.pack()
 
-    def mouse_canvas(self, event):
+    def create_status(self):
+        self.status_text = tk.StringVar()
+        label = ttk.Label(self.root,
+            textvariable=self.status_text,
+            relief='sunken',
+            #relief='groove',
+            font=self.app.text_font
+            )
+        label.pack(fill = tk.X)
+
+    def update_canvas(self, img_tk):
+        self.img_tk = img_tk
+        self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
+
+    def update_status(self, uv):
+        u, v = uv
+
         # original image size
         H, W = self.I.img.shape[:2]
-        # window image size
-        h, w = self.img.shape[:2]
-        # xy in window
-        xy = (event.x, event.y)
-        x, y = xy
-        # uv in window
-        uv = (x/(w-1), y/(h-1))
-        u, v = uv
+
         # XY in original image
         XY = (int(u * (W-1)), int(v * (H-1)))
 
         val = self.I.pick_uv(uv)
 
         uv_str = f"({u:.2f}, {v:.2f})"
-        text = f"xy={xy}, uv={uv_str}, XY={XY}, bgr={val}"
+        text = f"uv={uv_str}, XY={XY}, bgr={val}"
         self.status_text.set(text)
 
+    def mouse_canvas(self, event):
+        xy = (event.x, event.y)
+        uv = self.xy_to_uv(xy)
+        self.update_status(uv)
         self.app.cmd_show_crop(self.nr, uv)
+
+    def xy_to_uv(self, xy):
+        # xy in window
+        x, y = xy
+
+        # window image size
+        h, w = self.img.shape[:2]
+
+        # uv
+        uv = (x/(w-1), y/(h-1))
+
+        return uv
 
 
 class MainWin(tk.Frame):
@@ -244,6 +260,7 @@ class App():
         self.h = h
         self.I = {}
         self.switch_nr = 0
+        self.crop_win = None
 
     def __del__(self):
         print(f"App::__del__")
@@ -289,7 +306,6 @@ class App():
     def cmd_show(self, nr):
         I = self.I[nr]
 
-        #cv2.imshow(f"Image {nr}", I.disp_img)
         ImageWin(tk.Toplevel(), self, nr, "disp")
 
         self.cmd_print(f"fname     = {I.fname}")
@@ -297,19 +313,16 @@ class App():
 
     def cmd_show_crop(self, nr, uv):
         I = self.I[nr]
-        crop_xy = I.uv_to_xy(uv)
         crop_wh = self.args.crop_size
 
         I.make_crop_uv_img(uv, crop_wh)
-        val = I.pick_uv(uv)
 
-        #cv2.imshow(f"Crop {nr}", I.crop_img)
-        ImageWin(tk.Toplevel(), self, nr, "crop", uv)
-
-        self.cmd_print(f"uv        = {uv}")
-        self.cmd_print(f"crop_xy   = {crop_xy}")
-        self.cmd_print(f"crop_wh   = {crop_wh}")
-        self.cmd_print(f"val       = {val}")
+        if self.crop_win is None:
+            self.crop_win = ImageWin(tk.Toplevel(), self, nr, "crop", uv)
+        else:
+            self.crop_win.update_status(uv)
+            img_tk = cvimg_to_imgtk(I.crop_img)
+            self.crop_win.update_canvas(img_tk)
 
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
