@@ -88,6 +88,83 @@ class ImagePkg():
         return self.make_crop_xy_img(xy, wh)
 
 
+class ImageWin(tk.Frame):
+    def __init__(self, root, app, nr, type, uv=(0.5, 0.5)):
+        super().__init__(root)
+        self.pack()
+
+        self.I = app.I[nr]
+
+        if type == "disp":
+            self.img = self.I.disp_img
+        elif type == "crop":
+            self.img = self.I.crop_img
+        title = f"Image {nr}: {type}"
+
+        self.root = root
+        self.app = app
+        self.nr = nr
+        self.type = type
+
+        self.root.geometry("500x500")
+        self.root.title(title)
+        self.set_img(self.img)
+
+        orig_h, orig_w = self.I.img.shape[:2]
+        val = self.I.pick_uv(uv)
+
+        self.status_text = tk.StringVar()
+        self.status_text.set(f"wh=[{orig_w} {orig_h}] uv={uv} bgr={val}")
+
+        label = ttk.Label(root,
+            textvariable=self.status_text,
+            relief='sunken',
+            font=self.app.text_font
+            )
+        label.pack(fill = tk.X)
+
+        h, w = self.img.shape[:2]
+        win_h = h + 30
+        win_w = w
+        self.root.geometry(f"{win_w}x{win_h}")
+
+    def set_img(self, img):
+        if img.dtype == np.float32:
+            img = np.clip(img * 255, 0, 255).astype(np.uint8)
+
+        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        img_pil = Image.fromarray(img_rgb)
+        self.img_tk  = ImageTk.PhotoImage(img_pil)
+
+        h, w = img.shape[:2]
+        self.canvas = tk.Canvas(self.root, width=w, height=h)
+        self.canvas.bind('<Button-1>', self.mouse_canvas)
+        self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
+        self.canvas.pack()
+
+    def mouse_canvas(self, event):
+        # original image size
+        H, W = self.I.img.shape[:2]
+        # window image size
+        h, w = self.img.shape[:2]
+        # xy in window
+        xy = (event.x, event.y)
+        x, y = xy
+        # uv in window
+        uv = (x/(w-1), y/(h-1))
+        u, v = uv
+        # XY in original image
+        XY = (int(u * (W-1)), int(v * (H-1)))
+
+        val = self.I.pick_uv(uv)
+
+        uv_str = f"({u:.2f}, {v:.2f})"
+        text = f"xy={xy}, uv={uv_str}, XY={XY}, bgr={val}"
+        self.status_text.set(text)
+
+        self.app.img_show_crop(self.nr, uv)
+
+
 class MainWin(tk.Frame):
     def __init__(self, root, app):
         super().__init__(root)
@@ -157,77 +234,6 @@ class MainWin(tk.Frame):
             command=lambda: self.app.eval_cmd(f"{input_var.get()}")
             )
         button1.pack(side = tk.RIGHT)
-
-
-class ImageWin(tk.Frame):
-    def __init__(self, root, app, nr, type, uv=(0.5, 0.5)):
-        super().__init__(root)
-        self.I = app.I[nr]
-        if type == "disp":
-            self.img = self.I.disp_img
-        elif type == "crop":
-            self.img = self.I.crop_img
-        title = f"Image {nr}: {type}"
-
-        self.pack()
-
-        self.root = root
-        self.app = app
-        self.nr = nr
-        self.type = type
-
-        self.root.geometry("500x500")
-        self.root.title(title)
-        self.set_img(self.img)
-
-        orig_h, orig_w = self.I.img.shape[:2]
-        val = self.I.pick_uv(uv)
-
-        self.status_text = tk.StringVar()
-        self.status_text.set(f"wh=[{orig_w} {orig_h}] uv={uv} bgr={val}")
-
-        label = ttk.Label(root,
-            textvariable=self.status_text,
-            relief='sunken',
-            font=self.app.text_font
-            )
-        label.pack(fill = tk.X)
-
-        h, w = self.img.shape[:2]
-        win_h = h + 30
-        win_w = w
-        self.root.geometry(f"{win_w}x{win_h}")
-
-    def set_img(self, img):
-        if img.dtype == np.float32:
-            img = np.clip(img * 255, 0, 255).astype(np.uint8)
-
-        self.img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-        self.img_pil = Image.fromarray(self.img_rgb)
-        self.img_tk  = ImageTk.PhotoImage(self.img_pil)
-
-        h, w = img.shape[:2]
-        self.canvas = tk.Canvas(self.root, width=w, height=h)
-        self.canvas.bind('<Button-1>', self.mouse_canvas)
-        self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
-        self.canvas.pack()
-
-    def mouse_canvas(self, event):
-        # original image size
-        H, W = self.I.img.shape[:2]
-        # window image size
-        h, w = self.img.shape[:2]
-        xy = (event.x, event.y)
-        x, y = xy
-        uv = (x/w, y/h)
-        u, v = uv
-        XY = (int(u * W), int(v * H))
-        val = self.I.pick_uv(uv)
-        text = f"xy={xy}, uv={uv}, XY={XY}, bgr={val}"
-        self.status_text.set(text)
-        #self.root.update()
-
-        self.app.img_show_crop(self.nr, uv)
 
 
 class App():
