@@ -177,13 +177,13 @@ class MainWin(tk.Frame):
         # File Menu
         filemenu = tk.Menu(menubar, tearoff=0)
         filemenu.add_command(label='Open Image 1',
-                command=lambda: self.app.eval_cmd(f"cmd_load_dlg(1)"))
+                command=lambda: self.app.eval_cmd(f"load_dlg(1)"))
         filemenu.add_command(label='Open Image 2',
-                command=lambda: self.app.eval_cmd(f"cmd_load_dlg(2)"))
+                command=lambda: self.app.eval_cmd(f"load_dlg(2)"))
         filemenu.add_command(label='Save Image 0',
-                command=lambda: self.app.eval_cmd(f"cmd_save_dlg(0)"))
+                command=lambda: self.app.eval_cmd(f"save_dlg(0)"))
         filemenu.add_command(label='Clear Text',
-                command=lambda: self.app.eval_cmd(f"clear_text()"))
+                command=lambda: self.app.eval_cmd(f"clear()"))
         filemenu.add_separator()
         filemenu.add_command(label='Exit',
                 command=lambda: self.app.eval_cmd(f"quit()"))
@@ -248,42 +248,6 @@ class App():
     def __del__(self):
         print(f"App::__del__")
 
-    def parse_args(self):
-        parser = argparse.ArgumentParser(description='show images')
-        parser.add_argument('-s', '--size',
-                            nargs='+',
-                            type=int,
-                            default=[500, 500],
-                            help='set display size [w, h]')
-        parser.add_argument('-p', '--pos',
-                            nargs='+',
-                            type=int,
-                            default=[0, 0],
-                            help='set position [x, y]')
-        parser.add_argument('-cs', '--crop_size',
-                            nargs='+',
-                            type=int,
-                            default=[500, 500],
-                            help='set crop size [w, h]')
-        parser.add_argument('file',
-                            nargs='*',
-                            type=str,
-                            help='input file')
-        self.args = parser.parse_args()
-
-    def clear_text(self):
-        self.text_field.delete('1.0', 'end')
-
-    def add_text(self, text):
-        self.text_field.insert('insert', text)
-
-    def add_line(self, text):
-        self.add_text(f"{text}\n")
-
-    def eval_cmd(self, text):
-        self.add_line(f">>> {text}")
-        eval(f"self.{text}")
-
     #------------------------------------------------------
     # image command
     #------------------------------------------------------
@@ -313,14 +277,14 @@ class App():
         min = img.min(axis=(0, 1))
         max = img.max(axis=(0, 1))
 
-        self.add_line(f"height    = {h}")
-        self.add_line(f"width     = {w}")
-        self.add_line(f"channels  = {c}")
-        self.add_line(f"img.shape = {img.shape}")
-        self.add_line(f"img.dtype = {img.dtype}")
-        self.add_line(f"type(img) = {type(img)}")
-        self.add_line(f"min       = {min}")
-        self.add_line(f"max       = {max}")
+        self.cmd_print(f"height    = {h}")
+        self.cmd_print(f"width     = {w}")
+        self.cmd_print(f"channels  = {c}")
+        self.cmd_print(f"img.shape = {img.shape}")
+        self.cmd_print(f"img.dtype = {img.dtype}")
+        self.cmd_print(f"type(img) = {type(img)}")
+        self.cmd_print(f"min       = {min}")
+        self.cmd_print(f"max       = {max}")
 
     def cmd_show(self, nr):
         I = self.I[nr]
@@ -328,7 +292,7 @@ class App():
         #cv2.imshow(f"Image {nr}", I.disp_img)
         ImageWin(tk.Toplevel(), self, nr, "disp")
 
-        self.add_line(f"fname     = {I.fname}")
+        self.cmd_print(f"fname     = {I.fname}")
         self.cmd_info(nr)
 
     def cmd_show_crop(self, nr, uv):
@@ -342,10 +306,10 @@ class App():
         #cv2.imshow(f"Crop {nr}", I.crop_img)
         ImageWin(tk.Toplevel(), self, nr, "crop", uv)
 
-        self.add_line(f"uv        = {uv}")
-        self.add_line(f"crop_xy   = {crop_xy}")
-        self.add_line(f"crop_wh   = {crop_wh}")
-        self.add_line(f"val       = {val}")
+        self.cmd_print(f"uv        = {uv}")
+        self.cmd_print(f"crop_xy   = {crop_xy}")
+        self.cmd_print(f"crop_wh   = {crop_wh}")
+        self.cmd_print(f"val       = {val}")
 
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
@@ -402,6 +366,9 @@ class App():
         self.cmd_set(0, oimg, "range")
         self.cmd_show(0)
 
+    #------------------------------------------------------
+    # command
+    #------------------------------------------------------
     def cmd_get(self, nr):
         return self.I[nr].img
 
@@ -410,27 +377,71 @@ class App():
         I.set_img(img, name)
         self.I[nr] = I
 
-    def quit(self):
+    def cmd_print(self, text):
+        self.add_text(f"{text}\n")
+
+    def cmd_clear(self):
+        self.text_field.delete('1.0', 'end')
+
+    def cmd_quit(self):
         quit()
 
-    def help(self):
-        self.add_line(f"cmd_load(nr, fname)            ... load an image to the image nr")
-        self.add_line(f"cmd_load_dlg(nr)               ... load an image by dialog to the image nr")
-        self.add_line(f"cmd_save(nr, fname)            ... save an image to the image nr")
-        self.add_line(f"cmd_save_dlg(nr)               ... save an image by dialog to the image nr")
-        self.add_line(f"cmd_info(nr=1)                 ... info the image nr")
-        self.add_line(f"cmd_show(nr)                   ... show the image nr")
-        self.add_line(f"cmd_show_crop(nr, uv)          ... show the cropped image nr")
-        self.add_line(f"cmd_new(nr, shape, dtype, val) ... create a new image")
-        self.add_line(f"cmd_channel(nr, ch)            ... get a channel")
-        self.add_line(f"cmd_mult(nr, val)              ... multiply val to the image nr")
-        self.add_line(f"cmd_power(nr, val)             ... power")
-        self.add_line(f"cmd_add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
-        self.add_line(f"cmd_diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
-        self.add_line(f"cmd_switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
-        self.add_line(f"cmd_range(nr, min, max)        ... range from min to max")
-        self.add_line(f"quit()                         ... quit this app")
-        self.add_line(f"help()                         ... print help")
+    def cmd_help(self):
+        self.cmd_print(f"load(nr, fname)            ... load an image to the image nr")
+        self.cmd_print(f"load_dlg(nr)               ... load an image by dialog to the image nr")
+        self.cmd_print(f"save(nr, fname)            ... save an image to the image nr")
+        self.cmd_print(f"save_dlg(nr)               ... save an image by dialog to the image nr")
+        self.cmd_print(f"info(nr=1)                 ... info the image nr")
+        self.cmd_print(f"show(nr)                   ... show the image nr")
+        self.cmd_print(f"show_crop(nr, uv)          ... show the cropped image nr")
+        self.cmd_print(f"new(nr, shape, dtype, val) ... create a new image")
+        self.cmd_print(f"channel(nr, ch)            ... get a channel")
+        self.cmd_print(f"mult(nr, val)              ... multiply val to the image nr")
+        self.cmd_print(f"power(nr, val)             ... power")
+        self.cmd_print(f"add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
+        self.cmd_print(f"diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
+        self.cmd_print(f"switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
+        self.cmd_print(f"range(nr, min, max)        ... range from min to max")
+        self.cmd_print(f"print(text)                ... print text")
+        self.cmd_print(f"clear()                    ... clear text")
+        self.cmd_print(f"quit()                     ... quit this app")
+        self.cmd_print(f"help()                     ... print help")
+
+    #------------------------------------------------------
+    # parse_args
+    #------------------------------------------------------
+    def parse_args(self):
+        parser = argparse.ArgumentParser(description='show images')
+        parser.add_argument('-s', '--size',
+                            nargs='+',
+                            type=int,
+                            default=[500, 500],
+                            help='set display size [w, h]')
+        parser.add_argument('-p', '--pos',
+                            nargs='+',
+                            type=int,
+                            default=[0, 0],
+                            help='set position [x, y]')
+        parser.add_argument('-cs', '--crop_size',
+                            nargs='+',
+                            type=int,
+                            default=[500, 500],
+                            help='set crop size [w, h]')
+        parser.add_argument('file',
+                            nargs='*',
+                            type=str,
+                            help='input file')
+        self.args = parser.parse_args()
+
+    #------------------------------------------------------
+    # private functions
+    #------------------------------------------------------
+    def add_text(self, text):
+        self.text_field.insert('insert', text)
+
+    def eval_cmd(self, text):
+        self.cmd_print(f">>> {text}")
+        eval(f"self.cmd_{text}")
 
     #------------------------------------------------------
     # run gui
@@ -446,8 +457,8 @@ class App():
         nr = 1
         for fname in self.args.file:
             fname = fname.replace('\\', '/')
-            self.eval_cmd(f"cmd_load({nr}, '{fname}')")
-            self.eval_cmd(f"cmd_show({nr})")
+            self.eval_cmd(f"load({nr}, '{fname}')")
+            self.eval_cmd(f"show({nr})")
             nr += 1
 
         root.mainloop()
