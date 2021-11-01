@@ -4,8 +4,8 @@
 import sys
 import cv2
 import numpy as np
-from ttpy import ImageSize
 from ttpy import FileName
+import ttpy as tu
 
 
 #======================================================
@@ -88,13 +88,11 @@ def cv_crop_center_img(img, center, size):
     return cv_crop_img(img, pos, size)
 
 
-def cv_resize_img(img, dst_size):
+def cv_resize_img(img, dst_wh):
     h, w = img.shape[:2]
-
-    img_size = ImageSize((w, h))
-    new_size = img_size.getSize(dst_size)
-
-    return cv2.resize(img, new_size, interpolation=cv2.INTER_AREA)
+    src_wh = (w, h)
+    new_wh = tu.fix_size(src_wh, dst_wh)
+    return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
 
 
 def cv_create_img(shape, dtype, val):

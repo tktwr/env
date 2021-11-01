@@ -426,16 +426,16 @@ class App():
     #------------------------------------------------------
     def parse_args(self):
         parser = argparse.ArgumentParser(description='show images')
+        parser.add_argument('-xy',
+                            nargs='+',
+                            type=int,
+                            default=[0, 0],
+                            help='set position [x, y]')
         parser.add_argument('-s', '--size',
                             nargs='+',
                             type=int,
                             default=[500, 500],
                             help='set display size [w, h]')
-        parser.add_argument('-p', '--pos',
-                            nargs='+',
-                            type=int,
-                            default=[0, 0],
-                            help='set position [x, y]')
         parser.add_argument('-cs', '--crop_size',
                             nargs='+',
                             type=int,

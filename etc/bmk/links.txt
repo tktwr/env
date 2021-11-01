@@ -95,6 +95,7 @@
 - OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 - OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 - glTF                                            | https://www.khronos.org/gltf/
+  - glTF 2.0 Specification                        | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
   - Extensions for glTF 2.0                       | https://github.com/KhronosGroup/glTF/tree/main/extensions
     - KHR_materials_specular                      | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
   - glTF extensions                               | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism

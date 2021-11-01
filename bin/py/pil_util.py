@@ -4,7 +4,7 @@
 import sys
 import numpy as np
 from PIL import Image, ImageDraw
-from ttpy import ImageSize
+import ttpy as tu
 
 
 def img_info(fname):
@@ -56,13 +56,10 @@ def img_create_tile(fname, size, colors):
     img.save(fname)
 
 
-def img_resize(ifname, ofname, dst_size):
+def img_resize(ifname, ofname, dst_wh):
     img = Image.open(ifname)
-
-    img_size = ImageSize(img.size)
-    new_size = img_size.getSize(dst_size)
-
-    oimg = img.resize(new_size)
+    new_wh = tu.fix_size(img.size, dst_wh)
+    oimg = img.resize(new_wh)
     oimg.save(ofname)
 
     print(f"img_resize {ifname} {ofname} {new_size}")

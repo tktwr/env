@@ -28,27 +28,35 @@ class FileName():
         return ext
 
 
-class ImageSize():
-    # size: [w, h]
-    def __init__(self, size):
-        self.size = size
+# dst_wh:
+#   (0, 0) : source size
+#   (w, 0) : set width, keep aspect ratio
+#   (0, h) : set height, keep aspect ratio
+#   (w, h) : set width and height, not keep aspect ratio
+def fix_size(src_wh, dst_wh):
+    sw, sh = src_wh
+    w, h = dst_wh
 
-    # dst_size: [w, h]
-    def getSize(self, dst_size):
-        sw, sh = self.size
-        w, h = dst_size
+    if w == 0 and h == 0:
+        return (sw, sh)
+    elif w > 0 and h == 0:
+        return (w, int(w * (sh / sw)))
+    elif w == 0 and h > 0:
+        return (int(h * (sw / sh)), h)
+    else:
+        return (w, h)
 
-        if w == 0 and h == 0:
-            # return the src size
-            return (sw, sh)
-        elif w > 0 and h == 0:
-            # set width, keep aspect ratio
-            return (w, int(w * (sh / sw)))
-        elif w == 0 and h > 0:
-            # set height, keep aspect ratio
-            return (int(h * (sw / sh)), h)
-        else:
-            # set width and height, not keep aspect ratio
-            return (w, h)
 
+def max_size(src_wh, max_wh):
+    w, h = src_wh
+    w_max, h_max = max_wh
+
+    if h >= w and h > h_max:
+        dst_wh = (0, h_max)
+    elif w >= h and w > w_max:
+        dst_wh = (w_max, 0)
+    else:
+        dst_wh = (0, 0)
+
+    return fix_size(src_wh, dst_wh)
 
