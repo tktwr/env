@@ -26,7 +26,6 @@ def cvimg_to_imgtk(img):
 class ImagePkg():
     def __init__(self, fname=""):
         print(f"ImagePkg::__init__")
-        self.disp_max_wh = [500, 500]
         if fname != "":
             self.load(fname)
 
@@ -39,7 +38,12 @@ class ImagePkg():
         self.fname = fname
         self.img = img
         self.wh = (w, h)
-        self.make_disp_img(self.disp_max_wh)
+
+    def get_img(self, type):
+        if type == "disp":
+            return self.disp_img
+        elif type == "crop":
+            return self.crop_img
 
     def load(self, fname):
         img = cu.cv_load(fname)
@@ -107,11 +111,13 @@ class ImageWin(tk.Frame):
         self.nr = nr
         self.type = type
 
+        # self.I = app.I[nr]
+        # if type == "disp":
+        #     self.img = self.I.disp_img
+        # elif type == "crop":
+        #     self.img = self.I.crop_img
         self.I = app.I[nr]
-        if type == "disp":
-            self.img = self.I.disp_img
-        elif type == "crop":
-            self.img = self.I.crop_img
+        self.img = self.I.get_img(type)
 
         img_tk = cvimg_to_imgtk(self.img)
         self.create_canvas(img_tk)
@@ -202,7 +208,8 @@ class MainWin(tk.Frame):
                 command=lambda: self.app.eval_cmd(f"clear()"))
         filemenu.add_separator()
         filemenu.add_command(label='Exit',
-                command=lambda: self.app.eval_cmd(f"quit()"))
+                command=self.menu_quit,
+                accelerator="Ctrl+q")
 
         # Help
         helpmenu = tk.Menu(menubar, tearoff=0)
@@ -218,6 +225,11 @@ class MainWin(tk.Frame):
         
         self.create_text_field()
         self.create_input()
+
+        self.bind_all("<Control-q>", self.menu_quit)
+
+    def menu_quit(self, event=None):
+        self.app.eval_cmd(f"quit()")
 
     def create_text_field(self):
         frame = ttk.Frame(self.root)
@@ -237,19 +249,24 @@ class MainWin(tk.Frame):
         #style = ttk.Style()
         #style.configure("Dark.TLabel", foreground="gold", background="gray20")
 
-        input_var = tk.StringVar()
+        self.input_var = tk.StringVar()
         input_text = ttk.Entry(frame,
-            textvariable=input_var,
+            textvariable=self.input_var,
             #style="Dark.TLabel",
             font=self.app.text_font
             )
         input_text.pack(side = tk.LEFT, expand = True, fill = tk.X)
+        input_text.bind('<Return>', self.key_enter)
 
         button1 = ttk.Button(frame,
             text='Enter',
-            command=lambda: self.app.eval_cmd(f"{input_var.get()}")
+            command=lambda: self.app.eval_cmd(f"{self.input_var.get()}")
             )
         button1.pack(side = tk.RIGHT)
+
+    def key_enter(self, event):
+        self.app.eval_cmd(f"{self.input_var.get()}")
+        #self.app.cmd_print(f"{event.keysym}")
 
 
 class App():
@@ -306,8 +323,13 @@ class App():
 
     def cmd_show(self, nr):
         I = self.I[nr]
+        disp_wh = self.args.size
+        uv = (0.5, 0.5)
 
-        ImageWin(tk.Toplevel(), self, nr, "disp")
+        I.make_disp_img(disp_wh)
+        self.create_or_update(self.disp_win, nr, "disp", uv)
+
+        #ImageWin(tk.Toplevel(), self, nr, "disp")
 
         self.cmd_print(f"fname     = {I.fname}")
         self.cmd_info(nr)
@@ -317,13 +339,17 @@ class App():
         crop_wh = self.args.crop_size
 
         I.make_crop_uv_img(uv, crop_wh)
+        self.create_or_update(self.crop_win, nr, "crop", uv)
 
-        if nr not in self.crop_win:
-            self.crop_win[nr] = ImageWin(tk.Toplevel(), self, nr, "crop", uv)
+    def create_or_update(self, win_dict, nr, type, uv):
+        if nr not in win_dict:
+            win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, type, uv)
         else:
-            img_tk = cvimg_to_imgtk(I.crop_img)
-            self.crop_win[nr].update_canvas(img_tk)
-            self.crop_win[nr].update_status(uv)
+            I = self.I[nr]
+            img = I.get_img(type)
+            img_tk = cvimg_to_imgtk(img)
+            win_dict[nr].update_canvas(img_tk)
+            win_dict[nr].update_status(uv)
 
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
@@ -452,6 +478,7 @@ class App():
     #------------------------------------------------------
     def add_text(self, text):
         self.text_field.insert('insert', text)
+        self.text_field.see('end')
 
     def eval_cmd(self, text):
         self.cmd_print(f">>> {text}")
