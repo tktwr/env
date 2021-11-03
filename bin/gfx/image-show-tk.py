@@ -111,11 +111,6 @@ class ImageWin(tk.Frame):
         self.nr = nr
         self.type = type
 
-        # self.I = app.I[nr]
-        # if type == "disp":
-        #     self.img = self.I.disp_img
-        # elif type == "crop":
-        #     self.img = self.I.crop_img
         self.I = app.I[nr]
         self.img = self.I.get_img(type)
 
@@ -191,10 +186,18 @@ class MainWin(tk.Frame):
     def __init__(self, root, app):
         super().__init__(root)
         self.pack()
+
         self.root = root
         self.app = app
 
-        menubar = tk.Menu(root)
+        self.create_menu()
+        self.create_text_field()
+        self.create_input()
+
+        self.root.title(self.app.name)
+
+    def create_menu(self):
+        menubar = tk.Menu(self.root)
 
         # File Menu
         filemenu = tk.Menu(menubar, tearoff=0)
@@ -215,21 +218,13 @@ class MainWin(tk.Frame):
         helpmenu = tk.Menu(menubar, tearoff=0)
         helpmenu.add_command(label='Help',
                 command=lambda: self.app.eval_cmd(f"help()"))
-        
+
         # Add
         menubar.add_cascade(label='File', menu=filemenu)
         menubar.add_cascade(label='Help', menu=helpmenu)
-        
-        root.config(menu=menubar)
-        root.title(self.app.name)
-        
-        self.create_text_field()
-        self.create_input()
 
+        self.root.config(menu=menubar)
         self.bind_all("<Control-q>", self.menu_quit)
-
-    def menu_quit(self, event=None):
-        self.app.eval_cmd(f"quit()")
 
     def create_text_field(self):
         frame = ttk.Frame(self.root)
@@ -260,11 +255,14 @@ class MainWin(tk.Frame):
 
         button1 = ttk.Button(frame,
             text='Enter',
-            command=lambda: self.app.eval_cmd(f"{self.input_var.get()}")
+            command=self.key_enter
             )
         button1.pack(side = tk.RIGHT)
 
-    def key_enter(self, event):
+    def menu_quit(self, event=None):
+        self.app.eval_cmd(f"quit()")
+
+    def key_enter(self, event=None):
         self.app.eval_cmd(f"{self.input_var.get()}")
         #self.app.cmd_print(f"{event.keysym}")
 
@@ -324,12 +322,9 @@ class App():
     def cmd_show(self, nr):
         I = self.I[nr]
         disp_wh = self.args.size
-        uv = (0.5, 0.5)
 
         I.make_disp_img(disp_wh)
-        self.create_or_update(self.disp_win, nr, "disp", uv)
-
-        #ImageWin(tk.Toplevel(), self, nr, "disp")
+        self.create_or_update(self.disp_win, nr, "disp")
 
         self.cmd_print(f"fname     = {I.fname}")
         self.cmd_info(nr)
@@ -341,7 +336,7 @@ class App():
         I.make_crop_uv_img(uv, crop_wh)
         self.create_or_update(self.crop_win, nr, "crop", uv)
 
-    def create_or_update(self, win_dict, nr, type, uv):
+    def create_or_update(self, win_dict, nr, type, uv=(0.5, 0.5)):
         if nr not in win_dict:
             win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, type, uv)
         else:
