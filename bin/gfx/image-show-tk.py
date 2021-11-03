@@ -17,6 +17,8 @@ from PIL import Image, ImageTk
 def cvimg_to_imgtk(img):
     if img.dtype == np.float32:
         img = np.clip(img * 255, 0, 255).astype(np.uint8)
+    elif img.dtype == np.uint16:
+        img = np.clip(img/65535 * 255, 0, 255).astype(np.uint8)
 
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pil = Image.fromarray(img_rgb)
@@ -103,6 +105,7 @@ class ImagePkg():
 
 class ImageWin(tk.Frame):
     def __init__(self, root, app, nr, type, uv=(0.5, 0.5)):
+        print(f"ImageWin::__init__")
         super().__init__(root)
         self.pack()
 
@@ -125,6 +128,9 @@ class ImageWin(tk.Frame):
 
         self.root.geometry(f"{win_w}x{win_h}")
         self.root.title(f"Image {nr}: {type}")
+
+    def __del__(self):
+        print(f"ImageWin::__del__")
 
     def create_canvas(self, img_tk):
         self.img_tk = img_tk
@@ -184,6 +190,7 @@ class ImageWin(tk.Frame):
 
 class MainWin(tk.Frame):
     def __init__(self, root, app):
+        print(f"MainWin::__init__")
         super().__init__(root)
         self.pack()
 
@@ -195,6 +202,9 @@ class MainWin(tk.Frame):
         self.create_input()
 
         self.root.title(self.app.name)
+
+    def __del__(self):
+        print(f"MainWin::__del__")
 
     def create_menu(self):
         menubar = tk.Menu(self.root)
@@ -282,42 +292,52 @@ class App():
         print(f"App::__del__")
 
     #------------------------------------------------------
-    # image command
+    # get/set image command
+    #------------------------------------------------------
+    def cmd_get_img(self, nr):
+        return self.I[nr].img
+
+    def cmd_set_img(self, nr, img, name):
+        I = ImagePkg()
+        I.set_img(img, name)
+        self.I[nr] = I
+
+    #------------------------------------------------------
+    # image io command
     #------------------------------------------------------
     def cmd_load(self, nr, fname):
         I = ImagePkg(fname)
         self.I[nr] = I
 
-    def cmd_load_dlg(self, nr):
-        fname = filedialog.askopenfilename() 
-        self.cmd_load(nr, fname)
-        self.cmd_show(nr)
-
     def cmd_save(self, nr, fname):
         I = self.I[nr]
         I.save(fname)
 
+    def cmd_load_dlg(self, nr):
+        fname = filedialog.askopenfilename() 
+        if fname != "":
+            self.cmd_load(nr, fname)
+            self.cmd_show(nr)
+
     def cmd_save_dlg(self, nr):
         fname = filedialog.asksaveasfilename(
-            filetypes = [("PNG", ".png"), ("EXR", ".exr"), ("HDR", ".hdr") ],
+            filetypes = [("PNG", ".png"), ("JPG", ".jpg"), ("EXR", ".exr"), ("HDR", ".hdr") ],
             defaultextension = "png"
             )
         self.cmd_save(nr, fname)
 
-    def cmd_info(self, nr=1):
-        img = self.cmd_get_img(nr)
-        h, w, c = cu.cv_size(img)
-        min = img.min(axis=(0, 1))
-        max = img.max(axis=(0, 1))
-
-        self.cmd_print(f"height    = {h}")
-        self.cmd_print(f"width     = {w}")
-        self.cmd_print(f"channels  = {c}")
-        self.cmd_print(f"img.shape = {img.shape}")
-        self.cmd_print(f"img.dtype = {img.dtype}")
-        self.cmd_print(f"type(img) = {type(img)}")
-        self.cmd_print(f"min       = {min}")
-        self.cmd_print(f"max       = {max}")
+    #------------------------------------------------------
+    # window command
+    #------------------------------------------------------
+    def create_or_update(self, win_dict, nr, type, uv=(0.5, 0.5)):
+        if nr not in win_dict:
+            win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, type, uv)
+        else:
+            I = self.I[nr]
+            img = I.get_img(type)
+            img_tk = cvimg_to_imgtk(img)
+            win_dict[nr].update_canvas(img_tk)
+            win_dict[nr].update_status(uv)
 
     def cmd_show(self, nr):
         I = self.I[nr]
@@ -336,16 +356,43 @@ class App():
         I.make_crop_uv_img(uv, crop_wh)
         self.create_or_update(self.crop_win, nr, "crop", uv)
 
-    def create_or_update(self, win_dict, nr, type, uv=(0.5, 0.5)):
-        if nr not in win_dict:
-            win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, type, uv)
-        else:
-            I = self.I[nr]
-            img = I.get_img(type)
-            img_tk = cvimg_to_imgtk(img)
-            win_dict[nr].update_canvas(img_tk)
-            win_dict[nr].update_status(uv)
+    def cmd_close_all(self):
+        keys = list(self.I.keys())
+        for i in keys:
+            self.cmd_close(i)
+    
+    def cmd_close(self, nr):
+        self.I.pop(nr, None)
+        win = self.disp_win.pop(nr, None)
+        if win != None:
+            win.root.destroy()
+        win = self.crop_win.pop(nr, None)
+        if win != None:
+            win.root.destroy()
 
+    def cmd_info_all(self):
+        for nr in self.I:
+            I = self.I[nr]
+            self.cmd_print(f"{nr} {I.fname} {I.img.shape} {I.img.dtype}")
+
+    def cmd_info(self, nr=1):
+        img = self.cmd_get_img(nr)
+        h, w, c = cu.cv_size(img)
+        min = img.min(axis=(0, 1))
+        max = img.max(axis=(0, 1))
+
+        self.cmd_print(f"height    = {h}")
+        self.cmd_print(f"width     = {w}")
+        self.cmd_print(f"channels  = {c}")
+        self.cmd_print(f"img.shape = {img.shape}")
+        self.cmd_print(f"img.dtype = {img.dtype}")
+        self.cmd_print(f"type(img) = {type(img)}")
+        self.cmd_print(f"min       = {min}")
+        self.cmd_print(f"max       = {max}")
+
+    #------------------------------------------------------
+    # image operation command
+    #------------------------------------------------------
     def cmd_new(self, nr, shape, dtype, val):
         img = cu.cv_create_img(shape, dtype, val)
         self.cmd_set_img(nr, img, "new")
@@ -404,14 +451,6 @@ class App():
     #------------------------------------------------------
     # command
     #------------------------------------------------------
-    def cmd_get_img(self, nr):
-        return self.I[nr].img
-
-    def cmd_set_img(self, nr, img, name):
-        I = ImagePkg()
-        I.set_img(img, name)
-        self.I[nr] = I
-
     def cmd_print(self, text):
         self.add_text(f"{text}\n")
 
@@ -423,12 +462,15 @@ class App():
 
     def cmd_help(self):
         self.cmd_print(f"load(nr, fname)            ... load an image to the image nr")
-        self.cmd_print(f"load_dlg(nr)               ... load an image by dialog to the image nr")
         self.cmd_print(f"save(nr, fname)            ... save an image to the image nr")
+        self.cmd_print(f"load_dlg(nr)               ... load an image by dialog to the image nr")
         self.cmd_print(f"save_dlg(nr)               ... save an image by dialog to the image nr")
-        self.cmd_print(f"info(nr=1)                 ... info the image nr")
         self.cmd_print(f"show(nr)                   ... show the image nr")
         self.cmd_print(f"show_crop(nr, uv)          ... show the cropped image nr")
+        self.cmd_print(f"close_all()                ... close all images")
+        self.cmd_print(f"close(nr)                  ... close the image nr")
+        self.cmd_print(f"info_all()                 ... info all images")
+        self.cmd_print(f"info(nr=1)                 ... info the image nr")
         self.cmd_print(f"new(nr, shape, dtype, val) ... create a new image")
         self.cmd_print(f"channel(nr, ch)            ... get a channel")
         self.cmd_print(f"mult(nr, val)              ... multiply val to the image nr")
