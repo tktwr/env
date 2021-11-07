@@ -38,13 +38,15 @@ class ImagePkg():
         h, w = img.shape[:2]
 
         self.fname = fname
-        self.img = img
         self.wh = (w, h)
+        self.img = img
+        self.disp_img = None
+        self.crop_img = None
 
-    def get_img(self, type):
-        if type == "disp":
+    def get_img(self, win_type):
+        if win_type == "disp":
             return self.disp_img
-        elif type == "crop":
+        elif win_type == "crop":
             return self.crop_img
 
     def load(self, fname):
@@ -103,41 +105,40 @@ class ImagePkg():
         return self.make_crop_xy_img(xy, wh)
 
 
-class ImageWin(tk.Frame):
-    def __init__(self, root, app, nr, type, uv=(0.5, 0.5)):
-        print(f"ImageWin::__init__")
+class ImageWinBase(tk.Frame):
+    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
+        print(f"ImageWinBase::__init__")
         super().__init__(root)
         self.pack()
 
         self.root = root
         self.app = app
         self.nr = nr
-        self.type = type
+        self.win_type = win_type
 
         self.I = app.I[nr]
-        self.img = self.I.get_img(type)
+        self.win_img = self.I.get_img(win_type)
 
-        img_tk = cvimg_to_imgtk(self.img)
-        self.create_canvas(img_tk)
-        self.create_status()
-        self.update_status(uv)
-
-        h, w = self.img.shape[:2]
-        win_h = h + 30
-        win_w = w
-
-        self.root.geometry(f"{win_w}x{win_h}")
-        self.root.title(f"Image {nr}: {type}")
+        self.root.title(f"Image {nr}: {win_type}")
 
     def __del__(self):
-        print(f"ImageWin::__del__")
+        print(f"ImageWinBase::__del__")
 
-    def create_canvas(self, img_tk):
-        self.img_tk = img_tk
-        self.canvas = tk.Canvas(self.root, width=img_tk.width(), height=img_tk.height())
-        self.canvas.bind('<Button-1>', self.mouse_canvas)
-        self.canvas.bind('<B1-Motion>', self.mouse_canvas)
+    def resize(self, img):
+        h, w = img.shape[:2]
+        win_h = h + 30
+        win_w = w
+        self.root.geometry(f"{win_w}x{win_h}")
+
+    def create_canvas(self, img):
+        self.img_tk = cvimg_to_imgtk(img)
+        w = self.img_tk.width()
+        h = self.img_tk.height()
+        self.canvas = tk.Canvas(self.root, width=w, height=h)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
+        self.canvas.bind('<Button-1>', self.mouse_canvas)
+        self.canvas.bind('<Button-3>', self.mouse_canvas)
+        self.canvas.bind('<B1-Motion>', self.mouse_canvas)
         self.canvas.pack()
 
     def create_status(self):
@@ -150,8 +151,8 @@ class ImageWin(tk.Frame):
             )
         label.pack(fill = tk.X)
 
-    def update_canvas(self, img_tk):
-        self.img_tk = img_tk
+    def update_canvas(self, img):
+        self.img_tk = cvimg_to_imgtk(img)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
 
     def update_status(self, uv):
@@ -170,22 +171,60 @@ class ImageWin(tk.Frame):
         self.status_text.set(text)
 
     def mouse_canvas(self, event):
-        xy = (event.x, event.y)
-        uv = self.xy_to_uv(xy)
-        self.update_status(uv)
-        self.app.cmd_show_crop(self.nr, uv)
+        if event.num == 3:
+            self.app.cmd_close_crop(self.nr)
+        else:
+            xy = (event.x, event.y)
+            uv = self.xy_to_uv(xy)
+            self.update_status(uv)
+            self.app.cmd_show_crop(self.nr, uv)
 
     def xy_to_uv(self, xy):
         # xy in window
         x, y = xy
 
         # window image size
-        h, w = self.img.shape[:2]
+        h, w = self.win_img.shape[:2]
 
         # uv
         uv = (x/(w-1), y/(h-1))
 
         return uv
+
+
+class ImageWin(ImageWinBase):
+    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
+        super().__init__(root, app, nr, win_type, uv)
+
+        self.create_menu()
+        self.create_canvas(self.win_img)
+        self.create_status()
+        self.resize(self.win_img)
+        self.update_status(uv)
+
+    def create_menu(self):
+        menubar = tk.Menu(self.root)
+
+        # File Menu
+        filemenu = tk.Menu(menubar, tearoff=0)
+        filemenu.add_command(label='Open Image',
+                command=lambda: self.app.eval_cmd(f"load_dlg({self.nr})"))
+        filemenu.add_command(label='Save Image',
+                command=lambda: self.app.eval_cmd(f"save_dlg({self.nr})"))
+
+        menubar.add_cascade(label='File', menu=filemenu)
+
+        self.root.config(menu=menubar)
+
+
+class CropWin(ImageWinBase):
+    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
+        super().__init__(root, app, nr, win_type, uv)
+
+        self.create_canvas(self.win_img)
+        self.create_status()
+        self.resize(self.win_img)
+        self.update_status(uv)
 
 
 class MainWin(tk.Frame):
@@ -217,19 +256,22 @@ class MainWin(tk.Frame):
                 command=lambda: self.app.eval_cmd(f"load_dlg(2)"))
         filemenu.add_command(label='Save Image 0',
                 command=lambda: self.app.eval_cmd(f"save_dlg(0)"))
-        filemenu.add_command(label='Clear Text',
-                command=lambda: self.app.eval_cmd(f"clear()"))
+        filemenu.add_command(label='Info All Images',
+                command=lambda: self.app.eval_cmd(f"info_all()"))
+        filemenu.add_command(label='Close All Images',
+                command=lambda: self.app.eval_cmd(f"close_all()"))
         filemenu.add_separator()
         filemenu.add_command(label='Exit',
                 command=self.menu_quit,
                 accelerator="Ctrl+q")
 
-        # Help
+        # Help Menu
         helpmenu = tk.Menu(menubar, tearoff=0)
         helpmenu.add_command(label='Help',
                 command=lambda: self.app.eval_cmd(f"help()"))
+        helpmenu.add_command(label='Clear Text',
+                command=lambda: self.app.eval_cmd(f"clear()"))
 
-        # Add
         menubar.add_cascade(label='File', menu=filemenu)
         menubar.add_cascade(label='Help', menu=helpmenu)
 
@@ -317,6 +359,8 @@ class App():
         fname = filedialog.askopenfilename() 
         if fname != "":
             self.cmd_load(nr, fname)
+            self.cmd_close_crop(nr)
+            self.cmd_close_disp(nr)
             self.cmd_show(nr)
 
     def cmd_save_dlg(self, nr):
@@ -329,14 +373,16 @@ class App():
     #------------------------------------------------------
     # window command
     #------------------------------------------------------
-    def create_or_update(self, win_dict, nr, type, uv=(0.5, 0.5)):
+    def create_or_update(self, win_dict, nr, win_type, uv=(0.5, 0.5)):
         if nr not in win_dict:
-            win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, type, uv)
+            if win_type == "disp":
+                win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, win_type, uv)
+            elif win_type == "crop":
+                win_dict[nr] = CropWin(tk.Toplevel(), self, nr, win_type, uv)
         else:
             I = self.I[nr]
-            img = I.get_img(type)
-            img_tk = cvimg_to_imgtk(img)
-            win_dict[nr].update_canvas(img_tk)
+            img = I.get_img(win_type)
+            win_dict[nr].update_canvas(img)
             win_dict[nr].update_status(uv)
 
     def cmd_show(self, nr):
@@ -363,9 +409,15 @@ class App():
     
     def cmd_close(self, nr):
         self.I.pop(nr, None)
+        self.cmd_close_disp(nr)
+        self.cmd_close_crop(nr)
+
+    def cmd_close_disp(self, nr):
         win = self.disp_win.pop(nr, None)
         if win != None:
             win.root.destroy()
+
+    def cmd_close_crop(self, nr):
         win = self.crop_win.pop(nr, None)
         if win != None:
             win.root.destroy()

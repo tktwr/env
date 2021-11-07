@@ -51,6 +51,7 @@
 - python                                          | https://www.python.org/
   - doc                                           | https://docs.python.org/ja/3/index.html
   - tutorial                                      | https://docs.python.org/ja/3/tutorial/
+  - tkinter                                       | https://docs.python.org/ja/3/library/tkinter.html
 - nkmk                                            | https://note.nkmk.me/
   - nkmk.python                                   | https://note.nkmk.me/python/
   - nkmk.numpy                                    | https://note.nkmk.me/numpy/
