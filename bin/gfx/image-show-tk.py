@@ -25,6 +25,9 @@ def cvimg_to_imgtk(img):
     img_tk  = ImageTk.PhotoImage(img_pil)
     return img_tk
 
+#======================================================
+# ImagePkg
+#======================================================
 class ImagePkg():
     def __init__(self, fname=""):
         print(f"ImagePkg::__init__")
@@ -48,6 +51,9 @@ class ImagePkg():
             return self.disp_img
         elif win_type == "crop":
             return self.crop_img
+
+    def size_wh(self):
+        return self.wh
 
     def load(self, fname):
         img = cu.cv_load(fname)
@@ -73,9 +79,6 @@ class ImagePkg():
         x, y = xy
         w, h = self.wh
         return (float(x)/(w-1), float(y)/(h-1))
-
-    def size_wh(self):
-        return self.wh
 
     def make_disp_img(self, max_wh):
         w_max, h_max = max_wh
@@ -105,6 +108,9 @@ class ImagePkg():
         return self.make_crop_xy_img(xy, wh)
 
 
+#======================================================
+# ImageWinBase
+#======================================================
 class ImageWinBase(tk.Frame):
     def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
         print(f"ImageWinBase::__init__")
@@ -192,6 +198,9 @@ class ImageWinBase(tk.Frame):
         return uv
 
 
+#======================================================
+# ImageWin
+#======================================================
 class ImageWin(ImageWinBase):
     def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
         super().__init__(root, app, nr, win_type, uv)
@@ -217,6 +226,9 @@ class ImageWin(ImageWinBase):
         self.root.config(menu=menubar)
 
 
+#======================================================
+# CropWin
+#======================================================
 class CropWin(ImageWinBase):
     def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
         super().__init__(root, app, nr, win_type, uv)
@@ -227,6 +239,9 @@ class CropWin(ImageWinBase):
         self.update_status(uv)
 
 
+#======================================================
+# MainWin
+#======================================================
 class MainWin(tk.Frame):
     def __init__(self, root, app):
         print(f"MainWin::__init__")
@@ -286,8 +301,7 @@ class MainWin(tk.Frame):
         text_field.place(x=0, y=0, width=self.app.w, height=self.app.h)
         text_field.pack(expand = True, fill = tk.BOTH)
         text_field.configure(fg='gray80', bg='gray20')
-
-        self.app.text_field = text_field
+        self.text_field = text_field
 
     def create_input(self):
         frame = ttk.Frame(self.root)
@@ -305,11 +319,11 @@ class MainWin(tk.Frame):
         input_text.pack(side = tk.LEFT, expand = True, fill = tk.X)
         input_text.bind('<Return>', self.key_enter)
 
-        button1 = ttk.Button(frame,
+        btn_enter = ttk.Button(frame,
             text='Enter',
             command=self.key_enter
             )
-        button1.pack(side = tk.RIGHT)
+        btn_enter.pack(side = tk.RIGHT)
 
     def menu_quit(self, event=None):
         self.app.eval_cmd(f"quit()")
@@ -318,7 +332,17 @@ class MainWin(tk.Frame):
         self.app.eval_cmd(f"{self.input_var.get()}")
         #self.app.cmd_print(f"{event.keysym}")
 
+    def add_text(self, text):
+        self.text_field.insert('insert', text)
+        self.text_field.see('end')
 
+    def clear_text(self):
+        self.text_field.delete('1.0', 'end')
+
+
+#======================================================
+# App
+#======================================================
 class App():
     def __init__(self, name="App", w=500, h=500):
         print(f"App::__init__")
@@ -326,6 +350,7 @@ class App():
         self.w = w
         self.h = h
         self.I = {}
+        self.main_win = None
         self.disp_win = {}
         self.crop_win = {}
         self.switch_nr = 0
@@ -392,7 +417,6 @@ class App():
         I.make_disp_img(disp_wh)
         self.create_or_update(self.disp_win, nr, "disp")
 
-        self.cmd_print(f"fname     = {I.fname}")
         self.cmd_info(nr)
 
     def cmd_show_crop(self, nr, uv):
@@ -428,11 +452,13 @@ class App():
             self.cmd_print(f"{nr} {I.fname} {I.img.shape} {I.img.dtype}")
 
     def cmd_info(self, nr=1):
+        I = self.I[nr]
         img = self.cmd_get_img(nr)
         h, w, c = cu.cv_size(img)
         min = img.min(axis=(0, 1))
         max = img.max(axis=(0, 1))
 
+        self.cmd_print(f"fname     = {I.fname}")
         self.cmd_print(f"height    = {h}")
         self.cmd_print(f"width     = {w}")
         self.cmd_print(f"channels  = {c}")
@@ -504,10 +530,10 @@ class App():
     # command
     #------------------------------------------------------
     def cmd_print(self, text):
-        self.add_text(f"{text}\n")
+        self.main_win.add_text(f"{text}\n")
 
     def cmd_clear(self):
-        self.text_field.delete('1.0', 'end')
+        self.main_win.clear_text()
 
     def cmd_quit(self):
         quit()
@@ -565,10 +591,6 @@ class App():
     #------------------------------------------------------
     # private functions
     #------------------------------------------------------
-    def add_text(self, text):
-        self.text_field.insert('insert', text)
-        self.text_field.see('end')
-
     def eval_cmd(self, text):
         self.cmd_print(f">>> {text}")
         eval(f"self.cmd_{text}")
@@ -582,7 +604,7 @@ class App():
         self.text_font = font.Font(family="Cica", size=14)
         #print(font.families())
 
-        MainWin(root, self)
+        self.main_win = MainWin(root, self)
 
         nr = 1
         for fname in self.args.file:
