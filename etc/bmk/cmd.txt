@@ -15,6 +15,7 @@
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
 - C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
 - U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
+- V BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
 - x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
     ---------------------------------- | ----------------------------------------
 - I MyWinInitSize                      | :MyWinInitSize
@@ -44,12 +45,8 @@
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
-- M Man                                | :MyMan ?
-- P Pydoc                              | :MyPydoc ?
-    ---------------------------------- | ----------------------------------------
 - V BmkViewThis         (C-CR)         | :call BmkViewThis()
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
-- F BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
 -   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 - : MyTabColon                         | :MyTabColon
@@ -198,5 +195,100 @@
 -   git-chmod-x-all                    | git-chmod-x-all<CR>
 -   git-ls-no-x                        | git-ls-no-x
 -   git-upgrade                        | git update-git-for-windows<CR>
+[ref:main] --------------------------- | ----------------------------------------
+-   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
+-   Google翻訳                         | https://translate.google.co.jp/
+-   DeepL翻訳                          | https://www.deepl.com/ja/translator
+    ---------------------------------- | ----------------------------------------
+- H Help                               | :MyHelp
+-   Help.index                         | :MyHelp index
+-   Help.expression-syntax             | :MyHelp expression-syntax
+-   Help.pattern-overview              | :MyHelp pattern-overview
+    ---------------------------------- | ----------------------------------------
+- M Memo                               | :Memo
+- m Memo.my                            | :Memo my
+- v Memo.vim                           | :Memo vim
+- g Memo.git                           | :Memo git
+- l Memo.links                         | :Memo links
+- c Memo.cpp.syntax                    | :Memo cpp.syntax
+- p Memo.py.syntax                     | :Memo py.syntax
+    ---------------------------------- | ----------------------------------------
+-   Man                                | :MyMan ?
+-   Pydoc                              | :MyPydoc ?
+    ---------------------------------- | ----------------------------------------
+-   tags.bin_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_sh"), "sh")
+-   tags.bin_py                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_py"), "py")
+-   tags.etc_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bash"), "sh")
+-   tags.etc_vim                       | :call TagCatalog(expand("$MY_ENV/tags/tags.vim"), "vim")
+-   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
+-   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+    ---------------------------------- | ----------------------------------------
+-   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
+-   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
+-   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
+-   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+[ref:keys] --------------------------- | ----------------------------------------
+-   help                  (F1)         | :echo
+-   desktop left          (F2)         | :echo
+-   desktop right         (F3)         | :echo
+-   desktop               (F4)         | :echo
+-   reload                (F5)         | :echo
+-   screen info           (F6)         | :echo
+-   maximize left         (F7)         | :echo
+-   maximize              (F8)         | :echo
+-   maximize right        (F9)         | :echo
+-   maximize toggle      (F10)         | :echo
+-   screenshot           (F11)         | :echo
+-   system               (F12)         | :echo
+    ---------------------------------- | ----------------------------------------
+-   menu               (Space)         | :echo
+-   win buf list         (End)         | :echo
+-   page up               (BS)         | :echo
+-   page down           (PgDn)         | :echo
+-   tab prev            (PgUp)         | :echo
+-   tab next          (S-PgUp)         | :echo
+-   tab new              (Ins)         | :echo
+-   tab close            (Del)         | :echo
+-   view                (C-CR)         | :echo
+-   open                (S-CR)         | :echo
+[ref:keys2] -------------------------- | ----------------------------------------
+-   window 1 top         (C-1)         | :echo
+-   window 2             (C-2)         | :echo
+-   x                    (C-3)         | :echo
+-   x                    (C-4)         | :echo
+-   x                    (C-5)         | :echo
+-   x                    (C-6)         | :echo
+-   maximize x           (C-7)         | :echo
+-   maximize xy          (C-8)         | :echo
+-   maximize y           (C-9)         | :echo
+-   window 0 bottom      (C-0)         | :echo
+    ---------------------------------- | ----------------------------------------
+-   quickhl              (C-a)         | :echo
+-   bmk                  (C-b)         | :echo
+-   interrupt            (C-c)         | :echo
+-   page up              (C-d)         | :echo
+-   close                (C-e)         | :echo
+-   page down            (C-f)         | :echo
+-   redraw               (C-g)         | :echo
+-   window left          (C-h)         | :echo
+-   TAB                  (C-i)         | :echo
+-   window next          (C-j)         | :echo
+-   window prev          (C-k)         | :echo
+-   window right         (C-l)         | :echo
+-   CR                   (C-m)         | :echo
+-   cn                   (C-n)         | :echo
+-   WblPop               (C-o)         | :echo
+-   cp                   (C-p)         | :echo
+-   @q                   (C-q)         | :echo
+-   redo                 (C-r)         | :echo
+-   x                    (C-s)         | :echo
+-   tag back             (C-t)         | :echo
+-   WblNext              (C-u)         | :echo
+-   block select         (C-v)         | :echo
+-   window command       (C-w)         | :echo
+-   x                    (C-x)         | :echo
+-   WblPrev              (C-y)         | :echo
+-   menu ref             (C-z)         | :echo
 
 # vim:set ft=bmk syntax=txt nowrap:
