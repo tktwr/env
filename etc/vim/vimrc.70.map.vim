@@ -93,20 +93,23 @@ tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
 vmap C  <Plug>NERDCommenterToggle
 
 "------------------------------------------------------
+" standard input
+"------------------------------------------------------
+vnoremap A       y:'<,'>w !sumcol.py<CR>
+
+"------------------------------------------------------
 " clipboard
 "------------------------------------------------------
 nnoremap ,p      "*p
 vnoremap Y       "*y
-vnoremap A       y:'<,'>w !sumcol.py<CR>
 
-"------------------------------------------------------
-" popup menu
-"------------------------------------------------------
-nnoremap <silent> <End>     :silent call WblPrint()<CR>
-nnoremap <silent> <Space>   :CpmOpen<CR>
-vnoremap <silent> <Space>   :'<,'>VimTestRange<CR>
+func YankUrlToClipboard()
+  let url = expand(expand("<cfile>"))
+  call setreg('*', url)
+  echo url
+endfunc
 
-tnoremap <silent> <C-Space> <C-W>:CpmOpen<CR>
+nnoremap Y       :call YankUrlToClipboard()<CR>
 
 "------------------------------------------------------
 " map.window.move
@@ -153,6 +156,13 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
+nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
+tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
+nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
+tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
+
+nnoremap <silent> <End>      :silent call WblPrint()<CR>
+
 "nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
 "nnoremap <silent> <TAB>      :silent call WblPrint()<CR>
 nnoremap <silent> <BS>       <C-B>
@@ -184,6 +194,7 @@ tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
+
 "======================================================
 " autocmd
 "======================================================

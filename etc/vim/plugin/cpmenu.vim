@@ -111,7 +111,7 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-func s:CpmGetNumTitles()
+func s:CpmGetNumTitles(name)
   if &buftype == 'terminal'
     let size = len(s:cpm_titles['terminal'])
   elseif &filetype == 'fern'
@@ -119,22 +119,22 @@ func s:CpmGetNumTitles()
   elseif &filetype == 'nerdtree'
     let size = len(s:cpm_titles['nerdtree'])
   else
-    let size = len(s:cpm_titles['buffer'])
+    let size = len(s:cpm_titles[a:name])
   endif
   return size
 endfunc
 
 func s:CpmNextNr()
-  let n = s:CpmGetNumTitles()
+  let n = s:CpmGetNumTitles(w:cpm_menu_name)
   return (w:cpm_menu_nr + 1) % n
 endfunc
 
 func s:CpmPrevNr()
-  let n = s:CpmGetNumTitles()
+  let n = s:CpmGetNumTitles(w:cpm_menu_name)
   return w:cpm_menu_nr == 0 ? n - 1 : w:cpm_menu_nr - 1
 endfunc
 
-func s:CpmGetMenu(nr)
+func s:CpmGetMenu(name, nr)
   if &buftype == 'terminal'
     let title = s:cpm_titles['terminal'][a:nr]
   elseif &filetype == 'fern'
@@ -142,7 +142,7 @@ func s:CpmGetMenu(nr)
   elseif &filetype == 'nerdtree'
     let title = s:cpm_titles['nerdtree'][a:nr]
   else
-    let title = s:cpm_titles['buffer'][a:nr]
+    let title = s:cpm_titles[a:name][a:nr]
   endif
   return s:cpm_menu_all[title]
 endfunc
@@ -166,13 +166,13 @@ func CpmFilter(id, key)
   elseif a:key == 'l'
     call popup_close(a:id, 0)
     let nr = s:CpmNextNr()
-    let id = s:CpmOpen(nr)
+    let id = s:CpmOpen(w:cpm_menu_name, nr)
     call s:CpmFixPos(id)
     return 1
   elseif a:key == 'h'
     call popup_close(a:id, 0)
     let nr = s:CpmPrevNr()
-    let id = s:CpmOpen(nr)
+    let id = s:CpmOpen(w:cpm_menu_name, nr)
     call s:CpmFixPos(id)
     return 1
   elseif a:key == "\<C-CR>"
@@ -211,9 +211,10 @@ func CpmHandler(id, result)
   endif
 endfunc
 
-func s:CpmOpen(menu_nr)
+func s:CpmOpen(menu_name='buffer', menu_nr=0)
+  let w:cpm_menu_name = a:menu_name
   let w:cpm_menu_nr = a:menu_nr
-  let w:cpm_menu = s:CpmGetMenu(w:cpm_menu_nr)
+  let w:cpm_menu = s:CpmGetMenu(w:cpm_menu_name, w:cpm_menu_nr)
   let winid = popup_menu(w:cpm_menu, #{
     \ filter: 'CpmFilter',
     \ callback: 'CpmHandler',
@@ -261,8 +262,8 @@ endfunc
 "------------------------------------------------------
 " public command
 "------------------------------------------------------
-command CpmReload    call s:CpmReload()
-command CpmOpen      call s:CpmOpen(0)
+command          CpmReload    call s:CpmReload()
+command -nargs=* CpmOpen      call s:CpmOpen(<f-args>)
 
 "------------------------------------------------------
 " init

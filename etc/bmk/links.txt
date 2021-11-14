@@ -26,6 +26,66 @@
 -   tags.eigen                                    | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
 -   tags.glm                                      | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
 -   tags.opencv2                                  | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+[ref:keys] ---------------------------            | ----------------------------------------
+-   help                  (F1)                    | :echo
+-   desktop left          (F2)                    | :echo
+-   desktop right         (F3)                    | :echo
+-   desktop               (F4)                    | :echo
+-   reload                (F5)                    | :echo
+-   screen info           (F6)                    | :echo
+-   maximize left         (F7)                    | :echo
+-   maximize              (F8)                    | :echo
+-   maximize right        (F9)                    | :echo
+-   maximize toggle      (F10)                    | :echo
+-   screenshot           (F11)                    | :echo
+-   system               (F12)                    | :echo
+    ----------------------------------            | ----------------------------------------
+-   menu               (Space)                    | :echo
+-   win buf list         (End)                    | :echo
+-   page up               (BS)                    | :echo
+-   page down           (PgDn)                    | :echo
+-   tab prev            (PgUp)                    | :echo
+-   tab next          (S-PgUp)                    | :echo
+-   tab new              (Ins)                    | :echo
+-   tab close            (Del)                    | :echo
+[ref:keys2] --------------------------            | ----------------------------------------
+-   window 1 top         (C-1)                    | :echo
+-   window 2             (C-2)                    | :echo
+-   x                    (C-3)                    | :echo
+-   x                    (C-4)                    | :echo
+-   x                    (C-5)                    | :echo
+-   x                    (C-6)                    | :echo
+-   maximize x           (C-7)                    | :echo
+-   maximize xy          (C-8)                    | :echo
+-   maximize y           (C-9)                    | :echo
+-   window 0 bottom      (C-0)                    | :echo
+    ----------------------------------            | ----------------------------------------
+-   quickhl              (C-a)                    | :echo
+-   bmk                  (C-b)                    | :echo
+-   interrupt            (C-c)                    | :echo
+-   page up              (C-d)                    | :echo
+-   close                (C-e)                    | :echo
+-   page down            (C-f)                    | :echo
+-   redraw               (C-g)                    | :echo
+-   window left          (C-h)                    | :echo
+-   TAB                  (C-i)                    | :echo
+-   window next          (C-j)                    | :echo
+-   window prev          (C-k)                    | :echo
+-   window right         (C-l)                    | :echo
+-   CR                   (C-m)                    | :echo
+-   cn                   (C-n)                    | :echo
+-   WblPop               (C-o)                    | :echo
+-   cp                   (C-p)                    | :echo
+-   @q                   (C-q)                    | :echo
+-   redo                 (C-r)                    | :echo
+-   x                    (C-s)                    | :echo
+-   tag back             (C-t)                    | :echo
+-   WblNext              (C-u)                    | :echo
+-   block select         (C-v)                    | :echo
+-   window command       (C-w)                    | :echo
+-   x                    (C-x)                    | :echo
+-   WblPrev              (C-y)                    | :echo
+-   x                    (C-z)                    | :echo
 [links] ------------------------------            | ----------------------------------------
 - Google                                          | https://www.google.com/
   - gmail                                         | https://mail.google.com/mail/u/0/#inbox
