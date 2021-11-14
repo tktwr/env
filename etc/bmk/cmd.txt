@@ -252,6 +252,9 @@
 -   tab close            (Del)         | :echo
 -   view                (C-CR)         | :echo
 -   open                (S-CR)         | :echo
+-   lcd                  (C-.)         | :echo
+-   command mode         (C-;)         | :echo
+-   tjump                (C-])         | :echo
 [ref:keys2] -------------------------- | ----------------------------------------
 -   window 1 top         (C-1)         | :echo
 -   window 2             (C-2)         | :echo
