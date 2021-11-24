@@ -31,7 +31,8 @@
 - 1 MyTabBar                           | :MyTabBar
     ---------------------------------- | ----------------------------------------
 - g MyGgrepHere                        | :silent MyGgrepHere
-- v vimgrep TODO                       | :vimgrep 'TODO' %
+- v MyVimgrepHere                      | :silent MyVimgrepHere *
+-   vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc

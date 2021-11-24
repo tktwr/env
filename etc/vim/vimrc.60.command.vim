@@ -15,17 +15,17 @@ endif
 "------------------------------------------------------
 " func
 "------------------------------------------------------
-func s:MyGrep(args)
+func s:MyVimgrep(args)
   lcd %:h
   silent exec "vimgrep ".a:args
 endfunc
 
-func s:MyGrepHere(args)
+func s:MyVimgrepHere(args)
   lcd %:h
   silent exec "vimgrep <cword> ".a:args
 endfunc
 
-"func s:MyGrep(word)
+"func s:MyVimgrep(word)
 "  silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
 "endfunc
 
@@ -65,8 +65,8 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=+ MyGrep      call s:MyGrep("<args>")
-command -nargs=+ MyGrepHere  call s:MyGrepHere("<args>")
+command -nargs=+ MyVimgrep      call s:MyVimgrep("<args>")
+command -nargs=+ MyVimgrepHere  call s:MyVimgrepHere("<args>")
 
 command -nargs=1 MySetTab    call s:MySetTab("<args>")
 command MyLineNumberToggle   call s:MyLineNumberToggle()
