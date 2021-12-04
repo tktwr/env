@@ -17,6 +17,7 @@ call plug#begin('$MY_VIM/plugged')
 source $MY_VIM/vim-plug/vim-dirdiff.vim
 source $MY_VIM/vim-plug/vim-fugitive.vim
 source $MY_VIM/vim-plug/vim-indent-guides.vim
+source $MY_VIM/vim-plug/vim-quickhl.vim
 source $MY_VIM/vim-plug/vim-easymotion.vim
 source $MY_VIM/vim-plug/tabular.vim
 source $MY_VIM/vim-plug/tagbar.vim
@@ -52,7 +53,6 @@ let g:molokai_original = 1
 "let g:rehash256 = 1
 
 Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 't9md/vim-quickhl'
 
 "------------------------------------------------------
 " vim-plug: IDE

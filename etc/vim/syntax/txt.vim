@@ -24,24 +24,23 @@ syn match    myHtml             "https://.*"
 syn match    myDir              "\f\+/"
 syn match    myVar              "\$\w\+"
 
+syn match    myDate             "\d\+/\d\+"
 syn match    myDate             "\d\+/\d\+/\d\+"
+syn match    myDate             "\d\+/\d\+" contained
+syn match    myDate             "\d\+/\d\+/\d\+" contained
 syn match    myTime             "\d\+:\d\+"
 syn match    myTime             "\d\+:\d\+:\d\+"
 syn match    mySat              "(Sat)"
 syn match    mySun              "(Sun)"
 syn match    myHoliday          "½ËÆü"
 
-syn match    myTag              "\[[^]]*\]"
+syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL
 
-syn match    myINFO             "\[INFO\]"
-syn match    myTODO             "\[TODO\]"
-syn match    myDONE             "\[DONE\]"
-syn match    myCANCEL           "\[CANCEL\]"
-syn match    myFIXED            "\[FIXED\]"
-syn match    mySOLVED           "\[SOLVED\]"
-syn match    myOK               "\[OK\]"
-syn match    myFAIL             "\[FAIL\]"
-syn match    myOBSOLETE         "\[OBSOLETE\]"
+syn keyword  myWORK             WORK contained
+syn keyword  myINFO             INFO contained
+syn keyword  myTODO             TODO contained
+syn keyword  myOK               OK DONE FIXED SOLVED contained
+syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
 syn match    myRed              "\[ *Red *\]"
 syn match    myGreen            "\[ *Green *\]"
@@ -94,15 +93,11 @@ hi link myHoliday          MyRed
 
 hi link myTag              MyPurple
 
+hi link myWORK             MyBlue
 hi link myINFO             MyYellow
 hi link myTODO             MyOrange
-hi link myDONE             MyGreen
-hi link myCANCEL           MyRed
-hi link myFIXED            MyGreen
-hi link mySOLVED           MyGreen
 hi link myOK               MyGreen
 hi link myFAIL             MyRed
-hi link myOBSOLETE         MyOrange
 
 hi link myRed              MyRed  
 hi link myGreen            MyGreen 

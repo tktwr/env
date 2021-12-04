@@ -38,14 +38,13 @@ C:/aa/bb/cc c\dd
 
 Tags
 =======================================================
+[OK|DONE|FIXED|SOLVED]
 [INFO]
 [TODO]
-[DONE]
-[CANCEL]
-[FIXED]
-[SOLVED]
-[OK]
-[FAIL]
+[FAIL|CANCEL|OBSOLETE]
+
+[WORK|TODO]
+[WORK|01/01|TODO]
 
 ## Colors
 [Red   ]
@@ -55,6 +54,14 @@ Tags
 [Purple]
 [Aqua  ]
 [Orange]
+
+[Red   ]
+[Orange]
+[Yellow]
+[Green ]
+[Aqua  ]
+[Blue  ]
+[Purple]
 
 ## Progress
 [  0%]
@@ -114,6 +121,6 @@ abc : 1
 1.0, 2.0, 3.0
 1.00, 2.00, 3.00
 
-[LastChange] Sun Mar 21 09:22:40 JST 2021
+[LastChange] Fri Dec  3 23:10:56 JST 2021
 
 # vim:set syntax=txt nowrap:
