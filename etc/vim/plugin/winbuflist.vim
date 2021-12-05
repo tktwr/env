@@ -17,6 +17,7 @@ func s:SetGlobalVars()
   " set defaults
   let s:wbl_key = "\<End>"
   let s:wbl_max = 10
+  let s:wbl_help = 0
 
   " set global variables
   if exists("g:wbl_key")
@@ -173,6 +174,11 @@ func WblPopupMenuFilter(id, key)
   if a:key == s:wbl_key
     call popup_close(a:id, 0)
     return 1
+  elseif a:key == "?"
+    let s:wbl_help = 1 - s:wbl_help
+    call popup_close(a:id, 0)
+    call WblPopupMenu()
+    return 1
   elseif a:key == "c"
     call popup_close(a:id, 0)
     call WblCopy()
@@ -223,6 +229,11 @@ func WblPopupMenu()
     let s = printf("%3d %s ", i, bufname(i))
     call add(l, s)
   endfor
+  if s:wbl_help
+    let s = printf("[CR:edit, 1-9:winnr, x:delete, c:copy, p:paste, C:clear]")
+    call add(l, s)
+  endif
+
   call popup_menu(l, #{
     \ filter: 'WblPopupMenuFilter',
     \ callback: 'WblPopupMenuHandler',
