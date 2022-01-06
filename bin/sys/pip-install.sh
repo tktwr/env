@@ -22,6 +22,7 @@ pkg_torch="\
 torch===1.6.0 torchvision===0.7.0 -f https://download.pytorch.org/whl/torch_stable.html \
 "
 
-pip install $pkg_vim $pkg_lib
+pip install $pkg_vim
+pip install $pkg_lib
 pip install $pkg_torch
 

@@ -15,13 +15,13 @@ f_min() {
 
 f_log() {
   f_log_clean
-	vim -c "q" --startuptime $(HOME)/vim_log.txt
-	vim -u NONE -c "q" --startuptime $(HOME)/vim_log_zero.txt
+	vim -c "q" --startuptime $HOME/vim_log.txt
+	vim -u NONE -c "q" --startuptime $HOME/vim_log_zero.txt
 }
 
 f_log_clean() {
-	rm -f $(HOME)/vim_log.txt
-	rm -f $(HOME)/vim_log_zero.txt
+	rm -f $HOME/vim_log.txt
+	rm -f $HOME/vim_log_zero.txt
 }
 
 f_help() {

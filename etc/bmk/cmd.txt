@@ -154,7 +154,7 @@
 -   mycmake-set-vs2019-reldeb          | mycmake-set-vs2019-reldeb<CR>
 [terminal:system] -------------------- | ----------------------------------------
 -   pacman -S -h                       | pacman -S -h<CR>
--   pacman -Syu                        | pacman -Syu<CR>
+-   pacman -Syyu                       | pacman -Syyu<CR>
 -   pacman -S <pkg>                    | pacman -S
 -   pacman -R <pkg>                    | pacman -R
 -   pacman -Ss <pattern>               | pacman -Ss
