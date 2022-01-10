@@ -60,9 +60,9 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
-        print(f"args.size: {args.size}")
-        print(f"args.ext: {args.ext}")
-        print(f"args.files: {args.files}")
+        print(f"args.size  : {args.size}")
+        print(f"args.ext   : {args.ext}")
+        print(f"args.files : {args.files}")
         print()
 
     f_conv_images((args.width, args.height), args.ext, args.files)

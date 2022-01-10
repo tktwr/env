@@ -63,7 +63,6 @@ f_print_build() {
 }
 
 f_help() {
-	echo "all         ... status in GIT_DIRS"
 	echo "graph       ... graph  in GIT_DIRS"
 	echo "status      ... status in GIT_DIRS"
 	echo "fetch       ... fetch  in GIT_DIRS"
@@ -72,6 +71,7 @@ f_help() {
 	echo "build       ... build in BUILD_DIRS"
 	echo "clean       ... clean in BUILD_DIRS"
 	echo "print_build ... print build directories"
+	echo "help        ... print help"
 }
 
 #======================================================

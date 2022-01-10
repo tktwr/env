@@ -53,15 +53,13 @@ if __name__ == "__main__":
 
     shape = (h, w, c)
     dtype = args.dtype
-    bgr0 = np.array(args.bgr0)
-    bgr0 = cu.cv_color(bgr0, dtype)
-    bgr1 = np.array(args.bgr1)
-    bgr1 = cu.cv_color(bgr1, dtype)
+    bgr0 = cu.cv_color(args.bgr0, dtype)
+    bgr1 = cu.cv_color(args.bgr1, dtype)
 
     print(f"shape = {shape}")
     print(f"dtype = {dtype}")
-    print(f"bgr0 = {bgr0}")
-    print(f"bgr1 = {bgr1}")
+    print(f"bgr0  = {bgr0}")
+    print(f"bgr1  = {bgr1}")
 
     if args.action == 'new':
         cu.cv_create(args.ofname, shape, dtype, bgr0)

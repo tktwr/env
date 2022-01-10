@@ -15,25 +15,13 @@ def f_image_split(ifname):
     ext = ".png"
 
     img = cu.cv_load(ifname)
-    h, w, ch = cu.cv_size(img)
 
-    if ch >= 3:
-        img_b = img[:, :, 0]
-        ofname_b = f"{name}_b{ext}"
-        cu.cv_save(ofname_b, img_b)
-
-        img_g = img[:, :, 1]
-        ofname_g = f"{name}_g{ext}"
-        cu.cv_save(ofname_g, img_g)
-
-        img_r = img[:, :, 2]
-        ofname_r = f"{name}_r{ext}"
-        cu.cv_save(ofname_r, img_r)
-
-    if ch >= 4:
-        img_a = img[:, :, 3]
-        ofname_a = f"{name}_a{ext}"
-        cu.cv_save(ofname_a, img_a)
+    img_list = cu.cv_split_img(img)
+    idx = 0
+    for i in img_list:
+        ofname = f"{name}_{idx}{ext}"
+        cu.cv_save(ofname, i)
+        idx += 1
 
 
 if __name__ == "__main__":
