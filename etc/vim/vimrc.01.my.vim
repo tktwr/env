@@ -74,6 +74,6 @@ let g:cpm_titles = {
   \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
   \ 'nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
   \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
-  \ 'ref': ['ref:main', 'ref:local', 'ref:keys', 'ref:keys2'],
+  \ 'ref': ['ref:main', 'ref:local', 'ref:keys', 'ref:keys2', 'papers', 'links'],
   \ }
 

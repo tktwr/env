@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # USAGE
-#     conv.py [--width width] [--height height] -e dst_ext image_file...
+#     conv.py [-w width] [-h height] -e dst_ext image_file...
 #
 # EXAMPLES
 #
@@ -13,10 +13,10 @@
 #     conv.py -w 200 -e jpg a.png b.png...
 #
 # - fixed height
-#     conv.py --height 200 -e jpg a.png b.png...
+#     conv.py -h 200 -e jpg a.png b.png...
 #
 # - fixed width and height
-#     conv.py --width 200 --height 100 -e jpg a.png b.png...
+#     conv.py -w 200 -h 100 -e jpg a.png b.png...
 
 import argparse
 from ttpy import FileName
@@ -33,7 +33,10 @@ def f_conv_images(dst_size, dst_ext, files):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='convert images')
+    parser = argparse.ArgumentParser(description='convert images', add_help=False)
+    parser.add_argument('--help',
+                        action='help',
+                        help="show this help message and exit")
     parser.add_argument('-v', '--verbose',
                         action='store_true',
                         help='show verbose message')
@@ -41,7 +44,7 @@ def parse_args():
                         type=int,
                         default=0,
                         help='set width')
-    parser.add_argument('--height',
+    parser.add_argument('-h', '--height',
                         type=int,
                         default=0,
                         help='set height')

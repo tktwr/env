@@ -7,14 +7,12 @@ import cv_util as cu
 import numpy as np
 
 
-def convert_1d_to_2d(l, cols):
-    return [l[i:i + cols] for i in range(0, len(l), cols)]
+def convert_1d_to_2d(l, step):
+    return [l[i:i + step] for i in range(0, len(l), step)]
 
 
-def make_tile(width, cols, ifnames, ofname):
-    w = width // cols
-    h = w
-    blank_img = np.zeros((h, w, 3), np.uint8)
+def make_img_list(ifnames):
+    blank_img = np.zeros((1, 1, 3), np.uint8)
 
     l1 = []
     for i in ifnames:
@@ -24,30 +22,52 @@ def make_tile(width, cols, ifnames, ofname):
             img = cu.cv_load(i)
         l1.append(img)
 
-    l2 = convert_1d_to_2d(l1, cols)
+    return l1
 
-    mycv = cu.ImageTile()
-    img_all = mycv.tile(l2)
-    cu.cv_save(ofname, img_all)
+
+def make_vtile(cols, ifnames):
+    l1 = make_img_list(ifnames)
+    rows = len(l1) // cols
+    l2 = convert_1d_to_2d(l1, rows)
+    return cu.cv_vtile(l2)
+
+
+def make_htile(cols, ifnames):
+    l1 = make_img_list(ifnames)
+    l2 = convert_1d_to_2d(l1, cols)
+    return cu.cv_htile(l2)
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='tiling images')
-    parser.add_argument('file', nargs='*')
-    parser.add_argument('-w', '--width',
-                        type=int,
-                        default=500,
-                        help="set width")
+    parser = argparse.ArgumentParser(description='tiling images', add_help=False)
+    parser.add_argument('--help',
+                        action='help',
+                        help="show this help message and exit")
+    parser.add_argument('-o', '--output',
+                        type=str,
+                        default='tile.png',
+                        help="set output file name")
     parser.add_argument('-c', '--cols',
                         type=int,
                         default=2,
                         help="set columns")
+    parser.add_argument('-h', '--htile',
+                        action='store_true',
+                        help="input files are in horizontal order")
+    parser.add_argument('files',
+                        nargs='+',
+                        type=str,
+                        help='input files')
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
-    make_tile(args.width, args.cols, args.file, "out.png")
+    if args.htile:
+        img = make_htile(args.cols, args.files)
+    else:
+        img = make_vtile(args.cols, args.files)
+    cu.cv_save(args.output, img)
 
 
 if __name__ == "__main__":

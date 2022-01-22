@@ -526,6 +526,12 @@ class App():
         self.cmd_set_img(0, oimg, "range")
         self.cmd_show(0)
 
+    def cmd_brightness_contrast(self, nr, brightness, contrast):
+        img = self.cmd_get_img(nr)
+        oimg = cu.cv_brightness_contrast_img(img, brightness, contrast)
+        self.cmd_set_img(0, oimg, "brightness_contrast")
+        self.cmd_show(0)
+
     #------------------------------------------------------
     # command
     #------------------------------------------------------
@@ -539,28 +545,29 @@ class App():
         quit()
 
     def cmd_help(self):
-        self.cmd_print(f"load(nr, fname)            ... load an image to the image nr")
-        self.cmd_print(f"save(nr, fname)            ... save an image to the image nr")
-        self.cmd_print(f"load_dlg(nr)               ... load an image by dialog to the image nr")
-        self.cmd_print(f"save_dlg(nr)               ... save an image by dialog to the image nr")
-        self.cmd_print(f"show(nr)                   ... show the image nr")
-        self.cmd_print(f"show_crop(nr, uv)          ... show the cropped image nr")
-        self.cmd_print(f"close_all()                ... close all images")
-        self.cmd_print(f"close(nr)                  ... close the image nr")
-        self.cmd_print(f"info_all()                 ... info all images")
-        self.cmd_print(f"info(nr=1)                 ... info the image nr")
-        self.cmd_print(f"new(nr, shape, dtype, val) ... create a new image")
-        self.cmd_print(f"channel(nr, ch)            ... get a channel")
-        self.cmd_print(f"mult(nr, val)              ... multiply val to the image nr")
-        self.cmd_print(f"power(nr, val)             ... power")
-        self.cmd_print(f"add(nr1=1, nr2=2)          ... add the image nr1 to the image nr2")
-        self.cmd_print(f"diff(nr1=1, nr2=2)         ... diff between image nr1 and nr2")
-        self.cmd_print(f"switch(nr1=1, nr2=2)       ... switch image nr1 and nr2")
-        self.cmd_print(f"range(nr, min, max)        ... range from min to max")
-        self.cmd_print(f"print(text)                ... print text")
-        self.cmd_print(f"clear()                    ... clear text")
-        self.cmd_print(f"quit()                     ... quit this app")
-        self.cmd_print(f"help()                     ... print help")
+        self.cmd_print(f"load(nr, fname)                               ... load an image to the image nr")
+        self.cmd_print(f"save(nr, fname)                               ... save an image to the image nr")
+        self.cmd_print(f"load_dlg(nr)                                  ... load an image by dialog to the image nr")
+        self.cmd_print(f"save_dlg(nr)                                  ... save an image by dialog to the image nr")
+        self.cmd_print(f"show(nr)                                      ... show the image nr")
+        self.cmd_print(f"show_crop(nr, uv)                             ... show the cropped image nr")
+        self.cmd_print(f"close_all()                                   ... close all images")
+        self.cmd_print(f"close(nr)                                     ... close the image nr")
+        self.cmd_print(f"info_all()                                    ... info all images")
+        self.cmd_print(f"info(nr=1)                                    ... info the image nr")
+        self.cmd_print(f"new(nr, shape, dtype, val)                    ... create a new image")
+        self.cmd_print(f"channel(nr, ch)                               ... get a channel")
+        self.cmd_print(f"mult(nr, val)                                 ... multiply val to the image nr")
+        self.cmd_print(f"power(nr, val)                                ... power")
+        self.cmd_print(f"add(nr1=1, nr2=2)                             ... add the image nr1 to the image nr2")
+        self.cmd_print(f"diff(nr1=1, nr2=2)                            ... diff between image nr1 and nr2")
+        self.cmd_print(f"switch(nr1=1, nr2=2)                          ... switch image nr1 and nr2")
+        self.cmd_print(f"range(nr, min, max)                           ... range from min to max")
+        self.cmd_print(f"brightness_contrast(nr, brightness, contrast) ... set brightness and contrast")
+        self.cmd_print(f"print(text)                                   ... print text")
+        self.cmd_print(f"clear()                                       ... clear text")
+        self.cmd_print(f"quit()                                        ... quit this app")
+        self.cmd_print(f"help()                                        ... print help")
 
     #------------------------------------------------------
     # parse_args

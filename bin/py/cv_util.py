@@ -173,6 +173,16 @@ def cv_crop_center_img(img, center, size):
     return cv_crop_img(img, pos, size)
 
 
+def cv_brightness_contrast_img(img, brightness, contrast):
+    a = 1.0 + contrast;
+    b = brightness - contrast * 0.5;
+
+    img = a * img + b
+    oimg = np.clip(img, 0.0, None)
+
+    return oimg;
+
+
 #======================================================
 # interface for file
 #======================================================
@@ -243,36 +253,40 @@ def cv_save(ifname, img):
 # tiling image
 #======================================================
 
-class ImageTile():
-    def __init__(self):
-        pass
+def cv_convert_to_bgr(img_list):
+    l = []
+    for i in img_list:
+        if len(i.shape) == 3:
+            l.append(i)
+        elif len(i.shape) == 4:
+            bgr = cv_bgra_to_bgr_img(i)
+            l.append(bgr)
+        elif len(i.shape) == 1:
+            bgr = cv2.cvtColor(i, cv2.COLOR_GRAY2BGR)
+            l.append(bgr)
+    return l
 
-    def convert_to_bgr(self, img_list):
-        l = []
-        for i in img_list:
-            if len(i.shape) == 3:
-                l.append(i)
-            elif len(i.shape) == 4:
-                bgr = cv_bgra_to_bgr_img(i)
-                l.append(bgr)
-            elif len(i.shape) == 1:
-                bgr = cv2.cvtColor(i, cv2.COLOR_GRAY2BGR)
-                l.append(bgr)
-        return l
 
-    def hconcat(self, img_list, interpolation=cv2.INTER_AREA):
-        l = self.convert_to_bgr(img_list)
-        h_min = min(i.shape[0] for i in l)
-        img_list_resize = [cv2.resize(i, (int(h_min * i.shape[1] / i.shape[0]), h_min), interpolation=interpolation) for i in l]
-        return cv2.hconcat(img_list_resize)
+def cv_hconcat(img_list, interpolation=cv2.INTER_AREA):
+    l = cv_convert_to_bgr(img_list)
+    h_min = min(i.shape[0] for i in l)
+    img_list_resize = [cv2.resize(i, (int(h_min * i.shape[1] / i.shape[0]), h_min), interpolation=interpolation) for i in l]
+    return cv2.hconcat(img_list_resize)
 
-    def vconcat(self, img_list, interpolation=cv2.INTER_AREA):
-        l = self.convert_to_bgr(img_list)
-        w_min = min(i.shape[1] for i in l)
-        img_list_resize = [cv2.resize(i, (w_min, int(w_min * i.shape[0] / i.shape[1])), interpolation=interpolation) for i in l]
-        return cv2.vconcat(img_list_resize)
 
-    def tile(self, img_list_2d, interpolation=cv2.INTER_AREA):
-        img_list_v = [self.hconcat(img_list_h, interpolation) for img_list_h in img_list_2d]
-        return self.vconcat(img_list_v, interpolation)
+def cv_vconcat(img_list, interpolation=cv2.INTER_AREA):
+    l = cv_convert_to_bgr(img_list)
+    w_min = min(i.shape[1] for i in l)
+    img_list_resize = [cv2.resize(i, (w_min, int(w_min * i.shape[0] / i.shape[1])), interpolation=interpolation) for i in l]
+    return cv2.vconcat(img_list_resize)
+
+
+def cv_htile(img_list_2d, interpolation=cv2.INTER_AREA):
+    img_list_v = [cv_hconcat(img_list_h, interpolation) for img_list_h in img_list_2d]
+    return cv_vconcat(img_list_v, interpolation)
+
+
+def cv_vtile(img_list_2d, interpolation=cv2.INTER_AREA):
+    img_list_h = [cv_vconcat(img_list_v, interpolation) for img_list_v in img_list_2d]
+    return cv_hconcat(img_list_h, interpolation)
 

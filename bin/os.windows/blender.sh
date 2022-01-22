@@ -1,10 +1,8 @@
 #!/bin/bash
 
 export PATH="\
+$SYS_PROG64_DIR/Blender Foundation/Blender 3.0:\
 $SYS_PROG64_DIR/Blender Foundation/Blender 2.93:\
-$SYS_PROG64_DIR/Blender Foundation/Blender 2.92:\
-$SYS_PROG64_DIR/Blender Foundation/Blender 2.83:\
-$SYS_PROG64_DIR/Blender Foundation/Blender:\
 $PATH"
 
 BIN_FILE="blender.exe"
