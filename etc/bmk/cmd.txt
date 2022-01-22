@@ -18,6 +18,7 @@
 - V BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
 - x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
     ---------------------------------- | ----------------------------------------
+- E MyIDE                              | :MyIDE
 - I MyWinInitSize                      | :MyWinInitSize
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle
 - G MyTagbarToggle                     | :MyTagbarToggle
@@ -59,7 +60,6 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
-- E MyIDE                              | :MyIDE
 - c MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
@@ -197,10 +197,15 @@
 -   git-ls-no-x                        | git-ls-no-x
 -   git-upgrade                        | git update-git-for-windows<CR>
 [ref:main] --------------------------- | ----------------------------------------
+- T Google翻訳                         | https://translate.google.co.jp/
+- D DeepL翻訳                          | https://www.deepl.com/ja/translator
+- C Cppreference                       | https://ja.cppreference.com/w/
+- P Python Doc                         | https://docs.python.org/ja/3/index.html
+- B Blender Python API                 | https://docs.blender.org/api/current/index.html
+- N nkmk                               | https://note.nkmk.me/
+    ---------------------------------- | ----------------------------------------
 -   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
 -   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
--   Google翻訳                         | https://translate.google.co.jp/
--   DeepL翻訳                          | https://www.deepl.com/ja/translator
     ---------------------------------- | ----------------------------------------
 - H Help                               | :MyHelp
 -   Help.index                         | :MyHelp index
