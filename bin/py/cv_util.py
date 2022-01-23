@@ -11,7 +11,9 @@ import ttpy as tu
 #======================================================
 # interface for image
 #======================================================
-
+#------------------------------------------------------
+# convert dtype
+#------------------------------------------------------
 def cv_maximum(dtype):
     if dtype == 'uint8':
         maximum = 255
@@ -23,58 +25,20 @@ def cv_maximum(dtype):
 
 
 # col: [0.0, 1.0]
-def cv_color(col, dtype):
-    return (np.array(col) * cv_maximum(dtype)).astype(dtype)
+def cv_color(col, dst_dtype):
+    dmax = cv_maximum(dst_dtype)
+    return (np.array(col) * dmax).astype(dst_dtype)
 
 
-def cv_size(img):
-    if len(img.shape) == 3:
-        h, w, ch = img.shape[:3]
-    else:
-        h, w = img.shape[:2]
-        ch = 1
-    return (h, w, ch)
+def cv_cvt_dtype(img, dst_dtype):
+    smax = cv_maximum(img.dtype)
+    dmax = cv_maximum(dst_dtype)
+    return np.clip(img/smax * dmax, 0, dmax).astype(dst_dtype)
 
 
-def cv_create_img(shape, dtype, val):
-    return (np.ones(shape) * val).astype(dtype)
-
-
-def cv_create_hgrad_img(shape, dtype, co0, co1):
-    img = np.ones(shape)
-    h, w = shape[:2]
-    for y in range(0, h):
-        for x in range(0, w):
-            t = float(x) / (w - 1)
-            img[y, x] = (1 - t) * co0 + t * co1
-    return img.astype(dtype)
-
-
-def cv_create_vgrad_img(shape, dtype, co0, co1):
-    img = np.ones(shape)
-    h, w = shape[:2]
-    for y in range(0, h):
-        for x in range(0, w):
-            t = float(y) / (h - 1)
-            img[y, x] = (1 - t) * co0 + t * co1
-    return img.astype(dtype)
-
-
-def cv_resize_img(img, dst_wh):
-    h, w = img.shape[:2]
-    src_wh = (w, h)
-    new_wh = tu.fix_size(src_wh, dst_wh)
-    return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
-
-
-def cv_uint16_to_uint8_img(img):
-    return np.clip(img * 255 / 65535, 0, 255).astype(np.uint8)
-
-
-def cv_uint8_to_uint16_img(img):
-    return np.clip(img * 65535 / 255, 0, 65535).astype(np.uint16)
-
-
+#------------------------------------------------------
+# convert channel
+#------------------------------------------------------
 def cv_bgr_to_rgb_img(img):
     spl = cv2.split(img)
     return cv2.merge((spl[2], spl[1], spl[0]))
@@ -115,6 +79,87 @@ def cv_split_img(img):
 
 def cv_merge_img(img_list):
     return cv2.merge(img_list)
+
+
+#------------------------------------------------------
+# convert pixel value
+#------------------------------------------------------
+# brightness: [-1, 1]
+# contrast  : [-1, 1]
+def cv_brightness_contrast_img(img, brightness, contrast):
+    a = 1.0 + contrast;
+    b = brightness - contrast * 0.5;
+
+    dtype = img.dtype
+    img = cv_cvt_dtype(img, 'float32')
+
+    img = a * img + b
+    oimg = np.clip(img, 0.0, None)
+
+    return cv_cvt_dtype(oimg, dtype)
+
+
+#------------------------------------------------------
+# convert for image list
+#------------------------------------------------------
+def cv_cvt_to_bgr_img_list(img_list):
+    l = []
+    for i in img_list:
+        if len(i.shape) == 3:
+            l.append(i)
+        elif len(i.shape) == 4:
+            bgr = cv_bgra_to_bgr_img(i)
+            l.append(bgr)
+        elif len(i.shape) == 1:
+            bgr = cv2.cvtColor(i, cv2.COLOR_GRAY2BGR)
+            l.append(bgr)
+    return l
+
+
+#------------------------------------------------------
+# create
+#------------------------------------------------------
+def cv_create_img(shape, dtype, val):
+    return (np.ones(shape) * val).astype(dtype)
+
+
+def cv_create_hgrad_img(shape, dtype, co0, co1):
+    img = np.ones(shape)
+    h, w = shape[:2]
+    for y in range(0, h):
+        for x in range(0, w):
+            t = float(x) / (w - 1)
+            img[y, x] = (1 - t) * co0 + t * co1
+    return img.astype(dtype)
+
+
+def cv_create_vgrad_img(shape, dtype, co0, co1):
+    img = np.ones(shape)
+    h, w = shape[:2]
+    for y in range(0, h):
+        for x in range(0, w):
+            t = float(y) / (h - 1)
+            img[y, x] = (1 - t) * co0 + t * co1
+    return img.astype(dtype)
+
+
+#------------------------------------------------------
+# resize
+#------------------------------------------------------
+def cv_size(img):
+    if len(img.shape) == 3:
+        h, w, ch = img.shape[:3]
+    else:
+        h, w = img.shape[:2]
+        ch = 1
+    return (h, w, ch)
+
+
+def cv_resize_img(img, dst_wh):
+    h, w = img.shape[:2]
+    src_wh = (w, h)
+    new_wh = tu.fix_size(src_wh, dst_wh)
+    return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
 
 
 # pos  : [x, y]
@@ -171,16 +216,6 @@ def cv_crop_center_img(img, center, size):
     pos[0] = center[0] - (size[0] // 2)
     pos[1] = center[1] - (size[1] // 2)
     return cv_crop_img(img, pos, size)
-
-
-def cv_brightness_contrast_img(img, brightness, contrast):
-    a = 1.0 + contrast;
-    b = brightness - contrast * 0.5;
-
-    img = a * img + b
-    oimg = np.clip(img, 0.0, None)
-
-    return oimg;
 
 
 #======================================================
@@ -253,29 +288,15 @@ def cv_save(ifname, img):
 # tiling image
 #======================================================
 
-def cv_convert_to_bgr(img_list):
-    l = []
-    for i in img_list:
-        if len(i.shape) == 3:
-            l.append(i)
-        elif len(i.shape) == 4:
-            bgr = cv_bgra_to_bgr_img(i)
-            l.append(bgr)
-        elif len(i.shape) == 1:
-            bgr = cv2.cvtColor(i, cv2.COLOR_GRAY2BGR)
-            l.append(bgr)
-    return l
-
-
 def cv_hconcat(img_list, interpolation=cv2.INTER_AREA):
-    l = cv_convert_to_bgr(img_list)
+    l = cv_cvt_to_bgr_img_list(img_list)
     h_min = min(i.shape[0] for i in l)
     img_list_resize = [cv2.resize(i, (int(h_min * i.shape[1] / i.shape[0]), h_min), interpolation=interpolation) for i in l]
     return cv2.hconcat(img_list_resize)
 
 
 def cv_vconcat(img_list, interpolation=cv2.INTER_AREA):
-    l = cv_convert_to_bgr(img_list)
+    l = cv_cvt_to_bgr_img_list(img_list)
     w_min = min(i.shape[1] for i in l)
     img_list_resize = [cv2.resize(i, (w_min, int(w_min * i.shape[0] / i.shape[1])), interpolation=interpolation) for i in l]
     return cv2.vconcat(img_list_resize)

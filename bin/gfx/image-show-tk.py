@@ -15,15 +15,12 @@ from PIL import Image, ImageTk
 
 
 def cvimg_to_imgtk(img):
-    if img.dtype == np.float32:
-        img = np.clip(img * 255, 0, 255).astype(np.uint8)
-    elif img.dtype == np.uint16:
-        img = np.clip(img/65535 * 255, 0, 255).astype(np.uint8)
-
+    img = cu.cv_cvt_dtype(img, 'uint8')
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pil = Image.fromarray(img_rgb)
     img_tk  = ImageTk.PhotoImage(img_pil)
     return img_tk
+
 
 #======================================================
 # ImagePkg
