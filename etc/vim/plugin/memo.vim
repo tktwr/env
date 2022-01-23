@@ -68,8 +68,38 @@ func! s:DefineCommands()
   nnoremap <buffer> <silent> h B
 endfunc
 
+func! s:MemoSyntax()
+  syn keyword  memoCPP             cpp
+  syn keyword  memoPY              py
+  syn keyword  memoSH              sh
+  syn keyword  memoVIM             vim
+  syn keyword  memoGIT             git
+  syn keyword  memoINIT            init
+  syn keyword  memoMY              my
+  syn keyword  memoOS              os
+  syn keyword  memoPROG            prog
+  syn keyword  memoDEV             dev
+  syn match    memoTAG             "\[[^]]*\]"
+  hi link memoCPP             MyRed
+  hi link memoPY              MyYellow
+  hi link memoSH              MyOrange
+  hi link memoVIM             MyGreen
+  hi link memoGIT             MyAqua
+  hi link memoINIT            MyPurple
+  hi link memoMY              MyBlue
+  hi link memoOS              MyYellow
+  hi link memoPROG            MyRed
+  hi link memoDEV             MyGreen
+  hi link memoTAG             MyPurple
+endfunc
+
+func! s:MemoFileType()
+  call s:DefineCommands()
+  call s:MemoSyntax()
+endfunc
+
 augroup ag_memo
   autocmd!
-  autocmd FileType memo    call s:DefineCommands()
+  autocmd FileType memo    call s:MemoFileType()
 augroup END
 
