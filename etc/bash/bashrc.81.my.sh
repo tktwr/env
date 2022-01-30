@@ -257,6 +257,7 @@ if [ "$VIM_TERMINAL" ]; then
   alias GV='vimapi.sh --in-new-tab MyGV'
   alias E='vimapi.sh --in-new-tab MyIDE'
   alias T='vimapi.sh MyTerm'
+  alias N='vimapi.sh new'
 
   if [ $MY_VIM_USE_FERN -eq 1 ]; then
     #alias D='vimapi-fern'

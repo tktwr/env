@@ -35,8 +35,10 @@ nnoremap '       `
 " fold on/off
 nnoremap ==      zi
 
- nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
- xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
+"nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
+"xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
+ nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
+ xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  nnoremap <silent> <C-B>   :edit $MY_BMK/bmk.txt<CR>
 "nnoremap <silent> <C-C>   :echo 'C-C'<CR>
  nnoremap <silent> <C-D>   <C-B>

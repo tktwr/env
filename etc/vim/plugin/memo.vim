@@ -70,6 +70,7 @@ endfunc
 
 func! s:MemoSyntax()
   syn keyword  memoCPP             cpp
+  syn keyword  memoCPP_LIB         cpp_lib
   syn keyword  memoPY              py
   syn keyword  memoSH              sh
   syn keyword  memoVIM             vim
@@ -81,6 +82,7 @@ func! s:MemoSyntax()
   syn keyword  memoDEV             dev
   syn match    memoTAG             "\[[^]]*\]"
   hi link memoCPP             MyRed
+  hi link memoCPP_LIB         MyRed
   hi link memoPY              MyYellow
   hi link memoSH              MyOrange
   hi link memoVIM             MyGreen

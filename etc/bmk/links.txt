@@ -15,7 +15,7 @@
 -   ArchWiki                                        | https://wiki.archlinux.jp/
 -   SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
     ------------------------------------            | ----------------------------------------
--   cppreference                                    | https://ja.cppreference.com/w/
+- c cppreference                                    | https://ja.cppreference.com/w/
 -   cpprefjp                                        | https://cpprefjp.github.io/
 -   clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
     ------------------------------------            | ----------------------------------------
@@ -24,7 +24,7 @@
 -     tutorial                                      | https://docs.python.org/ja/3/tutorial/
 -     tkinter                                       | https://docs.python.org/ja/3/library/tkinter.html
 -   nkmk                                            | https://note.nkmk.me/
--     nkmk.python                                   | https://note.nkmk.me/python/
+- p   nkmk.python                                   | https://note.nkmk.me/python/
 -     nkmk.numpy                                    | https://note.nkmk.me/numpy/
 -   基礎文法とサンプル集                            | https://algorithm.joho.info/programming/python/sample-code-py/
 -     numpy                                         | https://algorithm.joho.info/programming/python/numpy-sample-code/
@@ -67,12 +67,13 @@
 -   OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 -   OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 -   glTF                                            | https://www.khronos.org/gltf/
--     glTF 2.0 Specification                        | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
--     Extensions for glTF 2.0                       | https://github.com/KhronosGroup/glTF/tree/main/extensions
+- g   glTF 2.0 Specification                        | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
+- e   Extensions for glTF 2.0                       | https://github.com/KhronosGroup/glTF/tree/main/extensions
 -       KHR_materials_specular                      | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
 -     glTF extensions                               | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
 -     glTF viewer (old)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
 -     glTF viewer (new)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer
+- V   glTF-Sample-Viewer                            | https://github.khronos.org/glTF-Sample-Viewer-Release/
 -     glTF-Sample-Models                            | https://github.com/KhronosGroup/glTF-Sample-Models
 -   Learn OpenGL                                    | https://learnopengl.com/
 -   Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
@@ -85,7 +86,7 @@
 -     Blender Reference Manual                      | https://docs.blender.org/manual/en/latest/
 -       PrincipledBSDF                              | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
 -       Open Shading Language                       | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
--     Blender Python API Documentation              | https://docs.blender.org/api/current/index.html
+- b   Blender Python API Documentation              | https://docs.blender.org/api/current/index.html
 -       Object(ID)                                  | https://docs.blender.org/api/current/bpy.types.Object.html
 -       UILayout                                    | https://docs.blender.org/api/current/bpy.types.UILayout.html
 -   Develop Add-ons                                 | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/

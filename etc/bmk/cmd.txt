@@ -14,17 +14,18 @@
     ---------------------------------- | ----------------------------------------
 - D MyFernDrawer                       | :MyFernDrawer %:p:h
 - C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
-- U BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
-- V BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
+- V BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
+- O BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
 - x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
     ---------------------------------- | ----------------------------------------
 - E MyIDE                              | :MyIDE
-- I MyWinInitSize                      | :MyWinInitSize
-- F MyFernDrawerToggle                 | :MyFernDrawerToggle
-- G MyTagbarToggle                     | :MyTagbarToggle
+- N Editor                             | :new
 - T Term                               | :MyTerm
 - M Memo                               | :Memo
 - H Help                               | :MyHelp
+- I MyWinInitSize                      | :MyWinInitSize
+- F MyFernDrawerToggle                 | :MyFernDrawerToggle
+- G MyTagbarToggle                     | :MyTagbarToggle
 - X Wx                                 | :Wx 0
     ---------------------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
@@ -98,6 +99,8 @@
 [buffer:fern] ------------------------ | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
+- V MyFernViewItem      (C-CR)         | :call MyFernViewItem()
+- O MyFernOpenItem      (S-CR)         | :call MyFernOpenItem()
     ---------------------------------- | ----------------------------------------
 -   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
 -   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
@@ -130,6 +133,7 @@
 -   MyIDE                  (E)         | E<CR>
 -   MyFernDrawer           (D)         | D<CR>
 -   MyFernDrawerToggle     (F)         | F<CR>
+-   new                    (N)         | N<CR>
 -   MyTerm                 (T)         | T<CR>
 -   MyTermV               (TV)         | TV<CR>
 -   MyWinInitSize          (I)         | I<CR>
