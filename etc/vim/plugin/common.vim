@@ -160,7 +160,13 @@ func TtStatuslineFname()
 endfunc
 
 func TtStatuslineIndicator()
-  return "%m%r%h%w%q%y"
+  if &ft == &syn
+    let type = "[".&ft."]"
+  else
+    let type = "[".&ft.",".&syn."]"
+  endif
+
+  return type."%m%r%w%q"
 endfunc
 
 func TtStatuslineFileEnc()
