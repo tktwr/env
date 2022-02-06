@@ -16,13 +16,14 @@ endfunc
 func s:MyWinInitSizeForEachWin()
   if &buftype == 'terminal'
     exec "resize" g:my_term_winheight
-  else
-    exec "normal \<C-W>="
+  elseif winnr() == 2 && &filetype == 'fern'
+    exec "resize" g:my_fern_2nd_winheight
   endif
 endfunc
 
 func MyWinInitSize()
   1wincmd w
+  exec "normal \<C-W>="
   exec "vertical resize" g:my_left_winwidth
   2,$windo call s:MyWinInitSizeForEachWin()
 endfunc

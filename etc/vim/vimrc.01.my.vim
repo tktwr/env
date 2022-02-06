@@ -28,6 +28,7 @@ let g:my_term_winheight = 10
 let g:my_term_winheight_max = 20
 let g:my_trans_winheight = 10
 let g:my_gstatus_winheight = 10
+let g:my_fern_2nd_winheight = 18
 
 let g:my_winwidth_max = 110
 let g:my_help_winwidth = 82
@@ -42,6 +43,8 @@ let g:my_use_fern = $MY_VIM_USE_FERN
 func MyLeftWin()
   if g:my_use_fern
     call MyFernDrawerToggle()
+    below split
+    exec "resize" g:my_fern_2nd_winheight
   else
     call MyNERDTreeToggle()
   endif

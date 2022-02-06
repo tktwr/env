@@ -12,9 +12,10 @@ hi! link User7   MyOrangeRevBold
 func MyStatusline()
   let stat = "%{TtStatuslineWinNr()}"
   let stat.= TtStatuslineFname()
+  let stat.= "%{TtStatuslineFileType()}"
   let stat.= TtStatuslineIndicator()
   let stat.= "%{TtStatuslineFileEnc()}"
-  let stat.= "%<%="
+  let stat.= TtStatuslineSeparator()
   let stat.= TtStatuslineLineInfo()
 
   if $MY_PROMPT_TYPE >= 3

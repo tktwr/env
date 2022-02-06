@@ -159,14 +159,21 @@ func TtStatuslineFname()
   return color."%t"."%0* "
 endfunc
 
-func TtStatuslineIndicator()
-  if &ft == &syn
-    let type = "[".&ft."]"
+func TtStatuslineFileType()
+  let ft = getwinvar(0, '&ft')
+  let syn = getwinvar(0, '&syn')
+
+  if ft == syn
+    let type = "[".ft."]"
   else
-    let type = "[".&ft.",".&syn."]"
+    let type = "[".ft.",".syn."]"
   endif
 
-  return type."%m%r%w%q"
+  return type
+endfunc
+
+func TtStatuslineIndicator()
+  return "%m%r%w%q"
 endfunc
 
 func TtStatuslineFileEnc()
@@ -187,10 +194,16 @@ func TtStatuslineLineInfo()
   return stat
 endfunc
 
+func TtStatuslineSeparator()
+  return "%<%="
+endfunc
+
 func TtStatuslineForSideBar()
   let stat = "%{TtStatuslineWinNr()}"
   let stat.= "%t "
-  let stat.= "%m%y"
+  let stat.= "%{TtStatuslineFileType()}"
+  let stat.= TtStatuslineIndicator()
+  let stat.= TtStatuslineSeparator()
   return stat
 endfunc
 
