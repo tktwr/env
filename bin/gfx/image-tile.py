@@ -20,6 +20,9 @@ def make_img_list(ifnames):
             img = blank_img
         else:
             img = cu.cv_load(i)
+            h, w, ch = cu.cv_size(img)
+            if ch == 4:
+                img = cu.cv_bgra_to_bgr_img(img)
         l1.append(img)
 
     return l1
