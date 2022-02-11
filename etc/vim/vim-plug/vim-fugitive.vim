@@ -17,12 +17,12 @@ augroup END
 
 "------------------------------------------------------
 func s:MyGgrep(word)
-  exec "Ggrep -I" a:word "-- ':!tags*'"
-endfunc
+  let word = MyPrompt("Word? ", a:word)
+  if word == ""
+    return
+  endif
 
-func s:MyGgrepHere()
-  exec "Ggrep -I <cword> -- ':!tags*'"
-  redraw!
+  exec "Ggrep -I" word "-- ':!tags*'"
 endfunc
 
 func MyGitLog()
@@ -40,8 +40,7 @@ func MyGstatusToggle()
 endfunc
 
 "------------------------------------------------------
-command -nargs=+ MyGgrep          call s:MyGgrep("<args>")
-command -nargs=0 MyGgrepHere      call s:MyGgrepHere()
+command -nargs=1 MyGgrep          call s:MyGgrep(<f-args>)
 command          MyGitLog         call MyGitLog()
 command          MyGstatusToggle  call MyGstatusToggle()
 

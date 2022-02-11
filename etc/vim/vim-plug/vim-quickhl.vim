@@ -10,3 +10,15 @@ let g:quickhl_manual_colors = [
       \ "cterm=bold ctermfg=255 ctermbg=92  ",
       \ "cterm=bold ctermfg=255 ctermbg=161 ",
       \ ]
+
+func MyQuickhl(word)
+  let word = MyPrompt("Word? ", a:word)
+  if word == ""
+    return
+  endif
+
+  exec "QuickhlManualAdd!" word
+endfunc
+
+command -nargs=1 MyQuickhl   call MyQuickhl(<f-args>)
+

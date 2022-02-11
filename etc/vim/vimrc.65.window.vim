@@ -22,12 +22,8 @@ endfunc
 " buffer exchange
 "------------------------------------------------------
 func MyWinBufExchange(winnr)
-  let winnr = a:winnr
-  if winnr == 0
-    let winnr = input("winnr? ")
-  endif
+  let winnr = MyPrompt("Winnr? ", a:winnr)
   if winnr == ""
-    echo "canceled"
     return
   endif
 
@@ -40,12 +36,8 @@ func MyWinBufExchange(winnr)
 endfunc
 
 func MyWinBufCopy(winnr)
-  let winnr = a:winnr
-  if winnr == 0
-    let winnr = input("winnr? ")
-  endif
+  let winnr = MyPrompt("Winnr? ", a:winnr)
   if winnr == ""
-    echo "canceled"
     return
   endif
 

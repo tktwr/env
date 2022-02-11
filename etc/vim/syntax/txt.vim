@@ -21,24 +21,24 @@ syn match    myString           "'[^']*'"
 syn match    myHtml             "<[^>]*>"
 syn match    myHtml             "http://.*"
 syn match    myHtml             "https://.*"
-syn match    myDir              "\f\+/"
+syn match    myDir              "[/\.\-0-9A-Za-z_]\+/"
 syn match    myVar              "\$\w\+"
 
-syn match    myDate             "\d\+/\d\+"
-syn match    myDate             "\d\+/\d\+/\d\+"
-syn match    myDate             "\d\+/\d\+" contained
-syn match    myDate             "\d\+/\d\+/\d\+" contained
-syn match    myTime             "\d\+:\d\+"
-syn match    myTime             "\d\+:\d\+:\d\+"
-syn match    mySat              "(Sat)"
-syn match    mySun              "(Sun)"
-syn match    myHoliday          "½ËÆü"
+syn match    myDate             "\d\{1,2}/\d\{1,2}"
+syn match    myDate             "\d\{4}/\d\{2}/\d\{2}"
+syn match    myTime             "\d\{1,2}:\d\{1,2}"
+syn match    myTime             "\d\{1,2}:\d\{1,2}:\d\{1,2}"
+syn keyword  mySat              Sat
+syn keyword  mySun              Sun
+syn keyword  myHoliday          ½ËÆü
+syn keyword  myHoliday          Holiday
 
+syn match    myTagR             '([^)]*)' contains=mySat,mySun
 syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL
 
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
-syn keyword  myTODO             TODO contained
+syn keyword  myTODO             TODO
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
@@ -91,6 +91,7 @@ hi link mySat              MyBlue
 hi link mySun              MyRed
 hi link myHoliday          MyRed
 
+hi link myTagR             MyAqua
 hi link myTag              MyPurple
 
 hi link myWORK             MyBlue

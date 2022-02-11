@@ -15,19 +15,15 @@ endif
 "------------------------------------------------------
 " func
 "------------------------------------------------------
-func s:MyVimgrep(args)
-  lcd %:h
-  silent exec "vimgrep ".a:args
-endfunc
+func MyVimgrep(word, files)
+  let word = MyPrompt("Word? ", a:word)
+  if word == ""
+    return
+  endif
 
-func s:MyVimgrepHere(args)
   lcd %:h
-  silent exec "vimgrep <cword> ".a:args
+  silent exec "vimgrep" word a:files
 endfunc
-
-"func s:MyVimgrep(word)
-"  silent exec "vimgrep ".a:word." **/*.hpp **/*.hxx **/*.h **/*.cpp **/*.cxx **/*.c **/*.py **/*.vim **/*.sh **/*.html **/*.md **/*.txt"
-"endfunc
 
 func s:MySetTab(nr)
   let &tabstop=a:nr
@@ -65,15 +61,13 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=+ MyVimgrep      call s:MyVimgrep("<args>")
-command -nargs=+ MyVimgrepHere  call s:MyVimgrepHere("<args>")
-
-command -nargs=1 MySetTab    call s:MySetTab("<args>")
+command -nargs=+ MyVimgrep   call MyVimgrep(<f-args>)
+command -nargs=1 MySetTab    call s:MySetTab(<f-args>)
 command MyLineNumberToggle   call s:MyLineNumberToggle()
 command MyCheckEnv           call s:MyCheckEnv()
 
 " apply the command to each entry in the quickfix list
-command MyCdo      cdo execute "normal! @q" | w
+command MyCdo      cdo  execute "normal! @q" | w
 " apply the command to each file in the quickfix list
 command MyCfdo     cfdo execute "normal! @q" | w
 

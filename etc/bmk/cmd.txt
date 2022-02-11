@@ -13,30 +13,30 @@
 - w engword                            | $MY_CONFIG/local/eng/eng.txt
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
-    ---------------------------------- | ----------------------------------------
-- D MyFernDrawer                       | :MyFernDrawer %:p:h
+    --- (IDE) ------------------------ | ----------------------------------------
+- E IDE                                | :MyIDE
+- D Fern                               | :MyFernDrawer %:p:h
+- G Tagbar                             | :MyTagbarToggle
+- N Editor                             | :new
+- T Term                               | :MyTerm
+- I MyWinInitSize                      | :MyWinInitSize
+- X Wx                                 | :Wx ?
 - C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
+    --- (Develop) -------------------- | ----------------------------------------
+- H Help                               | :MyHelp
+- M Memo                               | :Memo
+- q MyQuickhl            (C-a)         | :MyQuickhl ??
+- g MyGgrep                            | :silent MyGgrep ??
+- v MyVimgrep                          | :silent MyVimgrep ?? *
+-   vimgrep TODO                       | :vimgrep 'TODO' %
+    --- (External) ------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
 - O BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
 - x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
-    ---------------------------------- | ----------------------------------------
-- E MyIDE                              | :MyIDE
-- N Editor                             | :new
-- T Term                               | :MyTerm
-- M Memo                               | :Memo
-- H Help                               | :MyHelp
-- I MyWinInitSize                      | :MyWinInitSize
-- F MyFernDrawerToggle                 | :MyFernDrawerToggle
-- G MyTagbarToggle                     | :MyTagbarToggle
-- X Wx                                 | :Wx 0
-    ---------------------------------- | ----------------------------------------
+    --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
 - 1 MyTabBar                           | :MyTabBar
-    ---------------------------------- | ----------------------------------------
-- g MyGgrepHere                        | :silent MyGgrepHere
-- v MyVimgrepHere                      | :silent MyVimgrepHere *
--   vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
@@ -70,7 +70,8 @@
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buffer:subsub] ---------------------- | ----------------------------------------
--   Wc                                 | :Wc 0
+- F MyFernDrawerToggle                 | :MyFernDrawerToggle
+-   Wc                                 | :Wc ?
 -   MyBufDelete                        | :MyBufDelete
     ---------------------------------- | ----------------------------------------
 -   quit                   (Q)         | :confirm qall
@@ -217,17 +218,13 @@
 -   Help.index                         | :MyHelp index
 -   Help.expression-syntax             | :MyHelp expression-syntax
 -   Help.pattern-overview              | :MyHelp pattern-overview
-    ---------------------------------- | ----------------------------------------
 - M Memo                               | :Memo
-- m Memo.my                            | :Memo my
-- v Memo.vim                           | :Memo vim
-- g Memo.git                           | :Memo git
-- l Memo.links                         | :Memo links
-- c Memo.cpp.syntax                    | :Memo cpp.syntax
-- p Memo.py.syntax                     | :Memo py.syntax
-    ---------------------------------- | ----------------------------------------
--   Man                                | :MyMan ?
--   Pydoc                              | :MyPydoc ?
+- m Man                                | :MyMan ??
+- p Pydoc                              | :MyPydoc ??
+-   MyTrans                            | :MyTrans
+-   MyDict                             | :MyDict
+-   EJ                                 | :EJ ??
+-   EE                                 | :EE ??
     ---------------------------------- | ----------------------------------------
 -   tags.bin_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_sh"), "sh")
 -   tags.bin_py                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_py"), "py")

@@ -30,12 +30,8 @@ func s:MyHelp(...)
 endfunc
 
 func s:MyRef(cmd, word)
-  let word = a:word
-  if word == "?"
-    let word = input("word? ")
-  endif
+  let word = MyPrompt("Word? ", a:word)
   if word == ""
-    echo "canceled"
     return
   endif
 

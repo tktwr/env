@@ -73,7 +73,7 @@ endfunc
 command MyTogglePathFormat       call s:MyTogglePathFormat()
 command MyUpdateLastChange       call s:MyUpdateLastChange()
 command MyAddTime                call s:MyAddTime()
-command -nargs=? MyAddDate       call s:MyAddDate("<args>")
+command -nargs=? MyAddDate       call s:MyAddDate(<f-args>)
 command MyUpdateDateHere         call s:MyAddDate(expand("<cWORD>"))
 
 command MyMakeLink               call s:MyMakeLink('- ')

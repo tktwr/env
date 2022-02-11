@@ -60,3 +60,17 @@ func MyCWD()
   return "[".l:type.":".l:cwd."]"
 endfunc
 
+func MyPrompt(prompt, word)
+  let word = a:word
+  if word == "?"
+    let word = input(a:prompt)
+  elseif word == "??"
+    let text = expand('<cword>')
+    let word = input(a:prompt, text)
+  endif
+  if word == ""
+    echo "Canceled"
+  endif
+  return word
+endfunc
+
