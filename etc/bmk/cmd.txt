@@ -99,6 +99,11 @@
 -   CocList words                      | :CocList words
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
+[buffer:fugitive] -------------------- | ----------------------------------------
+- - toggle stage / unstage             | -
+- X discard changes                    | X
+- D diff                               | dd
+- R reload the status buffer           | R
 [buffer:fern] ------------------------ | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)

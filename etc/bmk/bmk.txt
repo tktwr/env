@@ -22,6 +22,7 @@
 -   bash/bashrc.81.my.sh               | $MY_BASH/bashrc.81.my.sh
 -   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 [bmk:dir] ---------------------------- | ----------------------------------------
+-   prog64/                            | "$SYS_PROG64_DIR"/
 -   .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
 -   backup/                            | $MY_BACKUP/

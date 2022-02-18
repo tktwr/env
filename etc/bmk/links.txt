@@ -88,6 +88,7 @@
 -       Open Shading Language                       | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
 - b   Blender Python API Documentation              | https://docs.blender.org/api/current/index.html
 -       Object(ID)                                  | https://docs.blender.org/api/current/bpy.types.Object.html
+-       Material(ID)                                | https://docs.blender.org/api/current/bpy.types.Material.html
 -       UILayout                                    | https://docs.blender.org/api/current/bpy.types.UILayout.html
 -   Develop Add-ons                                 | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
 -   Blender入門(2.8版)                              | https://blender3d.biz/

@@ -73,10 +73,11 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'terminal': ['bmk:dir', 'bmk:local', 'terminal:main', 'terminal:system', 'terminal:git'],
-  \ 'fern': ['bmk:dir', 'bmk:local', 'buffer:fern'],
-  \ 'nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
-  \ 'buffer': ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
-  \ 'ref': ['ref:main', 'ref:local', 'ref:keys', 'ref:keys2', 'papers', 'links'],
+  \ 'buffer'     : ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
+  \ 'terminal'   : ['bmk:dir', 'bmk:local', 'terminal:main', 'terminal:system', 'terminal:git'],
+  \ 'ref'        : ['ref:main', 'ref:local', 'ref:keys', 'ref:keys2', 'papers', 'links'],
+  \ 'ft:fugitive': ['buffer:fugitive'],
+  \ 'ft:fern'    : ['bmk:dir', 'bmk:local', 'buffer:fern'],
+  \ 'ft:nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
   \ }
 

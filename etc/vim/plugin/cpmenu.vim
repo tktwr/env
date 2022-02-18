@@ -20,10 +20,8 @@ func s:SetGlobalVars()
   let s:cpm_term_key = "\<C-Space>"
   let s:cpm_files = []
   let s:cpm_titles = {
-    \ 'terminal': [],
-    \ 'fern': [],
-    \ 'nerdtree': [],
     \ 'buffer': [],
+    \ 'terminal': [],
     \ }
 
   " set global variables
@@ -111,17 +109,39 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
-func s:CpmGetNumTitles(name)
-  if &buftype == 'terminal'
-    let size = len(s:cpm_titles['terminal'])
-  elseif &filetype == 'fern'
-    let size = len(s:cpm_titles['fern'])
-  elseif &filetype == 'nerdtree'
-    let size = len(s:cpm_titles['nerdtree'])
-  else
-    let size = len(s:cpm_titles[a:name])
+func s:CpmGetValidMenuName(name='')
+  if a:name != ''
+    let name = a:name
+    let l = get(s:cpm_titles, name, [])
+    if l != []
+      return name
+    endif
   endif
-  return size
+
+  if &buftype == 'terminal'
+    let name = &buftype
+    let l = get(s:cpm_titles, name, [])
+    if l != []
+      return name
+    endif
+  endif
+
+  let name = 'ft:'.&filetype
+  let l = get(s:cpm_titles, name, [])
+  if l != []
+    return name
+  endif
+
+  return 'buffer'
+endfunc
+
+func s:CpmGetMenu(name, nr)
+  let title = s:cpm_titles[a:name][a:nr]
+  return s:cpm_menu_all[title]
+endfunc
+
+func s:CpmGetNumTitles(name)
+  return len(s:cpm_titles[a:name])
 endfunc
 
 func s:CpmNextNr()
@@ -132,19 +152,6 @@ endfunc
 func s:CpmPrevNr()
   let n = s:CpmGetNumTitles(w:cpm_menu_name)
   return w:cpm_menu_nr == 0 ? n - 1 : w:cpm_menu_nr - 1
-endfunc
-
-func s:CpmGetMenu(name, nr)
-  if &buftype == 'terminal'
-    let title = s:cpm_titles['terminal'][a:nr]
-  elseif &filetype == 'fern'
-    let title = s:cpm_titles['fern'][a:nr]
-  elseif &filetype == 'nerdtree'
-    let title = s:cpm_titles['nerdtree'][a:nr]
-  else
-    let title = s:cpm_titles[a:name][a:nr]
-  endif
-  return s:cpm_menu_all[title]
 endfunc
 
 func s:CpmFixPos(id)
@@ -211,8 +218,8 @@ func CpmHandler(id, result)
   endif
 endfunc
 
-func s:CpmOpen(menu_name='buffer', menu_nr=0)
-  let w:cpm_menu_name = a:menu_name
+func s:CpmOpen(menu_name='', menu_nr=0)
+  let w:cpm_menu_name = s:CpmGetValidMenuName(a:menu_name)
   let w:cpm_menu_nr = a:menu_nr
   let w:cpm_menu = s:CpmGetMenu(w:cpm_menu_name, w:cpm_menu_nr)
   let winid = popup_menu(w:cpm_menu, #{
