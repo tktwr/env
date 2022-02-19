@@ -88,9 +88,9 @@ function f_get_git_snapfname() {
 }
 
 function f_eval() {
-  echo $*
+  echo "$*"
   if [ $EXEC -eq 1 ]; then
-    eval $*
+    eval "$*"
   fi
 }
 

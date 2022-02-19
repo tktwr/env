@@ -302,13 +302,5 @@ alias GM='git-log.sh --log 4 --log-submodule 2'
 alias pp='print-path.sh -p'
 
 #------------------------------------------------------
-mymake() {
-  if [ -f "Makefile" ]; then
-    make --no-print-directory "$@"
-  elif [ -x "make.sh" ]; then
-    ./make.sh "$@"
-  fi
-}
-
-alias make='mymake'
+alias make='mymake.sh'
 

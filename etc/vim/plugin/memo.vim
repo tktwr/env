@@ -1,6 +1,8 @@
 "======================================================
 " Memo
 "======================================================
+"unlet g:loaded_memo
+
 if exists("g:loaded_memo")
   finish
 endif
@@ -57,7 +59,7 @@ endfunc
 "------------------------------------------------------
 " command
 "------------------------------------------------------
-command -nargs=? Memo call s:Memo(<q-args>)
+command! -nargs=? Memo call s:Memo(<q-args>)
 
 "------------------------------------------------------
 " autocmd
@@ -69,30 +71,43 @@ func! s:DefineCommands()
 endfunc
 
 func! s:MemoSyntax()
-  syn keyword  memoCPP             cpp
-  syn keyword  memoCPP_LIB         cpp_lib
-  syn keyword  memoPY              py
-  syn keyword  memoSH              sh
-  syn keyword  memoVIM             vim
-  syn keyword  memoGIT             git
-  syn keyword  memoINIT            init
-  syn keyword  memoMY              my
-  syn keyword  memoOS              os
-  syn keyword  memoPROG            prog
-  syn keyword  memoDEV             dev
-  syn match    memoTAG             "\[[^]]*\]"
-  hi link memoCPP             MyRed
-  hi link memoCPP_LIB         MyRed
-  hi link memoPY              MyYellow
-  hi link memoSH              MyOrange
-  hi link memoVIM             MyGreen
-  hi link memoGIT             MyAqua
-  hi link memoINIT            MyPurple
-  hi link memoMY              MyBlue
-  hi link memoOS              MyYellow
-  hi link memoPROG            MyRed
-  hi link memoDEV             MyGreen
-  hi link memoTAG             MyPurple
+  syn keyword  memo_cpp             cpp
+  syn keyword  memo_cpp_lib         cpp_lib
+  syn keyword  memo_py              py
+  syn keyword  memo_sh              sh
+  syn keyword  memo_vim             vim
+  syn keyword  memo_git             git
+  syn keyword  memo_init            init
+  syn keyword  memo_my              my
+  syn keyword  memo_os              os
+  syn keyword  memo_prog            prog
+  syn keyword  memo_dev             dev
+
+  syn keyword  memo_scratchpad     scratchpad
+  syn keyword  memo_info           info
+  syn keyword  memo_diary          diary
+  syn keyword  memo_todo           todo
+
+  syn match    memo_tag             "\[[^]]*\]"
+
+  hi link memo_cpp            MyRed
+  hi link memo_cpp_lib        MyRed
+  hi link memo_py             MyYellow
+  hi link memo_sh             MyOrange
+  hi link memo_vim            MyGreen
+  hi link memo_git            MyAqua
+  hi link memo_init           MyPurple
+  hi link memo_my             MyBlue
+  hi link memo_os             MyYellow
+  hi link memo_prog           MyRed
+  hi link memo_dev            MyGreen
+
+  hi link memo_scratchpad     MyGreen
+  hi link memo_info           MyRed
+  hi link memo_diary          MyYellow
+  hi link memo_todo           MyOrange
+
+  hi link memo_tag            MyPurple
 endfunc
 
 func! s:MemoFileType()
