@@ -3,14 +3,25 @@
 "======================================================
 set path+=$QTDIR/include
 
+"------------------------------------------------------
+" tags
+"------------------------------------------------------
+" tags.memo
+set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
+set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
+set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
+set tags+=$MY_DIARY/tags.memo
+
+" tags for env
 set tags+=$MY_ENV/tags/tags.bin_sh
 set tags+=$MY_ENV/tags/tags.bin_py
 set tags+=$MY_ENV/tags/tags.bash
 set tags+=$MY_ENV/tags/tags.vim
+
+" tags for libtt
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
-set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
-set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
-set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
+
+" tags for opt
 set tags+=$MY_OPT/tags.eigen
 set tags+=$MY_OPT/tags.glm
 set tags+=$MY_OPT/tags.imgui
@@ -19,6 +30,7 @@ set tags+=$MY_OPT/tags.opencv2
 set tags+=$MY_OPT/tags.stb
 set tags+=$MY_OPT/tags.json11
 set tags+=$MY_OPT/tags.win
+"------------------------------------------------------
 
 let g:mapleader = ','
 let g:maplocalleader = ','

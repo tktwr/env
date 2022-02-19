@@ -9,7 +9,12 @@ fi
 
 bin_name=`basename $0`
 memo_dir="$MY_LOCAL_CONFIG/memo"
-tags="$MY_REMOTE_CONFIG/memo/tags.memo $MY_REMOTE_CONFIG/samples/tags.memo $MY_LOCAL_CONFIG/memo/tags.memo"
+tags="\
+  $MY_REMOTE_CONFIG/samples/tags.memo \
+  $MY_REMOTE_CONFIG/memo/tags.memo \
+  $MY_LOCAL_CONFIG/memo/tags.memo \
+  $MY_DIARY/tags.memo \
+  "
 
 f_help() {
   echo "NAME"
