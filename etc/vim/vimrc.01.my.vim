@@ -87,11 +87,12 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer'     : ['buffer:main', 'buffer:sub', 'buffer:coc', 'ref:main', 'ref:local'],
-  \ 'terminal'   : ['bmk:dir', 'bmk:local', 'terminal:main', 'terminal:system', 'terminal:git'],
-  \ 'ref'        : ['ref:main', 'ref:local', 'ref:keys', 'ref:keys2', 'papers', 'links'],
-  \ 'ft:fugitive': ['buffer:fugitive'],
-  \ 'ft:fern'    : ['bmk:dir', 'bmk:local', 'buffer:fern'],
-  \ 'ft:nerdtree': ['bmk:dir', 'bmk:local', 'buffer:nerdtree'],
+  \ 'buffer'      : ['bmk.main & cmd.main', 'cmd.sub', 'cmd.coc', 'ref.main', 'local.ref'],
+  \ 'buffer:side' : ['side.main & bmk.dir'],
+  \ 'terminal'    : ['local.bmk', 'term.main', 'term.system', 'term.git'],
+  \ 'ref'         : ['ref.main', 'local.ref', 'ref.keys', 'ref.keys2', 'papers', 'links'],
+  \ 'ft:fugitive' : ['cmd.fugitive'],
+  \ 'ft:fern'     : ['side.main & bmk.dir', 'local.bmk', 'cmd.fern'],
+  \ 'ft:nerdtree' : ['side.main & bmk.dir', 'local.bmk', 'cmd.nerdtree'],
   \ }
 

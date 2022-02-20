@@ -1,27 +1,4 @@
-[bmk:file] --------------------------- | ----------------------------------------
-- s scratchpad                         | $MY_DIARY/scratchpad.md.html
-- i info                               | $MY_DIARY/info.md.html
-- d dia                                | $MY_DIARY/diary.md.html
-- t todo                               | $MY_DIARY/todo.md.html
-    ---------------------------------- | ----------------------------------------
-- b bmk                  (C-b)         | $MY_BMK/bmk.txt
-- c cmd                                | $MY_BMK/cmd.txt
-- L links                              | $MY_BMK/links.txt
-- P papers                             | $MY_BMK/papers.txt
-    ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
-- w engword                            | $MY_CONFIG/local/eng/eng.txt
-- e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
-- m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
-    ---------------------------------- | ----------------------------------------
--   memo/my.md.html                    | $MY_MEMO/my.md.html
--   memo/vim.md.html                   | $MY_MEMO/vim.md.html
--   memo/git.md.html                   | $MY_MEMO/git.md.html
--   memo/links.md.html                 | $MY_MEMO/links.md.html
-    ---------------------------------- | ----------------------------------------
--   bash/bashrc.81.my.sh               | $MY_BASH/bashrc.81.my.sh
--   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
-[bmk:dir] ---------------------------- | ----------------------------------------
+[bmk.dir] ---------------------------- | ----------------------------------------
 -   prog64/                            | "$SYS_PROG64_DIR"/
 -   .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
@@ -48,5 +25,13 @@
 - r papers/                            | $MY_PAPERS/
 - g git/                               | $MY_GIT/
 - H github/                            | $MY_GITHUB/
+[bmk.file] --------------------------- | ----------------------------------------
+-   memo/my.md.html                    | $MY_MEMO/my.md.html
+-   memo/vim.md.html                   | $MY_MEMO/vim.md.html
+-   memo/git.md.html                   | $MY_MEMO/git.md.html
+-   memo/links.md.html                 | $MY_MEMO/links.md.html
+    ---------------------------------- | ----------------------------------------
+-   bash/bashrc.81.my.sh               | $MY_BASH/bashrc.81.my.sh
+-   vim/vimrc.70.map.vim               | $MY_VIM/vimrc.70.map.vim
 
 # vim:set ft=bmk syntax=txt nowrap:

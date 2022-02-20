@@ -1,4 +1,10 @@
-[buffer:main] ------------------------ | ----------------------------------------
+[side.main] -------------------------- | ----------------------------------------
+-   Memo                               | :Memo
+-   todo                               | $MY_DIARY/todo.md.html
+-   bmk                                | $MY_BMK/bmk.txt
+-   links                              | $MY_BMK/links.txt
+-   papers                             | $MY_BMK/papers.txt
+[bmk.main] --------------------------- | ----------------------------------------
 - s scratchpad                         | $MY_DIARY/scratchpad.md.html
 - i info                               | $MY_DIARY/info.md.html
 - d dia                                | $MY_DIARY/diary.md.html
@@ -13,7 +19,7 @@
 - w engword                            | $MY_CONFIG/local/eng/eng.txt
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
-    --- (IDE) ------------------------ | ----------------------------------------
+[cmd.main] --------------------------- | ----------------------------------------
 - E IDE                                | :MyIDE
 - D Fern                               | :MyFernDrawer %:p:h
 - G Tagbar                             | :MyTagbarToggle
@@ -40,7 +46,7 @@
     ---------------------------------- | ----------------------------------------
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
-[buffer:sub] ------------------------- | ----------------------------------------
+[cmd.sub] ---------------------------- | ----------------------------------------
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
 - s MyGstatusToggle                    | :MyGstatusToggle
@@ -69,13 +75,13 @@
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
 -   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
-[buffer:subsub] ---------------------- | ----------------------------------------
+[cmd.subsub] ------------------------- | ----------------------------------------
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle
 -   Wc                                 | :Wc ?
 -   MyBufDelete                        | :MyBufDelete
     ---------------------------------- | ----------------------------------------
 -   quit                   (Q)         | :confirm qall
-[buffer:coc] ------------------------- | ----------------------------------------
+[cmd.coc] ---------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
 -   CocInfo                            | :CocInfo
 -   CocOpenLog                         | :CocOpenLog
@@ -99,12 +105,12 @@
 -   CocList words                      | :CocList words
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
-[buffer:fugitive] -------------------- | ----------------------------------------
+[cmd.fugitive] ----------------------- | ----------------------------------------
 - - toggle stage / unstage             | -
 - X discard changes                    | X
 - D diff                               | dd
 - R reload the status buffer           | R
-[buffer:fern] ------------------------ | ----------------------------------------
+[cmd.fern] --------------------------- | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
 - V MyFernViewItem      (C-CR)         | :call MyFernViewItem()
@@ -132,7 +138,7 @@
     ---------------------------------- | ----------------------------------------
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
-[terminal:main] ---------------------- | ----------------------------------------
+[term.main] -------------------------- | ----------------------------------------
 -   git graph              (G)         | G<CR>
 -   git graph --all       (GA)         | GA<CR>
 -   MyGstatusToggle       (GS)         | GS<CR>
@@ -164,7 +170,7 @@
 - v mycmake-set-vs2019-release         | mycmake-set-vs2019-release<CR>
 -   mycmake-set-vs2019-debug           | mycmake-set-vs2019-debug<CR>
 -   mycmake-set-vs2019-reldeb          | mycmake-set-vs2019-reldeb<CR>
-[terminal:system] -------------------- | ----------------------------------------
+[term.system] ------------------------ | ----------------------------------------
 -   pacman -S -h                       | pacman -S -h<CR>
 -   pacman -Syyu                       | pacman -Syyu<CR>
 -   pacman -S <pkg>                    | pacman -S
@@ -189,7 +195,7 @@
 -   pip install <pkg>                  | pip install
 -   pip uninstall <pkg>                | pip uninstall
 -   pip-upgrade                        | python -m pip install --upgrade pip<CR>
-[terminal:git] ----------------------- | ----------------------------------------
+[term.git] --------------------------- | ----------------------------------------
 - G G                                  | G<CR>
 -   git status                         | git status<CR>
 -   git fetch                          | git fetch<CR>
@@ -208,7 +214,7 @@
 -   git-chmod-x-all                    | git-chmod-x-all<CR>
 -   git-ls-no-x                        | git-ls-no-x
 -   git-upgrade                        | git update-git-for-windows<CR>
-[ref:main] --------------------------- | ----------------------------------------
+[ref.main] --------------------------- | ----------------------------------------
 - T Google翻訳                         | https://translate.google.co.jp/
 - D DeepL翻訳                          | https://www.deepl.com/ja/translator
 - C Cppreference                       | https://ja.cppreference.com/w/
@@ -242,7 +248,7 @@
 -   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
 -   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
 -   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
-[ref:keys] --------------------------- | ----------------------------------------
+[ref.keys] --------------------------- | ----------------------------------------
 -   help                  (F1)         | :echo
 -   desktop left          (F2)         | :echo
 -   desktop right         (F3)         | :echo
@@ -269,7 +275,7 @@
 -   lcd                  (C-.)         | :echo
 -   command mode         (C-;)         | :echo
 -   tjump                (C-])         | :echo
-[ref:keys2] -------------------------- | ----------------------------------------
+[ref.keys2] -------------------------- | ----------------------------------------
 -   window 1 top         (C-1)         | :echo
 -   window 2             (C-2)         | :echo
 -   x                    (C-3)         | :echo

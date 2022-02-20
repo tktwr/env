@@ -16,21 +16,41 @@ let g:fern#renderer = 'nerdfont'
 "let g:fern#renderer#default#leading = "  "
 
 "------------------------------------------------------
-func MyFernDrawerToggle()
-  let cmd = printf("Fern . -reveal=%% -drawer -toggle")
+func MyFernDrawerOpen()
+  call TtGotoWinnr(1)
+
+  if exists('w:my_fern_init_buf') && &filetype != 'fern'
+    exec w:my_fern_init_buf.'b'
+  endif
+endfunc
+
+func MyFern(dir, drawer='', toggle='')
+  let dir = expand(a:dir)
+  let drawer = a:drawer
+  let toggle = a:toggle
+
+  if (TtInSideBar() && winnr() == 1)
+    let drawer = '-drawer'
+  endif
+
+  if drawer == '-drawer'
+    call MyFernDrawerOpen()
+  endif
+
+  let cmd = printf('Fern %s -reveal=%% %s %s', dir, drawer, toggle)
   exec cmd
+
+  if !exists('w:my_fern_init_buf')
+    let w:my_fern_init_buf = bufnr('%')
+  endif
+endfunc
+
+func MyFernDrawerToggle()
+  call MyFern('.', '-drawer', '-toggle')
 endfunc
 
 func MyFernDrawer(dir)
-  let dir = expand(a:dir)
-  let cmd = printf("Fern %s -reveal=%% -drawer", dir)
-  exec cmd
-endfunc
-
-func MyFern(dir)
-  let dir = expand(a:dir)
-  let cmd = printf("Fern %s -reveal=%%", dir)
-  exec cmd
+  call MyFern(a:dir, '-drawer', '')
 endfunc
 
 "------------------------------------------------------

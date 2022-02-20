@@ -21,10 +21,19 @@ func! s:ListTags()
   setlocal nomodifiable
 endfunc
 
-func! s:OpenTag(tagname)
+func! s:OpenTag(tagname, winnr=0)
+  let winnr = TtFindEditor(a:winnr)
+  call TtGotoWinnr(winnr)
+
   "exec "below stjump" "memo_".a:tagname
   exec "tag" "memo_".a:tagname
   exec "normal z\<CR>"
+endfunc
+
+func! s:PreviewTag(tagname, winnr=0)
+  let prev_winnr = winnr()
+  call s:OpenTag(a:tagname, a:winnr)
+  exec prev_winnr."wincmd w"
 endfunc
 
 " make a [memo] window
@@ -65,9 +74,24 @@ command! -nargs=? Memo call s:Memo(<q-args>)
 " autocmd
 "------------------------------------------------------
 func! s:DefineCommands()
-  nnoremap <buffer> <silent> <CR> :call <SID>OpenTag(expand("<cWORD>"))<CR>
-  nnoremap <buffer> <silent> l W
+  if (TtInSideBar())
+    nnoremap <buffer> l     :call <SID>PreviewTag(expand("<cWORD>"), -2)<CR>
+  else
+    nnoremap <buffer> <silent> l W
+  endif
+
   nnoremap <buffer> <silent> h B
+
+  nnoremap <buffer> <silent> <CR> :call <SID>OpenTag(expand("<cWORD>"))<CR>
+
+  nnoremap <buffer> 2     :call <SID>OpenTag(expand("<cWORD>"), 2)<CR>
+  nnoremap <buffer> 3     :call <SID>OpenTag(expand("<cWORD>"), 3)<CR>
+  nnoremap <buffer> 4     :call <SID>OpenTag(expand("<cWORD>"), 4)<CR>
+  nnoremap <buffer> 5     :call <SID>OpenTag(expand("<cWORD>"), 5)<CR>
+  nnoremap <buffer> 6     :call <SID>OpenTag(expand("<cWORD>"), 6)<CR>
+  nnoremap <buffer> 7     :call <SID>OpenTag(expand("<cWORD>"), 7)<CR>
+  nnoremap <buffer> 8     :call <SID>OpenTag(expand("<cWORD>"), 8)<CR>
+  nnoremap <buffer> 9     :call <SID>OpenTag(expand("<cWORD>"), 9)<CR>
 endfunc
 
 func! s:MemoSyntax()
