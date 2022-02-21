@@ -204,6 +204,7 @@ func TtStatuslineForSideBar()
   let stat.= "%{TtStatuslineFileType()}"
   let stat.= TtStatuslineIndicator()
   let stat.= TtStatuslineSeparator()
+  let stat.= "[%c,%l]"
   return stat
 endfunc
 
