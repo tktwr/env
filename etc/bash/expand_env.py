@@ -2,35 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import sys
-import os
 import re
-
-
-def f_expand_env(s):
-    r = re.search('\$\w+', s)
-    if r != None:
-        matched = r.group()
-        env_var = matched[1:]
-        if env_var[:3] != "MY_":
-            if os.getenv(env_var) != None:
-                s = s.replace(matched, os.environ[env_var])
-    return s
-
-
-def f_expand_path_unix(fname):
-    fname = f_expand_env(fname)
-    fname = re.sub('^C:', '/c', fname)
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-def f_expand_path_win(fname):
-    fname = f_expand_env(fname)
-    fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
-    fname = re.sub('^/c', 'C:', fname)
-    #fname = fname.replace('/', '\\')
-    fname = fname.replace('\\', '/')
-    return fname
+import tt_util as tu
 
 
 def f_make_dir(fname):
@@ -45,8 +18,15 @@ def f_make_dir(fname):
 
                 name = lst[0].strip()
                 env_name = lst[1].strip()
-                dir_name = f_expand_path_unix(lst[2].strip())
-                dir_name_win = f_expand_path_win(lst[2].strip())
+                dir_name = lst[2].strip()
+
+                # expand env except MY_XXX
+                r = re.search('^\$MY_', dir_name)
+                if r == None:
+                    dir_name = tu.expand_env(dir_name)
+
+                dir_name = tu.unix_path(dir_name)
+                dir_name_win = tu.win_path(dir_name)
 
                 print(f"export {env_name}=\"{dir_name}\"")
                 print(f"export {env_name}_WIN=\"{dir_name_win}\"")
