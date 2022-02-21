@@ -5,11 +5,11 @@ import sys
 import cv2
 import cv_util as cu
 import numpy as np
-from ttpy import FileName
+import tt_util as tu
 
 
 def f_image_split(ifname):
-    fname = FileName(ifname)
+    fname = tu.FileName(ifname)
     name = fname.name()
     ext = fname.ext()
     ext = ".png"

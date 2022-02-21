@@ -4,8 +4,7 @@
 import sys
 import cv2
 import numpy as np
-from ttpy import FileName
-import ttpy as tu
+import tt_util as tu
 
 
 #======================================================
@@ -271,7 +270,7 @@ def cv_load(ifname):
 
 
 def cv_save(ifname, img):
-    fname = FileName(ifname)
+    fname = tu.FileName(ifname)
     ext = fname.ext()
 
     if img.dtype == np.float32 and ext == ".png":

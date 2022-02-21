@@ -5,7 +5,6 @@ import argparse
 import cv2
 import cv_util as cu
 import numpy as np
-from ttpy import FileName
 import tkinter as tk
 from tkinter import ttk
 from tkinter import font

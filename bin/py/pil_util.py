@@ -4,7 +4,7 @@
 import sys
 import numpy as np
 from PIL import Image, ImageDraw
-import ttpy as tu
+import tt_util as tu
 
 
 def img_info(fname):

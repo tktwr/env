@@ -4,7 +4,7 @@
 import argparse
 import cv2
 import cv_util as cu
-from ttpy import FileName
+import tt_util as tu
 
 
 def img_show(fname, size, pos, crop_size):
@@ -33,7 +33,7 @@ def img_show(fname, size, pos, crop_size):
 
     key = cv2.waitKey()
     if key == 115: # 's'
-        fn = FileName(fname)
+        fn = tu.FileName(fname)
         ofname = f"small_{fn.name()}.png"
         cu.cv_save(ofname, oimg)
         if dst_size != (0, 0):

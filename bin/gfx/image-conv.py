@@ -19,13 +19,13 @@
 #     conv.py -w 200 -h 100 -e jpg a.png b.png...
 
 import argparse
-from ttpy import FileName
+import tt_util as tu
 import cv_util as cu
 
 
 def f_conv_images(dst_size, dst_ext, files):
     for ifname in files:
-        fname = FileName(ifname)
+        fname = tu.FileName(ifname)
         name = fname.name()
         ofname = f"{name}.{dst_ext}"
 
