@@ -87,12 +87,12 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk_local.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer'      : ['bmk.main & cmd.main', 'cmd.sub', 'cmd.coc', 'ref.main'],
-  \ 'buffer:side' : ['side.main & bmk.dir'],
+  \ 'buffer'      : ['buf.bmk.main & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main'],
+  \ 'buffer:side' : ['bmk.side & bmk.dir'],
   \ 'terminal'    : ['local.bmk', 'term.main', 'term.system', 'term.git'],
   \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
-  \ 'ft:fern'     : ['side.main & bmk.dir', 'local.bmk', 'cmd.fern'],
-  \ 'ft:nerdtree' : ['side.main & bmk.dir', 'local.bmk', 'cmd.nerdtree'],
+  \ 'ft:fern'     : ['bmk.side & bmk.dir', 'local.bmk', 'cmd.fern'],
+  \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'local.bmk', 'cmd.nerdtree'],
   \ }
 
