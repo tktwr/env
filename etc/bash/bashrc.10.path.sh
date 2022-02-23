@@ -31,6 +31,7 @@ done
 
 for i in $MY_REMOTE_CONFIG/env; do
   PATH="$i/bin:$PATH"
+  PATH="$i/bin/cron:$PATH"
   PATH="$i/bin/sys:$PATH"
   PATH="$i/bin/gfx:$PATH"
   PATH="$i/bin/os.$MY_OS_NAME:$PATH"
