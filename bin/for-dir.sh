@@ -14,7 +14,7 @@ f_exec_in_dirs() {
       cd "$i"
       eval "$cmd"
       echo
-      echo
+      #echo
       cd $top_dir
     fi
   done

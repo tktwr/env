@@ -15,8 +15,10 @@
 -   ArchWiki                                        | https://wiki.archlinux.jp/
 -   SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
     ------------------------------------            | ----------------------------------------
-- c cppreference                                    | https://ja.cppreference.com/w/
--   cpprefjp                                        | https://cpprefjp.github.io/
+- c cpprefjp                                        | https://cpprefjp.github.io/
+-     filesystem                                    | https://cpprefjp.github.io/reference/filesystem.html
+-     path                                          | https://cpprefjp.github.io/reference/filesystem/path.html
+-   cppreference                                    | https://ja.cppreference.com/w/
 -   clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
     ------------------------------------            | ----------------------------------------
 -   python                                          | https://www.python.org/
