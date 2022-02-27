@@ -92,7 +92,7 @@
 -       Object(ID)                                  | https://docs.blender.org/api/current/bpy.types.Object.html
 -       Material(ID)                                | https://docs.blender.org/api/current/bpy.types.Material.html
 -       UILayout                                    | https://docs.blender.org/api/current/bpy.types.UILayout.html
--   Develop Add-ons                                 | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
+- a Develop Add-ons                                 | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
 -   Blender入門(2.8版)                              | https://blender3d.biz/
 -   Bake texture                                    | https://3dcg-school.pro/blender-bake/
 -   Bake texture (TexTools)                         | https://virtualcast.jp/blog/2020/04/blender_bake_ao/

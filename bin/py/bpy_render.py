@@ -28,7 +28,8 @@ def render(cam_name, light_names, env_file, env_intensity, rot_deg, out_file):
     if env_file != "":
         bpy.data.worlds["World"].node_tree.nodes['Environment Texture'].image = bpy.data.images.load(env_file)
     bpy.data.worlds["World"].node_tree.nodes['Background'].inputs[1].default_value = env_intensity
-    bpy.data.worlds["World"].node_tree.nodes['Mapping'].inputs[2].default_value[2] = rot_deg * math.pi / 180
+    if rot_deg != 0:
+        bpy.data.worlds["World"].node_tree.nodes['Mapping'].inputs[2].default_value[2] = rot_deg * math.pi / 180
 
     bpy.ops.render.render()
     bpy.data.images['Render Result'].save_render(filepath = out_file)
