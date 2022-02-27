@@ -1,7 +1,5 @@
 #!/bin/bash
 
-EXEC=1
-
 # to handle filenames including spaces
 #IFS=\
 
@@ -88,9 +86,13 @@ function f_get_git_snapfname() {
 }
 
 function f_eval() {
-  echo "$*"
-  if [ $EXEC -eq 1 ]; then
-    eval "$*"
+  cmd="$1"
+  exec_flag=${2:-1}
+  if [ $exec_flag -eq 1 ]; then
+    echo "$cmd"
+    eval "$cmd"
+  else
+    echo "$cmd [no exec]"
   fi
 }
 
