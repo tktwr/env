@@ -95,7 +95,13 @@ class ImagePkg():
         return oimg
 
     def make_crop_xy_img(self, xy, wh):
+        center = (wh[0]//2, wh[1]//2)
+        p1 = (center[0] - 5, center[1] - 5)
+        p2 = (center[0] + 5, center[1] + 5)
+        color = (0, 0, 255)
+
         oimg = cu.cv_crop_center_img(self.img, xy, wh)
+        oimg = cv2.rectangle(oimg, p1, p2, color, 1)
         self.crop_img = oimg
         return oimg
 
