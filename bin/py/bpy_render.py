@@ -1,48 +1,54 @@
 import bpy
 import os
 import math
+import bpy_util as bu
 
 
-def find_obj_by_name(name, data_type=bpy.types.Mesh):
-    for o in bpy.data.objects:
-        if o.name == name and isinstance(o.data, data_type):
-            return o
-    return None
+class Render():
+    def __init__(self):
+        self.set_engine('BLENDER_EEVEE')
+        self.set_size(1024, 1024)
+        self.set_tonemap('Filmic')
 
+    def set_engine(self, engine):
+        scene = bpy.context.scene
+        if engine == 'eevee':
+            scene.render.engine = 'BLENDER_EEVEE'
+        elif engine == 'cycles':
+            scene.render.engine = 'CYCLES'
+            scene.cycles.feature_set = 'SUPPORTED'
+            scene.cycles.device = 'GPU'
 
-def hide_lights():
-    for o in bpy.data.objects:
-        if o.name.startswith('Light'):
-            o.hide_render = True
+    def set_size(self, w, h):
+        scene = bpy.context.scene
+        scene.render.resolution_x = w
+        scene.render.resolution_y = h
+        scene.render.resolution_percentage = 100
 
+    def set_tonemap(self, tonemap):
+        scene = bpy.context.scene
+        scene.view_settings.view_transform = tonemap
 
-def show_lights(light_names):
-    hide_lights()
-    for i in light_names:
-        bpy.data.objects[i].hide_render = False
+    def render(self, cam_name, light_names, env_file, env_intensity, rot_deg, out_file):
+        scene = bpy.context.scene
+        world = bpy.data.worlds["World"]
 
+        scene.camera = scene.objects.get(cam_name)
+        bu.show_lights(light_names)
 
-def render(cam_name, light_names, env_file, env_intensity, rot_deg, out_file):
-    bpy.context.scene.camera = bpy.context.scene.objects.get(cam_name)
-    show_lights(light_names)
-    if env_file != "":
-        bpy.data.worlds["World"].node_tree.nodes['Environment Texture'].image = bpy.data.images.load(env_file)
-    bpy.data.worlds["World"].node_tree.nodes['Background'].inputs[1].default_value = env_intensity
-    if rot_deg != 0:
-        bpy.data.worlds["World"].node_tree.nodes['Mapping'].inputs[2].default_value[2] = rot_deg * math.pi / 180
+        node = bu.find_node(world.node_tree, 'ShaderNodeTexEnvironment')
+        if node != None and env_file != "":
+            node.image = bpy.data.images.load(env_file)
 
-    bpy.ops.render.render()
-    bpy.data.images['Render Result'].save_render(filepath = out_file)
+        node = bu.find_node(world.node_tree, 'ShaderNodeBackground')
+        if node != None:
+            node.inputs[1].default_value = env_intensity
 
+        node = bu.find_node(world.node_tree, 'ShaderNodeMapping')
+        if node != None:
+            node.inputs[2].default_value[2] = rot_deg * math.pi / 180
 
-def init(engine, w, h):
-    bpy.context.scene.render.resolution_x = w
-    bpy.context.scene.render.resolution_y = h
-    bpy.context.scene.render.resolution_percentage = 100
+        bpy.ops.render.render()
+        bpy.data.images['Render Result'].save_render(filepath = out_file)
 
-    if engine == 'eevee':
-        bpy.context.scene.render.engine = 'BLENDER_EEVEE'
-    elif engine == 'cycles':
-        bpy.context.scene.render.engine = 'CYCLES'
-        bpy.context.scene.cycles.device = 'GPU'
 
