@@ -166,7 +166,8 @@ tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
 tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
 
-nnoremap <silent> <End>      :silent call WblPrint()<CR>
+nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
+tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
 
 "nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
 "nnoremap <silent> <TAB>      :silent call WblPrint()<CR>

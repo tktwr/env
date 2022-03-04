@@ -263,6 +263,7 @@ if [ "$VIM_TERMINAL" ]; then
     #alias D='vimapi-fern'
     alias D='vimapi-dir "$PWD"'
     alias F='vimapi.sh MyFernDrawerToggle'
+    alias D2='D 2'
   else
     alias D='vimapi-nerdtree'
     alias F='vimapi.sh MyNERDTreeToggle'
