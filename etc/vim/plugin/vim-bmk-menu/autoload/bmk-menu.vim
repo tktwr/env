@@ -201,13 +201,13 @@ func! CpmFilter(id, key)
   elseif a:key == 'l'
     call popup_close(a:id, 0)
     let nr = s:CpmNextNr()
-    let id = s:CpmOpen(w:cpm_menu_name, nr)
+    let id = CpmOpen(w:cpm_menu_name, nr)
     call s:CpmFixPos(id)
     return 1
   elseif a:key == 'h'
     call popup_close(a:id, 0)
     let nr = s:CpmPrevNr()
-    let id = s:CpmOpen(w:cpm_menu_name, nr)
+    let id = CpmOpen(w:cpm_menu_name, nr)
     call s:CpmFixPos(id)
     return 1
   elseif a:key == "\<C-CR>"
@@ -246,7 +246,10 @@ func! CpmHandler(id, result)
   endif
 endfunc
 
-func! s:CpmOpen(menu_name='', menu_nr=0)
+func! CpmOpen(menu_name='', menu_nr=0)
+  if (!exists('s:cpm_menu_all'))
+    call CpmReload()
+  endif
   let w:cpm_menu_name = s:CpmGetValidMenuName(a:menu_name)
   let w:cpm_menu_nr = a:menu_nr
   let w:cpm_menu = s:CpmGetMenu(w:cpm_menu_name, w:cpm_menu_nr)
@@ -266,7 +269,7 @@ endfunc
 "------------------------------------------------------
 " reload
 "------------------------------------------------------
-func! s:CpmReload()
+func! CpmReload()
   call s:SetGlobalVars()
 
   " menu_entry: cmd/dir/url
@@ -305,17 +308,11 @@ func! s:CpmReload()
 endfunc
 
 "------------------------------------------------------
-" public command
-"------------------------------------------------------
-command!          CpmReload    call s:CpmReload()
-command! -nargs=* CpmOpen      call s:CpmOpen(<f-args>)
-
-"------------------------------------------------------
 " init
 "------------------------------------------------------
 func! s:Init()
-  call s:CpmReload()
+  call CpmReload()
 endfunc
 
-call s:Init()
+"call s:Init()
 

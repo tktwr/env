@@ -16,7 +16,8 @@
 [buf.cmd.main] ----------------------- | ----------------------------------------
 - E IDE                                | :MyIDE
 - D Fern                               | :MyFernDrawer %:p:h
-- G Tagbar                             | :MyTagbarToggle
+-   SideBar                            | :call IdeSideBarToggle()
+- G TagBar                             | :MyTagbarToggle
 - N Editor                             | :new
 - T Term                               | :MyTerm
 - I MyWinInitSize                      | :MyWinInitSize

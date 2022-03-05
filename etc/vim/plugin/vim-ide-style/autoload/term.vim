@@ -56,9 +56,3 @@ func Tapi_ExecInNewTab(bufnr, cmdline)
   exec a:cmdline
 endfunc
 
-"------------------------------------------------------
-" command
-"------------------------------------------------------
-command -nargs=? MyTerm         call MyTerm(<f-args>)
-command -nargs=0 MyTermV        call MyTermV()
-

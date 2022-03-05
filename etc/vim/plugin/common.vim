@@ -41,111 +41,8 @@ func TtSystem(cmd)
 endfunc
 
 "------------------------------------------------------
-" window
-"------------------------------------------------------
-func TtInSideBar()
-  let winnr = winnr()
-  if (winnr <= 2 && winwidth(0) <= g:my_left_winwidth)
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
-func TtIsFullscreen()
-  if &columns > 150
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
-func TtIsEmptyTab()
-  let last_winnr = winnr('$')
-  if last_winnr == 1 && &filetype == ""
-    return 1
-  endif
-  return 0
-endfunc
-
-func TtGotoWinnr(winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
-endfunc
-
-"------------------------------------------------------
-" find the first terminal window
-"------------------------------------------------------
-func TtFindFirstTerm()
-  let last_winnr = winnr('$')
-  let i = 1
-  while i <= last_winnr
-    exec i."wincmd w"
-    if &buftype == 'terminal'
-      return i
-    endif
-    let i = i + 1
-  endwhile
-  return -1
-endfunc
-
-"------------------------------------------------------
-" find the first editor window
-"------------------------------------------------------
-func TtFindFirstEditor()
-  let last_winnr = winnr('$')
-  let i = 1
-  while i <= last_winnr
-    exec i."wincmd w"
-    if !TtInSideBar()
-      return i
-    endif
-    let i = i + 1
-  endwhile
-  return -1
-endfunc
-
-"------------------------------------------------------
-" find the last editor window from the current window
-"------------------------------------------------------
-func TtFindLastEditor()
-  let curr_winnr = winnr()
-  let i = curr_winnr
-  while i > 0
-    exec i."wincmd w"
-    if &buftype != 'terminal'
-      return i
-    endif
-    let i = i - 1
-  endwhile
-  return -1
-endfunc
-
-"------------------------------------------------------
-" find an editor
-"------------------------------------------------------
-" winnr == -2: the first editor window
-" winnr == -1: the last editor window
-" winnr ==  0: the current window
-" winnr >=  1: the specified window
-func TtFindEditor(winnr)
-  let winnr = a:winnr
-  if winnr == -2
-    let winnr = TtFindFirstEditor()
-  elseif winnr == -1
-    let winnr = TtFindLastEditor()
-  endif
-  return winnr
-endfunc
-
-"------------------------------------------------------
 " statusline
 "------------------------------------------------------
-func TtStatuslineWinNr()
-  return printf("[%s] ", winnr())
-endfunc
-
 func TtStatuslineFname()
   let cwd = getcwd()
   let dir = expand("%:p:h")
@@ -196,19 +93,5 @@ endfunc
 
 func TtStatuslineSeparator()
   return "%<%="
-endfunc
-
-func TtStatuslineForSideBar()
-  let stat = "%{TtStatuslineWinNr()}"
-  let stat.= "%t "
-  let stat.= "%{TtStatuslineFileType()}"
-  let stat.= TtStatuslineIndicator()
-  let stat.= TtStatuslineSeparator()
-  let stat.= "[%c,%l]"
-  return stat
-endfunc
-
-func TtSetStatuslineForSideBar()
-  setl statusline=%!TtStatuslineForSideBar()
 endfunc
 

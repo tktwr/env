@@ -6,6 +6,7 @@
 #------------------------------------------------------
 # git-alias
 #------------------------------------------------------
+alias gss='git status -s'
 alias gs='git status'
 alias gd='git diff'
 alias gf='git fetch'

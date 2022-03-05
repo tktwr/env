@@ -384,11 +384,11 @@ endfunc
 "------------------------------------------------------
 " map
 "------------------------------------------------------
-func s:init_bmk()
+func BmkInit()
   call TtSetStatuslineForSideBar()
 endfunc
 
-func s:BmkMapWin()
+func BmkMapWin()
   if &filetype != "bmk"
     return
   endif
@@ -429,22 +429,6 @@ func s:BmkMapWin()
     endif
   endif
 endfunc
-
-"------------------------------------------------------
-" autocmd
-"------------------------------------------------------
-augroup ag_bmk
-  autocmd!
-  autocmd FileType bmk      call s:init_bmk()
-  autocmd BufWinEnter *     call s:BmkMapWin()
-  autocmd WinEnter *        call s:BmkMapWin()
-augroup END
-
-"------------------------------------------------------
-" command
-"------------------------------------------------------
-command -nargs=+ BmkEditDir   call BmkEditDir(<f-args>)
-command -nargs=+ BmkEditFile  call BmkEditFile(<f-args>)
 
 func BmkToggleDebug()
   let s:bmk_debug = !s:bmk_debug
