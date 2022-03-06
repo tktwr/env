@@ -16,3 +16,7 @@ func MyGstatusToggle()
   endif
 endfunc
 
+func MyFugitiveMap()
+  nmap <buffer> D       dd
+endfunc
+

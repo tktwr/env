@@ -18,7 +18,13 @@ f_tags() {
   f_eval 'myctags.sh $MY_BIN/*.sh > tags.bin_sh'
   f_eval 'myctags.sh $MY_BIN/py/*.py > tags.bin_py'
   f_eval 'myctags.sh $MY_BASH/*.sh > tags.bash'
-  f_eval 'myctags.sh $MY_VIM/*.vim $MY_VIM/plugin/*.vim $MY_VIM/vim-plug/*.vim > tags.vim'
+
+  vim_files='\
+    $MY_VIM/*.vim \
+    $MY_VIM/vim-plug/*.vim \
+    $MY_VIM/plugin \
+    '
+  f_eval "myctags.sh $vim_files > tags.vim"
 }
 
 f_help() {

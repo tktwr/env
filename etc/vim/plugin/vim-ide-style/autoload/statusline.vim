@@ -58,6 +58,24 @@ func TtStatuslineSeparator()
 endfunc
 
 "------------------------------------------------------
+" statusline for buffer
+"------------------------------------------------------
+func MyStatusline()
+  let stat = "%{TtStatuslineWinNr()}"
+  let stat.= TtStatuslineFname()
+  let stat.= "%{TtStatuslineFileType()}"
+  let stat.= TtStatuslineIndicator()
+  let stat.= "%{TtStatuslineFileEnc()}"
+  let stat.= TtStatuslineSeparator()
+  let stat.= TtStatuslineLineInfo()
+
+  if $MY_PROMPT_TYPE >= 3
+    let stat.= "%6*%{FugitiveStatusline()}%0*"
+  endif
+  return stat
+endfunc
+
+"------------------------------------------------------
 " statusline for sidebar
 "------------------------------------------------------
 func TtStatuslineForSideBar()
@@ -77,15 +95,15 @@ endfunc
 "------------------------------------------------------
 " statusline for terminal
 "------------------------------------------------------
-func MyStatuslineTerm()
+func MyStatuslineForTerm()
   let stat = "%{TtStatuslineWinNr()}"
   let stat.= "terminal:%n"
-  let stat.= "%<%="
+  let stat.= TtStatuslineSeparator()
   let stat.= "%{MyCWD()}"
   return stat
 endfunc
 
-func MySetTerm()
-  setl statusline=%!MyStatuslineTerm()
+func MySetStatuslineForTerm()
+  setl statusline=%!MyStatuslineForTerm()
 endfunc
 

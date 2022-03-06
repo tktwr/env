@@ -1,4 +1,14 @@
 "------------------------------------------------------
+" init
+"------------------------------------------------------
+let g:my_tab_labels = {}
+let g:my_tab_info = ""
+
+set laststatus=2
+set statusline=%!MyStatusline()
+set tabline=%!MyTabLine()
+
+"------------------------------------------------------
 " command for ide
 "------------------------------------------------------
 command                         MyIDE            call MyIDE()
@@ -35,11 +45,6 @@ command -nargs=+ -complete=dir  MyIDESendCdT2T   call MyIDESendCdT2T(<f-args>)
 "------------------------------------------------------
 command -nargs=1                MyTabLineSetLabel call MyTabLine_SetLabel(<f-args>)
 command -nargs=1                MyTabLineSetInfo  call MyTabLine_SetInfo(<f-args>)
-
-let g:my_tab_labels = {}
-let g:my_tab_info = ""
-
-set tabline=%!MyTabLine()
 
 "------------------------------------------------------
 " command for term
@@ -103,33 +108,23 @@ command                         MyLcdHere          exec "lcd" expand("%:p:h")
 "------------------------------------------------------
 " autocmd
 "------------------------------------------------------
-func s:my_map_win()
-  if &diff == 1
-    nnoremap <buffer> <C-P>   [c
-    nnoremap <buffer> <C-N>   ]c
-  else
-    nnoremap <buffer> <C-P>   :cp<CR>
-    nnoremap <buffer> <C-N>   :cn<CR>
-  endif
-endfunc
-
-augroup ag_my_map
+augroup ag_ide_map
   autocmd!
-  autocmd WinEnter        *      call s:my_map_win()
+  autocmd WinEnter        *      call MyBufferMap()
   autocmd QuickFixCmdPost *grep* below cwindow
   autocmd QuickFixCmdPost *make* below cwindow
 augroup END
 
-augroup ag_my_term
+augroup ag_ide_term
   autocmd!
   if !has('nvim')
-    autocmd TerminalOpen *       call MySetTerm()
+    autocmd TerminalOpen *       call MySetStatuslineForTerm()
   else
-    autocmd TermOpen     *       call MySetTerm()
+    autocmd TermOpen     *       call MySetStatuslineForTerm()
   endif
 augroup END
 
-augroup ag_fern
+augroup ag_ide_fern
   autocmd! *
   autocmd FileType fern          call glyph_palette#apply()
   autocmd FileType fern          call TtSetStatuslineForSideBar()
@@ -138,17 +133,13 @@ augroup ag_fern
   autocmd User     FernHighlight call MyFernHighlight()
 augroup END
 
-augroup ag_nerdtree
+augroup ag_ide_nerdtree
   autocmd!
   autocmd FileType nerdtree      call MyNERDTreeMap()
 augroup END
 
-func s:my_fugitive_settings()
-  nmap <buffer> D       dd
-endfunc
-
-augroup ag_fugitive
+augroup ag_ide_fugitive
   autocmd!
-  autocmd FileType fugitive      call s:my_fugitive_settings()
+  autocmd FileType fugitive      call MyFugitiveMap()
 augroup END
 
