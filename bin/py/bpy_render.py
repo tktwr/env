@@ -7,7 +7,7 @@ import bpy_util as bu
 class Render():
     def __init__(self):
         self.set_engine('BLENDER_EEVEE')
-        self.set_size(1024, 1024)
+        self.set_size((1024, 1024))
         self.set_tonemap('Filmic')
 
     def set_engine(self, engine):
@@ -19,10 +19,10 @@ class Render():
             scene.cycles.feature_set = 'SUPPORTED'
             scene.cycles.device = 'GPU'
 
-    def set_size(self, w, h):
+    def set_size(self, size):
         scene = bpy.context.scene
-        scene.render.resolution_x = w
-        scene.render.resolution_y = h
+        scene.render.resolution_x = size[0]
+        scene.render.resolution_y = size[1]
         scene.render.resolution_percentage = 100
 
     def set_tonemap(self, tonemap):
