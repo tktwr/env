@@ -85,6 +85,18 @@ func MyWinPlace(place)
 endfunc
 
 "------------------------------------------------------
+" close window
+"------------------------------------------------------
+func MyClosePrevWin()
+  let curr_winnr = winnr()
+  wincmd p
+  call WblCopy()
+  close
+  exec curr_winnr."wincmd w"
+  call WblPaste()
+endfunc
+
+"------------------------------------------------------
 " find the first terminal window
 "------------------------------------------------------
 func TtFindFirstTerm()

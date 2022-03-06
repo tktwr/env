@@ -201,23 +201,3 @@ tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
 
-"======================================================
-" autocmd
-"======================================================
-func s:my_map_win()
-  if &diff == 1
-    nnoremap <buffer> <C-P>   [c
-    nnoremap <buffer> <C-N>   ]c
-  else
-    nnoremap <buffer> <C-P>   :cp<CR>
-    nnoremap <buffer> <C-N>   :cn<CR>
-  endif
-endfunc
-
-augroup ag_my_map
-  autocmd!
-  autocmd WinEnter *        call s:my_map_win()
-  autocmd QuickFixCmdPost *grep* below cwindow
-  autocmd QuickFixCmdPost *make* below cwindow
-augroup END
-

@@ -1,19 +1,7 @@
-"======================================================
-" Window Buffer List
-"======================================================
-if v:version < 802
-  finish
-endif
-
-if exists("g:loaded_wbl")
-  finish
-endif
-let g:loaded_wbl = 1
-
 "------------------------------------------------------
-" set global variables
+" init
 "------------------------------------------------------
-func s:SetGlobalVars()
+func WblInit()
   " set defaults
   let s:wbl_key = "\<End>"
   let s:wbl_max = 10
@@ -245,13 +233,4 @@ func WblPopupMenu()
     \ moved: 'WORD',
     \ })
 endfunc
-
-"------------------------------------------------------
-" init
-"------------------------------------------------------
-func s:Init()
-  call s:SetGlobalVars()
-endfunc
-
-call s:Init()
 

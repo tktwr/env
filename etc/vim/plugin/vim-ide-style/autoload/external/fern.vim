@@ -104,7 +104,7 @@ func MyFernNextItem()
 endfunc
 
 "------------------------------------------------------
-function! MyFernInit() abort
+function! MyFernMap() abort
   nmap <buffer><expr>
         \ <Plug>(my-fern-select-expand-collapse)
         \ fern#smart#leaf(
@@ -148,8 +148,6 @@ function! MyFernInit() abort
 
   nmap <buffer><nowait> < <Plug>(fern-action-leave)
   nmap <buffer><nowait> > <Plug>(fern-action-enter)
-
-  call TtSetStatuslineForSideBar()
 endfunction
 
 function! MyFernSyntax() abort

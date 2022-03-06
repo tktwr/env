@@ -9,13 +9,10 @@ SourceFile $MY_VIM/vimrc.10.skel.vim
 SourceFile $MY_VIM/vimrc.30.vim-plug.vim
 SourceFile $MY_VIM/vimrc.40.highlight.vim
 SourceFile $MY_VIM/vimrc.41.statusline.vim
-SourceFile $MY_VIM/vimrc.42.tabline.vim
-SourceFile $MY_VIM/vimrc.50.func.vim
 SourceFile $MY_VIM/vimrc.60.command.vim
 SourceFile $MY_VIM/vimrc.61.enc.vim
 SourceFile $MY_VIM/vimrc.63.dev.vim
 SourceFile $MY_VIM/vimrc.64.edit.vim
-SourceFile $MY_VIM/vimrc.65.window.vim
 SourceFile $MY_VIM/vimrc.66.external.vim
 SourceFile $MY_VIM/vimrc.70.map.vim
 SourceFile $MY_VIM/vimrc.72.menu.vim

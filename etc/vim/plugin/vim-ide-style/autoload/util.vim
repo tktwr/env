@@ -1,6 +1,3 @@
-"======================================================
-" func
-"======================================================
 func MyExpand(url)
   let url = a:url
   if (url == "")
@@ -72,5 +69,52 @@ func MyPrompt(prompt, word)
     echo "Canceled"
   endif
   return word
+endfunc
+
+func MySetTab(nr)
+  let &tabstop=a:nr
+  let &shiftwidth=a:nr
+endfunc
+
+func MyLineNumberToggle()
+  set invnumber
+  set invlist
+endfunc
+
+func MyCheckEnv()
+  echo "version: ".v:version
+  echo "unix: ".has("unix")
+  echo "win32unix: ".has("win32unix")
+  echo "win32: ".has("win32")
+  echo "win64: ".has("win64")
+  echo "python: ".has("python")
+  if has("python")
+    py print(sys.version)
+  endif
+  echo "python3: ".has("python3")
+  if has("python3")
+    py3 print(sys.version)
+  endif
+  echo "gui_running: ".has("gui_running")
+  echo "term: ".&term
+  echo "shell: ".&shell
+  echo "path: ".&path
+  echo "runtimepath: ".&runtimepath
+  echo "pwd:"
+  pwd
+endfunc
+
+func MyWinInfo()
+  echo "columns               : &columns      : ".&columns
+  echo "lines                 : &lines        : ".&lines
+  echo "current win's width   : winwidth(0)   : ".winwidth(0)
+  echo "current win's height  : winheight(0)  : ".winheight(0)
+  echo "current win's winnr   : winnr()       : ".winnr()
+  echo "last win's winnr      : winnr('$')    : ".winnr('$')
+  echo "current win's bufnr   : winbufnr(0)   : ".winbufnr(0)
+  echo "current buf's bufnr   : bufnr('%')    : ".bufnr('%')
+  echo "current buf's bufname : bufname('%')  : ".bufname('%')
+  echo "current buf's winnr   : bufwinnr('%') : ".bufwinnr('%')
+  echo "current buf's winid   : bufwinid('%') : ".bufwinid('%')
 endfunc
 

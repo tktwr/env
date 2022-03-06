@@ -1,15 +1,7 @@
-"======================================================
-" Bmk
-"======================================================
-if exists("g:loaded_bmk")
-  finish
-endif
-let g:loaded_bmk = 1
-
 "------------------------------------------------------
 " set global variables
 "------------------------------------------------------
-func s:SetGlobalVars()
+func BmkInit()
   " set defaults
   let s:bmk_debug = 0
   let s:bmk_winwidth = 30
@@ -384,10 +376,6 @@ endfunc
 "------------------------------------------------------
 " map
 "------------------------------------------------------
-func BmkInit()
-  call TtSetStatuslineForSideBar()
-endfunc
-
 func BmkMapWin()
   if &filetype != "bmk"
     return
@@ -433,13 +421,4 @@ endfunc
 func BmkToggleDebug()
   let s:bmk_debug = !s:bmk_debug
 endfunc
-
-"------------------------------------------------------
-" init
-"------------------------------------------------------
-func s:Init()
-  call s:SetGlobalVars()
-endfunc
-
-call s:Init()
 

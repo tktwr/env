@@ -5,6 +5,61 @@ func TtStatuslineWinNr()
   return printf("[%s] ", winnr())
 endfunc
 
+func TtStatuslineFname()
+  let cwd = getcwd()
+  let dir = expand("%:p:h")
+  let color = ""
+  if (cwd != dir)
+    let color = "%3*"
+  else
+    let color = "%6*"
+  endif
+  "return color."%f"."%0* "
+  return color."%t"."%0* "
+endfunc
+
+func TtStatuslineFileType()
+  let ft = getwinvar(0, '&ft')
+  let syn = getwinvar(0, '&syn')
+
+  if ft == syn
+    let type = "[".ft."]"
+  else
+    let type = "[".ft.",".syn."]"
+  endif
+
+  return type
+endfunc
+
+func TtStatuslineIndicator()
+  return "%m%r%w%q"
+endfunc
+
+func TtStatuslineFileEnc()
+  let stat = ""
+  if winwidth(0) >= 60
+    let fenc = &fenc != '' ? &fenc : &enc
+    let ff = &ff
+    let stat = printf("[%s,%s]", fenc, ff)
+  endif
+  return stat
+endfunc
+
+func TtStatuslineLineInfo()
+  let stat = ""
+  if winwidth(0) >= 60
+    let stat = "[%c%V,%l/%L,%p%%]"
+  endif
+  return stat
+endfunc
+
+func TtStatuslineSeparator()
+  return "%<%="
+endfunc
+
+"------------------------------------------------------
+" statusline for sidebar
+"------------------------------------------------------
 func TtStatuslineForSideBar()
   let stat = "%{TtStatuslineWinNr()}"
   let stat.= "%t "
@@ -17,5 +72,20 @@ endfunc
 
 func TtSetStatuslineForSideBar()
   setl statusline=%!TtStatuslineForSideBar()
+endfunc
+
+"------------------------------------------------------
+" statusline for terminal
+"------------------------------------------------------
+func MyStatuslineTerm()
+  let stat = "%{TtStatuslineWinNr()}"
+  let stat.= "terminal:%n"
+  let stat.= "%<%="
+  let stat.= "%{MyCWD()}"
+  return stat
+endfunc
+
+func MySetTerm()
+  setl statusline=%!MyStatuslineTerm()
 endfunc
 

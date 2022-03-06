@@ -71,13 +71,3 @@ func MyTabLine_SetInfo(label)
   set tabline=%!MyTabLine()
 endfunc
 
-"------------------------------------------------------
-command -nargs=1 MyTabLineSetLabel      call MyTabLine_SetLabel("<args>")
-command -nargs=1 MyTabLineSetInfo       call MyTabLine_SetInfo("<args>")
-
-"------------------------------------------------------
-let g:my_tab_labels = {}
-let g:my_tab_info = ""
-
-set tabline=%!MyTabLine()
-

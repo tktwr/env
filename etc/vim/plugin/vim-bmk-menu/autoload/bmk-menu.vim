@@ -1,21 +1,10 @@
 "======================================================
 " Custom Popup Menu
 "======================================================
-if v:version < 802
-  finish
-endif
-
-"unlet g:loaded_cpmenu
-
-if exists("g:loaded_cpmenu")
-  finish
-endif
-let g:loaded_cpmenu = 1
-
 "------------------------------------------------------
 " set global variables
 "------------------------------------------------------
-func! s:SetGlobalVars()
+func! CpmInit()
   " set defaults
   let s:separator = "------------------------------"
   let s:cpm_key = "\<Space>"
@@ -270,7 +259,7 @@ endfunc
 " reload
 "------------------------------------------------------
 func! CpmReload()
-  call s:SetGlobalVars()
+  call CpmInit()
 
   " menu_entry: cmd/dir/url
   let s:cpm_cmd_dict = {}
@@ -306,13 +295,4 @@ func! CpmReload()
     let s:cpm_titles[menu_type] = valid_titles
   endfor
 endfunc
-
-"------------------------------------------------------
-" init
-"------------------------------------------------------
-func! s:Init()
-  call CpmReload()
-endfunc
-
-"call s:Init()
 
