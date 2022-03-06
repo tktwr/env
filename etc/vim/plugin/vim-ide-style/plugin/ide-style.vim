@@ -67,6 +67,11 @@ command -nargs=1                MyGgrep            call MyGgrep(<f-args>)
 command                         MyGstatusToggle    call MyGstatusToggle()
 
 "------------------------------------------------------
+" command for quickhl
+"------------------------------------------------------
+command -nargs=1                MyQuickhl          call MyQuickhl(<f-args>)
+
+"------------------------------------------------------
 " command for ref
 "------------------------------------------------------
 command -nargs=+                MyMan              call MyRef("man", <q-args>)
