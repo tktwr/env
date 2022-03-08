@@ -1,8 +1,28 @@
-winbuf-menu.txt
+*winbuf-menu.txt*
 
-=============================================================================
-CONTENTS                                            *winbuf-menu-contents*
+Author  : Takehiro Tawara
+License : MIT license
 
-=============================================================================
-USAGE                                                  *winbuf-menu-usage*
+==========================================================================
+INTRODUCTION                                    *winbuf-menu-introduction*
 
+winbuf-menu is a popup menu to show window specific buffer list.
+>
+        nnoremap <silent> <End>  <C-W>:silent call WblPrint()<CR>
+        tnoremap <silent> <End>  <C-W>:silent call WblPrint()<CR>
+<
+==========================================================================
+VARIABLE                                            *winbuf-menu-variable*
+
+*g:wbl_key*
+        Set a startup key.
+>
+        let g:wbl_key = "\<End>"
+<
+*g:wbl_max*
+        Set the maximum buffer list.
+>
+        let g:wbl_max = 10
+<
+==========================================================================
+vim:tw=78:ft=help:norl:

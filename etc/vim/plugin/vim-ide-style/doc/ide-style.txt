@@ -1,9 +1,21 @@
-ide-style.txt
+*ide-style.txt*
 
-=============================================================================
-CONTENTS                                              *ide-style-contents*
+Author  : Takehiro Tawara
+License : MIT license
 
-=============================================================================
-USAGE                                                    *ide-style-usage*
+==========================================================================
+INTRODUCTION                                      *ide-style-introduction*
 
-  :MyIDE
+ide-style is a helper plugin for ide-style window management.
+
+==========================================================================
+COMMAND                                                *ide-style-command*
+
+:MyIDE
+        Open ide-style windows.
+
+==========================================================================
+VARIABLE                                              *ide-style-variable*
+
+==========================================================================
+vim:tw=78:ft=help:norl:

@@ -1,10 +1,61 @@
-bmk-menu.txt
+*bmk-menu.txt*
 
-=============================================================================
-CONTENTS                                               *bmk-menu-contents*
+Author  : Takehiro Tawara
+License : MIT license
 
-=============================================================================
-USAGE                                                     *bmk-menu-usage*
+==========================================================================
+INTRODUCTION                                       *bmk-menu-introduction*
 
-  :CpmOpen
-  :CpmReload
+bmk-menu is a user defined popup menu specified in bookmark files.
+>
+        nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
+        tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
+<
+==========================================================================
+COMMAND                                                 *bmk-menu-command*
+
+:CpmOpen
+        Open a bookmark menu.
+
+:CpmReload
+        Reload the bookmark menu.
+
+:BmkEditDir {dir} {winnr}
+        Edit a directory in the window winnr.
+
+:BmkEditFile {file} {winnr}
+        Edit a file in the window winnr.
+
+==========================================================================
+VARIABLE                                               *bmk-menu-variable*
+
+*g:cpm_key*
+        Set a startup key.
+>
+        let g:cpm_key = "\<Space>"
+<
+*g:cpm_term_key*
+        Set a startup key in a terminal window.
+>
+        let g:cpm_term_key = "\<C-Space>"
+<
+*g:cpm_files*
+        Set bookmark files.
+>
+        let g:cpm_files = [
+          \ "$MY_BMK/cmd.txt",
+          \ "$MY_BMK/bmk.txt",
+          \ ]
+<
+*g:cpm_titles*
+        Set popup menus.
+>
+        let g:cpm_titles = {
+          \ 'buffer'      : ['buf.bmk & buf.cmd', 'local.bmk.file'],
+          \ 'buffer:side' : ['bmk.dir'],
+          \ 'terminal'    : ['cmd.term', 'local.bmk.dir'],
+          \ 'ft:fern'     : ['cmd.fern', 'local.bmk.dir'],
+          \ }
+<
+==========================================================================
+vim:tw=78:ft=help:norl:
