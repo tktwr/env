@@ -3,6 +3,7 @@
 
 import sys
 import re
+import os
 
 
 def expand_env(s):
