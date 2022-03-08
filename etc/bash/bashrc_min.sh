@@ -33,11 +33,9 @@ export MY_DOTMY="$HOME/.my"
 #------------------------------------------------------
 if [ -z "$SYS_PATH" ]; then
   export SYS_PATH=$PATH
-  export SYS_PYTHONPATH=$PYTHONPATH
 fi
 
 export PATH="$SYS_PATH"
-export PYTHONPATH="$SYS_PYTHONPATH"
 
 if [ -n "$USERPROFILE" ]; then
   # gitbash/msys2
@@ -47,7 +45,6 @@ if [ -n "$USERPROFILE" ]; then
 fi
 
 export PATH="$MY_BIN:$PATH"
-export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
 
 #------------------------------------------------------
 # prompt
