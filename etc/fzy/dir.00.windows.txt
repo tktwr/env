@@ -8,8 +8,8 @@ cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME
 prog64              | SYS_PROG64_DIR      | C:\Program Files
 prog32              | SYS_PROG32_DIR      | C:\Program Files (x86)
 user-prog           | USER_PROG_DIR       | $USERPROFILE/AppData/Local/Programs
-user-python-home    | USER_PYTHON_HOME    | $USERPROFILE/AppData/Local/Programs/Python/Python38
-user-python-roaming | USER_PYTHON_ROAMING | $USERPROFILE/AppData/Roaming/Python/Python38
+user-python-home    | USER_PYTHON_HOME    | $USERPROFILE/AppData/Local/Programs/Python/Python39
+user-python-roaming | USER_PYTHON_ROAMING | $USERPROFILE/AppData/Roaming/Python/Python39
 android-sdk         | ANDROID_SDK         | $USERPROFILE/AppData/Local/Android/sdk
 anaconda-home       | ANACONDA_HOME       | $USERPROFILE/Anaconda3
 miniconda-home      | MINICONDA_HOME      | $USERPROFILE/miniconda3

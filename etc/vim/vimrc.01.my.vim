@@ -89,7 +89,7 @@ let g:cpm_files = [
 let g:cpm_titles = {
   \ 'buffer'      : ['buf.bmk.main & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
   \ 'buffer:side' : ['bmk.side & bmk.dir'],
-  \ 'terminal'    : ['local.bmk.dir', 'term.main', 'term.system', 'term.git'],
+  \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
   \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
   \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'local.bmk.dir'],

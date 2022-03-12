@@ -1,5 +1,8 @@
 #!/bin/bash
 
+#======================================================
+# variables
+#======================================================
 pkg_min="\
 winpty \
 vim \
@@ -57,7 +60,60 @@ mingw-w64-x86_64-python2-pip \
 mingw-w64-x86_64-gnuplot \
 "
 
-pkg="$pkg_min $pkg_ext $pkg_dev"
+#======================================================
+# functions
+#======================================================
+f_update() {
+  pacman -Syyu
+}
 
-pacman -S --needed $pkg
+f_install_min() {
+  pacman -S --needed $pkg_min
+}
+
+f_install_ext() {
+  pacman -S --needed $pkg_ext
+}
+
+f_install_dev() {
+  pacman -S --needed $pkg_dev
+}
+
+f_python() {
+  mypython-venv-create torch
+  pip-upgrade.sh
+  pip-install.sh
+}
+
+#======================================================
+# init
+#======================================================
+f_default() {
+  f_help
+}
+
+f_init() {
+  f_update
+  f_install_min
+  #f_install_ext
+  #f_install_dev
+  #f_python
+}
+
+f_help() {
+  echo "init        ... init"
+  echo "update      ... update"
+  echo "install_min ... install_min"
+  echo "install_ext ... install_ext"
+  echo "install_dev ... install_dev"
+  echo "python      ... python"
+  echo "help        ... print help"
+}
+
+#======================================================
+# main
+#======================================================
+func_name=${1:-"default"}
+shift
+eval "f_$func_name $@"
 

@@ -39,7 +39,7 @@ export PATH="$SYS_PATH"
 
 if [ -n "$USERPROFILE" ]; then
   # gitbash/msys2
-  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python38"
+  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python39"
   export PATH="$USER_PYTHON_HOME:$PATH"
   export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
 fi

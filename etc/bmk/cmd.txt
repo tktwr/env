@@ -133,6 +133,20 @@
     ---------------------------------- | ----------------------------------------
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
+[term.cmd.my] ------------------------ | ----------------------------------------
+- c mycmake.sh                         | mycmake.sh<CR>
+- b mycmake.sh --build                 | mycmake.sh --build<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-submodule-update-all           | git-submodule-update-all<CR>
+-   gC-amend {"new message"}           | gC-amend
+-   git-tmp-commit {"message"}         | git-tmp-commit
+-   git-tmp-reset                      | git-tmp-reset<CR>
+-   git-merge-no-ff                    | git-merge-no-ff<CR>
+-   git-rebase-origin                  | git-rebase-origin<CR>
+-   git-ls-no-x                        | git-ls-no-x<CR>
+-   git-chmod-x-all                    | git-chmod-x-all<CR>
+-   git-branch-delete {branch}         | git-branch-delete
+-   git-remote-branch-delete {branch}  | git-remote-branch-delete
 [term.main] -------------------------- | ----------------------------------------
 -   git graph              (G)         | G<CR>
 -   git graph --all       (GA)         | GA<CR>
@@ -154,6 +168,11 @@
     ---------------------------------- | ----------------------------------------
 - c mycmake.sh                         | mycmake.sh<CR>
 - b mycmake.sh --build                 | mycmake.sh --build<CR>
+    ---------------------------------- | ----------------------------------------
+-   mypython-venv-info                 | mypython-venv-info<CR>
+-   mypython-venv-create torch         | mypython-venv-create torch<CR>
+-   mypython-set-python-win torch      | mypython-set-python-win<CR>
+-   mypython-set-python torch          | mypython-set-python<CR>
     ---------------------------------- | ----------------------------------------
 -   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
 -   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>

@@ -146,12 +146,16 @@ alias gt-all='print-git-tag-all'
 
 git-branch-delete() {
   br=$1
-  git branch -d $br
+  if [ -n "$br" ]; then
+    git branch -d $br
+  fi
 }
 
 git-remote-branch-delete() {
   br=$1
-  git push origin :$br
+  if [ -n "$br" ]; then
+    git push origin :$br
+  fi
 }
 
 #------------------------------------------------------
