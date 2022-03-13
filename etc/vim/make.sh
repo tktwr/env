@@ -13,6 +13,10 @@ f_min() {
   cp vimrc_min.vim $HOME/.vimrc
 }
 
+f_min_plug() {
+  cat vimrc_min.vim vimrc_min_plug.vim > $HOME/.vimrc
+}
+
 f_log() {
   f_log_clean
 	vim -c "q" --startuptime $HOME/vim_log.txt
@@ -27,6 +31,7 @@ f_log_clean() {
 f_help() {
   echo "default"
   echo "min"
+  echo "min_plug"
   echo "log"
   echo "log_clean"
   echo "help"
