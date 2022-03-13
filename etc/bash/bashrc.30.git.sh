@@ -171,4 +171,8 @@ gg()   { git graph --color=always $* | less -EFRSX; }
 gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
 gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 
+alias G='gg-d -6'
+alias GA='gg-d -6 --all'
+alias GM='git-log.sh --log 4 --log-submodule 2'
+
 #------------------------------------------------------

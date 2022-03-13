@@ -12,11 +12,11 @@ f_help() {
   echo "  $g_bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $g_bin_name [options]"
+  echo "  $g_bin_name [options] file|dir"
   echo
   echo "OPTIONS"
   echo "  -h, --help            ... print help"
-  echo "  -d, --backup-dir      ... set backup dir"
+  echo "  -d, --backup-dir dir  ... set backup dir"
   echo "  -n, --no-exec         ... no execution"
 }
 

@@ -1,4 +1,6 @@
 #!/bin/bash
 
-$MY_PYTHON_EXE -m pip install --upgrade pip
+python_exe=${MY_PYTHON_EXE:-"python"}
+
+$python_exe -m pip install --upgrade pip
 

@@ -1,26 +1,24 @@
 [bmk.side] --------------------------- | ----------------------------------------
-- M Memo                               | :Memo
+-   Memo                               | :Memo
 -   todo                               | $MY_DIARY/todo.md.html
 -   bmk                                | $MY_BMK/bmk.txt
-- L links                              | $MY_BMK/links.txt
-- P papers                             | $MY_BMK/papers.txt
+-   links                              | $MY_BMK/links.txt
+-   papers                             | $MY_BMK/papers.txt
 [bmk.dir] ---------------------------- | ----------------------------------------
--   .my/                               | $MY_DOTMY/
+-   C:/                                | C:/
+-   D:/                                | D:/
+-   private/                           | $MY_PRIVATE/
+-   protected/                         | $MY_PROTECTED/
+-   public/                            | $MY_PUBLIC/
+    ---------------------------------- | ----------------------------------------
+- y .my/                               | $MY_DOTMY/
 - C config/                            | $MY_CONFIG/
 -     local/                           | $MY_CONFIG/local/
 - c     common/                        | $MY_COMMON_SETTING/
 -   rconfig/                           | $MY_REMOTE_CONFIG/
 -   lconfig/                           | $MY_LOCAL_CONFIG/
 -   pconfig/                           | $MY_PRIVATE_CONFIG/
-    ---------------------------------- | ----------------------------------------
--   C:/                                | C:/
--   D:/                                | D:/
--   private/                           | $MY_PRIVATE/
--     backup/                          | $MY_BACKUP/
--     tmp/                             | $MY_TMP/
--   protected/                         | $MY_PROTECTED/
--   public/                            | $MY_PUBLIC/
-    ---------------------------------- | ----------------------------------------
+    --- (rconfig) -------------------- | ----------------------------------------
 - i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
@@ -28,13 +26,20 @@
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/
 - t libtt/                             | $MY_LIBTT/
-    ---------------------------------- | ----------------------------------------
+    --- (private) -------------------- | ----------------------------------------
+- B backup/                            | $MY_BACKUP/
+- T tmp/                               | $MY_TMP/
 - w work/                              | $MY_WORK/
 - p proj/                              | $MY_PROJ/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
-- r papers/                            | $MY_PAPERS/
 - g git/                               | $MY_GIT/
 - H github/                            | $MY_GITHUB/
+    --- (public) --------------------- | ----------------------------------------
+- A arch/                              | $MY_ARCH/
+- P papers/                            | $MY_PAPERS/
+- O opt/                               | $MY_OPT/
+- M man/                               | $MY_MAN/
+- D data/                              | $MY_DATA/
 
 # vim:set ft=bmk syntax=txt nowrap:

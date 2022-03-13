@@ -19,8 +19,8 @@ libtt          | MY_LIBTT          | $MY_REMOTE_CONFIG/libtt
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------
-backup         | MY_BACKUP         | $MY_PRIVATE/backup
-tmp            | MY_TMP            | $MY_PRIVATE/tmp
+backup         | MY_BACKUP         | $MY_PRIVATE/backup/2022
+tmp            | MY_TMP            | $MY_PRIVATE/tmp/2022
 repo           | MY_REPO           | $MY_PRIVATE/repo
 work           | MY_WORK           | $MY_PRIVATE/work
 proj           | MY_PROJ           | $MY_PRIVATE/proj

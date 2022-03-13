@@ -2,10 +2,13 @@
 
 source common.sh
 
-tmpdir=tmp.$(f_get_date)
+name=${1:-"tmp"}
+tmpdir=$name.$(f_get_date)
 
 if [ ! -d $tmpdir ]; then
   echo "make $tmpdir"
   mkdir $tmpdir
+else
+  echo "$tmpdir already exists."
 fi
 
