@@ -6,6 +6,12 @@ func WblInit()
   let s:wbl_key = "\<End>"
   let s:wbl_max = 10
   let s:wbl_help = 0
+  let s:wbl_edit_func = "WblEdit"
+
+  " use the bmk func if it has already been loaded
+  if exists("*BmkEdit")
+    let s:wbl_edit_func = "BmkEdit"
+  endif
 
   " set global variables
   if exists("g:wbl_key")
@@ -42,6 +48,24 @@ func WblFindIdxByName(lst, pattern)
     let idx = idx + 1
   endfor
   return -1
+endfunc
+
+func WblFind(pattern, winnr)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+
+  let idx = WblFindIdxByName(w:buflist, a:pattern)
+  if (idx != -1)
+    exec w:buflist[idx]."b"
+  endif
+endfunc
+
+func WblEdit(file, winnr)
+  if a:winnr > 0
+    exec a:winnr."wincmd w"
+  endif
+  exec "edit" a:file
 endfunc
 
 "------------------------------------------------------
@@ -143,18 +167,6 @@ func WblNext()
 endfunc
 
 "------------------------------------------------------
-func WblFind(pattern, winnr)
-  if a:winnr > 0
-    exec a:winnr."wincmd w"
-  endif
-
-  let idx = WblFindIdxByName(w:buflist, a:pattern)
-  if (idx != -1)
-    exec w:buflist[idx]."b"
-  endif
-endfunc
-
-"------------------------------------------------------
 " popup menu
 "------------------------------------------------------
 func WblPopupMenuFilter(id, key)
@@ -202,7 +214,7 @@ func WblPopupMenuHandler(id, result)
     else
       let bufname = bufname(bufnr)
       let absname = fnamemodify(bufname, ":p")
-      call BmkEdit(absname, w:dst_winnr)
+      exec printf('call %s("%s", %d)', s:wbl_edit_func, absname, w:dst_winnr)
     endif
   endif
 endfunc

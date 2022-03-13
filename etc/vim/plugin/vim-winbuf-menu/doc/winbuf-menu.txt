@@ -6,7 +6,7 @@ License : MIT license
 ==========================================================================
 INTRODUCTION                                    *winbuf-menu-introduction*
 
-winbuf-menu is a popup menu to show window specific buffer list.
+winbuf-menu is a pop-up menu for displaying a window-specific buffer list.
 >
         nnoremap <silent> <End>  <C-W>:silent call WblPrint()<CR>
         tnoremap <silent> <End>  <C-W>:silent call WblPrint()<CR>
