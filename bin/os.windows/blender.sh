@@ -1,6 +1,7 @@
 #!/bin/bash
 
 export PATH="\
+$SYS_PROG64_DIR/Blender Foundation/Blender 3.1:\
 $SYS_PROG64_DIR/Blender Foundation/Blender 3.0:\
 $SYS_PROG64_DIR/Blender Foundation/Blender 2.93:\
 $PATH"

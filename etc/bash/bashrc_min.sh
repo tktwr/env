@@ -4,12 +4,13 @@
 # env
 #------------------------------------------------------
 if [ -n "$USERPROFILE" ]; then
-  # gitbash/msys2
+  # msys2/gitbash
   export MY_HOME="/c/Users/$USERNAME"
   export MY_PYTHON_EXE="python"
   export MY_OS_NAME="windows"
+  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python39"
 else
-  # linux
+  # linux/android
   export MY_HOME="$HOME"
   export MY_PYTHON_EXE="python3"
   export MY_OS_NAME="linux"
@@ -38,8 +39,7 @@ fi
 export PATH="$SYS_PATH"
 
 if [ -n "$USERPROFILE" ]; then
-  # gitbash/msys2
-  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python39"
+  # msys2/gitbash
   export PATH="$USER_PYTHON_HOME:$PATH"
   export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
 fi
