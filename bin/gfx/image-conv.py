@@ -33,11 +33,14 @@ def f_conv_images(files, args):
 
         #cu.cv_resize(ifname, ofname, dst_size)
 
-        img = cu.cv_load(ifname)
-        img = cu.cv_resize_img(img, dst_size)
-        img = cu.cv_cvt_channels(img, args.channels)
-        img = cu.cv_cvt_dtype(img, args.dtype)
-        cu.cv_save(ofname, img)
+        try:
+            img = cu.cv_load(ifname)
+            img = cu.cv_resize_img(img, dst_size)
+            img = cu.cv_cvt_channels(img, args.channels)
+            img = cu.cv_cvt_dtype(img, args.dtype)
+            cu.cv_save(ofname, img)
+        except Exception as e:
+            print(f'fail to convert ... {ifname}')
 
 
 def parse_args():

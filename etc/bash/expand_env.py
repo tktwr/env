@@ -58,10 +58,10 @@ def f_make_dir(fname):
                 print(f"alias .{name}='pushd \"{dir_name}\"'")
     except FileNotFoundError as e:
         #print(f"FileNotFoundError: {e}")
-        pass;
+        pass
     except Exception as e:
         #print(f"Exception: {e}")
-        pass;
+        pass
 
 
 def main(argv):

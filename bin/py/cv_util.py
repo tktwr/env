@@ -92,12 +92,12 @@ def cv_cvt_channels(img, dst_ch):
     if ch == dst_ch:
         return img
 
-    img_list = cv2.split(img)
+    img_list = list(cv2.split(img))
     img_a = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
 
     if ch == 1 and dst_ch == 4:
-        img_list.append(img_a)
-        img_list.append(img_a)
+        img_list.append(img_list[0])
+        img_list.append(img_list[0])
         img_list.append(img_a)
         return cv2.merge(img_list)
 
