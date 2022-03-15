@@ -31,6 +31,8 @@
 -   CS 431/636 - Advanced Rendering Techniques                                                                         | https://www.cs.drexel.edu/~david/Classes/CS431/
     --- [SSS] ------------------------------                                                                           | ----------------------------------------
 -   Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
+    --- [Displacement] ------------------------------                                                                           | ----------------------------------------
+-   Tessellation-Free Displacement Mapping for Ray Tracing | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
     --- [Resources] ------------------------                                                                           | ----------------------------------------
 -   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
