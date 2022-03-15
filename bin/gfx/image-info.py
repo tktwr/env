@@ -10,5 +10,5 @@ if __name__ == "__main__":
         try:
             cu.cv_info(fname)
         except Exception as e:
-            print(f'fail to get info ... {ifname}')
+            print(f'fail to get info ... {fname}')
 
