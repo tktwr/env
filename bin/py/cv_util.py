@@ -30,6 +30,9 @@ def cv_color(col, dst_dtype):
 
 
 def cv_cvt_dtype(img, dst_dtype):
+    if img.dtype == dst_dtype:
+        return img
+
     smax = cv_maximum(img.dtype)
     dmax = cv_maximum(dst_dtype)
     return np.clip(img/smax * dmax, 0, dmax).astype(dst_dtype)
@@ -64,12 +67,15 @@ def cv_bgra_to_bgr_img(img):
 
 def cv_split_img(img):
     h, w, ch = cv_size(img)
-
     img_list = []
-    if ch >= 3:
+
+    if ch >= 1:
         img_list.append(img[:, :, 0])
+
+    if ch >= 3:
         img_list.append(img[:, :, 1])
         img_list.append(img[:, :, 2])
+
     if ch >= 4:
         img_list.append(img[:, :, 3])
 
@@ -78,6 +84,32 @@ def cv_split_img(img):
 
 def cv_merge_img(img_list):
     return cv2.merge(img_list)
+
+
+def cv_cvt_channels(img, dst_ch):
+    h, w, ch = cv_size(img)
+
+    if ch == dst_ch:
+        return img
+
+    img_list = cv2.split(img)
+    img_a = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
+
+    if ch == 1 and dst_ch == 4:
+        img_list.append(img_a)
+        img_list.append(img_a)
+        img_list.append(img_a)
+        return cv2.merge(img_list)
+
+    if ch == 3 and dst_ch == 4:
+        img_list.append(img_a)
+        return cv2.merge(img_list)
+
+    if ch == 4 and dst_ch == 3:
+        return cv2.merge([img_list[0], img_list[1], img_list[2]])
+
+    if ch == 4 and dst_ch == 1:
+        return img_list[0]
 
 
 #------------------------------------------------------
@@ -158,7 +190,11 @@ def cv_resize_img(img, dst_wh):
     h, w = img.shape[:2]
     src_wh = (w, h)
     new_wh = tu.fix_size(src_wh, dst_wh)
-    return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
+
+    if src_wh == new_wh:
+        return img
+    else:
+        return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
 
 
 # pos  : [x, y]

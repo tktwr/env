@@ -23,13 +23,21 @@ import tt_util as tu
 import cv_util as cu
 
 
-def f_conv_images(dst_size, dst_ext, files):
+def f_conv_images(files, args):
+    dst_size = (args.width, args.height)
+
     for ifname in files:
         fname = tu.FileName(ifname)
         name = fname.name()
-        ofname = f"{name}.{dst_ext}"
+        ofname = f"{name}.{args.ext}"
 
-        cu.cv_resize(ifname, ofname, dst_size)
+        #cu.cv_resize(ifname, ofname, dst_size)
+
+        img = cu.cv_load(ifname)
+        img = cu.cv_resize_img(img, dst_size)
+        img = cu.cv_cvt_channels(img, args.channels)
+        img = cu.cv_cvt_dtype(img, args.dtype)
+        cu.cv_save(ofname, img)
 
 
 def parse_args():
@@ -48,6 +56,14 @@ def parse_args():
                         type=int,
                         default=0,
                         help='set height')
+    parser.add_argument('-c', '--channels',
+                        type=int,
+                        default=0,
+                        help='set channels (1|3|4)')
+    parser.add_argument('-d', '--dtype',
+                        type=str,
+                        default='',
+                        help='set dtype (uint8|uint16|float)')
     parser.add_argument('-e', '--ext',
                         type=str,
                         default='jpg',
@@ -63,11 +79,10 @@ def parse_args():
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
-        print(f"args.size  : {args.size}")
         print(f"args.ext   : {args.ext}")
         print(f"args.files : {args.files}")
         print()
 
-    f_conv_images((args.width, args.height), args.ext, args.files)
+    f_conv_images(args.files, args)
 
 
