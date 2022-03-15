@@ -24,6 +24,10 @@ export EDITOR='vim'
 #export GIT_EDITOR='vim'
 export WWW_HOME="https://tktwr.github.io/memo/"
 
+export XDG_CONFIG_HOME="~/.config"
+export XDG_DATA_HOME="~/.local/share"
+export XDG_CACHE_HOME="~/.cache"
+
 source $HOME/.my/hostname
 source $HOME/.my/buildrc
 source $HOME/.my/pythonrc
