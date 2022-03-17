@@ -10,6 +10,15 @@ import tt_util as tu
 #======================================================
 # interface for image
 #======================================================
+def cv_size(img):
+    if len(img.shape) == 3:
+        h, w, ch = img.shape[:3]
+    else:
+        h, w = img.shape[:2]
+        ch = 1
+    return (h, w, ch)
+
+
 #------------------------------------------------------
 # convert dtype
 #------------------------------------------------------
@@ -183,15 +192,6 @@ def cv_create_vgrad_img(shape, dtype, co0, co1):
 #------------------------------------------------------
 # resize
 #------------------------------------------------------
-def cv_size(img):
-    if len(img.shape) == 3:
-        h, w, ch = img.shape[:3]
-    else:
-        h, w = img.shape[:2]
-        ch = 1
-    return (h, w, ch)
-
-
 def cv_resize_img(img, dst_wh):
     h, w = img.shape[:2]
     src_wh = (w, h)
@@ -262,6 +262,11 @@ def cv_crop_center_img(img, center, size):
 #======================================================
 # interface for file
 #======================================================
+
+def cv_info_short(fname):
+    img = cv_load(fname)
+    print(f'{fname} {img.shape} {img.dtype}')
+
 
 def cv_info(fname):
     img = cv_load(fname)
