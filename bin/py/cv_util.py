@@ -30,6 +30,9 @@ def cv_color(col, dst_dtype):
 
 
 def cv_cvt_dtype(img, dst_dtype):
+    if dst_dtype not in ('uint8', 'uint16', 'float'):
+        return img
+
     if img.dtype == dst_dtype:
         return img
 
@@ -87,6 +90,9 @@ def cv_merge_img(img_list):
 
 
 def cv_cvt_channels(img, dst_ch):
+    if dst_ch not in (1, 3, 4):
+        return img
+
     h, w, ch = cv_size(img)
 
     if ch == dst_ch:
@@ -309,13 +315,13 @@ def cv_save(ifname, img):
     fname = tu.FileName(ifname)
     ext = fname.ext()
 
-    if img.dtype == np.float32 and ext == ".png":
-        print(f"cv_save: {ifname}: convert float32 to png")
-        oimg = np.clip(img * 255, 0, 255).astype(np.uint8)
-        cv2.imwrite(ifname, oimg)
-        return
+    dst_dtype = ''
+    if ext in ('.png', '.jpg'):
+        dst_dtype = 'uint8'
 
-    print(f"cv_save: {ifname}:")
+    img = cv_cvt_dtype(img, dst_dtype)
+
+    print(f"cv_save: {ifname} {img.dtype}")
     cv2.imwrite(ifname, img)
 
 

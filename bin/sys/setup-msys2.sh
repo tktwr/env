@@ -40,6 +40,7 @@ mingw-w64-x86_64-glew \
 mingw-w64-x86_64-freeglut \
 mingw-w64-x86_64-glm \
 mingw-w64-x86_64-opencv \
+mingw-w64-x86_64-openexr \
 "
 
 pkg_uninstalled="\

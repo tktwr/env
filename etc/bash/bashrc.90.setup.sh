@@ -24,3 +24,7 @@ if [ "$VIM_TERMINAL" ]; then
   vimapi-tabline-set-info
 fi
 
+# opencv's openexr feature is disabled in default for security issues
+# the following env variable enable it
+export OPENCV_IO_ENABLE_OPENEXR=1
+
