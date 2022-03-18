@@ -145,6 +145,22 @@ def cv_brightness_contrast_img(img, brightness, contrast):
     return cv_cvt_dtype(oimg, dtype)
 
 
+def cv_bgr_to_hsv(img):
+    return cv2.cvtColor(img, cv2.COLOR_BGR2HSV_FULL)
+
+
+def cv_hsv_to_bgr(img):
+    return cv2.cvtColor(img, cv2.COLOR_HSV2BGR_FULL)
+
+
+def cv_linear_to_srgb(img):
+    return np.power(img, 1.0/2.2)
+
+
+def cv_srgb_to_linear(img):
+    return np.power(img, 2.2)
+
+
 #------------------------------------------------------
 # convert for image list
 #------------------------------------------------------
@@ -203,6 +219,13 @@ def cv_resize_img(img, dst_wh):
         return cv2.resize(img, new_wh, interpolation=cv2.INTER_AREA)
 
 
+def cv_fit_img(img, dst_wh):
+    h, w = img.shape[:2]
+    src_wh = (w, h)
+    fit_size = tu.fit_size(src_wh, dst_wh)
+    return cv_resize_img(img, fit_size)
+
+
 # pos  : [x, y]
 # size : [w, h]
 def cv_crop_img_simple(img, pos, size):
@@ -215,8 +238,8 @@ def cv_crop_img_simple(img, pos, size):
 
 # pos  : [x, y]
 # size : [w, h]
-def cv_crop_img(img, pos, size):
-    # region in the img
+def cv_crop_img(img, pos, size, centering=False):
+    # crop in the img
     h, w = img.shape[:2]
 
     top    = pos[1]
@@ -226,12 +249,12 @@ def cv_crop_img(img, pos, size):
 
     top = 0 if top < 0 else top
     left = 0 if left < 0 else left
-    bottom = h-1 if bottom > h-1 else bottom
-    right = w-1 if right > w-1 else right
+    bottom = h if bottom > h else bottom
+    right = w if right > w else right
 
     crop_img = img[top:bottom, left:right]
 
-    # regin in the dst_img
+    # fill in the dst_img
     shape = list(img.shape)
     shape[0] = size[1]
     shape[1] = size[0]
@@ -241,12 +264,22 @@ def cv_crop_img(img, pos, size):
     dy = 0
     dh = bottom - top
     dw = right - left
-    if top == 0:
-        dy = size[1] - dh
-    if left == 0:
-        dx = size[0] - dw
+
+    if centering:
+        if dh < size[1]:
+            dy = size[1] - dh
+            dy //= 2
+        if dw < size[0]:
+            dx = size[0] - dw
+            dx //= 2
+    else:
+        if dh < size[1] and top == 0:
+            dy = size[1] - dh
+        if dw < size[0] and left == 0:
+            dx = size[0] - dw
 
     dst_img[dy:dy+dh, dx:dx+dw] = crop_img
+
     return dst_img
 
 

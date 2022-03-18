@@ -82,39 +82,39 @@ func MyLineNumberToggle()
 endfunc
 
 func MyCheckEnv()
-  echo "version: ".v:version
-  echo "unix: ".has("unix")
-  echo "win32unix: ".has("win32unix")
-  echo "win32: ".has("win32")
-  echo "win64: ".has("win64")
-  echo "python: ".has("python")
+  echom "version: ".v:version
+  echom "unix: ".has("unix")
+  echom "win32unix: ".has("win32unix")
+  echom "win32: ".has("win32")
+  echom "win64: ".has("win64")
+  echom "python: ".has("python")
   if has("python")
     py print(sys.version)
   endif
-  echo "python3: ".has("python3")
+  echom "python3: ".has("python3")
   if has("python3")
     py3 print(sys.version)
   endif
-  echo "gui_running: ".has("gui_running")
-  echo "term: ".&term
-  echo "shell: ".&shell
-  echo "path: ".&path
-  echo "runtimepath: ".&runtimepath
-  echo "pwd:"
+  echom "gui_running: ".has("gui_running")
+  echom "term: ".&term
+  echom "shell: ".&shell
+  echom "path: ".&path
+  echom "runtimepath: ".&runtimepath
+  echom "pwd:"
   pwd
 endfunc
 
 func MyWinInfo()
-  echo "columns               : &columns      : ".&columns
-  echo "lines                 : &lines        : ".&lines
-  echo "current win's width   : winwidth(0)   : ".winwidth(0)
-  echo "current win's height  : winheight(0)  : ".winheight(0)
-  echo "current win's winnr   : winnr()       : ".winnr()
-  echo "last win's winnr      : winnr('$')    : ".winnr('$')
-  echo "current win's bufnr   : winbufnr(0)   : ".winbufnr(0)
-  echo "current buf's bufnr   : bufnr('%')    : ".bufnr('%')
-  echo "current buf's bufname : bufname('%')  : ".bufname('%')
-  echo "current buf's winnr   : bufwinnr('%') : ".bufwinnr('%')
-  echo "current buf's winid   : bufwinid('%') : ".bufwinid('%')
+  echom "columns               : &columns      : ".&columns
+  echom "lines                 : &lines        : ".&lines
+  echom "current win's width   : winwidth(0)   : ".winwidth(0)
+  echom "current win's height  : winheight(0)  : ".winheight(0)
+  echom "current win's winnr   : winnr()       : ".winnr()
+  echom "last win's winnr      : winnr('$')    : ".winnr('$')
+  echom "current win's bufnr   : winbufnr(0)   : ".winbufnr(0)
+  echom "current buf's bufnr   : bufnr('%')    : ".bufnr('%')
+  echom "current buf's bufname : bufname('%')  : ".bufname('%')
+  echom "current buf's winnr   : bufwinnr('%') : ".bufwinnr('%')
+  echom "current buf's winid   : bufwinid('%') : ".bufwinid('%')
 endfunc
 

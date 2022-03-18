@@ -5,6 +5,9 @@ import os
 import re
 
 
+#------------------------------------------------------
+# file name
+#------------------------------------------------------
 class FileName():
     def __init__(self, orig_path):
         self._orig_path = orig_path
@@ -29,6 +32,9 @@ class FileName():
         return ext
 
 
+#------------------------------------------------------
+# image size
+#------------------------------------------------------
 # dst_wh:
 #   (0, 0) : source size
 #   (w, 0) : set width, keep aspect ratio
@@ -48,7 +54,8 @@ def fix_size(src_wh, dst_wh):
         return (w, h)
 
 
-def max_size(src_wh, max_wh):
+# compute the maximized size
+def fit_size(src_wh, max_wh):
     w, h = src_wh
     w_max, h_max = max_wh
 
@@ -62,6 +69,9 @@ def max_size(src_wh, max_wh):
     return fix_size(src_wh, dst_wh)
 
 
+#------------------------------------------------------
+# path
+#------------------------------------------------------
 def expand_env(s):
     r = re.search('\$\w+', s)
     if r != None:

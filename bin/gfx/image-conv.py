@@ -33,10 +33,25 @@ def f_conv_images(files, args):
 
         try:
             img = cu.cv_load(ifname)
-            img = cu.cv_resize_img(img, dst_size)
-            img = cu.cv_cvt_channels(img, args.channels)
-            img = cu.cv_cvt_dtype(img, args.dtype)
-            img = cu.cv_crop_img_simple(img, args.crop_pos, args.crop_size)
+
+            if args.srgb_to_linear:
+                img = cu.cv_srgb_to_linear(img)
+
+            if args.thumbnail > 0:
+                thmb_size = (args.thumbnail, args.thumbnail)
+                img = cu.cv_fit_img(img, thmb_size)
+                img = cu.cv_crop_img(img, (0, 0), thmb_size, True)
+            else:
+                img = cu.cv_resize_img(img, dst_size)
+                img = cu.cv_cvt_channels(img, args.channels)
+                img = cu.cv_cvt_dtype(img, args.dtype)
+                img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
+                if args.crop_size != [0, 0]:
+                    img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
+
+            if args.linear_to_srgb:
+                img = cu.cv_linear_to_srgb(img)
+
             cu.cv_save(ofname, img)
         except Exception as e:
             print(f'fail to convert ... {ifname} {e}')
@@ -44,12 +59,40 @@ def f_conv_images(files, args):
 
 def parse_args():
     parser = argparse.ArgumentParser(description='convert images', add_help=False)
+
+    #------------------------------------------------------
+    # positional arguments
+    #------------------------------------------------------
+    parser.add_argument('files',
+                        nargs='+',
+                        type=str,
+                        help='input files')
+
+    #------------------------------------------------------
+    # common
+    #------------------------------------------------------
     parser.add_argument('--help',
                         action='help',
                         help="show this help message and exit")
     parser.add_argument('-v', '--verbose',
                         action='store_true',
                         help='show verbose message')
+
+    #------------------------------------------------------
+    # special
+    #------------------------------------------------------
+    parser.add_argument('-t', '--thumbnail',
+                        type=int,
+                        default=0,
+                        help='set thumbnail size')
+
+    #------------------------------------------------------
+    # basic
+    #------------------------------------------------------
+    parser.add_argument('-e', '--ext',
+                        type=str,
+                        default='jpg',
+                        help='set ext (default=jpg)')
     parser.add_argument('-w', '--width',
                         type=int,
                         default=0,
@@ -66,24 +109,45 @@ def parse_args():
                         type=str,
                         default='',
                         help='set dtype (uint8|uint16|float)')
+
+    #------------------------------------------------------
+    # pixel value
+    #------------------------------------------------------
+    parser.add_argument('--brightness',
+                        type=float,
+                        default=0,
+                        help='set brightness')
+    parser.add_argument('--contrast',
+                        type=float,
+                        default=0,
+                        help='set contrast')
+
+    #------------------------------------------------------
+    # crop
+    #------------------------------------------------------
     parser.add_argument('-cp', '--crop_pos',
                         nargs=2,
                         type=int,
                         default=[0, 0],
-                        help='set position (default=0 0)')
+                        help='set crop position (default=0 0)')
     parser.add_argument('-cs', '--crop_size',
                         nargs=2,
                         type=int,
-                        default=[256, 256],
-                        help='set image size (default=256 256)')
-    parser.add_argument('-e', '--ext',
-                        type=str,
-                        default='jpg',
-                        help='set ext (default=jpg)')
-    parser.add_argument('files',
-                        nargs='+',
-                        type=str,
-                        help='input files')
+                        default=[0, 0],
+                        help='set crop size')
+    parser.add_argument('-cc', '--crop_centering',
+                        action='store_true',
+                        help='set crop centering')
+
+    #------------------------------------------------------
+    # color space
+    #------------------------------------------------------
+    parser.add_argument('--linear_to_srgb',
+                        action='store_true',
+                        help='convert linear to srgb')
+    parser.add_argument('--srgb_to_linear',
+                        action='store_true',
+                        help='convert srgb to linear')
 
     return parser.parse_args()
 
