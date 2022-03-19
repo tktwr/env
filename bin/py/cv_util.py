@@ -39,7 +39,7 @@ def cv_color(col, dst_dtype):
 
 
 def cv_cvt_dtype(img, dst_dtype):
-    if dst_dtype not in ('uint8', 'uint16', 'float'):
+    if dst_dtype not in ('uint8', 'uint16', 'float32'):
         return img
 
     if img.dtype == dst_dtype:
@@ -140,9 +140,9 @@ def cv_brightness_contrast_img(img, brightness, contrast):
     img = cv_cvt_dtype(img, 'float32')
 
     img = a * img + b
-    oimg = np.clip(img, 0.0, None)
+    img = np.clip(img, 0.0, None)
 
-    return cv_cvt_dtype(oimg, dtype)
+    return cv_cvt_dtype(img, dtype)
 
 
 def cv_bgr_to_hsv(img):
