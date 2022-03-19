@@ -1,9 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# USAGE
-#     conv.py [-w width] [-h height] -e dst_ext image_file...
-#
 
 import os
 import argparse
@@ -36,6 +32,7 @@ def f_conv_images(files, args):
                 img = cu.cv_resize_img(img, dst_size)
                 img = cu.cv_cvt_channels(img, args.channels)
                 img = cu.cv_cvt_dtype(img, args.dtype)
+                img = cu.cv_mult_img(img, args.mult)
                 img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
                 if args.crop_size != [0, 0]:
                     img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
@@ -48,16 +45,9 @@ def f_conv_images(files, args):
             print(f'fail to convert ... {ifname} {e}')
 
 
-class MyHelpFormatter(
-    argparse.RawDescriptionHelpFormatter,
-    argparse.ArgumentDefaultsHelpFormatter,
-    argparse.MetavarTypeHelpFormatter,
-    ):
-    pass
-
 def parse_args():
     parser = argparse.ArgumentParser(
-        formatter_class=MyHelpFormatter,
+        formatter_class=tu.MyHelpFormatter,
         description='convert images',
         epilog='''
 examples:
@@ -73,15 +63,15 @@ examples:
 
   fixed width and height
       image-conv.py -e jpg -w 200 -h 100 a.png b.png...
-            ''',
+        ''',
         add_help=False)
 
     #------------------------------------------------------
     # positional arguments
     #------------------------------------------------------
     parser.add_argument('files',
-                        nargs='+',
                         type=str,
+                        nargs='+',
                         help='input files')
 
     #------------------------------------------------------
@@ -122,36 +112,26 @@ examples:
                         help='set height')
     parser.add_argument('-c', '--channels',
                         type=int,
+                        choices=[1, 3, 4],
                         default=0,
-                        help='set channels (1|3|4)')
-    parser.add_argument('-d', '--dtype',
+                        help='set channels')
+    parser.add_argument('-y', '--dtype',
                         type=str,
+                        choices=['uint8', 'uint16', 'float32'],
                         default='',
-                        help='set dtype (uint8|uint16|float32)')
-
-    #------------------------------------------------------
-    # pixel value
-    #------------------------------------------------------
-    parser.add_argument('--brightness',
-                        type=float,
-                        default=0,
-                        help='set brightness')
-    parser.add_argument('--contrast',
-                        type=float,
-                        default=0,
-                        help='set contrast')
+                        help='set dtype')
 
     #------------------------------------------------------
     # crop
     #------------------------------------------------------
     parser.add_argument('-cp', '--crop_pos',
-                        nargs=2,
                         type=int,
+                        nargs=2,
                         default=[0, 0],
                         help='set crop position')
     parser.add_argument('-cs', '--crop_size',
-                        nargs=2,
                         type=int,
+                        nargs=2,
                         default=[0, 0],
                         help='set crop size')
     parser.add_argument('-cc', '--crop_centering',
@@ -168,6 +148,22 @@ examples:
                         action='store_true',
                         help='convert srgb to linear')
 
+    #------------------------------------------------------
+    # pixel value
+    #------------------------------------------------------
+    parser.add_argument('--mult',
+                        type=float,
+                        default=1,
+                        help='multiply')
+    parser.add_argument('--brightness',
+                        type=float,
+                        default=0,
+                        help='set brightness')
+    parser.add_argument('--contrast',
+                        type=float,
+                        default=0,
+                        help='set contrast')
+
     return parser.parse_args()
 
 
@@ -181,6 +177,7 @@ def print_args(args):
     print(f"args.crop_size : {args.crop_size}")
     print(f"args.ext       : {args.ext}")
     print(f"args.files     : {args.files}")
+
 
 if __name__ == "__main__":
     args = parse_args()

@@ -78,20 +78,7 @@ def cv_bgra_to_bgr_img(img):
 
 
 def cv_split_img(img):
-    h, w, ch = cv_size(img)
-    img_list = []
-
-    if ch >= 1:
-        img_list.append(img[:, :, 0])
-
-    if ch >= 3:
-        img_list.append(img[:, :, 1])
-        img_list.append(img[:, :, 2])
-
-    if ch >= 4:
-        img_list.append(img[:, :, 3])
-
-    return img_list
+    return cv2.split(img)
 
 
 def cv_merge_img(img_list):
@@ -130,6 +117,13 @@ def cv_cvt_channels(img, dst_ch):
 #------------------------------------------------------
 # convert pixel value
 #------------------------------------------------------
+def cv_mult_img(img, val):
+    dtype = img.dtype
+    img = cv_cvt_dtype(img, 'float32')
+    img *= val
+    return cv_cvt_dtype(img, dtype)
+
+
 # brightness: [-1, 1]
 # contrast  : [-1, 1]
 def cv_brightness_contrast_img(img, brightness, contrast):

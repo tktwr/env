@@ -3,6 +3,18 @@
 
 import os
 import re
+import argparse
+
+
+#------------------------------------------------------
+# MyHelpFormatter
+#------------------------------------------------------
+class MyHelpFormatter(
+    argparse.RawDescriptionHelpFormatter,
+    argparse.ArgumentDefaultsHelpFormatter,
+    argparse.MetavarTypeHelpFormatter,
+    ):
+    pass
 
 
 #------------------------------------------------------
