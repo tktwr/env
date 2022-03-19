@@ -5,6 +5,7 @@
 #     conv.py [-w width] [-h height] -e dst_ext image_file...
 #
 
+import os
 import argparse
 import tt_util as tu
 import cv_util as cu
@@ -17,6 +18,9 @@ def f_conv_images(files, args):
         fname = tu.FileName(ifname)
         name = fname.name()
         ofname = f"{name}.{args.ext}"
+        if os.path.isfile(ofname) == True and not args.force:
+            print(f"file is already existed: {ofname}")
+            continue
 
         try:
             img = cu.cv_load(ifname)
@@ -89,6 +93,9 @@ examples:
     parser.add_argument('-v', '--verbose',
                         action='store_true',
                         help='show verbose message')
+    parser.add_argument('-f', '--force',
+                        action='store_true',
+                        help='force to overwrite')
 
     #------------------------------------------------------
     # special

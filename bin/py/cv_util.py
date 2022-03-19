@@ -63,7 +63,7 @@ def cv_rgb_to_bgr_img(img):
 
 
 def cv_bgr_to_bgra_img(img):
-    img_list = cv2.split(img)
+    img_list = list(cv2.split(img))
     img_a = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
     img_list.append(img_a)
     return cv2.merge(img_list)
@@ -359,7 +359,7 @@ def cv_save(ifname, img):
 
     img = cv_cvt_dtype(img, dst_dtype)
 
-    print(f"cv_save: {ifname} {img.dtype}")
+    print(f"cv_save: {ifname} {img.shape} {img.dtype}")
     cv2.imwrite(ifname, img)
 
 
