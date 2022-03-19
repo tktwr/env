@@ -15,14 +15,14 @@
 -   ArchWiki                                        | https://wiki.archlinux.jp/
 -   SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
     ------------------------------------            | ----------------------------------------
-- c cpprefjp                                        | https://cpprefjp.github.io/
+- C cpprefjp                                        | https://cpprefjp.github.io/
 -     filesystem                                    | https://cpprefjp.github.io/reference/filesystem.html
 -     path                                          | https://cpprefjp.github.io/reference/filesystem/path.html
 -   cppreference                                    | https://ja.cppreference.com/w/
 -   clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
     ------------------------------------            | ----------------------------------------
 -   python                                          | https://www.python.org/
--     doc                                           | https://docs.python.org/ja/3/index.html
+- P   doc                                           | https://docs.python.org/ja/3/index.html
 -     tutorial                                      | https://docs.python.org/ja/3/tutorial/
 -     tkinter                                       | https://docs.python.org/ja/3/library/tkinter.html
 -   nkmk                                            | https://note.nkmk.me/
@@ -69,8 +69,8 @@
 -   OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 -   OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 -   glTF                                            | https://www.khronos.org/gltf/
-- g   glTF 2.0 Specification                        | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
-- e   Extensions for glTF 2.0                       | https://github.com/KhronosGroup/glTF/tree/main/extensions
+- G   glTF 2.0 Specification                        | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
+- E   Extensions for glTF 2.0                       | https://github.com/KhronosGroup/glTF/tree/main/extensions
 -       KHR_materials_specular                      | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
 -     glTF extensions                               | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
 -     glTF viewer (old)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
@@ -87,8 +87,9 @@
 -   Blender                                         | https://docs.blender.org/
 -     Blender Reference Manual                      | https://docs.blender.org/manual/en/latest/
 -       PrincipledBSDF                              | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
+-       PrincipledHairBSDF                          | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
 -       Open Shading Language                       | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
-- b   Blender Python API Documentation              | https://docs.blender.org/api/current/index.html
+- B   Blender Python API Documentation              | https://docs.blender.org/api/current/index.html
 -       Object(ID)                                  | https://docs.blender.org/api/current/bpy.types.Object.html
 -       Material(ID)                                | https://docs.blender.org/api/current/bpy.types.Material.html
 -       UILayout                                    | https://docs.blender.org/api/current/bpy.types.UILayout.html
@@ -116,7 +117,7 @@
     ------------------------------------            | ----------------------------------------
 -   Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
 -   A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
--   DANIEL BOSCHUNG – Face Cartography             | https://www.danielboschung.com/
+-   DANIEL BOSCHUNG – Face Cartography              | https://www.danielboschung.com/
 -   USC ICT                                         | https://vgl.ict.usc.edu/
     ------------------------------------            | ----------------------------------------
 -   Resources                                       |
