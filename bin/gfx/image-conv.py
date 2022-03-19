@@ -4,19 +4,6 @@
 # USAGE
 #     conv.py [-w width] [-h height] -e dst_ext image_file...
 #
-# EXAMPLES
-#
-# - same size as each input
-#     conv.py -e jpg a.png b.png...
-#
-# - fixed width
-#     conv.py -w 200 -e jpg a.png b.png...
-#
-# - fixed height
-#     conv.py -h 200 -e jpg a.png b.png...
-#
-# - fixed width and height
-#     conv.py -w 200 -h 100 -e jpg a.png b.png...
 
 import argparse
 import tt_util as tu
@@ -57,8 +44,33 @@ def f_conv_images(files, args):
             print(f'fail to convert ... {ifname} {e}')
 
 
+class MyHelpFormatter(
+    argparse.RawDescriptionHelpFormatter,
+    argparse.ArgumentDefaultsHelpFormatter,
+    argparse.MetavarTypeHelpFormatter,
+    ):
+    pass
+
 def parse_args():
-    parser = argparse.ArgumentParser(description='convert images', add_help=False)
+    parser = argparse.ArgumentParser(
+        formatter_class=MyHelpFormatter,
+        description='convert images',
+        epilog='''
+examples:
+
+  same size as each input
+      image-conv.py -e jpg a.png b.png...
+
+  fixed width
+      image-conv.py -e jpg -w 200 a.png b.png...
+
+  fixed height
+      image-conv.py -e jpg -h 200 a.png b.png...
+
+  fixed width and height
+      image-conv.py -e jpg -w 200 -h 100 a.png b.png...
+            ''',
+        add_help=False)
 
     #------------------------------------------------------
     # positional arguments
@@ -92,7 +104,7 @@ def parse_args():
     parser.add_argument('-e', '--ext',
                         type=str,
                         default='jpg',
-                        help='set ext (default=jpg)')
+                        help='set ext')
     parser.add_argument('-w', '--width',
                         type=int,
                         default=0,
@@ -108,7 +120,7 @@ def parse_args():
     parser.add_argument('-d', '--dtype',
                         type=str,
                         default='',
-                        help='set dtype (uint8|uint16|float)')
+                        help='set dtype (uint8|uint16|float32)')
 
     #------------------------------------------------------
     # pixel value
@@ -129,7 +141,7 @@ def parse_args():
                         nargs=2,
                         type=int,
                         default=[0, 0],
-                        help='set crop position (default=0 0)')
+                        help='set crop position')
     parser.add_argument('-cs', '--crop_size',
                         nargs=2,
                         type=int,
