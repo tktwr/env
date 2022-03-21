@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import argparse
+import os
+os.environ['OPENCV_IO_ENABLE_OPENEXR'] = '1'
 import cv2
+import argparse
+import tt_util as tu
 import cv_util as cu
 import numpy as np
 import tkinter as tk
@@ -29,14 +32,20 @@ class ImagePkg():
         print(f"ImagePkg::__init__")
         if fname != "":
             self.load(fname)
+        else:
+            w, h = (500, 500)
+            img = cu.cv_create_img((h, w, 3), 'uint8', (0, 0, 0))
+            self.set_img(img, fname)
+            self.make_disp_img((w, h))
 
     def __del__(self):
         print(f"ImagePkg::__del__")
 
     def set_img(self, img, fname):
         h, w = img.shape[:2]
-
-        self.fname = fname
+        fn = tu.FileName(fname)
+        self.dirname = fn.dirname()
+        self.fname = fn.filename()
         self.wh = (w, h)
         self.img = img
         self.disp_img = None
@@ -47,9 +56,6 @@ class ImagePkg():
             return self.disp_img
         elif win_type == "crop":
             return self.crop_img
-
-    def size_wh(self):
-        return self.wh
 
     def load(self, fname):
         img = cu.cv_load(fname)
@@ -77,22 +83,8 @@ class ImagePkg():
         return (float(x)/(w-1), float(y)/(h-1))
 
     def make_disp_img(self, max_wh):
-        w_max, h_max = max_wh
-        w, h = self.wh
-        img = self.img
-
-        if h >= w and h > h_max:
-            dst_size = (0, h_max)
-            oimg = cu.cv_resize_img(img, dst_size)
-        elif w >= h and w > w_max:
-            dst_size = (w_max, 0)
-            oimg = cu.cv_resize_img(img, dst_size)
-        else:
-            dst_size = (0, 0)
-            oimg = img
-
-        self.disp_img = oimg
-        return oimg
+        self.disp_img = cu.cv_fit_img(self.img, max_wh)
+        return self.disp_img
 
     def make_crop_xy_img(self, xy, wh):
         center = (wh[0]//2, wh[1]//2)
@@ -103,7 +95,7 @@ class ImagePkg():
         oimg = cu.cv_crop_center_img(self.img, xy, wh)
         oimg = cv2.rectangle(oimg, p1, p2, color, 1)
         self.crop_img = oimg
-        return oimg
+        return self.crop_img
 
     def make_crop_uv_img(self, uv, wh):
         xy = self.uv_to_xy(uv)
@@ -114,12 +106,12 @@ class ImagePkg():
 # ImageWinBase
 #======================================================
 class ImageWinBase(tk.Frame):
-    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
+    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5)):
         print(f"ImageWinBase::__init__")
-        super().__init__(root)
+        super().__init__(parent)
         self.pack()
 
-        self.root = root
+        self.parent = parent
         self.app = app
         self.nr = nr
         self.win_type = win_type
@@ -127,7 +119,7 @@ class ImageWinBase(tk.Frame):
         self.I = app.I[nr]
         self.win_img = self.I.get_img(win_type)
 
-        self.root.title(f"Image {nr}: {win_type}")
+        #self.parent.title(f"Image {nr}: {win_type}")
 
     def __del__(self):
         print(f"ImageWinBase::__del__")
@@ -136,47 +128,22 @@ class ImageWinBase(tk.Frame):
         h, w = img.shape[:2]
         win_h = h + 30
         win_w = w
-        self.root.geometry(f"{win_w}x{win_h}")
+        #self.parent.geometry(f"{win_w}x{win_h}")
 
     def create_canvas(self, img):
         self.img_tk = cvimg_to_imgtk(img)
         w = self.img_tk.width()
         h = self.img_tk.height()
-        self.canvas = tk.Canvas(self.root, width=w, height=h)
+        self.canvas = tk.Canvas(self.parent, width=w, height=h)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
         self.canvas.bind('<Button-1>', self.mouse_canvas)
         self.canvas.bind('<Button-3>', self.mouse_canvas)
         self.canvas.bind('<B1-Motion>', self.mouse_canvas)
         self.canvas.pack()
 
-    def create_status(self):
-        self.status_text = tk.StringVar()
-        label = ttk.Label(self.root,
-            textvariable=self.status_text,
-            relief='sunken',
-            #relief='groove',
-            font=self.app.text_font
-            )
-        label.pack(fill = tk.X)
-
     def update_canvas(self, img):
         self.img_tk = cvimg_to_imgtk(img)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
-
-    def update_status(self, uv):
-        u, v = uv
-
-        # original image size
-        H, W = self.I.img.shape[:2]
-
-        # XY in original image
-        XY = (int(u * (W-1)), int(v * (H-1)))
-
-        val = self.I.pick_uv(uv)
-
-        uv_str = f"({u:.2f}, {v:.2f})"
-        text = f"uv={uv_str}, XY={XY}, bgr={val}"
-        self.status_text.set(text)
 
     def mouse_canvas(self, event):
         if event.num == 3:
@@ -199,126 +166,210 @@ class ImageWinBase(tk.Frame):
 
         return uv
 
+    def update_status(self, uv):
+        uv = np.clip(uv, 0, 1)
+        u, v = uv
+
+        # original image size
+        H, W = self.I.img.shape[:2]
+
+        # XY in original image
+        XY = (int(u * (W-1)), int(v * (H-1)))
+
+        val = self.I.pick_uv(uv)
+
+        uv_str = f"({u:.2f}, {v:.2f})"
+        text = f"uv={uv_str}, XY={XY}, val={val}"
+        main_win = self.app.main_win
+        if hasattr(main_win, 'status_text') and main_win.status_text != None:
+            main_win.status_text.set(text)
+
+
+#======================================================
+# ImageFrame
+#======================================================
+class ImageFrame(ImageWinBase):
+    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5)):
+        super().__init__(parent, app, nr, win_type, uv)
+
+        self.create_canvas(self.win_img)
+        self.resize(self.win_img)
+        self.update_status(uv)
+
 
 #======================================================
 # ImageWin
 #======================================================
 class ImageWin(ImageWinBase):
-    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
-        super().__init__(root, app, nr, win_type, uv)
+    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5), geom=''):
+        super().__init__(parent, app, nr, win_type, uv)
 
         self.create_menu()
         self.create_canvas(self.win_img)
-        self.create_status()
         self.resize(self.win_img)
         self.update_status(uv)
+        if geom != '':
+            self.parent.geometry(geom)
 
     def create_menu(self):
-        menubar = tk.Menu(self.root)
+        menubar = tk.Menu(self.parent)
 
         # File Menu
-        filemenu = tk.Menu(menubar, tearoff=0)
-        filemenu.add_command(label='Open Image',
+        file_menu = tk.Menu(menubar, tearoff=0)
+        file_menu.add_command(label='Open Image',
                 command=lambda: self.app.eval_cmd(f"load_dlg({self.nr})"))
-        filemenu.add_command(label='Save Image',
+        file_menu.add_command(label='Save Image',
                 command=lambda: self.app.eval_cmd(f"save_dlg({self.nr})"))
 
-        menubar.add_cascade(label='File', menu=filemenu)
+        menubar.add_cascade(label='File', menu=file_menu)
 
-        self.root.config(menu=menubar)
+        self.parent.config(menu=menubar)
 
 
 #======================================================
 # CropWin
 #======================================================
 class CropWin(ImageWinBase):
-    def __init__(self, root, app, nr, win_type, uv=(0.5, 0.5)):
-        super().__init__(root, app, nr, win_type, uv)
+    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5), geom=''):
+        super().__init__(parent, app, nr, win_type, uv)
 
         self.create_canvas(self.win_img)
-        self.create_status()
         self.resize(self.win_img)
-        self.update_status(uv)
+        if geom != '':
+            self.parent.geometry(geom)
 
 
 #======================================================
 # MainWin
 #======================================================
 class MainWin(tk.Frame):
-    def __init__(self, root, app):
+    def __init__(self, parent, app):
         print(f"MainWin::__init__")
-        super().__init__(root)
+        super().__init__(parent)
         self.pack()
 
-        self.root = root
+        self.parent = parent
         self.app = app
+        self.status_text = None
 
         self.create_menu()
+        #self.create_combobox()
+        self.create_image_field(1, 'disp')
+        self.create_image_list()
         self.create_text_field()
         self.create_input()
+        self.create_status()
 
-        self.root.title(self.app.name)
+        self.parent.title(self.app.name)
 
     def __del__(self):
         print(f"MainWin::__del__")
 
+    #------------------------------------------------------
+    # create widget
+    #------------------------------------------------------
     def create_menu(self):
-        menubar = tk.Menu(self.root)
+        menubar = tk.Menu(self.parent)
 
         # File Menu
-        filemenu = tk.Menu(menubar, tearoff=0)
-        filemenu.add_command(label='Open Image 1',
+        file_menu = tk.Menu(menubar, tearoff=0)
+        file_menu.add_command(label='Open Image 1',
                 command=lambda: self.app.eval_cmd(f"load_dlg(1)"))
-        filemenu.add_command(label='Open Image 2',
+        file_menu.add_command(label='Open Image 2',
                 command=lambda: self.app.eval_cmd(f"load_dlg(2)"))
-        filemenu.add_command(label='Save Image 0',
+        file_menu.add_command(label='Save Image 0',
                 command=lambda: self.app.eval_cmd(f"save_dlg(0)"))
-        filemenu.add_command(label='Info All Images',
+        file_menu.add_command(label='Info All Images',
                 command=lambda: self.app.eval_cmd(f"info_all()"))
-        filemenu.add_command(label='Close All Images',
+        file_menu.add_command(label='Close All Images',
                 command=lambda: self.app.eval_cmd(f"close_all()"))
-        filemenu.add_separator()
-        filemenu.add_command(label='Exit',
+        file_menu.add_separator()
+        file_menu.add_command(label='Exit',
                 command=self.menu_quit,
                 accelerator="Ctrl+q")
 
+        # Edit Menu
+        edit_menu = tk.Menu(menubar, tearoff=0)
+        edit_menu.add_command(label='Linear to sRGB',
+                command=lambda: self.app.eval_cmd(f"power(1, 1/2.2)"))
+        edit_menu.add_command(label='sRGB to Linear',
+                command=lambda: self.app.eval_cmd(f"power(1, 2.2)"))
+
         # Help Menu
-        helpmenu = tk.Menu(menubar, tearoff=0)
-        helpmenu.add_command(label='Help',
+        help_menu = tk.Menu(menubar, tearoff=0)
+        help_menu.add_command(label='Help',
                 command=lambda: self.app.eval_cmd(f"help()"))
-        helpmenu.add_command(label='Clear Text',
+        help_menu.add_command(label='Clear Text',
                 command=lambda: self.app.eval_cmd(f"clear()"))
 
-        menubar.add_cascade(label='File', menu=filemenu)
-        menubar.add_cascade(label='Help', menu=helpmenu)
+        menubar.add_cascade(label='File', menu=file_menu)
+        menubar.add_cascade(label='Edit', menu=edit_menu)
+        menubar.add_cascade(label='Help', menu=help_menu)
 
-        self.root.config(menu=menubar)
+        self.parent.config(menu=menubar)
         self.bind_all("<Control-q>", self.menu_quit)
 
-    def create_text_field(self):
-        frame = ttk.Frame(self.root)
-        frame.pack(expand = True, fill = tk.BOTH)
+    def create_combobox(self):
+        img_list = ['Easy', 'Normal', 'Hard']
+        img_list_combobox = ttk.Combobox(self.parent,
+            values=img_list,
+            )
+        img_list_combobox.pack(expand=True, fill=tk.X)
 
-        text_field = ScrolledText(frame, font=self.app.text_font)
-        text_field.place(x=0, y=0, width=self.app.w, height=self.app.h)
-        text_field.pack(expand = True, fill = tk.BOTH)
+    def create_image_field(self, nr, win_type, uv=(0.5, 0.5)):
+        self.app.I[nr] = ImagePkg()
+        win = ImageFrame(self.parent,
+            self.app, nr, win_type, uv)
+        win.pack()
+        self.app.disp_win[nr] = win
+
+    def create_image_list(self):
+        frame = ttk.Frame(self.parent)
+        frame.pack(expand=True, fill=tk.X)
+
+        var = tk.StringVar()
+        listbox = tk.Listbox(frame,
+            height=4,
+            font=self.app.text_font,
+            listvariable=var)
+
+        scrollbar = ttk.Scrollbar(frame,
+            orient='vertical',
+            command=listbox.yview)
+        listbox['yscrollcommand'] = scrollbar.set
+
+        listbox.configure(fg='gray80', bg='gray20')
+        listbox.pack(side='left', fill=tk.X, expand=True)
+        scrollbar.pack(side='right', fill='both')
+        self.listbox = listbox
+
+    def create_text_field(self):
+        frame = ttk.Frame(self.parent)
+        frame.pack(expand=True, fill=tk.BOTH)
+
+        w, h = (80, 10)
+        text_field = ScrolledText(frame,
+            font=self.app.text_font,
+            width=w, height=h)
+        #text_field.place(x=0, y=0, width=self.app.w, height=self.app.h)
         text_field.configure(fg='gray80', bg='gray20')
+        text_field.pack(expand=True, fill=tk.BOTH)
         self.text_field = text_field
 
     def create_input(self):
-        frame = ttk.Frame(self.root)
-        frame.pack(fill = tk.X)
+        frame = ttk.Frame(self.parent)
+        frame.pack(fill=tk.X)
 
         #style = ttk.Style()
         #style.configure("Dark.TLabel", foreground="gold", background="gray20")
 
-        self.input_var = tk.StringVar()
+        input_var = tk.StringVar()
         input_text = ttk.Entry(frame,
-            textvariable=self.input_var,
+            textvariable=input_var,
             #style="Dark.TLabel",
             font=self.app.text_font
             )
-        input_text.pack(side = tk.LEFT, expand = True, fill = tk.X)
+        input_text.pack(side=tk.LEFT, expand=True, fill=tk.X)
         input_text.bind('<Return>', self.key_enter)
 
         btn_enter = ttk.Button(frame,
@@ -326,13 +377,29 @@ class MainWin(tk.Frame):
             command=self.key_enter
             )
         btn_enter.pack(side = tk.RIGHT)
+        self.input_var = input_var
 
+    def create_status(self):
+        #frame = ttk.Frame(self.parent)
+        #frame.pack(expand=True, fill=tk.X)
+
+        self.status_text = tk.StringVar()
+        label = ttk.Label(self.parent,
+            textvariable=self.status_text,
+            relief='sunken',
+            #relief='groove',
+            font=self.app.text_font
+            )
+        label.pack(expand=True, fill=tk.X)
+
+    #------------------------------------------------------
+    # operate widget
+    #------------------------------------------------------
     def menu_quit(self, event=None):
         self.app.eval_cmd(f"quit()")
 
-    def key_enter(self, event=None):
-        self.app.eval_cmd(f"{self.input_var.get()}")
-        #self.app.cmd_print(f"{event.keysym}")
+    def add_text_to_image_list(self, text):
+        self.listbox.insert('end', text)
 
     def add_text(self, text):
         self.text_field.insert('insert', text)
@@ -340,6 +407,10 @@ class MainWin(tk.Frame):
 
     def clear_text(self):
         self.text_field.delete('1.0', 'end')
+
+    def key_enter(self, event=None):
+        self.app.eval_cmd(f"{self.input_var.get()}")
+        #self.app.cmd_print(f"{event.keysym}")
 
 
 #======================================================
@@ -377,6 +448,8 @@ class App():
     def cmd_load(self, nr, fname):
         I = ImagePkg(fname)
         self.I[nr] = I
+        text = f'{nr} {I.fname} {I.img.shape} {I.img.dtype}'
+        self.main_win.add_text_to_image_list(text)
 
     def cmd_save(self, nr, fname):
         I = self.I[nr]
@@ -405,7 +478,8 @@ class App():
             if win_type == "disp":
                 win_dict[nr] = ImageWin(tk.Toplevel(), self, nr, win_type, uv)
             elif win_type == "crop":
-                win_dict[nr] = CropWin(tk.Toplevel(), self, nr, win_type, uv)
+                geom = f'500x500+1000+0'
+                win_dict[nr] = CropWin(tk.Toplevel(), self, nr, win_type, uv, geom)
         else:
             I = self.I[nr]
             img = I.get_img(win_type)
@@ -439,14 +513,15 @@ class App():
         self.cmd_close_crop(nr)
 
     def cmd_close_disp(self, nr):
+        return
         win = self.disp_win.pop(nr, None)
         if win != None:
-            win.root.destroy()
+            win.parent.destroy()
 
     def cmd_close_crop(self, nr):
         win = self.crop_win.pop(nr, None)
         if win != None:
-            win.root.destroy()
+            win.parent.destroy()
 
     def cmd_info_all(self):
         for nr in self.I:
@@ -456,17 +531,13 @@ class App():
     def cmd_info(self, nr=1):
         I = self.I[nr]
         img = self.cmd_get_img(nr)
-        h, w, c = cu.cv_size(img)
         min = img.min(axis=(0, 1))
         max = img.max(axis=(0, 1))
 
+        self.cmd_print(f"dirname   = {I.dirname}")
         self.cmd_print(f"fname     = {I.fname}")
-        self.cmd_print(f"height    = {h}")
-        self.cmd_print(f"width     = {w}")
-        self.cmd_print(f"channels  = {c}")
         self.cmd_print(f"img.shape = {img.shape}")
         self.cmd_print(f"img.dtype = {img.dtype}")
-        self.cmd_print(f"type(img) = {type(img)}")
         self.cmd_print(f"min       = {min}")
         self.cmd_print(f"max       = {max}")
 
@@ -575,26 +646,30 @@ class App():
     # parse_args
     #------------------------------------------------------
     def parse_args(self):
-        parser = argparse.ArgumentParser(description='show images')
+        parser = argparse.ArgumentParser(
+            formatter_class=tu.MyHelpFormatter,
+            description='show images')
+
         parser.add_argument('-xy',
-                            nargs='+',
                             type=int,
+                            nargs=2,
                             default=[0, 0],
                             help='set position [x, y]')
         parser.add_argument('-s', '--size',
-                            nargs='+',
                             type=int,
+                            nargs=2,
                             default=[500, 500],
                             help='set display size [w, h]')
         parser.add_argument('-cs', '--crop_size',
-                            nargs='+',
                             type=int,
+                            nargs=2,
                             default=[500, 500],
                             help='set crop size [w, h]')
-        parser.add_argument('file',
-                            nargs='*',
+        parser.add_argument('files',
                             type=str,
-                            help='input file')
+                            nargs='*',
+                            help='input files')
+
         self.args = parser.parse_args()
 
     #------------------------------------------------------
@@ -616,7 +691,7 @@ class App():
         self.main_win = MainWin(root, self)
 
         nr = 1
-        for fname in self.args.file:
+        for fname in self.args.files:
             fname = fname.replace('\\', '/')
             self.eval_cmd(f"load({nr}, '{fname}')")
             self.eval_cmd(f"show({nr})")

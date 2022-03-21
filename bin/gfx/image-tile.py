@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import cv2
-import cv_util as cu
 import numpy as np
+import tt_util as tu
+import cv_util as cu
 
 
 def convert_1d_to_2d(l, step):
@@ -42,7 +42,11 @@ def make_htile(cols, ifnames):
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='tiling images', add_help=False)
+    parser = argparse.ArgumentParser(
+        formatter_class=tu.MyHelpFormatter,
+        description='tiling images',
+        add_help=False)
+
     parser.add_argument('--help',
                         action='help',
                         help="show this help message and exit")
@@ -58,21 +62,20 @@ def parse_args():
                         action='store_true',
                         help="input files are in horizontal order")
     parser.add_argument('files',
-                        nargs='+',
                         type=str,
+                        nargs='+',
                         help='input files')
+
     return parser.parse_args()
 
 
-def main():
+if __name__ == "__main__":
     args = parse_args()
+
     if args.htile:
         img = make_htile(args.cols, args.files)
     else:
         img = make_vtile(args.cols, args.files)
+
     cu.cv_save(args.output, img)
-
-
-if __name__ == "__main__":
-    main()
 

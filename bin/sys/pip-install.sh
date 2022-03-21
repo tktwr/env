@@ -5,15 +5,16 @@ wheel \
 python-language-server \
 pylint \
 flake8 \
+pyinstaller \
 "
 
 pkg_lib="\
+parse \
 numpy \
 opencv-python \
 matplotlib \
 scipy \
 sklearn \
-parse \
 tensorboard \
 "
 
