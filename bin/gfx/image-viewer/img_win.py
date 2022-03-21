@@ -27,7 +27,6 @@ class ImageWinBase(tk.Frame):
         self.parent = parent
         self.app = app
         self.nr = nr
-        self.win_type = win_type
 
         self.I = app.I[nr]
         self.win_img = self.I.get_img(win_type)
@@ -60,12 +59,12 @@ class ImageWinBase(tk.Frame):
 
     def mouse_canvas(self, event):
         if event.num == 3:
-            self.app.cmd_close_crop(self.nr)
+            self.app.cmd_close_crop(self.app.active_nr)
         else:
             xy = (event.x, event.y)
             uv = self.xy_to_uv(xy)
             self.update_status(uv)
-            self.app.cmd_show_crop(self.nr, uv)
+            self.app.cmd_show_crop(uv, self.app.active_nr)
 
     def xy_to_uv(self, xy):
         # xy in window
@@ -102,8 +101,8 @@ class ImageWinBase(tk.Frame):
 # ImageFrame
 #======================================================
 class ImageFrame(ImageWinBase):
-    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5)):
-        super().__init__(parent, app, nr, win_type, uv)
+    def __init__(self, parent, app, nr, uv=(0.5, 0.5)):
+        super().__init__(parent, app, nr, 'disp', uv)
 
         self.create_canvas(self.win_img)
         self.resize(self.win_img)
@@ -114,8 +113,8 @@ class ImageFrame(ImageWinBase):
 # ImageWin
 #======================================================
 class ImageWin(ImageWinBase):
-    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5), geom=''):
-        super().__init__(parent, app, nr, win_type, uv)
+    def __init__(self, parent, app, nr, uv=(0.5, 0.5), geom=''):
+        super().__init__(parent, app, nr, 'disp', uv)
 
         self.create_menu()
         self.create_canvas(self.win_img)
@@ -130,7 +129,7 @@ class ImageWin(ImageWinBase):
         # File Menu
         file_menu = tk.Menu(menubar, tearoff=0)
         file_menu.add_command(label='Open Image',
-                command=lambda: self.app.eval_cmd(f"load_dlg({self.nr})"))
+                command=lambda: self.app.eval_cmd(f"load_dlg({self.nr})", show=True))
         file_menu.add_command(label='Save Image',
                 command=lambda: self.app.eval_cmd(f"save_dlg({self.nr})"))
 
@@ -143,8 +142,8 @@ class ImageWin(ImageWinBase):
 # CropWin
 #======================================================
 class CropWin(ImageWinBase):
-    def __init__(self, parent, app, nr, win_type, uv=(0.5, 0.5), geom=''):
-        super().__init__(parent, app, nr, win_type, uv)
+    def __init__(self, parent, app, nr, uv=(0.5, 0.5), geom=''):
+        super().__init__(parent, app, nr, 'crop', uv)
 
         self.create_canvas(self.win_img)
         self.resize(self.win_img)

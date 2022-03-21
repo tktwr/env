@@ -14,8 +14,9 @@ class ImagePkg():
             self.load(fname)
         else:
             w, h = (500, 500)
-            img = cu.cv_create_img((h, w, 3), 'uint8', (0, 0, 0))
-            self.set_img(img, fname)
+            col = cu.cv_color((0.5, 0.5, 0.5), 'uint8')
+            img = cu.cv_create_img((h, w, 3), 'uint8', col)
+            self.set_img(img, 'default')
             self.make_disp_img((w, h))
 
     def __del__(self):
@@ -32,7 +33,9 @@ class ImagePkg():
         self.crop_img = None
 
     def get_img(self, win_type):
-        if win_type == "disp":
+        if win_type == "orig":
+            return self.img
+        elif win_type == "disp":
             return self.disp_img
         elif win_type == "crop":
             return self.crop_img

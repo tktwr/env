@@ -28,6 +28,8 @@
 -   nkmk                                            | https://note.nkmk.me/
 - p   nkmk.python                                   | https://note.nkmk.me/python/
 -     nkmk.numpy                                    | https://note.nkmk.me/numpy/
+-   Python-tkinter                                  | https://www.python-beginners.com/archive/category/Python-tkinter
+-     tkinter.widgets                               | https://www.python-beginners.com/entry/20210607/1623057987
 -   基礎文法とサンプル集                            | https://algorithm.joho.info/programming/python/sample-code-py/
 -     numpy                                         | https://algorithm.joho.info/programming/python/numpy-sample-code/
 -   python modules                                  |

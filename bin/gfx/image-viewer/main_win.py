@@ -18,13 +18,17 @@ class MainWin(tk.Frame):
         super().__init__(parent)
         self.pack()
 
+        self.text_font = font.Font(family="Cica", size=14)
+        #print(font.families())
+
         self.parent = parent
         self.app = app
+        self.image_field = None
         self.status_text = None
 
         self.create_menu()
         #self.create_combobox()
-        self.create_image_field(1, 'disp')
+        self.create_image_field()
         self.create_image_list()
         self.create_text_field()
         self.create_input()
@@ -36,19 +40,17 @@ class MainWin(tk.Frame):
         print(f"MainWin::__del__")
 
     #------------------------------------------------------
-    # create widget
+    # menu
     #------------------------------------------------------
     def create_menu(self):
         menubar = tk.Menu(self.parent)
 
         # File Menu
         file_menu = tk.Menu(menubar, tearoff=0)
-        file_menu.add_command(label='Open Image 1',
-                command=lambda: self.app.eval_cmd(f"load_dlg(1)"))
-        file_menu.add_command(label='Open Image 2',
-                command=lambda: self.app.eval_cmd(f"load_dlg(2)"))
-        file_menu.add_command(label='Save Image 0',
-                command=lambda: self.app.eval_cmd(f"save_dlg(0)"))
+        file_menu.add_command(label='Open Image',
+                command=lambda: self.app.eval_cmd(f"load_dlg()", show=True))
+        file_menu.add_command(label='Save Image',
+                command=lambda: self.app.eval_cmd(f"save_dlg()"))
         file_menu.add_command(label='Info All Images',
                 command=lambda: self.app.eval_cmd(f"info_all()"))
         file_menu.add_command(label='Close All Images',
@@ -61,9 +63,9 @@ class MainWin(tk.Frame):
         # Edit Menu
         edit_menu = tk.Menu(menubar, tearoff=0)
         edit_menu.add_command(label='Linear to sRGB',
-                command=lambda: self.app.eval_cmd(f"power(1, 1/2.2)"))
+                command=lambda: self.app.eval_cmd(f"power(1/2.2)", show=True))
         edit_menu.add_command(label='sRGB to Linear',
-                command=lambda: self.app.eval_cmd(f"power(1, 2.2)"))
+                command=lambda: self.app.eval_cmd(f"power(2.2)", show=True))
 
         # Help Menu
         help_menu = tk.Menu(menubar, tearoff=0)
@@ -79,6 +81,12 @@ class MainWin(tk.Frame):
         self.parent.config(menu=menubar)
         self.bind_all("<Control-q>", self.menu_quit)
 
+    def menu_quit(self, event=None):
+        self.app.eval_cmd(f"quit()")
+
+    #------------------------------------------------------
+    # combobox
+    #------------------------------------------------------
     def create_combobox(self):
         img_list = ['Easy', 'Normal', 'Hard']
         img_list_combobox = ttk.Combobox(self.parent,
@@ -86,46 +94,91 @@ class MainWin(tk.Frame):
             )
         img_list_combobox.pack(expand=True, fill=tk.X)
 
-    def create_image_field(self, nr, win_type, uv=(0.5, 0.5)):
-        self.app.I[nr] = img_pkg.ImagePkg()
-        win = img_win.ImageFrame(self.parent,
-            self.app, nr, win_type, uv)
-        win.pack()
-        self.app.disp_win[nr] = win
+    #------------------------------------------------------
+    # image field
+    #------------------------------------------------------
+    def create_image_field(self):
+        nr = 0
+        self.app.set_I(img_pkg.ImagePkg(), nr)
+        frame = img_win.ImageFrame(self.parent, self.app, nr)
+        frame.pack()
+        self.image_field = frame
 
+    #------------------------------------------------------
+    # image list
+    #------------------------------------------------------
     def create_image_list(self):
         frame = ttk.Frame(self.parent)
         frame.pack(expand=True, fill=tk.X)
 
         var = tk.StringVar()
-        listbox = tk.Listbox(frame,
-            height=4,
-            font=self.app.text_font,
+        img_listbox = tk.Listbox(frame,
+            height=6,
+            selectmode="extended",
+            font=self.text_font,
             listvariable=var)
+        img_listbox.bind(
+            "<<ListboxSelect>>",
+            self.img_listbox_select,
+            )
 
         scrollbar = ttk.Scrollbar(frame,
             orient='vertical',
-            command=listbox.yview)
-        listbox['yscrollcommand'] = scrollbar.set
+            command=img_listbox.yview)
+        img_listbox['yscrollcommand'] = scrollbar.set
 
-        listbox.configure(fg='gray80', bg='gray20')
-        listbox.pack(side='left', fill=tk.X, expand=True)
+        img_listbox.configure(fg='gray80', bg='gray20')
+        img_listbox.pack(side='left', fill=tk.X, expand=True)
         scrollbar.pack(side='right', fill='both')
-        self.listbox = listbox
+        self.img_listbox = img_listbox
 
+    def img_listbox_select(self, event):
+        i = self.img_listbox.curselection()
+        line = self.img_listbox.get(i)
+        nr = int(line.split(' ')[0])
+        self.app.cmd_show(nr)
+
+    def img_listbox_activate(self, nr):
+        size = self.img_listbox.size()
+        for i in range(size):
+            line = self.img_listbox.get(i)
+            inr = int(line.split(' ')[0])
+            if inr == nr:
+                self.img_listbox.activate(i)
+                break
+
+    def img_listbox_add(self, text):
+        self.img_listbox.insert('end', text)
+
+    def img_listbox_delete(self, idx):
+        self.img_listbox.delete(idx)
+
+    #------------------------------------------------------
+    # text field
+    #------------------------------------------------------
     def create_text_field(self):
         frame = ttk.Frame(self.parent)
         frame.pack(expand=True, fill=tk.BOTH)
 
         w, h = (80, 10)
         text_field = ScrolledText(frame,
-            font=self.app.text_font,
+            font=self.text_font,
             width=w, height=h)
         #text_field.place(x=0, y=0, width=self.app.w, height=self.app.h)
         text_field.configure(fg='gray80', bg='gray20')
         text_field.pack(expand=True, fill=tk.BOTH)
         self.text_field = text_field
 
+    def add_text(self, text):
+        self.text_field.insert('insert', text)
+        self.text_field.see('end')
+
+    def clear_text(self):
+        self.text_field.delete('1.0', 'end')
+
+    #------------------------------------------------------
+    # input
+    #------------------------------------------------------
     def create_input(self):
         frame = ttk.Frame(self.parent)
         frame.pack(fill=tk.X)
@@ -137,7 +190,7 @@ class MainWin(tk.Frame):
         input_text = ttk.Entry(frame,
             textvariable=input_var,
             #style="Dark.TLabel",
-            font=self.app.text_font
+            font=self.text_font
             )
         input_text.pack(side=tk.LEFT, expand=True, fill=tk.X)
         input_text.bind('<Return>', self.key_enter)
@@ -149,37 +202,20 @@ class MainWin(tk.Frame):
         btn_enter.pack(side = tk.RIGHT)
         self.input_var = input_var
 
-    def create_status(self):
-        #frame = ttk.Frame(self.parent)
-        #frame.pack(expand=True, fill=tk.X)
+    def key_enter(self, event=None):
+        self.app.eval_cmd(f"{self.input_var.get()}")
+        #self.app.cmd_print(f"{event.keysym}")
 
+    #------------------------------------------------------
+    # status
+    #------------------------------------------------------
+    def create_status(self):
         self.status_text = tk.StringVar()
         label = ttk.Label(self.parent,
             textvariable=self.status_text,
             relief='sunken',
             #relief='groove',
-            font=self.app.text_font
+            font=self.text_font
             )
         label.pack(expand=True, fill=tk.X)
-
-    #------------------------------------------------------
-    # operate widget
-    #------------------------------------------------------
-    def menu_quit(self, event=None):
-        self.app.eval_cmd(f"quit()")
-
-    def add_text_to_image_list(self, text):
-        self.listbox.insert('end', text)
-
-    def add_text(self, text):
-        self.text_field.insert('insert', text)
-        self.text_field.see('end')
-
-    def clear_text(self):
-        self.text_field.delete('1.0', 'end')
-
-    def key_enter(self, event=None):
-        self.app.eval_cmd(f"{self.input_var.get()}")
-        #self.app.cmd_print(f"{event.keysym}")
-
 
