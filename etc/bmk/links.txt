@@ -15,9 +15,13 @@
 -   ArchWiki                                        | https://wiki.archlinux.jp/
 -   SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
     ------------------------------------            | ----------------------------------------
-- C cpprefjp                                        | https://cpprefjp.github.io/
--     filesystem                                    | https://cpprefjp.github.io/reference/filesystem.html
--     path                                          | https://cpprefjp.github.io/reference/filesystem/path.html
+-   cpprefjp                                        | https://cpprefjp.github.io/
+- C   reference                                     | https://cpprefjp.github.io/reference.html
+-       string                                      | https://cpprefjp.github.io/reference/string/basic_string.html
+-       vector                                      | https://cpprefjp.github.io/reference/vector/vector.html
+-       map                                         | https://cpprefjp.github.io/reference/map/map.html
+-       filesystem                                  | https://cpprefjp.github.io/reference/filesystem.html
+-       path                                        | https://cpprefjp.github.io/reference/filesystem/path.html
 -   cppreference                                    | https://ja.cppreference.com/w/
 -   clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
     ------------------------------------            | ----------------------------------------

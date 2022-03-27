@@ -12,7 +12,7 @@ def normalize_vector(v):
     return v / l
 
 
-def disp_to_normal(ifname, ofname):
+def disp_to_normal(ifname, ofname, height):
     gray_img = cu.cv_load(ifname)
     if len(gray_img.shape) == 3:
         h, w, ch = gray_img.shape[:3]
@@ -21,13 +21,10 @@ def disp_to_normal(ifname, ofname):
         h, w = gray_img.shape[:2]
         ch = 1
 
-    gray_img = gray_img.astype('float')
+    gray_img = gray_img.astype('float32')
+    gray_img *= height
 
-    # exr: if value is [0, 1]
-    #gray_img *= 65535.0
-    gray_img *= 255.0
-
-    nml_img = np.zeros((h, w, 3), dtype=float)
+    nml_img = np.zeros((h, w, 3), dtype='float32')
 
     for y in range(1, h-1):
         for x in range(1, w-1):
@@ -43,5 +40,5 @@ def disp_to_normal(ifname, ofname):
 
 
 if __name__ == "__main__":
-    disp_to_normal(sys.argv[1], sys.argv[2])
+    disp_to_normal(sys.argv[1], sys.argv[2], float(sys.argv[3]))
 

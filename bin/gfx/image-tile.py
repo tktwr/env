@@ -7,12 +7,8 @@ import tt_util as tu
 import cv_util as cu
 
 
-def convert_1d_to_2d(l, step):
-    return [l[i:i + step] for i in range(0, len(l), step)]
-
-
 def make_img_list(ifnames):
-    blank_img = np.zeros((1, 1, 3), np.uint8)
+    blank_img = np.zeros((500, 500, 3), 'uint8')
 
     l1 = []
     for i in ifnames:
@@ -20,9 +16,6 @@ def make_img_list(ifnames):
             img = blank_img
         else:
             img = cu.cv_load(i)
-            h, w, ch = cu.cv_size(img)
-            if ch == 4:
-                img = cu.cv_bgra_to_bgr_img(img)
         l1.append(img)
 
     return l1
@@ -31,13 +24,13 @@ def make_img_list(ifnames):
 def make_vtile(cols, ifnames):
     l1 = make_img_list(ifnames)
     rows = len(l1) // cols
-    l2 = convert_1d_to_2d(l1, rows)
+    l2 = cu.cv_convert_1d_to_2d(l1, rows)
     return cu.cv_vtile(l2)
 
 
 def make_htile(cols, ifnames):
     l1 = make_img_list(ifnames)
-    l2 = convert_1d_to_2d(l1, cols)
+    l2 = cu.cv_convert_1d_to_2d(l1, cols)
     return cu.cv_htile(l2)
 
 

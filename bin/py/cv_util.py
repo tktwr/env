@@ -63,19 +63,8 @@ def cv_rgb_to_bgr_img(img):
     return cv_bgr_to_rgb_img(img)
 
 
-def cv_bgr_to_bgra_img(img):
-    img_list = list(cv2.split(img))
-    img_a = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
-    img_list.append(img_a)
-    return cv2.merge(img_list)
-
-
-def cv_bgra_to_bgr_img(img):
-    img_list = []
-    img_list.append(img[:, :, 0])
-    img_list.append(img[:, :, 1])
-    img_list.append(img[:, :, 2])
-    return cv2.merge(img_list)
+def cv_channel_img(img, ch):
+    return img[:, :, ch]
 
 
 def cv_split_img(img):
@@ -113,6 +102,14 @@ def cv_cvt_channels(img, dst_ch):
 
     if ch == 4 and dst_ch == 1:
         return img_list[0]
+
+    if ch == 1 and dst_ch == 3:
+        return cv2.merge([img_list[0], img_list[0], img_list[0]])
+
+    if ch == 2 and dst_ch == 3:
+        return cv2.merge([img_list[0], img_list[0], img_list[0]])
+
+    return img
 
 
 #------------------------------------------------------
@@ -161,15 +158,10 @@ def cv_srgb_to_linear(img):
 #------------------------------------------------------
 def cv_cvt_to_bgr_img_list(img_list):
     l = []
-    for i in img_list:
-        if len(i.shape) == 3:
-            l.append(i)
-        elif len(i.shape) == 4:
-            bgr = cv_bgra_to_bgr_img(i)
-            l.append(bgr)
-        elif len(i.shape) == 1:
-            bgr = cv2.cvtColor(i, cv2.COLOR_GRAY2BGR)
-            l.append(bgr)
+    for img in img_list:
+        img = cv_cvt_channels(img, 3)
+        img = cv_cvt_dtype(img, 'uint8')
+        l.append(img)
     return l
 
 
@@ -221,6 +213,9 @@ def cv_fit_img(img, dst_wh):
     return cv_resize_img(img, fit_size)
 
 
+#------------------------------------------------------
+# crop
+#------------------------------------------------------
 # pos  : [x, y]
 # size : [w, h]
 def cv_crop_img_simple(img, pos, size):
@@ -234,9 +229,15 @@ def cv_crop_img_simple(img, pos, size):
 # pos  : [x, y]
 # size : [w, h]
 def cv_crop_img(img, pos, size, centering=False):
-    # crop in the img
-    h, w = img.shape[:2]
+    h, w, ch = cv_size(img)
 
+    if ch == 1:
+        dst_shape = (size[1], size[0])
+    else:
+        dst_shape = (size[1], size[0], ch)
+    dst_img = np.zeros(dst_shape, dtype=img.dtype)
+
+    # crop in the img
     top    = pos[1]
     bottom = pos[1] + size[1]
     left   = pos[0]
@@ -247,14 +248,14 @@ def cv_crop_img(img, pos, size, centering=False):
     bottom = h if bottom > h else bottom
     right = w if right > w else right
 
+    crop_h = bottom - top
+    crop_w = right - left
+    if not (crop_h > 0 and crop_w > 0):
+        return dst_img
+
     crop_img = img[top:bottom, left:right]
 
     # fill in the dst_img
-    shape = list(img.shape)
-    shape[0] = size[1]
-    shape[1] = size[0]
-    dst_img = np.zeros(shape, dtype=img.dtype)
-
     dx = 0
     dy = 0
     dh = bottom - top
@@ -319,21 +320,6 @@ def cv_pick(fname, x, y):
     return img[y, x]
 
 
-def cv_create(fname, shape, dtype, val):
-    img = cv_create_img(shape, dtype, val)
-    cv_save(fname, img)
-
-
-def cv_create_hgrad(ofname, shape, dtype, co0, co1):
-    img = cv_create_hgrad_img(shape, dtype, co0, co1)
-    cv_save(ofname, img)
-
-
-def cv_create_vgrad(ofname, shape, dtype, co0, co1):
-    img = cv_create_vgrad_img(shape, dtype, co0, co1)
-    cv_save(ofname, img)
-
-
 def cv_resize(ifname, ofname, dst_size):
     img = cv_load(ifname)
     oimg = cv_resize_img(img, dst_size)
@@ -384,4 +370,34 @@ def cv_htile(img_list_2d, interpolation=cv2.INTER_AREA):
 def cv_vtile(img_list_2d, interpolation=cv2.INTER_AREA):
     img_list_h = [cv_vconcat(img_list_v, interpolation) for img_list_v in img_list_2d]
     return cv_hconcat(img_list_h, interpolation)
+
+
+def cv_convert_1d_to_2d(l, step):
+    return [l[i:i + step] for i in range(0, len(l), step)]
+
+
+def cv_create_check_img(shape, dtype, co0, co1, nelm):
+    h, w, ch = shape
+    nx, ny = nelm
+
+    ih = h // ny
+    iw = w // nx
+    ishape = (ih, iw, ch)
+
+    img0 = cv_create_img(ishape, dtype, co0)
+    img1 = cv_create_img(ishape, dtype, co1)
+
+    img_list_y = []
+    for y in range(ny):
+        img_list_x = []
+        for x in range(nx):
+            mx = x % 2
+            my = y % 2
+            if (mx + my) == 1:
+                img_list_x.append(img1)
+            else:
+                img_list_x.append(img0)
+        img_list_y.append(img_list_x)
+    return cv_htile(img_list_y)
+
 

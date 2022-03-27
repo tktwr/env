@@ -14,7 +14,7 @@ def parse_args():
 
     parser.add_argument('-a', '--action',
                         type=str,
-                        choices=['new', 'hgrad', 'vgrad'],
+                        choices=['new', 'hgrad', 'vgrad', 'check'],
                         default='new',
                         help='set action')
     parser.add_argument('-o', '--ofname',
@@ -26,6 +26,11 @@ def parse_args():
                         nargs=2,
                         default=[256, 256],
                         help='set image size')
+    parser.add_argument('-n', '--nelm',
+                        type=int,
+                        nargs=2,
+                        default=[2, 2],
+                        help='set number of elements')
     parser.add_argument('-c', '--channels',
                         type=int,
                         choices=[1, 3, 4],
@@ -63,9 +68,12 @@ if __name__ == "__main__":
     bgr1 = cu.cv_color(args.bgr1, dtype)
 
     if args.action == 'new':
-        cu.cv_create(args.ofname, shape, dtype, bgr0)
+        img = cu.cv_create_img(shape, dtype, bgr0)
     elif args.action == 'hgrad':
-        cu.cv_create_hgrad(args.ofname, shape, dtype, bgr0, bgr1)
+        img = cu.cv_create_hgrad_img(shape, dtype, bgr0, bgr1)
     elif args.action == 'vgrad':
-        cu.cv_create_vgrad(args.ofname, shape, dtype, bgr0, bgr1)
+        img = cu.cv_create_vgrad_img(shape, dtype, bgr0, bgr1)
+    elif args.action == 'check':
+        img = cu.cv_create_check_img(shape, dtype, bgr0, bgr1, args.nelm)
 
+    cu.cv_save(args.ofname, img)

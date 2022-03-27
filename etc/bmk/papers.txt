@@ -31,8 +31,8 @@
 -   CS 431/636 - Advanced Rendering Techniques                                                                         | https://www.cs.drexel.edu/~david/Classes/CS431/
     --- [SSS] ------------------------------                                                                           | ----------------------------------------
 -   Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
-    --- [Displacement] ------------------------------                                                                           | ----------------------------------------
--   Tessellation-Free Displacement Mapping for Ray Tracing | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
+    --- [Displacement] ------------------------------                                                                  | ----------------------------------------
+-   Tessellation-Free Displacement Mapping for Ray Tracing                                                             | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
     --- [Resources] ------------------------                                                                           | ----------------------------------------
 -   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
@@ -82,7 +82,8 @@
 -   Robust High-Resolution Video Matting with Temporal Guidance                                                        | https://arxiv.org/abs/2108.11515
 -   Deep Automatic Portrait Matting                                                                                    | http://xiaoyongshen.me/webpages/webpage_automatting/
 -   Automatic Portrait Segmentation for Image Stylization                                                              | http://xiaoyongshen.me/webpage_portrait/index.html
-    --- [CycleGAN] ------------------------                                                                            | ----------------------------------------
+    --- [GAN] ------------------------                                                                            | ----------------------------------------
+-   StyleGAN3                                                                                                          | https://github.com/NVlabs/stylegan3
 -   CycleGAN and pix2pix in PyTorch                                                                                    | https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 -   CycleGAN                                                                                                           | https://github.com/junyanz/CycleGAN
 -   pix2pix                                                                                                            | https://github.com/phillipi/pix2pix

@@ -10,7 +10,7 @@ def f_image_split(ifname):
     fname = tu.FileName(ifname)
     name = fname.name()
     ext = fname.ext()
-    ext = ".png"
+    #ext = ".png"
 
     img = cu.cv_load(ifname)
 

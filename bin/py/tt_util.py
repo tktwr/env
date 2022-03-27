@@ -3,7 +3,9 @@
 
 import os
 import re
+import time
 import argparse
+import numpy as np
 
 
 #------------------------------------------------------
@@ -106,5 +108,22 @@ def win_path(fname):
     #fname = fname.replace('/', '\\')
     fname = fname.replace('\\', '/')
     return fname
+
+
+#------------------------------------------------------
+# timeit
+#------------------------------------------------------
+def timeit(func):
+    def wrapper(*args, **kargs):
+        time_list = []
+        for i in range(5):
+            start = time.time()
+            func(*args, **kargs)
+            end = time.time()
+            time_list.append(end - start)
+        avg = np.mean(time_list)
+        median = np.median(time_list)
+        print(f"{func.__name__}: avg={avg:.3f} sec, median={median:.3f} sec")
+    return wrapper
 
 

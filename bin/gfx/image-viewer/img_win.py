@@ -8,6 +8,7 @@ from PIL import Image, ImageTk
 
 
 def cvimg_to_imgtk(img):
+    img = cu.cv_cvt_channels(img, 3)
     img = cu.cv_cvt_dtype(img, 'uint8')
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pil = Image.fromarray(img_rgb)
@@ -31,8 +32,6 @@ class ImageWinBase(tk.Frame):
         self.I = app.I[nr]
         self.win_img = self.I.get_img(win_type)
 
-        #self.parent.title(f"Image {nr}: {win_type}")
-
     def __del__(self):
         print(f"ImageWinBase::__del__")
 
@@ -43,6 +42,7 @@ class ImageWinBase(tk.Frame):
         #self.parent.geometry(f"{win_w}x{win_h}")
 
     def create_canvas(self, img):
+        self.win_img = img
         self.img_tk = cvimg_to_imgtk(img)
         w = self.img_tk.width()
         h = self.img_tk.height()
@@ -54,6 +54,7 @@ class ImageWinBase(tk.Frame):
         self.canvas.pack()
 
     def update_canvas(self, img):
+        self.win_img = img
         self.img_tk = cvimg_to_imgtk(img)
         self.canvas.create_image(0, 0, image=self.img_tk, anchor='nw')
 
@@ -72,6 +73,8 @@ class ImageWinBase(tk.Frame):
 
         # window image size
         h, w = self.win_img.shape[:2]
+        #w = self.img_tk.width()
+        #h = self.img_tk.height()
 
         # uv
         uv = (x/(w-1), y/(h-1))
@@ -150,4 +153,5 @@ class CropWin(ImageWinBase):
         if geom != '':
             self.parent.geometry(geom)
 
+        self.parent.title(f"Zoom {nr}")
 
