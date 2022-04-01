@@ -7,6 +7,8 @@ msys2-home          | SYS_MSYS2_HOME      | C:/msys64/home/$USERNAME
 cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME
 prog64              | SYS_PROG64_DIR      | C:\Program Files
 prog32              | SYS_PROG32_DIR      | C:\Program Files (x86)
+user-local          | USER_LOCAL          | $USERPROFILE/AppData/Local
+user-roaming        | USER_ROAMING        | $USERPROFILE/AppData/Roaming
 user-prog           | USER_PROG_DIR       | $USERPROFILE/AppData/Local/Programs
 user-python-home    | USER_PYTHON_HOME    | $USERPROFILE/AppData/Local/Programs/Python/Python39
 user-python-roaming | USER_PYTHON_ROAMING | $USERPROFILE/AppData/Roaming/Python/Python39
