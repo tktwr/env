@@ -34,6 +34,7 @@
     --- [Displacement] ------------------------------                                                                  | ----------------------------------------
 -   Tessellation-Free Displacement Mapping for Ray Tracing                                                             | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
     --- [Resources] ------------------------                                                                           | ----------------------------------------
+-   Ke-Sen Huang's Home Page                                                                                           | https://kesen.realtimerendering.com/
 -   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
 -   SIGGRAPH Courses                                                                                                   | https://blog.selfshadow.com/publications/
@@ -51,6 +52,8 @@
 -   4dface                                                                                                             | https://www.4dface.io/
 -   4dface (github)                                                                                                    | https://github.com/patrikhuber/4dface
 -   6d.ai                                                                                                              | https://www.6d.ai/
+    --- [University] ------------------------                                                                          | ----------------------------------------
+-   USC                                                                                                                | https://vgl.ict.usc.edu/publications.php
     --- [People] ------------------------                                                                              | ----------------------------------------
 -   Ravi Ramamoorthi                                                                                                   | https://cseweb.ucsd.edu/~ravir/
 -   Kun Zhou                                                                                                           | http://www.kunzhou.net/
@@ -82,8 +85,9 @@
 -   Robust High-Resolution Video Matting with Temporal Guidance                                                        | https://arxiv.org/abs/2108.11515
 -   Deep Automatic Portrait Matting                                                                                    | http://xiaoyongshen.me/webpages/webpage_automatting/
 -   Automatic Portrait Segmentation for Image Stylization                                                              | http://xiaoyongshen.me/webpage_portrait/index.html
-    --- [GAN] ------------------------                                                                            | ----------------------------------------
+    --- [GAN] ------------------------                                                                                 | ----------------------------------------
 -   StyleGAN3                                                                                                          | https://github.com/NVlabs/stylegan3
+-   StyleGAN2                                                                                                          | https://github.com/NVlabs/stylegan2
 -   CycleGAN and pix2pix in PyTorch                                                                                    | https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
 -   CycleGAN                                                                                                           | https://github.com/junyanz/CycleGAN
 -   pix2pix                                                                                                            | https://github.com/phillipi/pix2pix

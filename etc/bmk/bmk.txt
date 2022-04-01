@@ -37,9 +37,9 @@
 - H github/                            | $MY_GITHUB/
     --- (public) --------------------- | ----------------------------------------
 - A arch/                              | $MY_ARCH/
-- P papers/                            | $MY_PAPERS/
-- O opt/                               | $MY_OPT/
-- M man/                               | $MY_MAN/
 - D data/                              | $MY_DATA/
+- M man/                               | $MY_MAN/
+- O opt/                               | $MY_OPT/
+- P papers/                            | $MY_PAPERS/
 
 # vim:set ft=bmk syntax=txt nowrap:
