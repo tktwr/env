@@ -69,7 +69,6 @@
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
--   MyTabDirDiffQuit                   | :MyTabDirDiffQuit
 [buf.cmd.subsub] --------------------- | ----------------------------------------
 - F MyFernDrawerToggle                 | :MyFernDrawerToggle
 -   Wc                                 | :Wc ?
@@ -100,11 +99,14 @@
 -   CocList words                      | :CocList words
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
+[cmd.dirdiff] ------------------------ | ----------------------------------------
+- q quit dirdiff                       | :MyTabDirDiffQuit
 [cmd.fugitive] ----------------------- | ----------------------------------------
 - - toggle stage / unstage             | -
 - X discard changes                    | X
 - D diff                               | dd
 - R reload the status buffer           | R
+- q quit fugitive                      | :MyTabClosePrev
 [cmd.fern] --------------------------- | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
