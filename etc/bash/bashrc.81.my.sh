@@ -166,14 +166,6 @@ vimapi-resize() {
   vimapi.sh MyWinResize $rows
 }
 
-vimapi-tab-diff() {
-  vimapi.sh MyTabDiff "$1" "$2"
-}
-
-vimapi-tab-dirdiff() {
-  vimapi.sh MyTabDirDiff "$1" "$2"
-}
-
 vimapi-nerdtree() {
   local dir=${*:-$PWD}
   vimapi.sh MyNERDTreeFind --filepath "$dir"/
@@ -246,8 +238,6 @@ if [ "$VIM_TERMINAL" ]; then
   alias cd='vimapi-cd'
   alias pushd='vimapi-pushd'
   alias popd='vimapi-popd'
-  alias vimdiff='vimapi-tab-diff'
-  alias vimdirdiff='vimapi-tab-dirdiff'
   vim() { vimapi-edit "$@"; }
 
   alias I='vimapi.sh MyWinInitSize'
@@ -298,4 +288,6 @@ alias pp='print-path.sh -p'
 
 #------------------------------------------------------
 alias make='mymake.sh'
+alias vimdiff='vimdiff.sh'
+alias vimdirdiff='vimdirdiff.sh'
 
