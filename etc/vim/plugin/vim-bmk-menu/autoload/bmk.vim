@@ -292,6 +292,10 @@ func BmkEdit(url, winnr)
   let url = a:url
   let type = BmkUrlType(url)
 
+  if s:bmk_debug
+    echom "BmkEdit: url=[".url."], type=[".type."]"
+  endif
+
   if (type == "http")
     call BmkOpenURL(url)
   elseif (type == "network")

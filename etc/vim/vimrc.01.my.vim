@@ -88,11 +88,11 @@ let g:cpm_files = [
   \ ]
 let g:cpm_titles = {
   \ 'buffer'      : ['buf.bmk.main & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
-  \ 'buffer:side' : ['bmk.side & bmk.dir'],
+  \ 'buffer:side' : ['bmk.side & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
   \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
   \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
-  \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'local.bmk.dir'],
-  \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'local.bmk.dir'],
+  \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
   \ }
 
