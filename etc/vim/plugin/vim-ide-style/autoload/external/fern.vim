@@ -12,6 +12,7 @@ endfunc
 
 func MyFern(dir, drawer='', toggle='')
   let dir = expand(a:dir)
+  let dir = substitute(dir, ' ', '\\ ', 'g')
   let drawer = a:drawer
   let toggle = a:toggle
 

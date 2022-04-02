@@ -186,17 +186,18 @@ vimapi-fern() {
 
 vimapi-dir() {
   local dir="${1:-$PWD}"
+  local dir=$(cygpath -au "$dir")
   local winnr=${2:-1}
   if [ -n "$dir" ]; then
-    vimapi.sh BmkEditDir --filepath "$dir"/ $winnr
+    vimapi.sh "call BmkEditDir('$dir/', $winnr)"
   fi
 }
 
 vimapi-edit() {
-  local file="$1"
+  local file=$(cygpath -au "$1")
   local winnr="${2:--1}"
   if [ -n "$file" ]; then
-    vimapi.sh BmkEditFile --filepath "$file" "$winnr"
+    vimapi.sh "call BmkEditFile('$file', $winnr)"
   fi
 }
 
