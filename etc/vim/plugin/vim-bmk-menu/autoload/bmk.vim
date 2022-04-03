@@ -135,24 +135,6 @@ func s:BmkNextItem()
 endfunc
 
 "------------------------------------------------------
-" external open
-"------------------------------------------------------
-func BmkOpenURL(url)
-  exec "silent !chrome.sh" a:url
-  redraw!
-endfunc
-
-func BmkOpenDir(url)
-  exec "silent !explorer.sh" a:url
-  redraw!
-endfunc
-
-func BmkOpenFile(url)
-  exec "silent !vscode.sh" a:url
-  redraw!
-endfunc
-
-"------------------------------------------------------
 " internal open
 "------------------------------------------------------
 func BmkEditDirInTerm(dir)
@@ -164,42 +146,45 @@ func BmkEditDirInTerm(dir)
 endfunc
 
 func BmkEditDir(dir, winnr)
+  let dir = expand(a:dir)
   call TtGotoWinnr(a:winnr)
 
   if &buftype == 'terminal'
-    call BmkEditDirInTerm(a:dir)
+    call BmkEditDirInTerm(dir)
   else
     if s:bmk_edit_dir_func != ""
-      exec printf('call %s("%s")', s:bmk_edit_dir_func, a:dir)
+      exec printf('call %s("%s")', s:bmk_edit_dir_func, dir)
     endif
   endif
 endfunc
 
 func BmkEditFile(file, winnr)
+  let file = expand(a:file)
   let winnr = TtFindEditor(a:winnr)
   call TtGotoWinnr(winnr)
 
-  let dir = TtGetDirName(a:file)
+  let dir = TtGetDirName(file)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(dir)
   else
     exec "lcd" dir
-    exec "edit" a:file
+    exec "edit" file
   endif
 endfunc
 
 func BmkEditPDF(file, winnr)
+  let file = expand(a:file)
   let winnr = TtFindEditor(a:winnr)
   call TtGotoWinnr(winnr)
 
-  let dir = TtGetDirName(a:file)
+  let dir = TtGetDirName(file)
   if &buftype == 'terminal'
     call BmkEditDirInTerm(dir)
   else
     exec "lcd" dir
-    let cmd = printf("pdftotext %s -", a:file)
+    let cmd = printf("pdftotext %s -", file)
     let out = TtSystem(cmd)
-    let cmd = printf("edit %s.txt", a:file)
+    let cmd = printf("edit %s.txt", file)
     exec cmd
     setlocal buftype=nofile
     setlocal bufhidden=hide
@@ -213,7 +198,7 @@ endfunc
 func BmkExecCommand(cmd, winnr)
   call TtGotoWinnr(a:winnr)
 
-  let cmd = a:cmd
+  let cmd = expand(a:cmd)
   let cmd = substitute(cmd, '<CR>', "\<CR>", '')
   let cmd = substitute(cmd, '_Plug_', "\<Plug>", '')
 
@@ -230,10 +215,31 @@ func BmkExecCommand(cmd, winnr)
 endfunc
 
 "------------------------------------------------------
+" external open
+"------------------------------------------------------
+func BmkOpenURL(url)
+  let url = expand(a:url)
+  exec "silent !chrome.sh" url
+  redraw!
+endfunc
+
+func BmkOpenDir(url)
+  let url = expand(a:url)
+  exec "silent !explorer.sh" url
+  redraw!
+endfunc
+
+func BmkOpenFile(url)
+  let url = expand(a:url)
+  exec "silent !vscode.sh" url
+  redraw!
+endfunc
+
+"------------------------------------------------------
 " action
 "------------------------------------------------------
 func BmkOpen(url, winnr)
-  let url = a:url
+  let url = expand(a:url)
   let type = BmkUrlType(url)
 
   if (type == "http")
@@ -261,7 +267,7 @@ func BmkOpen(url, winnr)
 endfunc
 
 func BmkView(url, winnr)
-  let url = a:url
+  let url = expand(a:url)
   let type = BmkUrlType(url)
 
   if (type == "http")
@@ -289,7 +295,7 @@ func BmkView(url, winnr)
 endfunc
 
 func BmkEdit(url, winnr)
-  let url = a:url
+  let url = expand(a:url)
   let type = BmkUrlType(url)
 
   if s:bmk_debug
@@ -360,20 +366,20 @@ endfunc
 " action on <cfile> or the current buffer
 "------------------------------------------------------
 func BmkOpenThis()
-  let val = expand(expand("<cfile>"))
+  let val = expand("<cfile>")
 
   let r = BmkOpen(val, 0)
   if !r
-    call BmkOpenFile(expand('%:p'))
+    call BmkOpenFile('%:p')
   endif
 endfunc
 
 func BmkViewThis()
-  let val = expand(expand("<cfile>"))
+  let val = expand("<cfile>")
 
   let r = BmkView(val, 0)
   if !r
-    call BmkOpenURL(expand('%:p'))
+    call BmkOpenURL('%:p')
   endif
 endfunc
 

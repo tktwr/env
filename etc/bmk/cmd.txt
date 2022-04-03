@@ -31,9 +31,9 @@
 - v MyVimgrep                          | :silent MyVimgrep ?? *
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
-- V BmkOpenURL                         | :call BmkOpenURL(expand('%:p'))
-- O BmkOpenFile                        | :call BmkOpenFile(expand('%:p'))
-- x BmkOpenDir                         | :call BmkOpenDir(expand('%:p:h'))
+- V BmkOpenURL                         | :call BmkOpenURL('%:p')
+- O BmkOpenFile                        | :call BmkOpenFile('%:p')
+- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
     --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
@@ -257,17 +257,17 @@
 -   EJ                                 | :EJ ??
 -   EE                                 | :EE ??
     ---------------------------------- | ----------------------------------------
--   tags.bin_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_sh"), "sh")
--   tags.bin_py                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bin_py"), "py")
--   tags.etc_sh                        | :call TagCatalog(expand("$MY_ENV/tags/tags.bash"), "sh")
--   tags.etc_vim                       | :call TagCatalog(expand("$MY_ENV/tags/tags.vim"), "vim")
--   tags.memo                          | :call TagCatalog(expand("$MY_MEMO/tags.memo"), "memo")
--   tags.libtt                         | :call TagCatalog(expand("$MY_LIBTT/tags.libtt"), "cpp")
+-   tags.bin_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
+-   tags.bin_py                        | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
+-   tags.etc_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
+-   tags.etc_vim                       | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
+-   tags.memo                          | :call TagCatalog("$MY_MEMO/tags.memo", "memo")
+-   tags.libtt                         | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
     ---------------------------------- | ----------------------------------------
--   tags.imgui                         | :call TagCatalog(expand("$MY_OPT/tags.imgui"), "cpp")
--   tags.eigen                         | :call TagCatalog(expand("$MY_OPT/tags.eigen"), "cpp")
--   tags.glm                           | :call TagCatalog(expand("$MY_OPT/tags.glm"), "cpp")
--   tags.opencv2                       | :call TagCatalog(expand("$MY_OPT/tags.opencv2"), "cpp")
+-   tags.imgui                         | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
+-   tags.eigen                         | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
+-   tags.glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
+-   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
 -   help                  (F1)         | :echo
 -   desktop left          (F2)         | :echo

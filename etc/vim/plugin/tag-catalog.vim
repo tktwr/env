@@ -52,9 +52,10 @@ func TgClogUpdate(file, type)
 endfunc
 
 func TagCatalog(file, type)
-  let title = s:tag_catalog_winname." ".a:file
+  let file = expand(a:file)
+  let title = s:tag_catalog_winname." ".file
   call TgClogMakeWindow(title)
-  call TgClogUpdate(a:file, a:type)
+  call TgClogUpdate(file, a:type)
 endfunc
 
 "command -nargs=2 -complete=file TagCatalog call TagCatalog(<f-args>)
