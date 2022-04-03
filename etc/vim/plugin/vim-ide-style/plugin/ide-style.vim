@@ -124,8 +124,13 @@ augroup ag_ide_term
   endif
 augroup END
 
+augroup ag_ide_bmk
+  autocmd!
+  autocmd FileType bmk           call TtSetStatuslineForSideBar()
+augroup END
+
 augroup ag_ide_fern
-  autocmd! *
+  autocmd!
   autocmd FileType fern          call glyph_palette#apply()
   autocmd FileType fern          call TtSetStatuslineForSideBar()
   autocmd FileType fern          call MyFernMap()

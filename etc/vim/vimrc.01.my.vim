@@ -92,6 +92,7 @@ let g:cpm_titles = {
   \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
   \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
   \ 'ft:dirdiff'  : ['cmd.dirdiff'],
+  \ 'ft:git'      : ['cmd.git'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
   \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],

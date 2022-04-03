@@ -24,7 +24,6 @@ command! -nargs=* CpmOpen      call CpmOpen(<f-args>)
 "------------------------------------------------------
 augroup ag_bmk
   autocmd!
-  autocmd FileType    bmk      call TtSetStatuslineForSideBar()
   autocmd BufWinEnter *        call BmkMapWin()
   autocmd WinEnter    *        call BmkMapWin()
 augroup END

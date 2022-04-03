@@ -15,12 +15,12 @@
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
 [buf.cmd.main] ----------------------- | ----------------------------------------
 - E IDE                                | :MyIDE
+- I MyWinInitSize                      | :MyWinInitSize
+- < SideBar                            | :call IdeSideBarToggle()
+- > TagBar                             | :MyTagbarToggle
 - D Fern                               | :MyFernDrawer %:p:h
--   SideBar                            | :call IdeSideBarToggle()
-- G TagBar                             | :MyTagbarToggle
 - N Editor                             | :new
 - T Term                               | :MyTerm
-- I MyWinInitSize                      | :MyWinInitSize
 - X Wx                                 | :Wx ?
 - C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
     --- (Develop) -------------------- | ----------------------------------------
@@ -101,6 +101,10 @@
 -   CocListResume                      | :CocListResume
 [cmd.dirdiff] ------------------------ | ----------------------------------------
 - q quit dirdiff                       | :MyTabDirDiffQuit
+[cmd.git] ---------------------------- | ----------------------------------------
+- D GV diff                            | O
+- ( GV prev                            | (
+- ) GV next                            | )
 [cmd.fugitive] ----------------------- | ----------------------------------------
 - - toggle stage / unstage             | -
 - X discard changes                    | X
