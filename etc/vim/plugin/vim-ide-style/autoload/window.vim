@@ -99,32 +99,40 @@ endfunc
 "------------------------------------------------------
 " find the first terminal window
 "------------------------------------------------------
-func TtFindFirstTerm()
+func TtFindFirstTerm(begin_winnr=1)
+  let curr_winnr = winnr()
   let last_winnr = winnr('$')
-  let i = 1
+  let i = a:begin_winnr
   while i <= last_winnr
-    exec i."wincmd w"
+    call TtGotoWinnr(i)
     if &buftype == 'terminal'
+      call TtGotoWinnr(curr_winnr)
       return i
     endif
-    let i = i + 1
+    let i += 1
   endwhile
+
+  call TtGotoWinnr(curr_winnr)
   return -1
 endfunc
 
 "------------------------------------------------------
 " find the first editor window
 "------------------------------------------------------
-func TtFindFirstEditor()
+func TtFindFirstEditor(begin_winnr=1)
+  let curr_winnr = winnr()
   let last_winnr = winnr('$')
-  let i = 1
+  let i = a:begin_winnr
   while i <= last_winnr
-    exec i."wincmd w"
-    if !TtInSideBar()
+    call TtGotoWinnr(i)
+    if !TtInSideBar() && &buftype != 'terminal'
+      call TtGotoWinnr(curr_winnr)
       return i
     endif
-    let i = i + 1
+    let i += 1
   endwhile
+
+  call TtGotoWinnr(curr_winnr)
   return -1
 endfunc
 
@@ -135,12 +143,15 @@ func TtFindLastEditor()
   let curr_winnr = winnr()
   let i = curr_winnr
   while i > 0
-    exec i."wincmd w"
-    if &buftype != 'terminal'
+    call TtGotoWinnr(i)
+    if !TtInSideBar() && &buftype != 'terminal'
+      call TtGotoWinnr(curr_winnr)
       return i
     endif
-    let i = i - 1
+    let i -= 1
   endwhile
+
+  call TtGotoWinnr(curr_winnr)
   return -1
 endfunc
 

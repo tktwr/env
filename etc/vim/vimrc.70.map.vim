@@ -68,12 +68,8 @@ nnoremap ==      zi
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
 
-func MyTjump(tag_name)
-  exec "tjump ".a:tag_name
-endfunc
-
 "nnoremap <C-]>   g<C-]>
-nnoremap <C-]>   :call MyTjump(expand('<cword>'))<CR>
+nnoremap <C-]>   :call MyTjump(expand('<cword>'), 0)<CR>
 
 "------------------------------------------------------
 " tmap

@@ -93,6 +93,11 @@ command -nargs=?                MyHelp             call MyHelp(<f-args>)
 command -nargs=+                MyVimgrep          call MyVimgrep(<f-args>)
 
 "------------------------------------------------------
+" command for tag jump
+"------------------------------------------------------
+command -nargs=+                MyTjump            call MyTjump(<f-args>)
+
+"------------------------------------------------------
 " command for util
 "------------------------------------------------------
 command -nargs=1                MySetTab           call MySetTab(<f-args>)

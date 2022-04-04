@@ -29,6 +29,7 @@
 - q MyQuickhl            (C-a)         | :MyQuickhl ??
 - g MyGgrep                            | :silent MyGgrep ??
 - v MyVimgrep                          | :silent MyVimgrep ?? *
+- ] MyTjumpPrompt                      | :call MyTjumpPrompt()
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
