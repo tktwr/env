@@ -3,10 +3,18 @@
   "session.saveOnVimLeave": false,
 
   // snippets
-  "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips",
+  "snippets.ultisnips.directories": [
+    "C:\\Users\\Takeh\\MyConfig\\local\\common\\UltiSnips",
+    "C:\\Users\\Takeh\\MyConfig\\tktwr.github\\env\\etc\\vim\\UltiSnips"
+  ],
+  "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\local\\common\\UltiSnips",
 
   // python-win
-  "python.venvFolders": ["C:\\Users\\Takeh\\.python-venv\\torch\\Scripts", "C:\\Users\\Takeh\\.python-venv\\torch", "C:\\Users\\Takeh\\.python-venv"],
+  "python.venvFolders": [
+    "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts",
+    "C:\\Users\\Takeh\\.python-venv\\torch",
+    "C:\\Users\\Takeh\\.python-venv"
+  ],
   "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\python.exe",
   "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\pylint.exe",
   "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\flake8.exe",

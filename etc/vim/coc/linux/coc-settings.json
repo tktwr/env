@@ -1,6 +1,10 @@
 {
   // snippets
-  "snippets.userSnippetsDirectory": "$MY_VIM/UltiSnips",
+  "snippets.ultisnips.directories": [
+    "$MY_COMMON_SETTING/UltiSnips",
+    "$MY_VIM/UltiSnips"
+  ],
+  "snippets.userSnippetsDirectory": "$MY_COMMON_SETTING/UltiSnips",
 
   "python.venvFolders": ["~/.python-venv"],
   "python.pythonPath": "~/.python-venv/torch/bin/python",
