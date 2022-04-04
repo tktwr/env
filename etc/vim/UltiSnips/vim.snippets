@@ -10,6 +10,10 @@ snippet --
 
 endsnippet
 
+#------------------------------------------------------
+# control
+#------------------------------------------------------
+
 snippet if "if"
 if ${1:expr}
 elseif ${2:expr}
@@ -33,5 +37,15 @@ endsnippet
 snippet wh
 while expr
 endwhile
+endsnippet
+
+#------------------------------------------------------
+# function
+#------------------------------------------------------
+
+snippet func "function"
+func ${1:FuncName}(${2:arg1})
+endfunc
+
 endsnippet
 

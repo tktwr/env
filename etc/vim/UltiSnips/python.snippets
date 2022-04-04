@@ -74,8 +74,8 @@ endsnippet
 # function
 #------------------------------------------------------
 
-snippet def "def"
-def ${1:function}(${2:arg1}):
+snippet func "function"
+def ${1:func_name}(${2:arg1}):
     ${0:pass}
 
 
@@ -156,10 +156,6 @@ endsnippet
 
 snippet print "print"
 print(f"${1:val}: {$1}")
-endsnippet
-
-snippet printf "printf"
-print("${1:val}: {}".format($1))
 endsnippet
 
 snippet range "range"
