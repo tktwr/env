@@ -238,10 +238,12 @@
 [ref.main] --------------------------- | ----------------------------------------
 - T Google翻訳                         | https://translate.google.co.jp/
 - D DeepL翻訳                          | https://www.deepl.com/ja/translator
-- C Cppreference                       | https://ja.cppreference.com/w/
+- C cpprefjp                           | https://cpprefjp.github.io/reference.html
+-   cppreference                       | https://ja.cppreference.com/w/
 - P Python Doc                         | https://docs.python.org/ja/3/index.html
-- B Blender Python API                 | https://docs.blender.org/api/current/index.html
+-   PyPI                               | https://pypi.org/
 - N nkmk                               | https://note.nkmk.me/
+- B Blender Python API                 | https://docs.blender.org/api/current/index.html
     ---------------------------------- | ----------------------------------------
 -   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
 -   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
