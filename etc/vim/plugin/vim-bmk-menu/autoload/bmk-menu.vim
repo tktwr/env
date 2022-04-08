@@ -122,26 +122,39 @@ endfunc
 "------------------------------------------------------
 " popup menu
 "------------------------------------------------------
+func! s:CpmInMenu(name)
+  let l = get(s:cpm_titles, a:name, [])
+  if l != []
+    return 1
+  else
+    return 0
+  endif
+endfunc
+
 func! s:CpmGetValidMenuName(name='')
   if a:name != ''
     let name = a:name
-    let l = get(s:cpm_titles, name, [])
-    if l != []
+    if s:CpmInMenu(name)
       return name
     endif
   endif
 
   if &buftype == 'terminal'
-    let name = &buftype
-    let l = get(s:cpm_titles, name, [])
-    if l != []
+    let name = 'terminal'
+    if s:CpmInMenu(name)
+      return name
+    endif
+  endif
+
+  if &diff == 1
+    let name = 'diff'
+    if s:CpmInMenu(name)
       return name
     endif
   endif
 
   let name = 'ft:'.&filetype
-  let l = get(s:cpm_titles, name, [])
-  if l != []
+  if s:CpmInMenu(name)
     return name
   endif
 

@@ -91,6 +91,7 @@ let g:cpm_titles = {
   \ 'buffer:side' : ['bmk.side & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
   \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
   \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
+  \ 'diff'        : ['cmd.diff'],
   \ 'ft:dirdiff'  : ['cmd.dirdiff'],
   \ 'ft:git'      : ['cmd.git'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
