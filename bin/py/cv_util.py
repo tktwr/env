@@ -30,6 +30,8 @@ def cv_maximum(dtype):
         maximum = 65535
     elif dtype == 'float32':
         maximum = 1.0
+    elif dtype == 'float64':
+        maximum = 1.0
     return maximum
 
 
@@ -40,7 +42,7 @@ def cv_color(col, dst_dtype):
 
 
 def cv_cvt_dtype(img, dst_dtype):
-    if dst_dtype not in ('uint8', 'uint16', 'float32'):
+    if dst_dtype not in ('uint8', 'uint16', 'float32', 'float64'):
         return img
 
     if img.dtype == dst_dtype:
