@@ -73,6 +73,7 @@ Plug 'tpope/vim-surround'
 " vim-plug: my
 "------------------------------------------------------
 Plug 'tktwr/vim-winbuf-menu'
+Plug 'tktwr/vim-bmk-menu'
 
 "------------------------------------------------------
 
