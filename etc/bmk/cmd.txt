@@ -247,8 +247,8 @@
 - N nkmk                               | https://note.nkmk.me/
 - B Blender Python API                 | https://docs.blender.org/api/current/index.html
     ---------------------------------- | ----------------------------------------
--   Memo Index                         | vimapi.sh "call BmkOpenURL('$MY_LOCAL_CONFIG/memo/index.html')"<CR>
--   Diary Index                        | vimapi.sh "call BmkOpenURL('$MY_PRIVATE_CONFIG/diary/index.html')"<CR>
+-   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
     ---------------------------------- | ----------------------------------------
 - H Help                               | :MyHelp
 -   Help.index                         | :MyHelp index
