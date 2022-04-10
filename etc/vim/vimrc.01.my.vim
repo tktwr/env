@@ -52,29 +52,13 @@ let g:my_right_winwidth = 30
 let g:my_dia_file = "$MY_DIARY/diary.md.html"
 let g:my_todo_file = "$MY_DIARY/todo.md.html"
 
-let g:my_use_fern = $MY_VIM_USE_FERN
-
-func MyLeftWin()
-  if g:my_use_fern
-    call MyFernDrawerToggle()
-    below split
-    exec "resize" g:my_fern_2nd_winheight
-  else
-    call MyNERDTreeToggle()
-  endif
-endfunc
-
-" bmk
-let g:bmk_winwidth = g:my_left_winwidth
-if g:my_use_fern
-  let g:bmk_edit_dir_func = "MyFern"
-else
-  let g:bmk_edit_dir_func = "MyNERDTreeFind"
-endif
-
 " wbl
 let g:wbl_key = "\<End>"
 let g:wbl_max = 10
+
+" bmk
+let g:bmk_winwidth = g:my_left_winwidth
+let g:bmk_edit_dir_func = "MyFern"
 
 " cpm
 let g:cpm_key = "\<Space>"
@@ -90,12 +74,13 @@ let g:cpm_titles = {
   \ 'buffer'      : ['buf.bmk.main & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
   \ 'buffer:side' : ['bmk.side & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
   \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
-  \ 'ref'         : ['local.links & local.ref', 'ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links'],
   \ 'diff'        : ['cmd.diff'],
   \ 'ft:dirdiff'  : ['cmd.dirdiff'],
   \ 'ft:git'      : ['cmd.git'],
   \ 'ft:fugitive' : ['cmd.fugitive'],
   \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links & local.ref'],
+  \ 'ref.terminal' : ['ref.main'],
   \ }
 

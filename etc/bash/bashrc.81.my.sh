@@ -135,30 +135,38 @@ print-env() {
 #------------------------------------------------------
 # vimapi
 #------------------------------------------------------
-vimapi-lcd() {
-  local dir=${*:-$PWD}
-  vimapi.sh lcd --filepath "$dir"
-}
-
-vimapi-tcd() {
-  local dir=${*:-$PWD}
-  vimapi.sh tcd --filepath "$dir"
-}
-
 vimapi-cd() {
   local dir=${*:-$HOME}
   cd "$dir"
-  vimapi-lcd
+  vimapi.sh "lcd $PWD"
 }
 
 vimapi-pushd() {
   pushd "$@"
-  vimapi-lcd
+  vimapi.sh "lcd $PWD"
 }
 
 vimapi-popd() {
   popd "$@"
-  vimapi-lcd
+  vimapi.sh "lcd $PWD"
+}
+
+vimapi-dir() {
+  local dir=${1:-$PWD}
+  local winnr=${2:-1}
+  vimapi.sh --winnr $winnr --edit-dir "$dir"
+}
+
+vimapi-dir2() {
+  local dir=${1:-$PWD}
+  local winnr=2
+  vimapi.sh --winnr $winnr --edit-dir "$dir"
+}
+
+vimapi-vim() {
+  local file="$1"
+  local winnr=${2:--1}
+  vimapi.sh --winnr $winnr --edit "$file"
 }
 
 vimapi-resize() {
@@ -168,53 +176,18 @@ vimapi-resize() {
 
 vimapi-nerdtree() {
   local dir=${*:-$PWD}
-  vimapi.sh MyNERDTreeFind --filepath "$dir"/
+  vimapi.sh MyNERDTreeFind "$dir/"
 }
 
 vimapi-fern() {
   local dir=${*:-$PWD}
-  vimapi.sh MyFernDrawer --filepath "$dir"/
-}
-
-vimapi-dir() {
-  local dir="${1:-$PWD}"
-  local dir=$(cygpath -au "$dir")
-  local winnr=${2:-1}
-  if [ -n "$dir" ]; then
-    vimapi.sh "call BmkEditDir('$dir/', $winnr)"
-  fi
-}
-
-vimapi-edit() {
-  local file=$(cygpath -au "$1")
-  local winnr="${2:--1}"
-  if [ -n "$file" ]; then
-    vimapi.sh "call BmkEditFile('$file', $winnr)"
-  fi
-}
-
-vimapi-split() {
-  local file="$1"
-  if [ -n "$file" ]; then
-    vimapi.sh --in-above-win "below split" --filepath "$file"
-  else
-    vimapi.sh --in-above-win "below split"
-  fi
-}
-
-vimapi-tabedit() {
-  local file="$1"
-  if [ -n "$file" ]; then
-    vimapi.sh tabedit --filepath "$file"
-  else
-    vimapi.sh tabedit
-  fi
+  vimapi.sh MyFernDrawer "$dir/"
 }
 
 vimapi-termcd() {
   local winnr="$1"
   if [ -n "$winnr" ]; then
-    vimapi.sh MyIDESendCdT2T --filepath "$PWD" $winnr
+    vimapi.sh MyIDESendCdT2T "$PWD" $winnr
   fi
 }
 
@@ -232,13 +205,11 @@ vimapi-tabline-set-info() {
 #------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
-export MY_VIM_USE_FERN=1
-
 if [ "$VIM_TERMINAL" ]; then
   alias cd='vimapi-cd'
   alias pushd='vimapi-pushd'
   alias popd='vimapi-popd'
-  vim() { vimapi-edit "$@"; }
+  alias vim='vimapi-vim'
 
   alias I='vimapi.sh MyWinInitSize'
   alias TV='vimapi.sh MyTermV'
@@ -250,20 +221,13 @@ if [ "$VIM_TERMINAL" ]; then
   alias T='vimapi.sh MyTerm'
   alias N='vimapi.sh new'
 
-  if [ $MY_VIM_USE_FERN -eq 1 ]; then
-    #alias D='vimapi-fern'
-    alias D='vimapi-dir "$PWD"'
-    alias F='vimapi.sh MyFernDrawerToggle'
-    alias D2='D 2'
-  else
-    alias D='vimapi-nerdtree'
-    alias F='vimapi.sh MyNERDTreeToggle'
-  fi
+  alias D='vimapi-dir'
+  alias D2='vimapi-dir2'
 
-  alias ,e='vimapi-edit'
-  alias ,sp='vimapi-split'
-  alias ,new='vimapi.sh "new"'
-  alias ,tabe='vimapi-tabedit'
+  alias ,e='vimapi.sh --edit'
+  alias ,sp='vimapi.sh --in-above-win "below split"'
+  alias ,new='vimapi.sh new'
+  alias ,tabe='vimapi.sh tabedit'
 
   alias ,termcd='vimapi-termcd'
   alias ,resize='vimapi-resize'
@@ -272,12 +236,6 @@ else
   alias GV='vim -c "MyGV"'
   alias E='vim -c "MyIDE"'
   alias T='vim -c "MyTerm"'
-
-  if [ $MY_VIM_USE_FERN -eq 1 ]; then
-    alias F='vim -c "MyFernDrawerToggle"'
-  else
-    alias F='vim -c "MyNERDTreeToggle"'
-  fi
 
   alias z='vim -c "DiaFull"'
   alias zh='vim -c "DiaFullH"'

@@ -4,15 +4,6 @@
 "------------------------------------------------------
 " query
 "------------------------------------------------------
-func TtInSideBar()
-  let winnr = winnr()
-  if (winnr <= 2 && winwidth(0) <= g:my_left_winwidth)
-    return 1
-  else
-    return 0
-  endif
-endfunc
-
 func TtIsFullscreen()
   if &columns > 150
     return 1

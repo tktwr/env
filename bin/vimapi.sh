@@ -2,8 +2,11 @@
 
 bin_name=`basename $0`
 
+g_tapi="Tapi_Exec"
+g_func=""
+g_filepath=""
+g_winnr=
 g_args=""
-g_where=""
 
 f_help() {
   echo "NAME"
@@ -14,29 +17,37 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  -h, --help            ... print help"
-  echo "  --filepath <filepath> ... filepath"
   echo "  --in-prev-win         ... exec in prev win"
   echo "  --in-above-win        ... exec in above win"
   echo "  --in-new-tab          ... exec in new tab"
+  echo "  --edit-dir <dir>      ... edit dir"
+  echo "  --edit <file>         ... edit file"
+  echo "  --filepath <filepath> ... set filepath"
+  echo "  --winnr <nr>          ... set winnr"
 }
 
-f_vimapi_exec() {
-  printf '\e]51;["call","Tapi_Exec","%s"]\x07' "$1"
+f_vimapi() {
+  printf '\e]51;["call","%s","%s"]\x07' "$g_tapi" "$1"
 }
 
-f_vimapi_exec_in_prev_win() {
-  printf '\e]51;["call","Tapi_ExecInPrevWin","%s"]\x07' "$1"
+f_vimapi_dir() {
+  local dir="${1:-$PWD}"
+  local dir=$(cygpath -au "$dir")
+  local winnr=${2:-1}
+  if [ -n "$dir" ]; then
+    f_vimapi "call BmkEditDir('$dir/', $winnr)"
+  fi
 }
 
-f_vimapi_exec_in_above_win() {
-  printf '\e]51;["call","Tapi_ExecInAboveWin","%s"]\x07' "$1"
+f_vimapi_edit() {
+  local file=$(cygpath -au "$1")
+  local winnr="${2:--1}"
+  if [ -n "$file" ]; then
+    f_vimapi "call BmkEditFile('$file', $winnr)"
+  fi
 }
 
-f_vimapi_exec_in_new_tab() {
-  printf '\e]51;["call","Tapi_ExecInNewTab","%s"]\x07' "$1"
-}
-
-f_args() {
+f_parse_args() {
   while [ $# -gt 0 ]; do
     case "$1" in
       -h|--help)
@@ -44,27 +55,60 @@ f_args() {
         exit
         ;;
       --in-prev-win)
-        g_where="_in_prev_win"
+        g_tapi="Tapi_ExecInPrevWin"
         ;;
       --in-above-win)
-        g_where="_in_above_win"
+        g_tapi="Tapi_ExecInAboveWin"
         ;;
       --in-new-tab)
-        g_where="_in_new_tab"
+        g_tapi="Tapi_ExecInNewTab"
+        ;;
+      --edit-dir)
+        g_func="BmkEditDir"
+        ;;
+      --edit)
+        g_func="BmkEditFile"
         ;;
       --filepath)
         shift
-        p=$(cygpath -au "$1")
-        g_args="$g_args $p"
+        g_filepath=$(cygpath -au "$1")
+        ;;
+      --winnr)
+        shift
+        g_winnr=$1
         ;;
       *)
-        g_args="$g_args $1"
+        if [ -z $g_args ]; then
+          g_args="$1"
+        else
+          g_args="$g_args $1"
+        fi
         ;;
     esac
     shift
   done
 }
 
-f_args "$@"
-eval "f_vimapi_exec$g_where \"$g_args\""
+f_print_args() {
+  echo "g_tapi     = $g_tapi"
+  echo "g_func     = $g_func"
+  echo "g_filepath = $g_filepath"
+  echo "g_winnr    = $g_winnr"
+  echo "g_args     = $g_args"
+}
+
+f_parse_args "$@"
+f_print_args
+
+case $g_func in
+  BmkEditDir)
+    f_vimapi_dir "$g_args" $g_winnr
+    ;;
+  BmkEditFile)
+    f_vimapi_edit "$g_args" $g_winnr
+    ;;
+  *)
+    f_vimapi "$g_args"
+    ;;
+esac
 

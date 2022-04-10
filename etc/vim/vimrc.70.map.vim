@@ -154,13 +154,13 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <silent> <F1>       <C-W>:CpmOpen ref 0<CR>
-tnoremap <silent> <F1>       <C-W>:CpmOpen ref 0<CR>
+nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
+tnoremap <silent> <F1>       <C-W>:CpmOpen ref.terminal<CR>
 
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
-nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
-tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref 0<CR>
+nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref<CR>
+tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref.terminal<CR>
 
 nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
 tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>

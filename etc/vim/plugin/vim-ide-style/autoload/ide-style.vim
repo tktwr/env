@@ -3,7 +3,7 @@
 "======================================================
 func MyIDE()
   let l:is_fullscreen = TtIsFullscreen()
-  call MyLeftWin()
+  call MyMakeSideBar()
   wincmd w
   if l:is_fullscreen
     vsp
@@ -13,6 +13,9 @@ func MyIDE()
   MyTerm
 endfunc
 
+"------------------------------------------------------
+" init size
+"------------------------------------------------------
 func s:MyWinInitSizeForEachWin()
   if &buftype == 'terminal'
     exec "resize" g:my_term_winheight
@@ -26,16 +29,6 @@ func MyWinInitSize()
   exec "normal \<C-W>="
   exec "vertical resize" g:my_left_winwidth
   2,$windo call s:MyWinInitSizeForEachWin()
-endfunc
-
-func IdeSideBarToggle()
-  1wincmd w
-  if winwidth(0) < 5
-    exec "vertical resize" g:my_left_winwidth
-  else
-    exec "vert resize 0"
-  endif
-  wincmd p
 endfunc
 
 "------------------------------------------------------
