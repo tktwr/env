@@ -1,1 +1,0 @@
-# bmk-menu.vim
