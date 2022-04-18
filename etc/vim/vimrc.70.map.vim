@@ -52,24 +52,24 @@ nnoremap ==      zi
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>
  nnoremap <silent> <C-N>   :cn<CR>
- nnoremap <silent> <C-O>   :silent call WblPop()<CR>
+ nnoremap <silent> <C-O>   :silent call wbl#WblPop()<CR>
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
  nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nnoremap <silent> <C-U>   :silent call WblNext()<CR>
+ nnoremap <silent> <C-U>   :silent call wbl#WblNext()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :echo<CR>
- nnoremap <silent> <C-Y>   :silent call WblPrev()<CR>
+ nnoremap <silent> <C-Y>   :silent call wbl#WblPrev()<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
 nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :MyLcdHere<CR>
 
 "nnoremap <C-]>   g<C-]>
-nnoremap <C-]>   :call MyTjump(expand('<cword>'), 0)<CR>
+nnoremap <C-]>   :call MyTjump(expand('<cfile>'), 0)<CR>
 
 "------------------------------------------------------
 " tmap
@@ -133,9 +133,9 @@ nnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-nnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-nnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
-nnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle("")<CR>
+nnoremap <silent> <C-7> <C-W>:silent call vis#window#MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+nnoremap <silent> <C-8> <C-W>:silent call vis#window#MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
+nnoremap <silent> <C-9> <C-W>:silent call vis#window#MyWinMaximizeYToggle("")<CR>
 nnoremap <silent> <C-0> <C-W>b
 
 tnoremap <silent> <C-1> <C-W>t
@@ -146,9 +146,9 @@ tnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-tnoremap <silent> <C-7> <C-W>:silent call MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-tnoremap <silent> <C-8> <C-W>:silent call MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
-tnoremap <silent> <C-9> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-7> <C-W>:silent call vis#window#MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
+tnoremap <silent> <C-8> <C-W>:silent call vis#window#MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-9> <C-W>:silent call vis#window#MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 tnoremap <silent> <C-0> <C-W>b
 
 "------------------------------------------------------
@@ -162,11 +162,11 @@ tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref<CR>
 tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref.terminal<CR>
 
-nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
-tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
+nnoremap <silent> <End>      <C-W>:silent call wbl#WblPrint()<CR>
+tnoremap <silent> <End>      <C-W>:silent call wbl#WblPrint()<CR>
 
 "nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
-"nnoremap <silent> <TAB>      :silent call WblPrint()<CR>
+"nnoremap <silent> <TAB>      :silent call wbl#WblPrint()<CR>
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
 
@@ -179,7 +179,7 @@ nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
 tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 
-tnoremap <silent> <PageDown> <C-W>:silent call MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <silent> <PageDown> <C-W>:silent call vis#window#MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 "------------------------------------------------------
 nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
 nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>

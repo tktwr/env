@@ -24,20 +24,7 @@ mypython-venv-info() {
 }
 
 mypython-venv-create() {
-  venv_name=$1
-  if [ -z "$venv_name" ]; then
-    echo "mypython-venv-create venv_name"
-    return
-  fi
-
-  mypython-venv-exist $venv_name
-  if [ $? -eq 0 ]; then
-    echo "already existed: $venv_name"
-    return
-  fi
-
-  $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$venv_name
-  mypython.sh --set $MY_PYTHON_TYPE $venv_name
+  mypython.sh --create-venv $1
   source $HOME/.bashrc
 }
 
@@ -49,10 +36,12 @@ mypython-venv-exist() {
 mypython-venv-activate() {
   venv_name=$1
   if [ -n "$USERPROFILE" ]; then
+    # msys2/gitbash
     MY_OLD_PATH=$PATH
     PATH="$MY_PYTHON_VENV_DIR/$venv_name:$PATH"
     PATH="$MY_PYTHON_VENV_DIR/$venv_name/Scripts:$PATH"
   else
+    # linux/android
     source $MY_PYTHON_VENV_DIR/$venv_name/bin/activate
   fi
   MY_PYTHON_VENV="$venv_name"
@@ -60,8 +49,10 @@ mypython-venv-activate() {
 
 mypython-venv-deactivate() {
   if [ -n "$USERPROFILE" ]; then
+    # msys2/gitbash
     PATH=$MY_OLD_PATH
   else
+    # linux/android
     deactivate
   fi
   MY_PYTHON_VENV=""

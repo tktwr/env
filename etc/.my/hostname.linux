@@ -1,0 +1,9 @@
+#!/bin/bash
+
+export MY_HOST_NAME=$HOSTNAME
+export MY_SITE_NAME=home
+export MY_SHELL_NAME=bash
+export MY_OS_NAME=linux
+
+export CC=clang
+export CXX=clang++

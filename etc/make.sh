@@ -20,13 +20,14 @@ f_min() {
   cp vim/vimrc_min.vim $HOME/.vimrc
 }
 
+#------------------------------------------------------
+f_backup() {
+	./dot.sh --backup
+}
+
 f_init() {
   ./dot.sh --init
   f_min
-}
-
-f_backup() {
-	./dot.sh --backup
 }
 
 f_tags() {

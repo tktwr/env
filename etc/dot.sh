@@ -20,6 +20,11 @@ DOT_FILES_DIFF="\
 .my/hostname \
 .my/pythonrc \
 "
+DOT_FILES_INIT="\
+.bash_logout \
+.bashrc \
+.profile \
+"
 DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 DOT_FILES=""
 
@@ -48,23 +53,36 @@ f_get_date() {
   echo `env LC_TIME=C date '+%Y%m%d'`
 }
 
+f_get_time() {
+  echo `env LC_TIME=C date '+%H%M%S'`
+}
+
 f_backup() {
-  local BACKUP_DIR=$HOME/.dot.$(f_get_date)
+  local BACKUP_DIR=$HOME/.backup/dotfiles_$(f_get_date)_$(f_get_time)
 
   if [ ! -d $BACKUP_DIR ]; then
-    mkdir $BACKUP_DIR
+    mkdir -p $BACKUP_DIR
   fi
 
   cd
 
   # backup original files
   cp --parents $DOT_FILES_ALL $BACKUP_DIR
+  cp --parents $DOT_FILES_INIT $BACKUP_DIR
 }
 
 f_init() {
   # copy default dot files
   cp -n --parents $DOT_FILES_ALL $HOME
   cp -n -a $DOT_DIRS_COMMON $HOME
+
+  if [ -n "$USERPROFILE" ]; then
+    # msys2/gitbash
+    cp .my/hostname.windows $HOME/.my/hostname
+  else
+    # linux/android
+    cp .my/hostname.linux $HOME/.my/hostname
+  fi
 }
 
 #------------------------------------------------------

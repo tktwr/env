@@ -72,9 +72,9 @@ Plug 'tpope/vim-surround'
 "------------------------------------------------------
 " vim-plug: my
 "------------------------------------------------------
-Plug 'tktwr/vim-winbuf-menu'
-Plug 'tktwr/vim-bmk-menu'
-Plug 'tktwr/vim-ide-style'
+source $MY_VIM/vim-plug/vim-winbuf-menu.vim
+source $MY_VIM/vim-plug/vim-bmk-menu.vim
+source $MY_VIM/vim-plug/vim-ide-style.vim
 
 "------------------------------------------------------
 

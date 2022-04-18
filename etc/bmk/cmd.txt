@@ -16,25 +16,26 @@
 [buf.cmd.main] ----------------------- | ----------------------------------------
 - E IDE                                | :MyIDE
 - I MyWinInitSize                      | :MyWinInitSize
-- < SideBar                            | :call MySideBarToggle()
+- < SideBar                            | :MySideBarToggle
 - > TagBar                             | :MyTagbarToggle
 - D Fern                               | :MyFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :MyTerm
 - X Wx                                 | :Wx ?
-- C MyIDESendCdE2T                     | :call MyIDESendCdE2T()
+- C MyIDESendCdE2T                     | :MyIDESendCdE2T
     --- (Develop) -------------------- | ----------------------------------------
 - H Help                               | :MyHelp
 - M Memo                               | :Memo
 - q MyQuickhl            (C-a)         | :MyQuickhl ??
 - g MyGgrep                            | :silent MyGgrep ??
 - v MyVimgrep                          | :silent MyVimgrep ?? *
-- ] MyTjumpPrompt                      | :call MyTjumpPrompt()
+- A MyVimgrepAll                       | :call MyVimgrepAll('??')
+- ] MyTjumpPrompt                      | :call vis#internal#tjump#MyTjumpPrompt()
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
-- V BmkOpenURL                         | :call BmkOpenURL('%:p')
-- O BmkOpenFile                        | :call BmkOpenFile('%:p')
-- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
+- V BmkOpenURL                         | :call bmk#BmkOpenURL('%:p')
+- O BmkOpenFile                        | :call bmk#BmkOpenFile('%:p')
+- x BmkOpenDir                         | :call bmk#BmkOpenDir('%:p:h')
     --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
@@ -52,9 +53,9 @@
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
-- V BmkViewThis         (C-CR)         | :call BmkViewThis()
-- O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
--   BmkToggleDebug                     | :call BmkToggleDebug()
+- V BmkViewThis         (C-CR)         | :call bmk#BmkViewThis()
+- O BmkOpenThis         (S-CR)         | :call bmk#BmkOpenThis()
+-   BmkToggleDebug                     | :call bmk#BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 - : MyTabColon                         | :MyTabColon
 - , MyTabComma                         | :MyTabComma
@@ -65,7 +66,7 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
-- c MyIDESendCmdE2T                    | :call MyIDESendCmdE2T("")
+- c MyIDESendCmdE2T                    | :call vis#send#MyIDESendCmdE2T("")
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
@@ -117,8 +118,8 @@
 [cmd.fern] --------------------------- | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
-- V MyFernViewItem      (C-CR)         | :call MyFernViewItem()
-- O MyFernOpenItem      (S-CR)         | :call MyFernOpenItem()
+- V MyFernViewItem      (C-CR)         | :call vis#external#fern#MyFernViewItem()
+- O MyFernOpenItem      (S-CR)         | :call vis#external#fern#MyFernOpenItem()
     ---------------------------------- | ----------------------------------------
 -   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
 -   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
@@ -180,8 +181,8 @@
     ---------------------------------- | ----------------------------------------
 -   mypython-venv-info                 | mypython-venv-info<CR>
 -   mypython-venv-create torch         | mypython-venv-create torch<CR>
--   mypython-set-python-win torch      | mypython-set-python-win<CR>
--   mypython-set-python torch          | mypython-set-python<CR>
+-   mypython-set-python-win torch      | mypython-set-python-win torch<CR>
+-   mypython-set-python torch          | mypython-set-python torch<CR>
     ---------------------------------- | ----------------------------------------
 -   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
 -   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>

@@ -21,19 +21,36 @@ f_format_unix_path() { sed 's+:+\n+g'; }
 f_format_dos_path() { sed 's+;+\n+g'; }
 FORMAT=f_format_unix_path
 
-f_print_path() {
+f_print_sys_path() {
   echo "=== [SYS_PATH] ==="
   echo "$SYS_PATH" | $FORMAT
-  echo
+}
+
+f_print_path() {
   echo "=== [PATH] ==="
   echo "$PATH" | $FORMAT
-  echo
+}
+
+f_print_python_path() {
+  echo "=== [PYTHONPATH] ==="
+  if [ -n "$USERPROFILE" ]; then
+    # msys2/gitbash
+    echo "$PYTHONPATH" | f_format_dos_path
+  else
+    # linux/android
+    echo "$PYTHONPATH" | f_format_unix_path
+  fi
+}
+
+f_print_python_env() {
   echo "=== [env] ==="
   echo "MY_PYTHON_TYPE: $MY_PYTHON_TYPE"
   echo "MY_PYTHON_VENV: $MY_PYTHON_VENV"
   echo "MY_PYTHON_VENV_DIR: $MY_PYTHON_VENV_DIR"
   echo "MY_PYTHON_EXE: $MY_PYTHON_EXE"
-  echo
+}
+
+f_print_which() {
   echo "=== [which] ==="
   which python 2> /dev/null
   python --version
@@ -59,6 +76,18 @@ f_print_path() {
   which vim 2> /dev/null
 }
 
+f_print_all() {
+  f_print_sys_path
+  echo
+  f_print_path
+  echo
+  f_print_python_path
+  echo
+  f_print_python_env
+  echo
+  f_print_which
+}
+
 f_main() {
   str=""
 
@@ -69,7 +98,7 @@ f_main() {
       exit
       ;;
     -p|--path)
-      f_print_path
+      f_print_all
       exit
       ;;
     -d|--dos)
@@ -79,7 +108,7 @@ f_main() {
       FORMAT=f_format_unix_path
       ;;
     *)
-      if [ "x$str" == "x" ]; then
+      if [ -z "$str" ]; then
         str="$i"
       else
         str="$str $i"
@@ -88,12 +117,13 @@ f_main() {
     esac
   done
 
-  if [ "x$str" == "x" ]; then
+  if [ -z "$str" ]; then
+    # work as filter
     $FORMAT
   else
     echo "$str" | $FORMAT
   fi
 }
 
-f_main $*
+f_main "$@"
 
