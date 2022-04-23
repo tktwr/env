@@ -30,12 +30,12 @@
 - g MyGgrep                            | :silent MyGgrep ??
 - v MyVimgrep                          | :silent MyVimgrep ?? *
 - A MyVimgrepAll                       | :call MyVimgrepAll('??')
-- ] MyTjumpPrompt                      | :call vis#internal#tjump#MyTjumpPrompt()
+- ] MyTjumpPrompt                      | :call MyTjumpPrompt()
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
-- V BmkOpenURL                         | :call bmk#BmkOpenURL('%:p')
-- O BmkOpenFile                        | :call bmk#BmkOpenFile('%:p')
-- x BmkOpenDir                         | :call bmk#BmkOpenDir('%:p:h')
+- V BmkOpenURL                         | :call BmkOpenURL('%:p')
+- O BmkOpenFile                        | :call BmkOpenFile('%:p')
+- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
     --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
@@ -53,9 +53,9 @@
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
     ---------------------------------- | ----------------------------------------
-- V BmkViewThis         (C-CR)         | :call bmk#BmkViewThis()
-- O BmkOpenThis         (S-CR)         | :call bmk#BmkOpenThis()
--   BmkToggleDebug                     | :call bmk#BmkToggleDebug()
+- V BmkViewThis         (C-CR)         | :call BmkViewThis()
+- O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
+-   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 - : MyTabColon                         | :MyTabColon
 - , MyTabComma                         | :MyTabComma
@@ -66,7 +66,7 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
-- c MyIDESendCmdE2T                    | :call vis#send#MyIDESendCmdE2T("")
+- c MyIDESendCurrCmdE2T                | :call MyIDESendCurrCmdE2T()
 -   MyWinInfo                          | :MyWinInfo
 -   MyCheckEnv                         | :MyCheckEnv
     ---------------------------------- | ----------------------------------------
@@ -118,8 +118,8 @@
 [cmd.fern] --------------------------- | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
-- V MyFernViewItem      (C-CR)         | :call vis#external#fern#MyFernViewItem()
-- O MyFernOpenItem      (S-CR)         | :call vis#external#fern#MyFernOpenItem()
+- V MyFernViewItem      (C-CR)         | :call MyFernViewItem()
+- O MyFernOpenItem      (S-CR)         | :call MyFernOpenItem()
     ---------------------------------- | ----------------------------------------
 -   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
 -   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
@@ -144,100 +144,100 @@
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
 [term.cmd.my] ------------------------ | ----------------------------------------
-- c mycmake.sh                         | mycmake.sh<CR>
-- b mycmake.sh --build                 | mycmake.sh --build<CR>
+- c mycmake.sh                         | > mycmake.sh<CR>
+- b mycmake.sh --build                 | > mycmake.sh --build<CR>
     ---------------------------------- | ----------------------------------------
--   git-submodule-update-all           | git-submodule-update-all<CR>
--   gC-amend {"new message"}           | gC-amend
--   git-tmp-commit {"message"}         | git-tmp-commit
--   git-tmp-reset                      | git-tmp-reset<CR>
--   git-merge-no-ff                    | git-merge-no-ff<CR>
--   git-rebase-origin                  | git-rebase-origin<CR>
--   git-ls-no-x                        | git-ls-no-x<CR>
--   git-chmod-x-all                    | git-chmod-x-all<CR>
--   git-branch-delete {branch}         | git-branch-delete
--   git-remote-branch-delete {branch}  | git-remote-branch-delete
+-   git-submodule-update-all           | > git-submodule-update-all<CR>
+-   gC-amend {"new message"}           | > gC-amend
+-   git-tmp-commit {"message"}         | > git-tmp-commit
+-   git-tmp-reset                      | > git-tmp-reset<CR>
+-   git-merge-no-ff                    | > git-merge-no-ff<CR>
+-   git-rebase-origin                  | > git-rebase-origin<CR>
+-   git-ls-no-x                        | > git-ls-no-x<CR>
+-   git-chmod-x-all                    | > git-chmod-x-all<CR>
+-   git-branch-delete {branch}         | > git-branch-delete
+-   git-remote-branch-delete {branch}  | > git-remote-branch-delete
 [term.main] -------------------------- | ----------------------------------------
--   git graph              (G)         | G<CR>
--   git graph --all       (GA)         | GA<CR>
--   MyGstatusToggle       (GS)         | GS<CR>
--   MyGV                  (GV)         | GV<CR>
+-   git graph              (G)         | > G<CR>
+-   git graph --all       (GA)         | > GA<CR>
+-   MyGstatusToggle       (GS)         | > GS<CR>
+-   MyGV                  (GV)         | > GV<CR>
     ---------------------------------- | ----------------------------------------
--   MyIDE                  (E)         | E<CR>
--   MyFernDrawer           (D)         | D<CR>
--   MyFernDrawerToggle     (F)         | F<CR>
--   new                    (N)         | N<CR>
--   MyTerm                 (T)         | T<CR>
--   MyTermV               (TV)         | TV<CR>
--   MyWinInitSize          (I)         | I<CR>
+-   MyIDE                  (E)         | > E<CR>
+-   MyFernDrawer           (D)         | > D<CR>
+-   MyFernDrawerToggle     (F)         | > F<CR>
+-   new                    (N)         | > N<CR>
+-   MyTerm                 (T)         | > T<CR>
+-   MyTermV               (TV)         | > TV<CR>
+-   MyWinInitSize          (I)         | > I<CR>
     ---------------------------------- | ----------------------------------------
-- 1 ,resize 10                         | ,resize 10<CR>
-- 2 ,resize 20                         | ,resize 20<CR>
-- 3 ,resize 30                         | ,resize 30<CR>
-- 4 ,resize 40                         | ,resize 40<CR>
+- 1 ,resize 10                         | > ,resize 10<CR>
+- 2 ,resize 20                         | > ,resize 20<CR>
+- 3 ,resize 30                         | > ,resize 30<CR>
+- 4 ,resize 40                         | > ,resize 40<CR>
     ---------------------------------- | ----------------------------------------
-- c mycmake.sh                         | mycmake.sh<CR>
-- b mycmake.sh --build                 | mycmake.sh --build<CR>
+- c mycmake.sh                         | > mycmake.sh<CR>
+- b mycmake.sh --build                 | > mycmake.sh --build<CR>
     ---------------------------------- | ----------------------------------------
--   mypython-venv-info                 | mypython-venv-info<CR>
--   mypython-venv-create torch         | mypython-venv-create torch<CR>
--   mypython-set-python-win torch      | mypython-set-python-win torch<CR>
--   mypython-set-python torch          | mypython-set-python torch<CR>
+-   mypython-venv-info                 | > mypython-venv-info<CR>
+-   mypython-venv-create torch         | > mypython-venv-create torch<CR>
+-   mypython-set-python-win torch      | > mypython-set-python-win torch<CR>
+-   mypython-set-python torch          | > mypython-set-python torch<CR>
     ---------------------------------- | ----------------------------------------
--   mycmake-set-ninja-release          | mycmake-set-ninja-release<CR>
--   mycmake-set-ninja-debug            | mycmake-set-ninja-debug<CR>
-- m mycmake-set-make-release           | mycmake-set-make-release<CR>
--   mycmake-set-make-debug             | mycmake-set-make-debug<CR>
--   mycmake-set-vs2017-release         | mycmake-set-vs2017-release<CR>
--   mycmake-set-vs2017-debug           | mycmake-set-vs2017-debug<CR>
--   mycmake-set-vs2017-reldeb          | mycmake-set-vs2017-reldeb<CR>
-- v mycmake-set-vs2019-release         | mycmake-set-vs2019-release<CR>
--   mycmake-set-vs2019-debug           | mycmake-set-vs2019-debug<CR>
--   mycmake-set-vs2019-reldeb          | mycmake-set-vs2019-reldeb<CR>
+-   mycmake-set-ninja-release          | > mycmake-set-ninja-release<CR>
+-   mycmake-set-ninja-debug            | > mycmake-set-ninja-debug<CR>
+- m mycmake-set-make-release           | > mycmake-set-make-release<CR>
+-   mycmake-set-make-debug             | > mycmake-set-make-debug<CR>
+-   mycmake-set-vs2017-release         | > mycmake-set-vs2017-release<CR>
+-   mycmake-set-vs2017-debug           | > mycmake-set-vs2017-debug<CR>
+-   mycmake-set-vs2017-reldeb          | > mycmake-set-vs2017-reldeb<CR>
+- v mycmake-set-vs2019-release         | > mycmake-set-vs2019-release<CR>
+-   mycmake-set-vs2019-debug           | > mycmake-set-vs2019-debug<CR>
+-   mycmake-set-vs2019-reldeb          | > mycmake-set-vs2019-reldeb<CR>
 [term.system] ------------------------ | ----------------------------------------
--   pacman -S -h                       | pacman -S -h<CR>
--   pacman -Syyu                       | pacman -Syyu<CR>
--   pacman -S <pkg>                    | pacman -S
--   pacman -R <pkg>                    | pacman -R
--   pacman -Ss <pattern>               | pacman -Ss
--   pacman -Si <pkg>                   | pacman -Si
--   pacman -Sl                         | pacman -Sl<CR>
--   pacman -Sg [pkg_group]             | pacman -Sg
--   pacman -Qi <installed_pkg>         | pacman -Qi
--   pacman -Ql <installed_pkg>         | pacman -Ql
+-   pacman -S -h                       | > pacman -S -h<CR>
+-   pacman -Syyu                       | > pacman -Syyu<CR>
+-   pacman -S <pkg>                    | > pacman -S
+-   pacman -R <pkg>                    | > pacman -R
+-   pacman -Ss <pattern>               | > pacman -Ss
+-   pacman -Si <pkg>                   | > pacman -Si
+-   pacman -Sl                         | > pacman -Sl<CR>
+-   pacman -Sg [pkg_group]             | > pacman -Sg
+-   pacman -Qi <installed_pkg>         | > pacman -Qi
+-   pacman -Ql <installed_pkg>         | > pacman -Ql
     ---------------------------------- | ----------------------------------------
--   apt list <pkg>                     | apt list
--   apt search <pkg>                   | apt search
--   apt show <pkg>                     | apt show
--   apt install <pkg>                  | apt install
--   apt remove <pkg>                   | apt remove
--   apt update                         | apt update
--   apt upgrade                        | apt upgrade
+-   apt list <pkg>                     | > apt list
+-   apt search <pkg>                   | > apt search
+-   apt show <pkg>                     | > apt show
+-   apt install <pkg>                  | > apt install
+-   apt remove <pkg>                   | > apt remove
+-   apt update                         | > apt update
+-   apt upgrade                        | > apt upgrade
     ---------------------------------- | ----------------------------------------
--   pip list                           | pip list<CR>
--   pip search <pkg>                   | pip search
--   pip install <pkg>                  | pip install
--   pip uninstall <pkg>                | pip uninstall
--   pip-upgrade                        | python -m pip install --upgrade pip<CR>
+-   pip list                           | > pip list<CR>
+-   pip search <pkg>                   | > pip search
+-   pip install <pkg>                  | > pip install
+-   pip uninstall <pkg>                | > pip uninstall
+-   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
 [term.git] --------------------------- | ----------------------------------------
-- G G                                  | G<CR>
--   git status                         | git status<CR>
--   git fetch                          | git fetch<CR>
--   git rebase <branch>                | git rebase
--   git rebase --abort                 | git rebase --abort<CR>
--   git merge --no-ff <branch>         | git merge --no-ff
--   git merge --abort                  | git merge --abort<CR>
--   git branch -d <branch>             | git branch -d
--   git push origin :<branch>          | git push origin :
--   git push origin <branch>           | git push origin
--   git-clone-recursive <url>          | git clone --recurse-submodules
--   git-submodule-update-all           | git submodule update --init --recursive<CR>
--   git-untrack-file <file>            | git-untrack-file
--   git-untrack-dir <dir>              | git-untrack-dir
--   git-chmod-x <file>                 | git-chmod-x
--   git-chmod-x-all                    | git-chmod-x-all<CR>
--   git-ls-no-x                        | git-ls-no-x
--   git-upgrade                        | git update-git-for-windows<CR>
+- G G                                  | > G<CR>
+-   git status                         | > git status<CR>
+-   git fetch                          | > git fetch<CR>
+-   git rebase <branch>                | > git rebase
+-   git rebase --abort                 | > git rebase --abort<CR>
+-   git merge --no-ff <branch>         | > git merge --no-ff
+-   git merge --abort                  | > git merge --abort<CR>
+-   git branch -d <branch>             | > git branch -d
+-   git push origin :<branch>          | > git push origin :
+-   git push origin <branch>           | > git push origin
+-   git-clone-recursive <url>          | > git clone --recurse-submodules
+-   git-submodule-update-all           | > git submodule update --init --recursive<CR>
+-   git-untrack-file <file>            | > git-untrack-file
+-   git-untrack-dir <dir>              | > git-untrack-dir
+-   git-chmod-x <file>                 | > git-chmod-x
+-   git-chmod-x-all                    | > git-chmod-x-all<CR>
+-   git-ls-no-x                        | > git-ls-no-x
+-   git-upgrade                        | > git update-git-for-windows<CR>
 [ref.main] --------------------------- | ----------------------------------------
 - T Google翻訳                         | https://translate.google.co.jp/
 - D DeepL翻訳                          | https://www.deepl.com/ja/translator

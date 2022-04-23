@@ -45,6 +45,10 @@ f_plug_status() {
 	for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
+f_plug_tags() {
+	for-dir.sh "./make.sh tags" ${GIT_DIRS}
+}
+
 f_help() {
   echo "default"
   echo "min"
@@ -53,6 +57,7 @@ f_help() {
   echo "log_clean"
   echo "plug_graph"
   echo "plug_status"
+  echo "plug_tags"
   echo "help"
 }
 
