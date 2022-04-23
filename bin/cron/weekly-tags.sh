@@ -3,6 +3,9 @@
 cd $MY_ENV
 mymake.sh tags
 
+cd $MY_VIM
+mymake.sh plug_tags
+
 cd $MY_MEMO
 mymake.sh tags_memo
 

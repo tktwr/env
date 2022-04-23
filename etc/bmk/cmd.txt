@@ -14,23 +14,23 @@
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
 [buf.cmd.main] ----------------------- | ----------------------------------------
-- E IDE                                | :MyIDE
-- I MyWinInitSize                      | :MyWinInitSize
-- < SideBar                            | :MySideBarToggle
-- > TagBar                             | :MyTagbarToggle
-- D Fern                               | :MyFernDrawer %:p:h
+- E IDE                                | :VisIDE
+- I VisWinInitSize                     | :VisWinInitSize
+- < SideBar                            | :VisSideBarToggle
+- > TagBar                             | :VisTagbarToggle
+- D Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
-- T Term                               | :MyTerm
+- T Term                               | :VisTerm
 - X Wx                                 | :Wx ?
-- C MyIDESendCdE2T                     | :MyIDESendCdE2T
+- C VisIDESendCdE2T                    | :VisIDESendCdE2T
     --- (Develop) -------------------- | ----------------------------------------
-- H Help                               | :MyHelp
+- H Help                               | :VisHelp
 - M Memo                               | :Memo
-- q MyQuickhl            (C-a)         | :MyQuickhl ??
-- g MyGgrep                            | :silent MyGgrep ??
-- v MyVimgrep                          | :silent MyVimgrep ?? *
+- q VisQuickhl            (C-a)        | :VisQuickhl ??
+- g VisGgrep                           | :VisGgrep ??
+- v VisVimgrep                         | :VisVimgrep ?? *
 - A MyVimgrepAll                       | :call MyVimgrepAll('??')
-- ] MyTjumpPrompt                      | :call MyTjumpPrompt()
+- ] VisTjumpPrompt                     | :call VisTjumpPrompt()
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
@@ -46,7 +46,7 @@
 [buf.cmd.sub] ------------------------ | ----------------------------------------
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
-- s MyGstatusToggle                    | :MyGstatusToggle
+- s VisGstatusToggle                   | :VisGstatusToggle
 - v MyGV                               | :MyGV
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
@@ -66,15 +66,15 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
-- c MyIDESendCurrCmdE2T                | :call MyIDESendCurrCmdE2T()
--   MyWinInfo                          | :MyWinInfo
--   MyCheckEnv                         | :MyCheckEnv
+- c VisIDESendCurrCmdE2T               | :call VisIDESendCurrCmdE2T()
+-   VisWinInfo                         | :VisWinInfo
+-   VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
--   vimdirdiff .my                     | :MyTabDirDiff $MY_ETC/.my $HOME/.my
+-   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
 [buf.cmd.subsub] --------------------- | ----------------------------------------
-- F MyFernDrawerToggle                 | :MyFernDrawerToggle
+- F VisFernDrawerToggle                | :VisFernDrawerToggle
 -   Wc                                 | :Wc ?
--   MyBufDelete                        | :MyBufDelete
+-   VisBufDelete                       | :VisBufDelete
     ---------------------------------- | ----------------------------------------
 -   quit                   (Q)         | :confirm qall
 [cmd.coc] ---------------------------- | ----------------------------------------
@@ -104,7 +104,7 @@
 [cmd.diff] --------------------------- | ----------------------------------------
 -   diffupdate                         | :diffupdate
 [cmd.dirdiff] ------------------------ | ----------------------------------------
-- q quit dirdiff                       | :MyTabDirDiffQuit
+- q quit dirdiff                       | :VisTabDirDiffQuit
 [cmd.git] ---------------------------- | ----------------------------------------
 - D GV diff                            | O
 - ( GV prev                            | (
@@ -114,12 +114,12 @@
 - X discard changes                    | X
 - D diff                               | dd
 - R reload the status buffer           | R
-- q quit fugitive                      | :MyTabClosePrev
+- q quit fugitive                      | :VisTabClosePrev
 [cmd.fern] --------------------------- | ----------------------------------------
 - - below split                        | :below split
 - y yank an abs path                   | _Plug_(fern-action-yank)
-- V MyFernViewItem      (C-CR)         | :call MyFernViewItem()
-- O MyFernOpenItem      (S-CR)         | :call MyFernOpenItem()
+- V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
+- O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
     ---------------------------------- | ----------------------------------------
 -   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
 -   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
@@ -139,7 +139,7 @@
 - v open:vsplit            (v)         | _Plug_(fern-action-open:vsplit)
     ---------------------------------- | ----------------------------------------
 - h collapse               (h)         | _Plug_(fern-action-collapse)
-- l MyFernPreview          (l)         | :call MyFernPreviewItem(-2)
+- l VisFernPreview         (l)         | :call VisFernPreviewItem(-2)
     ---------------------------------- | ----------------------------------------
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
@@ -160,16 +160,16 @@
 [term.main] -------------------------- | ----------------------------------------
 -   git graph              (G)         | > G<CR>
 -   git graph --all       (GA)         | > GA<CR>
--   MyGstatusToggle       (GS)         | > GS<CR>
+-   VisGstatusToggle      (GS)         | > GS<CR>
 -   MyGV                  (GV)         | > GV<CR>
     ---------------------------------- | ----------------------------------------
--   MyIDE                  (E)         | > E<CR>
--   MyFernDrawer           (D)         | > D<CR>
--   MyFernDrawerToggle     (F)         | > F<CR>
+-   VisIDE                 (E)         | > E<CR>
+-   VisFernDrawer          (D)         | > D<CR>
+-   VisFernDrawerToggle    (F)         | > F<CR>
 -   new                    (N)         | > N<CR>
--   MyTerm                 (T)         | > T<CR>
--   MyTermV               (TV)         | > TV<CR>
--   MyWinInitSize          (I)         | > I<CR>
+-   VisTerm                (T)         | > T<CR>
+-   VisTermV              (TV)         | > TV<CR>
+-   VisWinInitSize         (I)         | > I<CR>
     ---------------------------------- | ----------------------------------------
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>
@@ -251,13 +251,13 @@
 -   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
 -   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
     ---------------------------------- | ----------------------------------------
-- H Help                               | :MyHelp
--   Help.index                         | :MyHelp index
--   Help.expression-syntax             | :MyHelp expression-syntax
--   Help.pattern-overview              | :MyHelp pattern-overview
+- H Help                               | :VisHelp
+-   Help.index                         | :VisHelp index
+-   Help.expression-syntax             | :VisHelp expression-syntax
+-   Help.pattern-overview              | :VisHelp pattern-overview
 - M Memo                               | :Memo
-- m Man                                | :MyMan ??
-- p Pydoc                              | :MyPydoc ??
+- m Man                                | :VisMan ??
+- p Pydoc                              | :VisPydoc ??
 -   MyTrans                            | :MyTrans
 -   MyDict                             | :MyDict
 -   EJ                                 | :EJ ??

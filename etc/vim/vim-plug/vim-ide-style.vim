@@ -1,7 +1,7 @@
 Plug 'tktwr/vim-ide-style'
 
 func MyVimgrepAll(word)
-  let word = vis#util#MyPrompt("Word? ", a:word)
+  let word = vis#util#VisPrompt("Word? ", a:word)
   if word == ""
     return
   endif

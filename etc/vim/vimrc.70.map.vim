@@ -44,7 +44,7 @@ nnoremap ==      zi
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>
- nnoremap <silent> <C-G>   :MyRedraw<CR>
+ nnoremap <silent> <C-G>   :VisRedraw<CR>
 "nnoremap <silent> <C-H>   :echo 'C-H'<CR>
 "nnoremap <silent> <C-I>   :echo 'C-I'<CR>
 "nnoremap <silent> <C-J>   :echo 'C-J'<CR>
@@ -66,10 +66,10 @@ nnoremap ==      zi
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
 nnoremap <C-;>   <C-W>:
-nnoremap <C-.>   :MyLcdHere<CR>
+nnoremap <C-.>   :VisLcdHere<CR>
 
 "nnoremap <C-]>   g<C-]>
-nnoremap <C-]>   :call MyTjump(expand('<cfile>'), 0)<CR>
+nnoremap <C-]>   :call VisTjump(expand('<cfile>'), 0)<CR>
 
 "------------------------------------------------------
 " tmap
@@ -77,7 +77,7 @@ nnoremap <C-]>   :call MyTjump(expand('<cfile>'), 0)<CR>
 tnoremap <C-;>   <C-W>:
 
 tnoremap <C-G>   <C-L>
-"tnoremap <C-I>   <C-W>:MyWinInitSize<CR>
+"tnoremap <C-I>   <C-W>:VisWinInitSize<CR>
 " go to Terminal-Normal
 tnoremap <C-O>   <C-W>N
 " paste register
@@ -133,9 +133,9 @@ nnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-nnoremap <silent> <C-7> <C-W>:silent call vis#window#MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-nnoremap <silent> <C-8> <C-W>:silent call vis#window#MyWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
-nnoremap <silent> <C-9> <C-W>:silent call vis#window#MyWinMaximizeYToggle("")<CR>
+nnoremap <silent> <C-7> <C-W>:silent call vis#window#VisWinMaximizeXToggle(g:my_winwidth_max)<CR>
+nnoremap <silent> <C-8> <C-W>:silent call vis#window#VisWinMaximizeXYToggle(g:my_winwidth_max, "")<CR>
+nnoremap <silent> <C-9> <C-W>:silent call vis#window#VisWinMaximizeYToggle("")<CR>
 nnoremap <silent> <C-0> <C-W>b
 
 tnoremap <silent> <C-1> <C-W>t
@@ -146,9 +146,9 @@ tnoremap <silent> <C-4> <C-W>:call 'C-4'<CR>
 tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
 tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
 tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-tnoremap <silent> <C-7> <C-W>:silent call vis#window#MyWinMaximizeXToggle(g:my_winwidth_max)<CR>
-tnoremap <silent> <C-8> <C-W>:silent call vis#window#MyWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
-tnoremap <silent> <C-9> <C-W>:silent call vis#window#MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-7> <C-W>:silent call vis#window#VisWinMaximizeXToggle(g:my_winwidth_max)<CR>
+tnoremap <silent> <C-8> <C-W>:silent call vis#window#VisWinMaximizeXYToggle(g:my_winwidth_max, g:my_term_winheight_max)<CR>
+tnoremap <silent> <C-9> <C-W>:silent call vis#window#VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 tnoremap <silent> <C-0> <C-W>b
 
 "------------------------------------------------------
@@ -165,7 +165,7 @@ tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref.terminal<CR>
 nnoremap <silent> <End>      <C-W>:silent call wbl#WblPrint()<CR>
 tnoremap <silent> <End>      <C-W>:silent call wbl#WblPrint()<CR>
 
-"nnoremap <silent> <TAB>      :MyFernDrawerToggle<CR>
+"nnoremap <silent> <TAB>      :VisFernDrawerToggle<CR>
 "nnoremap <silent> <TAB>      :silent call wbl#WblPrint()<CR>
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
@@ -179,21 +179,21 @@ nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
 tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 
-tnoremap <silent> <PageDown> <C-W>:silent call vis#window#MyWinMaximizeYToggle(g:my_term_winheight_max)<CR>
+tnoremap <silent> <PageDown> <C-W>:silent call vis#window#VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 "------------------------------------------------------
 nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-nnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
+nnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 
 tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-tnoremap <silent> <Del>      <C-W>:MyTabClosePrev<CR>
+tnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 "------------------------------------------------------
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
-nnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
+nnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
 
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
-tnoremap <silent> <C-Down>   <C-W>:MyTerm<CR>
+tnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
 

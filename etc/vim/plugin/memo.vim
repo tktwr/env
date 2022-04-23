@@ -22,8 +22,8 @@ func! s:ListTags()
 endfunc
 
 func! s:OpenTag(tagname, winnr=0)
-  let winnr = vis#window#TtFindEditor(a:winnr)
-  call vis#window#TtGotoWinnr(winnr)
+  let winnr = vis#window#VisFindEditor(a:winnr)
+  call vis#window#VisGotoWinnr(winnr)
 
   "exec "below stjump" "memo_".a:tagname
   exec "tag" "memo_".a:tagname
@@ -74,7 +74,7 @@ command! -nargs=? Memo call s:Memo(<q-args>)
 " autocmd
 "------------------------------------------------------
 func! s:DefineCommands()
-  if (vis#sidebar#TtInSideBar())
+  if (vis#sidebar#VisInSideBar())
     nnoremap <buffer> l     :call <SID>PreviewTag(expand("<cWORD>"), -2)<CR>
   else
     nnoremap <buffer> <silent> l W

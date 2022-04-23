@@ -236,7 +236,7 @@ func GitLogAction(word)
     tabedit +MyGV
   elseif (a:word == "Status")
     call GitLogLcd()
-    tabedit +MyGstatusToggle
+    tabedit +VisGstatusToggle
   elseif (a:word == "Setting")
     call GitLogStoreBuf()
     call GitLogSetting()
@@ -330,9 +330,9 @@ command -nargs=? -complete=dir GitLog call GitLog(<f-args>)
 " autocmd
 "------------------------------------------------------
 func GitLogStatusline()
-  let l:statusline = "%{TtStatuslineWinNr()}"
+  let l:statusline = "%{vis#statusline#VisStatuslineWinNr()}"
   let l:statusline.= "\ [gitlog]"
-  let l:statusline.= "\ %=%{MyCWD()}"
+  let l:statusline.= "\ %=%{vis#util#VisCWD()}"
   return l:statusline
 endfunc
 

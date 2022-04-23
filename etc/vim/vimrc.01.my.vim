@@ -58,7 +58,7 @@ let g:wbl_max = 10
 
 " bmk
 let g:bmk_winwidth = g:my_left_winwidth
-let g:bmk_edit_dir_func = "MyFern"
+let g:bmk_edit_dir_func = "VisFern"
 
 " cpm
 let g:cpm_key = "\<Space>"

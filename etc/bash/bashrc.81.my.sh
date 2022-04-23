@@ -171,35 +171,35 @@ vimapi-vim() {
 
 vimapi-resize() {
   local rows=${1:-10}
-  vimapi.sh MyWinResize $rows
+  vimapi.sh VisWinResize $rows
 }
 
 vimapi-nerdtree() {
   local dir=${*:-$PWD}
-  vimapi.sh MyNERDTreeFind "$dir/"
+  vimapi.sh VisNERDTreeFind "$dir/"
 }
 
 vimapi-fern() {
   local dir=${*:-$PWD}
-  vimapi.sh MyFernDrawer "$dir/"
+  vimapi.sh VisFernDrawer "$dir/"
 }
 
 vimapi-termcd() {
   local winnr="$1"
   if [ -n "$winnr" ]; then
-    vimapi.sh MyIDESendCdT2T "$PWD" $winnr
+    vimapi.sh VisIDESendCdT2T "$PWD" $winnr
   fi
 }
 
 vimapi-tabline-set-label() {
-  vimapi.sh MyTabLineSetLabel "$*"
+  vimapi.sh VisTabLineSetLabel "$*"
 }
 
 vimapi-tabline-set-info() {
   info=""
   info="$info[$MY_PYTHON_TYPE,$MY_PYTHON_VENV]"
   info="$info[$MY_BUILD_SYS,$MY_BUILD_CONFIG]"
-  vimapi.sh MyTabLineSetInfo "$info"
+  vimapi.sh VisTabLineSetInfo "$info"
 }
 
 #------------------------------------------------------
@@ -211,14 +211,14 @@ if [ "$VIM_TERMINAL" ]; then
   alias popd='vimapi-popd'
   alias vim='vimapi-vim'
 
-  alias I='vimapi.sh MyWinInitSize'
-  alias TV='vimapi.sh MyTermV'
+  alias I='vimapi.sh VisWinInitSize'
+  alias TV='vimapi.sh VisTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
 
-  alias GS='vimapi.sh --in-new-tab MyGstatusToggle'
+  alias GS='vimapi.sh --in-new-tab VisGstatusToggle'
   alias GV='vimapi.sh --in-new-tab MyGV'
-  alias E='vimapi.sh --in-new-tab MyIDE'
-  alias T='vimapi.sh MyTerm'
+  alias E='vimapi.sh --in-new-tab VisIDE'
+  alias T='vimapi.sh VisTerm'
   alias N='vimapi.sh new'
 
   alias D='vimapi-dir'
@@ -232,10 +232,10 @@ if [ "$VIM_TERMINAL" ]; then
   alias ,termcd='vimapi-termcd'
   alias ,resize='vimapi-resize'
 else
-  alias GS='vim -c "MyGstatusToggle"'
+  alias GS='vim -c "VisGstatusToggle"'
   alias GV='vim -c "MyGV"'
-  alias E='vim -c "MyIDE"'
-  alias T='vim -c "MyTerm"'
+  alias E='vim -c "VisIDE"'
+  alias T='vim -c "VisTerm"'
 
   alias z='vim -c "DiaFull"'
   alias zh='vim -c "DiaFullH"'
