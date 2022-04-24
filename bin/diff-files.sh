@@ -43,7 +43,7 @@ f_diff() {
         ;;
       vimdiff)
         if [ $VIM_TERMINAL ]; then
-          eval "vimapi.sh MyTabDiff $1 $2"
+          eval "vimapi.sh VisTabDiff $1 $2"
           read -p "Enter to proceed. "
         else
           eval "$DIFF_CMD $1 $2"

@@ -14,8 +14,8 @@ plugged/vim-ide-style \
 #======================================================
 f_default() {
   cp vimrc_all.vim $HOME/.vimrc
-  cp gvimrc_min.vim $HOME/_vimrc
-  cp gvimrc_min.vim $MY_HOME/_vimrc
+  cat vimrc_min.vim gvimrc_min.vim > $HOME/_vimrc
+  cat vimrc_min.vim gvimrc_min.vim > $MY_HOME/_vimrc
 }
 
 f_min() {

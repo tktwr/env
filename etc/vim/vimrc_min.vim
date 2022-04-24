@@ -1,7 +1,6 @@
 "======================================================
 " minimal vimrc
 "======================================================
-
 set nocompatible
 
 set encoding=utf-8
@@ -21,6 +20,11 @@ nnoremap <C-H>   <C-W>h
 nnoremap <C-J>   <C-W>w
 nnoremap <C-K>   <C-W>W
 nnoremap <C-L>   <C-W>l
+
+tnoremap <C-H>   <C-W>h
+tnoremap <C-J>   <C-W>w
+tnoremap <C-K>   <C-W>W
+tnoremap <C-L>   <C-W>l
 
 nnoremap <C-D>   <C-B>
 nnoremap <C-E>   :close<CR>
