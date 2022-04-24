@@ -17,16 +17,16 @@
 - E IDE                                | :VisIDE
 - I VisWinInitSize                     | :VisWinInitSize
 - < SideBar                            | :VisSideBarToggle
-- > TagBar                             | :VisTagbarToggle
+- > TagBar                             | :MyTagbarToggle
 - D Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :VisTerm
 - X Wx                                 | :Wx ?
-- C VisIDESendCdE2T                    | :VisIDESendCdE2T
+- C VisSendCdE2T                       | :VisSendCdE2T
     --- (Develop) -------------------- | ----------------------------------------
 - H Help                               | :VisHelp
 - M Memo                               | :Memo
-- q VisQuickhl            (C-a)        | :VisQuickhl ??
+- q VisQuickhl           (C-a)         | :VisQuickhl ??
 - g VisGgrep                           | :VisGgrep ??
 - v VisVimgrep                         | :VisVimgrep ?? *
 - A MyVimgrepAll                       | :call MyVimgrepAll('??')
@@ -66,7 +66,7 @@
 - I MyMakeImageLink                    | :MyMakeImageLink
 - p MyTogglePathFormat                 | :MyTogglePathFormat
     ---------------------------------- | ----------------------------------------
-- c VisIDESendCurrCmdE2T               | :call VisIDESendCurrCmdE2T()
+- c VisSendCurrCmdE2T                  | :call VisSendCurrCmdE2T()
 -   VisWinInfo                         | :VisWinInfo
 -   VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------

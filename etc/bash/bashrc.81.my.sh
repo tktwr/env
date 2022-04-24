@@ -187,7 +187,7 @@ vimapi-fern() {
 vimapi-termcd() {
   local winnr="$1"
   if [ -n "$winnr" ]; then
-    vimapi.sh VisIDESendCdT2T "$PWD" $winnr
+    vimapi.sh VisSendCdT2T "$PWD" $winnr
   fi
 }
 
@@ -206,17 +206,18 @@ vimapi-tabline-set-info() {
 # vim terminal
 #------------------------------------------------------
 if [ "$VIM_TERMINAL" ]; then
+  vim() { vimapi-vim "$@"; }
+
   alias cd='vimapi-cd'
   alias pushd='vimapi-pushd'
   alias popd='vimapi-popd'
-  alias vim='vimapi-vim'
 
   alias I='vimapi.sh VisWinInitSize'
   alias TV='vimapi.sh VisTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
 
-  alias GS='vimapi.sh --in-new-tab VisGstatusToggle'
   alias GV='vimapi.sh --in-new-tab MyGV'
+  alias GS='vimapi.sh --in-new-tab VisGstatusToggle'
   alias E='vimapi.sh --in-new-tab VisIDE'
   alias T='vimapi.sh VisTerm'
   alias N='vimapi.sh new'
@@ -224,16 +225,13 @@ if [ "$VIM_TERMINAL" ]; then
   alias D='vimapi-dir'
   alias D2='vimapi-dir2'
 
-  alias ,e='vimapi.sh --edit'
-  alias ,sp='vimapi.sh --in-above-win "below split"'
-  alias ,new='vimapi.sh new'
   alias ,tabe='vimapi.sh tabedit'
 
   alias ,termcd='vimapi-termcd'
   alias ,resize='vimapi-resize'
 else
-  alias GS='vim -c "VisGstatusToggle"'
   alias GV='vim -c "MyGV"'
+  alias GS='vim -c "VisGstatusToggle"'
   alias E='vim -c "VisIDE"'
   alias T='vim -c "VisTerm"'
 
