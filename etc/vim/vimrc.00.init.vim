@@ -53,6 +53,8 @@ set wildignore+=*/build*/**
 set hlsearch
 set incsearch
 
+set complete=.,w,b,u,i
+
 "set showcmd
 "set ignorecase
 "set smartcase

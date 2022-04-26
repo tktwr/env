@@ -1,12 +1,15 @@
 "======================================================
 " vim-plug
 "======================================================
-"let plug_file = expand('$MY_VIM/autoload/plug.vim')
-"let plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-"if empty(glob(plug_file))
-"  silent !curl -fLo plug_file --create-dirs plug_url
-"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-"endif
+let $MY_VIM = expand('~/.vim')
+
+let plug_file = expand('$MY_VIM/autoload/plug.vim')
+let plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if empty(glob(plug_file))
+  let cmd = printf("!curl --create-dirs -fL -o %s %s", plug_file, plug_url)
+  silent exec cmd
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('$MY_VIM/plugged')
 

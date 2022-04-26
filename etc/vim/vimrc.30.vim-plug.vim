@@ -1,11 +1,11 @@
 "======================================================
 " vim-plug
 "======================================================
-set complete=.,w,b,u,i
-
-if empty(glob('$MY_VIM/autoload/plug.vim'))
-  silent !curl -fLo $MY_VIM/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+let plug_file = expand('$MY_VIM/autoload/plug.vim')
+let plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+if empty(glob(plug_file))
+  let cmd = printf("!curl --create-dirs -fL -o %s %s", plug_file, plug_url)
+  silent exec cmd
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
