@@ -3,7 +3,7 @@
 #======================================================
 # functions
 #======================================================
-f_default() {
+f_all() {
   ./dot.sh --common-files --cp
 
   cd bash
@@ -47,11 +47,13 @@ f_vimdirdiff() {
 	./dot.sh --all-files --vimdirdiff
 }
 
+#------------------------------------------------------
 f_help() {
   echo "default"
+  echo "all"
   echo "min"
-  echo "init"
   echo "backup"
+  echo "init"
   echo "tags"
   echo "cmp"
   echo "vimdiff"
@@ -59,9 +61,12 @@ f_help() {
   echo "help"
 }
 
+f_default() {
+  f_all
+}
+
 #======================================================
 # main
 #======================================================
 func_name=${1:-"default"}
 eval "f_$func_name"
-
