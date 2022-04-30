@@ -133,117 +133,24 @@ print-env() {
 }
 
 #------------------------------------------------------
-# vimapi
-#------------------------------------------------------
-vimapi-cd() {
-  local dir=${*:-$HOME}
-  cd "$dir"
-  vimapi.sh "lcd $PWD"
-}
-
-vimapi-pushd() {
-  pushd "$@"
-  vimapi.sh "lcd $PWD"
-}
-
-vimapi-popd() {
-  popd "$@"
-  vimapi.sh "lcd $PWD"
-}
-
-vimapi-dir() {
-  local dir=${1:-$PWD}
-  local winnr=${2:-1}
-  vimapi.sh --winnr $winnr --edit-dir "$dir"
-}
-
-vimapi-dir2() {
-  local dir=${1:-$PWD}
-  local winnr=2
-  vimapi.sh --winnr $winnr --edit-dir "$dir"
-}
-
-vimapi-vim() {
-  local file="$1"
-  local winnr=${2:--1}
-  vimapi.sh --winnr $winnr --edit "$file"
-}
-
-vimapi-resize() {
-  local rows=${1:-10}
-  vimapi.sh VisWinResize $rows
-}
-
-vimapi-nerdtree() {
-  local dir=${*:-$PWD}
-  vimapi.sh VisNERDTreeFind "$dir/"
-}
-
-vimapi-fern() {
-  local dir=${*:-$PWD}
-  vimapi.sh VisFernDrawer "$dir/"
-}
-
-vimapi-termcd() {
-  local winnr="$1"
-  if [ -n "$winnr" ]; then
-    vimapi.sh VisSendCdT2T "$PWD" $winnr
-  fi
-}
-
-vimapi-tabline-set-label() {
-  vimapi.sh VisTabLineSetLabel "$*"
-}
-
-vimapi-tabline-set-info() {
-  info=""
-  info="$info[$MY_PYTHON_TYPE,$MY_PYTHON_VENV]"
-  info="$info[$MY_BUILD_SYS,$MY_BUILD_CONFIG]"
-  vimapi.sh VisTabLineSetInfo "$info"
-}
+alias pp='print-path.sh -p'
+alias make='mymake.sh'
 
 #------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
 if [ "$VIM_TERMINAL" ]; then
-  vim() { vimapi-vim "$@"; }
-
-  alias cd='vimapi-cd'
-  alias pushd='vimapi-pushd'
-  alias popd='vimapi-popd'
-
   alias I='vimapi.sh VisWinInitSize'
   alias TV='vimapi.sh VisTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
 
-  alias GV='vimapi.sh --in-new-tab MyGV'
-  alias GS='vimapi.sh --in-new-tab VisGstatusToggle'
-  alias E='vimapi.sh --in-new-tab VisIDE'
-  alias T='vimapi.sh VisTerm'
-  alias N='vimapi.sh new'
-
-  alias D='vimapi-dir'
-  alias D2='vimapi-dir2'
-
   alias ,tabe='vimapi.sh tabedit'
-
   alias ,termcd='vimapi-termcd'
-  alias ,resize='vimapi-resize'
 else
-  alias GV='vim -c "MyGV"'
-  alias GS='vim -c "VisGstatusToggle"'
-  alias E='vim -c "VisIDE"'
-  alias T='vim -c "VisTerm"'
-
   alias z='vim -c "DiaFull"'
   alias zh='vim -c "DiaFullH"'
 fi
 
-#------------------------------------------------------
-alias pp='print-path.sh -p'
-
-#------------------------------------------------------
-alias make='mymake.sh'
-alias vimdiff='vimdiff.sh'
-alias vimdirdiff='vimdirdiff.sh'
-
+export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
+export PATH="$MY_VIM_IDE/bin:$PATH"
+source $MY_VIM_IDE/etc/bashrc

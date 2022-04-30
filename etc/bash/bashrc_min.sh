@@ -86,3 +86,6 @@ alias cd.bin='cd $MY_BIN'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
+export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
+export PATH="$MY_VIM_IDE/bin:$PATH"
+source $MY_VIM_IDE/etc/bashrc
