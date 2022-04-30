@@ -1,4 +1,7 @@
 [bmk.side] --------------------------- | ----------------------------------------
+- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
+- G VisTabGV                           | :call VisTabGV()
+    ---------------------------------- | ----------------------------------------
 -   Memo                               | :Memo
 -   todo                               | $MY_DIARY/todo.md.html
 -   bmk                                | $MY_BMK/bmk.txt
@@ -17,17 +20,9 @@
 -   Desktop/                           | $MY_DESKTOP/
 -   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
--   private/                           | $MY_PRIVATE/
--   protected/                         | $MY_PROTECTED/
--   public/                            | $MY_PUBLIC/
-    ---------------------------------- | ----------------------------------------
 - y .my/                               | $MY_DOTMY/
-- C config/                            | $MY_CONFIG/
--     local/                           | $MY_CONFIG/local/
-- c     common/                        | $MY_COMMON_SETTING/
--   rconfig/                           | $MY_REMOTE_CONFIG/
--   lconfig/                           | $MY_LOCAL_CONFIG/
--   pconfig/                           | $MY_PRIVATE_CONFIG/
+- C MyConfig/                          | $MY_CONFIG/
+-   MyShare/                           | $MY_SHARE/
     --- (rconfig) -------------------- | ----------------------------------------
 - i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/

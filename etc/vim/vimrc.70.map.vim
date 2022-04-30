@@ -69,7 +69,7 @@ nnoremap <C-;>   <C-W>:
 nnoremap <C-.>   :VisLcdHere<CR>
 
 "nnoremap <C-]>   g<C-]>
-nnoremap <C-]>   :call VisTjump(expand('<cfile>'), 0)<CR>
+nnoremap <C-]>   :<C-U>call VisTjump(expand('<cfile>'), v:count)<CR>
 
 "------------------------------------------------------
 " tmap

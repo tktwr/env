@@ -1,25 +1,28 @@
 "======================================================
 " vim-plug
 "======================================================
-let $MY_VIM = expand('~/.vim')
+func s:InstallVimPlug()
+  let plug_file = expand('$MY_VIM/autoload/plug.vim')
+  let plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  if empty(glob(plug_file))
+    let cmd = printf("!curl --create-dirs -fL -o %s %s", plug_file, plug_url)
+    silent exec cmd
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
+endfunc
 
-let plug_file = expand('$MY_VIM/autoload/plug.vim')
-let plug_url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-if empty(glob(plug_file))
-  let cmd = printf("!curl --create-dirs -fL -o %s %s", plug_file, plug_url)
-  silent exec cmd
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
+call s:InstallVimPlug()
 call plug#begin('$MY_VIM/plugged')
 
-" fern
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-let g:fern#disable_default_mappings = 1
-let g:fern#renderer = 'nerdfont'
+if v:true
+  " fern
+  Plug 'lambdalisue/fern.vim'
+  Plug 'lambdalisue/nerdfont.vim'
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim'
+  Plug 'lambdalisue/glyph-palette.vim'
+  let g:fern#disable_default_mappings = 1
+  let g:fern#renderer = 'nerdfont'
+endif
 
 if has('nvim')
   " popup for nvim

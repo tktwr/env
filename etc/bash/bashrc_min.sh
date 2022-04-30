@@ -22,8 +22,9 @@ export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
 export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
 
 export MY_ENV="$MY_REMOTE_CONFIG/env"
-export MY_ETC="$MY_ENV/etc"
 export MY_BIN="$MY_ENV/bin"
+export MY_ETC="$MY_ENV/etc"
+export MY_VIM="$MY_ENV/etc/vim"
 
 export MY_FZY="$MY_ETC/fzy"
 export MY_COMMON_SETTING="$MY_CONFIG/local/common"
