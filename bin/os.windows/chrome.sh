@@ -1,11 +1,7 @@
 #!/bin/bash
 
-BIN_FILE="$SYS_PROG32_DIR/Google/Chrome/Application/chrome.exe"
+export SYS_PROG32_DIR="/c/Program Files (x86)"
+export PATH="$SYS_PROG32_DIR/Google/Chrome/Application:$PATH"
 
-if [ ! -x "$BIN_FILE" ]; then
-  echo "no $BIN_FILE"
-  exit
-fi
-
-exec "$BIN_FILE" "$@" > /dev/null 2>&1 &
+exec chrome.exe "$@" > /dev/null 2>&1 &
 

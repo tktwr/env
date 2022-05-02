@@ -15,7 +15,7 @@
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
 [buf.cmd.main] ----------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
-- I VisWinInitSize                     | :VisWinInitSize
+- I WinInitSize                        | :VisWinInitSize
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
 - D Fern                               | :VisFernDrawer %:p:h
@@ -72,7 +72,6 @@
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
 [buf.cmd.subsub] --------------------- | ----------------------------------------
-- F VisFernDrawerToggle                | :VisFernDrawerToggle
 -   Wc                                 | :Wc ?
 -   VisBufDelete                       | :VisBufDelete
     ---------------------------------- | ----------------------------------------
@@ -163,13 +162,12 @@
 -   VisGstatusToggle      (GS)         | > GS<CR>
 -   MyGV                  (GV)         | > GV<CR>
     ---------------------------------- | ----------------------------------------
--   VisIDE                 (E)         | > E<CR>
--   VisFernDrawer          (D)         | > D<CR>
--   VisFernDrawerToggle    (F)         | > F<CR>
--   new                    (N)         | > N<CR>
--   VisTerm                (T)         | > T<CR>
--   VisTermV              (TV)         | > TV<CR>
--   VisWinInitSize         (I)         | > I<CR>
+-   IDE                    (E)         | > E<CR>
+-   WinInitSize            (I)         | > I<CR>
+-   Fern                   (D)         | > D<CR>
+-   Editor                 (N)         | > N<CR>
+-   Term                   (T)         | > T<CR>
+-   TermV                 (TV)         | > TV<CR>
     ---------------------------------- | ----------------------------------------
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>

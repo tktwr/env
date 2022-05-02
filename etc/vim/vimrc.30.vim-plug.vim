@@ -35,7 +35,6 @@ source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/ultisnips.vim
 
 "source $MY_VIM/vim-plug/eskk.vim
-"source $MY_VIM/vim-plug/nerdtree-git-plugin.vim
 "source $MY_VIM/vim-plug/fzf.vim
 
 if $MY_PROMPT_TYPE >= 1
@@ -75,8 +74,6 @@ Plug 'tpope/vim-surround'
 "------------------------------------------------------
 " vim-plug: my
 "------------------------------------------------------
-source $MY_VIM/vim-plug/vim-winbuf-menu.vim
-source $MY_VIM/vim-plug/vim-bmk-menu.vim
 source $MY_VIM/vim-plug/vim-ide-style.vim
 
 "------------------------------------------------------

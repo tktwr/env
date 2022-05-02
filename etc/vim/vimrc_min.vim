@@ -36,6 +36,13 @@ set background=dark
 nnoremap Q       :confirm qall<CR>
 nnoremap '       `
 
+nnoremap <C-D>   <C-B>
+nnoremap <C-E>   :close<CR>
+nnoremap <C-G>   <C-L>
+
+"------------------------------------------------------
+" map.window.move
+"------------------------------------------------------
 nnoremap <C-H>   <C-W>h
 nnoremap <C-J>   <C-W>w
 nnoremap <C-K>   <C-W>W
@@ -46,10 +53,16 @@ tnoremap <C-J>   <C-W>w
 tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
 
-nnoremap <C-D>   <C-B>
-nnoremap <C-E>   :close<CR>
-nnoremap <C-G>   <C-L>
+"------------------------------------------------------
+" tmap
+"------------------------------------------------------
+tnoremap <C-G>   <C-L>
+tnoremap <C-O>   <C-W>N
+tnoremap <C-;>   <C-W>:
 
+"------------------------------------------------------
+" clipboard
+"------------------------------------------------------
 nnoremap ,p      "*p
 vnoremap Y       "*y
 

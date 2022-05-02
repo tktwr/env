@@ -3,21 +3,26 @@
 #======================================================
 # functions
 #======================================================
-f_all() {
-  ./dot.sh --common-files --cp
-
-  cd bash
-  ./make.sh
-  cd ..
-
-  cd vim
-  ./make.sh
+f_sub() {
+  cd $1
+  ./make.sh $2
   cd ..
 }
 
+f_all() {
+  ./dot.sh --common-files --cp
+  f_sub bash
+  f_sub vim
+}
+
 f_min() {
-  cp bash/bashrc_min.sh $HOME/.bashrc
-  cp vim/vimrc_min.vim $HOME/.vimrc
+  f_sub bash min
+  f_sub vim min
+}
+
+f_test() {
+  f_sub bash min
+  f_sub vim min_plug
 }
 
 #------------------------------------------------------
@@ -52,6 +57,7 @@ f_help() {
   echo "default"
   echo "all"
   echo "min"
+  echo "test"
   echo "backup"
   echo "init"
   echo "tags"

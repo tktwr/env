@@ -137,10 +137,17 @@ alias pp='print-path.sh -p'
 alias make='mymake.sh'
 
 #------------------------------------------------------
+# vim plugin
+#------------------------------------------------------
+export MY_VIM_BMK="$MY_VIM/plugged/vim-bmk-menu"
+export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
+export PATH="$MY_VIM_IDE/bin:$MY_VIM_BMK/bin:$PATH"
+source $MY_VIM_IDE/etc/bashrc
+
+#------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
 if [ "$VIM_TERMINAL" ]; then
-  alias I='vimapi.sh VisWinInitSize'
   alias TV='vimapi.sh VisTermV'
   alias GL='vimapi.sh --in-above-win GitLog $PWD'
 
@@ -151,6 +158,3 @@ else
   alias zh='vim -c "DiaFullH"'
 fi
 
-export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
-export PATH="$MY_VIM_IDE/bin:$PATH"
-source $MY_VIM_IDE/etc/bashrc

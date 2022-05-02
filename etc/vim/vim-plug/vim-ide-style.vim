@@ -1,3 +1,5 @@
+Plug 'tktwr/vim-winbuf-menu'
+Plug 'tktwr/vim-bmk-menu'
 Plug 'tktwr/vim-ide-style'
 
 func MyVimgrepAll(word)

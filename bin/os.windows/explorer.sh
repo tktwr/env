@@ -13,19 +13,18 @@ f_check_exe() {
   fi
 }
 
-f_win_path() {
-  local l_winpath="$@"
+f_winpath() {
+  local wp="$@"
 
-  if [ -z "$l_winpath" -o "$l_winpath" = "." ]; then
-    l_winpath=$(pwd)
+  if [ -z "$wp" -o "$wp" = "." ]; then
+    wp=$(pwd)
   fi
 
-  l_winpath=$(cygpath -w $l_winpath)
-  echo $l_winpath
+  echo $(cygpath -w $wp)
 }
 
 f_check_exe "$BIN_FILE"
-winpath=$(f_win_path "$@")
+wp=$(f_winpath "$@")
 
-exec "$BIN_FILE" "$winpath" > /dev/null 2>&1 &
+exec "$BIN_FILE" "$wp" > /dev/null 2>&1 &
 

@@ -86,6 +86,11 @@ alias cd.bin='cd $MY_BIN'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
+#------------------------------------------------------
+# vim plugin
+#------------------------------------------------------
+export MY_VIM_BMK="$MY_VIM/plugged/vim-bmk-menu"
 export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
-export PATH="$MY_VIM_IDE/bin:$PATH"
+export PATH="$MY_VIM_IDE/bin:$MY_VIM_BMK/bin:$PATH"
 source $MY_VIM_IDE/etc/bashrc
+
