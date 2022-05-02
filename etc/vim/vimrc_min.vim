@@ -1,7 +1,14 @@
 "======================================================
 " minimal vimrc
 "======================================================
-"let $MY_VIM = expand('~/.vim')
+if !exists('$MY_VIM')
+  let $MY_VIM = expand('~/.vim')
+endif
+
+set runtimepath-=~/.vim
+set runtimepath-=~/.vim/after
+set runtimepath^=$MY_VIM
+set runtimepath+=$MY_VIM/after
 
 "------------------------------------------------------
 " basic

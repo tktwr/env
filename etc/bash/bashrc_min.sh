@@ -80,8 +80,9 @@ alias gs='git status'
 alias gf='git fetch'
 alias G='git graph -6'
 
-alias cd.etc='cd $MY_ETC'
 alias cd.bin='cd $MY_BIN'
+alias cd.etc='cd $MY_ETC'
+alias cd.vim='cd $MY_VIM'
 
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
