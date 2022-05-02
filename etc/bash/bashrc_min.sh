@@ -77,8 +77,13 @@ alias vi='vim'
 alias more='less'
 
 alias gs='git status'
+alias gd='git diff'
 alias gf='git fetch'
+alias gA='git add'
+alias gAu='git add -u'
+alias gR='git reset --hard'
 alias G='git graph -6'
+alias GA='git graph -6 --all'
 
 alias cd.bin='cd $MY_BIN'
 alias cd.etc='cd $MY_ETC'
