@@ -53,6 +53,12 @@ export PATH="$MY_BIN:$PATH"
 export PS1="[\w]$ "
 
 #------------------------------------------------------
+# color
+#------------------------------------------------------
+export LS_COLORS="di=31:ln=31:tw=31:ow=31"
+export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
+
+#------------------------------------------------------
 # alias
 #------------------------------------------------------
 unalias -a
@@ -72,7 +78,7 @@ alias s='source $HOME/.bashrc'
 alias h='history 20'
 alias j='jobs -l'
 alias where='type -all'
-alias ls='ls -F'
+alias ls="ls -F --color=auto -I 'NTUSER.*'"
 alias vi='vim'
 alias more='less'
 

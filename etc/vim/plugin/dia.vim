@@ -6,25 +6,32 @@ if exists("g:loaded_dia")
 endif
 let g:loaded_dia = 1
 
-let s:dia = g:my_dia_file
-let s:todo = g:my_todo_file
+let s:dia_file = ""
+let s:todo_file = ""
 let s:todo_winwidth = 40
 let s:todo_winheight = 10
 
+if exists("g:dia_file")
+  let s:dia_file = g:dia_file
+endif
+if exists("g:todo_file")
+  let s:todo_file = g:todo_file
+endif
+
 func s:MyDia(sp, type)
   if a:type == 'd'
-    exec a:sp s:dia
+    exec a:sp s:dia_file
   elseif a:type == 't'
-    exec a:sp s:todo
+    exec a:sp s:todo_file
   elseif a:type == 'h'
-    exec a:sp s:todo
-    exec "sp" s:dia
+    exec a:sp s:todo_file
+    exec "sp" s:dia_file
     wincmd j
     exec "resize" s:todo_winheight
     wincmd k
   elseif a:type == 'v'
-    exec a:sp s:todo
-    exec "vsp" s:dia
+    exec a:sp s:todo_file
+    exec "vsp" s:dia_file
     wincmd l
     exec "vertical resize" s:todo_winwidth
     wincmd h

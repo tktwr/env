@@ -62,22 +62,3 @@ hi! link Terminal         MyBgTerm
 
 hi! link CocErrorHighlight  MyRedRevBold
 
-let g:terminal_ansi_colors = [
-\ '#000000',
-\ '#fb4934',
-\ '#b8bb26',
-\ '#fabd2f',
-\ '#707fd9',
-\ '#d3869b',
-\ '#8ec07c',
-\ '#fe8019',
-\ '#000000',
-\ '#fb4934',
-\ '#b8bb26',
-\ '#fabd2f',
-\ '#707fd9',
-\ '#d3869b',
-\ '#8ec07c',
-\ '#fe8019',
-\ ]
-
