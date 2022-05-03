@@ -27,7 +27,7 @@ f_test() {
 
 #------------------------------------------------------
 f_backup() {
-	./dot.sh --backup
+  ./dot.sh --backup
 }
 
 f_init() {
@@ -36,20 +36,20 @@ f_init() {
 }
 
 f_tags() {
-	cd ..
+  cd ..
   ./make.sh tags
 }
 
 f_cmp() {
-	./dot.sh --all-files --cmp
+  ./dot.sh --all-files --cmp
 }
 
 f_vimdiff() {
-	./dot.sh --all-files --vimdiff
+  ./dot.sh --all-files --vimdiff
 }
 
 f_vimdirdiff() {
-	./dot.sh --all-files --vimdirdiff
+  ./dot.sh --all-files --vimdirdiff
 }
 
 #------------------------------------------------------

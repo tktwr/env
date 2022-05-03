@@ -28,27 +28,27 @@ f_min_plug() {
 
 #------------------------------------------------------
 f_plug_status() {
-	for-dir.sh "git status -s" ${GIT_DIRS}
+  for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
 f_plug_graph() {
-	for-dir.sh "git graph -1" ${GIT_DIRS}
+  for-dir.sh "git graph -1" ${GIT_DIRS}
 }
 
 f_plug_tags() {
-	for-dir.sh "./make.sh tags" ${GIT_DIRS}
+  for-dir.sh "./make.sh tags" ${GIT_DIRS}
 }
 
 #------------------------------------------------------
 f_log() {
   f_log_clean
-	vim -c "q" --startuptime $HOME/vim_log.txt
-	vim -u NONE -c "q" --startuptime $HOME/vim_log_zero.txt
+  vim -c "q" --startuptime $HOME/vim_log.txt
+  vim -u NONE -c "q" --startuptime $HOME/vim_log_zero.txt
 }
 
 f_log_clean() {
-	rm -f $HOME/vim_log.txt
-	rm -f $HOME/vim_log_zero.txt
+  rm -f $HOME/vim_log.txt
+  rm -f $HOME/vim_log_zero.txt
 }
 
 #------------------------------------------------------

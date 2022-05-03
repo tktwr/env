@@ -30,48 +30,48 @@ f_default() {
 }
 
 f_graph() {
-	for-dir.sh "git graph -1" ${GIT_DIRS}
+  for-dir.sh "git graph -1" ${GIT_DIRS}
 }
 
 f_status() {
-	for-dir.sh "git status -s" ${GIT_DIRS}
+  for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
 f_fetch() {
-	for-dir.sh "git fetch" ${GIT_DIRS}
+  for-dir.sh "git fetch" ${GIT_DIRS}
 }
 
 f_pull() {
-	for-dir.sh "git pull" ${GIT_DIRS}
+  for-dir.sh "git pull" ${GIT_DIRS}
 }
 
 f_tags() {
-	for-dir.sh "./make.sh tags_memo" ${MEMO_DIRS}
-	for-dir.sh "make tags" ${TAGS_DIRS}
+  for-dir.sh "./make.sh tags_memo" ${MEMO_DIRS}
+  for-dir.sh "make tags" ${TAGS_DIRS}
 }
 
 f_build() {
-	for-dir.sh "make all" ${BUILD_DIRS}
+  for-dir.sh "make all" ${BUILD_DIRS}
 }
 
 f_clean() {
-	for-dir.sh "make all.clean" ${BUILD_DIRS}
+  for-dir.sh "make all.clean" ${BUILD_DIRS}
 }
 
 f_print_build() {
-	myfind.sh -b
+  myfind.sh -b
 }
 
 f_help() {
-	echo "graph       ... graph  in GIT_DIRS"
-	echo "status      ... status in GIT_DIRS"
-	echo "fetch       ... fetch  in GIT_DIRS"
-	echo "pull        ... pull  in GIT_DIRS"
-	echo "tags        ... tags in TAGS_DIRS and MEMO_DIRS"
-	echo "build       ... build in BUILD_DIRS"
-	echo "clean       ... clean in BUILD_DIRS"
-	echo "print_build ... print build directories"
-	echo "help        ... print help"
+  echo "graph       ... graph  in GIT_DIRS"
+  echo "status      ... status in GIT_DIRS"
+  echo "fetch       ... fetch  in GIT_DIRS"
+  echo "pull        ... pull  in GIT_DIRS"
+  echo "tags        ... tags in TAGS_DIRS and MEMO_DIRS"
+  echo "build       ... build in BUILD_DIRS"
+  echo "clean       ... clean in BUILD_DIRS"
+  echo "print_build ... print build directories"
+  echo "help        ... print help"
 }
 
 #======================================================
