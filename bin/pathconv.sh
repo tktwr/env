@@ -9,7 +9,8 @@ f_path_unix() {
       ;;
     *WSL*)
       if [ -e "$p" ]; then
-        wslpath -au `wslpath -aw "$p"`
+        local pw=$(wslpath -aw "$p")
+        wslpath -au "$pw"
       else
         echo "$p"
       fi

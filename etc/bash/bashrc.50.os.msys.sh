@@ -32,6 +32,7 @@ PATH="$SYS_CUDA_SDK/bin:$SYS_CUDA_SDK/libnvvp:$PATH"
 
 alias x='te.sh'
 alias ls='ls.sh'
+alias gvim='gvim.sh'
 alias gvimdiff='gvim.sh -d'
 
 #alias adb='winpty adb'
@@ -41,7 +42,7 @@ alias ipconfig='winpty ipconfig'
 alias tracert='winpty tracert'
 
 net-info() {
-  net share
-  net use
+  net.exe share
+  net.exe use
 }
 
