@@ -12,6 +12,8 @@
 -     vim script                                    | https://knowledge.sakura.ad.jp/23436/
 -     chrisatmachine                                | https://www.chrisatmachine.com/neovim
     ------------------------------------            | ----------------------------------------
+-   launchpad                                       | https://launchpad.net/ubuntu
+-   wsltty                                          | https://github.com/mintty/wsltty
 -   ArchWiki                                        | https://wiki.archlinux.jp/
 -   SSL Certificate Verification                    | https://curl.se/docs/sslcerts.html
     ------------------------------------            | ----------------------------------------
@@ -36,7 +38,7 @@
 -     tkinter.widgets                               | https://www.python-beginners.com/entry/20210607/1623057987
 -   基礎文法とサンプル集                            | https://algorithm.joho.info/programming/python/sample-code-py/
 -     numpy                                         | https://algorithm.joho.info/programming/python/numpy-sample-code/
--   python modules                                  |
+-   pypi                                            | https://pypi.org/
 -     numpy                                         | https://numpy.org/
 -     numpy.reference                               | https://numpy.org/doc/stable/reference/index.html
 -     pillow                                        | https://pillow.readthedocs.io/en/stable/

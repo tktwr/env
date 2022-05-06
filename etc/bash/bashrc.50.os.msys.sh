@@ -30,9 +30,9 @@ PATH="$SYS_CUDA_SDK/bin:$SYS_CUDA_SDK/libnvvp:$PATH"
 # alias
 #------------------------------------------------------
 
-alias x='explorer.sh'
+alias x='te.sh'
 alias ls='ls.sh'
-alias gvimdiff='gvim -d'
+alias gvimdiff='gvim.sh -d'
 
 #alias adb='winpty adb'
 alias net='winpty net'

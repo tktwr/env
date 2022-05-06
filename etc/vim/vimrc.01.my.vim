@@ -62,7 +62,7 @@ let g:wbl_max = 10
 let g:bmk_winwidth = g:my_left_winwidth
 let g:bmk_edit_dir_func = "VisFern"
 let g:bmk_open_url_prog = "chrome.sh"
-let g:bmk_open_dir_prog = "explorer.sh"
+let g:bmk_open_dir_prog = "te.sh"
 let g:bmk_open_file_prog = "vscode.sh"
 
 " cpm

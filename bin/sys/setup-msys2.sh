@@ -12,6 +12,7 @@ openssh \
 "
 
 pkg_ext="\
+fzy \
 make \
 rsync \
 diffstat \
@@ -20,7 +21,6 @@ patch \
 patchutils \
 man-db \
 man-pages-posix \
-fzy \
 mingw-w64-x86_64-ninja \
 mingw-w64-x86_64-universal-ctags-git \
 mingw-w64-x86_64-imagemagick \

@@ -13,15 +13,13 @@ python3-venv \
 "
 
 pkg_ext="\
-vim-gtk3 \
+fzy \
 neovim \
+zip unzip \
 universal-ctags \
 cmake \
 clang \
-clang-tools \
-python3-dev \
-fzf \
-fzy \
+clang-format \
 "
 
 #======================================================

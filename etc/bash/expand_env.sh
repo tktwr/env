@@ -16,5 +16,11 @@ $MY_COMMON_SETTING/dir.txt \
 $MY_DOTMY/dir.txt \
 "
 
-$MY_PYTHON_EXE ./expand_env.py $FILES
+case $MY_OS_NAME in
+  wsl|linux)
+    opt="-p /mnt"
+    ;;
+esac
+
+$MY_PYTHON_EXE ./expand_env.py $opt $FILES
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import re
 import os
+import argparse
 
 
 def expand_env(s):
@@ -16,21 +16,23 @@ def expand_env(s):
     return s
 
 
-def unix_path(fname):
-    fname = re.sub('^C:', '/c', fname)
+def unix_path(fname, prefix=''):
+    fname = re.sub('^C:', f'{prefix}/c', fname)
+    fname = re.sub('^D:', f'{prefix}/d', fname)
     fname = fname.replace('\\', '/')
     return fname
 
 
-def win_path(fname):
+def win_path(fname, prefix=''):
     fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
-    fname = re.sub('^/c', 'C:', fname)
+    fname = re.sub(f'^{prefix}/c', 'C:', fname)
+    fname = re.sub(f'^{prefix}/d', 'D:', fname)
     #fname = fname.replace('/', '\\')
     fname = fname.replace('\\', '/')
     return fname
 
 
-def f_make_dir(fname):
+def f_print_env(fname, args):
     try:
         with open(fname, "r") as f:
             for line in f:
@@ -49,8 +51,8 @@ def f_make_dir(fname):
                 if r == None:
                     dir_name = expand_env(dir_name)
 
-                dir_name = unix_path(dir_name)
-                dir_name_win = win_path(dir_name)
+                dir_name = unix_path(dir_name, args.prefix)
+                dir_name_win = win_path(dir_name, args.prefix)
 
                 print(f"export {env_name}=\"{dir_name}\"")
                 print(f"export {env_name}_WIN=\"{dir_name_win}\"")
@@ -64,12 +66,39 @@ def f_make_dir(fname):
         pass
 
 
-def main(argv):
+def parse_args():
+    parser = argparse.ArgumentParser(description='make env variables')
+    parser.add_argument('-v', '--verbose',
+                        action='store_true',
+                        help='show verbose message')
+    parser.add_argument('-p', '--prefix',
+                        type=str,
+                        default='',
+                        help='set prefix')
+    parser.add_argument('files',
+                        type=str,
+                        nargs='+',
+                        help='input files')
+    return parser.parse_args()
+
+
+def print_args(args):
+    print(f"--- args ---")
+    print(f"args.prefix : {args.prefix}")
+    print(f"args.files  : {args.files}")
+
+
+def main(files, args):
     print(f"#!/bin/bash")
-    for i in argv:
-        f_make_dir(i)
+    for i in files:
+        f_print_env(i, args)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:])
+    args = parse_args()
+    if args.verbose:
+        print_args(args)
+
+    main(args.files, args)
+
 
