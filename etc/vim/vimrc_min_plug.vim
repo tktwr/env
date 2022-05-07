@@ -11,6 +11,7 @@ func s:InstallVimPlug()
   endif
 endfunc
 
+"------------------------------------------------------
 call s:InstallVimPlug()
 call plug#begin('$MY_VIM/plugged')
 

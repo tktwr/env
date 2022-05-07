@@ -11,6 +11,7 @@ func s:InstallVimPlug()
   endif
 endfunc
 
+"------------------------------------------------------
 call s:InstallVimPlug()
 call plug#begin('$MY_VIM/plugged')
 
@@ -80,8 +81,8 @@ source $MY_VIM/vim-plug/vim-ide-style.vim
 
 call plug#end()
 
-"------------------------------------------------------
-" colorscheme
-"------------------------------------------------------
+"======================================================
+" color
+"======================================================
 colorscheme gruvbox
 

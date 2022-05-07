@@ -9,7 +9,7 @@ f_os_name() {
     *Msys*)  echo "msys" ;;
     *WSL*)   echo "wsl" ;;
     *Linux*) echo "linux" ;;
-    *)       echo "unknown" ;;
+    *)       echo "linux" ;;
   esac
 }
 
@@ -19,6 +19,7 @@ f_os_name() {
 f_env_msys() {
   export MY_HOME="/c/Users/$USERNAME"
   export MY_PYTHON_EXE="python"
+  export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python39"
 }
 
 f_env_wsl() {
@@ -48,10 +49,6 @@ f_env_common() {
   export MY_DOTMY="$HOME/.my"
 }
 
-export MY_OS_NAME=$(f_os_name)
-f_env_$MY_OS_NAME
-f_env_common
-
 #------------------------------------------------------
 # path
 #------------------------------------------------------
@@ -62,20 +59,21 @@ f_path() {
 
   export PATH="$SYS_PATH"
   export PATH="$MY_BIN:$PATH"
+
+  if [ -n "$USER_PYTHON_HOME" ]; then
+    export PATH="$USER_PYTHON_HOME:$PATH"
+    export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+  fi
 }
 
-f_path_python() {
-  case $MY_OS_NAME in
-    msys)
-      export USER_PYTHON_HOME="$MY_HOME/AppData/Local/Programs/Python/Python39"
-      export PATH="$USER_PYTHON_HOME:$PATH"
-      export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
-      ;;
-  esac
-}
+#------------------------------------------------------
+# setup
+#------------------------------------------------------
+export MY_OS_NAME=$(f_os_name)
 
+f_env_$MY_OS_NAME
+f_env_common
 f_path
-f_path_python
 
 #------------------------------------------------------
 # prompt

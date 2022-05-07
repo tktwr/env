@@ -15,10 +15,10 @@ set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
 set tags+=$MY_DIARY/tags.memo
 
 " tags for env
-set tags+=$MY_ENV/tags/tags.bin_sh
-set tags+=$MY_ENV/tags/tags.bin_py
-set tags+=$MY_ENV/tags/tags.bash
-set tags+=$MY_ENV/tags/tags.vim
+set tags+=$MY_ENV/.tags.bin_sh
+set tags+=$MY_ENV/.tags.bin_py
+set tags+=$MY_ENV/.tags.bash
+set tags+=$MY_ENV/.tags.vim
 
 " tags for libtt
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt

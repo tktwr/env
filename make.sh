@@ -14,20 +14,19 @@ f_snap() {
 }
 
 f_tags() {
-  cd tags
-  f_eval 'myctags.sh $MY_BIN/*.sh > tags.bin_sh'
-  f_eval 'myctags.sh $MY_BIN/py/*.py > tags.bin_py'
-  f_eval 'myctags.sh $MY_BASH/*.sh > tags.bash'
+  f_eval 'myctags.sh bin/*.sh > .tags.bin_sh'
+  f_eval 'myctags.sh bin/py/*.py > .tags.bin_py'
+  f_eval 'myctags.sh etc/bash/*.sh > .tags.bash'
 
   vim_files='\
-    $MY_VIM/*.vim \
-    $MY_VIM/vim-plug/*.vim \
-    $MY_VIM/plugin \
-    $MY_VIM/plugged/vim-winbuf-menu \
-    $MY_VIM/plugged/vim-bmk-menu \
-    $MY_VIM/plugged/vim-ide-style \
+    etc/vim/*.vim \
+    etc/vim/vim-plug/*.vim \
+    etc/vim/plugin \
+    etc/vim/plugged/vim-winbuf-menu \
+    etc/vim/plugged/vim-bmk-menu \
+    etc/vim/plugged/vim-ide-style \
     '
-  f_eval "myctags.sh $vim_files > tags.vim"
+  f_eval "myctags.sh $vim_files > .tags.vim"
 }
 
 f_help() {

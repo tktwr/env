@@ -44,8 +44,8 @@ f_parse_args() {
 
 f_print_args() {
   echo "== [args] ============================================="
-  echo "g_backup_dir: $g_backup_dir"
-  echo "g_files: $g_files"
+  echo "g_backup_dir : $g_backup_dir"
+  echo "g_files      : $g_files"
   echo "======================================================="
 }
 

@@ -1,3 +1,4 @@
 etc/vim/autoload/plug.vim.old
 etc/vim/plugged/
 etc/vim/coc_data/
+.tags.*
