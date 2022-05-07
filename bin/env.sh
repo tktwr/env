@@ -42,8 +42,9 @@ f_home() {
 }
 
 f_pathconv() {
-  pathconv.sh unix "$1"
+  #pathconv.sh unix "$1"
   #pathconv.py -t unix -p /mnt "$1"
+  pathconv.py -t unix "$1"
 }
 
 f_win_home() {
@@ -62,7 +63,15 @@ f_user_prog_dir() {
   echo $(f_pathconv "$HOME/WinHome/AppData/Local/Programs")
 }
 
-f_default() {
+f_cc() {
+  echo "clang"
+}
+
+f_cxx() {
+  echo "clang++"
+}
+
+f_all() {
   echo "export MY_OS_NAME=$(f_os_name)"
   echo "export MY_HOST_NAME=$(f_host_name)"
   echo "export MY_USER_NAME=$(f_user_name)"
@@ -73,6 +82,15 @@ f_default() {
   echo "export SYS_PROG32_DIR=$(f_prog32_dir)"
   echo "export SYS_PROG64_DIR=$(f_prog64_dir)"
   echo "export USER_PROG_DIR=$(f_user_prog_dir)"
+}
+
+f_default() {
+  echo "export MY_HOST_NAME=$(f_host_name)"
+  echo "export MY_SITE_NAME=$(f_site_name)"
+  echo "export MY_SHELL_NAME=$(f_shell_name)"
+  echo "export MY_OS_NAME=$(f_os_name)"
+  echo "export CC=$(f_cc)"
+  echo "export CXX=$(f_cxx)"
 }
 
 #======================================================
