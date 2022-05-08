@@ -64,12 +64,24 @@ tnoremap <C-L>   <C-W>l
 " tmap
 "------------------------------------------------------
 tnoremap <C-G>   <C-L>
-tnoremap <C-O>   <C-W>N
 tnoremap <C-;>   <C-W>:
+tnoremap <C-O>   <C-W>N
 
 "------------------------------------------------------
 " clipboard
 "------------------------------------------------------
 nnoremap ,p      "*p
 vnoremap Y       "*y
+
+"======================================================
+" nvim
+"======================================================
+if has('nvim')
+tnoremap <C-H>   <C-\><C-N><C-W>h
+tnoremap <C-J>   <C-\><C-N><C-W>w
+tnoremap <C-K>   <C-\><C-N><C-W>W
+tnoremap <C-L>   <C-\><C-N><C-W>l
+
+tnoremap <C-O>   <C-\><C-N>
+endif
 

@@ -40,6 +40,7 @@ alias vim-min='/usr/bin/vim -u $MY_VIM/vimrc_min.vim'
 alias vim-tags='/usr/bin/vim -e -c "helptags . | quit"'
 vim-which() { vim `which "$1"` $2; }
 vim-where() { vim `which "$1"` $2; }
+alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 
 # file
 alias f='vifm'

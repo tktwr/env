@@ -74,9 +74,8 @@ nnoremap <C-]>   :<C-U>call VisTjump(expand('<cfile>'), v:count)<CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
-tnoremap <C-;>   <C-W>:
-
 tnoremap <C-G>   <C-L>
+tnoremap <C-;>   <C-W>:
 
 " go to Terminal-Normal
 tnoremap <C-O>   <C-W>N
@@ -197,4 +196,16 @@ tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 tnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
+
+"======================================================
+" nvim
+"======================================================
+if has('nvim')
+tnoremap <C-H>   <C-\><C-N><C-W>h
+tnoremap <C-J>   <C-\><C-N><C-W>w
+tnoremap <C-K>   <C-\><C-N><C-W>W
+tnoremap <C-L>   <C-\><C-N><C-W>l
+
+tnoremap <C-O>   <C-\><C-N>
+endif
 

@@ -12,6 +12,8 @@
 -     vim script                                    | https://knowledge.sakura.ad.jp/23436/
 -     chrisatmachine                                | https://www.chrisatmachine.com/neovim
     ------------------------------------            | ----------------------------------------
+-   snapcraft                                       | https://snapcraft.io/
+-   flathub                                         | https://flathub.org/
 -   launchpad                                       | https://launchpad.net/ubuntu
 -   wsltty                                          | https://github.com/mintty/wsltty
 -   ArchWiki                                        | https://wiki.archlinux.jp/

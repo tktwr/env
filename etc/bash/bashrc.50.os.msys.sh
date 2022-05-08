@@ -40,6 +40,7 @@ alias net='winpty net'
 alias ping='winpty ping'
 alias ipconfig='winpty ipconfig'
 alias tracert='winpty tracert'
+alias wsl='winpty wsl'
 
 net-info() {
   net.exe share
