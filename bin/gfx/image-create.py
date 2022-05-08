@@ -14,7 +14,7 @@ def parse_args():
 
     parser.add_argument('-a', '--action',
                         type=str,
-                        choices=['new', 'hgrad', 'vgrad', 'check'],
+                        choices=['new', 'hgrad', 'vgrad', 'check', 'hstripe'],
                         default='new',
                         help='set action')
     parser.add_argument('-o', '--ofname',
@@ -75,5 +75,7 @@ if __name__ == "__main__":
         img = cu.cv_create_vgrad_img(shape, dtype, bgr0, bgr1)
     elif args.action == 'check':
         img = cu.cv_create_check_img(shape, dtype, bgr0, bgr1, args.nelm)
+    elif args.action == 'hstripe':
+        img = cu.cv_create_hstripe_img(shape, dtype, bgr0, bgr1, args.nelm)
 
     cu.cv_save(args.ofname, img)

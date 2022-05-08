@@ -25,17 +25,24 @@
 -   Image Based Lighting with Multiple Scattering                                                                      | https://bruop.github.io/ibl/
 -   Disney BSDF: 超雑訳 Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering                      | http://project-asura.com/blog/archives/2175
 -   Disney BRDF: 超雑訳 Physically Based Shading at Disney                                                             | http://project-asura.com/blog/archives/1972
+-   Adobe: THE PBR GUIDE - PART 1                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
+-   Adobe: THE PBR GUIDE - PART 2                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
 -   Lafortune BRDF: Non-linear approximation of reflectance functions                                                  | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
 -     Reflectance Data                                                                                                 | http://www.graphics.cornell.edu/online/measurements/reflectance/
 -   Efficient BRDF Importance Sampling Using a Factored Representation                                                 | https://gfx.cs.princeton.edu/proj/brdf/
 -   CS 431/636 - Advanced Rendering Techniques                                                                         | https://www.cs.drexel.edu/~david/Classes/CS431/
     --- [SSS] ------------------------------                                                                           | ----------------------------------------
+-   Disney SSS: 超雑訳 Approximate Reflectance Profiles for Efficient Subsurface Scattering                            | http://project-asura.com/blog/archives/6217
+-   UE SSS: 超雑訳 Real-time subsurface scattering with single pass variance-guided adaptive importance sampling       | http://project-asura.com/blog/archives/8307
+-   Real-time subsurface scattering with single pass variance-guided adaptive importance sampling                      | https://thisistian.github.io/publication/real-time-subsurface-with-adaptive-sampling/
 -   Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
+    --- [Real-Time Rendering] ------------------------------                                                                  | ----------------------------------------
+-   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
+-   SIGGRAPH 2018 Course: Advances in Real-Time Rendering in Games                                                     | https://advances.realtimerendering.com/s2018/index.htm
     --- [Displacement] ------------------------------                                                                  | ----------------------------------------
 -   Tessellation-Free Displacement Mapping for Ray Tracing                                                             | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
     --- [Resources] ------------------------                                                                           | ----------------------------------------
 -   Ke-Sen Huang's Home Page                                                                                           | https://kesen.realtimerendering.com/
--   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
 -   SIGGRAPH Courses                                                                                                   | https://blog.selfshadow.com/publications/
 -   What Makes a (Graphics) Systems Paper Beautiful                                                                    | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/

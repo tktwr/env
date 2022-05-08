@@ -403,3 +403,24 @@ def cv_create_check_img(shape, dtype, co0, co1, nelm):
     return cv_htile(img_list_y)
 
 
+# create a horizontal stripe image
+def cv_create_hstripe_img(shape, dtype, co0, co1, nelm):
+    h, w, ch = shape
+    nx, ny = nelm
+
+    ih = h // ny
+    ishape = (ih, w, ch)
+
+    img0 = cv_create_img(ishape, dtype, co0)
+    img1 = cv_create_img(ishape, dtype, co1)
+
+    img_list_y = []
+    for y in range(ny):
+        my = y % 2
+        if my == 1:
+            img_list_y.append(img1)
+        else:
+            img_list_y.append(img0)
+    return cv_vconcat(img_list_y)
+
+
