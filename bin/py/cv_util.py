@@ -424,3 +424,19 @@ def cv_create_hstripe_img(shape, dtype, co0, co1, nelm):
     return cv_vconcat(img_list_y)
 
 
+# create a stripe image in the southeast direction
+def cv_create_se_stripe_img(shape, dtype, co0, co1, nelm):
+    h, w, ch = shape
+    nx, ny = nelm
+    iw = w // nx
+
+    img = cv_create_img(shape, dtype, co0)
+
+    for y in range(0, h):
+        for x in range(0, w):
+            mx = ((x - y) // iw) % 2
+            if mx == 1:
+                img[y, x] = co1
+    return img
+
+
