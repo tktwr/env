@@ -53,16 +53,17 @@ f_log_clean() {
 
 #------------------------------------------------------
 f_help() {
-  echo "default"
-  echo "all"
-  echo "min"
-  echo "min_plug"
-  echo "plug_status"
-  echo "plug_graph"
-  echo "plug_tags"
-  echo "log"
-  echo "log_clean"
-  echo "help"
+  echo "all         ... full settings (default)"
+  echo "min         ... minimum settings"
+  echo "min_plug    ... minimum settings with plugins"
+  echo "----------- ... -----------------------------"
+  echo "plug_status ... git status for plugins"
+  echo "plug_graph  ... git graph for plugins"
+  echo "plug_tags   ... make tags for plugins"
+  echo "----------- ... -----------------------------"
+  echo "log         ... measure startuptime"
+  echo "log_clean   ... clean log files"
+  echo "help        ... print this help"
 }
 
 f_default() {

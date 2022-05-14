@@ -107,7 +107,6 @@ alias h='history 20'
 alias j='jobs -l'
 alias where='type -all'
 alias ls="ls -F --color=auto -I 'NTUSER.*'"
-alias vi='vim'
 alias more='less'
 
 alias gs='git status'
@@ -123,13 +122,12 @@ alias cd.bin='cd $MY_BIN'
 alias cd.etc='cd $MY_ETC'
 alias cd.vim='cd $MY_VIM'
 
+alias vi='vim'
+alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
 #------------------------------------------------------
 # vim plugin
 #------------------------------------------------------
-export MY_VIM_BMK="$MY_VIM/plugged/vim-bmk-menu"
-export MY_VIM_IDE="$MY_VIM/plugged/vim-ide-style"
-export PATH="$MY_VIM_IDE/bin:$MY_VIM_BMK/bin:$PATH"
-source $MY_VIM_IDE/etc/bashrc
+source $MY_VIM/plugged/vim-ide-style/etc/bashrc

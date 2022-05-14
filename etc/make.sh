@@ -9,6 +9,7 @@ f_sub() {
   cd ..
 }
 
+#------------------------------------------------------
 f_all() {
   ./dot.sh --common-files --cp
   f_sub bash
@@ -40,6 +41,7 @@ f_tags() {
   ./make.sh tags
 }
 
+#------------------------------------------------------
 f_cmp() {
   ./dot.sh --all-files --cmp
 }
@@ -54,17 +56,18 @@ f_vimdirdiff() {
 
 #------------------------------------------------------
 f_help() {
-  echo "default"
-  echo "all"
-  echo "min"
-  echo "test"
-  echo "backup"
-  echo "init"
-  echo "tags"
-  echo "cmp"
-  echo "vimdiff"
-  echo "vimdirdiff"
-  echo "help"
+  echo "all         ... full settings (default)"
+  echo "min         ... minimum settings"
+  echo "test        ... minimum settings with plugins"
+  echo "----------- ... -----------------------------"
+  echo "backup      ... backup"
+  echo "init        ... init"
+  echo "tags        ... make tags"
+  echo "----------- ... -----------------------------"
+  echo "cmp         ... cmp"
+  echo "vimdiff     ... vimdiff"
+  echo "vimdirdiff  ... vimdirdiff"
+  echo "help        ... print this help"
 }
 
 f_default() {

@@ -12,8 +12,8 @@ set guifont=Cica:h14
 set guioptions-=T
 
 "hi Normal ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
-colorscheme desert
-syntax on
+"colorscheme gruvbox
+"syntax on
 
 if 0
   " IM off for start up

@@ -14,10 +14,9 @@ f_min() {
 
 #------------------------------------------------------
 f_help() {
-  echo "default"
-  echo "all"
-  echo "min"
-  echo "help"
+  echo "all         ... full settings (default)"
+  echo "min         ... minimum settings"
+  echo "help        ... print this help"
 }
 
 f_default() {

@@ -35,7 +35,7 @@ fzy_arg_pushd() {
   echo $(dirs -v | fzy | awk '{print $1}')
 }
 fzy_arg_make() {
-  echo $(make help | fzy | awk '{print $1}')
+  echo $(make help | cut -d " " -f 1 | fzy)
 }
 fzy_arg_memo() {
   echo $(memo --fzy | fzy | awk '{print $1}')

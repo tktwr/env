@@ -5,6 +5,12 @@ if !exists('$MY_VIM')
   let $MY_VIM = expand('~/.vim')
 endif
 
+if has('win32') || has('win64')
+  if exists('$MY_VIM_WIN')
+    let $MY_VIM = expand('$MY_VIM_WIN')
+  endif
+endif
+
 set runtimepath-=~/.vim
 set runtimepath-=~/.vim/after
 set runtimepath^=$MY_VIM

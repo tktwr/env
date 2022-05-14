@@ -5,10 +5,6 @@ source common.sh
 #======================================================
 # functions
 #======================================================
-f_default() {
-  f_help
-}
-
 f_snap() {
   git-tar.sh ${MY_SNAP}
 }
@@ -29,10 +25,15 @@ f_tags() {
   f_eval "myctags.sh $vim_files > .tags.vim"
 }
 
+#------------------------------------------------------
 f_help() {
   echo "snap    ... make a snapshot"
   echo "tags    ... make tags"
-  echo "help    ... print help"
+  echo "help    ... print this help (default)"
+}
+
+f_default() {
+  f_help
 }
 
 #======================================================

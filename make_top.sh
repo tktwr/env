@@ -25,16 +25,12 @@ samples/mycmake.test \
 #======================================================
 # functions
 #======================================================
-f_default() {
-  f_status
+f_status() {
+  for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
 f_graph() {
   for-dir.sh "git graph -1" ${GIT_DIRS}
-}
-
-f_status() {
-  for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
 f_fetch() {
@@ -62,16 +58,21 @@ f_print_build() {
   myfind.sh -b
 }
 
+#------------------------------------------------------
 f_help() {
+  echo "status      ... status in GIT_DIRS (default)"
   echo "graph       ... graph  in GIT_DIRS"
-  echo "status      ... status in GIT_DIRS"
   echo "fetch       ... fetch  in GIT_DIRS"
-  echo "pull        ... pull  in GIT_DIRS"
-  echo "tags        ... tags in TAGS_DIRS and MEMO_DIRS"
-  echo "build       ... build in BUILD_DIRS"
-  echo "clean       ... clean in BUILD_DIRS"
+  echo "pull        ... pull   in GIT_DIRS"
+  echo "tags        ... tags   in TAGS_DIRS and MEMO_DIRS"
+  echo "build       ... build  in BUILD_DIRS"
+  echo "clean       ... clean  in BUILD_DIRS"
   echo "print_build ... print build directories"
-  echo "help        ... print help"
+  echo "help        ... print this help"
+}
+
+f_default() {
+  f_status
 }
 
 #======================================================

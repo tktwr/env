@@ -2,4 +2,4 @@
 
 export PATH="$SYS_PROG32_DIR/FastStone Image Viewer:$PATH"
 
-exec fsviewer.exe "$@" > /dev/null 2>&1 &
+exec $WINPTY fsviewer.exe "$@" > /dev/null 2>&1 &
