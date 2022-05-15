@@ -9,6 +9,7 @@
 alias gss='git status -s'
 alias gs='git status'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gf='git fetch'
 alias gb='git branch'
 alias gt='git tag'
