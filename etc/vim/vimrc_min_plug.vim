@@ -15,8 +15,8 @@ endfunc
 call s:InstallVimPlug()
 call plug#begin('$MY_VIM/plugged')
 
+" fern
 if v:true
-  " fern
   Plug 'lambdalisue/fern.vim'
   Plug 'lambdalisue/nerdfont.vim'
   Plug 'lambdalisue/fern-renderer-nerdfont.vim'
@@ -25,9 +25,8 @@ if v:true
   let g:fern#renderer = 'nerdfont'
 endif
 
+" popup menu support for nvim
 if has('nvim')
-  " popup for nvim
-  "Plug 'Ajnasz/vim-popup-menu'
   Plug 'kamykn/popup-menu.nvim'
 endif
 

@@ -1,3 +1,8 @@
+" popup menu support for nvim
+if has('nvim')
+  Plug 'kamykn/popup-menu.nvim'
+endif
+
 Plug 'tktwr/vim-winbuf-menu'
 Plug 'tktwr/vim-bmk-menu'
 Plug 'tktwr/vim-ide-style'
