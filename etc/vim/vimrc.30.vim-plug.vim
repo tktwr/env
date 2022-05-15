@@ -77,6 +77,14 @@ Plug 'tpope/vim-surround'
 "------------------------------------------------------
 source $MY_VIM/vim-plug/vim-ide-style.vim
 
+Plug 'tktwr/vim-memo'
+let g:memo_tags_files = [
+  \ "$MY_REMOTE_CONFIG/memo/tags.memo",
+  \ "$MY_REMOTE_CONFIG/samples/tags.memo",
+  \ "$MY_LOCAL_CONFIG/memo/tags.memo",
+  \ "$MY_DIARY/tags.memo",
+  \ ]
+
 "------------------------------------------------------
 
 call plug#end()

@@ -7,6 +7,7 @@ GIT_DIRS="\
 plugged/vim-winbuf-menu \
 plugged/vim-bmk-menu \
 plugged/vim-ide-style \
+plugged/vim-memo \
 "
 
 #======================================================

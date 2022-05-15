@@ -131,3 +131,5 @@ vim-where() { vim `which $*`; }
 # vim plugin
 #------------------------------------------------------
 source $MY_VIM/plugged/vim-ide-style/etc/bashrc
+source $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
+source $MY_VIM/plugged/vim-memo/etc/bashrc

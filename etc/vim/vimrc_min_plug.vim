@@ -35,6 +35,14 @@ Plug 'tktwr/vim-winbuf-menu'
 Plug 'tktwr/vim-bmk-menu'
 Plug 'tktwr/vim-ide-style'
 
+Plug 'tktwr/vim-memo'
+let g:memo_tags_files = [
+  \ "$MY_REMOTE_CONFIG/memo/tags.memo",
+  \ "$MY_REMOTE_CONFIG/samples/tags.memo",
+  \ "$MY_LOCAL_CONFIG/memo/tags.memo",
+  \ "$MY_DIARY/tags.memo",
+  \ ]
+
 " color
 Plug 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark = "soft"

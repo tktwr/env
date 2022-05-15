@@ -8,12 +8,6 @@ set makeprg=mymake.sh
 "------------------------------------------------------
 " tags
 "------------------------------------------------------
-" tags.memo
-set tags+=$MY_REMOTE_CONFIG/samples/tags.memo
-set tags+=$MY_REMOTE_CONFIG/memo/tags.memo
-set tags+=$MY_LOCAL_CONFIG/memo/tags.memo
-set tags+=$MY_DIARY/tags.memo
-
 " tags for env
 set tags+=$MY_ENV/.tags.bin_sh
 set tags+=$MY_ENV/.tags.bin_py
