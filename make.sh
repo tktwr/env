@@ -21,6 +21,7 @@ f_tags() {
     etc/vim/plugged/vim-winbuf-menu \
     etc/vim/plugged/vim-bmk-menu \
     etc/vim/plugged/vim-ide-style \
+    etc/vim/plugged/vim-memo \
     '
   f_eval "myctags.sh $vim_files > .tags.vim"
 }
