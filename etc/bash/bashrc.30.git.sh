@@ -4,6 +4,42 @@
 # git
 #======================================================
 #------------------------------------------------------
+# func
+#------------------------------------------------------
+git-prompt() {
+  prompt="$1"
+  val=$2
+  default=$3
+  if [ -z "$val" ]; then
+    echo -n "$prompt ($default) " 1>&2
+    read val
+    if [ -z "$val" ]; then
+      val=$default
+    fi
+  fi
+  echo $val
+}
+
+git-eval() {
+  echo "$1"
+  eval "$1"
+}
+
+git-branch-name() {
+  git rev-parse --abbrev-ref HEAD 2>/dev/null
+  #git symbolic-ref --short HEAD 2>/dev/null
+  #git branch --show-current 2>/dev/null
+}
+
+git-commit-hash() {
+  git rev-parse --short HEAD 2>/dev/null
+}
+
+git-commit-hash-long() {
+  git rev-parse HEAD 2>/dev/null
+}
+
+#------------------------------------------------------
 # git-alias
 #------------------------------------------------------
 alias gss='git status -s'
@@ -101,61 +137,33 @@ git-merge-origin-no-commit() {
 }
 
 #------------------------------------------------------
-# git-ls
-#------------------------------------------------------
-alias git-ls-track='git ls-files -s'
-alias git-ls-untrack='git ls-files -o --directory'
-
-git-ls-no-x() {
-  git ls-files -s | grep '^100644' | awk '{print $4}'
-}
-
-alias gls='git-ls'
-
-#------------------------------------------------------
 # git-branch
 #------------------------------------------------------
-git-branch-name() {
-  git rev-parse --abbrev-ref HEAD 2>/dev/null
-  #git symbolic-ref --short HEAD 2>/dev/null
-  #git branch --show-current 2>/dev/null
+git-branch-reset() {
+  br=$(git-prompt 'branch?' "$*" "master")
+  if [ -n "$br" ]; then
+    git-eval "git branch -f $br HEAD"
+  fi
 }
 
-git-commit-hash() {
-  git rev-parse --short HEAD 2>/dev/null
+git-branch-create() {
+  br=$(git-prompt 'branch?' "$*" "tmp")
+  if [ -n "$br" ]; then
+    git-eval "git branch $br"
+  fi
 }
-
-git-commit-hash-long() {
-  git rev-parse HEAD 2>/dev/null
-}
-
-print-git-branch-all() {
-  echo "[REMOTE]"
-  git remote -v
-  echo "[BRANCH]"
-  git branch -a -vv
-}
-
-print-git-tag-all() {
-  echo "[TAG]"
-  git tag
-  git ls-remote --tags
-}
-
-alias gb-all='print-git-branch-all'
-alias gt-all='print-git-tag-all'
 
 git-branch-delete() {
-  br=$1
+  br=$(git-prompt 'branch?' "$*")
   if [ -n "$br" ]; then
-    git branch -d $br
+    git-eval "git branch -d $br"
   fi
 }
 
 git-remote-branch-delete() {
-  br=$1
+  br=$(git-prompt 'branch?' "$*")
   if [ -n "$br" ]; then
-    git push origin :$br
+    git-eval "git push origin :$br"
   fi
 }
 
@@ -175,5 +183,35 @@ gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
 alias G='gg-d -6'
 alias GA='gg-d -6 --all'
 alias GM='git-log.sh --log 4 --log-submodule 2'
+
+#------------------------------------------------------
+# git-ls
+#------------------------------------------------------
+alias gls='git-ls.sh'
+alias git-ls-track='git ls-files -s'
+alias git-ls-untrack='git ls-files -o --directory'
+
+git-ls-no-x() {
+  git ls-files -s | grep '^100644' | awk '{print $4}'
+}
+
+#------------------------------------------------------
+# print
+#------------------------------------------------------
+print-git-branch-all() {
+  echo "[REMOTE]"
+  git remote -v
+  echo "[BRANCH]"
+  git branch -a -vv
+}
+
+print-git-tag-all() {
+  echo "[TAG]"
+  git tag
+  git ls-remote --tags
+}
+
+alias gb-all='print-git-branch-all'
+alias gt-all='print-git-tag-all'
 
 #------------------------------------------------------

@@ -30,3 +30,4 @@ source $HOME/.my/pythonrc
 source $HOME/.my/pushdrc
 source $HOME/.bashrc.env
 
+shopt -s no_empty_cmd_completion
