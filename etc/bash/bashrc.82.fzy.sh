@@ -73,7 +73,7 @@ alias ,?='fzy_cmd popd fzy_arg_pushd'
 alias ??='fzy_cmd pushd fzy_arg_pushd'
 alias x?='fzy_cmd te.sh "bmk.sh bmk.txt"'
 
-alias cmd?='fzy_cmd " " "bmk.sh cmd.txt"'
+alias term?='fzy_cmd " " "bmk.sh term.txt"'
 alias links?='fzy_cmd chrome.sh "bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "bmk.sh papers.txt"'
 

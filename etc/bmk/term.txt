@@ -1,0 +1,106 @@
+[term.main] -------------------------- | ----------------------------------------
+-   git graph              (G)         | > G<CR>
+-   git graph --all       (GA)         | > GA<CR>
+-   VisGstatusToggle      (GS)         | > GS<CR>
+-   MyGV                  (GV)         | > GV<CR>
+    ---------------------------------- | ----------------------------------------
+-   IDE                    (E)         | > E<CR>
+-   WinInitSize            (I)         | > I<CR>
+-   Fern                   (D)         | > D<CR>
+-   Editor                 (N)         | > N<CR>
+-   Term                   (T)         | > T<CR>
+-   TermV                 (TV)         | > TV<CR>
+    ---------------------------------- | ----------------------------------------
+- 1 ,resize 10                         | > ,resize 10<CR>
+- 2 ,resize 20                         | > ,resize 20<CR>
+- 3 ,resize 30                         | > ,resize 30<CR>
+- 4 ,resize 40                         | > ,resize 40<CR>
+    ---------------------------------- | ----------------------------------------
+-   mypython-venv-info                 | > mypython-venv-info<CR>
+-   mypython-venv-create torch         | > mypython-venv-create torch<CR>
+-   mypython-set-python-win torch      | > mypython-set-python-win torch<CR>
+-   mypython-set-python torch          | > mypython-set-python torch<CR>
+    ---------------------------------- | ----------------------------------------
+- c mycmake.sh                         | > mycmake.sh<CR>
+- b mycmake.sh --build                 | > mycmake.sh --build<CR>
+    ---------------------------------- | ----------------------------------------
+-   mycmake-set-ninja-release          | > mycmake-set-ninja-release<CR>
+-   mycmake-set-ninja-debug            | > mycmake-set-ninja-debug<CR>
+- m mycmake-set-make-release           | > mycmake-set-make-release<CR>
+-   mycmake-set-make-debug             | > mycmake-set-make-debug<CR>
+-   mycmake-set-vs2017-release         | > mycmake-set-vs2017-release<CR>
+-   mycmake-set-vs2017-debug           | > mycmake-set-vs2017-debug<CR>
+-   mycmake-set-vs2017-reldeb          | > mycmake-set-vs2017-reldeb<CR>
+- v mycmake-set-vs2019-release         | > mycmake-set-vs2019-release<CR>
+-   mycmake-set-vs2019-debug           | > mycmake-set-vs2019-debug<CR>
+-   mycmake-set-vs2019-reldeb          | > mycmake-set-vs2019-reldeb<CR>
+[term.system] ------------------------ | ----------------------------------------
+-   pacman -S -h                       | > pacman -S -h<CR>
+-   pacman -Syyu                       | > pacman -Syyu<CR>
+-   pacman -S <pkg>                    | > pacman -S
+-   pacman -R <pkg>                    | > pacman -R
+-   pacman -Ss <pattern>               | > pacman -Ss
+-   pacman -Si <pkg>                   | > pacman -Si
+-   pacman -Sl                         | > pacman -Sl<CR>
+-   pacman -Sg [pkg_group]             | > pacman -Sg
+-   pacman -Qi <installed_pkg>         | > pacman -Qi
+-   pacman -Ql <installed_pkg>         | > pacman -Ql
+    ---------------------------------- | ----------------------------------------
+-   apt list <pkg>                     | > apt list
+-   apt search <pkg>                   | > apt search
+-   apt show <pkg>                     | > apt show
+-   apt install <pkg>                  | > apt install
+-   apt remove <pkg>                   | > apt remove
+-   apt update                         | > apt update
+-   apt upgrade                        | > apt upgrade
+    ---------------------------------- | ----------------------------------------
+-   pip list                           | > pip list<CR>
+-   pip search <pkg>                   | > pip search
+-   pip install <pkg>                  | > pip install
+-   pip uninstall <pkg>                | > pip uninstall
+-   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-upgrade                        | > git update-git-for-windows<CR>
+[term.git] --------------------------- | ----------------------------------------
+- G G                                  | > G<CR>
+-   git status                         | > git status<CR>
+-   git fetch                          | > git fetch<CR>
+-   git rebase <branch>                | > git rebase
+-   git rebase --abort                 | > git rebase --abort<CR>
+-   git merge --no-ff <branch>         | > git merge --no-ff
+-   git merge --abort                  | > git merge --abort<CR>
+-   git branch -d <branch>             | > git branch -d
+-   git push origin :<branch>          | > git push origin :
+-   git push origin <branch>           | > git push origin
+-   git-clone-recursive <url>          | > git clone --recurse-submodules
+-   git-submodule-update-all           | > git-submodule-update-all<CR>
+-   git-untrack-file <file>            | > git-untrack-file
+-   git-untrack-dir <dir>              | > git-untrack-dir
+-   git-chmod-x <file>                 | > git-chmod-x
+-   git-chmod-x-all                    | > git-chmod-x-all<CR>
+-   git-ls-no-x                        | > git-ls-no-x<CR>
+    ---------------------------------- | ----------------------------------------
+-   gC-amend {"new message"}           | > gC-amend
+-   git-tmp-commit {"message"}         | > git-tmp-commit
+-   git-tmp-reset                      | > git-tmp-reset<CR>
+-   git-merge-no-ff                    | > git-merge-no-ff<CR>
+-   git-rebase-origin                  | > git-rebase-origin<CR>
+-   git-branch-delete {branch}         | > git-branch-delete
+-   git-remote-branch-delete {branch}  | > git-remote-branch-delete
+[term.cmd.my] ------------------------ | ----------------------------------------
+-   D?                                 | > D?<CR>
+-   D2?                                | > D2?<CR>
+-   cd?                                | > cd?<CR>
+-   .?                                 | > .?<CR>
+-   ,?                                 | > ,?<CR>
+-   ??                                 | > ??<CR>
+- X x?                                 | > x?<CR>
+- T term?                              | > term?<CR>
+- L links?                             | > links?<CR>
+- P papers?                            | > papers?<CR>
+-   fd?                                | > fd?<CR>
+-   .fd?                               | > .fd?<CR>
+-   vi?                                | > vi?<CR>
+- M make?                              | > make?<CR>
+
+# vim:set ft=bmk syntax=txt nowrap:

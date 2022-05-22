@@ -36,7 +36,7 @@
 -   UE SSS: 超雑訳 Real-time subsurface scattering with single pass variance-guided adaptive importance sampling       | http://project-asura.com/blog/archives/8307
 -   Real-time subsurface scattering with single pass variance-guided adaptive importance sampling                      | https://thisistian.github.io/publication/real-time-subsurface-with-adaptive-sampling/
 -   Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
-    --- [Real-Time Rendering] ------------------------------                                                                  | ----------------------------------------
+    --- [Real-Time Rendering] ------------------------------                                                           | ----------------------------------------
 -   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH 2018 Course: Advances in Real-Time Rendering in Games                                                     | https://advances.realtimerendering.com/s2018/index.htm
     --- [Displacement] ------------------------------                                                                  | ----------------------------------------

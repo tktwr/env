@@ -15,3 +15,12 @@ let g:fern#disable_default_mappings = 1
 let g:fern#renderer = 'nerdfont'
 "let g:fern#renderer#default#leading = "  "
 
+func s:my_fern_settings()
+  nmap <buffer> <C-Space>  :call FzyCommand("BmkEditDir", "bmk.sh bmk.txt")<CR>
+endfunc
+
+augroup ag_fern
+  autocmd!
+  autocmd FileType fern          call s:my_fern_settings()
+augroup END
+

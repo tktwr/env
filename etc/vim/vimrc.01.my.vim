@@ -65,6 +65,7 @@ let g:cpm_term_key = "\<C-Space>"
 let g:cpm_files = [
   \ "$MY_BMK/cmd.txt",
   \ "$MY_BMK/bmk.txt",
+  \ "$MY_BMK/term.txt",
   \ "$MY_BMK/links.txt",
   \ "$MY_BMK/papers.txt",
   \ "$MY_COMMON_SETTING/bmk.txt",

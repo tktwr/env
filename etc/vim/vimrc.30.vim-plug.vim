@@ -36,7 +36,6 @@ source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/ultisnips.vim
 
 "source $MY_VIM/vim-plug/eskk.vim
-"source $MY_VIM/vim-plug/fzf.vim
 
 if $MY_PROMPT_TYPE >= 1
   source $MY_VIM/vim-plug/vim-gitgutter.vim
@@ -60,6 +59,7 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'thinca/vim-ref'
 
 "Plug 'ctrlpvim/ctrlp.vim'
+"source $MY_VIM/vim-plug/fzf.vim
 
 "------------------------------------------------------
 " vim-plug: git
