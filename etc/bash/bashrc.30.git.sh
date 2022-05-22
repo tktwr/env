@@ -42,10 +42,10 @@ git-commit-hash-long() {
 #------------------------------------------------------
 # git-alias
 #------------------------------------------------------
-alias gss='git status -s'
 alias gs='git status'
+alias gS='git status -s'
 alias gd='git diff'
-alias gds='git diff --staged'
+alias gD='git diff --staged'
 alias gf='git fetch'
 alias gb='git branch'
 alias gt='git tag'
@@ -76,7 +76,6 @@ alias gRom='git reset --hard origin/$(git-branch-name)'
 alias gPom='git push origin $(git-branch-name)'
 
 alias git-clone-recursive='git clone --recurse-submodules'
-
 alias git-submodule-update-all='git submodule update --init --recursive'
 alias git-dirdiff='git difftool --dir-diff'
 
@@ -198,20 +197,20 @@ git-ls-no-x() {
 #------------------------------------------------------
 # print
 #------------------------------------------------------
-print-git-branch-all() {
+git-print-branch-all() {
   echo "[REMOTE]"
   git remote -v
   echo "[BRANCH]"
   git branch -a -vv
 }
 
-print-git-tag-all() {
+git-print-tag-all() {
   echo "[TAG]"
   git tag
   git ls-remote --tags
 }
 
-alias gb-all='print-git-branch-all'
-alias gt-all='print-git-tag-all'
+alias gb-all='git-print-branch-all'
+alias gt-all='git-print-tag-all'
 
 #------------------------------------------------------

@@ -55,7 +55,7 @@ f_check_args() {
 
 f_run() {
   if [ -n "$g_word" ]; then
-    grep "$g_word" `txt-find.sh "$g_dirs"`
+    grep "$g_word" `find-txt.sh "$g_dirs"`
   fi
 }
 

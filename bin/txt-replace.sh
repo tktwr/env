@@ -35,7 +35,7 @@ f_help() {
 f_replace() {
   src=$1
   dst=$2
-  txt_files=`txt-find.sh $g_files`
+  txt_files=`find-txt.sh $g_files`
   matched_files=`grep -l "$src" $txt_files`
   for i in $matched_files; do
     echo "replacing... $i (\"$src\" -> \"$dst\")"

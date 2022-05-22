@@ -1,26 +1,19 @@
-[bmk.side] --------------------------- | ----------------------------------------
-- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
-- G VisTabGV                           | :call VisTabGV()
-    ---------------------------------- | ----------------------------------------
--   Memo                               | :Memo
--   todo                               | $MY_DIARY/todo.md.html
--   bmk                                | $MY_BMK/bmk.txt
--   links                              | $MY_BMK/links.txt
--   papers                             | $MY_BMK/papers.txt
 [bmk.dir.sys] ------------------------ | ----------------------------------------
 -   C:/                                | C:/
 -   D:/                                | D:/
 -   prog64/                            | $SYS_PROG64_DIR/
+-   prog32/                            | $SYS_PROG32_DIR/
 -   msys2-home/                        | $SYS_MSYS2_HOME/
     ---------------------------------- | ----------------------------------------
 -   win-home/                          | $SYS_WIN_HOME/
--   Local/                             | $USER_LOCAL/
--   Roaming/                           | $USER_ROAMING/
+-   user-local/                        | $USER_LOCAL/
+-   user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
 -   Desktop/                           | $MY_DESKTOP/
 -   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - y .my/                               | $MY_DOTMY/
+- c common/                            | $MY_COMMON_SETTING/
 - C MyConfig/                          | $MY_CONFIG/
 -   MyShare/                           | $MY_SHARE/
     --- (rconfig) -------------------- | ----------------------------------------
@@ -46,5 +39,21 @@
 - M man/                               | $MY_MAN/
 - O opt/                               | $MY_OPT/
 - P papers/                            | $MY_PAPERS/
+[bmk.dir.ext] ------------------------ | ----------------------------------------
+-   env/                               | $MY_ENV/
+-   bmk/                               | $MY_BMK/
+-   fzy/                               | $MY_FZY/
+-   dia/                               | $MY_DIARY/
+-   repo/                              | $MY_REPO/
+-   svn/                               | $MY_SVN/
+-   python-venv/                       | $MY_PYTHON_VENV_DIR/
+    ---------------------------------- | ----------------------------------------
+-   rconfig/                           | $MY_REMOTE_CONFIG/
+-   lconfig/                           | $MY_LOCAL_CONFIG/
+-   pconfig/                           | $MY_PRIVATE_CONFIG/
+    ---------------------------------- | ----------------------------------------
+-   private/                           | $MY_PRIVATE/
+-   protected/                         | $MY_PROTECTED/
+-   public/                            | $MY_PUBLIC/
 
 # vim:set ft=bmk syntax=txt nowrap:

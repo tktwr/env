@@ -1,4 +1,9 @@
 [buf.bmk.main] ----------------------- | ----------------------------------------
+-   fzy cmd                            | :call FzyCommand("BmkEdit", "bmk.sh cmd.txt")
+-   fzy links                          | :call FzyCommand("BmkOpenURL", "bmk.sh links.txt")
+-   fzy papers                         | :call FzyCommand("BmkOpenURL", "bmk.sh papers.txt")
+- f fzy file                           | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
+    ---------------------------------- | ----------------------------------------
 - s scratchpad                         | $MY_DIARY/scratchpad.md.html
 - i info                               | $MY_DIARY/info.md.html
 - d dia                                | $MY_DIARY/diary.md.html
@@ -9,7 +14,7 @@
 - L links                              | $MY_BMK/links.txt
 - P papers                             | $MY_BMK/papers.txt
     ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_SETTING/bmk_local.txt
+- B bmk_local                          | $MY_COMMON_SETTING/bmk.txt
 - w engword                            | $MY_CONFIG/local/eng/eng.txt
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
@@ -143,19 +148,20 @@
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
 [term.cmd.my] ------------------------ | ----------------------------------------
-- c mycmake.sh                         | > mycmake.sh<CR>
-- b mycmake.sh --build                 | > mycmake.sh --build<CR>
-    ---------------------------------- | ----------------------------------------
--   git-submodule-update-all           | > git-submodule-update-all<CR>
--   gC-amend {"new message"}           | > gC-amend
--   git-tmp-commit {"message"}         | > git-tmp-commit
--   git-tmp-reset                      | > git-tmp-reset<CR>
--   git-merge-no-ff                    | > git-merge-no-ff<CR>
--   git-rebase-origin                  | > git-rebase-origin<CR>
--   git-ls-no-x                        | > git-ls-no-x<CR>
--   git-chmod-x-all                    | > git-chmod-x-all<CR>
--   git-branch-delete {branch}         | > git-branch-delete
--   git-remote-branch-delete {branch}  | > git-remote-branch-delete
+-   D?                                 | > D?<CR>
+-   D2?                                | > D2?<CR>
+-   cd?                                | > cd?<CR>
+-   .?                                 | > .?<CR>
+-   ,?                                 | > ,?<CR>
+-   ??                                 | > ??<CR>
+- X x?                                 | > x?<CR>
+- C cmd?                               | > cmd?<CR>
+- L links?                             | > links?<CR>
+- P papers?                            | > papers?<CR>
+-   fd?                                | > fd?<CR>
+-   .fd?                               | > .fd?<CR>
+-   vi?                                | > vi?<CR>
+- M make?                              | > make?<CR>
 [term.main] -------------------------- | ----------------------------------------
 -   git graph              (G)         | > G<CR>
 -   git graph --all       (GA)         | > GA<CR>
@@ -174,13 +180,13 @@
 - 3 ,resize 30                         | > ,resize 30<CR>
 - 4 ,resize 40                         | > ,resize 40<CR>
     ---------------------------------- | ----------------------------------------
-- c mycmake.sh                         | > mycmake.sh<CR>
-- b mycmake.sh --build                 | > mycmake.sh --build<CR>
-    ---------------------------------- | ----------------------------------------
 -   mypython-venv-info                 | > mypython-venv-info<CR>
 -   mypython-venv-create torch         | > mypython-venv-create torch<CR>
 -   mypython-set-python-win torch      | > mypython-set-python-win torch<CR>
 -   mypython-set-python torch          | > mypython-set-python torch<CR>
+    ---------------------------------- | ----------------------------------------
+- c mycmake.sh                         | > mycmake.sh<CR>
+- b mycmake.sh --build                 | > mycmake.sh --build<CR>
     ---------------------------------- | ----------------------------------------
 -   mycmake-set-ninja-release          | > mycmake-set-ninja-release<CR>
 -   mycmake-set-ninja-debug            | > mycmake-set-ninja-debug<CR>
@@ -217,6 +223,8 @@
 -   pip install <pkg>                  | > pip install
 -   pip uninstall <pkg>                | > pip uninstall
 -   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-upgrade                        | > git update-git-for-windows<CR>
 [term.git] --------------------------- | ----------------------------------------
 - G G                                  | > G<CR>
 -   git status                         | > git status<CR>
@@ -229,13 +237,20 @@
 -   git push origin :<branch>          | > git push origin :
 -   git push origin <branch>           | > git push origin
 -   git-clone-recursive <url>          | > git clone --recurse-submodules
--   git-submodule-update-all           | > git submodule update --init --recursive<CR>
+-   git-submodule-update-all           | > git-submodule-update-all<CR>
 -   git-untrack-file <file>            | > git-untrack-file
 -   git-untrack-dir <dir>              | > git-untrack-dir
 -   git-chmod-x <file>                 | > git-chmod-x
 -   git-chmod-x-all                    | > git-chmod-x-all<CR>
--   git-ls-no-x                        | > git-ls-no-x
--   git-upgrade                        | > git update-git-for-windows<CR>
+-   git-ls-no-x                        | > git-ls-no-x<CR>
+    ---------------------------------- | ----------------------------------------
+-   gC-amend {"new message"}           | > gC-amend
+-   git-tmp-commit {"message"}         | > git-tmp-commit
+-   git-tmp-reset                      | > git-tmp-reset<CR>
+-   git-merge-no-ff                    | > git-merge-no-ff<CR>
+-   git-rebase-origin                  | > git-rebase-origin<CR>
+-   git-branch-delete {branch}         | > git-branch-delete
+-   git-remote-branch-delete {branch}  | > git-remote-branch-delete
 [ref.main] --------------------------- | ----------------------------------------
 - T Google翻訳                         | https://translate.google.co.jp/
 - D DeepL翻訳                          | https://www.deepl.com/ja/translator
@@ -337,5 +352,17 @@
 -   x                    (C-x)         | :echo
 -   WblPrev              (C-y)         | :echo
 -   menu ref             (C-z)         | :echo
+[bmk.side] --------------------------- | ----------------------------------------
+- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
+- G VisTabGV                           | :call VisTabGV()
+    ---------------------------------- | ----------------------------------------
+- b fzy bmk                            | :call FzyCommand("BmkEditDir", "bmk.sh bmk.txt")
+- d fzy dir                            | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
+    ---------------------------------- | ----------------------------------------
+-   Memo                               | :Memo
+-   todo                               | $MY_DIARY/todo.md.html
+-   bmk                                | $MY_BMK/bmk.txt
+-   links                              | $MY_BMK/links.txt
+-   papers                             | $MY_BMK/papers.txt
 
 # vim:set ft=bmk syntax=txt nowrap:
