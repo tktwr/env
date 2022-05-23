@@ -63,16 +63,19 @@ let g:bmk_open_file_prog = "vscode.sh"
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
 let g:cpm_files = [
-  \ "$MY_BMK/cmd.txt",
   \ "$MY_BMK/bmk.txt",
-  \ "$MY_BMK/term.txt",
+  \ "$MY_BMK/cmd.txt",
+  \ "$MY_BMK/file.txt",
   \ "$MY_BMK/links.txt",
   \ "$MY_BMK/papers.txt",
+  \ "$MY_BMK/ref.txt",
+  \ "$MY_BMK/term.txt",
   \ "$MY_COMMON_SETTING/bmk.txt",
+  \ "$MY_COMMON_SETTING/file.txt",
   \ "$MY_COMMON_SETTING/links.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer'      : ['buf.bmk.main & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
+  \ 'buffer'      : ['buf.bmk.main & buf.bmk.file & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
   \ 'buffer:side' : ['bmk.side & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
   \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
   \ 'diff'        : ['cmd.diff'],
@@ -81,7 +84,7 @@ let g:cpm_titles = {
   \ 'ft:fugitive' : ['cmd.fugitive'],
   \ 'ft:fern'     : ['bmk.side & bmk.dir', 'cmd.fern', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links & local.ref'],
+  \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
   \ 'ref.terminal' : ['ref.main'],
   \ }
 

@@ -61,25 +61,22 @@ fzy_cmd() {
 #------------------------------------------------------
 # fzy alias
 #------------------------------------------------------
-#alias cd?='fzy_cmd cd fzy_arg_dir'
-#alias .?='fzy_cmd pushd fzy_arg_dir'
-#alias x?='fzy_cmd te.sh fzy_arg_dir'
+alias  D?='fzy_cmd D     "bmk.sh bmk.txt"'
+alias D2?='fzy_cmd D2    "bmk.sh bmk.txt"'
+alias cd?='fzy_cmd cd    "bmk.sh bmk.txt"'
+alias  .?='fzy_cmd pushd "bmk.sh bmk.txt"'
+alias  ,?='fzy_cmd popd   fzy_arg_pushd'
+alias  ??='fzy_cmd pushd  fzy_arg_pushd'
+alias  x?='fzy_cmd te.sh "bmk.sh bmk.txt"'
 
-alias D?='fzy_cmd D "bmk.sh bmk.txt"'
-alias D2?='fzy_cmd D2 "bmk.sh bmk.txt"'
-alias cd?='fzy_cmd cd "bmk.sh bmk.txt"'
-alias .?='fzy_cmd pushd "bmk.sh bmk.txt"'
-alias ,?='fzy_cmd popd fzy_arg_pushd'
-alias ??='fzy_cmd pushd fzy_arg_pushd'
-alias x?='fzy_cmd te.sh "bmk.sh bmk.txt"'
-
-alias term?='fzy_cmd " " "bmk.sh term.txt"'
-alias links?='fzy_cmd chrome.sh "bmk.sh links.txt"'
+alias     vi?='fzy_cmd vim       "bmk.sh file.txt"'
+alias   term?='fzy_cmd " "       "bmk.sh term.txt"'
+alias  links?='fzy_cmd chrome.sh "bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "bmk.sh papers.txt"'
 
-alias  fd?='fzy_cmd cd fzy_arg_find_dir'
-alias .fd?='fzy_cmd pushd fzy_arg_find_dir'
-alias vi?='fzy_cmd vim "fzy_arg_find_file 6"'
+alias  fd?='fzy_cmd cd    "fzy_arg_find_dir  6"'
+alias .fd?='fzy_cmd pushd "fzy_arg_find_dir  6"'
+alias  ff?='fzy_cmd vim   "fzy_arg_find_file 6"'
 
 alias make?='fzy_cmd make fzy_arg_make'
 

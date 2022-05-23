@@ -1,23 +1,21 @@
+[bmk.side] --------------------------- | ----------------------------------------
+- F fzy bmk  dir     (C-Space)         | :call FzyCommand("BmkEditDir", "bmk.sh bmk.txt")
+-   fzy find dir                       | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
+    ---------------------------------- | ----------------------------------------
+- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
+- G VisTabGV                           | :call VisTabGV()
+    ---------------------------------- | ----------------------------------------
+-   Memo                               | :Memo
+-   todo                               | $MY_DIARY/todo.md.html
+-   bmk                                | $MY_BMK/bmk.txt
+-   links                              | $MY_BMK/links.txt
+-   papers                             | $MY_BMK/papers.txt
 [buf.bmk.main] ----------------------- | ----------------------------------------
--   fzy file                           | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
+- F fzy bmk  file                      | :call FzyCommand("BmkEditFile", "bmk.sh file.txt")
+-   fzy find file                      | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
 -   fzy cmd                            | :call FzyCommand("BmkEdit", "bmk.sh cmd.txt")
 -   fzy links                          | :call FzyCommand("BmkOpenURL", "bmk.sh links.txt")
 -   fzy papers                         | :call FzyCommand("BmkOpenURL", "bmk.sh papers.txt")
-    ---------------------------------- | ----------------------------------------
-- s scratchpad                         | $MY_DIARY/scratchpad.md.html
-- i info                               | $MY_DIARY/info.md.html
-- d dia                                | $MY_DIARY/diary.md.html
-- t todo                               | $MY_DIARY/todo.md.html
-    ---------------------------------- | ----------------------------------------
-- b bmk                  (C-b)         | $MY_BMK/bmk.txt
-- c cmd                                | $MY_BMK/cmd.txt
-- L links                              | $MY_BMK/links.txt
-- P papers                             | $MY_BMK/papers.txt
-    ---------------------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_SETTING/bmk.txt
-- w engword                            | $MY_CONFIG/local/eng/eng.txt
-- e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
-- m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
 [buf.cmd.main] ----------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
 - I WinInitSize                        | :VisWinInitSize
@@ -147,118 +145,5 @@
     ---------------------------------- | ----------------------------------------
 - < leave                  (<)         | _Plug_(fern-action-leave)
 - > enter                  (>)         | _Plug_(fern-action-enter)
-[ref.main] --------------------------- | ----------------------------------------
-- T Google翻訳                         | https://translate.google.co.jp/
-- D DeepL翻訳                          | https://www.deepl.com/ja/translator
-- C cpprefjp                           | https://cpprefjp.github.io/reference.html
--   cppreference                       | https://ja.cppreference.com/w/
-- P Python Doc                         | https://docs.python.org/ja/3/index.html
--   PyPI                               | https://pypi.org/
-- N nkmk                               | https://note.nkmk.me/
-- B Blender Python API                 | https://docs.blender.org/api/current/index.html
-    ---------------------------------- | ----------------------------------------
--   Memo Index                         | $MY_LOCAL_CONFIG/memo/index.html
--   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
-    ---------------------------------- | ----------------------------------------
-- H Help                               | :VisHelp
--   Help.index                         | :VisHelp index
--   Help.expression-syntax             | :VisHelp expression-syntax
--   Help.pattern-overview              | :VisHelp pattern-overview
-- M Memo                               | :Memo
-- m Man                                | :VisMan ??
-- p Pydoc                              | :VisPydoc ??
--   MyTrans                            | :MyTrans
--   MyDict                             | :MyDict
--   EJ                                 | :EJ ??
--   EE                                 | :EE ??
-    ---------------------------------- | ----------------------------------------
--   tags.bin_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
--   tags.bin_py                        | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
--   tags.etc_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
--   tags.etc_vim                       | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
--   tags.memo                          | :call TagCatalog("$MY_MEMO/tags.memo", "memo")
--   tags.libtt                         | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
-    ---------------------------------- | ----------------------------------------
--   tags.imgui                         | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
--   tags.eigen                         | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
--   tags.glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
--   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
-[ref.keys] --------------------------- | ----------------------------------------
--   help                  (F1)         | :echo
--   desktop left          (F2)         | :echo
--   desktop right         (F3)         | :echo
--   desktop               (F4)         | :echo
--   reload                (F5)         | :echo
--   screen info           (F6)         | :echo
--   maximize left         (F7)         | :echo
--   maximize              (F8)         | :echo
--   maximize right        (F9)         | :echo
--   maximize toggle      (F10)         | :echo
--   screenshot           (F11)         | :echo
--   system               (F12)         | :echo
-    ---------------------------------- | ----------------------------------------
--   menu               (Space)         | :echo
--   win buf list         (End)         | :echo
--   page up               (BS)         | :echo
--   page down           (PgDn)         | :echo
--   tab prev            (PgUp)         | :echo
--   tab next          (S-PgUp)         | :echo
--   tab new              (Ins)         | :echo
--   tab close            (Del)         | :echo
--   view                (C-CR)         | :echo
--   open                (S-CR)         | :echo
--   lcd                  (C-.)         | :echo
--   command mode         (C-;)         | :echo
--   tjump                (C-])         | :echo
-[ref.keys2] -------------------------- | ----------------------------------------
--   window 1 top         (C-1)         | :echo
--   window 2             (C-2)         | :echo
--   x                    (C-3)         | :echo
--   x                    (C-4)         | :echo
--   x                    (C-5)         | :echo
--   x                    (C-6)         | :echo
--   maximize x           (C-7)         | :echo
--   maximize xy          (C-8)         | :echo
--   maximize y           (C-9)         | :echo
--   window 0 bottom      (C-0)         | :echo
-    ---------------------------------- | ----------------------------------------
--   quickhl              (C-a)         | :echo
--   bmk                  (C-b)         | :echo
--   interrupt            (C-c)         | :echo
--   page up              (C-d)         | :echo
--   close                (C-e)         | :echo
--   page down            (C-f)         | :echo
--   redraw               (C-g)         | :echo
--   window left          (C-h)         | :echo
--   TAB                  (C-i)         | :echo
--   window next          (C-j)         | :echo
--   window prev          (C-k)         | :echo
--   window right         (C-l)         | :echo
--   CR                   (C-m)         | :echo
--   cn                   (C-n)         | :echo
--   WblPop               (C-o)         | :echo
--   cp                   (C-p)         | :echo
--   @q                   (C-q)         | :echo
--   redo                 (C-r)         | :echo
--   x                    (C-s)         | :echo
--   tag back             (C-t)         | :echo
--   WblNext              (C-u)         | :echo
--   block select         (C-v)         | :echo
--   window command       (C-w)         | :echo
--   x                    (C-x)         | :echo
--   WblPrev              (C-y)         | :echo
--   menu ref             (C-z)         | :echo
-[bmk.side] --------------------------- | ----------------------------------------
-- F fzy bmk          (C-Space)         | :call FzyCommand("BmkEditDir", "bmk.sh bmk.txt")
--   fzy dir                            | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
-    ---------------------------------- | ----------------------------------------
-- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
-- G VisTabGV                           | :call VisTabGV()
-    ---------------------------------- | ----------------------------------------
--   Memo                               | :Memo
--   todo                               | $MY_DIARY/todo.md.html
--   bmk                                | $MY_BMK/bmk.txt
--   links                              | $MY_BMK/links.txt
--   papers                             | $MY_BMK/papers.txt
 
 # vim:set ft=bmk syntax=txt nowrap:

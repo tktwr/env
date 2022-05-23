@@ -128,4 +128,3 @@
 -   Image Super-Resolution via Iterative Refinement                                                                    | https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
 
 # vim:set ft=bmk syntax=txt nowrap:
-

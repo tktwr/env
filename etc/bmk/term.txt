@@ -88,19 +88,20 @@
 -   git-branch-delete {branch}         | > git-branch-delete
 -   git-remote-branch-delete {branch}  | > git-remote-branch-delete
 [term.cmd.my] ------------------------ | ----------------------------------------
--   D?                                 | > D?<CR>
+-    D?                                | > D?<CR>
 -   D2?                                | > D2?<CR>
--   cd?                                | > cd?<CR>
--   .?                                 | > .?<CR>
--   ,?                                 | > ,?<CR>
--   ??                                 | > ??<CR>
-- X x?                                 | > x?<CR>
-- T term?                              | > term?<CR>
-- L links?                             | > links?<CR>
-- P papers?                            | > papers?<CR>
--   fd?                                | > fd?<CR>
+- F cd?                                | > cd?<CR>
+-    .?                                | > .?<CR>
+-    ,?                                | > ,?<CR>
+-    ??                                | > ??<CR>
+-    x?                                | > x?<CR>
+-       vi?                            | > vi?<CR>
+-     term?                            | > term?<CR>
+-    links?                            | > links?<CR>
+-   papers?                            | > papers?<CR>
+-    fd?                               | > fd?<CR>
 -   .fd?                               | > .fd?<CR>
--   vi?                                | > vi?<CR>
-- M make?                              | > make?<CR>
+-    ff?                               | > ff?<CR>
+-   make?                              | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
