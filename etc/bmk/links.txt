@@ -5,6 +5,7 @@
 -     keep                                          | https://keep.google.com/
 -     drive                                         | https://drive.google.com/drive/my-drive
 -     translate                                     | https://translate.google.co.jp/
+-   DeepL                                           | https://www.deepl.com/ja/translator
     ------------------------------------            | ----------------------------------------
 -   git                                             | https://git-scm.com/docs
     ------------------------------------            | ----------------------------------------

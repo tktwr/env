@@ -15,8 +15,8 @@
 - y .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
 - C MyConfig/                          | $MY_CONFIG/
--   MyShare/                           | $MY_SHARE/
-    --- (rconfig) -------------------- | ----------------------------------------
+- S MyShare/                           | $MY_SHARE/
+    ---------------------------------- | ----------------------------------------
 - i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
@@ -24,23 +24,24 @@
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/
 - t libtt/                             | $MY_LIBTT/
-    --- (private) -------------------- | ----------------------------------------
-- B backup/                            | $MY_BACKUP/
-- T tmp/                               | $MY_TMP/
+    ---------------------------------- | ----------------------------------------
 - w work/                              | $MY_WORK/
 - p proj/                              | $MY_PROJ/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
 - g git/                               | $MY_GIT/
 - H github/                            | $MY_GITHUB/
-    --- (public) --------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
 - A arch/                              | $MY_ARCH/
+- B backup/                            | $MY_BACKUP/
 - D data/                              | $MY_DATA/
 - M man/                               | $MY_MAN/
 - O opt/                               | $MY_OPT/
 - P papers/                            | $MY_PAPERS/
+- T tmp/                               | $MY_TMP/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   env/                               | $MY_ENV/
+-   ahk/                               | $MY_ENV/os.windows/ahk/
 -   bmk/                               | $MY_BMK/
 -   fzy/                               | $MY_FZY/
 -   dia/                               | $MY_DIARY/

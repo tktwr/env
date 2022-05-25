@@ -13,5 +13,10 @@
 - w engword                            | $MY_CONFIG/local/eng/eng.txt
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
+    ---------------------------------- | ----------------------------------------
+-   Memo Index                         | $MY_REMOTE_CONFIG/memo/index.html
+-   Memo Index (local)                 | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
+-   Proj Index                         | $MY_PROJ/index.md.html
 
 # vim:set ft=bmk syntax=txt nowrap:
