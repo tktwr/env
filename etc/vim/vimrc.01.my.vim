@@ -70,9 +70,13 @@ let g:cpm_files = [
   \ "$MY_BMK/papers.txt",
   \ "$MY_BMK/ref.txt",
   \ "$MY_BMK/term.txt",
-  \ "$MY_COMMON_SETTING/bmk.txt",
-  \ "$MY_COMMON_SETTING/file.txt",
-  \ "$MY_COMMON_SETTING/links.txt",
+  \ "$MY_COMMON_SETTING/bmk/bmk.txt",
+  \ "$MY_COMMON_SETTING/bmk/cmd.txt",
+  \ "$MY_COMMON_SETTING/bmk/file.txt",
+  \ "$MY_COMMON_SETTING/bmk/links.txt",
+  \ "$MY_COMMON_SETTING/bmk/papers.txt",
+  \ "$MY_COMMON_SETTING/bmk/ref.txt",
+  \ "$MY_COMMON_SETTING/bmk/term.txt",
   \ ]
 let g:cpm_titles = {
   \ 'buffer'      : ['buf.bmk.main & buf.bmk.file & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],

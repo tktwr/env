@@ -11,8 +11,8 @@ fzy_dir_filter() {
 }
 
 fzy_arg_dir() {
-  local files="$MY_DOTMY/dir.txt \
-               $MY_COMMON_SETTING/dir.txt \
+  local files="$MY_DOTMY/fzy/dir.txt \
+               $MY_COMMON_SETTING/fzy/dir.txt \
                $MY_FZY/dir.00.msys.txt \
                $MY_FZY/dir.01.usr.txt \
                $MY_FZY/dir.txt \

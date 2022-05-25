@@ -9,7 +9,7 @@
 - L links                              | $MY_BMK/links.txt
 - P papers                             | $MY_BMK/papers.txt
 [buf.bmk.file2] ---------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_SETTING/bmk.txt
+- B bmk_local                          | $MY_COMMON_SETTING/bmk/bmk.txt
 - w engword                            | $MY_CONFIG/local/eng/eng.txt
 - e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
