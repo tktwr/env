@@ -5,7 +5,7 @@
 - t todo                                | $MY_DIARY/todo.md.html
     ----------------------------------  | ----------------------------------------
 - b bmk                  (C-b)          | $MY_BMK/bmk.txt
-- c cmd                                 | $MY_BMK/cmd.txt
+- c vcmd                                | $MY_BMK/vcmd.txt
 - L links                               | $MY_BMK/links.txt
 - P papers                              | $MY_BMK/papers.txt
 [buf.bmk.file2] ----------------------  | ----------------------------------------

@@ -6,25 +6,12 @@
 #------------------------------------------------------
 # func
 #------------------------------------------------------
-git-prompt() {
-  prompt="$1"
-  val=$2
-  default=$3
-  if [ -z "$val" ]; then
-    echo -n "$prompt ($default) " 1>&2
-    read val
-    if [ -z "$val" ]; then
-      val=$default
-    fi
-  fi
-  echo $val
-}
-
 git-eval() {
   echo "$1"
   eval "$1"
 }
 
+#------------------------------------------------------
 git-branch-name() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
   #git symbolic-ref --short HEAD 2>/dev/null
@@ -37,161 +24,6 @@ git-commit-hash() {
 
 git-commit-hash-long() {
   git rev-parse HEAD 2>/dev/null
-}
-
-#------------------------------------------------------
-# git-alias
-#------------------------------------------------------
-alias gs='git status'
-alias gS='git status -s'
-alias gd='git diff'
-alias gD='git diff --staged'
-alias gf='git fetch'
-alias gb='git branch'
-alias gt='git tag'
-
-alias gA='git add'
-alias gAu='git add -u'
-
-# gC-amend ["amend"]
-gC-amend() {
-  msg=${1:-"amend"}
-  git commit --amend -m "$msg"
-}
-
-# gC ["update"]
-gC() {
-  msg=${1:-"update"}
-  git commit -m "$msg"
-}
-
-# gAC ["update"]
-gAC() {
-  msg=${1:-"update"}
-  git commit -a -m "$msg"
-}
-
-alias gR='git reset --hard'
-alias gRom='git reset --hard origin/$(git-branch-name)'
-alias gPom='git push origin $(git-branch-name)'
-
-alias git-clone-recursive='git clone --recurse-submodules'
-alias git-submodule-update-all='git submodule update --init --recursive'
-alias git-dirdiff='git difftool --dir-diff'
-
-#------------------------------------------------------
-# git (stage/unstage, track/untrack)
-#------------------------------------------------------
-alias git-stage='git add'
-alias git-unstage='git reset --'
-
-alias git-track='git add'
-alias git-untrack-file='git rm --cached'
-alias git-untrack-dir='git rm --cached -r'
-
-git-chmod-x() {
-  git update-index --add --chmod=+x "$@"
-}
-
-git-chmod-x-all() {
-  git-chmod-x $(git-ls-no-x)
-}
-
-#------------------------------------------------------
-# git-tmp
-#------------------------------------------------------
-git-tmp-commit() {
-  git commit -a -m "[TMP] $*";
-}
-
-git-tmp-reset() {
-  git reset HEAD^;
-}
-
-git-reset-last() {
-  git reset HEAD^;
-}
-
-#------------------------------------------------------
-# git (push/pull/merge/rebase)
-#------------------------------------------------------
-alias git-pull-no-commit='git pull --no-commit'
-alias git-merge-no-commit='git merge --no-commit'
-alias git-merge-no-ff='git merge --no-ff'
-
-git-push-origin() {
-  git push origin $(git-branch-name)
-}
-
-git-pull-origin() {
-  git pull origin $(git-branch-name)
-}
-
-git-rebase-origin() {
-  git rebase origin/$(git-branch-name)
-}
-
-git-merge-origin-no-commit() {
-  git merge --no-commit origin/$(git-branch-name)
-}
-
-#------------------------------------------------------
-# git-branch
-#------------------------------------------------------
-git-branch-reset() {
-  br=$(git-prompt 'branch?' "$*" "master")
-  if [ -n "$br" ]; then
-    git-eval "git branch -f $br HEAD"
-  fi
-}
-
-git-branch-create() {
-  br=$(git-prompt 'branch?' "$*" "tmp")
-  if [ -n "$br" ]; then
-    git-eval "git branch $br"
-  fi
-}
-
-git-branch-delete() {
-  br=$(git-prompt 'branch?' "$*")
-  if [ -n "$br" ]; then
-    git-eval "git branch -d $br"
-  fi
-}
-
-git-remote-branch-delete() {
-  br=$(git-prompt 'branch?' "$*")
-  if [ -n "$br" ]; then
-    git-eval "git push origin :$br"
-  fi
-}
-
-#------------------------------------------------------
-# git-graph
-#------------------------------------------------------
-# less options
-# -E or --QUIT-AT-EOF
-# -F or --quit-if-one-screen
-# -R or --RAW-CONTROL-CHARS
-# -S or --chop-long-lines
-# -X or --no-init
-gg()   { git graph --color=always $* | less -EFRSX; }
-gg-d() { git graph --color=always --date-order  $* | less -EFRSX; }
-gg-s() { git graph --color=always --name-status $* | less -EFRSX; }
-
-alias G='gg-d -6'
-alias GA='gg-d -6 --all'
-alias GM='git-log.sh --log 4 --log-submodule 2'
-
-#------------------------------------------------------
-# git-ls
-#------------------------------------------------------
-alias gls='git-ls.sh'
-alias git-ls-track='git ls-files -s'
-alias git-ls-untrack='git ls-files -o --directory'
-
-git-ls-no-x() {
-  git ls-files -s | grep '^100644' | awk '{print $4}'
 }
 
 #------------------------------------------------------
@@ -210,6 +42,233 @@ git-print-tag-all() {
   git ls-remote --tags
 }
 
+#------------------------------------------------------
+# git-ls
+#------------------------------------------------------
+git-ls-track() {
+  git ls-files -s
+}
+
+git-ls-untrack() {
+  git ls-files -o --directory
+}
+
+git-ls-no-x() {
+  git ls-files -s | grep '^100644' | awk '{print $4}'
+}
+
+#------------------------------------------------------
+# chmod
+#------------------------------------------------------
+git-chmod-x() {
+  git update-index --add --chmod=+x "$@"
+}
+
+git-chmod-x-all() {
+  git-chmod-x $(git-ls-no-x)
+}
+
+#------------------------------------------------------
+# git-graph
+#------------------------------------------------------
+# less options
+# -E or --QUIT-AT-EOF
+# -F or --quit-if-one-screen
+# -R or --RAW-CONTROL-CHARS
+# -S or --chop-long-lines
+# -X or --no-init
+git-graph() {
+  git graph --color=always $* | less -EFRSX
+}
+
+git-graph-date() {
+  git graph --color=always --date-order  $* | less -EFRSX
+}
+
+git-graph-status() {
+  git graph --color=always --name-status $* | less -EFRSX
+}
+
+#------------------------------------------------------
+# git-branch
+#------------------------------------------------------
+git-branch-reset() {
+  br=$(prompt.sh 'branch' 'master' "$*")
+  if [ -n "$br" ]; then
+    git-eval "git branch -f $br HEAD"
+  fi
+}
+
+git-branch-create() {
+  br=$(prompt.sh 'branch' 'tmp' "$*")
+  if [ -n "$br" ]; then
+    git-eval "git branch $br"
+  fi
+}
+
+git-branch-delete() {
+  br=$(prompt.sh 'branch' '' "$*")
+  if [ -n "$br" ]; then
+    git-eval "git branch -d $br"
+  fi
+}
+
+git-remote-branch-delete() {
+  br=$(prompt.sh 'branch' '' "$*")
+  if [ -n "$br" ]; then
+    git-eval "git push origin :$br"
+  fi
+}
+
+#------------------------------------------------------
+# git (stage/unstage, track/untrack)
+#------------------------------------------------------
+git-stage() {
+  git add "$@"
+}
+
+git-unstage() {
+  git reset -- "$@"
+}
+
+git-track() {
+  git add "$@"
+}
+
+git-untrack-file() {
+  git rm --cached "$@"
+}
+
+git-untrack-dir() {
+  git rm --cached -r "$@"
+}
+
+#------------------------------------------------------
+# git commit
+#------------------------------------------------------
+git-commit-amend() {
+  msg=${1:-"amend"}
+  git commit --amend -m "$msg"
+}
+
+git-commit() {
+  msg=${1:-"update"}
+  git commit -m "$msg"
+}
+
+git-add-commit() {
+  msg=${1:-"update"}
+  git commit -a -m "$msg"
+}
+
+#------------------------------------------------------
+# git tmp
+#------------------------------------------------------
+git-commit-tmp() {
+  args=$(prompt.sh 'message' '[TMP] update' "$*")
+  if [ -n "$args" ]; then
+    git-eval "git commit -a -m $args"
+  fi
+}
+
+git-reset-tmp() {
+  git-eval "git reset HEAD^"
+}
+
+git-reset-last() {
+  git-eval "git reset HEAD^"
+}
+
+#------------------------------------------------------
+# git (push/pull/merge/rebase)
+#------------------------------------------------------
+git-push-origin() {
+  git push origin $(git-branch-name)
+}
+
+git-pull-origin() {
+  git pull origin $(git-branch-name)
+}
+
+git-pull-no-commit() {
+  git pull --no-commit
+}
+
+git-rebase-origin() {
+  git rebase origin/$(git-branch-name)
+}
+
+git-rebase-abort() {
+  git rebase --abort
+}
+
+git-merge-abort() {
+  git merge --abort
+}
+
+git-merge-no-ff() {
+  git merge --no-ff "$@"
+}
+
+git-merge-no-commit() {
+  git merge --no-commit "$@"
+}
+
+git-merge-no-commit-origin() {
+  git merge --no-commit origin/$(git-branch-name)
+}
+
+#------------------------------------------------------
+# git reset
+#------------------------------------------------------
+git-reset-hard() {
+  git reset --hard "$@"
+}
+
+git-reset-hard-origin() {
+  git reset --hard origin/$(git-branch-name)
+}
+
+#------------------------------------------------------
+# others
+#------------------------------------------------------
+git-clone-recursive() {
+  git clone --recurse-submodules "$@"
+}
+
+git-submodule-update-all() {
+  git submodule update --init --recursive
+}
+
+git-dirdiff() {
+  git difftool --dir-diff
+}
+
+#------------------------------------------------------
+# git-alias
+#------------------------------------------------------
+alias gs='git status'
+alias gS='git status -s'
+alias gd='git diff'
+alias gD='git diff --staged'
+alias gf='git fetch'
+alias gb='git branch'
+alias gt='git tag'
+
+alias gA='git add'
+alias gAu='git add -u'
+alias gAC='git-add-commit'
+alias gC='git-commit'
+
+alias gR='git reset --hard'
+alias gRom='git-reset-hard-origin'
+alias gPom='git-push-origin'
+
+alias G='git-graph-date -6'
+alias GA='git-graph-date -6 --all'
+alias GM='git-log.sh --log 4 --log-submodule 2'
+
+alias gls='git-ls.sh'
 alias gb-all='git-print-branch-all'
 alias gt-all='git-print-tag-all'
 

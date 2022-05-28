@@ -4,21 +4,21 @@
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
 - B VisFernBmkItem                     | :call VisFernBmkItem()
 [bmk.side] --------------------------- | ----------------------------------------
-- F fzy bmk  dir     (C-Space)         | :call FzyCommand("BmkEditDir", "bmk.sh bmk.txt")
--   fzy find dir                       | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
+- F fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "bmk.sh bmk_dir.txt $HOME/.bmk_dir.txt")
+-   fzy find_dir                       | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
     ---------------------------------- | ----------------------------------------
 - S VisTabGstatusToggle                | :call VisTabGstatusToggle()
 - G VisTabGV                           | :call VisTabGV()
     ---------------------------------- | ----------------------------------------
 -   Memo                               | :Memo
 -   todo                               | $MY_DIARY/todo.md.html
--   bmk                                | $MY_BMK/bmk.txt
+-   bmk_dir                            | $MY_BMK/bmk_dir.txt
 -   links                              | $MY_BMK/links.txt
 -   papers                             | $MY_BMK/papers.txt
 [buf.bmk.main] ----------------------- | ----------------------------------------
-- F fzy bmk  file                      | :call FzyCommand("BmkEditFile", "bmk.sh file.txt")
--   fzy find file                      | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
--   fzy cmd                            | :call FzyCommand("BmkEdit", "bmk.sh cmd.txt")
+- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "bmk.sh bmk_file.txt $HOME/.bmk_file.txt")
+-   fzy find_file                      | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
+-   fzy vcmd                           | :call FzyCommand("BmkEdit", "bmk.sh vcmd.txt")
 -   fzy links                          | :call FzyCommand("BmkOpenURL", "bmk.sh links.txt")
 -   fzy papers                         | :call FzyCommand("BmkOpenURL", "bmk.sh papers.txt")
 [buf.cmd.main] ----------------------- | ----------------------------------------

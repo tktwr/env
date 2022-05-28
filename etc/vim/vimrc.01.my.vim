@@ -63,20 +63,22 @@ let g:bmk_open_file_prog = "vscode.sh"
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
 let g:cpm_files = [
-  \ "$MY_BMK/bmk.txt",
-  \ "$MY_BMK/cmd.txt",
-  \ "$MY_BMK/file.txt",
+  \ "$MY_BMK/bmk_dir.txt",
+  \ "$MY_BMK/bmk_file.txt",
+  \ "$MY_BMK/tcmd.txt",
+  \ "$MY_BMK/tcmd_git.txt",
+  \ "$MY_BMK/vcmd.txt",
   \ "$MY_BMK/links.txt",
   \ "$MY_BMK/papers.txt",
   \ "$MY_BMK/ref.txt",
-  \ "$MY_BMK/term.txt",
-  \ "$MY_COMMON_SETTING/bmk/bmk.txt",
-  \ "$MY_COMMON_SETTING/bmk/cmd.txt",
-  \ "$MY_COMMON_SETTING/bmk/file.txt",
+  \ "$MY_COMMON_SETTING/bmk/bmk_dir.txt",
+  \ "$MY_COMMON_SETTING/bmk/bmk_file.txt",
+  \ "$MY_COMMON_SETTING/bmk/tcmd.txt",
+  \ "$MY_COMMON_SETTING/bmk/tcmd_git.txt",
+  \ "$MY_COMMON_SETTING/bmk/vcmd.txt",
   \ "$MY_COMMON_SETTING/bmk/links.txt",
   \ "$MY_COMMON_SETTING/bmk/papers.txt",
   \ "$MY_COMMON_SETTING/bmk/ref.txt",
-  \ "$MY_COMMON_SETTING/bmk/term.txt",
   \ ]
 let g:cpm_titles = {
   \ 'buffer'      : ['buf.bmk.main & buf.bmk.file & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
