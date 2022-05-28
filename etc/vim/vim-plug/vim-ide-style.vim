@@ -29,6 +29,7 @@ Plug 'tktwr/vim-ide-style'
 let g:vis_unexpand_env_list = [
   \ '$MY_PAPERS',
   \ '$MY_GIT',
+  \ '$MY_GITHUB',
   \ '$MY_WORK',
   \ '$MY_PROJ',
   \ '$MY_DOC',

@@ -61,15 +61,15 @@ fzy_cmd() {
 #------------------------------------------------------
 # fzy alias
 #------------------------------------------------------
-alias  D?='fzy_cmd D     "bmk.sh bmk.txt"'
-alias D2?='fzy_cmd D2    "bmk.sh bmk.txt"'
-alias cd?='fzy_cmd cd    "bmk.sh bmk.txt"'
-alias  x?='fzy_cmd te.sh "bmk.sh bmk.txt"'
-alias  .?='fzy_cmd pushd "bmk.sh bmk.txt"'
+alias  D?='fzy_cmd D     "bmk.sh bmk.txt $HOME/.bmk_dir.txt"'
+alias D2?='fzy_cmd D2    "bmk.sh bmk.txt $HOME/.bmk_dir.txt"'
+alias cd?='fzy_cmd cd    "bmk.sh bmk.txt $HOME/.bmk_dir.txt"'
+alias  x?='fzy_cmd te.sh "bmk.sh bmk.txt $HOME/.bmk_dir.txt"'
+alias  .?='fzy_cmd pushd "bmk.sh bmk.txt $HOME/.bmk_dir.txt"'
 alias  ,?='fzy_cmd popd   fzy_arg_pushd'
 alias  ??='fzy_cmd pushd  fzy_arg_pushd'
 
-alias     vi?='fzy_cmd vim       "bmk.sh file.txt"'
+alias     vi?='fzy_cmd vim       "bmk.sh file.txt $HOME/.bmk_file.txt"'
 alias   term?='fzy_cmd " "       "bmk.sh term.txt"'
 alias  links?='fzy_cmd chrome.sh "bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "bmk.sh papers.txt"'

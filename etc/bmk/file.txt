@@ -1,22 +1,31 @@
-[buf.bmk.file] ----------------------- | ----------------------------------------
-- s scratchpad                         | $MY_DIARY/scratchpad.md.html
-- i info                               | $MY_DIARY/info.md.html
-- d dia                                | $MY_DIARY/diary.md.html
-- t todo                               | $MY_DIARY/todo.md.html
-    ---------------------------------- | ----------------------------------------
-- b bmk                  (C-b)         | $MY_BMK/bmk.txt
-- c cmd                                | $MY_BMK/cmd.txt
-- L links                              | $MY_BMK/links.txt
-- P papers                             | $MY_BMK/papers.txt
-[buf.bmk.file2] ---------------------- | ----------------------------------------
-- B bmk_local                          | $MY_COMMON_SETTING/bmk/bmk.txt
-- w engword                            | $MY_CONFIG/local/eng/eng.txt
-- e eng                                | $MY_LOCAL_CONFIG/memo/eng.md.html
-- m math                               | $MY_LOCAL_CONFIG/memo/math.md.html
-    ---------------------------------- | ----------------------------------------
--   Memo Index                         | $MY_REMOTE_CONFIG/memo/index.html
--   Memo Index (local)                 | $MY_LOCAL_CONFIG/memo/index.html
--   Diary Index                        | $MY_PRIVATE_CONFIG/diary/index.html
--   Proj Index                         | $MY_PROJ/index.md.html
+[buf.bmk.file] -----------------------  | ----------------------------------------
+- s scratchpad                          | $MY_DIARY/scratchpad.md.html
+- i info                                | $MY_DIARY/info.md.html
+- d dia                                 | $MY_DIARY/diary.md.html
+- t todo                                | $MY_DIARY/todo.md.html
+    ----------------------------------  | ----------------------------------------
+- b bmk                  (C-b)          | $MY_BMK/bmk.txt
+- c cmd                                 | $MY_BMK/cmd.txt
+- L links                               | $MY_BMK/links.txt
+- P papers                              | $MY_BMK/papers.txt
+[buf.bmk.file2] ----------------------  | ----------------------------------------
+- B bmk_local                           | $MY_COMMON_SETTING/bmk/bmk.txt
+- w engword                             | $MY_CONFIG/local/eng/eng.txt
+- e eng                                 | $MY_LOCAL_CONFIG/memo/eng.md.html
+- m math                                | $MY_LOCAL_CONFIG/memo/math.md.html
+    ----------------------------------  | ----------------------------------------
+-   Memo Index                          | $MY_REMOTE_CONFIG/memo/index.html
+-   Memo Index (local)                  | $MY_LOCAL_CONFIG/memo/index.html
+-   Diary Index                         | $MY_PRIVATE_CONFIG/diary/index.html
+-   Proj Index                          | $MY_PROJ/index.md.html
+    --- (Blender) --------------------  | ----------------------------------------
+-   eevee/principled.glsl               | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
+-   cycles/bsdf_microfacet.h            | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
+-   cycles/svm/closure.h                | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
+-   cycles/osl/node_principled_bsdf.osl | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
+    --- (GLTF) -----------------------  | ----------------------------------------
+-   gltf/pbr.frag                       | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
+    --- (SSSS) -----------------------  | ----------------------------------------
+-   SeparableSSS.h                      | $MY_GITHUB/separable-sss/SeparableSSS.h
 
 # vim:set ft=bmk syntax=txt nowrap:

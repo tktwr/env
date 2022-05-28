@@ -13,8 +13,10 @@ fzy_arg_bmk() {
                $MY_COMMON_SETTING/bmk/$1 \
                $MY_BMK/$1 \
                "
+  shift
+  files="$files $@"
   echo $(cat $files 2> /dev/null | fzy_bmk_filter | fzy_cmd_filter)
 }
 
-fzy_arg_bmk $1
+fzy_arg_bmk "$@"
 

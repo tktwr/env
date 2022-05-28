@@ -17,9 +17,10 @@
 -     Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                 | https://github.com/ShichenLiu/SoftRas
 -   Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                               | https://arxiv.org/abs/2007.08501
 -     PyTorch3D [github]                                                                                               | https://github.com/facebookresearch/pytorch3d
--   Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                           | https://arxiv.org/abs/2011.03277
--     Modular Primitives for High-Performance Differentiable Rendering [github]                                        | https://github.com/NVlabs/nvdiffrast
+-   nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                           | https://arxiv.org/abs/2011.03277
+-     nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [github]                                        | https://github.com/NVlabs/nvdiffrast
 -   nvdiffmodeling                                                                                                     | https://github.com/NVlabs/nvdiffmodeling
+-   nvdiffrec                                                                                                          | https://nvlabs.github.io/nvdiffrec/
     --- [NeRF] ------------------------                                                                                | ----------------------------------------
 -   Instant Neural Graphics Primitives with a Multiresolution Hash Encoding                                            | https://nvlabs.github.io/instant-ngp/
 -   Instant Neural Graphics Primitives (github)                                                                        | https://github.com/NVlabs/instant-ngp
