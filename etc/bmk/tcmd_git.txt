@@ -1,4 +1,4 @@
-[term.git] --------------------------- | ----------------------------------------
+[tcmd.git] --------------------------- | ----------------------------------------
 -   git-branch-name                    | > git-branch-name<CR>
 -   git-commit-hash                    | > git-commit-hash<CR>
 -   git-commit-hash-long               | > git-commit-hash-long<CR>

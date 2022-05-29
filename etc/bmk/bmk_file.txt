@@ -1,15 +1,15 @@
-[buf.bmk.file] -----------------------  | ----------------------------------------
+[bmk.file] ---------------------------  | ----------------------------------------
 - s scratchpad                          | $MY_DIARY/scratchpad.md.html
 - i info                                | $MY_DIARY/info.md.html
 - d dia                                 | $MY_DIARY/diary.md.html
 - t todo                                | $MY_DIARY/todo.md.html
     ----------------------------------  | ----------------------------------------
-- b bmk                  (C-b)          | $MY_BMK/bmk.txt
+- b bmk_file                            | $MY_BMK/bmk_file.txt
 - c vcmd                                | $MY_BMK/vcmd.txt
 - L links                               | $MY_BMK/links.txt
 - P papers                              | $MY_BMK/papers.txt
-[buf.bmk.file2] ----------------------  | ----------------------------------------
-- B bmk_local                           | $MY_COMMON_SETTING/bmk/bmk.txt
+[bmk.file.ext] -----------------------  | ----------------------------------------
+- B bmk_file (local)                    | $MY_COMMON_SETTING/bmk/bmk_file.txt
 - w engword                             | $MY_CONFIG/local/eng/eng.txt
 - e eng                                 | $MY_LOCAL_CONFIG/memo/eng.md.html
 - m math                                | $MY_LOCAL_CONFIG/memo/math.md.html

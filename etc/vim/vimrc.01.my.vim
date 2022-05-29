@@ -62,6 +62,8 @@ let g:bmk_open_file_prog = "vscode.sh"
 " cpm
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
+let g:cpm_user_bmk_dir = '$MY_DOTMY/bmk_dir.txt'
+let g:cpm_user_bmk_file = '$MY_DOTMY/bmk_file.txt'
 let g:cpm_files = [
   \ "$MY_BMK/bmk_dir.txt",
   \ "$MY_BMK/bmk_file.txt",
@@ -81,15 +83,15 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk/ref.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer'      : ['buf.bmk.main & buf.bmk.file & buf.cmd.main', 'buf.cmd.sub', 'cmd.coc', 'ref.main', 'local.bmk.file'],
-  \ 'buffer:side' : ['bmk.side & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'terminal'    : ['local.bmk.dir & term.cmd.my', 'term.main', 'term.system', 'term.git'],
-  \ 'diff'        : ['cmd.diff'],
-  \ 'ft:dirdiff'  : ['cmd.dirdiff'],
-  \ 'ft:git'      : ['cmd.git'],
-  \ 'ft:fugitive' : ['cmd.fugitive'],
-  \ 'ft:fern'     : ['bmk.side.fern & bmk.side & bmk.dir', 'cmd.fern', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'ft:nerdtree' : ['bmk.side & bmk.dir', 'cmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'buffer'      : ['bmk.file & vcmd.main & vcmd.fzy', 'vcmd.sub', 'vcmd.coc', 'ref.main', 'local.bmk.file'],
+  \ 'buffer:side' : ['side.fzy & side.main & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'terminal'    : ['local.bmk.dir & tcmd.my', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
+  \ 'diff'        : ['vcmd.diff'],
+  \ 'ft:dirdiff'  : ['vcmd.dirdiff'],
+  \ 'ft:git'      : ['vcmd.git'],
+  \ 'ft:fugitive' : ['vcmd.fugitive'],
+  \ 'ft:fern'     : ['side.fern & side.fzy & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'ft:nerdtree' : ['side.fzy & side.main & bmk.dir', 'vcmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
   \ 'ref.terminal' : ['ref.main'],
   \ }

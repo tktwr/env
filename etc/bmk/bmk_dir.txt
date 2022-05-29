@@ -9,8 +9,8 @@
 -   user-local/                        | $USER_LOCAL/
 -   user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
--   Desktop/                           | $MY_DESKTOP/
--   Downloads/                         | $MY_DOWNLOADS/
+- K Desktop/                           | $MY_DESKTOP/
+- N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - y .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
@@ -30,11 +30,11 @@
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
 - g git/                               | $MY_GIT/
-- H github/                            | $MY_GITHUB/
     ---------------------------------- | ----------------------------------------
 - A arch/                              | $MY_ARCH/
-- B backup/                            | $MY_BACKUP/
+- U backup/                            | $MY_BACKUP/
 - D data/                              | $MY_DATA/
+- H github/                            | $MY_GITHUB/
 - M man/                               | $MY_MAN/
 - O opt/                               | $MY_OPT/
 - P papers/                            | $MY_PAPERS/

@@ -1,4 +1,4 @@
-[term.main] -------------------------- | ----------------------------------------
+[tcmd.main] -------------------------- | ----------------------------------------
 -   git graph              (G)         | > G<CR>
 -   git graph --all       (GA)         | > GA<CR>
 -   VisGstatusToggle      (GS)         | > GS<CR>
@@ -34,7 +34,7 @@
 - v mycmake-set-vs2019-release         | > mycmake-set-vs2019-release<CR>
 -   mycmake-set-vs2019-debug           | > mycmake-set-vs2019-debug<CR>
 -   mycmake-set-vs2019-reldeb          | > mycmake-set-vs2019-reldeb<CR>
-[term.system] ------------------------ | ----------------------------------------
+[tcmd.system] ------------------------ | ----------------------------------------
 -   pacman -S -h                       | > pacman -S -h<CR>
 -   pacman -Syyu                       | > pacman -Syyu<CR>
 -   pacman -S <pkg>                    | > pacman -S
@@ -61,17 +61,19 @@
 -   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
     ---------------------------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
-[term.cmd.my] ------------------------ | ----------------------------------------
+[tcmd.my] ---------------------------- | ----------------------------------------
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
+- F cd?                                | > cd?<CR>
+[tcmd.ext] --------------------------- | ----------------------------------------
 -    D?                                | > D?<CR>
 -   D2?                                | > D2?<CR>
-- F cd?                                | > cd?<CR>
 -    .?                                | > .?<CR>
 -    ,?                                | > ,?<CR>
 -    ??                                | > ??<CR>
 -    x?                                | > x?<CR>
 -       vi?                            | > vi?<CR>
--     term?                            | > term?<CR>
+-       tc?                            | > tc?<CR>
+-      git?                            | > git?<CR>
 -    links?                            | > links?<CR>
 -   papers?                            | > papers?<CR>
 -    fd?                               | > fd?<CR>

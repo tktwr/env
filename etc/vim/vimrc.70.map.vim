@@ -39,7 +39,7 @@ nnoremap ==      zi
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- nnoremap <silent> <C-B>   :edit $MY_BMK/bmk_dir.txt<CR>
+"nnoremap <silent> <C-B>   :echo 'C-B'<CR>
 "nnoremap <silent> <C-C>   :echo 'C-C'<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>

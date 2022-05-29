@@ -1,12 +1,12 @@
-[bmk.side.fern] ---------------------- | ----------------------------------------
-- y yank an abs path                   | _Plug_(fern-action-yank)
+[side.fern] -------------------------- | ----------------------------------------
 - V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
 - B VisFernBmkItem                     | :call VisFernBmkItem()
-[bmk.side] --------------------------- | ----------------------------------------
+- Y yank an abs path                   | _Plug_(fern-action-yank)
+[side.fzy] --------------------------- | ----------------------------------------
 - F fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "bmk.sh bmk_dir.txt $HOME/.bmk_dir.txt")
 -   fzy find_dir                       | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
-    ---------------------------------- | ----------------------------------------
+[side.main] -------------------------- | ----------------------------------------
 - S VisTabGstatusToggle                | :call VisTabGstatusToggle()
 - G VisTabGV                           | :call VisTabGV()
     ---------------------------------- | ----------------------------------------
@@ -15,13 +15,13 @@
 -   bmk_dir                            | $MY_BMK/bmk_dir.txt
 -   links                              | $MY_BMK/links.txt
 -   papers                             | $MY_BMK/papers.txt
-[buf.bmk.main] ----------------------- | ----------------------------------------
+[vcmd.fzy] --------------------------- | ----------------------------------------
 - F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "bmk.sh bmk_file.txt $HOME/.bmk_file.txt")
 -   fzy find_file                      | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
 -   fzy vcmd                           | :call FzyCommand("BmkEdit", "bmk.sh vcmd.txt")
 -   fzy links                          | :call FzyCommand("BmkOpenURL", "bmk.sh links.txt")
 -   fzy papers                         | :call FzyCommand("BmkOpenURL", "bmk.sh papers.txt")
-[buf.cmd.main] ----------------------- | ----------------------------------------
+[vcmd.main] -------------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
 - I WinInitSize                        | :VisWinInitSize
 - < SideBar                            | :VisSideBarToggle
@@ -29,17 +29,14 @@
 - D Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :VisTerm
-- X Wx                                 | :Wx ?
-- C VisSendCdE2T                       | :VisSendCdE2T
-    --- (Develop) -------------------- | ----------------------------------------
-- H Help                               | :VisHelp
 - M Memo                               | :Memo
+- H Help                               | :VisHelp
+    --- (Develop) -------------------- | ----------------------------------------
 - q VisQuickhl           (C-a)         | :VisQuickhl ??
 - g VisGgrep                           | :VisGgrep ??
 - v VisVimgrep                         | :VisVimgrep ?? *
 - A MyVimgrepAll                       | :call MyVimgrepAll('??')
 - ] VisTjumpPrompt                     | :call VisTjumpPrompt()
--   vimgrep TODO                       | :vimgrep 'TODO' %
     --- (External) ------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
 - O BmkOpenFile                        | :call BmkOpenFile('%:p')
@@ -49,10 +46,12 @@
 -   yank                   (Y)         | "*y
 - 1 MyTabBar                           | :MyTabBar
     ---------------------------------- | ----------------------------------------
+- C VisSendCdE2T                       | :VisSendCdE2T
+- X Wx                                 | :Wx ?
 - B CpmSave                            | :call CpmSave()
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
-[buf.cmd.sub] ------------------------ | ----------------------------------------
+[vcmd.sub] --------------------------- | ----------------------------------------
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
 - s VisGstatusToggle                   | :VisGstatusToggle
@@ -80,12 +79,13 @@
 -   VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
-[buf.cmd.subsub] --------------------- | ----------------------------------------
+[vcmd.ext] --------------------------- | ----------------------------------------
 -   Wc                                 | :Wc ?
 -   VisBufDelete                       | :VisBufDelete
+-   vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
 -   quit                   (Q)         | :confirm qall
-[cmd.coc] ---------------------------- | ----------------------------------------
+[vcmd.coc] --------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
 -   CocInfo                            | :CocInfo
 -   CocOpenLog                         | :CocOpenLog
@@ -109,21 +109,21 @@
 -   CocList words                      | :CocList words
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
-[cmd.diff] --------------------------- | ----------------------------------------
+[vcmd.diff] -------------------------- | ----------------------------------------
 -   diffupdate                         | :diffupdate
-[cmd.dirdiff] ------------------------ | ----------------------------------------
+[vcmd.dirdiff] ----------------------- | ----------------------------------------
 - q quit dirdiff                       | :VisTabDirDiffQuit
-[cmd.git] ---------------------------- | ----------------------------------------
+[vcmd.git] --------------------------- | ----------------------------------------
 - D GV diff                            | O
 - ( GV prev                            | (
 - ) GV next                            | )
-[cmd.fugitive] ----------------------- | ----------------------------------------
+[vcmd.fugitive] ---------------------- | ----------------------------------------
 - - toggle stage / unstage             | -
 - X discard changes                    | X
 - D diff                               | dd
 - R reload the status buffer           | R
 - q quit fugitive                      | :VisTabClosePrev
-[cmd.fern] --------------------------- | ----------------------------------------
+[vcmd.fern] -------------------------- | ----------------------------------------
 - - below split                        | :below split
     ---------------------------------- | ----------------------------------------
 -   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
