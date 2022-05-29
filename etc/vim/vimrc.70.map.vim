@@ -31,10 +31,16 @@ cnoremap <C-N>   <Down>
 " nmap
 "------------------------------------------------------
 nnoremap Q       :confirm qall<CR>
+
+" mark
 nnoremap '       `
+
 " fold on/off
 nnoremap ==      zi
 
+"------------------------------------------------------
+" nmap C-?
+"------------------------------------------------------
 "nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
@@ -65,11 +71,11 @@ nnoremap ==      zi
  nnoremap <silent> <C-Y>   :silent call WblPrev()<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
-nnoremap <C-;>   <C-W>:
-nnoremap <C-.>   :VisLcdHere<CR>
+ nnoremap <C-;>   <C-W>:
+ nnoremap <C-.>   :VisLcdHere<CR>
 
 "nnoremap <C-]>   g<C-]>
-nnoremap <C-]>   :<C-U>call VisTjump(expand('<cfile>'), v:count)<CR>
+ nnoremap <C-]>   :<C-U>call VisTjump(expand('<cfile>'), v:count)<CR>
 
 "------------------------------------------------------
 " tmap
@@ -154,19 +160,18 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
+nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
+tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
+
 nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
 tnoremap <silent> <F1>       <C-W>:CpmOpen ref.terminal<CR>
 
-nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
-tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref<CR>
 tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref.terminal<CR>
 
 nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
 tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
 
-"nnoremap <silent> <TAB>      :VisFernDrawerToggle<CR>
-"nnoremap <silent> <TAB>      :silent call WblPrint()<CR>
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
 

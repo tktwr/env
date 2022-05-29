@@ -1,4 +1,10 @@
 [ref.main] --------------------------- | ----------------------------------------
+- C Cpprefjp                           | https://cpprefjp.github.io/reference.html
+- P Python                             | https://docs.python.org/ja/3/index.html
+- E GLTF 2.0 Extensions                | https://github.com/KhronosGroup/glTF/tree/main/extensions
+- B Blender Python API                 | https://docs.blender.org/api/current/index.html
+- U Unreal Engine 5                    | https://docs.unrealengine.com/5.0/en-US/
+    ---------------------------------- | ----------------------------------------
 - H Help                               | :VisHelp
 -   Help.index                         | :VisHelp index
 -   Help.expression-syntax             | :VisHelp expression-syntax
