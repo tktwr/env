@@ -9,10 +9,12 @@ fzy_cmd_filter() {
 }
 
 fzy_arg_bmk() {
-  local files="$MY_DOTMY/bmk/$1 \
-               $MY_COMMON_SETTING/bmk/$1 \
-               $MY_BMK/$1 \
-               "
+  local files="\
+    $MY_BMK/$1 \
+    $MY_COMMON_SETTING/bmk/$1 \
+    $MY_DOTMY/$1 \
+    $HOME/.$1 \
+    "
   shift
   files="$files $@"
   echo $(cat $files 2> /dev/null | fzy_bmk_filter | fzy_cmd_filter)
