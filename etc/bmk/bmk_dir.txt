@@ -57,6 +57,7 @@
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
 [bmk.dir.opt] ------------------------ | ----------------------------------------
+-   Blender/addons/                    | $USER_ROAMING/Blender Foundation/Blender/3.1/scripts/addons/
 -   blender/                           | $MY_GITHUB/blender/
 -   eevee/                             | $MY_GITHUB/blender/source/blender/gpu/
 -   cycles/                            | $MY_GITHUB/blender/intern/cycles/

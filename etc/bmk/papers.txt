@@ -131,10 +131,12 @@
 -   Semantic Scene Completion from a Single Depth Image                                                                | https://github.com/shurans/sscnet
     --- [Photography] ------------------------                                                                         | ----------------------------------------
 -   Casual 3D Photography                                                                                              | http://visual.cs.ucl.ac.uk/pubs/casual3d/
-    --- [Recent] ------------------------                                                                              | ----------------------------------------
+    --- [2021] ------------------------                                                                                | ----------------------------------------
 -   FabSoften: Face Beautification via Dynamic Skin Smoothing, Guided Feathering, and Texture Restoration              | https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Velusamy_FabSoften_Face_Beautification_via_Dynamic_Skin_Smoothing_Guided_Feathering_and_CVPRW_2020_paper.pdf
 -   ICT-FaceKit                                                                                                        | https://github.com/ICT-VGL/ICT-FaceKit
 -   Learning Formation of Physically-Based Face Attributes                                                             | https://arxiv.org/abs/2004.03458
 -   Image Super-Resolution via Iterative Refinement                                                                    | https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
+    --- [2022] ------------------------                                                                                | ----------------------------------------
+-   ReLU Fields: The Little Non-linearity That Could                                                                   | https://geometry.cs.ucl.ac.uk/group_website/projects/2022/relu_fields/
 
 # vim:set ft=bmk syntax=txt nowrap:
