@@ -43,8 +43,18 @@ fzy_arg_hist() {
   echo $(history 40 | fzy | awk '{print $1}')
 }
 
+memo() {
+  tags_files="\
+  -t=$MY_REMOTE_CONFIG/memo/tags.memo \
+  -t=$MY_REMOTE_CONFIG/samples/tags.memo \
+  -t=$MY_LOCAL_CONFIG/memo/tags.memo \
+  -t=$MY_DIARY/tags.memo \
+  "
+  eval "memo.sh $tags_files $@"
+}
+
 fzy_arg_memo() {
-  echo $(memo.sh --fzy | fzy | awk '{print $1}')
+  echo $(memo --fzy | fzy | awk '{print $1}')
 }
 
 #------------------------------------------------------
@@ -83,5 +93,5 @@ alias  ff?='fzy_cmd vim   "fzy_arg_find_file 6"'
 alias make?='fzy_cmd make fzy_arg_make'
 
 #alias h?='fzy_cmd "!" fzy_arg_hist'
-#alias memo?='fzy_cmd memo.sh fzy_arg_memo'
+#alias memo?='fzy_cmd memo fzy_arg_memo'
 

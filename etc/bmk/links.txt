@@ -127,7 +127,7 @@
     ------------------------------------            | ----------------------------------------
 -   Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
 -   A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
--   DANIEL BOSCHUNG – Face Cartography             | https://www.danielboschung.com/
+-   DANIEL BOSCHUNG – Face Cartography              | https://www.danielboschung.com/
 -   USC ICT                                         | https://vgl.ict.usc.edu/
     ------------------------------------            | ----------------------------------------
 -   Resources                                       |
@@ -135,5 +135,9 @@
 -     Poly Haven                                    | https://polyhaven.com/
 -     PFM                                           | http://www.pauldebevec.com/Research/HDR/PFM/
 -     ambientcg                                     | https://ambientcg.com/
+    --- (2022) -------------------------            | ----------------------------------------
+-   Principled-Baker                                | https://github.com/danielenger/Principled-Baker
+-   www.o3de.org                                    | https://www.o3de.org/
+-   o3de                                            | https://github.com/o3de/o3de
 
 # vim:set ft=bmk syntax=txt nowrap:

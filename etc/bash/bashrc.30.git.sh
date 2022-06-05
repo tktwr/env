@@ -96,6 +96,7 @@ git-branch-reset() {
   br=$(prompt.sh 'branch' 'master' "$*")
   if [ -n "$br" ]; then
     git-eval "git branch -f $br HEAD"
+    git-eval "git checkout $br"
   fi
 }
 
@@ -260,6 +261,7 @@ alias gAu='git add -u'
 alias gAC='git-add-commit'
 alias gC='git-commit'
 
+alias gbR='git-branch-reset'
 alias gR='git reset --hard'
 alias gRom='git-reset-hard-origin'
 alias gPom='git-push-origin'
