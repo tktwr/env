@@ -28,6 +28,8 @@ mingw-w64-x86_64-graphviz \
 mingw-w64-x86_64-qpdf \
 mingw-w64-x86_64-ghostscript \
 mingw-w64-x86_64-ffmpeg \
+mingw-w64-x86_64-ripgrep \
+mingw-w64-x86_64-ag \
 "
 
 pkg_dev="\

@@ -75,7 +75,7 @@ nnoremap ==      zi
  nnoremap <C-.>   :VisLcdHere<CR>
 
 "nnoremap <C-]>   g<C-]>
- nnoremap <C-]>   :<C-U>call VisTjump(expand('<cfile>'), v:count)<CR>
+ nnoremap <C-]>   :<C-U>call VisTjump(expand('<cWORD>'), v:count)<CR>
 
 "------------------------------------------------------
 " tmap
