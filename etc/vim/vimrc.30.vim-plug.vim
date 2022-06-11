@@ -16,74 +16,41 @@ call s:InstallVimPlug()
 call plug#begin('$MY_VIM/plugged')
 
 "------------------------------------------------------
-" include
+" vim-plug:
 "------------------------------------------------------
 source $MY_VIM/vim-plug/vim-dirdiff.vim
-source $MY_VIM/vim-plug/vim-fugitive.vim
-source $MY_VIM/vim-plug/vim-indent-guides.vim
 source $MY_VIM/vim-plug/vim-quickhl.vim
 source $MY_VIM/vim-plug/vim-easymotion.vim
-source $MY_VIM/vim-plug/tabular.vim
-source $MY_VIM/vim-plug/tagbar.vim
-source $MY_VIM/vim-plug/gv.vim
-source $MY_VIM/vim-plug/nerdcommenter.vim
-
-source $MY_VIM/vim-plug/fern.vim
-"source $MY_VIM/vim-plug/nerdtree.vim
 
 source $MY_VIM/vim-plug/coc.vim
 "source $MY_VIM/vim-plug/vim-vsnip.vim
 "source $MY_VIM/vim-plug/ultisnips.vim
 
-"source $MY_VIM/vim-plug/eskk.vim
-
-if $MY_PROMPT_TYPE >= 1
-  source $MY_VIM/vim-plug/vim-gitgutter.vim
-endif
-
 "------------------------------------------------------
 " vim-plug: color
 "------------------------------------------------------
-Plug 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark = "soft"
-
-Plug 'tomasr/molokai'
-let g:molokai_original = 1
-"let g:rehash256 = 1
-
-Plug 'octol/vim-cpp-enhanced-highlight'
-
-"------------------------------------------------------
-" vim-plug: IDE
-"------------------------------------------------------
-Plug 'thinca/vim-ref'
-
-"Plug 'ctrlpvim/ctrlp.vim'
-"source $MY_VIM/vim-plug/fzf.vim
-
-"------------------------------------------------------
-" vim-plug: git
-"------------------------------------------------------
-Plug 'cohama/agit.vim'
+source $MY_VIM/vim-plug/color.vim
 
 "------------------------------------------------------
 " vim-plug: edit
 "------------------------------------------------------
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
+"source $MY_VIM/vim-plug/eskk.vim
+source $MY_VIM/vim-plug/edit.vim
+source $MY_VIM/vim-plug/fzy.vim
 
 "------------------------------------------------------
-" vim-plug: my
+" vim-plug: git
 "------------------------------------------------------
-source $MY_VIM/vim-plug/vim-ide-style.vim
+source $MY_VIM/vim-plug/git.vim
+source $MY_VIM/vim-plug/git-log.vim
 
-Plug 'tktwr/vim-memo'
-let g:memo_tags_files = [
-  \ "$MY_REMOTE_CONFIG/memo/tags.memo",
-  \ "$MY_REMOTE_CONFIG/samples/tags.memo",
-  \ "$MY_LOCAL_CONFIG/memo/tags.memo",
-  \ "$MY_DIARY/tags.memo",
-  \ ]
+"------------------------------------------------------
+" vim-plug: IDE
+"------------------------------------------------------
+"source $MY_VIM/vim-plug/nerdtree.vim
+source $MY_VIM/vim-plug/fern.vim
+source $MY_VIM/vim-plug/tagbar.vim
+source $MY_VIM/vim-plug/ide.vim
 
 "------------------------------------------------------
 
