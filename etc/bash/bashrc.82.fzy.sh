@@ -70,28 +70,38 @@ fzy_cmd() {
 }
 
 #------------------------------------------------------
+virg() {
+  if [ -n "$1" ]; then
+    fzy_cmd vim "git-rg.sh $1"
+  else
+    echo "virg search_word"
+  fi
+}
+
+#------------------------------------------------------
 # fzy alias
 #------------------------------------------------------
-alias  D?='fzy_cmd D     "bmk.sh bmk_dir.txt"'
-alias D2?='fzy_cmd D2    "bmk.sh bmk_dir.txt"'
-alias cd?='fzy_cmd cd    "bmk.sh bmk_dir.txt"'
-alias  x?='fzy_cmd te.sh "bmk.sh bmk_dir.txt"'
-alias  .?='fzy_cmd pushd "bmk.sh bmk_dir.txt"'
-alias  ,?='fzy_cmd popd   fzy_arg_pushd'
-alias  ??='fzy_cmd pushd  fzy_arg_pushd'
+alias      D?='fzy_cmd D         "bmk.sh bmk_dir.txt"'
+alias     D2?='fzy_cmd D2        "bmk.sh bmk_dir.txt"'
+alias     cd?='fzy_cmd cd        "bmk.sh bmk_dir.txt"'
+alias      x?='fzy_cmd te.sh     "bmk.sh bmk_dir.txt"'
+alias      .?='fzy_cmd pushd     "bmk.sh bmk_dir.txt"'
+alias      ,?='fzy_cmd popd       fzy_arg_pushd'
+alias      ??='fzy_cmd pushd      fzy_arg_pushd'
 
-alias     vi?='fzy_cmd vim       "bmk.sh bmk_file.txt"'
-alias     tc?='fzy_cmd " "       "bmk.sh tcmd.txt"'
+alias    cmd?='fzy_cmd " "       "bmk.sh tcmd.txt"'
 alias    git?='fzy_cmd " "       "bmk.sh tcmd_git.txt"'
 alias  links?='fzy_cmd chrome.sh "bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "bmk.sh papers.txt"'
 
-alias  fd?='fzy_cmd cd    "fzy_arg_find_dir  6"'
-alias .fd?='fzy_cmd pushd "fzy_arg_find_dir  6"'
-alias  ff?='fzy_cmd vim   "fzy_arg_find_file 6"'
+alias     vi?='fzy_cmd vim       "bmk.sh bmk_file.txt"'
+alias    vif?='fzy_cmd vim       "fzy_arg_find_file 6"'
 
-alias make?='fzy_cmd make fzy_arg_make'
+alias     fd?='fzy_cmd cd        "fzy_arg_find_dir 6"'
+alias    .fd?='fzy_cmd pushd     "fzy_arg_find_dir 6"'
 
-#alias h?='fzy_cmd "!" fzy_arg_hist'
-#alias memo?='fzy_cmd memo fzy_arg_memo'
+alias   make?='fzy_cmd make       fzy_arg_make'
+
+#alias     h?='fzy_cmd "!"        fzy_arg_hist'
+#alias  memo?='fzy_cmd memo       fzy_arg_memo'
 
