@@ -4,8 +4,8 @@
 - B VisFernBmkItem                     | :call VisFernBmkItem()
 - Y yank an abs path                   | _Plug_(fern-action-yank)
 [side.fzy] --------------------------- | ----------------------------------------
-- F fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "bmk.sh bmk_dir.txt $HOME/.bmk_dir.txt")
--   fzy find_dir                       | :call FzyCommand("BmkEditDir", "find-dir.sh -maxdepth 6")
+- F fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+-   fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh 6")
 [side.main] -------------------------- | ----------------------------------------
 - S VisTabGstatusToggle                | :call VisTabGstatusToggle()
 - G VisTabGV                           | :call VisTabGV()
@@ -16,11 +16,12 @@
 -   links                              | $MY_BMK/links.txt
 -   papers                             | $MY_BMK/papers.txt
 [vcmd.fzy] --------------------------- | ----------------------------------------
-- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "bmk.sh bmk_file.txt $HOME/.bmk_file.txt")
--   fzy find_file                      | :call FzyCommand("BmkEditFile", "find-txt.sh -maxdepth 6")
--   fzy vcmd                           | :call FzyCommand("BmkEdit", "bmk.sh vcmd.txt")
--   fzy links                          | :call FzyCommand("BmkOpenURL", "bmk.sh links.txt")
--   fzy papers                         | :call FzyCommand("BmkOpenURL", "bmk.sh papers.txt")
+- r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
+- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
+-   fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh 6")
+-   fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
+-   fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
+-   fzy papers                         | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh papers.txt")
 [vcmd.main] -------------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
 - I WinInitSize                        | :VisWinInitSize
@@ -32,6 +33,7 @@
 - M Memo                               | :Memo
 - H Help                               | :VisHelp
     --- (Develop) -------------------- | ----------------------------------------
+- P ctrlp                              | _Plug_(ctrlp)
 - q VisQuickhl           (C-a)         | :VisQuickhl ??
 - g VisGgrep                           | :VisGgrep ??
 - v VisVimgrep                         | :VisVimgrep ?? *

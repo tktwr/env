@@ -10,9 +10,9 @@ fzy_cmd_filter() {
 
 fzy_arg_bmk() {
   local files="\
-    $MY_BMK/$1 \
+    $MY_ETC/bmk/$1 \
     $MY_COMMON_SETTING/bmk/$1 \
-    $MY_DOTMY/$1 \
+    $MY_DOTMY/bmk/$1 \
     $HOME/.$1 \
     "
   shift
