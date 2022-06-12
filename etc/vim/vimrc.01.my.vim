@@ -88,14 +88,14 @@ let g:cpm_files = [
   \ "$MY_COMMON_SETTING/bmk/ref.txt",
   \ ]
 let g:cpm_titles = {
-  \ 'buffer'      : ['bmk.file & vcmd.main & vcmd.fzy', 'vcmd.sub', 'vcmd.coc', 'ref.main', 'local.bmk.file'],
+  \ 'buffer'      : ['vcmd.fzy & bmk.file & vcmd.main', 'vcmd.sub', 'vcmd.coc', 'ref.main', 'local.bmk.file'],
   \ 'buffer:side' : ['side.fzy & side.main & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'terminal'    : ['local.bmk.dir & tcmd.my', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
+  \ 'terminal'    : ['tcmd.my & local.bmk.dir', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
   \ 'diff'        : ['vcmd.diff'],
   \ 'ft:dirdiff'  : ['vcmd.dirdiff'],
   \ 'ft:git'      : ['vcmd.git'],
   \ 'ft:fugitive' : ['vcmd.fugitive'],
-  \ 'ft:fern'     : ['side.fern & side.fzy & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'ft:fern'     : ['side.fzy & side.fern & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ft:nerdtree' : ['side.fzy & side.main & bmk.dir', 'vcmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
   \ 'ref.terminal' : ['ref.main'],

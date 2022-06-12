@@ -1,14 +1,14 @@
 #!/bin/bash
 
-fzy_bmk_filter() {
-  grep -v '^#' | grep -v '\-\-\-' | fzy | awk -F '|' '{print $2}'
+bmk_pre() {
+  grep -v '^#' | grep -v '\-\-\-'
 }
 
-fzy_cmd_filter() {
-  sed -e 's+> ++' -e 's+<CR>++'
+bmk_post() {
+  awk -F '|' '{print $2}' | sed -e 's+> ++' -e 's+<CR>++'
 }
 
-fzy_arg_bmk() {
+fzy_bmk() {
   local files="\
     $MY_ETC/bmk/$1 \
     $MY_COMMON_SETTING/bmk/$1 \
@@ -17,8 +17,10 @@ fzy_arg_bmk() {
     "
   shift
   files="$files $@"
-  echo $(cat $files 2> /dev/null | fzy_bmk_filter | fzy_cmd_filter)
+  cmd="cat $files 2> /dev/null"
+  echo $(eval $cmd | bmk_pre | fzy | bmk_post)
 }
 
-fzy_arg_bmk "$@"
+#------------------------------------------------------
+fzy_bmk "$@"
 

@@ -62,23 +62,23 @@
     ---------------------------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
 [tcmd.my] ---------------------------- | ----------------------------------------
+- B cd?                                | > cd?<CR>
+- F fd?                                | > fd?<CR>
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
-- F cd?                                | > cd?<CR>
 [tcmd.ext] --------------------------- | ----------------------------------------
--    D?                                | > D?<CR>
--   D2?                                | > D2?<CR>
--    .?                                | > .?<CR>
--    ,?                                | > ,?<CR>
--    ??                                | > ??<CR>
--    x?                                | > x?<CR>
--       vi?                            | > vi?<CR>
--       tc?                            | > tc?<CR>
+-        D?                            | > D?<CR>
+-       D2?                            | > D2?<CR>
+-        x?                            | > x?<CR>
+-        .?                            | > .?<CR>
+-        ,?                            | > ,?<CR>
+-        ??                            | > ??<CR>
+-      cmd?                            | > cmd?<CR>
 -      git?                            | > git?<CR>
 -    links?                            | > links?<CR>
 -   papers?                            | > papers?<CR>
--    fd?                               | > fd?<CR>
--   .fd?                               | > .fd?<CR>
--    ff?                               | > ff?<CR>
--   make?                              | > make?<CR>
+-       vi?                            | > vi?<CR>
+-      vif?                            | > vif?<CR>
+-      .fd?                            | > .fd?<CR>
+-     make?                            | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:

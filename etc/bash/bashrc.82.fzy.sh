@@ -81,10 +81,10 @@ alias  links?='fzy_cmd chrome.sh "fzy_bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "fzy_bmk.sh papers.txt"'
 
 alias     vi?='fzy_cmd vim       "fzy_bmk.sh bmk_file.txt"'
-alias    vif?='fzy_cmd vim       "fzy_file.sh 6"'
+alias    vif?='fzy_cmd vim       "fzy_file.sh"'
 
-alias     fd?='fzy_cmd cd        "fzy_dir.sh 6"'
-alias    .fd?='fzy_cmd pushd     "fzy_dir.sh 6"'
+alias     fd?='fzy_cmd cd        "fzy_dir.sh"'
+alias    .fd?='fzy_cmd pushd     "fzy_dir.sh"'
 
 alias   make?='fzy_cmd make       fzy_make'
 

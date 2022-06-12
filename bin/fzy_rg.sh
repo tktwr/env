@@ -1,21 +1,34 @@
 #!/bin/bash
 
-fzy_arg_rg() {
-  topdir=$(git rev-parse --show-toplevel)
-  cd $topdir
-  rg --vimgrep --hidden "$*" | fzy | awk -F ':' '{print "'"$topdir/"'"$1}'
+cd_git_root() {
+  topdir=$(git rev-parse --show-toplevel 2> /dev/null)
+  if [ -n "$topdir" ]; then
+    cd $topdir
+    topdir="$topdir/"
+  fi
 }
 
-in_git=$(git rev-parse --is-inside-work-tree)
+#------------------------------------------------------
+rg_post() {
+  awk -F ':' '{print $1}'
+}
 
-if [ "$in_git" != 'true' ]; then
-  exit
-fi
+fzy_rg() {
+  cmd="rg --vimgrep --hidden $*"
+
+  p=$(eval $cmd | fzy | rg_post)
+  if [ -n "$p" ]; then
+    p=$(pathconv.sh unix "$p")
+  fi
+  echo $p
+}
+
+#------------------------------------------------------
+cd_git_root
 
 arg=$(prompt.sh 'search pattern' '' "$*")
 
 if [ -n "$arg" ]; then
-  fname=$(fzy_arg_rg "$arg")
-  pathconv.sh unix "$fname"
+  fzy_rg "$arg"
 fi
 
