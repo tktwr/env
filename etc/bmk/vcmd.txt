@@ -1,10 +1,10 @@
 [side.fzy] --------------------------- | ----------------------------------------
-- B fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
-- F fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
+- B fzy bmk_dir          (C-u)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+- F fzy find_dir         (C-y)         | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
 [side.fern] -------------------------- | ----------------------------------------
 - V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
-- B VisFernBmkItem                     | :call VisFernBmkItem()
+-   bmk save             (C-b)         | :call VisFernBmkItem()
 - Y yank an abs path                   | _Plug_(fern-action-yank)
 [side.main] -------------------------- | ----------------------------------------
 - S VisTabGstatusToggle                | :call VisTabGstatusToggle()
@@ -16,15 +16,14 @@
 -   links                              | $MY_BMK/links.txt
 -   papers                             | $MY_BMK/papers.txt
 [vcmd.fzy] --------------------------- | ----------------------------------------
-- B fzy bmk_file                       | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
-- F fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh")
+- B fzy bmk_file         (C-u)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
+- F fzy find_file        (C-y)         | :call FzyCommand("BmkEditFile", "fzy_file.sh")
 - r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
 -   fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
--   fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
--   fzy papers                         | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh papers.txt")
+- m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
+-   bmk save             (C-b)         | :call CpmSave()
 [vcmd.main] -------------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
-- I WinInitSize                        | :VisWinInitSize
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
 - D Fern                               | :VisFernDrawer %:p:h
@@ -33,11 +32,11 @@
 - M Memo                               | :Memo
 - H Help                               | :VisHelp
     --- (Develop) -------------------- | ----------------------------------------
-- q VisQuickhl           (C-a)         | :VisQuickhl ??
-- g VisGgrep                           | :VisGgrep ??
-- v VisVimgrep                         | :VisVimgrep ?? *
-- A MyVimgrepAll                       | :call MyVimgrepAll('??')
-- ] VisTjumpPrompt                     | :call VisTjumpPrompt()
+- q quickhl              (C-a)         | :VisQuickhl ??
+- g git grep                           | :VisGgrep ??
+- v vim grep here                      | :VisVimgrep ?? *
+- A vim grep all                       | :call MyVimgrepAll('??')
+- ] tjump                              | :call VisTjumpPrompt()
     --- (External) ------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
 - O BmkOpenFile                        | :call BmkOpenFile('%:p')
@@ -49,7 +48,6 @@
     ---------------------------------- | ----------------------------------------
 - C VisSendCdE2T                       | :VisSendCdE2T
 - X Wx                                 | :Wx ?
-- B CpmSave                            | :call CpmSave()
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
@@ -81,6 +79,8 @@
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
 [vcmd.ext] --------------------------- | ----------------------------------------
+-   fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
+-   fzy papers                         | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh papers.txt")
 - P ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?
 -   VisBufDelete                       | :VisBufDelete

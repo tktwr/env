@@ -6,7 +6,7 @@ set path+=$QTDIR/include
 set makeprg=mymake.sh
 
 if executable('rg')
-  let &grepprg = 'rg --vimgrep --hidden'
+  let &grepprg = 'rg --vimgrep'
   set grepformat=%f:%l:%c:%m
 endif
 
@@ -67,8 +67,8 @@ let g:bmk_open_file_prog = "vscode.sh"
 " cpm
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
-let g:cpm_user_bmk_dir = '$MY_DOTMY/bmk_dir.txt'
-let g:cpm_user_bmk_file = '$MY_DOTMY/bmk_file.txt'
+let g:cpm_user_bmk_dir = '$MY_DOTMY/bmk/bmk_dir.txt'
+let g:cpm_user_bmk_file = '$MY_DOTMY/bmk/bmk_file.txt'
 let g:cpm_files = [
   \ "$MY_BMK/bmk_dir.txt",
   \ "$MY_BMK/bmk_file.txt",

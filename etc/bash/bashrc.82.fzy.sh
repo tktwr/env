@@ -33,20 +33,6 @@ fzy_hist() {
   echo $(history 40 | fzy | awk '{print $1}')
 }
 
-memo() {
-  tags_files="\
-  -t=$MY_REMOTE_CONFIG/memo/tags.memo \
-  -t=$MY_REMOTE_CONFIG/samples/tags.memo \
-  -t=$MY_LOCAL_CONFIG/memo/tags.memo \
-  -t=$MY_DIARY/tags.memo \
-  "
-  eval "memo.sh $tags_files $@"
-}
-
-fzy_memo() {
-  echo $(memo --fzy | fzy | awk '{print $1}')
-}
-
 #------------------------------------------------------
 # fzy_cmd
 #------------------------------------------------------
@@ -89,5 +75,4 @@ alias    .fd?='fzy_cmd pushd     "fzy_dir.sh"'
 alias   make?='fzy_cmd make       fzy_make'
 
 #alias     h?='fzy_cmd "!"        fzy_hist'
-#alias  memo?='fzy_cmd memo       fzy_memo'
 

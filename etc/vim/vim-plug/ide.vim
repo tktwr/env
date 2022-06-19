@@ -22,7 +22,6 @@ endif
 Plug 'tktwr/vim-winbuf-menu'
 Plug 'tktwr/vim-bmk-menu'
 Plug 'tktwr/vim-ide-style'
-Plug 'tktwr/vim-memo'
 Plug 'thinca/vim-ref'
 
 "------------------------------------------------------
@@ -50,10 +49,15 @@ let g:vis_unexpand_env_list = [
   \ '$MY_DOWNLOADS',
   \ ]
 
+"------------------------------------------------------
+" memo
+"------------------------------------------------------
 let g:memo_tags_files = [
-  \ "$MY_REMOTE_CONFIG/memo/tags.memo",
-  \ "$MY_REMOTE_CONFIG/samples/tags.memo",
+  \ "$MY_MEMO/tags.memo",
+  \ "$MY_SAMPLES/tags.memo",
   \ "$MY_LOCAL_CONFIG/memo/tags.memo",
   \ "$MY_DIARY/tags.memo",
   \ ]
+
+Plug 'tktwr/vim-memo'
 

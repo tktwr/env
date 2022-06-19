@@ -14,7 +14,7 @@ rg_post() {
 }
 
 fzy_rg() {
-  cmd="rg --vimgrep --hidden $*"
+  cmd="rg --vimgrep $*"
 
   p=$(eval $cmd | fzy | rg_post)
   if [ -n "$p" ]; then

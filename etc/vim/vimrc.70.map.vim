@@ -45,7 +45,7 @@ nnoremap ==      zi
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
-"nnoremap <silent> <C-B>   :echo 'C-B'<CR>
+ nnoremap <silent> <C-B>   :call CpmSave()<CR>
 "nnoremap <silent> <C-C>   :echo 'C-C'<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
@@ -64,11 +64,11 @@ nnoremap ==      zi
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
  nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nnoremap <silent> <C-U>   :silent call WblNext()<CR>
+ nnoremap <silent> <C-U>   :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :echo<CR>
- nnoremap <silent> <C-Y>   :silent call WblPrev()<CR>
+ nnoremap <silent> <C-Y>   :call FzyCommand("BmkEditFile", "fzy_file.sh")<CR>
 "nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
 
  nnoremap <C-;>   <C-W>:
