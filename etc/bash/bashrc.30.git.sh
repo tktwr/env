@@ -184,11 +184,17 @@ git-reset-last() {
 # git (push/pull/merge/rebase)
 #------------------------------------------------------
 git-push-origin() {
-  git push origin $(git-branch-name)
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git push origin $br
+  fi
 }
 
 git-pull-origin() {
-  git pull origin $(git-branch-name)
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git pull origin $br
+  fi
 }
 
 git-pull-no-commit() {
@@ -196,7 +202,10 @@ git-pull-no-commit() {
 }
 
 git-rebase-origin() {
-  git rebase origin/$(git-branch-name)
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git rebase origin/$br
+  fi
 }
 
 git-rebase-abort() {
@@ -208,15 +217,24 @@ git-merge-abort() {
 }
 
 git-merge-no-ff() {
-  git merge --no-ff "$@"
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git merge --no-ff $br
+  fi
 }
 
 git-merge-no-commit() {
-  git merge --no-commit "$@"
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git merge --no-commit $br
+  fi
 }
 
 git-merge-no-commit-origin() {
-  git merge --no-commit origin/$(git-branch-name)
+  br=$(prompt.sh 'branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git merge --no-commit origin/$br
+  fi
 }
 
 #------------------------------------------------------
