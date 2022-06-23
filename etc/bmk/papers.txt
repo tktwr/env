@@ -1,6 +1,4 @@
 [papers] --------------------------------                                                                              | ----------------------------------------
--   Physically Based Rendering in Filament                                                                             | https://google.github.io/filament/Filament.md.html
--   Filament [github]                                                                                                  | https://github.com/google/filament
 -   project-asura.com: 超雑訳                                                                                          | http://project-asura.com/blog/?s=%E8%B6%85%E9%9B%91%E8%A8%B3
 -   超雑訳 A Multiple-Scattering Microfacet Model for Real-Time Image-based Lighting                                   | http://project-asura.com/blog/archives/5850
 -   超雑訳 Real Shading in Unreal Engine 4                                                                             | http://project-asura.com/blog/archives/3124
@@ -12,6 +10,18 @@
 -   超雑訳 [Disney BRDF] Physically Based Shading at Disney                                                            | http://project-asura.com/blog/archives/1972
 -   超雑訳 Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                         | http://project-asura.com/blog/archives/4181
 -   SIGGRAPH2019: Advances in Real-Time Rendering in Games                                                             | https://advances.realtimerendering.com/s2019/index.htm
+    --- [Textbook] ------------------------                                                                            | ----------------------------------------
+-   PBRT                                                                                                               | https://pbr-book.org/3ed-2018/contents
+-   Physically Based Rendering in Filament                                                                             | https://google.github.io/filament/Filament.md.html
+-   Filament [github]                                                                                                  | https://github.com/google/filament
+-   Learn OpenGL                                                                                                       | https://learnopengl.com/
+-   Learn OpenGL [github]                                                                                              | https://github.com/JoeyDeVries/LearnOpenGL
+-   Enterprise PBR Shading Model                                                                                       | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
+-   Adobe: THE PBR GUIDE - PART 1                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
+-   Adobe: THE PBR GUIDE - PART 2                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
+-   GPU Gems 3                                                                                                         | https://developer.nvidia.com/gpugems/gpugems3/foreword
+-     Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                                           | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
+-     Chapter 24. The Importance of Being Linear                                                                       | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
     --- [DR] ------------------------                                                                                  | ----------------------------------------
 -   Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                    | https://arxiv.org/abs/1904.01786
 -     Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                 | https://github.com/ShichenLiu/SoftRas
@@ -35,10 +45,7 @@
     --- [BSDF] -----------------------------                                                                           | ----------------------------------------
 -   SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                              | https://blog.selfshadow.com/publications/s2015-shading-course/
 -   SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                              | https://blog.selfshadow.com/publications/s2017-shading-course/
--   Enterprise PBR Shading Model                                                                                       | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
 -   Image Based Lighting with Multiple Scattering                                                                      | https://bruop.github.io/ibl/
--   Adobe: THE PBR GUIDE - PART 1                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
--   Adobe: THE PBR GUIDE - PART 2                                                                                      | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
 -   Lafortune BRDF: Non-linear approximation of reflectance functions                                                  | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
 -     Reflectance Data                                                                                                 | http://www.graphics.cornell.edu/online/measurements/reflectance/
 -   Efficient BRDF Importance Sampling Using a Factored Representation                                                 | https://gfx.cs.princeton.edu/proj/brdf/
@@ -46,6 +53,7 @@
     --- [SSS] ------------------------------                                                                           | ----------------------------------------
 -   Real-time subsurface scattering with single pass variance-guided adaptive importance sampling                      | https://thisistian.github.io/publication/real-time-subsurface-with-adaptive-sampling/
 -   Separable Subsurface Scattering                                                                                    | http://www.iryoku.com/separable-sss/
+-   A Practical Model for Subsurface Light Transport                                                                   | https://graphics.stanford.edu/papers/bssrdf/
     --- [Real-Time Rendering] ------------------------------                                                           | ----------------------------------------
 -   Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -   SIGGRAPH 2018 Course: Advances in Real-Time Rendering in Games                                                     | https://advances.realtimerendering.com/s2018/index.htm
@@ -62,9 +70,6 @@
 -   ゲームグラフィックス特論 A / B                                                                                     | https://tokoik.github.io/gg/
 -   NVISII - NVIDIA Scene Imaging Interface                                                                            | https://github.com/owl-project/NVISII
 -   PFM Portable FloatMap Image Format                                                                                 | http://www.pauldebevec.com/Research/HDR/PFM/
--   GPU Gems 3                                                                                                         | https://developer.nvidia.com/gpugems/gpugems3/foreword
--     Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                                           | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
--     Chapter 24. The Importance of Being Linear                                                                       | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
     --- [SDK] ------------------------                                                                                 | ----------------------------------------
 -   4dface                                                                                                             | https://www.4dface.io/
 -   4dface (github)                                                                                                    | https://github.com/patrikhuber/4dface

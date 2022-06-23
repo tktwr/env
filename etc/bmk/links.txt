@@ -88,8 +88,6 @@
 -     glTF viewer (new)                             | https://github.com/KhronosGroup/glTF-Sample-Viewer
 - V   glTF-Sample-Viewer                            | https://github.khronos.org/glTF-Sample-Viewer-Release/
 -     glTF-Sample-Models                            | https://github.com/KhronosGroup/glTF-Sample-Models
--   Learn OpenGL                                    | https://learnopengl.com/
--   Learn OpenGL (github)                           | https://github.com/JoeyDeVries/LearnOpenGL
 -   OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
     ------------------------------------            | ----------------------------------------
 -   VulkanSDK                                       | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
