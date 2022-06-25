@@ -58,11 +58,20 @@ func s:MyAddDate(date)
   call setline('.', l:str)
 endfunc
 
-func s:MyMakeLink(prefix)
+func MyMakeLink(prefix)
   let l:start = line('.')
   let l:end = l:start + 1
   let l:line = getline(start, end)
-  let l:str = a:prefix.'['.l:line[0].']('.l:line[1].')'
+  let l:str = printf("%s[%s](%s)", a:prefix, l:line[0], l:line[1])
+  call setline('.', l:str)
+  execute l:end 'delete _'
+endfunc
+
+func MyMakeBmk(prefix)
+  let l:start = line('.')
+  let l:end = l:start + 1
+  let l:line = getline(start, end)
+  let l:str = printf("%s %s | %s", a:prefix, l:line[0], l:line[1])
   call setline('.', l:str)
   execute l:end 'delete _'
 endfunc
@@ -76,8 +85,8 @@ command MyAddTime                call s:MyAddTime()
 command -nargs=? MyAddDate       call s:MyAddDate(<f-args>)
 command MyUpdateDateHere         call s:MyAddDate(expand("<cWORD>"))
 
-command MyMakeLink               call s:MyMakeLink('- ')
-command MyMakeImageLink          call s:MyMakeLink('!')
+command MyMakeLink               call MyMakeLink('- ')
+command MyMakeImageLink          call MyMakeLink('!')
 
 "------------------------------------------------------
 " edit.autocmd
