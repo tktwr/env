@@ -23,17 +23,17 @@
 -     Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                                           | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
 -     Chapter 24. The Importance of Being Linear                                                                       | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
     --- [DR] ------------------------                                                                                  | ----------------------------------------
--   Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                    | https://arxiv.org/abs/1904.01786
--     Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                 | https://github.com/ShichenLiu/SoftRas
--   Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                               | https://arxiv.org/abs/2007.08501
--     PyTorch3D [github]                                                                                               | https://github.com/facebookresearch/pytorch3d
+-   nvdiffrec                                                                                                          | https://nvlabs.github.io/nvdiffrec/
+-   nvdiffmodeling                                                                                                     | https://github.com/NVlabs/nvdiffmodeling
 -   nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [arxiv]                                | https://arxiv.org/abs/2011.03277
 -     nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [github]                             | https://github.com/NVlabs/nvdiffrast
--   nvdiffmodeling                                                                                                     | https://github.com/NVlabs/nvdiffmodeling
--   nvdiffrec                                                                                                          | https://nvlabs.github.io/nvdiffrec/
+-   Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                               | https://arxiv.org/abs/2007.08501
+-     PyTorch3D [github]                                                                                               | https://github.com/facebookresearch/pytorch3d
+-   Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                    | https://arxiv.org/abs/1904.01786
+-     Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                 | https://github.com/ShichenLiu/SoftRas
     --- [NeRF] ------------------------                                                                                | ----------------------------------------
 -   Instant Neural Graphics Primitives with a Multiresolution Hash Encoding                                            | https://nvlabs.github.io/instant-ngp/
--   Instant Neural Graphics Primitives (github)                                                                        | https://github.com/NVlabs/instant-ngp
+-   Instant Neural Graphics Primitives [github]                                                                        | https://github.com/NVlabs/instant-ngp
 -   HVH: Learning a Hybrid Neural Volumetric Representation for Dynamic Hair Performance Capture                       | https://ziyanw1.github.io/hvh/
 -   Mixture of Volumetric Primitives for Efficient Neural Rendering                                                    | https://arxiv.org/abs/2103.01954
 -   NeRF-Tex: Neural Reflectance Field Textures                                                                        | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
