@@ -9,10 +9,10 @@
 - L links                                     | $MY_BMK/links.txt
 - P papers                                    | $MY_BMK/papers.txt
 [bmk.file.ext] -----------------------        | ----------------------------------------
-- B bmk_file (local)                          | $MY_COMMON_SETTING/bmk/bmk_file.txt
-- w engword                                   | $MY_CONFIG/local/eng/eng.txt
-- e eng                                       | $MY_LOCAL_CONFIG/memo/eng.md.html
-- m math                                      | $MY_LOCAL_CONFIG/memo/math.md.html
+-   bmk_file (local)                          | $MY_COMMON_SETTING/bmk/bmk_file.txt
+-   engword                                   | $MY_CONFIG/local/eng/eng.txt
+-   eng                                       | $MY_LOCAL_CONFIG/memo/eng.md.html
+-   math                                      | $MY_LOCAL_CONFIG/memo/math.md.html
     ----------------------------------        | ----------------------------------------
 -   Memo  Index                               | $MY_REMOTE_CONFIG/memo/index.html
 -   Memo  Index (local)                       | $MY_LOCAL_CONFIG/memo/index.html

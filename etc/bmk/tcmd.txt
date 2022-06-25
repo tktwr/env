@@ -62,8 +62,8 @@
     ---------------------------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
 [tcmd.my] ---------------------------- | ----------------------------------------
-- B cd?                                | > cd?<CR>
-- F fd?                                | > fd?<CR>
+- D cd?                                | > cd?<CR>
+- Y fd?                                | > fd?<CR>
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
 [tcmd.ext] --------------------------- | ----------------------------------------
 -        D?                            | > D?<CR>

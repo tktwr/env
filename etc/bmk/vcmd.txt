@@ -1,32 +1,28 @@
 [side.fzy] --------------------------- | ----------------------------------------
-- B fzy bmk_dir          (C-u)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
-- F fzy find_dir         (C-y)         | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
+- D fzy bmk_dir          (C-u)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+- Y fzy find_dir         (C-y)         | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
+-   bmk save                           | :call VisFernBmkItem()
 [side.fern] -------------------------- | ----------------------------------------
 - V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
--   bmk save             (C-b)         | :call VisFernBmkItem()
-- Y yank an abs path                   | _Plug_(fern-action-yank)
+-   yank an abs path                   | _Plug_(fern-action-yank)
 [side.main] -------------------------- | ----------------------------------------
-- S VisTabGstatusToggle                | :call VisTabGstatusToggle()
-- G VisTabGV                           | :call VisTabGV()
-    ---------------------------------- | ----------------------------------------
--   Memo                               | :Memo
--   todo                               | $MY_DIARY/todo.md.html
--   bmk_dir                            | $MY_BMK/bmk_dir.txt
--   links                              | $MY_BMK/links.txt
--   papers                             | $MY_BMK/papers.txt
+-   VisTabGstatusToggle                | :call VisTabGstatusToggle()
+-   VisTabGV                           | :call VisTabGV()
 [vcmd.fzy] --------------------------- | ----------------------------------------
-- B fzy bmk_file         (C-u)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
-- F fzy find_file        (C-y)         | :call FzyCommand("BmkEditFile", "fzy_file.sh")
-- r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
--   fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
-- m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
--   bmk save             (C-b)         | :call CpmSave()
+- B fzy bmk_file         (C-b)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
+- D fzy bmk_dir          (C-u)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_dir.txt")
+- Y fzy find_file        (C-y)         | :call FzyCommand("BmkEditFile", "fzy_file.sh")
+-   fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
+- C fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
+- M fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
+-   bmk save                           | :call CpmSave()
 [vcmd.main] -------------------------- | ----------------------------------------
 - E IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
-- D Fern                               | :VisFernDrawer %:p:h
+- _ Cd                                 | :VisSendCdE2T
+- F Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :VisTerm
 - M Memo                               | :Memo
@@ -46,7 +42,6 @@
 -   yank                   (Y)         | "*y
 - 1 MyTabBar                           | :MyTabBar
     ---------------------------------- | ----------------------------------------
-- C VisSendCdE2T                       | :VisSendCdE2T
 - X Wx                                 | :Wx ?
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
@@ -66,7 +61,7 @@
     ---------------------------------- | ----------------------------------------
 - : MyTabColon                         | :MyTabColon
 - , MyTabComma                         | :MyTabComma
-- . MyTabDots                          | :MyTabDots
+-   MyTabDots                          | :MyTabDots
 - = MyTabEqual                         | :MyTabEqual
     ---------------------------------- | ----------------------------------------
 - L MyMakeLink                         | :MyMakeLink
