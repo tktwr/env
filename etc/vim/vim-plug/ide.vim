@@ -8,7 +8,7 @@ func MyVimgrepAll(word)
   endif
 
   lcd %:h
-  silent exec "vimgrep" word '$MY_BMK/*.txt' '$MY_BIN/*.sh' '$MY_BASH/*.sh' '$MY_VIM/*.vim' '$MY_VIM/plugin/*.vim' '$MY_VIM/plugged/vim-ide-style/**/*.vim' '$MY_VIM/plugged/vim-bmk-menu/**/*.vim' '$MY_VIM/plugged/vim-winbuf-menu/**/*.vim'
+  silent exec "vimgrep" word '$MY_BMK/*' '$MY_BIN/**/*' '$MY_BASH/*' '$MY_VIM/*' '$MY_VIM/*/*' '$MY_VIM/plugged/vim-ide-style/**/*' '$MY_VIM/plugged/vim-bmk-menu/**/*' '$MY_VIM/plugged/vim-winbuf-menu/**/*' '$MY_VIM/plugged/vim-memo/**/*'
 endfunc
 
 "------------------------------------------------------

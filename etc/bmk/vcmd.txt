@@ -18,7 +18,7 @@
 - M fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
 -   bmk save                           | :call CpmSave()
 [vcmd.main] -------------------------- | ----------------------------------------
-- E IDE                                | :VisIDE
+- I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
 - _ Cd                                 | :VisSendCdE2T
