@@ -51,6 +51,7 @@ alias f..='vifm -c "TwoCol" . .'
 alias wget-page='wget -N -k -p -L -np'
 alias wget-page1='wget -N -k -p -L -np -r -l1'
 alias wget-page2='wget -N -k -p -L -np -r -l2'
+alias wget-local-all='wget -N -k -p -L -np -r --no-proxy'
 
 # misc
 alias www='w3m -B'

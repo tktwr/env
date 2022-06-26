@@ -29,6 +29,10 @@ class Render():
         scene = bpy.context.scene
         scene.view_settings.view_transform = tonemap
 
+    def set_exposure(self, exposure):
+        scene = bpy.context.scene
+        scene.view_settings.exposure = exposure
+
     def render(self, cam_name, light_names, env_file, env_intensity, rot_deg, out_file):
         scene = bpy.context.scene
         world = bpy.data.worlds["World"]
