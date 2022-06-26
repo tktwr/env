@@ -40,7 +40,7 @@
     --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
-- 1 MyTabBar                           | :MyTabBar
+- 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
 - X Wx                                 | :Wx ?
 - R CpmReload                          | :CpmReload
@@ -59,14 +59,17 @@
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
 -   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
-- : MyTabColon                         | :MyTabColon
-- , MyTabComma                         | :MyTabComma
--   MyTabDots                          | :MyTabDots
-- = MyTabEqual                         | :MyTabEqual
+- : EditTabColon                       | :EditTabColon
+- , EditTabComma                       | :EditTabComma
+-   EditTabDots                        | :EditTabDots
+- = EditTabEqual                       | :EditTabEqual
     ---------------------------------- | ----------------------------------------
-- L MyMakeLink                         | :MyMakeLink
-- I MyMakeImageLink                    | :MyMakeImageLink
-- p MyTogglePathFormat                 | :MyTogglePathFormat
+- L EditMdLink                         | :call EditMdLink()
+- I EditMdImgLink                      | :call EditMdImgLink()
+-   EditHtmlLink                       | :call EditHtmlLink()
+-   EditHtmlImgLink                    | :call EditHtmlImgLink()
+-   EditBmkLink                        | :call EditBmkLink()
+- p EditTogglePathFormat               | :call EditTogglePathFormat()
     ---------------------------------- | ----------------------------------------
 - c VisSendCurrCmdE2T                  | :call VisSendCurrCmdE2T()
 -   VisWinInfo                         | :VisWinInfo

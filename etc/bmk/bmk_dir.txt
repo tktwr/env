@@ -9,13 +9,15 @@
 -   user-local/                        | $USER_LOCAL/
 -   user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
-- K Desktop/                           | $MY_DESKTOP/
-- N Downloads/                         | $MY_DOWNLOADS/
-    ---------------------------------- | ----------------------------------------
+-   HOME/                              | $HOME/
 - y .my/                               | $MY_DOTMY/
+    ---------------------------------- | ----------------------------------------
+-   WIN_HOME/                          | $SYS_WIN_HOME/
 - c common/                            | $MY_COMMON_SETTING/
 - C MyConfig/                          | $MY_CONFIG/
 - S MyShare/                           | $MY_SHARE/
+- K Desktop/                           | $MY_DESKTOP/
+- N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/

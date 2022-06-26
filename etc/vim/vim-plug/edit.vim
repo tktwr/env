@@ -1,11 +1,11 @@
 "------------------------------------------------------
 Plug 'godlygeek/tabular'
 
-command MyTabBar             Tabularize /|
-command MyTabColon           Tabularize /:
-command MyTabComma           Tabularize /,
-command MyTabDots            Tabularize /\.\.\.
-command MyTabEqual           Tabularize /=
+command EditTabBar             Tabularize /|
+command EditTabColon           Tabularize /:
+command EditTabComma           Tabularize /,
+command EditTabDots            Tabularize /\.\.\.
+command EditTabEqual           Tabularize /=
 
 "------------------------------------------------------
 Plug 'tpope/vim-repeat'

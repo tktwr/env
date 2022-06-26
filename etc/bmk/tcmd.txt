@@ -72,12 +72,12 @@
 -        .?                            | > .?<CR>
 -        ,?                            | > ,?<CR>
 -        ??                            | > ??<CR>
+-       vi?                            | > vi?<CR>
 -      cmd?                            | > cmd?<CR>
 -      git?                            | > git?<CR>
 -    links?                            | > links?<CR>
 -   papers?                            | > papers?<CR>
--       vi?                            | > vi?<CR>
--      vif?                            | > vif?<CR>
+-       ff?                            | > ff?<CR>
 -      .fd?                            | > .fd?<CR>
 -     make?                            | > make?<CR>
 
