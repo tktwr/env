@@ -16,6 +16,7 @@
 -   fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
 - C fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
 - m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
+- G fzy tags                           | :call FzyCommand("VisTjump",    "fzy_tags.sh")
 -   bmk save                           | :call CpmSave()
 [vcmd.main] -------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
