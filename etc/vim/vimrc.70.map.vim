@@ -65,14 +65,11 @@ nnoremap ==      zi
  nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
  nnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
- tnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :echo<CR>
  nnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
- tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
  nnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
- tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 
  nnoremap <C-;>   <C-W>:
  nnoremap <C-.>   :VisLcdHere<CR>
@@ -83,16 +80,17 @@ nnoremap ==      zi
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
-tnoremap <C-G>   <C-L>
-tnoremap <C-;>   <C-W>:
-
+ tnoremap <silent> <C-G>   <C-L>
 " go to Terminal-Normal
-tnoremap <C-O>   <C-W>N
-
+ tnoremap <silent> <C-O>   <C-W>N
 " paste register
-tnoremap <C-V>   <C-W>""
+ tnoremap <silent> <C-V>   <C-W>""
+ tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
+ tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 
-tnoremap <ScrollWheelUp> <C-W>N<ScrollWheelUp>
+ tnoremap <silent> <C-;>   <C-W>:
+
+ tnoremap <ScrollWheelUp>  <C-W>N<ScrollWheelUp>
 
 "------------------------------------------------------
 " vmap
@@ -107,15 +105,14 @@ vnoremap A       y:'<,'>w !sumcol.py<CR>
 "------------------------------------------------------
 " clipboard
 "------------------------------------------------------
-nnoremap ,p      "*p
-vnoremap Y       "*y
-
 func YankUrlToClipboard()
   let url = expand(expand("<cfile>"))
   call setreg('*', url)
   echo url
 endfunc
 
+nnoremap ,p      "*p
+vnoremap Y       "*y
 nnoremap Y       :call YankUrlToClipboard()<CR>
 
 "------------------------------------------------------
