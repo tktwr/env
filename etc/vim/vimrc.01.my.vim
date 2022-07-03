@@ -69,35 +69,22 @@ let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<C-Space>"
 let g:cpm_user_bmk_dir = '$MY_DOTMY/bmk/bmk_dir.txt'
 let g:cpm_user_bmk_file = '$MY_DOTMY/bmk/bmk_file.txt'
-let g:cpm_files = [
-  \ "$MY_BMK/bmk_dir.txt",
-  \ "$MY_BMK/bmk_file.txt",
-  \ "$MY_BMK/tcmd.txt",
-  \ "$MY_BMK/tcmd_git.txt",
-  \ "$MY_BMK/vcmd.txt",
-  \ "$MY_BMK/links.txt",
-  \ "$MY_BMK/papers.txt",
-  \ "$MY_BMK/ref.txt",
-  \ "$MY_COMMON_SETTING/bmk/bmk_dir.txt",
-  \ "$MY_COMMON_SETTING/bmk/bmk_file.txt",
-  \ "$MY_COMMON_SETTING/bmk/tcmd.txt",
-  \ "$MY_COMMON_SETTING/bmk/tcmd_git.txt",
-  \ "$MY_COMMON_SETTING/bmk/vcmd.txt",
-  \ "$MY_COMMON_SETTING/bmk/links.txt",
-  \ "$MY_COMMON_SETTING/bmk/papers.txt",
-  \ "$MY_COMMON_SETTING/bmk/ref.txt",
-  \ ]
+let g:cpm_files = 
+  \ split(glob("$MY_BMK/*.txt")) +
+  \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
-  \ 'buffer'      : ['vcmd.fzy & bmk.file & vcmd.main', 'vcmd.sub', 'vcmd.coc', 'ref.main', 'local.bmk.file'],
-  \ 'buffer:side' : ['side.fzy & side.main & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'terminal'    : ['tcmd.my & local.bmk.dir', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
-  \ 'diff'        : ['vcmd.diff'],
-  \ 'ft:dirdiff'  : ['vcmd.dirdiff'],
-  \ 'ft:git'      : ['vcmd.git'],
-  \ 'ft:fugitive' : ['vcmd.fugitive'],
-  \ 'ft:fern'     : ['side.fzy & side.fern & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'ft:nerdtree' : ['side.fzy & side.main & bmk.dir', 'vcmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'ref'         : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
-  \ 'ref.terminal' : ['ref.main'],
+  \ 'default'          : ['bmk.file & vcmd.main', 'vcmd.sub', 'vcmd.coc', 'local.bmk.file'],
+  \ 'default.terminal' : ['local.bmk.dir', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
+  \ 'default.diff'     : ['vcmd.diff'],
+  \ 'default.dirdiff'  : ['vcmd.dirdiff'],
+  \ 'default.git'      : ['vcmd.git'],
+  \ 'default.fugitive' : ['vcmd.fugitive'],
+  \ 'default.fern'     : ['side.fern & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'default.nerdtree' : ['side.main & bmk.dir', 'vcmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'ref'              : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
+  \ 'ref.terminal'     : ['ref.main'],
+  \ 'fzy'              : ['fzy'],
+  \ 'fzy.fern'         : ['fzy.fern'],
+  \ 'fzy.terminal'     : ['fzy.terminal'],
   \ }
 

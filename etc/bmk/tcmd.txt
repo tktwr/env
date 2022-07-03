@@ -1,11 +1,11 @@
 [tcmd.main] -------------------------- | ----------------------------------------
--   git graph              (G)         | > G<CR>
--   git graph --all       (GA)         | > GA<CR>
--   VisGstatusToggle      (GS)         | > GS<CR>
--   MyGV                  (GV)         | > GV<CR>
+- L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
+-   G                                  | > G<CR>
+-   GA                                 | > GA<CR>
+-   GS                                 | > GS<CR>
+-   GV                                 | > GV<CR>
     ---------------------------------- | ----------------------------------------
--   IDE                    (E)         | > E<CR>
--   WinInitSize            (I)         | > I<CR>
+-   IDE                    (I)         | > I<CR>
 -   Fern                   (D)         | > D<CR>
 -   Editor                 (N)         | > N<CR>
 -   Term                   (T)         | > T<CR>
@@ -61,24 +61,6 @@
 -   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
     ---------------------------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
-[tcmd.my] ---------------------------- | ----------------------------------------
-- D cd?                                | > cd?<CR>
-- Y fd?                                | > fd?<CR>
-- L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
 [tcmd.ext] --------------------------- | ----------------------------------------
--        D?                            | > D?<CR>
--       D2?                            | > D2?<CR>
--        x?                            | > x?<CR>
--        .?                            | > .?<CR>
--        ,?                            | > ,?<CR>
--        ??                            | > ??<CR>
--       vi?                            | > vi?<CR>
--      cmd?                            | > cmd?<CR>
--      git?                            | > git?<CR>
--    links?                            | > links?<CR>
--   papers?                            | > papers?<CR>
--       ff?                            | > ff?<CR>
--      .fd?                            | > .fd?<CR>
--     make?                            | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:

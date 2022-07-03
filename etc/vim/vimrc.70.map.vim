@@ -64,12 +64,15 @@ nnoremap ==      zi
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>
  nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>
- nnoremap <silent> <C-U>   :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_dir.txt")<CR>
+ nnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
+ tnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>
  nnoremap <silent> <C-X>   :echo<CR>
- nnoremap <silent> <C-Y>   :call FzyCommand("BmkEditFile", "fzy_file.sh")<CR>
-"nnoremap <silent> <C-Z>   :echo 'C-Z'<CR>
+ nnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
+ tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
+ nnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
+ tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 
  nnoremap <C-;>   <C-W>:
  nnoremap <C-.>   :VisLcdHere<CR>
@@ -164,10 +167,7 @@ nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 
 nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
-tnoremap <silent> <F1>       <C-W>:CpmOpen ref.terminal<CR>
-
-nnoremap <silent> <C-Z>      <C-W>:CpmOpen ref<CR>
-tnoremap <silent> <C-Z>      <C-W>:CpmOpen ref.terminal<CR>
+tnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
 
 nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
 tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
