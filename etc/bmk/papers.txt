@@ -36,7 +36,7 @@
 -   Instant Neural Graphics Primitives [github]                                                                        | https://github.com/NVlabs/instant-ngp
 -   HVH: Learning a Hybrid Neural Volumetric Representation for Dynamic Hair Performance Capture                       | https://ziyanw1.github.io/hvh/
 -   Mixture of Volumetric Primitives for Efficient Neural Rendering                                                    | https://arxiv.org/abs/2103.01954
--   NeRF-Tex: Neural Reflectance Field Textures                                                                        | https://research.nvidia.com/publication/2021-06_NeRF-Tex%3A-Neural-Reflectance
+-   NeRF-Tex: Neural Reflectance Field Textures                                                                        | https://research.nvidia.com/publication/2021-06_nerf-tex-neural-reflectance-field-textures
 -   NeRF: Neural Radiance Fields                                                                                       | https://www.matthewtancik.com/nerf
     --- [AI Filter] ------------------------                                                                           | ----------------------------------------
 -   Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/

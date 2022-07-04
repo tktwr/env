@@ -49,7 +49,7 @@
     ---------------------------------- | ----------------------------------------
 - : EditTabColon                       | :EditTabColon
 - , EditTabComma                       | :EditTabComma
--   EditTabDots                        | :EditTabDots
+- . EditTabDots                        | :EditTabDots
 - = EditTabEqual                       | :EditTabEqual
     ---------------------------------- | ----------------------------------------
 - L EditMdLink                         | :call EditMdLink()

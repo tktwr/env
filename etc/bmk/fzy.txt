@@ -1,33 +1,38 @@
 [fzy] -------------------------------- | ----------------------------------------
 - f fzy bmk_file         (C-b)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
-- d fzy bmk_dir                        | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_dir.txt")
 - F fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh")
+- d fzy bmk_dir                        | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_dir.txt")
 - D fzy find_dir                       | :call FzyCommand("BmkEditFile", "fzy_dir.sh")
+    ---------------------------------- | ----------------------------------------
 - r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
 - c fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
 - m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
 - t fzy tags                           | :call FzyCommand("VisTjump",    "fzy_tags.sh")
--   bmk save                           | :call CpmSave()
+    ---------------------------------- | ----------------------------------------
+- B bmk save                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
 - d fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
 - D fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
--   bmk save                           | :call VisFernBmkItem()
+    ---------------------------------- | ----------------------------------------
+- B bmk save                           | :call VisFernBmkItem()
 [fzy.terminal] ----------------------- | ----------------------------------------
 - f vi?                                | > vi?<CR>
-- d cd?                                | > cd?<CR>
 - F ff?                                | > ff?<CR>
+- d cd?                                | > cd?<CR>
 - D fd?                                | > fd?<CR>
--        D?                            | > D?<CR>
--       D2?                            | > D2?<CR>
--        x?                            | > x?<CR>
--        .?                            | > .?<CR>
--        ,?                            | > ,?<CR>
--        ??                            | > ??<CR>
+- p .fd?                               | > .fd?<CR>
+    ---------------------------------- | ----------------------------------------
+- 1      D?                            | > D?<CR>
+- 2     D2?                            | > D2?<CR>
+- x      x?                            | > x?<CR>
+- .      .?                            | > .?<CR>
+- ,      ,?                            | > ,?<CR>
+- ?      ??                            | > ??<CR>
+    ---------------------------------- | ----------------------------------------
 - c    cmd?                            | > cmd?<CR>
 - g    git?                            | > git?<CR>
 - L  links?                            | > links?<CR>
 - P papers?                            | > papers?<CR>
--      .fd?                            | > .fd?<CR>
 - m   make?                            | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
