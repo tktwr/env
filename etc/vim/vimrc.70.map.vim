@@ -161,6 +161,7 @@ tnoremap <silent> <C-0> <C-W>b
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
+nnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 
 nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
