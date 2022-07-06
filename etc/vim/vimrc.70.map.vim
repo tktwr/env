@@ -184,10 +184,10 @@ tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
 
 tnoremap <silent> <PageDown> <C-W>:silent call VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>
 "------------------------------------------------------
-nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+nnoremap <silent> <Insert>   <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 
-tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+tnoremap <silent> <Insert>   <C-W>:call VisTabEdit()<CR>
 tnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 "------------------------------------------------------
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
