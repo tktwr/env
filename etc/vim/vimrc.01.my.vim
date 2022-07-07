@@ -73,7 +73,7 @@ let g:cpm_files =
   \ split(glob("$MY_BMK/*.txt")) +
   \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
-  \ 'default'          : ['bmk.file & vcmd.main', 'vcmd.sub', 'vcmd.coc', 'local.bmk.file'],
+  \ 'default'          : ['vcmd.external & bmk.file & vcmd.ide', 'vcmd.sub', 'vcmd.coc', 'local.bmk.file'],
   \ 'default.terminal' : ['local.bmk.dir', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],

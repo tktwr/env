@@ -5,7 +5,11 @@
 [side.main] -------------------------- | ----------------------------------------
 -   VisTabGstatusToggle                | :call VisTabGstatusToggle()
 -   VisTabGV                           | :call VisTabGV()
-[vcmd.main] -------------------------- | ----------------------------------------
+[vcmd.external] ---------------------- | ----------------------------------------
+- V BmkOpenURL                         | :call BmkOpenURL('%:p')
+- O BmkOpenFile                        | :call BmkOpenFile('%:p')
+- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
+[vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
@@ -21,10 +25,6 @@
 - v vim grep here                      | :VisVimgrep ?? *
 - A vim grep all                       | :call MyVimgrepAll('??')
 - ] tjump                              | :call VisTjumpPrompt()
-    --- (External) ------------------- | ----------------------------------------
-- V BmkOpenURL                         | :call BmkOpenURL('%:p')
-- O BmkOpenFile                        | :call BmkOpenFile('%:p')
-- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
     --- (Edit) ----------------------- | ----------------------------------------
 - p paste                 (,p)         | "*p
 -   yank                   (Y)         | "*y
@@ -34,18 +34,18 @@
 - R CpmReload                          | :CpmReload
 - S MySourceVimrc                      | :MySourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
-- g Gllog                              | :Gllog
--   Gllog %                            | :Gllog %
+- V BmkViewThis         (C-CR)         | :call BmkViewThis()
+- O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
+-   BmkToggleDebug                     | :call BmkToggleDebug()
+    ---------------------------------- | ----------------------------------------
 - s VisGstatusToggle                   | :VisGstatusToggle
 - v MyGV                               | :MyGV
+- g Gllog                              | :Gllog
+-   Gllog %                            | :Gllog %
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
 -   PlugInstall                        | :PlugInstall
 -   PlugUpdate                         | :PlugUpdate
-    ---------------------------------- | ----------------------------------------
-- V BmkViewThis         (C-CR)         | :call BmkViewThis()
-- O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
--   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 - : EditTabColon                       | :EditTabColon
 - , EditTabComma                       | :EditTabComma
