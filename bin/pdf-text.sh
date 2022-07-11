@@ -5,7 +5,7 @@ source common.sh
 files="$@"
 
 for i in $files; do
-  name=`f_get_name $i`
-  f_eval "pdftotext $i $name.txt"
+  o=$(f_get_name $i).txt
+  f_eval "pdftotext $i $o"
 done
 

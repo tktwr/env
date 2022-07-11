@@ -59,7 +59,7 @@
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
     ---------------------------------- | ----------------------------------------
--   Blender/addons/                    | $USER_ROAMING/Blender Foundation/Blender/3.1/scripts/addons/
+-   Blender/3.2/addons/                | $USER_ROAMING/Blender Foundation/Blender/3.2/scripts/addons/
 [bmk.dir.opt] ------------------------ | ----------------------------------------
 -   LearnOpenGL/                       | $MY_GITHUB/LearnOpenGL/
 -   glTF-Sample-Viewer/                | $MY_GITHUB/glTF-Sample-Viewer/
