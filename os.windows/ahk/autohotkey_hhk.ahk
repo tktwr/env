@@ -84,9 +84,9 @@ F10::
   }
   return
 
-; screenshot
+; Xbox Game Bar
 F11::
-  send,#+s
+  send,#g
   return
 
 ; system
