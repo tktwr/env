@@ -10,11 +10,11 @@ get_tags() {
 }
 
 #------------------------------------------------------
-fzy_pre() {
+fzy_tags_pre() {
   grep -v '!_TAG_'
 }
 
-fzy_post() {
+fzy_tags_post() {
   awk '{print $1}'
 }
 
@@ -22,7 +22,7 @@ fzy_tags() {
   tags=$(get_tags)
   if [ -f "$tags" ]; then
     cmd="cat $tags"
-    p=$(eval $cmd | fzy_pre | fzy | fzy_post)
+    p=$(eval $cmd | fzy_tags_pre | fzy | fzy_tags_post)
     echo $p
   fi
 }

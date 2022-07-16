@@ -3,30 +3,8 @@
 #======================================================
 # fzy
 #======================================================
-#------------------------------------------------------
-# fzy_arg
-#------------------------------------------------------
-fzy_fzy_filter() {
-  grep -v '^#' | fzy | awk -F '|' '{print $3}'
-}
-
-fzy_fzy() {
-  local files="$MY_DOTMY/fzy/dir.txt \
-               $MY_COMMON_SETTING/fzy/dir.txt \
-               $MY_ETC/fzy/dir.00.msys.txt \
-               $MY_ETC/fzy/dir.01.usr.txt \
-               $MY_ETC/fzy/dir.txt \
-               "
-  echo $(cat $files 2> /dev/null | fzy_fzy_filter)
-}
-
-#------------------------------------------------------
 fzy_pushd() {
   echo $(dirs -v | fzy | awk '{print "+"$1}')
-}
-
-fzy_make() {
-  echo $(make help | cut -d " " -f 1 | fzy)
 }
 
 fzy_hist() {
@@ -71,7 +49,7 @@ alias     ff?='fzy_cmd vim       "fzy_file.sh"'
 alias     fd?='fzy_cmd cd        "fzy_dir.sh"'
 alias    .fd?='fzy_cmd pushd     "fzy_dir.sh"'
 
-alias   make?='fzy_cmd make       fzy_make'
+alias   make?='fzy_cmd make       fzy_make.sh'
 
 #alias     h?='fzy_cmd "!"        fzy_hist'
 

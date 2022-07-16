@@ -9,7 +9,7 @@ cd_git_root() {
 }
 
 #------------------------------------------------------
-find_post() {
+fzy_find_post() {
   awk '{print $1}'
 }
 
@@ -17,7 +17,7 @@ fzy_find() {
   depth=${1:-6}
   cmd="find-txt.sh -maxdepth $depth"
 
-  p=$(eval $cmd | fzy | find_post)
+  p=$(eval $cmd | fzy | fzy_find_post)
   if [ -n "$p" ]; then
     p=$(pathconv.sh unix "$p")
   fi

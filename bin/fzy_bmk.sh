@@ -1,10 +1,10 @@
 #!/bin/bash
 
-bmk_pre() {
+fzy_bmk_pre() {
   grep -v '^#' | grep -v '\-\-\-'
 }
 
-bmk_post() {
+fzy_bmk_post() {
   awk -F '|' '{print $2}' | sed -e 's+> ++' -e 's+<CR>++'
 }
 
@@ -18,7 +18,7 @@ fzy_bmk() {
   shift
   files="$files $@"
   cmd="cat $files 2> /dev/null"
-  echo $(eval $cmd | bmk_pre | fzy | bmk_post)
+  echo $(eval $cmd | fzy_bmk_pre | fzy | fzy_bmk_post)
 }
 
 #------------------------------------------------------
