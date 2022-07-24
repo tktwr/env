@@ -1,5 +1,6 @@
 import bpy
 import os
+import sys
 import math
 import bpy_util as bu
 
@@ -54,5 +55,10 @@ class Render():
 
         bpy.ops.render.render()
         bpy.data.images['Render Result'].save_render(filepath = out_file)
+
+
+def get_argv():
+    idx = sys.argv.index('--')
+    return sys.argv[idx+1:]
 
 

@@ -6,11 +6,12 @@ WINOPT="\
 EXCLUDES="\
   --include 'build.gradle' \
   --exclude 'imgui.ini' \
-  --exclude '*.blend1' \
-  --exclude '*.BLEND1' \
+  --exclude '*.blend?' \
+  --exclude '*.BLEND?' \
   --exclude 'build*' \
   --exclude '_output' \
   --exclude '_local' \
+  --exclude '__pycache__' \
   "
 
 echo "=== [mymirrorfat.sh $@] ==="
