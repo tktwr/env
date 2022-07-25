@@ -1,8 +1,6 @@
 #!/bin/bash
 
-WINOPT="\
-  --size-only -O --no-g --no-p \
-  "
+WINOPT="-O --no-g --no-p"
 EXCLUDES="\
   --include 'build.gradle' \
   --exclude 'imgui.ini' \

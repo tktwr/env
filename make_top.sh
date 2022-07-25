@@ -64,6 +64,7 @@ f_help() {
   echo "graph       ... graph  in GIT_DIRS"
   echo "fetch       ... fetch  in GIT_DIRS"
   echo "pull        ... pull   in GIT_DIRS"
+  echo "----------- ... -----------------------------"
   echo "tags        ... tags   in TAGS_DIRS and MEMO_DIRS"
   echo "build       ... build  in BUILD_DIRS"
   echo "clean       ... clean  in BUILD_DIRS"

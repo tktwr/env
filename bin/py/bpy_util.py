@@ -88,7 +88,7 @@ def get_from_socket(mat, socket_name):
 
 
 def make_link(mat, to_socket, from_socket):
-    mat.node_tree.links.new(to_socket, from_socket)
+    return mat.node_tree.links.new(to_socket, from_socket)
 
 
 #------------------------------------------------------
@@ -211,6 +211,16 @@ def create_light(name, loc, power):
     data.energy = power
     obj = bpy.data.objects.new(name=name, object_data=data)
     obj.location = loc
+    return obj
+
+
+def create_plane(name, sz, loc):
+    bpy.ops.mesh.primitive_plane_add(size=1.0, location=loc)
+    bpy.context.object.rotation_euler[0] = math.radians(90)
+    obj = bpy.context.view_layer.objects.active
+    obj.name = name
+    obj.data.name = name
+    obj.scale = (sz[0], sz[1], 1.0)
     return obj
 
 
