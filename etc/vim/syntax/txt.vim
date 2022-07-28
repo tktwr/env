@@ -2,12 +2,16 @@
 " Language: txt
 " see "help pattern"
 
+"------------------------------------------------------
+" syntax
+"------------------------------------------------------
 syn clear
 " syntax is case sensitive
 syn case match
 
 syn match    myComment          "#.*$"
 syn region   myComment          start="/\*" end="\*/"
+syn region   myDetails          start=+<details>+ end=+</details>+
 
 syn match    mySection1         "^# "
 syn match    mySection2         "^## "
@@ -71,7 +75,11 @@ else
   syn match myHyperTextEntry    "\*[#-)!+-~]\+\*$"
 endif
 
+"------------------------------------------------------
+" highlight
+"------------------------------------------------------
 hi link myComment          MyBlue
+hi link myDetails          MyBlue
 
 hi link mySection1         MyOrange
 hi link mySection2         MyOrange
