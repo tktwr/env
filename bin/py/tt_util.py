@@ -84,33 +84,6 @@ def fit_size(src_wh, max_wh):
 
 
 #------------------------------------------------------
-# path
-#------------------------------------------------------
-def expand_env(s):
-    r = re.search('\$\w+', s)
-    if r != None:
-        matched = r.group()
-        env_var = matched[1:]
-        if os.getenv(env_var) != None:
-            s = s.replace(matched, os.environ[env_var])
-    return s
-
-
-def unix_path(fname):
-    fname = re.sub('^C:', '/c', fname)
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-def win_path(fname):
-    fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
-    fname = re.sub('^/c', 'C:', fname)
-    #fname = fname.replace('/', '\\')
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-#------------------------------------------------------
 # timeit
 #------------------------------------------------------
 def timeit(func):

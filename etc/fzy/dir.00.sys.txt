@@ -1,26 +1,24 @@
-# for msys/cygwin/gitbash
+# for system
 
 # name              | env var             | dir
 # ---               | ---                 | ---
-win-home            | SYS_WIN_HOME        | $USERPROFILE
+win-home            | SYS_WIN_HOME        | $SYS_WIN_HOME
+config-home         | SYS_CONFIG_HOME     | $SYS_CONFIG_HOME
 msys2-home          | SYS_MSYS2_HOME      | C:/msys64/home/$USERNAME
 cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME
 prog64              | SYS_PROG64_DIR      | C:\Program Files
 prog32              | SYS_PROG32_DIR      | C:\Program Files (x86)
-user-local          | USER_LOCAL          | $USERPROFILE/AppData/Local
-user-roaming        | USER_ROAMING        | $USERPROFILE/AppData/Roaming
-user-prog           | USER_PROG_DIR       | $USERPROFILE/AppData/Local/Programs
-user-python-home    | USER_PYTHON_HOME    | $USERPROFILE/AppData/Local/Programs/Python/Python39
-user-python-roaming | USER_PYTHON_ROAMING | $USERPROFILE/AppData/Roaming/Python/Python39
-android-sdk         | ANDROID_SDK         | $USERPROFILE/AppData/Local/Android/sdk
-anaconda-home       | ANACONDA_HOME       | $USERPROFILE/Anaconda3
-miniconda-home      | MINICONDA_HOME      | $USERPROFILE/miniconda3
 nodejs-home         | NODEJS_HOME         | C:\Program Files\nodejs
 java-home           | JAVA_HOME           | C:\Program Files\Android\Android Studio\jre
 sys-git             | SYS_GIT             | C:\Program Files\Git
 sys-cmake           | SYS_CMAKE           | C:\Program Files\CMake
 sys-vulkan-sdk      | SYS_VULKAN_SDK      | $VULKAN_SDK
 sys-cuda-sdk        | SYS_CUDA_SDK        | $CUDA_PATH
-my-home             | MY_HOME             | $USERPROFILE
+user-local          | USER_LOCAL          | $SYS_WIN_HOME/AppData/Local
+user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
+user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs
+user-python-home    | USER_PYTHON_HOME    | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python39
+user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python39
+android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/sdk
 
 # vim:set nowrap:

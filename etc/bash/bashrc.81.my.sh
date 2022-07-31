@@ -29,92 +29,28 @@ alias cd.G='cd `mypushd.sh --get`'
 mv.G()          { mv "$@" `mypushd.sh --get`; }
 cp.G()          { cp "$@" `mypushd.sh --get`; }
 
-update-env() {
-  source $HOME/.bashrc
-}
-
-#------------------------------------------------------
-# mypython.sh
-#------------------------------------------------------
-mypython-set-python-anaconda() {
-  mypython.sh --set python-anaconda $1
-  update-env
-}
-mypython-set-python-miniconda() {
-  mypython.sh --set python-miniconda $1
-  update-env
-}
-mypython-set-python-win() {
-  mypython.sh --set python-win $1
-  update-env
-}
-mypython-set-python() {
-  mypython.sh --set python $1
-  update-env
-}
-
-#------------------------------------------------------
-# mycmake.sh
-#------------------------------------------------------
-mycmake-set-ninja-release() {
-  mycmake.sh --set ninja Release
-  update-env
-}
-mycmake-set-ninja-debug() {
-  mycmake.sh --set ninja Debug
-  update-env
-}
-mycmake-set-make-release() {
-  mycmake.sh --set make Release
-  update-env
-}
-mycmake-set-make-debug() {
-  mycmake.sh --set make Debug
-  update-env
-}
-mycmake-set-vs2017-release() {
-  mycmake.sh --set vs2017 Release
-  update-env
-}
-mycmake-set-vs2017-debug() {
-  mycmake.sh --set vs2017 Debug
-  update-env
-}
-mycmake-set-vs2017-reldeb() {
-  mycmake.sh --set vs2017 RelWithDebInfo
-  update-env
-}
-mycmake-set-vs2019-release() {
-  mycmake.sh --set vs2019 Release
-  update-env
-}
-mycmake-set-vs2019-debug() {
-  mycmake.sh --set vs2019 Debug
-  update-env
-}
-mycmake-set-vs2019-reldeb() {
-  mycmake.sh --set vs2019 RelWithDebInfo
-  update-env
-}
-
 #------------------------------------------------------
 # misc
 #------------------------------------------------------
 print-env-config() {
-  echo "MY_HOME            = $MY_HOME"
+  echo "MY_OS_NAME         = $MY_OS_NAME"
+  echo "SYS_WIN_HOME       = $SYS_WIN_HOME"
+  echo "SYS_CONFIG_HOME    = $SYS_CONFIG_HOME"
   echo "MY_CONFIG          = $MY_CONFIG"
   echo "MY_REMOTE_CONFIG   = $MY_REMOTE_CONFIG"
   echo "MY_LOCAL_CONFIG    = $MY_LOCAL_CONFIG"
   echo "MY_PRIVATE_CONFIG  = $MY_PRIVATE_CONFIG"
-  echo "MY_OS_NAME         = $MY_OS_NAME"
+}
+
+print-env-python() {
   echo "MY_PYTHON_EXE      = $MY_PYTHON_EXE"
   echo "                   = $(which $MY_PYTHON_EXE)"
+  echo "MY_PYTHON_TYPE     = $MY_PYTHON_TYPE"
+  echo "MY_PYTHON_VENV     = $MY_PYTHON_VENV"
 }
 
 print-env-build() {
   echo "MY_PUSHD_DIR       = $MY_PUSHD_DIR"
-  echo "MY_PYTHON_TYPE     = $MY_PYTHON_TYPE"
-  echo "MY_PYTHON_VENV     = $MY_PYTHON_VENV"
   echo "MY_BUILD_SYS       = $MY_BUILD_SYS"
   echo "MY_BUILD_CONFIG    = $MY_BUILD_CONFIG"
 }
@@ -128,6 +64,7 @@ print-env-proxy() {
 
 print-env() {
   print-env-config
+  print-env-python
   print-env-build
   print-env-proxy
 }

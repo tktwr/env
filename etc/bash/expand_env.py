@@ -1,35 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import re
 import os
+import re
 import argparse
-
-
-def expand_env(s):
-    r = re.search('\$\w+', s)
-    if r != None:
-        matched = r.group()
-        env_var = matched[1:]
-        if os.getenv(env_var) != None:
-            s = s.replace(matched, os.environ[env_var])
-    return s
-
-
-def unix_path(fname, prefix=''):
-    fname = re.sub('^C:', f'{prefix}/c', fname)
-    fname = re.sub('^D:', f'{prefix}/d', fname)
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-def win_path(fname, prefix=''):
-    fname = re.sub('(\$[^/]*)', '\\1_WIN', fname)
-    fname = re.sub(f'^{prefix}/c', 'C:', fname)
-    fname = re.sub(f'^{prefix}/d', 'D:', fname)
-    #fname = fname.replace('/', '\\')
-    fname = fname.replace('\\', '/')
-    return fname
+import tt_path_util as ttp
 
 
 def f_print_env(fname, args):
@@ -49,10 +24,11 @@ def f_print_env(fname, args):
                 # expand env except MY_XXX
                 r = re.search('^\$MY_', dir_name)
                 if r == None:
-                    dir_name = expand_env(dir_name)
+                    dir_name = ttp.expand_env(dir_name)
 
-                dir_name = unix_path(dir_name, args.prefix)
-                dir_name_win = win_path(dir_name, args.prefix)
+                dir_name = ttp.path_unix(dir_name, args.prefix)
+                dir_name_win = re.sub('(\$\w+)', '\\1_WIN', dir_name)
+                dir_name_win = ttp.path_mixed(dir_name_win, args.prefix)
 
                 print(f"export {env_name}=\"{dir_name}\"")
                 print(f"export {env_name}_WIN=\"{dir_name_win}\"")

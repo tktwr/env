@@ -12,30 +12,14 @@ f_to_unix() {
 }
 
 f_path_unix() {
-  local p="$1"
-  local p=$(echo $p | f_to_unix)
-  local os_name=$(uname -osr)
-  case $os_name in
-    *Msys*)
-      cygpath -au "$p"
-      ;;
-    *WSL*)
-      if [ -e "$p" ]; then
-        local pw=$(wslpath -aw "$p")
-        wslpath -au "$pw"
-      else
-        echo "$p"
-      fi
-      ;;
-    *)
-      echo "$p"
-      ;;
-  esac
+  local p=$(echo "$1" | f_to_unix)
+  local p=$(realpath "$p")
+  echo "$p"
 }
 
 f_path_win() {
-  local p="$1"
-  local p=$(echo $p | f_to_unix)
+  local p=$(echo "$1" | f_to_unix)
+  local p=$(realpath "$p")
   local os_name=$(uname -osr)
   case $os_name in
     *Msys*)

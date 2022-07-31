@@ -1,0 +1,9 @@
+export MY_USER_NAME=user_name
+export MY_HOST_NAME=host_name
+export MY_OS_NAME=os_name
+
+export CC=clang
+export CXX=clang++
+
+export SYS_WIN_HOME=$HOME
+export SYS_CONFIG_HOME=$HOME

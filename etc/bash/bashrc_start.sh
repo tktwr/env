@@ -34,15 +34,22 @@ echo_err() {
 }
 
 source_file() {
-  local fname=$1
-  if [ -f $fname ]; then
-    f_time_start $fname
-    source $fname
-    f_time_end $fname
-  else
-    if [ $MY_DEBUG -eq 1 ]; then
-      echo_err "no file: $fname"
+  local files="$@"
+
+  for i in $files; do
+    if [ -f $i ]; then
+      f_time_start $i
+      source $i
+      f_time_end $i
+    else
+      if [ $MY_DEBUG -eq 1 ]; then
+        echo_err "no file: $i"
+      fi
     fi
-  fi
+  done
+}
+
+source_bashrc() {
+  source $HOME/.bashrc
 }
 

@@ -1,10 +1,11 @@
 #!/bin/bash
 
-alias x='te.sh'
-alias ls='ls.sh'
-alias gvim='gvim.sh'
-alias gvimdiff='gvim.sh -d'
-
+#======================================================
+# wsl
+#======================================================
+#------------------------------------------------------
+# func
+#------------------------------------------------------
 net-info() {
   net.exe share
   net.exe use
@@ -24,3 +25,12 @@ f_set_proxy() {
   export CURL_SSL_NO_VERIFY=1
   export NO_PROXY="localhost,127.0.0.1"
 }
+
+#------------------------------------------------------
+# alias
+#------------------------------------------------------
+alias x='te.sh'
+alias ls='ls.sh'
+alias gvim='gvim.sh'
+alias gvimdiff='gvim.sh -d'
+

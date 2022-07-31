@@ -6,6 +6,7 @@
   ],
   "snippets.userSnippetsDirectory": "$MY_COMMON_SETTING/UltiSnips",
 
+  // python
   "python.venvFolders": ["~/.python-venv"],
   "python.pythonPath": "~/.python-venv/torch/bin/python",
   "python.linting.pylintPath": "~/.python-venv/torch/bin/pylint",

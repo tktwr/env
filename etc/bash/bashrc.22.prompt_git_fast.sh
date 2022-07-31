@@ -20,7 +20,7 @@ f_git_ps1() {
 }
 
 f_set_prompt_git_fast() {
-  PROMPT_COMMAND='echo -ne "\033]0;${MY_SHELL_NAME}\007";f_checkgit'
+  PROMPT_COMMAND='echo -ne "\033]0;${MY_OS_NAME}\007";f_checkgit'
 
   local PS1_DIR="$ECO3[\w]"
   local PS1_GIT=$ECO6'`f_git_ps1`'

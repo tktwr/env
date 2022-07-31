@@ -14,7 +14,7 @@ source_file $MY_BASH/bashrc.21.prompt_git.sh
 source_file $MY_BASH/bashrc.22.prompt_git_fast.sh
 source_file $MY_BASH/bashrc.30.git.sh
 source_file $MY_BASH/bashrc.40.python.sh
-source_file $MY_BASH/bashrc.41.conda.sh
+source_file $MY_BASH/bashrc.41.cmake.sh
 source_file $MY_BASH/bashrc.50.os.$MY_OS_NAME.sh
 source_file $MY_BASH/bashrc.80.alias.sh
 source_file $MY_BASH/bashrc.81.my.sh

@@ -75,14 +75,6 @@ f_init() {
   # copy default dot files
   cp -n --parents $DOT_FILES_ALL $HOME
   cp -n -a $DOT_DIRS_COMMON $HOME
-
-  if [ -n "$USERPROFILE" ]; then
-    # msys2/gitbash
-    cp .my/hostname.windows $HOME/.my/hostname
-  else
-    # linux/android
-    cp .my/hostname.linux $HOME/.my/hostname
-  fi
 }
 
 #------------------------------------------------------

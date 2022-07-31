@@ -48,6 +48,17 @@ endsnippet
 #------------------------------------------------------
 # main
 #------------------------------------------------------
+snippet sw_os
+local os_name=\$(uname -osr)
+case \$os_name in
+*Msys*)
+  ;;
+*WSL*)
+  ;;
+*)
+  ;;
+esac
+endsnippet
 
 snippet main
 g_bin_name=\`basename \$0\`

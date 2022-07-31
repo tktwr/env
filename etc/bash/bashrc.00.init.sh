@@ -24,10 +24,7 @@ export EDITOR='vim'
 #export GIT_EDITOR='vim'
 export WWW_HOME="https://tktwr.github.io/memo/"
 
-source $HOME/.my/hostname
-source $HOME/.my/buildrc
-source $HOME/.my/pythonrc
-source $HOME/.my/pushdrc
-source $HOME/.bashrc.env
-
 shopt -s no_empty_cmd_completion
+
+source_file $HOME/.my/*
+

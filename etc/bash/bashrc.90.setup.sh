@@ -5,8 +5,9 @@
 #======================================================
 
 f_set_core_off
-f_select_python $MY_PYTHON_TYPE
-f_activate_python $MY_PYTHON_TYPE $MY_PYTHON_VENV
+
+mypython-type $MY_PYTHON_TYPE
+mypython-venv-activate $MY_PYTHON_VENV
 
 if [ $MY_PROMPT_TYPE -ge 3 ]; then
   f_set_prompt_git

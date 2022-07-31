@@ -47,12 +47,14 @@ hi! link StatusLine       MyStatusLine
 hi! link StatusLineNC     MyStatusLineNC
 hi! link StatusLineTerm   MyAquaRevBold
 hi! link StatusLineTermNC MyStatusLineNC
+
 hi! link TabLineSel       MyAquaRevBold
 hi! link TabLine          MyStatusLine
 hi! link TabLineFill      MyStatusLineNC
 
 hi! link Folded           MyYellowSign
 hi! link FoldColumn       MyYellowSign
+
 hi! link WildMenu         MyYellowRevBold
 hi! link WhichKeyFloating MyYellowSign
 hi! link IndentGuidesOdd  MyBg0
@@ -61,4 +63,12 @@ hi! link IndentGuidesEven MyBg1a
 hi! link Terminal         MyBgTerm
 
 hi! link CocErrorHighlight  MyRedRevBold
+
+hi! link User1   MyRedRevBold
+hi! link User2   MyGreenRevBold
+hi! link User3   MyYellowRevBold
+hi! link User4   MyBlueRevBold
+hi! link User5   MyPurpleRevBold
+hi! link User6   MyAquaRevBold
+hi! link User7   MyOrangeRevBold
 

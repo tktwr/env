@@ -18,7 +18,7 @@ if isdirectory(expand('~/.vim/coc_data'))
 elseif has("win32unix") || has("win32") || has("win64")
   let g:coc_data_home = expand('$MY_VIM_WIN/coc_data/win')
 else
-  let g:coc_data_home = expand('$MY_VIM_WIN/coc_data/linux')
+  let g:coc_data_home = expand('$MY_VIM/coc_data/linux')
 endif
 
 let g:coc_disable_startup_warning = 1

@@ -16,7 +16,7 @@ plugged/vim-memo \
 f_all() {
   cp vimrc_all.vim $HOME/.vimrc
   cat vimrc_min.vim gvimrc_min.vim > $HOME/_vimrc
-  cat vimrc_min.vim gvimrc_min.vim > $MY_HOME/_vimrc
+  cat vimrc_min.vim gvimrc_min.vim > $SYS_WIN_HOME/_vimrc
 }
 
 f_min() {

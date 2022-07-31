@@ -1,12 +1,12 @@
 # name      | env var            | dir
 # ---       | ---                | ---
-python-venv | MY_PYTHON_VENV_DIR | $MY_HOME/.python-venv
-desktop     | MY_DESKTOP         | $MY_HOME/Desktop
-downloads   | MY_DOWNLOADS       | $MY_HOME/Downloads
-config      | MY_CONFIG          | $MY_HOME/MyConfig
-share       | MY_SHARE           | $MY_HOME/MyShare
-private     | MY_PRIVATE         | $MY_HOME/MyShare/private
-protected   | MY_PROTECTED       | $MY_HOME/MyShare/protected
-public      | MY_PUBLIC          | $MY_HOME/MyShare/public
+desktop     | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
+downloads   | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
+python-venv | MY_PYTHON_VENV_DIR | $SYS_CONFIG_HOME/.python-venv
+config      | MY_CONFIG          | $SYS_CONFIG_HOME/MyConfig
+share       | MY_SHARE           | $SYS_CONFIG_HOME/MyShare
+private     | MY_PRIVATE         | $SYS_CONFIG_HOME/MyShare/private
+protected   | MY_PROTECTED       | $SYS_CONFIG_HOME/MyShare/protected
+public      | MY_PUBLIC          | $SYS_CONFIG_HOME/MyShare/public
 
 # vim:set nowrap:

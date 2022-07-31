@@ -1,38 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import re
 import argparse
-
-
-def drive_unix(match):
-    return f'/{match.group(1).lower()}'
-
-
-def drive_windows(match):
-    return f'{match.group(1).upper()}:/'
-
-
-def path_unix(fname, prefix=''):
-    fname = re.sub(f'^{prefix}', '', fname)
-    fname = re.sub(f'^([c-zC-Z]):', drive_unix, fname)
-    fname = prefix + fname
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-def path_mixed(fname, prefix=''):
-    fname = re.sub(f'^{prefix}', '', fname)
-    fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
-    fname = fname.replace('\\', '/')
-    return fname
-
-
-def path_windows(fname, prefix=''):
-    fname = re.sub(f'^{prefix}', '', fname)
-    fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
-    fname = fname.replace('/', '\\')
-    return fname
+import tt_path_util as ttp
 
 
 def parse_args():
@@ -63,31 +35,15 @@ def print_args(args):
     print(f"args.files  : {args.files}")
 
 
-def test(fname, prefix):
-    print('--- test ---')
-    fname_unix = path_unix(fname, prefix)
-    fname_mix  = path_mixed(fname, prefix)
-    fname_win  = path_windows(fname, prefix)
-    print(f'orig : {fname}')
-    print(f'unix : {fname_unix}')
-    print(f'mix  : {fname_mix}')
-    print(f'win  : {fname_win}')
-
-
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
         print_args(args)
 
-        test(*['D:/aa\\bb/cc.txt', '/mnt'])
-        test(*['/d/aa\\bb/cc.txt', '/mnt'])
-        test(*['/mnt/d/aa\\bb/mnt/cc.txt', '/mnt'])
-        quit()
-
     otype  = args.type
-    fname  = args.files[0]
     prefix = args.prefix
+    fname  = args.files[0]
 
-    p = eval(f"path_{otype}('{fname}', '{prefix}')")
+    p = eval(f"ttp.path_{otype}('{fname}', '{prefix}')")
     print(p)
 

@@ -33,13 +33,14 @@ f_print_path() {
 
 f_print_python_path() {
   echo "=== [PYTHONPATH] ==="
-  if [ -n "$USERPROFILE" ]; then
-    # msys2/gitbash
-    echo "$PYTHONPATH" | f_format_dos_path
-  else
-    # linux/android
-    echo "$PYTHONPATH" | f_format_unix_path
-  fi
+  case $MY_OS_NAME in
+    msys|gitbash)
+      echo "$PYTHONPATH" | f_format_dos_path
+      ;;
+    *)
+      echo "$PYTHONPATH" | f_format_unix_path
+      ;;
+  esac
 }
 
 f_print_python_env() {

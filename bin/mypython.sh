@@ -18,8 +18,6 @@ f_help() {
   echo "  --create-venv venv_name                create venv"
   echo
   echo "PYTHON_TYPE:"
-  echo "  python-anaconda"
-  echo "  python-miniconda"
   echo "  python-win"
   echo "  python"
   echo

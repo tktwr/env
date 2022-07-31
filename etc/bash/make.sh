@@ -5,7 +5,8 @@
 #======================================================
 f_all() {
   cp bashrc_all.sh $HOME/.bashrc
-  ./expand_env.sh > $HOME/.bashrc.env
+  ./expand_env.sh > $HOME/.my/env
+  env.sh > $HOME/.my/hostname
 }
 
 f_min() {

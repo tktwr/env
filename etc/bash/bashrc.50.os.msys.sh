@@ -3,7 +3,9 @@
 #======================================================
 # windows
 #======================================================
-
+#------------------------------------------------------
+# env
+#------------------------------------------------------
 export WINPTY=winpty
 
 #export MSYS_NO_PATHCONV=1
@@ -30,9 +32,16 @@ PATH="$USER_ROAMING/npm:$PATH"
 #PATH="$ANDROID_SDK/platform-tools:$PATH"
 
 #------------------------------------------------------
+# func
+#------------------------------------------------------
+net-info() {
+  net.exe share
+  net.exe use
+}
+
+#------------------------------------------------------
 # alias
 #------------------------------------------------------
-
 alias x='te.sh'
 alias ls='ls.sh'
 alias gvim='gvim.sh'
@@ -44,9 +53,4 @@ alias ping='winpty ping'
 alias ipconfig='winpty ipconfig'
 alias tracert='winpty tracert'
 alias wsl='winpty wsl'
-
-net-info() {
-  net.exe share
-  net.exe use
-}
 

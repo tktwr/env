@@ -8,7 +8,6 @@ SourceFile $MY_VIM/vimrc.01.my.vim
 SourceFile $MY_VIM/vimrc.10.skel.vim
 SourceFile $MY_VIM/vimrc.30.vim-plug.vim
 SourceFile $MY_VIM/vimrc.40.highlight.vim
-SourceFile $MY_VIM/vimrc.41.statusline.vim
 SourceFile $MY_VIM/vimrc.60.command.vim
 SourceFile $MY_VIM/vimrc.61.enc.vim
 SourceFile $MY_VIM/vimrc.63.dev.vim

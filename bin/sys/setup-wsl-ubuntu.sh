@@ -48,8 +48,9 @@ f_dir() {
 f_python_venv() {
   mypython.sh --create-venv torch
   source $HOME/.bashrc
+
   #pip-upgrade.sh
-  #pip-install.sh
+  #pip-install.sh install_vim
 }
 
 #------------------------------------------------------

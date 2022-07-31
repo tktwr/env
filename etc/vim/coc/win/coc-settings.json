@@ -19,11 +19,6 @@
   "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\pylint.exe",
   "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\flake8.exe",
 
-  // python-miniconda
-  //"python.condaPath": "C:\\Users\\Takeh\\miniconda3\\Scripts\\conda",
-  //"python.pythonPath": "C:\\Users\\Takeh\\miniconda3\\envs\\conda-vim\\python",
-  //"python.linting.pylintPath": "C:\\Users\\Takeh\\miniconda3\\envs\\conda-vim\\Scripts\\pylint",
-
   //"python.jediEnabled": false,
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": false,

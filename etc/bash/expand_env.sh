@@ -3,9 +3,9 @@
 source bashrc_min.sh
 
 FILES="\
-$MY_FZY/dir.00.$MY_OS_NAME.txt \
-$MY_COMMON_SETTING/fzy/dir.00.$MY_OS_NAME.txt \
-$MY_DOTMY/fzy/dir.00.$MY_OS_NAME.txt \
+$MY_FZY/dir.00.sys.txt \
+$MY_COMMON_SETTING/fzy/dir.00.sys.txt \
+$MY_DOTMY/fzy/dir.00.sys.txt \
 \
 $MY_FZY/dir.01.usr.txt \
 $MY_COMMON_SETTING/fzy/dir.01.usr.txt \

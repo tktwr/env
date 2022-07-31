@@ -28,7 +28,6 @@ set nobackup
 set nowritebackup
 set noundofile
 
-set updatetime=300
 set timeoutlen=300
 
 set encoding=utf-8
@@ -70,8 +69,8 @@ tnoremap <C-L>   <C-W>l
 " tmap
 "------------------------------------------------------
 tnoremap <C-G>   <C-L>
-tnoremap <C-;>   <C-W>:
 tnoremap <C-O>   <C-W>N
+tnoremap <C-;>   <C-W>:
 
 "------------------------------------------------------
 " clipboard

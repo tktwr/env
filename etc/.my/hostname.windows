@@ -1,9 +1,0 @@
-#!/bin/bash
-
-export MY_HOST_NAME=$HOSTNAME
-export MY_SITE_NAME=home
-export MY_SHELL_NAME=$MSYSTEM
-export MY_OS_NAME=windows
-
-export CC=clang
-export CXX=clang++

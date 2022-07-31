@@ -11,5 +11,4 @@ endif
 " terminal window
 "------------------------------------------------------
 "set notimeout ttimeout
-set timeoutlen=300
 
