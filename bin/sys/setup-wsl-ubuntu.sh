@@ -4,6 +4,7 @@
 # variables
 #======================================================
 WIN_HOME=/mnt/c/Users/Takeh
+ENV_DIR=$(pwd)
 
 pkg_min="\
 vim \
@@ -40,21 +41,32 @@ f_install_ext() {
 
 f_dir() {
   cd
-  ln -s $WIN_HOME WinHome
-  ln -s WinHome/MyConfig .
-  ln -s WinHome/MyShare .
+  if [ ! -d "WinHome" ]; then
+    ln -s $WIN_HOME WinHome
+  fi
+}
+
+f_etc() {
+  cd $ENV_DIR/etc
+  ./make.sh min
+  source $HOME/.bashrc
 }
 
 f_python_venv() {
   mypython.sh --create-venv torch
   source $HOME/.bashrc
 
-  #pip-upgrade.sh
-  #pip-install.sh install_vim
+  pip-upgrade.sh
+  pip-install.sh install_vim
 }
 
 #------------------------------------------------------
 f_init() {
+  f_update
+  f_install_min
+  f_dir
+  f_etc
+  f_python_venv
 }
 
 f_help() {
