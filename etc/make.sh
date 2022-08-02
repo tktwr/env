@@ -21,7 +21,7 @@ f_min() {
   f_sub vim min
 }
 
-f_test() {
+f_min_plug() {
   f_sub bash min
   f_sub vim min_plug
 }
@@ -58,7 +58,7 @@ f_vimdirdiff() {
 f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
-  echo "test        ... minimum settings with plugins"
+  echo "min_plug    ... minimum settings with plugins"
   echo "----------- ... -----------------------------"
   echo "backup      ... backup"
   echo "init        ... init"

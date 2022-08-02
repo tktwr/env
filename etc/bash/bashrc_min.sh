@@ -11,6 +11,16 @@ f_os_name() {
   esac
 }
 
+source_file() {
+  local files="$@"
+
+  for i in $files; do
+    if [ -f $i ]; then
+      source $i
+    fi
+  done
+}
+
 #------------------------------------------------------
 # env
 #------------------------------------------------------
@@ -154,6 +164,6 @@ f_alias
 #------------------------------------------------------
 # vim plugin
 #------------------------------------------------------
-source $MY_VIM/plugged/vim-ide-style/etc/bashrc
-source $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
-source $MY_VIM/plugged/vim-memo/etc/bashrc
+source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc
+source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
+source_file $MY_VIM/plugged/vim-memo/etc/bashrc

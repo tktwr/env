@@ -48,7 +48,7 @@ f_dir() {
 
 f_etc() {
   cd $ENV_DIR/etc
-  ./make.sh min
+  ./make.sh init
   source $HOME/.bashrc
 }
 
@@ -60,13 +60,18 @@ f_python_venv() {
   pip-install.sh install_vim
 }
 
+f_wsltty() {
+  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
+  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
+}
+
 #------------------------------------------------------
 f_init() {
   f_update
   f_install_min
   f_dir
   f_etc
-  f_python_venv
+  #f_python_venv
 }
 
 f_help() {

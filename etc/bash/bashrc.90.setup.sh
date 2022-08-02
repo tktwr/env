@@ -28,9 +28,9 @@ export OPENCV_IO_ENABLE_OPENEXR=1
 #------------------------------------------------------
 # vim plugin
 #------------------------------------------------------
-source $MY_VIM/plugged/vim-ide-style/etc/bashrc
-source $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
-source $MY_VIM/plugged/vim-memo/etc/bashrc
+source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc
+source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
+source_file $MY_VIM/plugged/vim-memo/etc/bashrc
 
 if [ "$VIM_TERMINAL" ]; then
   vimapi-tabline-set-info "[$MY_PYTHON_TYPE,$MY_PYTHON_VENV][$MY_BUILD_SYS,$MY_BUILD_CONFIG]"
