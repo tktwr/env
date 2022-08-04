@@ -9,15 +9,18 @@
 -   user-local/                        | $USER_LOCAL/
 -   user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
--   HOME/                              | $HOME/
-- y .my/                               | $MY_DOTMY/
-    ---------------------------------- | ----------------------------------------
--   WIN_HOME/                          | $SYS_WIN_HOME/
-- c common/                            | $MY_COMMON_SETTING/
-- C MyConfig/                          | $MY_CONFIG/
-- S MyShare/                           | $MY_SHARE/
+- H HOME/                              | $HOME/
+- W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
 - K Desktop/                           | $MY_DESKTOP/
 - N Downloads/                         | $MY_DOWNLOADS/
+    ---------------------------------- | ----------------------------------------
+- R MY_REMOTE_CONFIG/                  | $MY_REMOTE_CONFIG/
+- L MY_LOCAL_CONFIG/                   | $MY_LOCAL_CONFIG/
+- P MY_PRIVATE_CONFIG/                 | $MY_PRIVATE_CONFIG/
+- C MyConfig/                          | $MY_CONFIG/
+- S MyShare/                           | $MY_SHARE/
+- y .my/                               | $MY_DOTMY/
+- c common/                            | $MY_COMMON_SETTING/
     ---------------------------------- | ----------------------------------------
 - i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
@@ -28,18 +31,18 @@
 - t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
 - w work/                              | $MY_WORK/
-- p proj/                              | $MY_PROJ/
+- j proj/                              | $MY_PROJ/
+- g git/                               | $MY_GIT/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
-- g git/                               | $MY_GIT/
+- p papers/                            | $MY_PAPERS/
     ---------------------------------- | ----------------------------------------
 - A arch/                              | $MY_ARCH/
-- U backup/                            | $MY_BACKUP/
+- B backup/                            | $MY_BACKUP/
 - D data/                              | $MY_DATA/
-- H github/                            | $MY_GITHUB/
+- G github/                            | $MY_GITHUB/
 - M man/                               | $MY_MAN/
 - O opt/                               | $MY_OPT/
-- P papers/                            | $MY_PAPERS/
 - T tmp/                               | $MY_TMP/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   env/                               | $MY_ENV/
