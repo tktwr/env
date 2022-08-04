@@ -11,13 +11,13 @@ vim \
 nodejs npm \
 python3-pip \
 python3-venv \
+fzy \
+zip unzip \
+universal-ctags \
 "
 
 pkg_ext="\
-fzy \
 neovim \
-zip unzip \
-universal-ctags \
 cmake \
 clang \
 clang-format \
@@ -52,17 +52,19 @@ f_etc() {
   source $HOME/.bashrc
 }
 
+f_wsltty() {
+  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
+  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
+}
+
 f_python_venv() {
   mypython.sh --create-venv torch
   source $HOME/.bashrc
 
-  pip-upgrade.sh
-  pip-install.sh install_vim
-}
-
-f_wsltty() {
-  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
-  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
+  if [ $MY_PYTHON_VENV = "torch" ]; then
+    pip-upgrade.sh
+    pip-install.sh install_vim
+  fi
 }
 
 #------------------------------------------------------
@@ -71,7 +73,8 @@ f_init() {
   f_install_min
   f_dir
   f_etc
-  #f_python_venv
+  f_wsltty
+  f_python_venv
 }
 
 f_help() {
@@ -80,6 +83,8 @@ f_help() {
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
   echo "dir         ... dir"
+  echo "etc         ... etc"
+  echo "wsltty      ... wsltty"
   echo "python_venv ... python_venv"
   echo "help        ... print help"
 }

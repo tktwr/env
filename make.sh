@@ -5,10 +5,6 @@ source common.sh
 #======================================================
 # functions
 #======================================================
-f_init() {
-  ./bin/sys/setup-wsl-ubuntu.sh init
-}
-
 f_snap() {
   fname=$(git-tar.sh)
   if [ -d "$MY_SNAP" ]; then
@@ -36,7 +32,6 @@ f_tags() {
 
 #------------------------------------------------------
 f_help() {
-  echo "init ... make init"
   echo "snap ... make a snapshot"
   echo "tags ... make tags"
   echo "help ... print this help (default)"
