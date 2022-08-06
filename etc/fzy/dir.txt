@@ -1,10 +1,10 @@
 #[home] ---    | ----------        | ----------
 my             | MY_DOTMY          | $HOME/.my
-common         | MY_COMMON_SETTING | $MY_CONFIG/local/common
+common         | MY_COMMON_SETTING | $MY_CONFIG/lconfig/common
 #[config] ---  | ----------        | ----------
-rconfig        | MY_REMOTE_CONFIG  | $MY_CONFIG/tktwr.github
-lconfig        | MY_LOCAL_CONFIG   | $MY_CONFIG/tktwr.local
-pconfig        | MY_PRIVATE_CONFIG | $MY_CONFIG/tktwr.private
+rconfig        | MY_REMOTE_CONFIG  | $MY_CONFIG/rconfig
+lconfig        | MY_LOCAL_CONFIG   | $MY_CONFIG/lconfig
+pconfig        | MY_PRIVATE_CONFIG | $MY_CONFIG/pconfig
 #[rconfig] --- | ----------        | ----------
 env            | MY_ENV            | $MY_REMOTE_CONFIG/env
 etc            | MY_ETC            | $MY_REMOTE_CONFIG/env/etc

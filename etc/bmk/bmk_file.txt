@@ -10,7 +10,7 @@
 - P papers                                    | $MY_BMK/papers.txt
 [bmk.file.ext] -----------------------        | ----------------------------------------
 -   bmk_file (local)                          | $MY_COMMON_SETTING/bmk/bmk_file.txt
--   engword                                   | $MY_CONFIG/local/eng/eng.txt
+-   engword                                   | $MY_LOCAL_CONFIG/eng/eng.txt
 -   eng                                       | $MY_LOCAL_CONFIG/memo/eng.md.html
 -   math                                      | $MY_LOCAL_CONFIG/memo/math.md.html
     ----------------------------------        | ----------------------------------------

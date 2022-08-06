@@ -15,5 +15,5 @@ ln -s WinHome/MyShare .
 
 ln -s WinHome/Dropbox .
 ln -s WinHome/GoogleDrive .
-#ln -s MyConfig/tktwr.github/env/etc/vim .vim
+#ln -s MyConfig/rconfig/env/etc/vim .vim
 

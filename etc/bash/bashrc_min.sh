@@ -36,9 +36,9 @@ f_env_linux() {
 
 f_env_common() {
   export MY_CONFIG="$SYS_CONFIG_HOME/MyConfig"
-  export MY_REMOTE_CONFIG="$MY_CONFIG/tktwr.github"
-  export MY_LOCAL_CONFIG="$MY_CONFIG/tktwr.local"
-  export MY_PRIVATE_CONFIG="$MY_CONFIG/tktwr.private"
+  export MY_REMOTE_CONFIG="$MY_CONFIG/rconfig"
+  export MY_LOCAL_CONFIG="$MY_CONFIG/lconfig"
+  export MY_PRIVATE_CONFIG="$MY_CONFIG/pconfig"
 
   export MY_ENV="$MY_REMOTE_CONFIG/env"
   export MY_BIN="$MY_ENV/bin"
@@ -46,7 +46,7 @@ f_env_common() {
   export MY_VIM="$MY_ENV/etc/vim"
 
   export MY_FZY="$MY_ETC/fzy"
-  export MY_COMMON_SETTING="$MY_CONFIG/local/common"
+  export MY_COMMON_SETTING="$MY_CONFIG/lconfig/common"
   export MY_DOTMY="$HOME/.my"
 
   #------------------------------------------------------

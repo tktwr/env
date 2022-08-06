@@ -6,8 +6,8 @@
 -   msys2-home/                        | $SYS_MSYS2_HOME/
     ---------------------------------- | ----------------------------------------
 -   win-home/                          | $SYS_WIN_HOME/
--   user-local/                        | $USER_LOCAL/
--   user-roaming/                      | $USER_ROAMING/
+- L user-local/                        | $USER_LOCAL/
+- R user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
 - H HOME/                              | $HOME/
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
