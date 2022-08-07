@@ -29,7 +29,7 @@ for i in $MY_OPT/usr/local; do
   INFOPATH="$i/share/info:$INFOPATH"
 done
 
-for i in $MY_REMOTE_CONFIG/env; do
+for i in $MY_ENV; do
   PATH="$i/bin:$PATH"
   PATH="$i/bin/cron:$PATH"
   PATH="$i/bin/sys:$PATH"

@@ -3,14 +3,6 @@
 #------------------------------------------------------
 # util
 #------------------------------------------------------
-f_os_name() {
-  local os_name=$(uname -osr)
-  case $os_name in
-    *Msys*)  echo "msys"  ;;
-    *)       echo "linux" ;;
-  esac
-}
-
 source_file() {
   local files="$@"
 
@@ -24,30 +16,18 @@ source_file() {
 #------------------------------------------------------
 # env
 #------------------------------------------------------
-f_env_msys() {
-  export SYS_WIN_HOME="/c/Users/$USERNAME"
-  export SYS_CONFIG_HOME="/c/Users/$USERNAME"
-}
+f_env() {
+  export MY_DOTMY="$SYS_LOCAL_HOME/.my"
+  export MY_ENV="$SYS_ROAMING_HOME/env"
+  export MY_REMOTE_CONFIG="$SYS_CONFIG_HOME/rconfig"
+  export MY_LOCAL_CONFIG="$SYS_CONFIG_HOME/lconfig"
+  export MY_PRIVATE_CONFIG="$SYS_CONFIG_HOME/pconfig"
+  export MY_COMMON_SETTING="$MY_LOCAL_CONFIG/common"
 
-f_env_linux() {
-  export SYS_WIN_HOME=$(realpath "$HOME/WinHome")
-  export SYS_CONFIG_HOME="$HOME"
-}
-
-f_env_common() {
-  export MY_CONFIG="$SYS_CONFIG_HOME/MyConfig"
-  export MY_REMOTE_CONFIG="$MY_CONFIG/rconfig"
-  export MY_LOCAL_CONFIG="$MY_CONFIG/lconfig"
-  export MY_PRIVATE_CONFIG="$MY_CONFIG/pconfig"
-
-  export MY_ENV="$MY_REMOTE_CONFIG/env"
   export MY_BIN="$MY_ENV/bin"
   export MY_ETC="$MY_ENV/etc"
-  export MY_VIM="$MY_ENV/etc/vim"
-
+  export MY_VIM="$MY_ETC/vim"
   export MY_FZY="$MY_ETC/fzy"
-  export MY_COMMON_SETTING="$MY_CONFIG/lconfig/common"
-  export MY_DOTMY="$HOME/.my"
 
   #------------------------------------------------------
   # prompt
@@ -93,15 +73,29 @@ f_python_linux() {
   export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
 }
 
+f_python() {
+  case $MY_OS_NAME in
+    msys|gitbash)
+      f_python_msys
+      ;;
+    wsl|linux)
+      f_python_linux
+      ;;
+  esac
+}
+
 #------------------------------------------------------
 # print
 #------------------------------------------------------
 f_print_env() {
-  echo "SYS_WIN_HOME    = $SYS_WIN_HOME"
-  echo "SYS_CONFIG_HOME = $SYS_CONFIG_HOME"
-  echo "PATH            = $PATH"
-  echo "PYTHONPATH      = $PYTHONPATH"
-  echo "MY_PYTHON_EXE   = $MY_PYTHON_EXE"
+  echo "SYS_WIN_HOME     = $SYS_WIN_HOME"
+  echo "SYS_LOCAL_HOME   = $SYS_LOCAL_HOME"
+  echo "SYS_ROAMING_HOME = $SYS_ROAMING_HOME"
+  echo "SYS_CONFIG_HOME  = $SYS_CONFIG_HOME"
+  echo "SYS_SHARE_HOME   = $SYS_SHARE_HOME"
+  echo "PATH             = $PATH"
+  echo "PYTHONPATH       = $PYTHONPATH"
+  echo "MY_PYTHON_EXE    = $MY_PYTHON_EXE"
   which $MY_PYTHON_EXE
 }
 
@@ -150,12 +144,11 @@ vim-where() { vim `which $*`; }
 #======================================================
 # setup
 #======================================================
-export MY_OS_NAME=$(f_os_name)
+source_file $HOME/.my/hostname
 
-f_env_${MY_OS_NAME}
-f_env_common
+f_env
 f_path
-f_python_${MY_OS_NAME}
+f_python
 #f_print_env
 
 unalias -a

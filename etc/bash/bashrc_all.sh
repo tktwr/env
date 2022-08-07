@@ -1,7 +1,6 @@
 #!/bin/bash
 
-export MY_CONFIG=$HOME/MyConfig
-export MY_BASH=$MY_CONFIG/rconfig/env/etc/bash
+export MY_BASH=$HOME/MyRoaming/env/etc/bash
 
 source $MY_BASH/bashrc_start.sh
 

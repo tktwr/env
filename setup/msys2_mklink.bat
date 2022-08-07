@@ -6,6 +6,7 @@ mklink /d WinHome %USERPROFILE%
 
 mklink /d Desktop WinHome\Desktop
 mklink /d Downloads WinHome\Downloads
+mklink /d MyRoaming WinHome\MyRoaming
 mklink /d MyConfig WinHome\MyConfig
 mklink /d MyShare WinHome\MyShare
 

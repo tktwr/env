@@ -1,5 +1,4 @@
-let $MY_CONFIG=expand("$HOME/MyConfig")
-let $MY_VIM=expand("$MY_CONFIG/rconfig/env/etc/vim")
+let $MY_VIM=expand("$HOME/MyRoaming/env/etc/vim")
 
 source $MY_VIM/vimrc_start.vim
 

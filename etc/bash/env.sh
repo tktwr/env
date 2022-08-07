@@ -6,7 +6,7 @@ f_user_name() {
   elif [ -n "$USERNAME" ]; then
     echo $USERNAME
   else
-    echo "unknown"
+    echo "unknown_user_name"
   fi
 }
 
@@ -14,7 +14,7 @@ f_host_name() {
   if [ -n "$HOSTNAME" ]; then
     echo $HOSTNAME
   else
-    echo "unknown"
+    echo "unknown_host_name"
   fi
 }
 
@@ -22,10 +22,10 @@ f_os_name() {
   local os_name=$(uname -osr)
   case $os_name in
     *Msys*)
-      if [[ $HOME =~ /home ]]; then
-        echo "msys"
-      else
+      if [[ $HOME =~ /c/Users ]]; then
         echo "gitbash"
+      else
+        echo "msys"
       fi
       ;;
     *WSL*)
@@ -35,52 +35,35 @@ f_os_name() {
       echo "linux"
       ;;
     *)
-      echo "unknown"
+      echo "unknown_os_name"
       ;;
   esac
-}
-
-#------------------------------------------------------
-f_sys_config_home() {
-  local os_name=$(f_os_name)
-  case $os_name in
-    msys)
-      echo $(pathconv.sh unix "$HOME/WinHome")
-      ;;
-    *)
-      echo $HOME
-      ;;
-  esac
-}
-
-f_my_config() {
-  echo $(pathconv.sh unix "$HOME/MyConfig")
-}
-
-f_my_share() {
-  echo $(pathconv.sh unix "$HOME/MyShare")
 }
 
 #------------------------------------------------------
 f_sys_win_home() {
-  if [ -d "$HOME/WinHome" ]; then
-    echo $(pathconv.sh unix "$HOME/WinHome")
+  local dir=$HOME/WinHome
+  if [ -d "$dir" ]; then
+    echo $(realpath "$dir")
   else
     echo $HOME
   fi
 }
 
-f_user_prog_dir() {
-  local win_home=$(f_sys_win_home)
-  echo $(pathconv.sh unix "$win_home/AppData/Local/Programs")
+f_sys_local_home() {
+  echo $HOME
 }
 
-f_prog32_dir() {
-  echo $(pathconv.sh unix 'C:\Program Files (x86)')
+f_sys_roaming_home() {
+    echo $(realpath "$HOME/MyRoaming")
 }
 
-f_prog64_dir() {
-  echo $(pathconv.sh unix 'C:\Program Files')
+f_sys_config_home() {
+    echo $(realpath "$HOME/MyConfig")
+}
+
+f_sys_share_home() {
+    echo $(realpath "$HOME/MyShare")
 }
 
 #------------------------------------------------------
@@ -102,20 +85,10 @@ f_min() {
   echo "export CXX=$(f_cxx)"
   echo
   echo "export SYS_WIN_HOME=$(f_sys_win_home)"
+  echo "export SYS_LOCAL_HOME=$(f_sys_local_home)"
+  echo "export SYS_ROAMING_HOME=$(f_sys_roaming_home)"
   echo "export SYS_CONFIG_HOME=$(f_sys_config_home)"
-}
-
-f_dir() {
-  echo "export MY_CONFIG=$(f_my_config)"
-  echo "export MY_SHARE=$(f_my_share)"
-  echo "export USER_PROG_DIR=$(f_user_prog_dir)"
-  echo "export SYS_PROG32_DIR=$(f_prog32_dir)"
-  echo "export SYS_PROG64_DIR=$(f_prog64_dir)"
-}
-
-f_all() {
-  f_min
-  f_dir
+  echo "export SYS_SHARE_HOME=$(f_sys_share_home)"
 }
 
 f_default() {

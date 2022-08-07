@@ -1,21 +1,20 @@
-#[home] ---    | ----------        | ----------
-my             | MY_DOTMY          | $HOME/.my
-common         | MY_COMMON_SETTING | $MY_CONFIG/lconfig/common
+#[env] ------- | ----------        | ----------
+bin            | MY_BIN            | $MY_ENV/bin
+etc            | MY_ETC            | $MY_ENV/etc
+bash           | MY_BASH           | $MY_ETC/bash
+vim            | MY_VIM            | $MY_ETC/vim
+bmk            | MY_BMK            | $MY_ETC/bmk
+fzy            | MY_FZY            | $MY_ETC/fzy
 #[config] ---  | ----------        | ----------
 rconfig        | MY_REMOTE_CONFIG  | $MY_CONFIG/rconfig
 lconfig        | MY_LOCAL_CONFIG   | $MY_CONFIG/lconfig
 pconfig        | MY_PRIVATE_CONFIG | $MY_CONFIG/pconfig
 #[rconfig] --- | ----------        | ----------
-env            | MY_ENV            | $MY_REMOTE_CONFIG/env
-etc            | MY_ETC            | $MY_REMOTE_CONFIG/env/etc
-bash           | MY_BASH           | $MY_REMOTE_CONFIG/env/etc/bash
-vim            | MY_VIM            | $MY_REMOTE_CONFIG/env/etc/vim
-bmk            | MY_BMK            | $MY_REMOTE_CONFIG/env/etc/bmk
-fzy            | MY_FZY            | $MY_REMOTE_CONFIG/env/etc/fzy
-bin            | MY_BIN            | $MY_REMOTE_CONFIG/env/bin
 memo           | MY_MEMO           | $MY_REMOTE_CONFIG/memo
 samples        | MY_SAMPLES        | $MY_REMOTE_CONFIG/samples
 libtt          | MY_LIBTT          | $MY_REMOTE_CONFIG/libtt
+#[lconfig] --- | ----------        | ----------
+common         | MY_COMMON_SETTING | $MY_LOCAL_CONFIG/common
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------
