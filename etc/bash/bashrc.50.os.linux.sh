@@ -17,5 +17,3 @@
 alias x='exo-open --launch FileManager'
 alias p='qpdfview --unique'
 
-alias ls='ls.sh'
-

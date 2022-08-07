@@ -30,7 +30,6 @@ f_set_proxy() {
 # alias
 #------------------------------------------------------
 alias x='te.sh'
-alias ls='ls.sh'
 alias gvim='gvim.sh'
 alias gvimdiff='gvim.sh -d'
 

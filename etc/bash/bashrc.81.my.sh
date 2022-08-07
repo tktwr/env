@@ -32,6 +32,7 @@ cp.G()          { cp "$@" `mypushd.sh --get`; }
 #------------------------------------------------------
 alias pp='print-path.sh -p'
 alias make='mymake.sh'
+alias ls='ls.sh'
 
 #------------------------------------------------------
 # vim terminal
