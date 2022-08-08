@@ -4,22 +4,22 @@
 # dirs
 #======================================================
 GIT_DIRS="\
-env \
-memo \
-samples \
-templates \
-libtt \
+$MY_ENV \
+$MY_MEMO \
+$MY_SAMPLES \
+$MY_LIBTT \
+$MY_REMOTE_CONFIG/templates \
 "
 
-TAGS_DIRS="libtt"
+TAGS_DIRS="$MY_LIBTT"
 
-MEMO_DIRS="memo samples"
+MEMO_DIRS="$MY_MEMO $MY_SAMPLES"
 
 BUILD_DIRS="\
-libtt \
-samples/cpp \
-samples/cpp_lib \
-samples/mycmake.test \
+$MY_LIBTT \
+$MY_SAMPLES/cpp \
+$MY_SAMPLES/cpp_lib \
+$MY_SAMPLES/mycmake.test \
 "
 
 #======================================================
