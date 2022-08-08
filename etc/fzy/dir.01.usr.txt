@@ -1,18 +1,22 @@
-# name      | env var            | dir
-# ---       | ---                | ---
+# NAME      | ENV_VAR            | DIR
+#---------- | ----------         | ----------
 desktop     | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
 downloads   | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
-# ---       | ---                | ---
+#---------- | ----------         | ----------
 local       | MY_LOCAL           | $SYS_LOCAL_HOME
 roaming     | MY_ROAMING         | $SYS_ROAMING_HOME
 config      | MY_CONFIG          | $SYS_CONFIG_HOME
 share       | MY_SHARE           | $SYS_SHARE_HOME
-# ---       | ---                | ---
+#---------- | ----------         | ----------
 my          | MY_DOTMY           | $MY_LOCAL/.my
-# ---       | ---                | ---
+#---------- | ----------         | ----------
 python-venv | MY_PYTHON_VENV_DIR | $MY_ROAMING/python-venv
 env         | MY_ENV             | $MY_ROAMING/env
-# ---       | ---                | ---
+#---------- | ----------         | ----------
+rconfig     | MY_REMOTE_CONFIG   | $MY_CONFIG/rconfig
+lconfig     | MY_LOCAL_CONFIG    | $MY_CONFIG/lconfig
+pconfig     | MY_PRIVATE_CONFIG  | $MY_CONFIG/pconfig
+#---------- | ----------         | ----------
 private     | MY_PRIVATE         | $MY_SHARE/private
 protected   | MY_PROTECTED       | $MY_SHARE/protected
 public      | MY_PUBLIC          | $MY_SHARE/public

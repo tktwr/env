@@ -1,3 +1,4 @@
+# NAME         | ENV_VAR           | DIR
 #[env] ------- | ----------        | ----------
 bin            | MY_BIN            | $MY_ENV/bin
 etc            | MY_ETC            | $MY_ENV/etc
@@ -5,10 +6,6 @@ bash           | MY_BASH           | $MY_ETC/bash
 vim            | MY_VIM            | $MY_ETC/vim
 bmk            | MY_BMK            | $MY_ETC/bmk
 fzy            | MY_FZY            | $MY_ETC/fzy
-#[config] ---  | ----------        | ----------
-rconfig        | MY_REMOTE_CONFIG  | $MY_CONFIG/rconfig
-lconfig        | MY_LOCAL_CONFIG   | $MY_CONFIG/lconfig
-pconfig        | MY_PRIVATE_CONFIG | $MY_CONFIG/pconfig
 #[rconfig] --- | ----------        | ----------
 memo           | MY_MEMO           | $MY_REMOTE_CONFIG/memo
 samples        | MY_SAMPLES        | $MY_REMOTE_CONFIG/samples

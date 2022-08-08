@@ -1,7 +1,7 @@
 # for system
 
-# name              | env var             | dir
-# ---               | ---                 | ---
+# NAME              | ENV_VAR             | DIR
+#----------         | ----------          | ----------
 msys2-home          | SYS_MSYS2_HOME      | C:/msys64/home/$USERNAME
 cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME
 prog64              | SYS_PROG64_DIR      | C:\Program Files
@@ -12,13 +12,13 @@ sys-git             | SYS_GIT             | C:\Program Files\Git
 sys-cmake           | SYS_CMAKE           | C:\Program Files\CMake
 sys-vulkan-sdk      | SYS_VULKAN_SDK      | $VULKAN_SDK
 sys-cuda-sdk        | SYS_CUDA_SDK        | $CUDA_PATH
-# ---               | ---                 | ---
+#----------         | ----------          | ----------
 win-home            | SYS_WIN_HOME        | $SYS_WIN_HOME
 local-home          | SYS_LOCAL_HOME      | $SYS_LOCAL_HOME
 roaming-home        | SYS_ROAMING_HOME    | $SYS_ROAMING_HOME
 config-home         | SYS_CONFIG_HOME     | $SYS_CONFIG_HOME
 share-home          | SYS_SHARE_HOME      | $SYS_SHARE_HOME
-# ---               | ---                 | ---
+#----------         | ----------          | ----------
 user-local          | USER_LOCAL          | $SYS_WIN_HOME/AppData/Local
 user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
 user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs
