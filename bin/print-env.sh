@@ -11,10 +11,17 @@ f_print_env_config() {
   echo "SYS_CONFIG_HOME    = $SYS_CONFIG_HOME"
   echo "SYS_SHARE_HOME     = $SYS_SHARE_HOME"
 
-  echo "MY_CONFIG          = $MY_CONFIG"
+  echo "MY_DOTMY           = $MY_DOTMY"
+  echo "MY_PYTHON_VENV_DIR = $MY_PYTHON_VENV_DIR"
+  echo "MY_ENV             = $MY_ENV"
+
   echo "MY_REMOTE_CONFIG   = $MY_REMOTE_CONFIG"
   echo "MY_LOCAL_CONFIG    = $MY_LOCAL_CONFIG"
   echo "MY_PRIVATE_CONFIG  = $MY_PRIVATE_CONFIG"
+
+  echo "MY_PRIVATE         = $MY_PRIVATE"
+  echo "MY_PROTECTED       = $MY_PROTECTED"
+  echo "MY_PUBLIC          = $MY_PUBLIC"
 }
 
 f_print_env_python() {

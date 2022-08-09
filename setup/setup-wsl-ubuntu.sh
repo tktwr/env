@@ -74,7 +74,7 @@ f_init() {
   f_dir
   f_etc
   f_wsltty
-  f_python_venv
+  #f_python_venv
 }
 
 f_help() {

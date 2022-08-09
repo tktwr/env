@@ -114,3 +114,7 @@ function f_rmdir() {
   fi
 }
 
+f_helptags() {
+  vim -e -c 'helptags . | quit'
+}
+

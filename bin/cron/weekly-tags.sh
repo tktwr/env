@@ -1,20 +1,29 @@
 #!/bin/bash
 
-cd $MY_ENV
-mymake.sh tags
+#------------------------------------------------------
+# ctags
+#------------------------------------------------------
+TAGS_DIRS="\
+  $MY_ENV \
+  $MY_LIBTT \
+  "
+for-dir.sh "mymake.sh tags" ${TAGS_DIRS}
 
-cd $MY_VIM
-mymake.sh plug_tags
+#------------------------------------------------------
+# memo tags
+#------------------------------------------------------
+MEMO_DIRS="\
+  $MY_MEMO \
+  $MY_LOCAL_CONFIG/memo \
+  $MY_SAMPLES \
+  "
+for-dir.sh "mymake.sh tags_memo" ${MEMO_DIRS}
 
-cd $MY_MEMO
-mymake.sh tags_memo
-
-cd $MY_LOCAL_CONFIG/memo
-mymake.sh tags_memo
-
-cd $MY_SAMPLES
-mymake.sh tags.memo
-
-cd $MY_LIBTT
-mymake.sh tags
+#------------------------------------------------------
+# help tags
+#------------------------------------------------------
+PLUG_DIRS="\
+  $MY_VIM \
+  "
+for-dir.sh "mymake.sh plug_tags" ${PLUG_DIRS}
 

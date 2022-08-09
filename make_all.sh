@@ -11,10 +11,6 @@ $MY_LIBTT \
 $MY_REMOTE_CONFIG/templates \
 "
 
-TAGS_DIRS="$MY_LIBTT"
-
-MEMO_DIRS="$MY_MEMO $MY_SAMPLES"
-
 BUILD_DIRS="\
 $MY_LIBTT \
 $MY_SAMPLES/cpp \
@@ -41,11 +37,6 @@ f_pull() {
   for-dir.sh "git pull" ${GIT_DIRS}
 }
 
-f_tags() {
-  for-dir.sh "./make.sh tags_memo" ${MEMO_DIRS}
-  for-dir.sh "make tags" ${TAGS_DIRS}
-}
-
 f_build() {
   for-dir.sh "make all" ${BUILD_DIRS}
 }
@@ -65,7 +56,6 @@ f_help() {
   echo "fetch       ... fetch  in GIT_DIRS"
   echo "pull        ... pull   in GIT_DIRS"
   echo "----------- ... -----------------------------"
-  echo "tags        ... tags   in TAGS_DIRS and MEMO_DIRS"
   echo "build       ... build  in BUILD_DIRS"
   echo "clean       ... clean  in BUILD_DIRS"
   echo "print_build ... print build directories"

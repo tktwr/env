@@ -7,10 +7,10 @@
   "snippets.userSnippetsDirectory": "$MY_COMMON_SETTING/UltiSnips",
 
   // python
-  "python.venvFolders": ["~/.python-venv"],
-  "python.pythonPath": "~/.python-venv/torch/bin/python",
-  "python.linting.pylintPath": "~/.python-venv/torch/bin/pylint",
-  "python.linting.flake8Path": "~/.python-venv/torch/bin/flake8",
+  "python.venvFolders": ["~/MyRoaming/python-venv"],
+  "python.pythonPath": "~/MyRoaming/python-venv/torch/bin/python",
+  "python.linting.pylintPath": "~/MyRoaming/python-venv/torch/bin/pylint",
+  "python.linting.flake8Path": "~/MyRoaming/python-venv/torch/bin/flake8",
 
   //"python.jediEnabled": false
   "python.linting.pylintEnabled": false,
