@@ -36,10 +36,6 @@ f_plug_graph() {
   for-dir.sh "git graph -1" ${GIT_DIRS}
 }
 
-f_plug_tags() {
-  for-dir.sh "./make.sh tags" ${GIT_DIRS}
-}
-
 #------------------------------------------------------
 f_log() {
   f_log_clean
@@ -60,7 +56,6 @@ f_help() {
   echo "----------- ... -----------------------------"
   echo "plug_status ... git status for plugins"
   echo "plug_graph  ... git graph for plugins"
-  echo "plug_tags   ... make tags for plugins"
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"
   echo "log_clean   ... clean log files"
