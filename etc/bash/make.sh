@@ -18,6 +18,7 @@ f_min() {
 f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
+  echo "----------- ... -----------------------------"
   echo "help        ... print this help"
 }
 

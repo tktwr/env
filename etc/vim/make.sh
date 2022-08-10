@@ -59,6 +59,7 @@ f_help() {
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"
   echo "log_clean   ... clean log files"
+  echo "----------- ... -----------------------------"
   echo "help        ... print this help"
 }
 

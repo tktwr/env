@@ -4,7 +4,7 @@
 # variables
 #======================================================
 WIN_HOME=/mnt/c/Users/Takeh
-ENV_DIR=$(pwd)
+ENV_DIR=~/MyRoaming/env
 
 pkg_min="\
 vim \
@@ -69,6 +69,11 @@ f_python_venv() {
 
 #------------------------------------------------------
 f_init() {
+  if [ ! -d $ENV_DIR ]; then
+    echo "$ENV_DIR is not a directory"
+    return
+  fi
+
   f_update
   f_install_min
   f_dir
@@ -78,7 +83,6 @@ f_init() {
 }
 
 f_help() {
-  echo "init        ... init"
   echo "update      ... update"
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
@@ -86,7 +90,10 @@ f_help() {
   echo "etc         ... etc"
   echo "wsltty      ... wsltty"
   echo "python_venv ... python_venv"
-  echo "help        ... print help"
+  echo "----------- ... -----------------------------"
+  echo "init        ... init"
+  echo "----------- ... -----------------------------"
+  echo "help        ... print this help (default)"
 }
 
 f_default() {
