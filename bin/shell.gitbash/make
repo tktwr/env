@@ -7,10 +7,9 @@ f_eval() {
   eval "$@"
 }
 
-# use winpty on terminal
-WINPTY=""
-if [ -t 1 ]; then
-  WINPTY="winpty"
+if [ ! -t 1 ]; then
+  # stdout is not opened on a terminal
+  WINPTY=""
 fi
 
 BIN_FILES=(\

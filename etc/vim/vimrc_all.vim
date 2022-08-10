@@ -13,7 +13,7 @@ SourceFile $MY_VIM/vimrc.63.dev.vim
 SourceFile $MY_VIM/vimrc.64.edit.vim
 SourceFile $MY_VIM/vimrc.66.external.vim
 SourceFile $MY_VIM/vimrc.70.map.vim
-SourceFile $MY_VIM/vimrc.72.menu.vim
+"SourceFile $MY_VIM/vimrc.72.menu.vim
 SourceFile $MY_VIM/vimrc.80.term.vim
 SourceFile $MY_VIM/vimrc.81.gui.vim
 

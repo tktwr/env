@@ -9,17 +9,16 @@ if [ -f $BUILDRC ]; then
   source $BUILDRC
 fi
 
-# use winpty on terminal
-WINPTY=""
-if [ -t 1 ]; then
-  WINPTY="winpty"
+if [ ! -t 1 ]; then
+  # stdout is not opened on a terminal
+  WINPTY=""
 fi
 
 f_help() {
   echo "mycmake.sh         [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
   echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
-  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] --target clean"
-  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] --target install"
+  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS] --target clean"
+  echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS] --target install"
   echo "mycmake.sh --set    BUILD_SYS   BUILD_CONFIG"
   echo
   echo "OPTIONS:"
@@ -30,7 +29,7 @@ f_help() {
   echo "  --set           set build settings"
   echo
   echo "BUILD_SYS:"
-  echo "  ninja|make|vs2017|vs2019"
+  echo "  make|ninja|vs2017|vs2019"
   echo
   echo "BUILD_CONFIG:"
   echo "  Debug|Release|RelWithDebInfo"
@@ -64,14 +63,14 @@ f_mycmake() {
   local opt
 
   case $build_sys in
-    ninja)
-      generator_name="Ninja"
+    make)
+      generator_name="Unix Makefiles"
       build_dir=build.$build_sys/$build_config
       opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
       ;;
-    make)
-      generator_name="Unix Makefiles"
+    ninja)
+      generator_name="Ninja"
       build_dir=build.$build_sys/$build_config
       opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
@@ -105,12 +104,12 @@ f_mycmake_build() {
   local opt
 
   case $build_sys in
-    ninja)
-      build_dir=build.$build_sys/$build_config
-      ;;
     make)
       build_dir=build.$build_sys/$build_config
       opt="$opt -j7"
+      ;;
+    ninja)
+      build_dir=build.$build_sys/$build_config
       ;;
     vs2017)
       build_dir=build.$build_sys

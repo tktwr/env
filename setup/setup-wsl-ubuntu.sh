@@ -15,11 +15,12 @@ fzy \
 zip unzip \
 universal-ctags \
 "
-
 pkg_ext="\
+vim-gui-common \
 neovim \
 cmake \
 clang \
+clangd \
 clang-format \
 "
 

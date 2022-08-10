@@ -19,6 +19,7 @@ build*/
 imgui.ini
 compile_commands.json
 .clangd/
+.cache/
 doxygen/
 !Doxyfile
 
