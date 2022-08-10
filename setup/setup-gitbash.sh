@@ -25,6 +25,8 @@ f_init() {
 }
 
 f_help() {
+  echo "etc         ... etc"
+  echo "----------- ... -----------------------------"
   echo "init        ... init"
   echo "----------- ... -----------------------------"
   echo "help        ... print this help (default)"
