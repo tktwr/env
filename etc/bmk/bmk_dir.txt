@@ -14,13 +14,13 @@
 - K Desktop/                           | $MY_DESKTOP/
 - N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
--   MyRoaming/                         | $MY_ROAMING/
+- R MyRoaming/                         | $MY_ROAMING/
 - C MyConfig/                          | $MY_CONFIG/
 - S MyShare/                           | $MY_SHARE/
     ---------------------------------- | ----------------------------------------
-- R MY_REMOTE_CONFIG/                  | $MY_REMOTE_CONFIG/
-- L MY_LOCAL_CONFIG/                   | $MY_LOCAL_CONFIG/
-- P MY_PRIVATE_CONFIG/                 | $MY_PRIVATE_CONFIG/
+-   MY_REMOTE_CONFIG/                  | $MY_REMOTE_CONFIG/
+-   MY_LOCAL_CONFIG/                   | $MY_LOCAL_CONFIG/
+-   MY_PRIVATE_CONFIG/                 | $MY_PRIVATE_CONFIG/
 - y .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
     ---------------------------------- | ----------------------------------------
@@ -34,11 +34,10 @@
 - t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
 - w work/                              | $MY_WORK/
-- j proj/                              | $MY_PROJ/
+- p proj/                              | $MY_PROJ/
 - g git/                               | $MY_GIT/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
-- p papers/                            | $MY_PAPERS/
     ---------------------------------- | ----------------------------------------
 - A arch/                              | $MY_ARCH/
 - B backup/                            | $MY_BACKUP/
@@ -46,6 +45,7 @@
 - G github/                            | $MY_GITHUB/
 - M man/                               | $MY_MAN/
 - O opt/                               | $MY_OPT/
+- P papers/                            | $MY_PAPERS/
 - T tmp/                               | $MY_TMP/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   env/                               | $MY_ENV/
