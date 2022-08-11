@@ -14,6 +14,8 @@ if [ ! -t 1 ]; then
   WINPTY=""
 fi
 
+CMAKE=cmake.exe
+
 f_help() {
   echo "mycmake.sh         [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
   echo "mycmake.sh --build [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
@@ -29,7 +31,7 @@ f_help() {
   echo "  --set           set build settings"
   echo
   echo "BUILD_SYS:"
-  echo "  make|ninja|vs2017|vs2019"
+  echo "  make|ninja|vs2017|vs2019|vs2022"
   echo
   echo "BUILD_CONFIG:"
   echo "  Debug|Release|RelWithDebInfo"
@@ -83,6 +85,10 @@ f_mycmake() {
       generator_name="Visual Studio 16 2019"
       build_dir=build.$build_sys
       ;;
+    vs2022)
+      generator_name="Visual Studio 17 2022"
+      build_dir=build.$build_sys
+      ;;
     *)
       echo "no such build_sys: $build_sys"
       return
@@ -91,7 +97,7 @@ f_mycmake() {
 
   opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
 
-  f_eval "$WINPTY cmake -S. -B$build_dir -G\"$generator_name\" $opt $@"
+  f_eval "$WINPTY $CMAKE -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }
 
 f_mycmake_build() {
@@ -117,13 +123,16 @@ f_mycmake_build() {
     vs2019)
       build_dir=build.$build_sys
       ;;
+    vs2022)
+      build_dir=build.$build_sys
+      ;;
     *)
       echo "no such build_sys: $build_sys"
       return
       ;;
   esac
 
-  f_eval "$WINPTY cmake --build $build_dir --config $build_config $opt $@"
+  f_eval "$WINPTY $CMAKE --build $build_dir --config $build_config $opt $@"
 }
 
 case $1 in
