@@ -1,8 +1,8 @@
 #!/bin/bash
 
+CMAKE=cmake
 MY_BUILD_SYS=make
 MY_BUILD_CONFIG=Release
-
 BUILDRC=$HOME/.my/buildrc
 
 if [ -f $BUILDRC ]; then
@@ -13,8 +13,6 @@ if [ ! -t 1 ]; then
   # stdout is not opened on a terminal
   WINPTY=""
 fi
-
-CMAKE=cmake.exe
 
 f_help() {
   echo "mycmake.sh         [BUILD_SYS] [BUILD_CONFIG] [CMAKE_OPTIONS]"
@@ -66,26 +64,31 @@ f_mycmake() {
 
   case $build_sys in
     make)
+      CMAKE=cmake
       generator_name="Unix Makefiles"
       build_dir=build.$build_sys/$build_config
       opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
       ;;
     ninja)
+      CMAKE=cmake
       generator_name="Ninja"
       build_dir=build.$build_sys/$build_config
       opt="$opt -DCMAKE_BUILD_TYPE=$build_config"
       opt="$opt -DCMAKE_EXPORT_COMPILE_COMMANDS=YES"
       ;;
     vs2017)
+      CMAKE=cmake.exe
       generator_name="Visual Studio 15 2017 Win64"
       build_dir=build.$build_sys
       ;;
     vs2019)
+      CMAKE=cmake.exe
       generator_name="Visual Studio 16 2019"
       build_dir=build.$build_sys
       ;;
     vs2022)
+      CMAKE=cmake.exe
       generator_name="Visual Studio 17 2022"
       build_dir=build.$build_sys
       ;;
@@ -111,19 +114,16 @@ f_mycmake_build() {
 
   case $build_sys in
     make)
+      CMAKE=cmake
       build_dir=build.$build_sys/$build_config
       opt="$opt -j7"
       ;;
     ninja)
+      CMAKE=cmake
       build_dir=build.$build_sys/$build_config
       ;;
-    vs2017)
-      build_dir=build.$build_sys
-      ;;
-    vs2019)
-      build_dir=build.$build_sys
-      ;;
-    vs2022)
+    vs2017|vs2019|vs2022)
+      CMAKE=cmake.exe
       build_dir=build.$build_sys
       ;;
     *)
