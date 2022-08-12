@@ -20,5 +20,6 @@ source_file $MY_BASH/bashrc.81.my.sh
 source_file $MY_BASH/bashrc.82.fzy.sh
 source_file $MY_BASH/bashrc.90.setup.sh
 
-source_file $MY_COMMON_SETTING/bashrc.*.sh
+source_file $MY_COMMON_SETTING/bashrc.0?.*.sh
+source_file $MY_COMMON_SETTING/bashrc.1?.*.$MY_OS_NAME.sh
 
