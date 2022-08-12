@@ -1,3 +1,3 @@
-netsh winhttp reset proxy
-netsh winhttp import proxy source=ie
-netsh winhttp show proxy
+netsh.exe winhttp reset proxy
+netsh.exe winhttp import proxy source=ie
+netsh.exe winhttp show proxy

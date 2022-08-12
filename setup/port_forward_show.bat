@@ -1,1 +1,1 @@
-netsh interface portproxy show v4tov4
+netsh.exe interface portproxy show v4tov4
