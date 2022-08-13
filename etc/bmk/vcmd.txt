@@ -65,8 +65,6 @@
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
 [vcmd.ext] --------------------------- | ----------------------------------------
--   fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
--   fzy papers                         | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh papers.txt")
 - P ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?
 -   VisBufDelete                       | :VisBufDelete

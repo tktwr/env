@@ -8,6 +8,8 @@
 - c fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
 - m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
 - t fzy tags                           | :call FzyCommand("VisTjump",    "fzy_tags.sh")
+- L fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
+- P fzy papers                         | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh papers.txt")
     ---------------------------------- | ----------------------------------------
 - B bmk save                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
