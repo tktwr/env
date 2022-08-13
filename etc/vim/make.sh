@@ -1,16 +1,6 @@
 #!/bin/bash
 
 #======================================================
-# dirs
-#======================================================
-GIT_DIRS="\
-plugged/vim-winbuf-menu \
-plugged/vim-bmk-menu \
-plugged/vim-ide-style \
-plugged/vim-memo \
-"
-
-#======================================================
 # functions
 #======================================================
 f_all() {
@@ -25,15 +15,6 @@ f_min() {
 
 f_min_plug() {
   cat vimrc_min.vim vimrc_min_plug.vim > $HOME/.vimrc
-}
-
-#------------------------------------------------------
-f_plug_status() {
-  for-dir.sh "git status -s" ${GIT_DIRS}
-}
-
-f_plug_graph() {
-  for-dir.sh "git graph -1" ${GIT_DIRS}
 }
 
 #------------------------------------------------------
@@ -53,9 +34,6 @@ f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
   echo "min_plug    ... minimum settings with plugins"
-  echo "----------- ... -----------------------------"
-  echo "plug_status ... git status for plugins"
-  echo "plug_graph  ... git graph for plugins"
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"
   echo "log_clean   ... clean log files"

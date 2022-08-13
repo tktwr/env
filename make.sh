@@ -1,7 +1,5 @@
 #!/bin/bash
 
-source common.sh
-
 #======================================================
 # dirs
 #======================================================
@@ -11,6 +9,10 @@ $MY_MEMO \
 $MY_SAMPLES \
 $MY_LIBTT \
 $MY_REMOTE_CONFIG/templates \
+$MY_VIM/plugged/vim-winbuf-menu \
+$MY_VIM/plugged/vim-bmk-menu \
+$MY_VIM/plugged/vim-ide-style \
+$MY_VIM/plugged/vim-memo \
 "
 
 BUILD_DIRS="\
@@ -18,6 +20,16 @@ $MY_LIBTT \
 $MY_SAMPLES/cpp \
 $MY_SAMPLES/cpp_lib \
 $MY_SAMPLES/mycmake.test \
+"
+
+VIM_FILES="\
+etc/vim/*.vim \
+etc/vim/vim-plug/*.vim \
+etc/vim/plugin \
+etc/vim/plugged/vim-winbuf-menu \
+etc/vim/plugged/vim-bmk-menu \
+etc/vim/plugged/vim-ide-style \
+etc/vim/plugged/vim-memo \
 "
 
 #======================================================
@@ -32,20 +44,10 @@ f_snap() {
 }
 
 f_tags() {
-  f_eval 'myctags.sh bin/*.sh > .tags.bin_sh'
-  f_eval 'myctags.sh bin/py/*.py > .tags.bin_py'
-  f_eval 'myctags.sh etc/bash/*.sh > .tags.bash'
-
-  vim_files='\
-    etc/vim/*.vim \
-    etc/vim/vim-plug/*.vim \
-    etc/vim/plugin \
-    etc/vim/plugged/vim-winbuf-menu \
-    etc/vim/plugged/vim-bmk-menu \
-    etc/vim/plugged/vim-ide-style \
-    etc/vim/plugged/vim-memo \
-    '
-  f_eval "myctags.sh $vim_files > .tags.vim"
+  myctags.sh bin/*.sh > .tags.bin_sh
+  myctags.sh bin/py/*.py > .tags.bin_py
+  myctags.sh etc/bash/*.sh > .tags.bash
+  myctags.sh $VIM_FILES > .tags.vim
 }
 
 #------------------------------------------------------

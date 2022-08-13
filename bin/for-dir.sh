@@ -13,8 +13,6 @@ f_exec_in_dirs() {
       echo "=== [$i]($cmd) ==="
       cd "$i"
       eval "$cmd"
-      echo
-      #echo
       cd $top_dir
     fi
   done
