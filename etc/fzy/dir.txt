@@ -15,19 +15,18 @@ common         | MY_COMMON_SETTING | $MY_LOCAL_CONFIG/common
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------
+proj           | MY_PROJ           | $MY_PRIVATE/proj
+work           | MY_WORK           | $MY_PRIVATE/work
+git            | MY_GIT            | $MY_PRIVATE/work/git
+doc            | MY_DOC            | $MY_PRIVATE/doc
+office         | MY_OFFICE         | $MY_PRIVATE/office
 backup         | MY_BACKUP         | $MY_PRIVATE/backup/2022
 tmp            | MY_TMP            | $MY_PRIVATE/tmp/2022
 repo           | MY_REPO           | $MY_PRIVATE/repo
-work           | MY_WORK           | $MY_PRIVATE/work
-proj           | MY_PROJ           | $MY_PRIVATE/proj
-doc            | MY_DOC            | $MY_PRIVATE/doc
-office         | MY_OFFICE         | $MY_PRIVATE/office
-git            | MY_GIT            | $MY_PRIVATE/work/git
-github         | MY_GITHUB         | $MY_PRIVATE/work/github
-svn            | MY_SVN            | $MY_PRIVATE/work/svn
 #[public] ---  | ----------        | ----------
 arch           | MY_ARCH           | $MY_PUBLIC/arch
 papers         | MY_PAPERS         | $MY_PUBLIC/Papers
+github         | MY_GITHUB         | $MY_PUBLIC/github
 opt            | MY_OPT            | $MY_PUBLIC/opt
 man            | MY_MAN            | $MY_PUBLIC/man
 data           | MY_DATA           | $MY_PUBLIC/data

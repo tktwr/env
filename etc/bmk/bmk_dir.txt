@@ -18,9 +18,6 @@
 - C MyConfig/                          | $MY_CONFIG/
 - S MyShare/                           | $MY_SHARE/
     ---------------------------------- | ----------------------------------------
--   MY_REMOTE_CONFIG/                  | $MY_REMOTE_CONFIG/
--   MY_LOCAL_CONFIG/                   | $MY_LOCAL_CONFIG/
--   MY_PRIVATE_CONFIG/                 | $MY_PRIVATE_CONFIG/
 - y .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
     ---------------------------------- | ----------------------------------------
@@ -33,8 +30,8 @@
 - s samples/                           | $MY_SAMPLES/
 - t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
-- w work/                              | $MY_WORK/
 - p proj/                              | $MY_PROJ/
+- w work/                              | $MY_WORK/
 - g git/                               | $MY_GIT/
 - d doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
@@ -48,15 +45,6 @@
 - P papers/                            | $MY_PAPERS/
 - T tmp/                               | $MY_TMP/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
--   env/                               | $MY_ENV/
--   ahk/                               | $MY_ENV/os.windows/ahk/
--   bmk/                               | $MY_BMK/
--   fzy/                               | $MY_FZY/
--   dia/                               | $MY_DIARY/
--   repo/                              | $MY_REPO/
--   svn/                               | $MY_SVN/
--   python-venv/                       | $MY_PYTHON_VENV_DIR/
-    ---------------------------------- | ----------------------------------------
 -   rconfig/                           | $MY_REMOTE_CONFIG/
 -   lconfig/                           | $MY_LOCAL_CONFIG/
 -   pconfig/                           | $MY_PRIVATE_CONFIG/

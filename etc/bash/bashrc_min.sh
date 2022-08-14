@@ -103,6 +103,12 @@ f_print_env() {
 # alias
 #------------------------------------------------------
 f_alias() {
+  # shell
+  alias s='source $HOME/.bashrc'
+  alias h='history 20'
+  alias j='jobs -l'
+  alias where='type -all'
+
   # directory stack
   alias .='pushd'
   alias ..='pushd +2'
@@ -114,10 +120,6 @@ f_alias() {
   alias .c='dirs -c'
   alias .i='dirs -c; cd'
 
-  alias s='source $HOME/.bashrc'
-  alias h='history 20'
-  alias j='jobs -l'
-  alias where='type -all'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
 
@@ -130,12 +132,12 @@ f_alias() {
   alias G='git graph -6'
   alias GA='git graph -6 --all'
 
+  alias vi='vim'
+  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
+
   alias cd.bin='cd $MY_BIN'
   alias cd.etc='cd $MY_ETC'
   alias cd.vim='cd $MY_VIM'
-
-  alias vi='vim'
-  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
 
 vim-which() { vim `which $*`; }
