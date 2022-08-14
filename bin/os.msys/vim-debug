@@ -11,7 +11,7 @@ venv=""
 
 debug=0
 if [ $debug -eq 1 ]; then
-  echo $PATH | print-path.sh > ~/vim.log
+  echo $PATH | format-path.sh > ~/vim.log
 
   echo >> ~/vim.log
   echo "[which]" >> ~/vim.log

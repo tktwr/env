@@ -19,7 +19,6 @@ BUILD_DIRS="\
 $MY_LIBTT \
 $MY_SAMPLES/cpp \
 $MY_SAMPLES/cpp_lib \
-$MY_SAMPLES/mycmake.test \
 "
 
 VIM_FILES="\
@@ -35,22 +34,6 @@ etc/vim/plugged/vim-memo \
 #======================================================
 # functions
 #======================================================
-f_snap() {
-  fname=$(git-tar.sh)
-  if [ -d "$MY_SNAP" ]; then
-    echo "$fname $MY_SNAP"
-    mv $fname $MY_SNAP
-  fi
-}
-
-f_tags() {
-  myctags.sh bin/*.sh > .tags.bin_sh
-  myctags.sh bin/py/*.py > .tags.bin_py
-  myctags.sh etc/bash/*.sh > .tags.bash
-  myctags.sh $VIM_FILES > .tags.vim
-}
-
-#------------------------------------------------------
 f_status() {
   for-dir.sh "git status -s" ${GIT_DIRS}
 }
@@ -77,10 +60,23 @@ f_clean() {
 }
 
 #------------------------------------------------------
+f_snap() {
+  fname=$(git-tar.sh)
+  if [ -d "$MY_SNAP" ]; then
+    echo "$fname $MY_SNAP"
+    mv $fname $MY_SNAP
+  fi
+}
+
+f_tags() {
+  myctags.sh bin/*.sh > .tags.bin_sh
+  myctags.sh bin/py/*.py > .tags.bin_py
+  myctags.sh etc/bash/*.sh > .tags.bash
+  myctags.sh $VIM_FILES > .tags.vim
+}
+
+#------------------------------------------------------
 f_help() {
-  echo "snap        ... make a snapshot"
-  echo "tags        ... make tags"
-  echo "----------- ... -----------------------------"
   echo "status      ... status in GIT_DIRS"
   echo "graph       ... graph  in GIT_DIRS"
   echo "fetch       ... fetch  in GIT_DIRS"
@@ -88,6 +84,9 @@ f_help() {
   echo "----------- ... -----------------------------"
   echo "build       ... build  in BUILD_DIRS"
   echo "clean       ... clean  in BUILD_DIRS"
+  echo "----------- ... -----------------------------"
+  echo "snap        ... make a snapshot"
+  echo "tags        ... make tags"
   echo "----------- ... -----------------------------"
   echo "help        ... print this help (default)"
 }

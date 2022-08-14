@@ -4,6 +4,12 @@
 # alias
 #======================================================
 
+# shell
+alias s='source $HOME/.bashrc'
+alias h='history 20'
+alias j='jobs -l'
+alias where='type -all'
+
 # directory stack
 alias .='pushd'
 alias ..='pushd +2'
@@ -21,16 +27,16 @@ alias nm='nm -C'
 alias df='df -h'
 alias more='$PAGER'
 
-# shell
-alias s='source $HOME/.bashrc'
-alias h='history 20'
-alias j='jobs -l'
-alias where='type -all'
-alias lsd='\ls -d --color=auto */'
+# ps
 alias psu='ps -u $USER'
+psall() { ps -aef | grep $*; }
+
+# ls
+alias lsd='\ls -d --color=auto */'
 ll() { ls -l --color $* | $PAGER; }
 lst() { ls -lt --color $* | grep -v "/$" | head -5; }
-psall() { ps -aef | grep $*; }
+
+# find
 ff() { find . -name "$*" -print; }
 
 # vim
@@ -42,10 +48,10 @@ alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 vim-which() { vim `which "$1"` $2; }
 vim-where() { vim `which "$1"` $2; }
 
-# file
-alias f='vifm'
-alias f.='vifm -c "OneCol" . ~'
-alias f..='vifm -c "TwoCol" . .'
+# vifm
+alias vf='vifm'
+alias vf.='vifm -c "OneCol" . ~'
+alias vf..='vifm -c "TwoCol" . .'
 
 # net
 alias wget-page='wget -N -k -p -L -np'

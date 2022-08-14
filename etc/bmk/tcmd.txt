@@ -24,16 +24,19 @@
 - c mycmake.sh                         | > mycmake.sh<CR>
 - b mycmake.sh --build                 | > mycmake.sh --build<CR>
     ---------------------------------- | ----------------------------------------
--   mycmake-set-ninja-release          | > mycmake-set-ninja-release<CR>
--   mycmake-set-ninja-debug            | > mycmake-set-ninja-debug<CR>
-- m mycmake-set-make-release           | > mycmake-set-make-release<CR>
--   mycmake-set-make-debug             | > mycmake-set-make-debug<CR>
--   mycmake-set-vs2017-release         | > mycmake-set-vs2017-release<CR>
--   mycmake-set-vs2017-debug           | > mycmake-set-vs2017-debug<CR>
--   mycmake-set-vs2017-reldeb          | > mycmake-set-vs2017-reldeb<CR>
-- v mycmake-set-vs2019-release         | > mycmake-set-vs2019-release<CR>
--   mycmake-set-vs2019-debug           | > mycmake-set-vs2019-debug<CR>
--   mycmake-set-vs2019-reldeb          | > mycmake-set-vs2019-reldeb<CR>
+- m mycmake-set make   Release         | > mycmake-set make   Release<CR>
+-   mycmake-set make   Debug           | > mycmake-set make   Debug<CR>
+-   mycmake-set ninja  Release         | > mycmake-set ninja  Release<CR>
+-   mycmake-set ninja  Debug           | > mycmake-set ninja  Debug<CR>
+-   mycmake-set vs2017 Release         | > mycmake-set vs2017 Release<CR>
+-   mycmake-set vs2017 Debug           | > mycmake-set vs2017 Debug<CR>
+-   mycmake-set vs2017 RelWithDebInfo  | > mycmake-set vs2017 RelWithDebInfo<CR>
+-   mycmake-set vs2019 Release         | > mycmake-set vs2019 Release<CR>
+-   mycmake-set vs2019 Debug           | > mycmake-set vs2019 Debug<CR>
+-   mycmake-set vs2019 RelWithDebInfo  | > mycmake-set vs2019 RelWithDebInfo<CR>
+- v mycmake-set vs2022 Release         | > mycmake-set vs2022 Release<CR>
+-   mycmake-set vs2022 Debug           | > mycmake-set vs2022 Debug<CR>
+-   mycmake-set vs2022 RelWithDebInfo  | > mycmake-set vs2022 RelWithDebInfo<CR>
 [tcmd.system] ------------------------ | ----------------------------------------
 -   pacman -S -h                       | > pacman -S -h<CR>
 -   pacman -Syyu                       | > pacman -Syyu<CR>

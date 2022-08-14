@@ -3,23 +3,6 @@
 #======================================================
 # my
 #======================================================
-
-#------------------------------------------------------
-# mv
-#------------------------------------------------------
-mv.desktop()    { mv "$@" $MY_DESKTOP; }
-mv.downloads()  { mv "$@" $MY_DOWNLOADS; }
-
-mv.work()       { mv "$@" $MY_WORK; }
-mv.doc()        { mv "$@" $MY_DOC; }
-mv.office()     { mv "$@" $MY_OFFICE; }
-mv.proj()       { mv "$@" $MY_PROJ; }
-
-mv.downloads2() { mv "$@" $MY_DOWNLOADS2; }
-mv.papers()     { mv "$@" $MY_PAPERS; }
-mv.opt()        { mv "$@" $MY_OPT; }
-mv.data()       { mv "$@" $MY_DATA; }
-
 #------------------------------------------------------
 # mypushd.sh
 #------------------------------------------------------
@@ -30,9 +13,13 @@ mv.G()          { mv "$@" `mypushd.sh --get`; }
 cp.G()          { cp "$@" `mypushd.sh --get`; }
 
 #------------------------------------------------------
-alias pp='print-path.sh -p'
-alias make='mymake.sh'
 alias ls='ls.sh'
+
+alias make='mymake.sh'
+mycmake-set() {
+  mycmake.sh --set $1 $2
+  source_bashrc
+}
 
 #------------------------------------------------------
 # vim terminal
