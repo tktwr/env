@@ -251,6 +251,10 @@ git-reset-hard-origin() {
 #------------------------------------------------------
 # others
 #------------------------------------------------------
+git-shallow-clone-recursive() {
+  git clone --depth 1 --recurse-submodules --shallow-submodules "$@"
+}
+
 git-clone-recursive() {
   git clone --recurse-submodules "$@"
 }

@@ -23,6 +23,10 @@ clang \
 clangd \
 clang-format \
 "
+pkg_ext2="\
+blender \
+nvidia-cuda-toolkit \
+"
 
 #======================================================
 # functions
