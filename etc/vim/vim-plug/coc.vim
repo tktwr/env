@@ -3,7 +3,8 @@
 "------------------------------------------------------
 let $NVIM_COC_LOG_LEVEL='debug'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'commit': 'cf651a3'}  " work with node v12.22.9
 
 if filereadable(expand('~/.vim/coc-settings.json'))
   let g:coc_config_home = expand('~/.vim')
