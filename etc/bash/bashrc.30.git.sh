@@ -275,6 +275,7 @@ alias gS='git status -s'
 alias gd='git diff'
 alias gD='git diff --staged'
 alias gf='git fetch'
+alias gg='git graph'
 alias gb='git branch'
 alias gt='git tag'
 

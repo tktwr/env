@@ -30,8 +30,5 @@ if [ "$VIM_TERMINAL" ]; then
 
   alias ,tabe='vimapi.sh tabedit'
   alias ,termcd='vimapi-termcd'
-else
-  alias z='vim -c "DiaFull"'
-  alias zh='vim -c "DiaFullH"'
 fi
 

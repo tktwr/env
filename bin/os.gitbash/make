@@ -1,0 +1,34 @@
+#!/bin/bash
+
+f_eval() {
+  echo "======================================================="
+  echo "$@"
+  echo "======================================================="
+  eval "$@"
+}
+
+f_get_bin_file() {
+  BIN_FILES=(\
+  "$ANDROID_SDK/ndk-bundle/prebuilt/windows-x86_64/bin/make.exe" \
+  )
+
+  for i in ${BIN_FILES[@]}; do
+    if [ -x "$i" ]; then
+      echo "$i"
+      return
+    fi
+  done
+
+  echo "make.exe is not found"
+  exit
+}
+
+if [ ! -t 1 ]; then
+  # stdout is not opened on a terminal
+  WINPTY=""
+fi
+
+bin_file=$(f_get_bin_file)
+
+f_eval "$WINPTY $bin_file $@"
+

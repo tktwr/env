@@ -1,27 +1,34 @@
-# gitconfig
+## gitconfig
 
 [user]
-	name = username
-	email = username@example.com
+  name = username
+  email = username@example.com
 [core]
-	autocrlf = input
-	quotepath = false
-	pager = less
-	editor = gvim
-	excludesfile = ~/.gitignore_global
+  autocrlf = input
+  quotepath = false
+  pager = less
+  editor = gvim
+  excludesfile = ~/.gitignore_global
 
 [diff]
-	tool = gvimdiff
+  tool = gvimdiff
 [merge]
-	tool = gvimdiff
+  tool = gvimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [mergetool]
-	prompt = false
+  prompt = false
 
 [alias]
-	graph     = log --graph --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
-	graph-all = log --graph --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --all
-	co = checkout
-	dd = difftool -d
+  graph     = log --graph --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
+  graph-all = log --graph --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --all
+  co = checkout
+  dd = difftool -d
 
+## gitbash/msys2
+#[credential]
+#  helper = manager-core
+
+## wsl
+#[credential]
+#  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
