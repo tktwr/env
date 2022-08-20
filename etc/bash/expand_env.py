@@ -7,7 +7,7 @@ import argparse
 import tt_path_util as ttp
 
 
-def f_print_env(fname, args):
+def f_expand_env(fname, args):
     try:
         with open(fname, "r") as f:
             for line in f:
@@ -23,7 +23,7 @@ def f_print_env(fname, args):
 
                 # expand env except MY_XXX
                 r = re.search('^\$MY_', dir_name)
-                if r == None:
+                if r is None:
                     dir_name = ttp.expand_env(dir_name)
 
                 dir_name = ttp.path_unix(dir_name, args.prefix)
@@ -67,7 +67,7 @@ def print_args(args):
 def main(files, args):
     print(f"#!/bin/bash")
     for i in files:
-        f_print_env(i, args)
+        f_expand_env(i, args)
 
 
 if __name__ == "__main__":
@@ -76,5 +76,3 @@ if __name__ == "__main__":
         print_args(args)
 
     main(args.files, args)
-
-

@@ -4,13 +4,13 @@
 # functions
 #======================================================
 f_all() {
-  ./env.sh > $HOME/.my/hostname
-  ./expand_env.sh > $HOME/.my/env
+  ./make_hostname.sh > $HOME/.my/hostname
+  ./make_env.sh > $HOME/.my/env
   cp bashrc_all.sh $HOME/.bashrc
 }
 
 f_min() {
-  ./env.sh > $HOME/.my/hostname
+  ./make_hostname.sh > $HOME/.my/hostname
   cp bashrc_min.sh $HOME/.bashrc
 }
 
