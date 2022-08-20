@@ -5,4 +5,4 @@ export PATH="$SYS_PROG32_DIR/Vim/vim82:$PATH"
 
 vimrc=$(pathconv.sh win "$HOME/_vimrc")
 wp=$(pathconv.sh win "$*")
-exec winpty vim.exe -u "$vimrc" "$wp"
+exec $WINPTY vim.exe -u "$vimrc" "$wp"
