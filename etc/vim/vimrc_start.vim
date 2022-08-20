@@ -14,3 +14,15 @@ endfunc
 
 command -nargs=1 SourceFile    call SourceFile(<f-args>)
 
+"------------------------------------------------------
+" IsWsl
+"------------------------------------------------------
+func IsWsl()
+  if has('unix')
+    if (match(system('uname -a'), 'WSL') != -1)
+      return 1
+    endif
+  endif
+  return 0
+endfunc
+

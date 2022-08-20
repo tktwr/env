@@ -111,9 +111,15 @@ func YankUrlToClipboard()
   echo url
 endfunc
 
-nnoremap ,p      "*p
-vnoremap Y       "*y
-nnoremap Y       :call YankUrlToClipboard()<CR>
+if IsWsl()
+  "nnoremap ,p            :r!paste.sh<CR>
+  nnoremap ,p            "+p
+  vnoremap <silent> Y    y:silent '<,'>w !clip.exe<CR>
+else
+  nnoremap ,p      "*p
+  vnoremap Y       "*y
+  nnoremap Y       :call YankUrlToClipboard()<CR>
+endif
 
 "------------------------------------------------------
 " map.window.move
