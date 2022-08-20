@@ -12,6 +12,7 @@ samples        | MY_SAMPLES        | $MY_REMOTE_CONFIG/samples
 libtt          | MY_LIBTT          | $MY_REMOTE_CONFIG/libtt
 #[lconfig] --- | ----------        | ----------
 common         | MY_COMMON_SETTING | $MY_LOCAL_CONFIG/common
+dict           | MY_DICT           | $MY_LOCAL_CONFIG/share/dict
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------

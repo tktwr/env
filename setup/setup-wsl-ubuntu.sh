@@ -14,6 +14,7 @@ python3-venv \
 fzy \
 zip unzip \
 universal-ctags \
+eblook \
 "
 pkg_ext="\
 vim-gui-common \
