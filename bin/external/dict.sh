@@ -50,24 +50,30 @@ quit
 END
 }
 
+f_filter() {
+  sed -e 's+<prev>.*</prev>++' \
+      -e 's+<next>.*</next>++' \
+      -e "s/<gaiji=[^>]*>//g" \
+      -e 's/・//g'
+}
+
 #==========================================================================
 # dictionaries
 #==========================================================================
-
 f_crown() {
   dict="crown"
   appendix="crown-appendix"
-  f_eblook | $PAGER
+  f_eblook | f_filter | $PAGER
 }
 
 f_daily() {
   dict="daily"
-  f_eblook | $PAGER | sed "s/<gaiji=[^>]*>//g" | sed 's/・//g'
+  f_eblook | f_filter | $PAGER
 }
 
 f_wordnet() {
   dict="wordnet"
-  f_eblook
+  f_eblook | f_filter | $PAGER
 }
 
 #==========================================================================
