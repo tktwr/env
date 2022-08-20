@@ -1,19 +1,19 @@
 #!/bin/sh
 
+cd $MY_DICT
+
 #TERM=cygwin
 #PAGER='lv -Ou8'
 
 case $MY_OS_NAME in
-  msys)
+  gitbash|msys)
     PAGER='iconv -f CP932 -t UTF-8'
-    EBLOOK=eblook.exe
+    EBLOOK=./eblook.exe
     ;;
   wsl)
     EBLOOK=eblook
     ;;
 esac
-
-cd $MY_DICT
 
 bin_name=`basename $0`
 
