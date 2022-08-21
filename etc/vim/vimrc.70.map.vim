@@ -112,11 +112,8 @@ func YankUrlToClipboard()
 endfunc
 
 if IsWsl()
-  if has('clipboard')
-    nnoremap ,p            "+p
-  else
-    nnoremap ,p            :r!paste.sh<CR>
-  endif
+  "nnoremap ,p            "+p
+  nnoremap ,p            :r !paste.sh<CR>
   vnoremap <silent> Y    y:silent '<,'>w !clip.exe<CR>
 else
   nnoremap ,p      "*p

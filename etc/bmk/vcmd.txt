@@ -26,7 +26,7 @@
 - A vim grep all                       | :call MyVimgrepAll('??')
 - ] tjump                              | :call VisTjumpPrompt()
     --- (Edit) ----------------------- | ----------------------------------------
-- p paste                 (,p)         | "*p
+- p paste                 (,p)         | ,p
 -   yank                   (Y)         | "*y
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
