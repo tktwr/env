@@ -108,49 +108,6 @@ class MySubClass(MyClass):
 endsnippet
 
 #------------------------------------------------------
-# io
-#------------------------------------------------------
-
-snippet f_read_text "read a text file"
-def f_read_text(fname):
-    with open(fname, "r") as f:
-        lines = f.readlines()
-    return lines
-
-
-endsnippet
-
-snippet f_write_text "write a text file"
-def f_write_text(fname, lines):
-    with open(fname, "w") as f:
-        for i in lines:
-            f.write(i)
-
-
-endsnippet
-
-snippet f_read_json "read a json file"
-import json
-
-def f_read_json(fname):
-    with open(fname, "r") as f:
-        json_data = json.load(f)
-    return json_data
-
-
-endsnippet
-
-snippet f_write_json "write a json file"
-import json
-
-def f_write_json(fname, data):
-    with open(fname, "w") as f:
-        f.write(json.dumps(data, sort_keys=True, indent=4))
-
-
-endsnippet
-
-#------------------------------------------------------
 # util
 #------------------------------------------------------
 

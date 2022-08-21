@@ -4,6 +4,7 @@
 import os
 import re
 import time
+import json
 import argparse
 import numpy as np
 
@@ -100,3 +101,28 @@ def timeit(func):
     return wrapper
 
 
+#------------------------------------------------------
+# text
+#------------------------------------------------------
+def read_text(fname):
+    with open(fname, "r") as f:
+        return f.readlines()
+
+
+def write_text(fname, lines):
+    with open(fname, "w") as f:
+        for i in lines:
+            f.write(i)
+
+
+#------------------------------------------------------
+# json
+#------------------------------------------------------
+def read_json(fname):
+    with open(fname, "r") as f:
+        return json.load(f)
+
+
+def write_json(fname, data):
+    with open(fname, "w") as f:
+        f.write(json.dumps(data, sort_keys=True, indent=4))
