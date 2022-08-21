@@ -32,7 +32,7 @@
     ---------------------------------- | ----------------------------------------
 - X Wx                                 | :Wx ?
 - R CpmReload                          | :CpmReload
-- S MySourceVimrc                      | :MySourceVimrc
+- S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
 - V BmkViewThis         (C-CR)         | :call BmkViewThis()
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()

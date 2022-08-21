@@ -1,4 +1,16 @@
 "------------------------------------------------------
+" IsWsl
+"------------------------------------------------------
+func IsWsl()
+  if has('unix')
+    if (match(system('uname -a'), 'WSL') != -1)
+      return 1
+    endif
+  endif
+  return 0
+endfunc
+
+"------------------------------------------------------
 " SourceFile
 "------------------------------------------------------
 func SourceFile(fname)
@@ -15,14 +27,13 @@ endfunc
 command -nargs=1 SourceFile    call SourceFile(<f-args>)
 
 "------------------------------------------------------
-" IsWsl
+" SourceVimrc
 "------------------------------------------------------
-func IsWsl()
-  if has('unix')
-    if (match(system('uname -a'), 'WSL') != -1)
-      return 1
-    endif
-  endif
-  return 0
-endfunc
+if !exists("g:my_source_vimrc")
+  let g:my_source_vimrc = 1
+  func s:SourceVimrc()
+    source $HOME/.vimrc
+  endfunc
+  command SourceVimrc        call s:SourceVimrc()
+endif
 
