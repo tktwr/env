@@ -15,6 +15,7 @@ fzy \
 zip unzip \
 universal-ctags \
 eblook \
+ripgrep \
 "
 pkg_ext="\
 vim-gui-common \

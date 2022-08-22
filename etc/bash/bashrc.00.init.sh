@@ -10,7 +10,7 @@
 # 2: middle [f_set_prompt_git_fast]
 # 3: max    [f_set_prompt_git, fugitive, coc]
 # 4: full   [fern-git-status]
-export MY_PROMPT_TYPE=2
+export MY_PROMPT_TYPE=4
 
 #------------------------------------------------------
 #umask 022
