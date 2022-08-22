@@ -37,6 +37,8 @@ let g:vis_unexpand_env_list = [
   \ '$MY_OFFICE',
   \ '$MY_DIARY',
   \ '$MY_MEMO',
+  \ '$MY_BASH',
+  \ '$MY_VIM',
   \ '$MY_ETC',
   \ '$MY_ENV',
   \ '$MY_REMOTE_CONFIG',
