@@ -2,4 +2,4 @@
 
 export PATH="/c/tools/neovim/Neovim/bin:$PATH"
 
-exec winpty nvim.exe "$@"
+exec $WINPTY nvim.exe "$@"

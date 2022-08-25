@@ -1,4 +1,4 @@
 #!/bin/bash
 
-gvim -c "DirDiff $1 $2"
+exec $WINPTY gvim.exe -c "DirDiff $1 $2"
 

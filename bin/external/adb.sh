@@ -2,4 +2,4 @@
 
 export PATH="$ANDROID_SDK/platform-tools:$PATH"
 
-exec adb.exe "$@"
+exec $WINPTY adb.exe "$@"

@@ -2,4 +2,4 @@
 
 export PATH="/c/ProgramData/chocolatey/bin:$PATH"
 
-exec choco.exe "$@"
+exec $WINPTY choco.exe "$@"
