@@ -90,6 +90,7 @@
 -   coc-format-selected                | _Plug_(coc-format-selected)
 -   coc-format-selected                | _Plug_(coc-format-selected)
     ---------------------------------- | ----------------------------------------
+-   CocList extensions                 | :CocList extensions
 -   CocList vimcommands                | :CocList vimcommands
 -   CocList buffers                    | :CocList buffers
 -   CocList words                      | :CocList words

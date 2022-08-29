@@ -1,16 +1,16 @@
 {
   // snippets
   "snippets.ultisnips.directories": [
-    "$MY_COMMON_SETTING/UltiSnips",
-    "$MY_VIM/UltiSnips"
+    "${env:MY_COMMON_SETTING}/UltiSnips",
+    "${env:MY_VIM}/UltiSnips"
   ],
-  "snippets.userSnippetsDirectory": "$MY_COMMON_SETTING/UltiSnips",
+  "snippets.userSnippetsDirectory": "${env:MY_COMMON_SETTING}/UltiSnips",
 
   // python
-  "python.venvFolders": ["~/MyRoaming/python-venv"],
-  "python.pythonPath": "~/MyRoaming/python-venv/torch/bin/python",
-  "python.linting.pylintPath": "~/MyRoaming/python-venv/torch/bin/pylint",
-  "python.linting.flake8Path": "~/MyRoaming/python-venv/torch/bin/flake8",
+  "python.venvFolders": ["${env:MY_PYTHON_VENV_DIR}"],
+  "python.pythonPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/python",
+  "python.linting.pylintPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/pylint",
+  "python.linting.flake8Path": "${env:MY_PYTHON_VENV_DIR}/torch/bin/flake8",
 
   //"python.jediEnabled": false
   "python.linting.pylintEnabled": false,

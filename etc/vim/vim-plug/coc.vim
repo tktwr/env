@@ -30,7 +30,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "------------------------------------------------------
 func s:MyCocInstall()
-  CocInstall coc-tsserver coc-json coc-python coc-clangd coc-snippets coc-lists
+  CocInstall coc-tsserver coc-json coc-pyright coc-clangd coc-snippets coc-lists
 endfunc
 
 command MyCocInstall     call s:MyCocInstall()
