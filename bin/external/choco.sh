@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export PATH="/c/ProgramData/chocolatey/bin:$PATH"
+export PATH="$SYS_C/ProgramData/chocolatey/bin:$PATH"
 
 exec $WINPTY choco.exe "$@"

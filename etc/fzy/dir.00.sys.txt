@@ -2,6 +2,8 @@
 
 # NAME              | ENV_VAR             | DIR
 #----------         | ----------          | ----------
+C                   | SYS_C               | C:/
+D                   | SYS_D               | D:/
 msys2-home          | SYS_MSYS2_HOME      | C:/msys64/home/$USERNAME
 cygwin-home         | SYS_CYGWIN_HOME     | C:/cygwin64/home/$USERNAME
 prog64              | SYS_PROG64_DIR      | C:\Program Files
