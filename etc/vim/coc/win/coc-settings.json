@@ -1,7 +1,4 @@
 {
-  //"session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
-  "session.saveOnVimLeave": false,
-
   // snippets
   "snippets.ultisnips.directories": [
     "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
@@ -9,25 +6,23 @@
   ],
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
 
-  // python-win
-  "python.venvFolders": [
-    "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts",
-    "C:\\Users\\Takeh\\.python-venv\\torch",
-    "C:\\Users\\Takeh\\.python-venv"
-  ],
+  // python
+  "python.venvPath": "C:\\Users\\Takeh\\.python-venv",
   "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\python.exe",
   "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\pylint.exe",
   "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\flake8.exe",
 
   //"python.jediEnabled": false,
-  "python.linting.pylintEnabled": true,
-  "python.linting.flake8Enabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
   "python.linting.enabled": true,
 
   // clangd
-  "clangd.enabled": false,
   "clangd.fallbackFlags": [
     "-I."
   ],
-  "clangd.path": "C:\\Users\\Takeh\\MyRoaming\\env\\etc\\vim\\coc_data\\win\\extensions\\coc-clangd-data\\install\\12.0.0\\clangd_12.0.0\\bin\\clangd.exe"
+  "clangd.enabled": false,
+
+  //"session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
+  "session.saveOnVimLeave": false
 }
