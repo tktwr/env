@@ -2,9 +2,9 @@ import bpy
 import math
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # material params
-#------------------------------------------------------
+# -----------------------------------------------------
 MAT_PARAM_30 = {
     "Base Color": 0,
     "Subsurface": 1,
@@ -34,24 +34,24 @@ MAT_PARAM_30 = {
 }
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # math
-#------------------------------------------------------
+# -----------------------------------------------------
 def radians3(deg3):
     return [math.radians(i) for i in deg3]
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # node_tree
-#------------------------------------------------------
+# -----------------------------------------------------
 def print_nodes(node_tree):
-    if node_tree != None:
+    if node_tree is not None:
         for i in node_tree.nodes:
             print(i)
 
 
 def find_node(node_tree, idname):
-    if node_tree != None:
+    if node_tree is not None:
         for i in node_tree.nodes:
             if i.bl_idname == idname:
                 return i
@@ -59,18 +59,18 @@ def find_node(node_tree, idname):
 
 
 def find_principled_bsdf_node(mat):
-    if mat.node_tree != None:
+    if mat.node_tree is not None:
         for i in mat.node_tree.nodes:
             if i.bl_idname == 'ShaderNodeBsdfPrincipled':
                 return i
     return None
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # link
-#------------------------------------------------------
+# -----------------------------------------------------
 def get_to_socket(mat, socket_name):
-    if mat.node_tree != None:
+    if mat.node_tree is not None:
         for i in mat.node_tree.links:
             if i.to_node.bl_idname == 'ShaderNodeBsdfPrincipled' and \
                i.to_socket.identifier == socket_name:
@@ -79,7 +79,7 @@ def get_to_socket(mat, socket_name):
 
 
 def get_from_socket(mat, socket_name):
-    if mat.node_tree != None:
+    if mat.node_tree is not None:
         for i in mat.node_tree.links:
             if i.to_node.bl_idname == 'ShaderNodeBsdfPrincipled' and \
                i.to_socket.identifier == socket_name:
@@ -91,9 +91,9 @@ def make_link(mat, to_socket, from_socket):
     return mat.node_tree.links.new(to_socket, from_socket)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # gltf
-#------------------------------------------------------
+# -----------------------------------------------------
 def add_gltf_shader_node(node_tree):
     GLTF_GROUP_NAME = 'glTF Settings'
 
@@ -110,9 +110,9 @@ def add_gltf_shader_node(node_tree):
     return gltf_ao
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # env
-#------------------------------------------------------
+# -----------------------------------------------------
 def add_env_shader_node(env_file):
     world = bpy.data.worlds["World"]
     node_tree = world.node_tree
@@ -135,9 +135,9 @@ def add_env_shader_node(env_file):
     node_tree.links.new(node_mapping.inputs[0], node_texcoord.outputs[0])
 
 
-#======================================================
+# =====================================================
 # Scene
-#======================================================
+# =====================================================
 def clear_all():
     for i in bpy.data.cameras:
         bpy.data.cameras.remove(i)
@@ -157,7 +157,7 @@ def set_mat_custom_props():
     for mat in bpy.data.materials:
         print(f'mat.name = {mat.name}')
         bsdf = find_principled_bsdf_node(mat)
-        if bsdf != None:
+        if bsdf is not None:
             print(f'bsdf.name = {bsdf.name}')
             mat['u_subsurface'] = get_mat_param(mat, 'Subsurface')
             mat['u_subsurface_radius'] = get_mat_param(mat, 'Subsurface Radius')
@@ -175,9 +175,9 @@ def set_mat_custom_props():
             mat['u_normal_scale'] = (normal_scale, normal_scale, 1.0)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # add
-#------------------------------------------------------
+# -----------------------------------------------------
 def add_collection_to_scene(coll):
     bpy.context.scene.collection.children.link(coll)
 
@@ -191,9 +191,9 @@ def link_object_to_collection(obj, coll):
     bpy.context.scene.collection.objects.unlink(obj)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # create
-#------------------------------------------------------
+# -----------------------------------------------------
 def create_collection(name):
     return bpy.data.collections.new(name)
 
@@ -250,9 +250,9 @@ def rename_all(src, dst):
             mat.name = mat.name.replace(src, dst)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # object
-#------------------------------------------------------
+# -----------------------------------------------------
 def find_obj_by_name(name, data_type=bpy.types.Mesh):
     for o in bpy.data.objects:
         if o.name == name and isinstance(o.data, data_type):
@@ -260,9 +260,9 @@ def find_obj_by_name(name, data_type=bpy.types.Mesh):
     return None
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # light
-#------------------------------------------------------
+# -----------------------------------------------------
 def hide_lights():
     for o in bpy.data.objects:
         if o.name.startswith('Light'):
@@ -275,11 +275,11 @@ def show_lights(light_names):
         bpy.data.objects[i].hide_render = False
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # material
-#------------------------------------------------------
+# -----------------------------------------------------
 def get_normal_map_strength(mat):
-    if mat.node_tree != None:
+    if mat.node_tree is not None:
         for i in mat.node_tree.links:
             if i.to_node.bl_idname == 'ShaderNodeBsdfPrincipled' and \
                i.to_socket.identifier == 'Normal' and \
@@ -325,5 +325,3 @@ def set_mat_param_all(mat_param_name, val):
     for mat in bpy.data.materials:
         bsdf = find_principled_bsdf_node(mat)
         bsdf.inputs[mat_param_name].default_value = val
-
-

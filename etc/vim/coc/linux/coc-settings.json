@@ -11,9 +11,8 @@
   "python.pythonPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/python",
   "python.linting.pylintPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/pylint",
   "python.linting.flake8Path": "${env:MY_PYTHON_VENV_DIR}/torch/bin/flake8",
-
-  //"python.jediEnabled": false,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore=E203,E501,F541"],
   "python.linting.enabled": true
 }

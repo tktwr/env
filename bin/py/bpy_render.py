@@ -34,7 +34,13 @@ class Render():
         scene = bpy.context.scene
         scene.view_settings.exposure = exposure
 
-    def render(self, cam_name, light_names, env_file, env_intensity, rot_deg, out_file):
+    def render(self,
+               cam_name,
+               light_names,
+               env_file,
+               env_intensity,
+               rot_deg,
+               out_file):
         scene = bpy.context.scene
         world = bpy.data.worlds["World"]
 
@@ -42,23 +48,21 @@ class Render():
         bu.show_lights(light_names)
 
         node = bu.find_node(world.node_tree, 'ShaderNodeTexEnvironment')
-        if node != None and env_file != "":
+        if node is not None and env_file != "":
             node.image = bpy.data.images.load(env_file)
 
         node = bu.find_node(world.node_tree, 'ShaderNodeBackground')
-        if node != None:
+        if node is not None:
             node.inputs[1].default_value = env_intensity
 
         node = bu.find_node(world.node_tree, 'ShaderNodeMapping')
-        if node != None:
+        if node is not None:
             node.inputs[2].default_value[2] = rot_deg * math.pi / 180
 
         bpy.ops.render.render()
-        bpy.data.images['Render Result'].save_render(filepath = out_file)
+        bpy.data.images['Render Result'].save_render(filepath=out_file)
 
 
 def get_argv():
     idx = sys.argv.index('--')
     return sys.argv[idx+1:]
-
-
