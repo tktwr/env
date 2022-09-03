@@ -13,8 +13,6 @@ inoremap <C-F>   <Right>
 "inoremap <C-P>   <Up>
 "inoremap <C-N>   <Down>
 
-imap <C-L>       <Plug>(coc-snippets-expand)
-
 "------------------------------------------------------
 " cmap
 "------------------------------------------------------
