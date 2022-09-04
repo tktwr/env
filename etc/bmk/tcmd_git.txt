@@ -10,7 +10,7 @@
 -   git-ls-untrack                     | > git-ls-untrack<CR>
 -   git-ls-no-x                        | > git-ls-no-x<CR>
     ---------------------------------- | ----------------------------------------
--   git-chmod-x                        | > git-chmod-x<CR>
+-   git-chmod-x {file}                 | > git-chmod-x<CR>
 -   git-chmod-x-all                    | > git-chmod-x-all<CR>
     ---------------------------------- | ----------------------------------------
 -   git-graph                          | > git-graph<CR>

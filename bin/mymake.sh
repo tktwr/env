@@ -1,10 +1,10 @@
 #!/bin/bash
 
 mymake() {
-  if [ -f "Makefile" ]; then
-    make --no-print-directory "$@"
-  elif [ -x "make.sh" ]; then
+  if [ -x "make.sh" ]; then
     ./make.sh "$@"
+  elif [ -f "Makefile" ]; then
+    make --no-print-directory "$@"
   fi
 }
 

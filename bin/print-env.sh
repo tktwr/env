@@ -40,8 +40,31 @@ f_print_env_build() {
 f_print_env_proxy() {
   echo "HTTP_PROXY         = $HTTP_PROXY"
   echo "HTTPS_PROXY        = $HTTPS_PROXY"
+  echo "NO_PROXY           = $NO_PROXY"
   echo "GIT_SSL_NO_VERIFY  = $GIT_SSL_NO_VERIFY"
   echo "CURL_SSL_NO_VERIFY = $CURL_SSL_NO_VERIFY"
+}
+
+f_check_env_dir() {
+  dirs="\
+    $MY_BACKUP \
+    $MY_TMP \
+    $MY_REPO \
+    $MY_ARCH \
+    $MY_SNAP \
+    $MY_PAPERS \
+    $MY_GITHUB \
+    $MY_OPT \
+    $MY_MAN \
+    $MY_DATA \
+    "
+  for i in $dirs; do
+    if [ -d "$i" ]; then
+      echo "[OK  ] $i"
+    else
+      echo "[FAIL] $i"
+    fi
+  done
 }
 
 f_print_env() {
@@ -49,6 +72,7 @@ f_print_env() {
   f_print_env_python
   f_print_env_build
   f_print_env_proxy
+  f_check_env_dir
 }
 
 f_print_env

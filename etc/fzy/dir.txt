@@ -26,6 +26,7 @@ tmp            | MY_TMP            | $MY_PRIVATE/tmp/2022
 repo           | MY_REPO           | $MY_PRIVATE/repo
 #[public] ---  | ----------        | ----------
 arch           | MY_ARCH           | $MY_PUBLIC/arch
+snap           | MY_SNAP           | $MY_PUBLIC/snap
 papers         | MY_PAPERS         | $MY_PUBLIC/Papers
 github         | MY_GITHUB         | $MY_PUBLIC/github
 opt            | MY_OPT            | $MY_PUBLIC/opt

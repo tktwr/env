@@ -99,5 +99,5 @@ f_default() {
 # main
 #======================================================
 func_name=${1:-"default"}
-eval "f_$func_name"
-
+shift
+eval "f_$func_name $@"

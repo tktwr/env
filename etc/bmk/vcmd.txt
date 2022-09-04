@@ -73,10 +73,10 @@
 -   quit                   (Q)         | :confirm qall
 [vcmd.coc] --------------------------- | ----------------------------------------
 -   CocDiagnostics                     | :CocDiagnostics
--   CocInfo                            | :CocInfo
--   CocOpenLog                         | :CocOpenLog
 -   CocAction('doHover')               | :call CocAction('doHover')
     ---------------------------------- | ----------------------------------------
+-   CocInfo                            | :CocInfo
+-   CocOpenLog                         | :CocOpenLog
 -   MyCocInstall                       | :MyCocInstall
 -   CocUpdate                          | :CocUpdate
     ---------------------------------- | ----------------------------------------
@@ -87,7 +87,6 @@
 -   coc-implementation                 | _Plug_(coc-implementation)
 -   coc-references                     | _Plug_(coc-references)
 -   coc-rename                         | _Plug_(coc-rename)
--   coc-format-selected                | _Plug_(coc-format-selected)
 -   coc-format-selected                | _Plug_(coc-format-selected)
     ---------------------------------- | ----------------------------------------
 -   CocList extensions                 | :CocList extensions
