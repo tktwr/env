@@ -63,7 +63,7 @@
 -   VisWinInfo                         | :VisWinInfo
 -   VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
--   vimdirdiff .my                     | :VisTabDirDiff $MY_ETC/.my $HOME/.my
+-   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
 - P ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?

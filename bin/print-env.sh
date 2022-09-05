@@ -47,6 +47,7 @@ f_print_env_proxy() {
 
 f_check_env_dir() {
   dirs="\
+    $MY_PYTHON_VENV_DIR \
     $MY_BACKUP \
     $MY_TMP \
     $MY_REPO \
