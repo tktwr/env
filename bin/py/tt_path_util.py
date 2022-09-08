@@ -5,15 +5,15 @@ import os
 import re
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # path
-#------------------------------------------------------
+# -----------------------------------------------------
 def expand_env(s):
-    r = re.search('\$\w+', s)
-    if r != None:
+    r = re.search(r'\$\w+', s)
+    if r is not None:
         matched = r.group()
         env_var = matched[1:]
-        if os.getenv(env_var) != None:
+        if os.getenv(env_var) is not None:
             s = s.replace(matched, os.environ[env_var])
     return s
 
@@ -52,5 +52,3 @@ def path_windows(fname, prefix='', realpath=True):
     if realpath and os.path.islink(fname):
         fname = os.path.realpath(fname)
     return fname
-
-

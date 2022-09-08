@@ -13,6 +13,11 @@
   "python.linting.flake8Path": "${env:MY_PYTHON_VENV_DIR}/torch/bin/flake8",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--ignore=E203,E501,F541"],
+  // E203: whitespace before ':'
+  // E203: whitespace before ','
+  // E221: multiple spaces before operator
+  // E501: line too long
+  // F541: f-string is missing placeholders
+  "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
   "python.linting.enabled": true
 }

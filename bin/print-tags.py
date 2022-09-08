@@ -87,6 +87,7 @@ def print_cpp_tags(fname, width):
     }
     print_tags(fname, width, cpp_types)
 
+
 def print_vim_tags(fname, width):
     vim_types = {
         'a': "autocommand groups",
@@ -97,6 +98,7 @@ def print_vim_tags(fname, width):
         'n': "vimball filename",
     }
     print_tags(fname, width, vim_types)
+
 
 def print_sh_tags(fname, width):
     sh_types = {
@@ -149,4 +151,3 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
-

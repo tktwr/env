@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-import re
 import argparse
 import tt_path_util as ttp
 
@@ -46,4 +44,3 @@ if __name__ == "__main__":
 
     p = eval(f"ttp.path_{otype}('{fname}', '{prefix}')")
     print(p)
-
