@@ -28,14 +28,14 @@ RShift::
 ;F1::
 
 ; virtual desktop left
-F2::
-  send,#^{Left}
-  return
+;F2::
+;  send,#^{Left}
+;  return
 
 ; virtual desktop right
-F3::
-  send,#^{Right}
-  return
+;F3::
+;  send,#^{Right}
+;  return
 
 ; display desktop
 F4::

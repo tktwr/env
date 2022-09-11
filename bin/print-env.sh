@@ -46,18 +46,29 @@ f_print_env_proxy() {
 }
 
 f_check_env_dir() {
-  dirs="\
-    $MY_PYTHON_VENV_DIR \
+  private_dirs="\
+    $MY_PROJ \
+    $MY_WORK \
+    $MY_GIT \
+    $MY_DOC \
+    $MY_OFFICE \
     $MY_BACKUP \
     $MY_TMP \
     $MY_REPO \
-    $MY_ARCH \
     $MY_SNAP \
+    "
+  public_dirs="\
+    $MY_ARCH \
     $MY_PAPERS \
     $MY_GITHUB \
     $MY_OPT \
     $MY_MAN \
     $MY_DATA \
+    "
+  dirs="\
+    $MY_PYTHON_VENV_DIR \
+    $private_dirs \
+    $public_dirs \
     "
   for i in $dirs; do
     if [ -d "$i" ]; then

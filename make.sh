@@ -61,11 +61,7 @@ f_clean() {
 
 #------------------------------------------------------
 f_snap() {
-  fname=$(git-tar.sh)
-  if [ -d "$MY_SNAP" ]; then
-    echo "$fname $MY_SNAP"
-    mv $fname $MY_SNAP
-  fi
+  git-tar.sh $MY_SNAP
 }
 
 f_tags() {

@@ -27,5 +27,6 @@ user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs
 user-python-home    | USER_PYTHON_HOME    | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python39
 user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python39
 android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/sdk
+blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 
 # vim:set nowrap:
