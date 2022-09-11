@@ -26,8 +26,9 @@ f_clean() {
 f_args() {
   for i in "$@"; do
     case "$i" in
-      -rm)
-        opt="$opt -exec rm -rf {} +"
+      -h|--help)
+        f_help
+        exit
         ;;
       -py|--python)
         opt="$opt -type d -name '__pycache__' -prune"
@@ -38,9 +39,8 @@ f_args() {
       -o|--output)
         opt="$out -type d -name '_output' -prune"
         ;;
-      -h|--help)
-        f_help
-        exit
+      -rm)
+        opt="$opt -exec rm -rf {} +"
         ;;
     esac
   done
