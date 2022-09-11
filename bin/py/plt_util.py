@@ -5,7 +5,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 def make_data(func, xrange=(0, 1, 100)):
     x = np.linspace(*xrange)
     y = []
@@ -15,7 +15,7 @@ def make_data(func, xrange=(0, 1, 100)):
     return (x, y)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 def plot_data(x, y, ofname=''):
     fig, ax = plt.subplots()
     ax.plot(x, y, color='r', marker='.')
@@ -28,9 +28,9 @@ def plot_data(x, y, ofname=''):
 
 def plot_rgb_data(x, y, ofname=''):
     Y = np.asarray(y)
-    r = Y[:,0]
-    g = Y[:,1]
-    b = Y[:,2]
+    r = Y[:, 0]
+    g = Y[:, 1]
+    b = Y[:, 2]
     fig, ax = plt.subplots()
     ax.plot(x, r, color='r', marker='.')
     ax.plot(x, g, color='g', marker='.')
@@ -42,7 +42,7 @@ def plot_rgb_data(x, y, ofname=''):
     plt.show()
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 def read_data(fname):
     with open(fname, 'r') as f:
         lines = f.readlines()
@@ -71,5 +71,3 @@ def write_data(fname, x, y):
             except TypeError as te:
                 s = str(iy)
             f.write(f'{ix} {s}\n')
-
-

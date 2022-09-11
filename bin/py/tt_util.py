@@ -2,27 +2,24 @@
 # -*- coding: utf-8 -*-
 
 import os
-import re
 import time
 import json
 import argparse
 import numpy as np
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # MyHelpFormatter
-#------------------------------------------------------
-class MyHelpFormatter(
-    argparse.RawDescriptionHelpFormatter,
-    argparse.ArgumentDefaultsHelpFormatter,
-    argparse.MetavarTypeHelpFormatter,
-    ):
+# -----------------------------------------------------
+class MyHelpFormatter(argparse.RawDescriptionHelpFormatter,
+                      argparse.ArgumentDefaultsHelpFormatter,
+                      argparse.MetavarTypeHelpFormatter):
     pass
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # file name
-#------------------------------------------------------
+# -----------------------------------------------------
 class FileName():
     def __init__(self, orig_path):
         self._orig_path = orig_path
@@ -47,9 +44,9 @@ class FileName():
         return ext
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # image size
-#------------------------------------------------------
+# -----------------------------------------------------
 # dst_wh:
 #   (0, 0) : source size
 #   (w, 0) : set width, keep aspect ratio
@@ -84,9 +81,9 @@ def fit_size(src_wh, max_wh):
     return fix_size(src_wh, dst_wh)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # timeit
-#------------------------------------------------------
+# -----------------------------------------------------
 def timeit(func):
     def wrapper(*args, **kargs):
         time_list = []
@@ -101,9 +98,9 @@ def timeit(func):
     return wrapper
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # text
-#------------------------------------------------------
+# -----------------------------------------------------
 def read_text(fname):
     with open(fname, "r") as f:
         return f.readlines()
@@ -115,9 +112,9 @@ def write_text(fname, lines):
             f.write(i)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # json
-#------------------------------------------------------
+# -----------------------------------------------------
 def read_json(fname):
     with open(fname, "r") as f:
         return json.load(f)

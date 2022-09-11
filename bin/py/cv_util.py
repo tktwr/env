@@ -8,9 +8,9 @@ import numpy as np
 import tt_util as tu
 
 
-#======================================================
+# =====================================================
 # interface for image
-#======================================================
+# =====================================================
 def cv_size(img):
     if len(img.shape) == 3:
         h, w, ch = img.shape[:3]
@@ -20,9 +20,9 @@ def cv_size(img):
     return (h, w, ch)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # convert dtype
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_maximum(dtype):
     if dtype == 'uint8':
         maximum = 255
@@ -50,12 +50,12 @@ def cv_cvt_dtype(img, dst_dtype):
 
     smax = cv_maximum(img.dtype)
     dmax = cv_maximum(dst_dtype)
-    return np.clip(img/smax * dmax, 0, dmax).astype(dst_dtype)
+    return np.clip(img / smax * dmax, 0, dmax).astype(dst_dtype)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # convert channel
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_bgr_to_rgb_img(img):
     spl = cv2.split(img)
     return cv2.merge((spl[2], spl[1], spl[0]))
@@ -114,9 +114,9 @@ def cv_cvt_channels(img, dst_ch):
     return img
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # convert pixel value
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_mult_img(img, val):
     dtype = img.dtype
     img = cv_cvt_dtype(img, 'float32')
@@ -127,8 +127,8 @@ def cv_mult_img(img, val):
 # brightness: [-1, 1]
 # contrast  : [-1, 1]
 def cv_brightness_contrast_img(img, brightness, contrast):
-    a = 1.0 + contrast;
-    b = brightness - contrast * 0.5;
+    a = 1.0 + contrast
+    b = brightness - contrast * 0.5
 
     dtype = img.dtype
     img = cv_cvt_dtype(img, 'float32')
@@ -148,16 +148,16 @@ def cv_hsv_to_bgr(img):
 
 
 def cv_linear_to_srgb(img):
-    return np.power(img, 1.0/2.2)
+    return np.power(img, 1.0 / 2.2)
 
 
 def cv_srgb_to_linear(img):
     return np.power(img, 2.2)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # convert for image list
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_cvt_to_bgr_img_list(img_list):
     l = []
     for img in img_list:
@@ -167,9 +167,9 @@ def cv_cvt_to_bgr_img_list(img_list):
     return l
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # create
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_create_img(shape, dtype, val):
     return (np.ones(shape) * val).astype(dtype)
 
@@ -194,9 +194,9 @@ def cv_create_vgrad_img(shape, dtype, co0, co1):
     return img.astype(dtype)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # resize
-#------------------------------------------------------
+# -----------------------------------------------------
 def cv_resize_img(img, dst_wh):
     h, w = img.shape[:2]
     src_wh = (w, h)
@@ -215,9 +215,9 @@ def cv_fit_img(img, dst_wh):
     return cv_resize_img(img, fit_size)
 
 
-#------------------------------------------------------
+# -----------------------------------------------------
 # crop
-#------------------------------------------------------
+# -----------------------------------------------------
 # pos  : [x, y]
 # size : [w, h]
 def cv_crop_img_simple(img, pos, size):
@@ -276,7 +276,7 @@ def cv_crop_img(img, pos, size, centering=False):
         if dw < size[0] and left == 0:
             dx = size[0] - dw
 
-    dst_img[dy:dy+dh, dx:dx+dw] = crop_img
+    dst_img[dy:dy + dh, dx:dx + dw] = crop_img
 
     return dst_img
 
@@ -290,9 +290,9 @@ def cv_crop_center_img(img, center, size):
     return cv_crop_img(img, pos, size)
 
 
-#======================================================
+# =====================================================
 # interface for file
-#======================================================
+# =====================================================
 
 def cv_info_short(fname):
     img = cv_load(fname)
@@ -346,9 +346,9 @@ def cv_save(ifname, img):
     cv2.imwrite(ifname, img)
 
 
-#======================================================
+# =====================================================
 # tiling image
-#======================================================
+# =====================================================
 
 def cv_hconcat(img_list, interpolation=cv2.INTER_AREA):
     l = cv_cvt_to_bgr_img_list(img_list)
@@ -438,5 +438,3 @@ def cv_create_se_stripe_img(shape, dtype, co0, co1, nelm):
             if mx == 1:
                 img[y, x] = co1
     return img
-
-

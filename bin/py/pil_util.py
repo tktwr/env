@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import numpy as np
 from PIL import Image, ImageDraw
 import tt_util as tu
@@ -12,7 +11,7 @@ def img_info(fname):
     print(f"format: {img.format}")
     print(f"mode: {img.mode}")
     print(f"size: {img.size}")
-    print(f"getextrema(): {img.getextrema()}") 
+    print(f"getextrema(): {img.getextrema()}")
     print(f"getbands(): {img.getbands()}")
 
 
@@ -49,10 +48,10 @@ def img_create_tile(fname, size, colors):
 
     img = Image.new("RGB", size, (0, 0, 0))
     draw = ImageDraw.Draw(img)
-    draw.rectangle((0  , 0  , w2-1 , h2-1) , fill=colors[0])
-    draw.rectangle((w2 , 0  , w-1  , h2-1) , fill=colors[1])
-    draw.rectangle((0  , h2 , w2-1 , h-1)  , fill=colors[2])
-    draw.rectangle((w2 , h2 , w-1  , h-1)  , fill=colors[3])
+    draw.rectangle((0  , 0  , w2 - 1 , h2 - 1) , fill=colors[0])
+    draw.rectangle((w2 , 0  , w  - 1 , h2 - 1) , fill=colors[1])
+    draw.rectangle((0  , h2 , w2 - 1 , h  - 1) , fill=colors[2])
+    draw.rectangle((w2 , h2 , w  - 1 , h  - 1) , fill=colors[3])
     img.save(fname)
 
 
@@ -61,7 +60,3 @@ def img_resize(ifname, ofname, dst_wh):
     new_wh = tu.fix_size(img.size, dst_wh)
     oimg = img.resize(new_wh)
     oimg.save(ofname)
-
-    print(f"img_resize {ifname} {ofname} {new_size}")
-
-
