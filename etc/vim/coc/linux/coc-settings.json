@@ -14,7 +14,7 @@
   "python.analysis.stubPath": "${env:MY_GITHUB}/python-type-stubs",
 
   "python.linting.pylintEnabled": false,
-  "python.linting.pylintArgs": ["--extension-pkg-whitelist=cv2"],
+  // "python.linting.pylintArgs": ["--extension-pkg-whitelist=cv2"],
   // "python.linting.pylintArgs": ["--generate-members"],
 
   "python.linting.flake8Enabled": true,

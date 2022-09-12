@@ -24,6 +24,6 @@
   ],
   "clangd.enabled": false,
 
-  //"session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
+  // "session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
   "session.saveOnVimLeave": false
 }
