@@ -85,7 +85,7 @@ f_install_dev() {
 f_python() {
   mypython-venv-create torch
   pip-upgrade.sh
-  pip-install.sh
+  pip-install.sh install_min
 }
 
 #------------------------------------------------------
@@ -117,4 +117,3 @@ f_default() {
 func_name=${1:-"default"}
 shift
 eval "f_$func_name $@"
-

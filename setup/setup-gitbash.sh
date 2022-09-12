@@ -42,4 +42,3 @@ f_default() {
 func_name=${1:-"default"}
 shift
 eval "f_$func_name $@"
-

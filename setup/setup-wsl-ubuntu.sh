@@ -28,6 +28,9 @@ clang-format \
 pkg_ext2="\
 blender \
 nvidia-cuda-toolkit \
+libopencv-dev \
+python3-tk \
+python3-opencv \
 "
 
 #======================================================
@@ -70,8 +73,13 @@ f_python_venv() {
 
   if [ $MY_PYTHON_VENV = "torch" ]; then
     pip-upgrade.sh
-    pip-install.sh install_vim
+    pip-install.sh install_min
   fi
+}
+
+f_vim() {
+  cd $MY_GITHUB
+  git clone https://github.com/microsoft/python-type-stubs.git
 }
 
 #------------------------------------------------------
@@ -87,6 +95,7 @@ f_init() {
   f_etc
   f_wsltty
   #f_python_venv
+  #f_vim
 }
 
 f_help() {
@@ -97,6 +106,7 @@ f_help() {
   echo "etc         ... etc"
   echo "wsltty      ... wsltty"
   echo "python_venv ... python_venv"
+  echo "vim         ... vim"
   echo "----------- ... -----------------------------"
   echo "init        ... init"
   echo "----------- ... -----------------------------"
@@ -113,4 +123,3 @@ f_default() {
 func_name=${1:-"default"}
 shift
 eval "f_$func_name $@"
-

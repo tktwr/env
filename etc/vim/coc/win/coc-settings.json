@@ -7,17 +7,19 @@
   "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
 
   // python
-  "python.venvPath": "C:\\Users\\Takeh\\.python-venv",
-  "python.pythonPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\python.exe",
-  "python.linting.pylintPath": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\pylint.exe",
-  "python.linting.flake8Path": "C:\\Users\\Takeh\\.python-venv\\torch\\Scripts\\flake8.exe",
+  "python.venvPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv",
+  "python.pythonPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\python.exe",
+  "python.linting.pylintPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\pylint.exe",
+  "python.linting.flake8Path": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\flake8.exe",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--ignore=E203,E501,F541"],
+  "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
   "python.linting.enabled": true,
 
   // clangd
   "clangd.fallbackFlags": [
+    "-xc++",
+    "-std=c++17",
     "-I."
   ],
   "clangd.enabled": false,

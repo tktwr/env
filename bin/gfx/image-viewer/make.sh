@@ -5,10 +5,6 @@ build_dir=build.pydist
 #======================================================
 # functions
 #======================================================
-f_default() {
-  f_help
-}
-
 f_dist() {
   rm -rf $build_dir
   mkdir -p $build_dir
@@ -20,7 +16,7 @@ f_dist() {
 
 f_install() {
   cd $build_dir
-  cp dist/image-viewer.exe ~/Desktop/bin
+  cp dist/image-viewer.exe $MY_PUBLIC/bin
 }
 
 f_clean() {
@@ -28,18 +24,21 @@ f_clean() {
   rm -rf __pycache__
 }
 
+#------------------------------------------------------
 f_help() {
-  echo "default"
   echo "dist"
   echo "install"
   echo "clean"
   echo "help"
 }
 
+f_default() {
+  f_help
+}
+
 #======================================================
 # main
 #======================================================
 func_name=${1:-"default"}
-eval "f_$func_name"
-
-
+shift
+eval "f_$func_name $@"
