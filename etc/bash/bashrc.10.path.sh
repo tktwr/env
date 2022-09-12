@@ -34,7 +34,6 @@ for i in $MY_ENV; do
   PATH="$i/bin/cron:$PATH"
   PATH="$i/bin/sys:$PATH"
   PATH="$i/bin/gfx:$PATH"
-  PATH="$i/bin/gfx/image-viewer:$PATH"
   PATH="$i/bin/wrapper:$PATH"
   PATH="$i/bin/external:$PATH"
   PATH="$i/bin/experimental:$PATH"
