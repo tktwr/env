@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 import re
 import argparse
 import tt_path_util as ttp
@@ -22,23 +21,23 @@ def f_expand_env(fname, args):
                 dir_name = lst[2].strip()
 
                 # expand env except MY_XXX
-                r = re.search('^\$MY_', dir_name)
+                r = re.search(r'^\$MY_', dir_name)
                 if r is None:
                     dir_name = ttp.expand_env(dir_name)
 
                 dir_name = ttp.path_unix(dir_name, args.prefix)
-                dir_name_win = re.sub('(\$\w+)', '\\1_WIN', dir_name)
+                dir_name_win = re.sub(r'(\$\w+)', r'\1_WIN', dir_name)
                 dir_name_win = ttp.path_mixed(dir_name_win, args.prefix)
 
-                print(f"export {env_name}=\"{dir_name}\"")
-                print(f"export {env_name}_WIN=\"{dir_name_win}\"")
-                print(f"alias cd.{name}='cd \"{dir_name}\"'")
-                print(f"alias .{name}='pushd \"{dir_name}\"'")
+                print(f'export {env_name}="{dir_name}"')
+                print(f'export {env_name}_WIN="{dir_name_win}"')
+                print(f'alias cd.{name}=\'cd "{dir_name}"\'')
+                print(f'alias .{name}=\'pushd "{dir_name}"\'')
     except FileNotFoundError as e:
-        #print(f"FileNotFoundError: {e}")
+        # print(f"FileNotFoundError: {e}")
         pass
     except Exception as e:
-        #print(f"Exception: {e}")
+        # print(f"Exception: {e}")
         pass
 
 
