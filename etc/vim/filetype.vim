@@ -5,10 +5,7 @@ augroup ag_filetype
   au! BufNewFile,BufRead *.txt          setf txt
   au! BufNewFile,BufRead *.cmd          setf txt
   au! BufNewFile,BufRead *.md           set syntax=txt
-  "au! BufNewFile,BufRead *.md.html      setf txt
   au! BufNewFile,BufRead *.md.html      setf markdown
-  au! BufNewFile,BufRead *.glsl         setf cpp
-  au! BufNewFile,BufRead *.frag         setf cpp
-  au! BufNewFile,BufRead *.vert         setf cpp
+  "au! BufNewFile,BufRead *.md.html      setf txt
 augroup END
 

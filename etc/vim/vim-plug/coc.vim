@@ -29,13 +29,6 @@ let g:coc_disable_startup_warning = 1
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "------------------------------------------------------
-func s:MyCocInstall()
-  CocInstall coc-tsserver coc-json coc-pyright coc-clangd coc-vimlsp coc-snippets coc-lists
-endfunc
-
-command MyCocInstall     call s:MyCocInstall()
-
-"------------------------------------------------------
 " imap: coc
 "------------------------------------------------------
 " Use tab for trigger completion with characters ahead and navigate.
@@ -66,5 +59,13 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-imap <C-L>    <Plug>(coc-snippets-expand)
+"------------------------------------------------------
+" my
+"------------------------------------------------------
+func s:MyCocInstall()
+  CocInstall coc-tsserver coc-json coc-pyright coc-clangd coc-vimlsp coc-snippets coc-lists
+endfunc
 
+command MyCocInstall     call s:MyCocInstall()
+
+imap <C-L>    <Plug>(coc-snippets-expand)

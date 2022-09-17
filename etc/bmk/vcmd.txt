@@ -63,6 +63,9 @@
 -   VisWinInfo                         | :VisWinInfo
 -   VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
+-   gruvbox                            | :colorscheme gruvbox
+-   molokai                            | :colorscheme molokai
+    ---------------------------------- | ----------------------------------------
 -   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
 - P ctrlp                              | _Plug_(ctrlp)
@@ -96,7 +99,9 @@
 -   CocList outline                    | :CocList outline
 -   CocListResume                      | :CocListResume
 [vcmd.diff] -------------------------- | ----------------------------------------
--   diffupdate                         | :diffupdate
+- o do                                 | do
+- p dp                                 | dp
+- u diffupdate                         | :diffupdate
 [vcmd.dirdiff] ----------------------- | ----------------------------------------
 - q quit dirdiff                       | :VisTabDirDiffQuit
 [vcmd.git] --------------------------- | ----------------------------------------
