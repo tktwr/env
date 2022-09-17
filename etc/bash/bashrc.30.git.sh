@@ -294,7 +294,7 @@ alias GA='git-graph-date -6 --all'
 alias GM='git-log.sh --log 4 --log-submodule 2'
 
 alias gls='git-ls.sh'
-alias gb-all='git-print-branch-all'
-alias gt-all='git-print-tag-all'
+alias gba='git-print-branch-all'
+alias gta='git-print-tag-all'
 
 #------------------------------------------------------
