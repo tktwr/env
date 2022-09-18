@@ -57,15 +57,16 @@ f_dir() {
   fi
 }
 
+f_wsltty() {
+  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
+  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
+}
+
+#------------------------------------------------------
 f_etc() {
   cd $ENV_DIR/etc
   ./make.sh init
   source $HOME/.bashrc
-}
-
-f_wsltty() {
-  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
-  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
 }
 
 f_python_venv() {
@@ -93,8 +94,9 @@ f_init() {
   f_update
   f_install_min
   f_dir
-  f_etc
   f_wsltty
+
+  f_etc
   #f_python_venv
   #f_vim
 }
@@ -104,8 +106,9 @@ f_help() {
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
   echo "dir         ... dir"
-  echo "etc         ... etc"
   echo "wsltty      ... wsltty"
+  echo "----------- ... -----------------------------"
+  echo "etc         ... etc"
   echo "python_venv ... python_venv"
   echo "vim         ... vim"
   echo "----------- ... -----------------------------"

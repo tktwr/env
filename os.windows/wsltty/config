@@ -1,6 +1,6 @@
 # To use common configuration in %APPDATA%\mintty, simply remove this file
 Font=Cica
-FontHeight=14
+FontHeight=12
 Locale=ja_JP
 Charset=UTF-8
 CursorType=block

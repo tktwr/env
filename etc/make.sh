@@ -39,10 +39,6 @@ f_sub() {
 
 #------------------------------------------------------
 f_cp_common() {
-  local WSLTTY_DIR="$HOME/WinHome/AppData/Roaming/wsltty"
-  if [ -d $WSLTTY_DIR ]; then
-    cp -a .wsltty/config $WSLTTY_DIR
-  fi
   cp -a .mintty .minttyrc $HOME
   cp -a --parents $DOT_FILES_COMMON $HOME
 }
