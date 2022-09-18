@@ -29,6 +29,7 @@ pkg_ext2="\
 blender \
 nvidia-cuda-toolkit \
 libopencv-dev \
+libglfw3-dev \
 python3-tk \
 python3-opencv \
 "
