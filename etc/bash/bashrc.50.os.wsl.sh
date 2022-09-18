@@ -38,4 +38,4 @@ wsl_proxy() {
 alias x='te.sh'
 alias gvim='gvim.sh'
 alias gvimdiff='gvim.sh -d'
-
+alias gitbash='"$SYS_PROG64_DIR"/Git/bin/bash.exe'

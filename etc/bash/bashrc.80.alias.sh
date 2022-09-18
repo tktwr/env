@@ -62,4 +62,3 @@ alias wget-local-all='wget -N -k -p -L -np -r --no-proxy'
 # misc
 alias www='w3m -B'
 vid() { display "vid:$*"; }
-
