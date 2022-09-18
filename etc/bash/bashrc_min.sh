@@ -146,7 +146,7 @@ vim-where() { vim `which $*`; }
 #======================================================
 # setup
 #======================================================
-source_file $HOME/.my/hostname
+source_file $HOME/.my/hostname.sh
 
 f_env
 f_path

@@ -67,22 +67,10 @@ f_sys_share_home() {
 }
 
 #------------------------------------------------------
-f_cc() {
-  echo "clang"
-}
-
-f_cxx() {
-  echo "clang++"
-}
-
-#------------------------------------------------------
 f_min() {
   echo "export MY_USER_NAME=$(f_user_name)"
   echo "export MY_HOST_NAME=$(f_host_name)"
   echo "export MY_OS_NAME=$(f_os_name)"
-  echo
-  echo "export CC=$(f_cc)"
-  echo "export CXX=$(f_cxx)"
   echo
   echo "export SYS_WIN_HOME=$(f_sys_win_home)"
   echo "export SYS_LOCAL_HOME=$(f_sys_local_home)"

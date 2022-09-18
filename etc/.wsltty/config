@@ -1,6 +1,4 @@
-BoldAsFont=yes
-Transparency=off
-OpaqueWhenFocused=no
+# To use common configuration in %APPDATA%\mintty, simply remove this file
 Font=Cica
 FontHeight=12
 Locale=ja_JP

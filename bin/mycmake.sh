@@ -42,6 +42,9 @@ f_help() {
 f_set() {
   echo "export MY_BUILD_SYS=$1"
   echo "export MY_BUILD_CONFIG=$2"
+  echo
+  echo "export CC=clang"
+  echo "export CXX=clang++"
   echo "export CLANGD_FLAGS=--compile-commands-dir=build.$1/$2"
 }
 
