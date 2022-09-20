@@ -73,18 +73,20 @@ let g:cpm_files =
   \ split(glob("$MY_BMK/*.txt")) +
   \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
-  \ 'default'          : ['vcmd.external & bmk.file & vcmd.ide', 'vcmd.sub', 'vcmd.coc', 'local.bmk.file'],
-  \ 'default.terminal' : ['local.bmk.dir', 'tcmd.main', 'tcmd.system', 'tcmd.git'],
+  \ 'default'          : ['vcmd.menu & vcmd.external & bmk.file & vcmd.ide', 'vcmd.sub', 'local.bmk.file'],
+  \ 'default.fern'     : ['fern.menu & fern.external & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
+  \ 'default.terminal' : ['tcmd.menu & local.bmk.dir', 'tcmd.main', 'tcmd.system'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],
   \ 'default.fugitive' : ['vcmd.fugitive'],
-  \ 'default.fern'     : ['side.fern & side.main & bmk.dir', 'vcmd.fern', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'default.nerdtree' : ['side.main & bmk.dir', 'vcmd.nerdtree', 'bmk.dir.sys & local.bmk.dir'],
   \ 'ref'              : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
   \ 'ref.terminal'     : ['ref.main'],
   \ 'fzy'              : ['fzy'],
   \ 'fzy.fern'         : ['fzy.fern'],
   \ 'fzy.terminal'     : ['fzy.terminal'],
+  \ 'coc'              : ['coc'],
+  \ 'fern'             : ['fern'],
+  \ 'tcmd.git'         : ['tcmd.git'],
   \ }
 

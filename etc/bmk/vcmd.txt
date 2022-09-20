@@ -1,10 +1,8 @@
-[side.fern] -------------------------- | ----------------------------------------
-- V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
-- O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
--   yank an abs path                   | _Plug_(fern-action-yank)
-[side.main] -------------------------- | ----------------------------------------
--   VisTabGstatusToggle                | :call VisTabGstatusToggle()
--   VisTabGV                           | :call VisTabGV()
+[vcmd.menu] -------------------------- | ----------------------------------------
+- - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- y fzy menu             (C-y)         | :CpmOpen fzy
+- r ref menu         (F1, C-z)         | :CpmOpen ref
+- c coc menu                           | :CpmOpen coc
 [vcmd.external] ---------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
 - O BmkOpenFile                        | :call BmkOpenFile('%:p')
@@ -74,30 +72,6 @@
 -   vimgrep TODO                       | :vimgrep 'TODO' %
     ---------------------------------- | ----------------------------------------
 -   quit                   (Q)         | :confirm qall
-[vcmd.coc] --------------------------- | ----------------------------------------
--   CocDiagnostics                     | :CocDiagnostics
--   CocAction('doHover')               | :call CocAction('doHover')
-    ---------------------------------- | ----------------------------------------
--   CocInfo                            | :CocInfo
--   CocOpenLog                         | :CocOpenLog
--   MyCocInstall                       | :MyCocInstall
--   CocUpdate                          | :CocUpdate
-    ---------------------------------- | ----------------------------------------
--   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
--   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
--   coc-definition                     | _Plug_(coc-definition)
--   coc-type-definition                | _Plug_(coc-type-definition)
--   coc-implementation                 | _Plug_(coc-implementation)
--   coc-references                     | _Plug_(coc-references)
--   coc-rename                         | _Plug_(coc-rename)
--   coc-format-selected                | _Plug_(coc-format-selected)
-    ---------------------------------- | ----------------------------------------
--   CocList extensions                 | :CocList extensions
--   CocList vimcommands                | :CocList vimcommands
--   CocList buffers                    | :CocList buffers
--   CocList words                      | :CocList words
--   CocList outline                    | :CocList outline
--   CocListResume                      | :CocListResume
 [vcmd.diff] -------------------------- | ----------------------------------------
 - o do                                 | do
 - p dp                                 | dp
@@ -114,30 +88,5 @@
 - D diff                               | dd
 - R reload the status buffer           | R
 - q quit fugitive                      | :VisTabClosePrev
-[vcmd.fern] -------------------------- | ----------------------------------------
-- - below split                        | :below split
-    ---------------------------------- | ----------------------------------------
--   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
--   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
-    ---------------------------------- | ----------------------------------------
-- N new-path               (N)         | _Plug_(fern-action-new-path)
-- D remove                 (D)         | _Plug_(fern-action-remove)
-- M move                   (M)         | _Plug_(fern-action-move)
-- R rename marked          (R)         | _Plug_(fern-action-rename)
-    ---------------------------------- | ----------------------------------------
--   reload               (C-g)         | _Plug_(fern-action-reload)
-- ? help                   (?)         | _Plug_(fern-action-help)
-- ! hidden                 (!)         | _Plug_(fern-action-hidden)
-- m mark                   (m)         | _Plug_(fern-action-mark)
-- c mark clear                         | _Plug_(fern-action-mark:clear)
-- d diff marked                        | _Plug_(fern-action-diff:tabedit:vert)
-- s open:split             (s)         | _Plug_(fern-action-open:split)
-- v open:vsplit            (v)         | _Plug_(fern-action-open:vsplit)
-    ---------------------------------- | ----------------------------------------
-- h collapse               (h)         | _Plug_(fern-action-collapse)
-- l VisFernPreview         (l)         | :call VisFernPreviewItem(-2)
-    ---------------------------------- | ----------------------------------------
-- < leave                  (<)         | _Plug_(fern-action-leave)
-- > enter                  (>)         | _Plug_(fern-action-enter)
 
 # vim:set ft=bmk syntax=txt nowrap:

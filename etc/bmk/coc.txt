@@ -1,0 +1,27 @@
+[coc] -------------------------------- | ----------------------------------------
+-   CocDiagnostics                     | :CocDiagnostics
+-   CocAction('doHover')               | :call CocAction('doHover')
+-   Switch src/header                  | CocCommand clangd.switchSourceHeader
+    ---------------------------------- | ----------------------------------------
+-   CocInfo                            | :CocInfo
+-   CocOpenLog                         | :CocOpenLog
+-   MyCocInstall                       | :MyCocInstall
+-   CocUpdate                          | :CocUpdate
+    ---------------------------------- | ----------------------------------------
+-   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
+-   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
+- d coc-definition                     | _Plug_(coc-definition)
+- t coc-type-definition                | _Plug_(coc-type-definition)
+- i coc-implementation                 | _Plug_(coc-implementation)
+- r coc-references                     | _Plug_(coc-references)
+-   coc-rename                         | _Plug_(coc-rename)
+-   coc-format-selected                | _Plug_(coc-format-selected)
+    ---------------------------------- | ----------------------------------------
+-   CocList extensions                 | :CocList extensions
+-   CocList vimcommands                | :CocList vimcommands
+-   CocList buffers                    | :CocList buffers
+-   CocList words                      | :CocList words
+-   CocList outline                    | :CocList outline
+-   CocListResume                      | :CocListResume
+
+# vim:set ft=bmk syntax=txt nowrap:

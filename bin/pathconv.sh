@@ -51,4 +51,7 @@ f_path_win() {
 
 os_name=$1
 shift
-f_path_$os_name "$*"
+pth="$*"
+if [ -n "$pth" ]; then
+  f_path_$os_name "$pth"
+fi

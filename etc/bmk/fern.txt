@@ -1,0 +1,37 @@
+[fern.menu] -------------------------- | ----------------------------------------
+- - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- y fzy menu             (C-y)         | :CpmOpen fzy
+- f fern menu                          | :CpmOpen fern
+[fern.external] ---------------------- | ----------------------------------------
+- V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
+- O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
+-   VisTabGstatusToggle                | :call VisTabGstatusToggle()
+-   VisTabGV                           | :call VisTabGV()
+-   yank an abs path                   | _Plug_(fern-action-yank)
+[fern] ------------------------------- | ----------------------------------------
+- - below split                        | :below split
+    ---------------------------------- | ----------------------------------------
+-   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
+-   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
+    ---------------------------------- | ----------------------------------------
+- N new-path               (N)         | _Plug_(fern-action-new-path)
+- D remove                 (D)         | _Plug_(fern-action-remove)
+- M move                   (M)         | _Plug_(fern-action-move)
+- R rename marked          (R)         | _Plug_(fern-action-rename)
+    ---------------------------------- | ----------------------------------------
+-   reload               (C-g)         | _Plug_(fern-action-reload)
+- ? help                   (?)         | _Plug_(fern-action-help)
+- ! hidden                 (!)         | _Plug_(fern-action-hidden)
+- m mark                   (m)         | _Plug_(fern-action-mark)
+- c mark clear                         | _Plug_(fern-action-mark:clear)
+- d diff marked                        | _Plug_(fern-action-diff:tabedit:vert)
+- s open:split             (s)         | _Plug_(fern-action-open:split)
+- v open:vsplit            (v)         | _Plug_(fern-action-open:vsplit)
+    ---------------------------------- | ----------------------------------------
+- h collapse               (h)         | _Plug_(fern-action-collapse)
+- l VisFernPreview         (l)         | :call VisFernPreviewItem(-2)
+    ---------------------------------- | ----------------------------------------
+- < leave                  (<)         | _Plug_(fern-action-leave)
+- > enter                  (>)         | _Plug_(fern-action-enter)
+
+# vim:set ft=bmk syntax=txt nowrap:
