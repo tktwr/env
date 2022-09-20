@@ -5,7 +5,6 @@
 -   prog32/                            | $SYS_PROG32_DIR/
 -   msys2-home/                        | $SYS_MSYS2_HOME/
     ---------------------------------- | ----------------------------------------
--   win-home/                          | $SYS_WIN_HOME/
 - L user-local/                        | $USER_LOCAL/
 - R user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------

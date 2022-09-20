@@ -16,7 +16,8 @@ net-info() {
 wsl_proxy() {
   PROXY_USER=$1
   PROXY_PASS=$2
-  PROXY_HOST=`grep "nameserver" /etc/resolv.conf | cut -d " " -f 2`
+  #PROXY_HOST=`grep "nameserver" /etc/resolv.conf | cut -d " " -f 2`
+  PROXY_HOST=$WSL_HOST_IP
   PROXY_PORT=8888
 
   export DISPLAY="$PROXY_HOST:0"

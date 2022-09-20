@@ -83,7 +83,6 @@ nnoremap ==      zi
  tnoremap <silent> <C-O>   <C-W>N
 " paste register
  tnoremap <silent> <C-V>   <C-W>""
- tnoremap <silent> <C-C>   <C-W>:CpmOpen tcmd.git<CR>
  tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
  tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 
