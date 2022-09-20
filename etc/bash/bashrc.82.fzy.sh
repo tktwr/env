@@ -40,7 +40,7 @@ alias      ,?='fzy_cmd popd       fzy_pushd'
 alias      ??='fzy_cmd pushd      fzy_pushd'
 
 alias     vi?='fzy_cmd vim       "fzy_bmk.sh bmk_file.txt"'
-alias    cmd?='fzy_cmd " "       "fzy_bmk.sh tcmd.txt"'
+alias    cmd?='fzy_cmd " "       "fzy_bmk.sh tcmd.txt $MY_BMK/tcmd_system.txt"'
 alias    git?='fzy_cmd " "       "fzy_bmk.sh tcmd_git.txt"'
 alias  links?='fzy_cmd chrome.sh "fzy_bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "fzy_bmk.sh papers.txt"'

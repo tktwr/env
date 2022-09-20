@@ -13,7 +13,6 @@ fzy_bmk() {
     $MY_ETC/bmk/$1 \
     $MY_COMMON_SETTING/bmk/$1 \
     $MY_DOTMY/bmk/$1 \
-    $HOME/.$1 \
     "
   shift
   files="$files $@"

@@ -9,13 +9,13 @@
 alias set.G='mypushd.sh --set `pwd`'
 alias get.G='mypushd.sh --get'
 alias cd.G='cd `mypushd.sh --get`'
-mv.G()          { mv "$@" `mypushd.sh --get`; }
-cp.G()          { cp "$@" `mypushd.sh --get`; }
+mv.G() { mv "$@" `mypushd.sh --get`; }
+cp.G() { cp "$@" `mypushd.sh --get`; }
 
 #------------------------------------------------------
 alias ls='ls.sh'
-
 alias make='mymake.sh'
+
 mycmake-set() {
   mycmake.sh --set $1 $2
   source_bashrc

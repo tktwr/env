@@ -1,6 +1,35 @@
 ; autohotkey.ahk
 
 ;------------------------------------------------------
+; functions
+;------------------------------------------------------
+; screen info
+ScreenInfo() {
+  w = %A_ScreenWidth%
+  w_half = %A_ScreenWidth%
+  w_half /= 2
+  MsgBox, w = %w% w_half = %w_half%
+  return
+}
+
+; toggle maximize / half maximize window
+ToggleHalfMaximize() {
+  WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
+  ;MsgBox, x y w h = %X% %Y% %W% %H%
+  screen_w_75 = %A_ScreenWidth%
+  screen_w_75 *= 0.75
+  If (W < screen_w_75) {
+    WinMaximize,A
+  } Else {
+    IfWinActive ahk_exe mintty.exe
+      send,#{Right}
+    Else
+      send,#{Left}
+  }
+  return
+}
+
+;------------------------------------------------------
 ; keymap
 ;------------------------------------------------------
 ; left meta
@@ -46,12 +75,9 @@ F4::
 ;F5::
 
 ; screen info
-F6::
-  w = %A_ScreenWidth%
-  w_half = %A_ScreenWidth%
-  w_half /= 2
-  MsgBox, w = %w% w_half = %w_half%
-  return
+;F6::
+;  ScreenInfo()
+;  return
 
 ; maximize window in left
 F7::
@@ -70,18 +96,7 @@ F9::
 
 ; toggle maximize / half maximize window
 F10::
-  WinGetPos, X, Y, W, H, A		; "A" to get the active window's pos.
-  ;MsgBox, x y w h = %X% %Y% %W% %H%
-  screen_w_75 = %A_ScreenWidth%
-  screen_w_75 *= 0.75
-  If (W < screen_w_75) {
-    WinMaximize,A
-  } Else {
-    IfWinActive ahk_exe mintty.exe
-      send,#{Right}
-    Else
-      send,#{Left}
-  }
+  ToggleHalfMaximize()
   return
 
 ; Xbox Game Bar
