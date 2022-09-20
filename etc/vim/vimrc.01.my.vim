@@ -75,7 +75,7 @@ let g:cpm_files =
 let g:cpm_titles = {
   \ 'default'          : ['vcmd.menu & vcmd.external & bmk.file & vcmd.ide', 'vcmd.sub', 'local.bmk.file'],
   \ 'default.fern'     : ['fern.menu & fern.external & bmk.dir', 'bmk.dir.sys & local.bmk.dir'],
-  \ 'default.terminal' : ['tcmd.menu & local.bmk.dir', 'tcmd.main', 'tcmd.system'],
+  \ 'default.terminal' : ['tcmd.menu & tcmd.main & local.bmk.dir', 'tcmd.sub'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],
@@ -88,5 +88,6 @@ let g:cpm_titles = {
   \ 'coc'              : ['coc'],
   \ 'fern'             : ['fern'],
   \ 'tcmd.git'         : ['tcmd.git'],
+  \ 'tcmd.system'      : ['tcmd.system'],
   \ }
 

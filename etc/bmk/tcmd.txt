@@ -1,9 +1,16 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call WblPrint()
 - y fzy menu             (C-y)         | :CpmOpen fzy
-- g git menu                           | :CpmOpen tcmd.git
+- g git menu             (C-c)         | :CpmOpen tcmd.git
+-   system menu                        | :CpmOpen tcmd.system
 [tcmd.main] -------------------------- | ----------------------------------------
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
+    ---------------------------------- | ----------------------------------------
+- 1 ,resize 10                         | > ,resize 10<CR>
+- 2 ,resize 20                         | > ,resize 20<CR>
+- 3 ,resize 30                         | > ,resize 30<CR>
+- 4 ,resize 40                         | > ,resize 40<CR>
+[tcmd.sub] --------------------------- | ----------------------------------------
 -   G                                  | > G<CR>
 -   GA                                 | > GA<CR>
 -   GS                                 | > GS<CR>
@@ -14,11 +21,6 @@
 -   Editor                 (N)         | > N<CR>
 -   Term                   (T)         | > T<CR>
 -   TermV                 (TV)         | > TV<CR>
-    ---------------------------------- | ----------------------------------------
-- 1 ,resize 10                         | > ,resize 10<CR>
-- 2 ,resize 20                         | > ,resize 20<CR>
-- 3 ,resize 30                         | > ,resize 30<CR>
-- 4 ,resize 40                         | > ,resize 40<CR>
     ---------------------------------- | ----------------------------------------
 -   mypython-venv-info                 | > mypython-venv-info<CR>
 -   mypython-venv-create torch         | > mypython-venv-create torch<CR>
@@ -41,33 +43,5 @@
 - v mycmake-set vs2022 Release         | > mycmake-set vs2022 Release<CR>
 -   mycmake-set vs2022 Debug           | > mycmake-set vs2022 Debug<CR>
 -   mycmake-set vs2022 RelWithDebInfo  | > mycmake-set vs2022 RelWithDebInfo<CR>
-[tcmd.system] ------------------------ | ----------------------------------------
--   pacman -S -h                       | > pacman -S -h<CR>
--   pacman -Syyu                       | > pacman -Syyu<CR>
--   pacman -S <pkg>                    | > pacman -S
--   pacman -R <pkg>                    | > pacman -R
--   pacman -Ss <pattern>               | > pacman -Ss
--   pacman -Si <pkg>                   | > pacman -Si
--   pacman -Sl                         | > pacman -Sl<CR>
--   pacman -Sg [pkg_group]             | > pacman -Sg
--   pacman -Qi <installed_pkg>         | > pacman -Qi
--   pacman -Ql <installed_pkg>         | > pacman -Ql
-    ---------------------------------- | ----------------------------------------
--   apt list <pkg>                     | > apt list
--   apt search <pkg>                   | > apt search
--   apt show <pkg>                     | > apt show
--   apt install <pkg>                  | > apt install
--   apt remove <pkg>                   | > apt remove
--   apt update                         | > apt update
--   apt upgrade                        | > apt upgrade
-    ---------------------------------- | ----------------------------------------
--   pip list                           | > pip list<CR>
--   pip search <pkg>                   | > pip search
--   pip install <pkg>                  | > pip install
--   pip uninstall <pkg>                | > pip uninstall
--   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
-    ---------------------------------- | ----------------------------------------
--   git-upgrade                        | > git update-git-for-windows<CR>
-[tcmd.ext] --------------------------- | ----------------------------------------
 
 # vim:set ft=bmk syntax=txt nowrap:

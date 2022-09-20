@@ -38,6 +38,7 @@ set nowritebackup
 set noundofile
 
 set timeoutlen=300
+set updatetime=300
 
 set signcolumn=yes
 set scrolloff=0

@@ -1,13 +1,13 @@
 [coc] -------------------------------- | ----------------------------------------
--   CocDiagnostics                     | :CocDiagnostics
--   CocAction('doHover')               | :call CocAction('doHover')
--   Switch src/header                  | CocCommand clangd.switchSourceHeader
+- D CocDiagnostics                     | :CocDiagnostics
+-   CocAction('doHover')  (CR)         | :call CocAction('doHover')
     ---------------------------------- | ----------------------------------------
 -   CocInfo                            | :CocInfo
 -   CocOpenLog                         | :CocOpenLog
 -   MyCocInstall                       | :MyCocInstall
 -   CocUpdate                          | :CocUpdate
     ---------------------------------- | ----------------------------------------
+- S Switch src/header                  | :CocCommand clangd.switchSourceHeader
 -   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
 -   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
 - d coc-definition                     | _Plug_(coc-definition)

@@ -166,5 +166,5 @@ command! TransZhVisual  TransZh
 "------------------------------------------------------
 " map
 "------------------------------------------------------
-nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
+"nnoremap K    :call Lookup("ej", "", expand("<cword>"))<CR>
 

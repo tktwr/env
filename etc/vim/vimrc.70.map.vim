@@ -44,27 +44,27 @@ nnoremap ==      zi
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  nnoremap <silent> <C-B>   :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")<CR>
-"nnoremap <silent> <C-C>   :echo 'C-C'<CR>
+ nnoremap <silent> <C-C>   <C-W>:CpmOpen coc<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
-"nnoremap <silent> <C-F>   :echo 'C-F'<CR>
+"nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [FIXED] next page
  nnoremap <silent> <C-G>   :VisRedraw<CR>
-"nnoremap <silent> <C-H>   :echo 'C-H'<CR>
-"nnoremap <silent> <C-I>   :echo 'C-I'<CR>
-"nnoremap <silent> <C-J>   :echo 'C-J'<CR>
-"nnoremap <silent> <C-K>   :echo 'C-K'<CR>
-"nnoremap <silent> <C-L>   :echo 'C-L'<CR>
-"nnoremap <silent> <C-M>   :echo 'C-M'<CR>
+"nnoremap <silent> <C-H>   :echo 'C-H'<CR>  " [FIXED] left win
+"nnoremap <silent> <C-I>   :echo 'C-I'<CR>  " [FIXED] TAB
+"nnoremap <silent> <C-J>   :echo 'C-J'<CR>  " [FIXED] next win
+"nnoremap <silent> <C-K>   :echo 'C-K'<CR>  " [FIXED] prev win
+"nnoremap <silent> <C-L>   :echo 'C-L'<CR>  " [FIXED] right win
+"nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [FIXED] CR
  nnoremap <silent> <C-N>   :cn<CR>
- nnoremap <silent> <C-O>   :silent call WblPop()<CR>
+ nnoremap <silent> <C-O>   <C-W>:silent call WblPop()<CR>
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
-"nnoremap <silent> <C-R>   :echo 'C-R'<CR>
+"nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [FIXED] redo
  nnoremap <silent> <C-S>   :echo<CR>
-"nnoremap <silent> <C-T>   :echo 'C-T'<CR>
+"nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [FIXED] prev tag
  nnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
-"nnoremap <silent> <C-V>   :echo 'C-V'<CR>
-"nnoremap <silent> <C-W>   :echo 'C-W'<CR>
+"nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
+"nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
  nnoremap <silent> <C-X>   :echo<CR>
  nnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
  nnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
@@ -83,6 +83,7 @@ nnoremap ==      zi
  tnoremap <silent> <C-O>   <C-W>N
 " paste register
  tnoremap <silent> <C-V>   <C-W>""
+ tnoremap <silent> <C-C>   <C-W>:CpmOpen tcmd.git<CR>
  tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
  tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 

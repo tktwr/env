@@ -2,7 +2,7 @@
 - - winbuf menu     (End, C-u)         | :silent call WblPrint()
 - y fzy menu             (C-y)         | :CpmOpen fzy
 - r ref menu         (F1, C-z)         | :CpmOpen ref
-- c coc menu                           | :CpmOpen coc
+- c coc menu             (C-c)         | :CpmOpen coc
 [vcmd.external] ---------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
 - O BmkOpenFile                        | :call BmkOpenFile('%:p')

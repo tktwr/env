@@ -25,9 +25,6 @@ endif
 let g:coc_disable_startup_warning = 1
 "let g:coc_uri_prefix_replace_patterns = {'/home': 'C:/msys64/home'}
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 "------------------------------------------------------
 " imap: coc
 "------------------------------------------------------
@@ -58,6 +55,18 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
+" Use K to show documentation in preview window.
+nnoremap <silent> <CR> :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 "------------------------------------------------------
 " my

@@ -1,0 +1,29 @@
+[tcmd.system] ------------------------ | ----------------------------------------
+-   pacman -S -h                       | > pacman -S -h<CR>
+-   pacman -Syyu                       | > pacman -Syyu<CR>
+-   pacman -S <pkg>                    | > pacman -S
+-   pacman -R <pkg>                    | > pacman -R
+-   pacman -Ss <pattern>               | > pacman -Ss
+-   pacman -Si <pkg>                   | > pacman -Si
+-   pacman -Sl                         | > pacman -Sl<CR>
+-   pacman -Sg [pkg_group]             | > pacman -Sg
+-   pacman -Qi <installed_pkg>         | > pacman -Qi
+-   pacman -Ql <installed_pkg>         | > pacman -Ql
+    ---------------------------------- | ----------------------------------------
+-   apt list <pkg>                     | > apt list
+-   apt search <pkg>                   | > apt search
+-   apt show <pkg>                     | > apt show
+-   apt install <pkg>                  | > apt install
+-   apt remove <pkg>                   | > apt remove
+-   apt update                         | > apt update
+-   apt upgrade                        | > apt upgrade
+    ---------------------------------- | ----------------------------------------
+-   pip list                           | > pip list<CR>
+-   pip search <pkg>                   | > pip search
+-   pip install <pkg>                  | > pip install
+-   pip uninstall <pkg>                | > pip uninstall
+-   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-upgrade                        | > git update-git-for-windows<CR>
+
+# vim:set ft=bmk syntax=txt nowrap:
