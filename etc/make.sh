@@ -6,6 +6,7 @@
 DOT_FILES_COMMON="\
 .clang-format \
 .gitignore_global \
+.rsync_exclude \
 .my/pushdrc \
 "
 DOT_FILES_DIFF="\

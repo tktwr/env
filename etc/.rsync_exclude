@@ -1,0 +1,7 @@
+imgui.ini
+*.blend*
+*.BLEND*
+build*
+_output
+_local
+__pycache__
