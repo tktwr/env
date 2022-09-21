@@ -16,7 +16,6 @@ elif [ $MY_PROMPT_TYPE -ge 2 ]; then
   alias g.='f_checkgit_force'
 elif [ $MY_PROMPT_TYPE -ge 1 ]; then
   f_set_prompt_git_branch
-  alias g.='f_set_prompt_git_branch'
 else
   f_set_prompt_none
 fi

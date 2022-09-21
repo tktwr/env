@@ -63,13 +63,13 @@ case $MY_OS_NAME in
     export MY_PYTHON_EXE="python"
     export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
     export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
-    export PYTHONPATH="$SYS_PROG64_DIR/Blender Foundation/Blender 3.3/3.3/scripts/modules;$PYTHONPATH"
+    export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
     ;;
   *)
     export MY_PYTHON_EXE="python3"
     export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
     export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
-    export PYTHONPATH="$SYS_PROG64_DIR/Blender Foundation/Blender 3.3/3.3/scripts/modules:$PYTHONPATH"
+    export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
     ;;
 esac
 

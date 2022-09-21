@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export PATH="$SYS_PROG64_DIR/Blender Foundation/Blender 3.3:$PATH"
+export PATH="$SYS_BLENDER:$PATH"
 
 exec $WINPTY blender.exe "$@"
