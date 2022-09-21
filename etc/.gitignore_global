@@ -14,6 +14,7 @@ Thumbs.db
 .DS_Store
 
 # build
+a.out
 build*/
 !build.gradle
 imgui.ini

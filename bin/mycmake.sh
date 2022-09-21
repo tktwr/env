@@ -45,7 +45,7 @@ f_set() {
   echo
   echo "export CC=clang"
   echo "export CXX=clang++"
-  echo "export CLANGD_FLAGS=--compile-commands-dir=build.$1/$2"
+  echo "export CLANGD_FLAGS=\"--compile-commands-dir=build.$1/$2\""
 }
 
 f_eval() {
