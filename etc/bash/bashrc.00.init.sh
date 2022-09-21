@@ -11,7 +11,7 @@ source_file $HOME/.my/*
 #------------------------------------------------------
 # MY_PROMPT_TYPE:
 # 0: none   [f_set_prompt_none]
-# 1: min    [f_set_prompt_minimal, gitgutter]
+# 1: min    [f_set_prompt_git_branch, gitgutter]
 # 2: middle [f_set_prompt_git_fast]
 # 3: max    [f_set_prompt_git, fugitive, coc]
 # 4: full   [fern-git-status]
@@ -20,7 +20,7 @@ case $MY_OS_NAME in
     export MY_PROMPT_TYPE=4
     ;;
   msys|gitbash)
-    export MY_PROMPT_TYPE=2
+    export MY_PROMPT_TYPE=1
     ;;
 esac
 

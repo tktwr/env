@@ -42,7 +42,7 @@ f_set_prompt_none() {
   export PS1="[\w]\$ "
 }
 
-f_set_prompt_minimal() {
+f_set_prompt_git_branch() {
   local PS1_HOST=$(f_get_prompt_color_host)
   local PS1_OS=$(f_get_prompt_color_os)
   local PS1_DIR=$(f_get_prompt_color_dir)
