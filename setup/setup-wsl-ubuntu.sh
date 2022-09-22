@@ -84,6 +84,11 @@ f_vim() {
   git clone https://github.com/microsoft/python-type-stubs.git
 }
 
+f_nvim() {
+  cp -a $MY_ENV/os.linux/config/nvim $HOME/.config
+  sudo npm install -g neovim
+}
+
 #------------------------------------------------------
 f_init() {
   if [ ! -d $ENV_DIR ]; then
@@ -99,6 +104,7 @@ f_init() {
   f_etc
   #f_python_venv
   #f_vim
+  #f_nvim
 }
 
 f_help() {
@@ -111,6 +117,7 @@ f_help() {
   echo "etc         ... etc"
   echo "python_venv ... python_venv"
   echo "vim         ... vim"
+  echo "nvim        ... nvim"
   echo "----------- ... -----------------------------"
   echo "init        ... init"
   echo "----------- ... -----------------------------"

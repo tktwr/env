@@ -8,6 +8,7 @@ python-language-server \
 pylint \
 flake8 \
 pyinstaller \
+pynvim \
 "
 
 pkg_dev="\
