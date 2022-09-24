@@ -32,7 +32,7 @@ f_env() {
   #------------------------------------------------------
   # prompt
   #------------------------------------------------------
-  export PS1="[\w]\$ "
+  export PS1="$MY_HOST_NAME:$MY_OS_NAME[\w]\$ "
 
   #------------------------------------------------------
   # color
@@ -82,21 +82,6 @@ f_python() {
       f_python_linux
       ;;
   esac
-}
-
-#------------------------------------------------------
-# print
-#------------------------------------------------------
-f_print_env() {
-  echo "SYS_WIN_HOME     = $SYS_WIN_HOME"
-  echo "SYS_LOCAL_HOME   = $SYS_LOCAL_HOME"
-  echo "SYS_ROAMING_HOME = $SYS_ROAMING_HOME"
-  echo "SYS_CONFIG_HOME  = $SYS_CONFIG_HOME"
-  echo "SYS_SHARE_HOME   = $SYS_SHARE_HOME"
-  echo "PATH             = $PATH"
-  echo "PYTHONPATH       = $PYTHONPATH"
-  echo "MY_PYTHON_EXE    = $MY_PYTHON_EXE"
-  which $MY_PYTHON_EXE
 }
 
 #------------------------------------------------------
@@ -151,7 +136,6 @@ source_file $HOME/.my/hostname.sh
 f_env
 f_path
 f_python
-#f_print_env
 
 unalias -a
 f_alias

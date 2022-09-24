@@ -24,6 +24,8 @@ cmake \
 clang \
 clangd \
 clang-format \
+imagemagick \
+img2pdf \
 "
 pkg_ext2="\
 blender \
@@ -50,9 +52,10 @@ f_install_ext() {
   sudo -E apt install $pkg_ext
 }
 
+#------------------------------------------------------
 f_dir() {
-  cd
   if [ ! -d "WinHome" ]; then
+    cd
     ln -s $WIN_HOME WinHome
   fi
 }
@@ -98,6 +101,7 @@ f_init() {
 
   f_update
   f_install_min
+
   f_dir
   f_wsltty
 
@@ -107,10 +111,12 @@ f_init() {
   #f_nvim
 }
 
+#------------------------------------------------------
 f_help() {
   echo "update      ... update"
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
+  echo "----------- ... -----------------------------"
   echo "dir         ... dir"
   echo "wsltty      ... wsltty"
   echo "----------- ... -----------------------------"

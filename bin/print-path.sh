@@ -20,6 +20,10 @@ f_format_path_win() {
   sed 's+;+\n+g'
 }
 
+f_unexpand_env() {
+  sed "s+$MY_PYTHON_VENV_DIR+\$MY_PYTHON_VENV_DIR+"
+}
+
 #------------------------------------------------------
 f_print_sys_path() {
   echo "=== [SYS_PATH] ==="
@@ -45,8 +49,13 @@ f_print_python_path() {
 
 f_print_which() {
   cmd=$1
-  which $cmd 2> /dev/null
-  $cmd --version 2> /dev/null | head -1
+  abspath=$(which $cmd 2> /dev/null)
+  ver=$($cmd --version 2> /dev/null | head -1)
+
+  abspath=$(echo $abspath | f_unexpand_env)
+  if [ -n "$abspath" ]; then
+    printf "%-40s $ver\n" $abspath
+  fi
 }
 
 f_print_which_all() {

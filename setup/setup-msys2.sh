@@ -82,7 +82,8 @@ f_install_dev() {
   pacman -S --needed $pkg_dev
 }
 
-f_python() {
+#------------------------------------------------------
+f_python_venv() {
   mypython-venv-create torch
   pip-upgrade.sh
   pip-install.sh install_min
@@ -94,17 +95,22 @@ f_init() {
   f_install_min
   #f_install_ext
   #f_install_dev
-  #f_python
+
+  #f_python_venv
 }
 
+#------------------------------------------------------
 f_help() {
-  echo "init        ... init"
   echo "update      ... update"
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
   echo "install_dev ... install_dev"
-  echo "python      ... python"
-  echo "help        ... print help"
+  echo "----------- ... -----------------------------"
+  echo "python_venv ... python_venv"
+  echo "----------- ... -----------------------------"
+  echo "init        ... init"
+  echo "----------- ... -----------------------------"
+  echo "help        ... print this help (default)"
 }
 
 f_default() {
