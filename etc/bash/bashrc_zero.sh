@@ -1,8 +1,13 @@
 #!/bin/bash
 
 #======================================================
-# functions
+# minimal bashrc
 #======================================================
+f_env() {
+  export LANG=C
+  export HISTCONTROL=ignoreboth
+}
+
 f_path() {
   if [ -z "$SYS_PATH" ]; then
     export SYS_PATH=$PATH
@@ -31,6 +36,7 @@ f_alias() {
   alias .i='dirs -c; cd'
 
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
+  alias more='less'
   alias vi='vim'
 }
 
@@ -41,5 +47,6 @@ vim-where() { vim `which $*`; }
 # main
 #======================================================
 unalias -a
+f_env
 f_path
 f_alias

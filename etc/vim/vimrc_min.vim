@@ -15,47 +15,57 @@ set runtimepath-=~/.vim
 set runtimepath-=~/.vim/after
 set runtimepath^=$MY_VIM
 set runtimepath+=$MY_VIM/after
-
 "------------------------------------------------------
 " basic
 "------------------------------------------------------
 set nocompatible
-
+set timeoutlen=300
+set encoding=utf-8
+set fileencodings=utf-8,cp932,euc-jp,cp936
+"------------------------------------------------------
+" buffer
+"------------------------------------------------------
 set hidden
 set autowrite
 set noswapfile
 set nobackup
 set nowritebackup
 set noundofile
-
-set timeoutlen=300
-
-set encoding=utf-8
-set fileencodings=utf-8,cp932,euc-jp,cp936
-
-set hlsearch
-
 set viminfo=
-
+"------------------------------------------------------
+" indent
+"------------------------------------------------------
+set tabstop=2
+set shiftwidth=2
+set expandtab
 "------------------------------------------------------
 " color
 "------------------------------------------------------
 set termguicolors
 set t_Co=256
 set background=dark
-
-"------------------------------------------------------
+set hlsearch
+syntax on
+"======================================================
 " map
-"------------------------------------------------------
+"======================================================
 nnoremap Q       :confirm qall<CR>
 nnoremap '       `
-
+"------------------------------------------------------
+" nmap
+"------------------------------------------------------
 nnoremap <C-D>   <C-B>
 nnoremap <C-E>   :close<CR>
 nnoremap <C-G>   <C-L>
-
+nnoremap <C-;>   <C-W>:
 "------------------------------------------------------
-" map.window.move
+" tmap
+"------------------------------------------------------
+tnoremap <C-G>   <C-L>
+tnoremap <C-O>   <C-W>N
+tnoremap <C-;>   <C-W>:
+"------------------------------------------------------
+" map: window/terminal
 "------------------------------------------------------
 nnoremap <C-H>   <C-W>h
 nnoremap <C-J>   <C-W>w
@@ -66,20 +76,11 @@ tnoremap <C-H>   <C-W>h
 tnoremap <C-J>   <C-W>w
 tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
-
 "------------------------------------------------------
-" tmap
-"------------------------------------------------------
-tnoremap <C-G>   <C-L>
-tnoremap <C-O>   <C-W>N
-tnoremap <C-;>   <C-W>:
-
-"------------------------------------------------------
-" clipboard
+" map: clipboard
 "------------------------------------------------------
 nnoremap ,p      "*p
 vnoremap Y       "*y
-
 "======================================================
 " nvim
 "======================================================

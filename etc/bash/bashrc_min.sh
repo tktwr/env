@@ -1,21 +1,14 @@
 #!/bin/bash
 
-#------------------------------------------------------
-# util
-#------------------------------------------------------
+#======================================================
+# minimal bashrc
+#======================================================
 source_file() {
-  local files="$@"
-
-  for i in $files; do
-    if [ -f $i ]; then
-      source $i
-    fi
-  done
+  if [ -f "$1" ]; then
+    source "$1"
+  fi
 }
 
-#------------------------------------------------------
-# env
-#------------------------------------------------------
 f_env() {
   export MY_DOTMY="$SYS_LOCAL_HOME/.my"
   export MY_ENV="$SYS_ROAMING_HOME/env"
@@ -29,27 +22,19 @@ f_env() {
   export MY_VIM="$MY_ETC/vim"
   export MY_FZY="$MY_ETC/fzy"
 
-  #------------------------------------------------------
   # prompt
-  #------------------------------------------------------
   export PS1="$MY_HOST_NAME:$MY_OS_NAME[\w]\$ "
 
-  #------------------------------------------------------
   # color
-  #------------------------------------------------------
   export LS_COLORS="di=31:ln=31:tw=31:ow=31"
   export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
 }
 
-#------------------------------------------------------
-# path
-#------------------------------------------------------
 f_path() {
   if [ -z "$SYS_PATH" ]; then
     export SYS_PATH=$PATH
     export SYS_PYTHONPATH=$PYTHONPATH
   fi
-
   export PATH="$SYS_PATH"
   export PYTHONPATH="$SYS_PYTHONPATH"
 
@@ -132,14 +117,11 @@ vim-where() { vim `which $*`; }
 # main
 #======================================================
 unalias -a
-
 source_file $HOME/.my/hostname.sh
-
 f_env
 f_path
 f_python
 f_alias
-
 #------------------------------------------------------
 # vim plugin
 #------------------------------------------------------
