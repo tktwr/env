@@ -33,6 +33,8 @@ set timeoutlen=300
 set encoding=utf-8
 set fileencodings=utf-8,cp932,euc-jp,cp936
 
+set hlsearch
+
 set viminfo=
 
 "------------------------------------------------------

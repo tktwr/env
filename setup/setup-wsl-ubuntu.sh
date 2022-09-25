@@ -18,20 +18,23 @@ eblook \
 ripgrep \
 "
 pkg_ext="\
-vim-gui-common \
+vim-gtk3 \
 neovim \
-cmake \
-clang \
-clangd \
-clang-format \
 imagemagick \
 img2pdf \
+fontforge \
 "
 pkg_ext2="\
 blender \
 nvidia-cuda-toolkit \
-libopencv-dev \
+"
+pkg_dev="\
+cmake \
+clang \
+clangd \
+clang-format \
 libglfw3-dev \
+libopencv-dev \
 python3-tk \
 python3-opencv \
 "
@@ -42,6 +45,7 @@ python3-opencv \
 f_update() {
   sudo -E apt update
   sudo -E apt upgrade
+  sudo -E apt autoremove
 }
 
 f_install_min() {
@@ -89,7 +93,7 @@ f_vim() {
 
 f_nvim() {
   cp -a $MY_ENV/os.linux/config/nvim $HOME/.config
-  sudo npm install -g neovim
+  sudo -E npm install -g neovim
 }
 
 #------------------------------------------------------

@@ -129,15 +129,15 @@ vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
 #======================================================
-# setup
+# main
 #======================================================
+unalias -a
+
 source_file $HOME/.my/hostname.sh
 
 f_env
 f_path
 f_python
-
-unalias -a
 f_alias
 
 #------------------------------------------------------

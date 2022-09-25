@@ -57,6 +57,8 @@ set incsearch
 
 set complete=.,w,b,u,i
 
+set ambiwidth=double
+
 "set showcmd
 "set ignorecase
 "set smartcase
