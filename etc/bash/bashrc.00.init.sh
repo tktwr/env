@@ -25,7 +25,6 @@ case $MY_OS_NAME in
 esac
 
 #------------------------------------------------------
-export LANG=C
 export HISTCONTROL=ignoreboth
 export PAGER='less -FRX'
 export EDITOR='vim'

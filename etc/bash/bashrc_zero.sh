@@ -4,8 +4,11 @@
 # minimal bashrc
 #======================================================
 f_env() {
-  export LANG=C
   export HISTCONTROL=ignoreboth
+
+  # color
+  export LS_COLORS="di=31:ln=31:tw=31:ow=31"
+  export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
 }
 
 f_path() {

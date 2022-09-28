@@ -270,6 +270,8 @@ git-dirdiff() {
 #------------------------------------------------------
 # git-alias
 #------------------------------------------------------
+alias git='git.sh'
+
 alias gs='git status'
 alias gS='git status -s'
 alias gd='git diff'
@@ -296,5 +298,3 @@ alias GM='git-log.sh --log 4 --log-submodule 2'
 alias gls='git-ls.sh'
 alias gba='git-print-branch-all'
 alias gta='git-print-tag-all'
-
-#------------------------------------------------------
