@@ -270,8 +270,6 @@ git-dirdiff() {
 #------------------------------------------------------
 # git-alias
 #------------------------------------------------------
-alias git='git.sh'
-
 alias gs='git status'
 alias gS='git status -s'
 alias gd='git diff'
