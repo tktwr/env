@@ -3,18 +3,18 @@
 #======================================================
 # minimal bashrc
 #======================================================
-unalias -a
-source_file $HOME/.my/hostname.sh
-
-#======================================================
-# functions
-#======================================================
 source_file() {
   if [ -f "$1" ]; then
     source "$1"
   fi
 }
 
+unalias -a
+source_file $HOME/.my/hostname.sh
+
+#======================================================
+# functions
+#======================================================
 f_env() {
   export HISTCONTROL=ignoreboth
 
@@ -38,8 +38,12 @@ f_env() {
   export MY_VIM="$MY_ETC/vim"
   export MY_FZY="$MY_ETC/fzy"
 
-  export MY_BIN_WIN=$(cygpath -am $MY_BIN)
-  export MY_VIM_WIN=$(cygpath -am $MY_VIM)
+  case $MY_OS_NAME in
+    msys|gitbash)
+      export MY_BIN_WIN=$(cygpath -am $MY_BIN)
+      export MY_VIM_WIN=$(cygpath -am $MY_VIM)
+      ;;
+  esac
 }
 
 f_path() {
