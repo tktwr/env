@@ -3,6 +3,12 @@
 #======================================================
 # minimal bashrc
 #======================================================
+unalias -a
+source_file $HOME/.my/hostname.sh
+
+#======================================================
+# functions
+#======================================================
 source_file() {
   if [ -f "$1" ]; then
     source "$1"
@@ -10,6 +16,16 @@ source_file() {
 }
 
 f_env() {
+  export HISTCONTROL=ignoreboth
+
+  # prompt
+  export PS1="$MY_HOST_NAME:$MY_OS_NAME[\w]\$ "
+
+  # color
+  export LS_COLORS="di=31:ln=31:tw=31:ow=31"
+  export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
+
+  # dir
   export MY_DOTMY="$SYS_LOCAL_HOME/.my"
   export MY_ENV="$SYS_ROAMING_HOME/env"
   export MY_REMOTE_CONFIG="$SYS_CONFIG_HOME/rconfig"
@@ -22,12 +38,8 @@ f_env() {
   export MY_VIM="$MY_ETC/vim"
   export MY_FZY="$MY_ETC/fzy"
 
-  # prompt
-  export PS1="$MY_HOST_NAME:$MY_OS_NAME[\w]\$ "
-
-  # color
-  export LS_COLORS="di=31:ln=31:tw=31:ow=31"
-  export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
+  export MY_BIN_WIN=$(cygpath -am $MY_BIN)
+  export MY_VIM_WIN=$(cygpath -am $MY_VIM)
 }
 
 f_path() {
@@ -45,7 +57,6 @@ f_path() {
 # python
 #------------------------------------------------------
 f_python_msys() {
-  export MY_BIN_WIN=$(cygpath -am $MY_BIN)
   export MY_PYTHON_EXE="python"
   export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
   export USER_PYTHON_HOME="$SYS_WIN_HOME/AppData/Local/Programs/Python/Python39"
@@ -92,6 +103,8 @@ f_alias() {
 
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
+  alias vi='vim'
+  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 
   alias gs='git status'
   alias gd='git diff'
@@ -101,9 +114,6 @@ f_alias() {
   alias gR='git reset --hard'
   alias G='git graph -6'
   alias GA='git graph -6 --all'
-
-  alias vi='vim'
-  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 
   alias cd.bin='cd $MY_BIN'
   alias cd.etc='cd $MY_ETC'
@@ -116,8 +126,6 @@ vim-where() { vim `which $*`; }
 #======================================================
 # main
 #======================================================
-unalias -a
-source_file $HOME/.my/hostname.sh
 f_env
 f_path
 f_python

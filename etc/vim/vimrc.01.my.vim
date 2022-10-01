@@ -48,7 +48,7 @@ let g:my_gstatus_winheight = 10
 let g:my_trans_winheight = 10
 
 " width
-let g:my_winwidth_max = 110
+let g:my_winwidth_max = 150
 let g:my_help_winwidth = 82
 let g:my_left_winwidth = 30
 let g:my_right_winwidth = 30
