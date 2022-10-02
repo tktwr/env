@@ -101,7 +101,14 @@ f_mycmake() {
       ;;
   esac
 
-  opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
+  case $CMAKE in
+    cmake)
+      opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT/usr/local"
+      ;;
+    cmake.exe)
+      opt="$opt -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
+      ;;
+  esac
 
   f_eval "$WINPTY $CMAKE -S. -B$build_dir -G\"$generator_name\" $opt $@"
 }

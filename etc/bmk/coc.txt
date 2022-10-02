@@ -1,21 +1,26 @@
 [coc] -------------------------------- | ----------------------------------------
 - D CocDiagnostics                     | :CocDiagnostics
 -   CocAction('doHover')  (CR)         | :call CocAction('doHover')
+-   CocAction('showIncomingCalls')     | :call CocAction('showIncomingCalls')
+-   CocAction('showOutgoingCalls')     | :call CocAction('showOutgoingCalls')
     ---------------------------------- | ----------------------------------------
--   CocInfo                            | :CocInfo
--   CocOpenLog                         | :CocOpenLog
+- I CocInfo                            | :CocInfo
+- L CocOpenLog                         | :CocOpenLog
 -   MyCocInstall                       | :MyCocInstall
 -   CocUpdate                          | :CocUpdate
     ---------------------------------- | ----------------------------------------
-- S Switch src/header                  | :CocCommand clangd.switchSourceHeader
--   coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
--   coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
+- p coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
+- n coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
 - d coc-definition                     | _Plug_(coc-definition)
 - t coc-type-definition                | _Plug_(coc-type-definition)
 - i coc-implementation                 | _Plug_(coc-implementation)
 - r coc-references                     | _Plug_(coc-references)
--   coc-rename                         | _Plug_(coc-rename)
--   coc-format-selected                | _Plug_(coc-format-selected)
+- R coc-rename                         | _Plug_(coc-rename)
+- F coc-format-selected                | _Plug_(coc-format-selected)
+    ---------------------------------- | ----------------------------------------
+- S clangd.switchSourceHeader          | :CocCommand clangd.switchSourceHeader
+-   workspace.inspectEdit              | :CocCommand workspace.inspectEdit
+- C document.checkBuffer               | :CocCommand document.checkBuffer
     ---------------------------------- | ----------------------------------------
 -   CocList extensions                 | :CocList extensions
 -   CocList vimcommands                | :CocList vimcommands

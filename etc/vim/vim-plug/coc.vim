@@ -71,6 +71,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 "------------------------------------------------------
 " my
 "------------------------------------------------------
+"let g:coc_global_extensions = ['coc-tsserver', 'coc-json', 'coc-pyright', 'coc-clangd', 'coc-vimlsp', 'coc-snippets', 'coc-lists']
+
 func s:MyCocInstall()
   CocInstall coc-tsserver coc-json coc-pyright coc-clangd coc-vimlsp coc-snippets coc-lists
 endfunc

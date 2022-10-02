@@ -87,8 +87,12 @@ f_python_venv() {
 }
 
 f_vim() {
+  # LSP for python for cv2, matplotlib, etc.
   cd $MY_GITHUB
   git clone https://github.com/microsoft/python-type-stubs.git
+
+  vim -c 'PlugInstall'
+  vim -c 'MyCocInstall'
 }
 
 f_nvim() {
