@@ -111,11 +111,23 @@ f_alias() {
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 
   alias gs='git status'
+  alias gS='git status -s'
   alias gd='git diff'
+  alias gD='git diff --staged'
   alias gf='git fetch'
+  alias gg='git graph'
+  alias gb='git branch'
+  alias gt='git tag'
+
   alias gA='git add'
   alias gAu='git add -u'
+  alias gAC='git commit -a -m'
+  alias gC='git commit -m'
+
   alias gR='git reset --hard'
+  alias gRom='git reset --hard origin/master'
+  alias gPom='git push origin master'
+
   alias G='git graph -6'
   alias GA='git graph -6 --all'
 
