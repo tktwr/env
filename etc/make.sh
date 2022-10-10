@@ -70,6 +70,11 @@ f_min_plug() {
   f_sub vim min_plug
 }
 
+f_zero() {
+  f_sub bash zero
+  f_sub vim zero
+}
+
 #------------------------------------------------------
 f_init() {
   f_cp_all
@@ -111,6 +116,7 @@ f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
   echo "min_plug    ... minimum settings with plugins"
+  echo "zero        ... minimum settings without any dependencies"
   echo "----------- ... -----------------------------"
   echo "init        ... init"
   echo "backup      ... backup"

@@ -14,10 +14,15 @@ f_min() {
   cp bashrc_min.sh $HOME/.bashrc
 }
 
+f_zero() {
+  cp bashrc_zero.sh $HOME/.bashrc
+}
+
 #------------------------------------------------------
 f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
+  echo "zero        ... minimum settings without any dependencies"
   echo "----------- ... -----------------------------"
   echo "help        ... print this help"
 }

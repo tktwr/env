@@ -17,6 +17,10 @@ f_min_plug() {
   cat vimrc_min.vim vimrc_min_plug.vim > $HOME/.vimrc
 }
 
+f_zero() {
+  cp vimrc_zero.vim $HOME/.vimrc
+}
+
 #------------------------------------------------------
 f_log() {
   f_log_clean
@@ -34,6 +38,7 @@ f_help() {
   echo "all         ... full settings (default)"
   echo "min         ... minimum settings"
   echo "min_plug    ... minimum settings with plugins"
+  echo "zero        ... minimum settings without any dependencies"
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"
   echo "log_clean   ... clean log files"
