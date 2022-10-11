@@ -2,4 +2,11 @@
 
 export PATH="$SYS_BLENDER:$PATH"
 
-exec $WINPTY blender.exe "$@"
+case $MY_OS_NAME in
+  wsl|msys|gitbash)
+    exec $WINPTY blender.exe "$@"
+    ;;
+  linux)
+    exec $WINPTY blender-softwaregl "$@"
+    ;;
+esac

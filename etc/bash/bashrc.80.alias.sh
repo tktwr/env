@@ -22,6 +22,7 @@ alias .c='dirs -c'
 alias .i='dirs -c; cd'
 
 # remap
+alias sudo='sudo -E'
 alias grep='grep -s'
 alias nm='nm -C'
 alias df='df -h'

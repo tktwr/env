@@ -46,6 +46,7 @@ f_alias() {
   alias .c='dirs -c'
   alias .i='dirs -c; cd'
 
+  alias sudo='sudo -E'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
   alias vi='vim'

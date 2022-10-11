@@ -105,6 +105,7 @@ f_alias() {
   alias .c='dirs -c'
   alias .i='dirs -c; cd'
 
+  alias sudo='sudo -E'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
   alias vi='vim'
@@ -134,6 +135,7 @@ f_alias() {
   alias cd.bin='cd $MY_BIN'
   alias cd.etc='cd $MY_ETC'
   alias cd.vim='cd $MY_VIM'
+  alias cd.common='cd $MY_COMMON_SETTING'
 }
 
 vim-which() { vim `which $*`; }

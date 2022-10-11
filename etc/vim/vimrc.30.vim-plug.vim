@@ -51,6 +51,7 @@ source $MY_VIM/vim-plug/git-log.vim
 source $MY_VIM/vim-plug/fern.vim
 source $MY_VIM/vim-plug/tagbar.vim
 source $MY_VIM/vim-plug/ide.vim
+source $MY_VIM/vim-plug/netrw.vim
 
 "------------------------------------------------------
 
