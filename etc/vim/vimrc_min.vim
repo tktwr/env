@@ -39,6 +39,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 "------------------------------------------------------
+" term
+"------------------------------------------------------
+if &term =~ "xterm"
+  set mouse=a
+  set ttymouse=xterm2
+endif
+"------------------------------------------------------
 " color
 "------------------------------------------------------
 set termguicolors
@@ -58,6 +65,7 @@ nnoremap <C-D>   <C-B>
 nnoremap <C-E>   :close<CR>
 nnoremap <C-G>   <C-L>
 nnoremap <C-;>   <C-W>:
+nnoremap <C-.>   :exec "lcd" expand("%:p:h")<CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------

@@ -5,6 +5,7 @@ func s:view_in_next_win(fname)
   let fname = printf("%s/%s", expand('%'), expand(a:fname))
 
   if (isdirectory(fname))
+    call feedkeys("\<Plug>NetrwLocalBrowseCheck")
   elseif (filereadable(fname))
     wincmd w
     exec "edit" fname
@@ -13,7 +14,8 @@ func s:view_in_next_win(fname)
 endfunc
 
 func s:ide_netrw_settings()
-  nmap     <buffer> h         -
+  "mapclear <buffer>
+  nmap     <buffer> h         <Plug>NetrwBrowseUpDir
   nnoremap <buffer> l         :call <SID>view_in_next_win('<cfile>')<CR>
 endfunc
 
