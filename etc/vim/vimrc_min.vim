@@ -85,6 +85,18 @@ tnoremap <C-J>   <C-W>w
 tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
+" map: tab
+"------------------------------------------------------
+nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+nnoremap <silent> <Del>      <C-W>:tabclose<CR>
+nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
+nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+
+tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
+tnoremap <silent> <Del>      <C-W>:tabclose<CR>
+tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
+tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+"------------------------------------------------------
 " map: clipboard
 "------------------------------------------------------
 nnoremap ,p      "*p

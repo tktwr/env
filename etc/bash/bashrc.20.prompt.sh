@@ -39,7 +39,7 @@ f_get_prompt_color_git_branch() {
 
 #------------------------------------------------------
 f_set_prompt_none() {
-  export PS1="[\w]\$ "
+  export PS1="\u@\h[\w]\$ "
 }
 
 f_set_prompt_git_branch() {
