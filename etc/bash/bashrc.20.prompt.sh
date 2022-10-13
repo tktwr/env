@@ -3,6 +3,22 @@
 export PROMPT_DIRTRIM=3
 
 #------------------------------------------------------
+# MY_PROMPT_TYPE:
+# 0: none   [f_set_prompt_none]
+# 1: min    [f_set_prompt_git_branch, gitgutter]
+# 2: middle [f_set_prompt_git_fast]
+# 3: max    [f_set_prompt_git, fugitive, coc]
+# 4: full   [fern-git-status]
+case $MY_OS_NAME in
+  wsl|linux)
+    export MY_PROMPT_TYPE=4
+    ;;
+  msys|gitbash)
+    export MY_PROMPT_TYPE=1
+    ;;
+esac
+
+#------------------------------------------------------
 # prompt color
 #------------------------------------------------------
 f_get_prompt_color_host() {
@@ -19,7 +35,7 @@ f_get_prompt_color_os() {
     msys)    ECO=$ECO1 ;;
     wsl)     ECO=$ECO2 ;;
     gitbash) ECO=$ECO4 ;;
-    termux)  ECO=$ECO5 ;;
+    linux)   ECO=$ECO5 ;;
     *)       ECO=$ECO6 ;;
   esac
   echo $ECO$MY_OS_NAME
@@ -63,3 +79,16 @@ f_set_prompt_git() {
   export PS1="$ECOD$PS1_HOST:$PS1_OS$ECOD$PS1_DIR$PS1_GIT$ECOD\$ "
 }
 
+#------------------------------------------------------
+f_set_prompt() {
+  if [ $MY_PROMPT_TYPE -ge 3 ]; then
+    f_set_prompt_git
+  elif [ $MY_PROMPT_TYPE -ge 2 ]; then
+    f_set_prompt_git_fast
+    alias g.='f_checkgit_force'
+  elif [ $MY_PROMPT_TYPE -ge 1 ]; then
+    f_set_prompt_git_branch
+  else
+    f_set_prompt_none
+  fi
+}

@@ -4,25 +4,15 @@
 # setup
 #======================================================
 
-f_set_core_off
+# opencv's openexr feature is disabled in default for security issues
+# the following env variable enable it
+export OPENCV_IO_ENABLE_OPENEXR=1
 
 mypython-type $MY_PYTHON_TYPE
 mypython-venv-activate $MY_PYTHON_VENV
 
-if [ $MY_PROMPT_TYPE -ge 3 ]; then
-  f_set_prompt_git
-elif [ $MY_PROMPT_TYPE -ge 2 ]; then
-  f_set_prompt_git_fast
-  alias g.='f_checkgit_force'
-elif [ $MY_PROMPT_TYPE -ge 1 ]; then
-  f_set_prompt_git_branch
-else
-  f_set_prompt_none
-fi
-
-# opencv's openexr feature is disabled in default for security issues
-# the following env variable enable it
-export OPENCV_IO_ENABLE_OPENEXR=1
+f_set_core_off
+f_set_prompt
 
 #------------------------------------------------------
 # vim plugin

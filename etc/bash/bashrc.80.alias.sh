@@ -29,8 +29,8 @@ alias df='df -h'
 alias more='$PAGER'
 
 # ps
-alias psu='ps -u $USER'
-psall() { ps -aef | grep $*; }
+alias psu='ps -H -u $USER'
+alias psall='ps -aefH'
 
 # ls
 alias lsd='\ls -d --color=auto */'
