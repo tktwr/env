@@ -105,12 +105,17 @@ f_alias() {
   alias .c='dirs -c'
   alias .i='dirs -c; cd'
 
+  # remap
   alias sudo='sudo -E'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
+
+  # vim
   alias vi='vim'
+  alias vim-none='/usr/bin/vim -u NONE'
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 
+  # git
   alias gs='git status'
   alias gS='git status -s'
   alias gd='git diff'
@@ -132,6 +137,7 @@ f_alias() {
   alias G='git graph -6'
   alias GA='git graph -6 --all'
 
+  # cd
   alias cd.bin='cd $MY_BIN'
   alias cd.etc='cd $MY_ETC'
   alias cd.vim='cd $MY_VIM'

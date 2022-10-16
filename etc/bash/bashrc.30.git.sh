@@ -166,18 +166,18 @@ git-add-commit() {
 # git tmp
 #------------------------------------------------------
 git-commit-tmp() {
-  args=$(prompt.sh 'message' '[TMP] update' "$*")
-  if [ -n "$args" ]; then
-    git-eval "git commit -a -m $args"
+  msg=$(prompt.sh 'message' '[TMP] update' "$*")
+  if [ -n "$msg" ]; then
+    git-eval "git commit -a -m $msg"
   fi
 }
 
 git-reset-tmp() {
-  git-eval "git reset HEAD^"
+  git-eval "git reset HEAD~"
 }
 
 git-reset-last() {
-  git-eval "git reset HEAD^"
+  git-eval "git reset HEAD~"
 }
 
 #------------------------------------------------------
@@ -251,7 +251,7 @@ git-reset-hard-origin() {
 #------------------------------------------------------
 # others
 #------------------------------------------------------
-git-shallow-clone-recursive() {
+git-clone-recursive-shallow() {
   git clone --depth 1 --recurse-submodules --shallow-submodules "$@"
 }
 

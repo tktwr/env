@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #======================================================
-# minimal bashrc
+# minimal bashrc without any dependencies
 #======================================================
 unalias -a
 
@@ -46,10 +46,14 @@ f_alias() {
   alias .c='dirs -c'
   alias .i='dirs -c; cd'
 
+  # remap
   alias sudo='sudo -E'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
+
+  # vim
   alias vi='vim'
+  alias vim-none='/usr/bin/vim -u NONE'
 }
 
 vim-which() { vim `which $*`; }

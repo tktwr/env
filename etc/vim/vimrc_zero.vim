@@ -1,5 +1,5 @@
 "======================================================
-" minimal vimrc
+" minimal vimrc without any dependencies
 "======================================================
 "------------------------------------------------------
 " basic
@@ -59,7 +59,7 @@ tnoremap <C-G>   <C-L>
 tnoremap <C-O>   <C-W>N
 tnoremap <C-;>   <C-W>:
 "------------------------------------------------------
-" map: window/terminal
+" map: window
 "------------------------------------------------------
 nnoremap <C-H>   <C-W>h
 nnoremap <C-J>   <C-W>w
@@ -98,4 +98,3 @@ tnoremap <C-L>   <C-\><C-N><C-W>l
 
 tnoremap <C-O>   <C-\><C-N>
 endif
-

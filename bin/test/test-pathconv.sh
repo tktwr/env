@@ -3,8 +3,8 @@
 files="\
 $HOME/.bashrc \
 $HOME/WinHome/.bashrc \
-$HOME/.no_file \
-$HOME/WinHome/.no_file \
+$HOME/.not_existing_file \
+$HOME/WinHome/.not_existing_file \
 "
 
 echo "--- pathconv.sh ---"

@@ -38,6 +38,7 @@ for i in $MY_ENV; do
   export PATH="$i/bin/external:$PATH"
   export PATH="$i/bin/experimental:$PATH"
   export PATH="$i/bin/os.$MY_OS_NAME:$PATH"
+  export PATH="$i/bin/test:$PATH"
   export PATH="$i/setup:$PATH"
 done
 
