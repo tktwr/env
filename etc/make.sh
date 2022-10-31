@@ -112,21 +112,43 @@ f_vimdirdiff() {
 }
 
 #------------------------------------------------------
+f_apt_update() {
+  sudo -E apt update
+}
+
+f_apt_list_upgradable() {
+  apt list --upgradable
+}
+
+f_apt_upgrade() {
+  sudo -E apt upgrade
+}
+
+f_apt_autoremove() {
+  sudo -E apt autoremove
+}
+
+#------------------------------------------------------
 f_help() {
-  echo "all         ... full settings (default)"
-  echo "min         ... minimum settings"
-  echo "min_plug    ... minimum settings with plugins"
-  echo "zero        ... minimum settings without any dependencies"
-  echo "----------- ... -----------------------------"
-  echo "init        ... init"
-  echo "backup      ... backup"
-  echo "----------- ... -----------------------------"
-  echo "cmp         ... cmp"
-  echo "diff        ... diff"
-  echo "vimdiff     ... vimdiff"
-  echo "vimdirdiff  ... vimdirdiff"
-  echo "----------- ... -----------------------------"
-  echo "help        ... print this help"
+  echo "all                 ... full settings (default)"
+  echo "min                 ... minimum settings"
+  echo "min_plug            ... minimum settings with plugins"
+  echo "zero                ... minimum settings without any dependencies"
+  echo "-----------         ... -----------------------------"
+  echo "init                ... init"
+  echo "backup              ... backup"
+  echo "-----------         ... -----------------------------"
+  echo "cmp                 ... cmp"
+  echo "diff                ... diff"
+  echo "vimdiff             ... vimdiff"
+  echo "vimdirdiff          ... vimdirdiff"
+  echo "-----------         ... -----------------------------"
+  echo "apt_update          ... apt update"
+  echo "apt_list_upgradable ... apt list --upgradable"
+  echo "apt_upgrade         ... apt upgrade"
+  echo "apt_autoremove      ... apt autoremove"
+  echo "-----------         ... -----------------------------"
+  echo "help                ... print this help"
 }
 
 f_default() {

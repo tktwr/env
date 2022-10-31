@@ -6,5 +6,5 @@
 "Plug 'ctrlpvim/ctrlp.vim'
 
 "------------------------------------------------------
-Plug 'bfrg/vim-fzy'
+"Plug 'bfrg/vim-fzy'
 

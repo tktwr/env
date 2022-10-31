@@ -12,7 +12,7 @@ function! FzyCommand(vim_func, fzy_cmd, word='')
 
     let output = system(fzy_cmd)
     let output = substitute(output, '\n', '', 'g')
-  catch /Vim:Interrupt/
+  catch /^Vim:Interrupt$/
     " Swallow errors from ^C, allow redraw! below
   endtry
 
