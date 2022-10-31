@@ -38,7 +38,7 @@ function f_get_ext() {
       ext=${fname##*.}
       ;;
   esac
-  if [ $ext == $fname ]; then
+  if [ $ext = $fname ]; then
     echo
   else
     echo .$ext
@@ -46,43 +46,45 @@ function f_get_ext() {
 }
 
 function f_get_date() {
-  echo `env LC_TIME=C date '+%Y%m%d'`
+  env LC_TIME=C date '+%Y%m%d'
 }
 
 function f_get_time() {
-  echo `env LC_TIME=C date '+%H%M%S'`
+  env LC_TIME=C date '+%H%M%S'
 }
 
 function f_get_git_branch() {
-  echo `git rev-parse --abbrev-ref HEAD 2>/dev/null`
+  git rev-parse --abbrev-ref HEAD 2>/dev/null
 }
 
 function f_get_git_commit() {
-  echo `git rev-parse --short HEAD 2>/dev/null`
+  git rev-parse --short HEAD 2>/dev/null
 }
 
 function f_get_snapfname() {
-  local name=`f_get_name $1`
-  local d=`f_get_date $1`
-  local t=`f_get_time $1`
-  local ext=`f_get_ext $1`
-  echo $name-$d-$t$ext
+  local name=$(f_get_name $1)
+  local dt=-$(f_get_date)
+  local tm=-$(f_get_time)
+  local ext=$(f_get_ext $1)
+  echo $name$dt$tm$ext
 }
 
 function f_get_git_snapfname() {
-  local name=`f_get_name $1`
-  local d=`f_get_date $1`
-  local t=`f_get_time $1`
-  local br=`f_get_git_branch $1`
-  if [ "x$br" != "x" ]; then
-    br="-$br"
+  local name=$(f_get_name $1)
+  local dt=-$(f_get_date)
+  local tm=-$(f_get_time)
+  local br=-$(f_get_git_branch)
+  local cm=-$(f_get_git_commit)
+  local ext=$(f_get_ext $1)
+
+  if [ "$br" = "-" ]; then
+    br=""
   fi
-  local cm=`f_get_git_commit $1`
-  if [ "x$cm" != "x" ]; then
-    cm="-$cm"
+  if [ "$cm" = "-" ]; then
+    cm=""
   fi
-  local ext=`f_get_ext $1`
-  echo $name-$d-$t$br$cm$ext
+
+  echo $name$dt$tm$br$cm$ext
 }
 
 function f_eval() {

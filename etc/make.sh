@@ -25,11 +25,11 @@ DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 # functions
 #======================================================
 f_get_date() {
-  echo `env LC_TIME=C date '+%Y%m%d'`
+  env LC_TIME=C date '+%Y%m%d'
 }
 
 f_get_time() {
-  echo `env LC_TIME=C date '+%H%M%S'`
+  env LC_TIME=C date '+%H%M%S'
 }
 
 f_sub() {

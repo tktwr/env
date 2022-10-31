@@ -2,7 +2,7 @@
 
 source common.sh
 
-fname="/a/b/c/d.txt"
+fname=${1:-"/a/b/c/d.txt"}
 
 echo "file name           : $fname"
 echo "f_get_dirname       : $(f_get_dirname $fname)"
