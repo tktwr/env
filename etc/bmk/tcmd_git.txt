@@ -1,58 +1,55 @@
-[tcmd.git] ---------------------------  | ----------------------------------------
--   git-branch-name                     | > git-branch-name<CR>
--   git-commit-hash                     | > git-commit-hash<CR>
--   git-commit-hash-long                | > git-commit-hash-long<CR>
-    ----------------------------------  | ----------------------------------------
--   git-print-branch-all                | > git-print-branch-all<CR>
--   git-print-tag-all                   | > git-print-tag-all<CR>
-    ----------------------------------  | ----------------------------------------
--   git-graph                           | > git-graph<CR>
--   git-graph-date                      | > git-graph-date<CR>
--   git-graph-status                    | > git-graph-status<CR>
-    ----------------------------------  | ----------------------------------------
--   git-ls-track                        | > git-ls-track<CR>
--   git-ls-untrack                      | > git-ls-untrack<CR>
--   git-ls-no-x                         | > git-ls-no-x<CR>
-    ----------------------------------  | ----------------------------------------
--   git-chmod-x {file}                  | > git-chmod-x<CR>
--   git-chmod-x-all                     | > git-chmod-x-all<CR>
-    ----------------------------------  | ----------------------------------------
--   git-branch-reset [branch=master]    | > git-branch-reset<CR>
--   git-branch-create [branch=tmp]      | > git-branch-create<CR>
--   git-branch-delete [branch]          | > git-branch-delete<CR>
--   git-remote-branch-delete [branch]   | > git-remote-branch-delete<CR>
-    ----------------------------------  | ----------------------------------------
--   git-stage {file}                    | > git-stage<CR>
--   git-unstage {file}                  | > git-unstage<CR>
--   git-track {file}                    | > git-track<CR>
--   git-untrack-file {file}             | > git-untrack-file<CR>
--   git-untrack-dir {dir}               | > git-untrack-dir<CR>
-    ----------------------------------  | ----------------------------------------
--   git-commit [msg="update"]           | > git-commit<CR>
--   git-commit-amend [msg="amend"]      | > git-commit-amend<CR>
--   git-add-commit [msg="update"]       | > git-add-commit<CR>
-    ----------------------------------  | ----------------------------------------
--   git-add-commit-tmp [msg="update"]   | > git-add-commit-tmp<CR>
--   git-reset-tmp                       | > git-reset-tmp<CR>
--   git-reset-last                      | > git-reset-last<CR>
-    ----------------------------------  | ----------------------------------------
--   git-reset-hard [branch]             | > git-reset-hard<CR>
--   git-reset-hard-origin               | > git-reset-hard-origin<CR>
-    ----------------------------------  | ----------------------------------------
--   git-push-origin [branch]            | > git-push-origin<CR>
--   git-pull-origin [branch]            | > git-pull-origin<CR>
--   git-pull-no-commit                  | > git-pull-no-commit<CR>
--   git-rebase-origin [branch]          | > git-rebase-origin<CR>
--   git-merge-no-ff [branch]            | > git-merge-no-ff<CR>
--   git-merge-no-commit [branch]        | > git-merge-no-commit<CR>
--   git-merge-no-commit-origin [branch] | > git-merge-no-commit-origin<CR>
-    ----------------------------------  | ----------------------------------------
--   git-rebase-abort                    | > git-rebase-abort<CR>
--   git-merge-abort                     | > git-merge-abort<CR>
-    ----------------------------------  | ----------------------------------------
--   git-clone-recursive-shallow {url}   | > git-clone-recursive-shallow<CR>
--   git-clone-recursive {url}           | > git-clone-recursive<CR>
--   git-submodule-update-all            | > git-submodule-update-all<CR>
--   git-dirdiff                         | > git-dirdiff<CR>
+[tcmd.git] --------------------------- | ----------------------------------------
+-   git-branch-name                    | > git-branch-name<CR>
+-   git-commit-hash                    | > git-commit-hash<CR>
+-   git-commit-hash-long               | > git-commit-hash-long<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-print-branch-all               | > git-print-branch-all<CR>
+-   git-print-tag-all                  | > git-print-tag-all<CR>
+-   git config --list                  | > git config --list<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-graph                          | > git-graph<CR>
+-   git-graph-date                     | > git-graph-date<CR>
+-   git-graph-status                   | > git-graph-status<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-ls-track                       | > git-ls-track<CR>
+-   git-ls-untrack                     | > git-ls-untrack<CR>
+-   git-ls-no-x                        | > git-ls-no-x<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-chmod-x {file}                 | > git-chmod-x<CR>
+-   git-chmod-x-all                    | > git-chmod-x-all<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-branch-reset [branch=master]   | > git-branch-reset<CR>
+-   git-branch-create [branch=tmp]     | > git-branch-create<CR>
+-   git-branch-delete [branch]         | > git-branch-delete<CR>
+-   git-remote-branch-delete [branch]  | > git-remote-branch-delete<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-stage {file}                   | > git-stage<CR>
+-   git-unstage {file}                 | > git-unstage<CR>
+-   git-track {file}                   | > git-track<CR>
+-   git-untrack {file,dir}             | > git-untrack<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-commit [msg="update"]          | > git-commit<CR>
+-   git-commit-add [msg="update"]      | > git-commit-add<CR>
+-   git-commit-amend [msg="amend"]     | > git-commit-amend<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-commit-add-tmp [msg="update"]  | > git-commit-add-tmp<CR>
+-   git-reset-tmp                      | > git-reset-tmp<CR>
+-   git-reset-last                     | > git-reset-last<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-reset-hard [branch]            | > git-reset-hard<CR>
+-   git-reset-hard-origin              | > git-reset-hard-origin<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-push-origin [branch]           | > git-push-origin<CR>
+-   git-pull-origin [branch]           | > git-pull-origin<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-merge [branch]                 | > git-merge<CR>
+-   git-merge-abort                    | > git-merge-abort<CR>
+-   git-rebase [branch]                | > git-rebase<CR>
+-   git-rebase-abort                   | > git-rebase-abort<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-clone-recursive-shallow {url}  | > git-clone-recursive-shallow<CR>
+-   git-clone-recursive {url}          | > git-clone-recursive<CR>
+-   git-submodule-update-all           | > git-submodule-update-all<CR>
+-   git-dirdiff                        | > git-dirdiff<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:

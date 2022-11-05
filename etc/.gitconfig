@@ -7,16 +7,19 @@
   autocrlf = input
   quotepath = false
   pager = less
-  editor = vim.sh
+  editor = vim
   excludesfile = ~/.gitignore_global
 
-[diff]
-  tool = vimdiff.sh
+[pull]
+  ff = only
 [merge]
-  tool = vimdiff.sh
-[difftool]
-  prompt = false
+  tool = vimdiff
+  ff = false
 [mergetool]
+  prompt = false
+[diff]
+  tool = vimdiff
+[difftool]
   prompt = false
 
 [alias]
@@ -26,8 +29,8 @@
   dd = difftool -d
 
 ## wsl
-#[credential]
-#  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
+[credential]
+  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager-core.exe
 
 ## gitbash/msys2
 #[credential]

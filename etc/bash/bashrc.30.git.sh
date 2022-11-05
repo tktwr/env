@@ -13,11 +13,13 @@ git-branch-name() {
 }
 
 git-commit-hash() {
-  git rev-parse --short HEAD 2>/dev/null
+  commit=${1:-HEAD}
+  git rev-parse --short $commit 2>/dev/null
 }
 
 git-commit-hash-long() {
-  git rev-parse HEAD 2>/dev/null
+  commit=${1:-HEAD}
+  git rev-parse $commit 2>/dev/null
 }
 
 git-print-branch-all() {
@@ -128,11 +130,7 @@ git-track() {
   git add "$@"
 }
 
-git-untrack-file() {
-  git rm --cached "$@"
-}
-
-git-untrack-dir() {
+git-untrack() {
   git rm --cached -r "$@"
 }
 
@@ -140,25 +138,25 @@ git-untrack-dir() {
 # git commit
 #------------------------------------------------------
 git-commit() {
-  msg=${1:-"update"}
+  msg=$(prompt.sh 'Commit message' 'update' "$*")
   git commit -m "$msg"
 }
 
-git-commit-amend() {
-  msg=${1:-"amend"}
-  git commit --amend -m "$msg"
+git-commit-add() {
+  msg=$(prompt.sh 'Commit message' 'update' "$*")
+  git commit -a -m "$msg"
 }
 
-git-add-commit() {
-  msg=${1:-"update"}
-  git commit -a -m "$msg"
+git-commit-amend() {
+  msg=$(prompt.sh 'Amend commit message' 'amend' "$*")
+  git commit --amend -m "$msg"
 }
 
 #------------------------------------------------------
 # git tmp
 #------------------------------------------------------
-git-add-commit-tmp() {
-  msg=$(prompt.sh 'message' '[TMP] update' "$*")
+git-commit-add-tmp() {
+  msg=$(prompt.sh 'Commit message' '[TMP] update' "$*")
   if [ -n "$msg" ]; then
     git commit -a -m "$msg"
   fi
@@ -184,7 +182,7 @@ git-reset-hard-origin() {
 }
 
 #------------------------------------------------------
-# git (push/pull/merge/rebase)
+# git push/pull
 #------------------------------------------------------
 git-push-origin() {
   br=$(prompt.sh 'Push branch' "$(git-branch-name)" "$*")
@@ -200,47 +198,29 @@ git-pull-origin() {
   fi
 }
 
-git-pull-no-commit() {
-  git pull --no-commit
-}
-
-git-rebase-origin() {
-  br=$(prompt.sh 'Rebase branch' "$(git-branch-name)" "$*")
-  if [ -n "$br" ]; then
-    git rebase origin/$br
-  fi
-}
-
-git-merge-no-ff() {
+#------------------------------------------------------
+# git merge/rebase
+#------------------------------------------------------
+git-merge() {
   br=$(prompt.sh 'Merge branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
     git merge --no-ff $br
   fi
 }
 
-git-merge-no-commit() {
-  br=$(prompt.sh 'Merge branch' "$(git-branch-name)" "$*")
-  if [ -n "$br" ]; then
-    git merge --no-commit $br
-  fi
-}
-
-git-merge-no-commit-origin() {
-  br=$(prompt.sh 'Merge branch' "$(git-branch-name)" "$*")
-  if [ -n "$br" ]; then
-    git merge --no-commit origin/$br
-  fi
-}
-
-#------------------------------------------------------
-# conflict
-#------------------------------------------------------
-git-rebase-abort() {
-  git rebase --abort
-}
-
 git-merge-abort() {
   git merge --abort
+}
+
+git-rebase() {
+  br=$(prompt.sh 'Rebase branch' "$(git-branch-name)" "$*")
+  if [ -n "$br" ]; then
+    git rebase $br
+  fi
+}
+
+git-rebase-abort() {
+  git rebase --abort
 }
 
 #------------------------------------------------------
@@ -276,7 +256,7 @@ alias gt='git tag'
 
 alias gA='git add'
 alias gAu='git add -u'
-alias gAC='git-add-commit'
+alias gAC='git-commit-add'
 alias gC='git-commit'
 
 alias gbR='git-branch-reset'
