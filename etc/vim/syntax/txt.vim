@@ -37,8 +37,9 @@ syn keyword  mySun              Sun
 syn keyword  myHoliday          ½ËÆü
 syn keyword  myHoliday          Holiday
 
-syn match    myTagR             '([^)]*)' contains=mySat,mySun
 syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL
+syn match    myTagR             '([^)]*)' contains=mySat,mySun
+syn match    myTagC             '{[^}]*}'
 
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
@@ -99,8 +100,9 @@ hi link mySat              MyBlue
 hi link mySun              MyRed
 hi link myHoliday          MyRed
 
-hi link myTagR             MyAqua
 hi link myTag              MyPurple
+hi link myTagR             MyAqua
+hi link myTagC             MyYellow
 
 hi link myWORK             MyBlue
 hi link myINFO             MyYellow
