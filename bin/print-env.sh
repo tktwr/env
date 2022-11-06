@@ -43,6 +43,8 @@ f_print_env_proxy() {
   echo "NO_PROXY           = $NO_PROXY"
   echo "GIT_SSL_NO_VERIFY  = $GIT_SSL_NO_VERIFY"
   echo "CURL_SSL_NO_VERIFY = $CURL_SSL_NO_VERIFY"
+  echo "WSL_HOST_IP        = $WSL_HOST_IP"
+  echo "WSL_GUEST_IP       = $WSL_GUEST_IP"
 }
 
 f_check_env_dir() {
