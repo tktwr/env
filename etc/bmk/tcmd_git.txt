@@ -32,10 +32,7 @@
 -   git-commit-add [msg="update"]      | > git-commit-add<CR>
 -   git-commit-amend [msg="amend"]     | > git-commit-amend<CR>
     ---------------------------------- | ----------------------------------------
--   git-commit-add-tmp [msg="update"]  | > git-commit-add-tmp<CR>
--   git-reset-tmp                      | > git-reset-tmp<CR>
 -   git-reset-last                     | > git-reset-last<CR>
-    ---------------------------------- | ----------------------------------------
 -   git-reset-hard [branch]            | > git-reset-hard<CR>
 -   git-reset-hard-origin              | > git-reset-hard-origin<CR>
     ---------------------------------- | ----------------------------------------
@@ -46,6 +43,9 @@
 -   git-merge-abort                    | > git-merge-abort<CR>
 -   git-rebase [branch]                | > git-rebase<CR>
 -   git-rebase-abort                   | > git-rebase-abort<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-tmp [msg="update"]             | > git-tmp<CR>
+-   git-tmp-reset                      | > git-tmp-reset<CR>
     ---------------------------------- | ----------------------------------------
 -   git-clone-recursive-shallow {url}  | > git-clone-recursive-shallow<CR>
 -   git-clone-recursive {url}          | > git-clone-recursive<CR>

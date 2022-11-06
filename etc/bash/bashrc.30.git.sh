@@ -36,7 +36,7 @@ git-print-tag-all() {
 }
 
 #------------------------------------------------------
-# git-graph
+# graph
 #------------------------------------------------------
 # less options
 # -E or --QUIT-AT-EOF
@@ -57,7 +57,7 @@ git-graph-status() {
 }
 
 #------------------------------------------------------
-# git-ls
+# ls
 #------------------------------------------------------
 git-ls-track() {
   git ls-files -s
@@ -83,7 +83,7 @@ git-chmod-x-all() {
 }
 
 #------------------------------------------------------
-# git-branch
+# branch
 #------------------------------------------------------
 git-branch-reset() {
   br=$(prompt.sh 'Reset branch' 'master' "$*")
@@ -116,7 +116,7 @@ git-remote-branch-delete() {
 }
 
 #------------------------------------------------------
-# git (stage/unstage, track/untrack)
+# stage/unstage
 #------------------------------------------------------
 git-stage() {
   git add "$@"
@@ -126,6 +126,9 @@ git-unstage() {
   git reset -- "$@"
 }
 
+#------------------------------------------------------
+# track/untrack
+#------------------------------------------------------
 git-track() {
   git add "$@"
 }
@@ -135,7 +138,7 @@ git-untrack() {
 }
 
 #------------------------------------------------------
-# git commit
+# commit
 #------------------------------------------------------
 git-commit() {
   msg=$(prompt.sh 'Commit message' 'update' "$*")
@@ -153,26 +156,12 @@ git-commit-amend() {
 }
 
 #------------------------------------------------------
-# git tmp
+# reset
 #------------------------------------------------------
-git-commit-add-tmp() {
-  msg=$(prompt.sh 'Commit message' '[TMP] update' "$*")
-  if [ -n "$msg" ]; then
-    git commit -a -m "$msg"
-  fi
-}
-
-git-reset-tmp() {
-  git reset HEAD~
-}
-
 git-reset-last() {
   git reset HEAD~
 }
 
-#------------------------------------------------------
-# git reset
-#------------------------------------------------------
 git-reset-hard() {
   git reset --hard "$@"
 }
@@ -182,7 +171,7 @@ git-reset-hard-origin() {
 }
 
 #------------------------------------------------------
-# git push/pull
+# push/pull
 #------------------------------------------------------
 git-push-origin() {
   br=$(prompt.sh 'Push branch' "$(git-branch-name)" "$*")
@@ -199,7 +188,7 @@ git-pull-origin() {
 }
 
 #------------------------------------------------------
-# git merge/rebase
+# merge/rebase
 #------------------------------------------------------
 git-merge() {
   br=$(prompt.sh 'Merge branch' "$(git-branch-name)" "$*")
@@ -224,6 +213,20 @@ git-rebase-abort() {
 }
 
 #------------------------------------------------------
+# tmp
+#------------------------------------------------------
+git-tmp() {
+  msg=$(prompt.sh 'Commit message' '[TMP] update' "$*")
+  if [ -n "$msg" ]; then
+    git commit -a -m "$msg"
+  fi
+}
+
+git-tmp-reset() {
+  git reset HEAD~
+}
+
+#------------------------------------------------------
 # others
 #------------------------------------------------------
 git-clone-recursive-shallow() {
@@ -243,7 +246,7 @@ git-dirdiff() {
 }
 
 #------------------------------------------------------
-# git-alias
+# alias
 #------------------------------------------------------
 alias gs='git status'
 alias gS='git status -s'
