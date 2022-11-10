@@ -16,8 +16,9 @@ let g:fern#renderer = 'nerdfont'
 "let g:fern#renderer#default#leading = "  "
 
 func s:my_fern_settings()
-  nmap <buffer> <C-Y>         :CpmOpen fzy<CR>
-  nmap <buffer> <C-C>         :CpmOpen fern<CR>
+  nmap <buffer> <C-Y>  :CpmOpen fzy<CR>
+  nmap <buffer> <C-C>  :CpmOpen fern<CR>
+  nmap <buffer> <C-B>  :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")<CR>
 endfunc
 
 augroup ag_fern

@@ -1,12 +1,3 @@
-[bmk.dir.sys] ------------------------ | ----------------------------------------
--   C:/                                | C:/
--   D:/                                | D:/
--   prog64/                            | $SYS_PROG64_DIR/
--   prog32/                            | $SYS_PROG32_DIR/
--   msys2-home/                        | $SYS_MSYS2_HOME/
-    ---------------------------------- | ----------------------------------------
-- L user-local/                        | $USER_LOCAL/
-- R user-roaming/                      | $USER_ROAMING/
 [bmk.dir] ---------------------------- | ----------------------------------------
 - H HOME/                              | $HOME/
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
@@ -43,6 +34,14 @@
 - O opt/                               | $MY_OPT/
 - P papers/                            | $MY_PAPERS/
 - T tmp/                               | $MY_TMP/
+[bmk.dir.sys] ------------------------ | ----------------------------------------
+-   C:/                                | $SYS_C/
+-   D:/                                | $SYS_D/
+-   prog64/                            | $SYS_PROG64_DIR/
+-   prog32/                            | $SYS_PROG32_DIR/
+    ---------------------------------- | ----------------------------------------
+- L user-local/                        | $USER_LOCAL/
+- R user-roaming/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   rconfig/                           | $MY_REMOTE_CONFIG/
 -   lconfig/                           | $MY_LOCAL_CONFIG/
@@ -51,6 +50,9 @@
 -   private/                           | $MY_PRIVATE/
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
+    ---------------------------------- | ----------------------------------------
+-   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
+-   MY_DIARY/                          | $MY_DIARY/
 [bmk.dir.opt] ------------------------ | ----------------------------------------
 -   LearnOpenGL/                       | $MY_GITHUB/LearnOpenGL/
 -   glTF-Sample-Viewer/                | $MY_GITHUB/glTF-Sample-Viewer/

@@ -13,7 +13,7 @@
     ---------------------------------- | ----------------------------------------
 - B bmk save                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
-- d fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+- d fzy bmk_dir          (C-b)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
 - D fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
     ---------------------------------- | ----------------------------------------
 - B bmk save                           | :call VisFernBmkItem()

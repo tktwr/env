@@ -18,7 +18,7 @@ fzy_cmd() {
   cmd="$1"
   arg=`$2`
   if [ -n "$arg" ]; then
-    eval "$cmd $arg"
+    eval "$cmd \"$arg\""
   fi
 }
 
