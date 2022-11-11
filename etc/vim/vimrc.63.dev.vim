@@ -22,6 +22,10 @@ func s:MyEndProf()
   noautocmd qall!
 endfunc
 
+func YankFilePath()
+  let @@ = expand('%:p')
+endfunc
+
 "------------------------------------------------------
 " dev.command
 "------------------------------------------------------
