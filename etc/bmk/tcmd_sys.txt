@@ -1,0 +1,52 @@
+[tcmd.system] ------------------------ | ----------------------------------------
+-   htop                               | > htop -t<CR>
+-   nvidia-smi.exe                     | > nvidia-smi.exe -l<CR>
+-   killall nvidia-smi.exe             | > killall nvidia-smi.exe<CR>
+    ---------------------------------- | ----------------------------------------
+-   mypython-venv-info                 | > mypython-venv-info<CR>
+-   mypython-venv-create torch         | > mypython-venv-create torch<CR>
+-   mypython-set-python-win torch      | > mypython-set-python-win torch<CR>
+-   mypython-set-python torch          | > mypython-set-python torch<CR>
+    ---------------------------------- | ----------------------------------------
+- m mycmake-set make   Release         | > mycmake-set make   Release<CR>
+-   mycmake-set make   Debug           | > mycmake-set make   Debug<CR>
+-   mycmake-set ninja  Release         | > mycmake-set ninja  Release<CR>
+-   mycmake-set ninja  Debug           | > mycmake-set ninja  Debug<CR>
+-   mycmake-set vs2017 Release         | > mycmake-set vs2017 Release<CR>
+-   mycmake-set vs2017 Debug           | > mycmake-set vs2017 Debug<CR>
+-   mycmake-set vs2017 RelWithDebInfo  | > mycmake-set vs2017 RelWithDebInfo<CR>
+-   mycmake-set vs2019 Release         | > mycmake-set vs2019 Release<CR>
+-   mycmake-set vs2019 Debug           | > mycmake-set vs2019 Debug<CR>
+-   mycmake-set vs2019 RelWithDebInfo  | > mycmake-set vs2019 RelWithDebInfo<CR>
+- v mycmake-set vs2022 Release         | > mycmake-set vs2022 Release<CR>
+-   mycmake-set vs2022 Debug           | > mycmake-set vs2022 Debug<CR>
+-   mycmake-set vs2022 RelWithDebInfo  | > mycmake-set vs2022 RelWithDebInfo<CR>
+    ---------------------------------- | ----------------------------------------
+-   apt list <pkg>                     | > apt list
+-   apt search <pkg>                   | > apt search
+-   apt show <pkg>                     | > apt show
+-   apt install <pkg>                  | > apt install
+-   apt remove <pkg>                   | > apt remove
+-   apt update                         | > apt update
+-   apt upgrade                        | > apt upgrade
+    ---------------------------------- | ----------------------------------------
+-   pip list                           | > pip list<CR>
+-   pip search <pkg>                   | > pip search
+-   pip install <pkg>                  | > pip install
+-   pip uninstall <pkg>                | > pip uninstall
+-   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-upgrade                        | > git update-git-for-windows<CR>
+    ---------------------------------- | ----------------------------------------
+-   pacman -S -h                       | > pacman -S -h<CR>
+-   pacman -Syyu                       | > pacman -Syyu<CR>
+-   pacman -S <pkg>                    | > pacman -S
+-   pacman -R <pkg>                    | > pacman -R
+-   pacman -Ss <pattern>               | > pacman -Ss
+-   pacman -Si <pkg>                   | > pacman -Si
+-   pacman -Sl                         | > pacman -Sl<CR>
+-   pacman -Sg [pkg_group]             | > pacman -Sg
+-   pacman -Qi <installed_pkg>         | > pacman -Qi
+-   pacman -Ql <installed_pkg>         | > pacman -Ql
+
+# vim:set ft=bmk syntax=txt nowrap:

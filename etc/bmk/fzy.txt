@@ -27,6 +27,7 @@
 - v     vi?                            | > vi?<CR>
 - c    cmd?                            | > cmd?<CR>
 - g    git?                            | > git?<CR>
+- s    sys?                            | > sys?<CR>
 - L  links?                            | > links?<CR>
 - P papers?                            | > papers?<CR>
     ---------------------------------- | ----------------------------------------
