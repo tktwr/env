@@ -23,6 +23,7 @@ neovim \
 imagemagick \
 img2pdf \
 fontforge \
+subversion \
 "
 pkg_ext2="\
 blender \

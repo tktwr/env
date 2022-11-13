@@ -47,7 +47,8 @@
 -   git-tmp [msg="update"]             | > git-tmp<CR>
 -   git-tmp-reset                      | > git-tmp-reset<CR>
     ---------------------------------- | ----------------------------------------
--   git-clone-recursive-shallow {url}  | > git-clone-recursive-shallow<CR>
+-   git-clone-shallow {url}            | > git-clone-shallow<CR>
+-   git-clone-shallow-recursive {url}  | > git-clone-shallow-recursive<CR>
 -   git-clone-recursive {url}          | > git-clone-recursive<CR>
 -   git-submodule-update-all           | > git-submodule-update-all<CR>
 -   git-dirdiff                        | > git-dirdiff<CR>

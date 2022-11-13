@@ -229,7 +229,11 @@ git-tmp-reset() {
 #------------------------------------------------------
 # others
 #------------------------------------------------------
-git-clone-recursive-shallow() {
+git-clone-shallow() {
+  git clone --depth 1 "$@"
+}
+
+git-clone-shallow-recursive() {
   git clone --depth 1 --recurse-submodules --shallow-submodules "$@"
 }
 
