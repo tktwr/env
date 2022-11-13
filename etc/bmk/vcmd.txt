@@ -85,8 +85,10 @@
 - ) GV next                            | )
 [vcmd.fugitive] ---------------------- | ----------------------------------------
 - - toggle stage / unstage             | -
-- X discard changes                    | X
+- = toggle inline diff                 | =
+- C commit                             | cc
 - D diff                               | dd
+- X discard changes                    | X
 - R reload the status buffer           | R
 - q quit fugitive                      | :VisTabClosePrev
 

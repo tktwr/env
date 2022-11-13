@@ -47,7 +47,7 @@
 -   SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                              | https://blog.selfshadow.com/publications/s2017-shading-course/
 -   Image Based Lighting with Multiple Scattering                                                                      | https://bruop.github.io/ibl/
 -   Lafortune BRDF: Non-linear approximation of reflectance functions                                                  | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
--   Lafortune BRDF: Reflectance Data                                                                                                 | http://www.graphics.cornell.edu/online/measurements/reflectance/
+-   Lafortune BRDF: Reflectance Data                                                                                   | http://www.graphics.cornell.edu/online/measurements/reflectance/
 -   Efficient BRDF Importance Sampling Using a Factored Representation                                                 | https://gfx.cs.princeton.edu/proj/brdf/
 -   CS 431/636 - Advanced Rendering Techniques                                                                         | https://www.cs.drexel.edu/~david/Classes/CS431/
     --- [SSS] ------------------------------                                                                           | ----------------------------------------
