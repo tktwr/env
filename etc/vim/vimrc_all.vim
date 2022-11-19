@@ -1,21 +1,13 @@
-let $MY_VIM=expand("$HOME/MyRoaming/env/etc/vim")
+let $MY_VIM = expand('$HOME/MyRoaming/env/etc/vim')
+let $MY_COMMON_SETTING = expand('$HOME/MyConfig/lconfig/common')
 
-source $MY_VIM/vimrc_start.vim
-
-SourceFile $MY_VIM/vimrc.00.init.vim
-SourceFile $MY_VIM/vimrc.01.my.vim
-SourceFile $MY_VIM/vimrc.10.skel.vim
-SourceFile $MY_VIM/vimrc.30.vim-plug.vim
-SourceFile $MY_VIM/vimrc.40.highlight.vim
-SourceFile $MY_VIM/vimrc.60.command.vim
-SourceFile $MY_VIM/vimrc.61.enc.vim
-SourceFile $MY_VIM/vimrc.63.dev.vim
-SourceFile $MY_VIM/vimrc.64.edit.vim
-SourceFile $MY_VIM/vimrc.66.external.vim
-SourceFile $MY_VIM/vimrc.70.map.vim
-"SourceFile $MY_VIM/vimrc.72.menu.vim
-SourceFile $MY_VIM/vimrc.80.term.vim
-SourceFile $MY_VIM/vimrc.81.gui.vim
-
-SourceFile $MY_COMMON_SETTING/vimrc.local.vim
-
+let rc_files  = glob('$MY_VIM/vimrc.??.*.vim')
+let rc_files1 = glob('$MY_COMMON_SETTING/vimrc.??.*.vim')
+if !empty(rc_files1)
+  let rc_files += rc_files1
+endif
+let rc_files = split(rc_files, "\n")
+for fname in rc_files
+  "echom fname
+  exec "source" fname
+endfor

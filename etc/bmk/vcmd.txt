@@ -66,6 +66,7 @@
 -   molokai                            | :colorscheme molokai
     ---------------------------------- | ----------------------------------------
 -   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
+-   vimdirdiff etc ~/WinHome           | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
 - P ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?

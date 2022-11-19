@@ -7,4 +7,9 @@
 
 "------------------------------------------------------
 "Plug 'bfrg/vim-fzy'
-
+"g:fzy = {
+"  lines: 15,
+"  prompt: '>>> ',
+"  showinfo: true,
+"  popupwin: true
+"}
