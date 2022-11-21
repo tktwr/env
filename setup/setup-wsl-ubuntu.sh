@@ -24,10 +24,12 @@ imagemagick \
 img2pdf \
 fontforge \
 subversion \
+ncdu \
 "
 pkg_ext2="\
 blender \
 nvidia-cuda-toolkit \
+baobab \
 "
 pkg_dev="\
 cmake \

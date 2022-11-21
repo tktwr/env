@@ -3,7 +3,8 @@
 "======================================================
 "set ambiwidth=double
 
-set guifont=Cica:h14
+set guifont=HackGen_Console_NF:h14
+"set guifont=Cica:h14
 "set guifont=Myrica_M:h14
 "set guifont=あくあフォント:h14
 

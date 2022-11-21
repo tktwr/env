@@ -54,6 +54,7 @@ f_alias() {
   # vim
   alias vi='vim'
   alias vim-none='/usr/bin/vim -u NONE'
+  alias T2='vim -c "term" -c "only" -c "term"'
 }
 
 vim-which() { vim `which $*`; }
