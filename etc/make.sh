@@ -4,6 +4,8 @@
 # variables
 #======================================================
 DOT_FILES_COMMON="\
+.mintty \
+.minttyrc \
 .clang-format \
 .gitignore_global \
 .rsync_exclude \
@@ -40,7 +42,6 @@ f_sub() {
 
 #------------------------------------------------------
 f_cp_common() {
-  cp -a .mintty .minttyrc $HOME
   cp -a --parents $DOT_FILES_COMMON $HOME
 }
 
