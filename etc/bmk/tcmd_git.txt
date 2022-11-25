@@ -18,10 +18,10 @@
 -   git-chmod-x {file}                 | > git-chmod-x<CR>
 -   git-chmod-x-all                    | > git-chmod-x-all<CR>
     ---------------------------------- | ----------------------------------------
--   git-branch-reset [branch=master]   | > git-branch-reset<CR>
--   git-branch-create [branch=tmp]     | > git-branch-create<CR>
--   git-branch-delete [branch]         | > git-branch-delete<CR>
--   git-remote-branch-delete [branch]  | > git-remote-branch-delete<CR>
+-   git-reset-branch [branch=master]   | > git-reset-branch<CR>
+-   git-create-branch [branch=tmp]     | > git-create-branch<CR>
+-   git-delete-branch [branch]         | > git-delete-branch<CR>
+-   git-delete-branch-origin [branch]  | > git-delete-branch-origin<CR>
     ---------------------------------- | ----------------------------------------
 -   git-stage {file}                   | > git-stage<CR>
 -   git-unstage {file}                 | > git-unstage<CR>

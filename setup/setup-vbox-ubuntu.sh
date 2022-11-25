@@ -25,6 +25,8 @@ clang-tools \
 python3-dev \
 img2pdf \
 ffmpeg \
+ffmpegthumbnailer \
+gstreamer1.0-libav \
 vlc \
 gimp \
 imagemagick \

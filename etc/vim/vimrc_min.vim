@@ -72,6 +72,7 @@ nnoremap <C-.>   :exec "lcd" expand("%:p:h")<CR>
 tnoremap <C-G>   <C-L>
 tnoremap <C-O>   <C-W>N
 tnoremap <C-;>   <C-W>:
+tnoremap <ScrollWheelUp>  <C-W>N<ScrollWheelUp>
 "------------------------------------------------------
 " map: window
 "------------------------------------------------------

@@ -85,7 +85,7 @@ git-chmod-x-all() {
 #------------------------------------------------------
 # branch
 #------------------------------------------------------
-git-branch-reset() {
+git-reset-branch() {
   br=$(prompt.sh 'Reset branch' 'master' "$*")
   if [ -n "$br" ]; then
     git branch -f $br HEAD
@@ -93,14 +93,14 @@ git-branch-reset() {
   fi
 }
 
-git-branch-create() {
+git-create-branch() {
   br=$(prompt.sh 'Create branch' 'tmp' "$*")
   if [ -n "$br" ]; then
     git branch $br
   fi
 }
 
-git-branch-delete() {
+git-delete-branch() {
   git branch
   br=$(prompt.sh 'Delete branch' '' "$*")
   if [ -n "$br" ]; then
@@ -108,7 +108,7 @@ git-branch-delete() {
   fi
 }
 
-git-remote-branch-delete() {
+git-delete-branch-origin() {
   br=$(prompt.sh 'Delete remote branch' '' "$*")
   if [ -n "$br" ]; then
     git push origin :$br
@@ -266,7 +266,6 @@ alias gAu='git add -u'
 alias gAC='git-commit-add'
 alias gC='git-commit'
 
-alias gbR='git-branch-reset'
 alias gR='git reset --hard'
 alias gRom='git-reset-hard-origin'
 alias gPom='git-push-origin'
