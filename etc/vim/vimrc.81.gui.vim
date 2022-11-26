@@ -1,9 +1,6 @@
 "======================================================
 " gvim
 "======================================================
-
-"set ambiwidth=double
-
 if has("gui_running")
   set guifont=HackGen_Console_NF:h14
   "set guifont=Cica:h14
@@ -19,6 +16,7 @@ endif
 " IM off for start up
 "------------------------------------------------------
 if 0
+  " IM off for start up
   set iminsert=0
   set imsearch=-1
   inoremap <ESC> <ESC>:set iminsert=0<CR>

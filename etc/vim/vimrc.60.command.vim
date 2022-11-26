@@ -11,3 +11,18 @@ command MyCfdo     cfdo execute "normal! @q" | w
 
 command -nargs=* -complete=file MyVspRight rightbelow vsplit <args>
 
+func MySetNoIgnoreCase()
+  set noignorecase
+  set nosmartcase
+endfunc
+
+func MySetIgnoreCase()
+  set ignorecase
+  set nosmartcase
+endfunc
+
+func MySetSmartCase()
+  set ignorecase
+  set smartcase
+endfunc
+

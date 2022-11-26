@@ -33,6 +33,10 @@
 - R CpmReload                          | :CpmReload
 - S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
+-   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
+-   MySetIgnoreCase                    | :call MySetIgnoreCase()
+-   MySetSmartCase                     | :call MySetSmartCase()
+    ---------------------------------- | ----------------------------------------
 - V BmkViewThis         (C-CR)         | :call BmkViewThis()
 - O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
 -   BmkToggleDebug                     | :call BmkToggleDebug()
