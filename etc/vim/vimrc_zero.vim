@@ -1,6 +1,20 @@
 "======================================================
 " minimal vimrc without any dependencies
 "======================================================
+if !exists('$MY_VIM')
+  let $MY_VIM = expand('~/.vim')
+endif
+
+if has('win32') || has('win64')
+  if exists('$MY_VIM_WIN')
+    let $MY_VIM = expand('$MY_VIM_WIN')
+  endif
+endif
+
+set runtimepath-=~/.vim
+set runtimepath-=~/.vim/after
+set runtimepath^=$MY_VIM
+set runtimepath+=$MY_VIM/after
 "------------------------------------------------------
 " basic
 "------------------------------------------------------
@@ -99,3 +113,16 @@ tnoremap <C-L>   <C-\><C-N><C-W>l
 
 tnoremap <C-O>   <C-\><C-N>
 endif
+"======================================================
+" gui
+"======================================================
+if has("gui_running")
+  set guifont=HackGen_Console_NF:h14
+  set guioptions-=T
+endif
+"------------------------------------------------------
+" color
+"------------------------------------------------------
+"hi Normal ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
+colorscheme slate
+syntax on

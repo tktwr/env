@@ -61,14 +61,14 @@ f_all() {
   f_sub vim
 }
 
-f_min() {
-  f_sub bash min
-  f_sub vim min
-}
-
 f_min_plug() {
   f_sub bash min
   f_sub vim min_plug
+}
+
+f_min() {
+  f_sub bash min
+  f_sub vim min
 }
 
 f_zero() {
@@ -132,8 +132,8 @@ f_apt_autoremove() {
 #------------------------------------------------------
 f_help() {
   echo "all                 ... full settings (default)"
-  echo "min                 ... minimum settings"
   echo "min_plug            ... minimum settings with plugins"
+  echo "min                 ... minimum settings"
   echo "zero                ... minimum settings without any dependencies"
   echo "-----------         ... -----------------------------"
   echo "init                ... init"

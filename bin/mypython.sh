@@ -39,25 +39,21 @@ f_venv_list() {
   ls $MY_PYTHON_VENV_DIR
 }
 
-f_venv_exist() {
-  local venv_name=$1
-  return $(test -d $MY_PYTHON_VENV_DIR/$venv_name)
-}
-
 f_venv_create() {
   local venv_name=$1
+  local venv_dir=$MY_PYTHON_VENV_DIR/$venv_name
+
   if [ -z "$venv_name" ]; then
     echo "mypython.sh: f_venv_create venv_name"
     return
   fi
 
-  f_venv_exist $venv_name
-  if [ $? -eq 0 ]; then
+  if [ -d $venv_dir ]; then
     echo "mypython.sh: venv is already existed: $venv_name"
     return
   fi
 
-  $MY_PYTHON_EXE -m venv $MY_PYTHON_VENV_DIR/$venv_name
+  $MY_PYTHON_EXE -m venv $venv_dir
   f_set $MY_PYTHON_TYPE $venv_name
 }
 

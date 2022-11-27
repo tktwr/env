@@ -8,7 +8,7 @@ unalias -a
 #======================================================
 # functions
 #======================================================
-f_env() {
+f_zero_env() {
   export HISTCONTROL=ignoreboth
 
   # prompt
@@ -19,16 +19,15 @@ f_env() {
   export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
 }
 
-f_path() {
+f_zero_path() {
   if [ -z "$SYS_PATH" ]; then
     export SYS_PATH=$PATH
   fi
   export PATH="$SYS_PATH"
-
   export PATH="$HOME/bin:$PATH"
 }
 
-f_alias() {
+f_zero_alias() {
   # shell
   alias s='source $HOME/.bashrc'
   alias h='history 20'
@@ -87,6 +86,6 @@ vim-where() { vim `which $*`; }
 #======================================================
 # main
 #======================================================
-f_env
-f_path
-f_alias
+f_zero_env
+f_zero_path
+f_zero_alias

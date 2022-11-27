@@ -3,28 +3,59 @@
 #======================================================
 # python
 #======================================================
+#------------------------------------------------------
+# type
+#------------------------------------------------------
+mypython-win() {
+  export MY_PYTHON_EXE="python"
+  export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
+  export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
+  export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
+  export PATH="$USER_PYTHON_ROAMING:$PATH"
+  export PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
+  export PATH="$USER_PYTHON_HOME:$PATH"
+  export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+  alias pip='winpty pip'
+  alias python='winpty python'
+}
+
+mypython-linux() {
+  export MY_PYTHON_EXE="python3"
+  export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
+  export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
+  export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
+}
+
+mypython-type() {
+  local python_type=$1
+
+  case $python_type in
+    python-win)
+      mypython-win
+      ;;
+    python)
+      mypython-linux
+      ;;
+  esac
+}
 
 #------------------------------------------------------
-# python venv
+# venv
 #------------------------------------------------------
 mypython-venv-info() {
   mypython.sh --list-venv
 }
 
 mypython-venv-create() {
-  mypython.sh --create-venv $1
-  source $HOME/.bashrc
-}
-
-mypython-venv-exist() {
-  venv_name=${1:-"default"}
-  venv_dir=$MY_PYTHON_VENV_DIR/$venv_name
-  return $(test -d $venv_dir)
+  local venv_name=${1:-"default"}
+  mypython.sh --create-venv $venv_name
+  source_bashrc
 }
 
 mypython-venv-activate() {
-  venv_name=${1:-"default"}
-  venv_dir=$MY_PYTHON_VENV_DIR/$venv_name
+  local venv_name=${1:-"default"}
+  local venv_dir=$MY_PYTHON_VENV_DIR/$venv_name
+
   if [ ! -d "$venv_dir" ]; then
     return
   fi
@@ -55,53 +86,13 @@ mypython-venv-deactivate() {
 }
 
 #------------------------------------------------------
-# select python
-#------------------------------------------------------
-
-mypython-path() {
-  case $MY_OS_NAME in
-    msys|gitbash)
-      export MY_PYTHON_EXE="python"
-      export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
-      export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
-      export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
-      ;;
-    *)
-      export MY_PYTHON_EXE="python3"
-      export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
-      export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
-      export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
-      ;;
-  esac
-}
-
-mypython-type() {
-  local python_type=$1
-
-  case $python_type in
-    python-win)
-      PATH="$USER_PYTHON_ROAMING:$PATH"
-      PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
-      PATH="$USER_PYTHON_HOME:$PATH"
-      PATH="$USER_PYTHON_HOME/Scripts:$PATH"
-      alias pip='winpty pip'
-      alias python='winpty python'
-      ;;
-    python)
-      ;;
-  esac
-}
-
-#------------------------------------------------------
 # mypython.sh
 #------------------------------------------------------
-mypython-set-python-win() {
-  mypython.sh --set python-win $1
-  source_bashrc
-}
+mypython-set() {
+  local python_type=${1:-"python"}
+  local venv_name=${2:-"default"}
 
-mypython-set-python() {
-  mypython.sh --set python $1
+  mypython.sh --set $python_type $venv_name
   source_bashrc
 }
 

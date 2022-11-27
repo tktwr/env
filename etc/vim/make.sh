@@ -4,21 +4,21 @@
 # functions
 #======================================================
 f_all() {
-  cp vimrc_all.vim $HOME/.vimrc
-  cat vimrc_min.vim gvimrc_min.vim > $HOME/_vimrc
-  cat vimrc_min.vim gvimrc_min.vim > $SYS_WIN_HOME/_vimrc
-}
-
-f_min() {
-  cp vimrc_min.vim $HOME/.vimrc
+  cat vimrc_all.vim  > $HOME/.vimrc
+  cat vimrc_zero.vim > $HOME/_vimrc
+  cat vimrc_zero.vim > $SYS_WIN_HOME/_vimrc
 }
 
 f_min_plug() {
-  cat vimrc_min.vim vimrc_min_plug.vim > $HOME/.vimrc
+  cat vimrc_zero.vim vimrc_min_plug.vim > $HOME/.vimrc
+}
+
+f_min() {
+  cat vimrc_zero.vim > $HOME/.vimrc
 }
 
 f_zero() {
-  cp vimrc_zero.vim $HOME/.vimrc
+  cat vimrc_zero.vim > $HOME/.vimrc
 }
 
 #------------------------------------------------------
@@ -36,8 +36,8 @@ f_log_clean() {
 #------------------------------------------------------
 f_help() {
   echo "all         ... full settings (default)"
-  echo "min         ... minimum settings"
   echo "min_plug    ... minimum settings with plugins"
+  echo "min         ... minimum settings"
   echo "zero        ... minimum settings without any dependencies"
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"

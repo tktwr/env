@@ -6,16 +6,16 @@
 f_all() {
   ./make_hostname.sh > $HOME/.my/hostname.sh
   ./make_env.sh > $HOME/.my/env.sh
-  cp bashrc_all.sh $HOME/.bashrc
+  cat bashrc_all.sh > $HOME/.bashrc
 }
 
 f_min() {
   ./make_hostname.sh > $HOME/.my/hostname.sh
-  cp bashrc_min.sh $HOME/.bashrc
+  cat bashrc_zero.sh bashrc_min.sh > $HOME/.bashrc
 }
 
 f_zero() {
-  cp bashrc_zero.sh $HOME/.bashrc
+  cat bashrc_zero.sh > $HOME/.bashrc
 }
 
 #------------------------------------------------------

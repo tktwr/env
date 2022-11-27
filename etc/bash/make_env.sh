@@ -1,5 +1,6 @@
 #!/bin/bash
 
+source bashrc_zero.sh
 source bashrc_min.sh
 
 FILES="\

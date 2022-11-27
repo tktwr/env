@@ -3,10 +3,12 @@
 -   nvidia-smi.exe                     | > nvidia-smi.exe -l<CR>
 -   killall nvidia-smi.exe             | > killall nvidia-smi.exe<CR>
     ---------------------------------- | ----------------------------------------
+-   mypython-type python               | > mypython-type python<CR>
+-   mypython-type python-win           | > mypython-type python-win<CR>
 -   mypython-venv-info                 | > mypython-venv-info<CR>
 -   mypython-venv-create torch         | > mypython-venv-create torch<CR>
--   mypython-set-python-win torch      | > mypython-set-python-win torch<CR>
--   mypython-set-python torch          | > mypython-set-python torch<CR>
+-   mypython-set python torch          | > mypython-set python torch<CR>
+-   mypython-set python-win torch      | > mypython-set python-win torch<CR>
     ---------------------------------- | ----------------------------------------
 - m mycmake-set make   Release         | > mycmake-set make   Release<CR>
 -   mycmake-set make   Debug           | > mycmake-set make   Debug<CR>

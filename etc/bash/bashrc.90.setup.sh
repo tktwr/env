@@ -8,7 +8,6 @@
 # the following env variable enable it
 export OPENCV_IO_ENABLE_OPENEXR=1
 
-mypython-path
 mypython-type $MY_PYTHON_TYPE
 mypython-venv-activate $MY_PYTHON_VENV
 
