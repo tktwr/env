@@ -75,7 +75,6 @@ f_zero_alias() {
   # vim
   alias vi='vim'
   alias vim-none='/usr/bin/vim -u NONE'
-  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
   alias T2='vim -c "term" -c "only" -c "term"'
   alias V2='vim -c "term" -c "only" -c "vert term"'
 }

@@ -91,7 +91,12 @@ linux_settings() {
   #alias p='evince'
   alias x='exo-open --launch FileManager'
   alias p='qpdfview --unique'
+  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
 
 #======================================================
-eval "${MY_OS_NAME}_settings"
+case $MY_OS_NAME in
+  wsl|msys|linux)
+    eval "${MY_OS_NAME}_settings"
+    ;;
+esac
