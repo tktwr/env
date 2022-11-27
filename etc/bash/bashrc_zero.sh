@@ -51,10 +51,34 @@ f_alias() {
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
 
+  # git
+  alias gs='git status'
+  alias gS='git status -s'
+  alias gd='git diff'
+  alias gD='git diff --staged'
+  alias gf='git fetch'
+  alias gg='git graph'
+  alias gb='git branch'
+  alias gt='git tag'
+
+  alias gA='git add'
+  alias gAu='git add -u'
+  alias gAC='git commit -a -m'
+  alias gC='git commit -m'
+
+  alias gR='git reset --hard'
+  alias gRom='git reset --hard origin/master'
+  alias gPom='git push origin master'
+
+  alias G='git log --graph --oneline -6'
+  alias GA='git log --graph --oneline -6 --all'
+
   # vim
   alias vi='vim'
   alias vim-none='/usr/bin/vim -u NONE'
+  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
   alias T2='vim -c "term" -c "only" -c "term"'
+  alias V2='vim -c "term" -c "only" -c "vert term"'
 }
 
 vim-which() { vim `which $*`; }

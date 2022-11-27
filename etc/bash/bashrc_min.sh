@@ -110,11 +110,6 @@ f_alias() {
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
 
-  # vim
-  alias vi='vim'
-  alias vim-none='/usr/bin/vim -u NONE'
-  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
-
   # git
   alias gs='git status'
   alias gS='git status -s'
@@ -136,6 +131,13 @@ f_alias() {
 
   alias G='git graph -6'
   alias GA='git graph -6 --all'
+
+  # vim
+  alias vi='vim'
+  alias vim-none='/usr/bin/vim -u NONE'
+  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
+  alias T2='vim -c "term" -c "only" -c "term"'
+  alias V2='vim -c "term" -c "only" -c "vert term"'
 
   # cd
   alias cd.bin='cd $MY_BIN'
