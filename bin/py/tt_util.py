@@ -123,3 +123,24 @@ def read_json(fname):
 def write_json(fname, data):
     with open(fname, "w") as f:
         f.write(json.dumps(data, sort_keys=True, indent=4))
+
+
+# -----------------------------------------------------
+# print
+# -----------------------------------------------------
+def print_title(title, separator, place='left'):
+    n = len(title)
+    out = separator
+    if place == 'left':
+        out = title + separator[n:]
+    elif place == 'right':
+        out = separator[:-n] + title
+    elif place == 'center':
+        nn = len(separator) - n
+        r = nn % 2
+        nl = int(nn / 2)
+        nr = int(nn / 2) + r
+        sepl = separator[:nl]
+        sepr = separator[-nr:]
+        out = sepl + title + sepr
+    print(f'{out}', flush=True)
