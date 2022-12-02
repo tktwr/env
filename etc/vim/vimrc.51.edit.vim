@@ -1,39 +1,5 @@
 "------------------------------------------------------
-" edit.func
-"------------------------------------------------------
-" remove a linefeed NL (0x0A)
-func s:RemoveNL(str)
-  return substitute(a:str, "[\xA]$", '', '')
-endfunc
-
-func s:MySystem(str)
-  return s:RemoveNL(system(a:str))
-endfunc
-
-" update the line started with "[LastChange]"
-func s:MyUpdateLastChange()
-  normal m'
-  let l:nr = search('\[LastChange\]')
-  if (l:nr != 0)
-    let l:cmd = "env LC_TIME=C date"
-    let l:str = s:MySystem(l:cmd)
-    call setline('.', "[LastChange] ".l:str)
-  endif
-  normal `'
-endfunc
-
-func s:MyAddTime()
-  let l:cmd = "env LC_TIME=C date '+%T'"
-  let l:str = s:MySystem(l:cmd)
-  call setline('.', l:str)
-endfunc
-
-func s:MyAddDate(date)
-  let l:cmd = "env LC_TIME=C date --date='".a:date."' '+%Y/%m/%d (%a)'"
-  let l:str = s:MySystem(l:cmd)
-  call setline('.', l:str)
-endfunc
-
+" edit
 "------------------------------------------------------
 func s:EditMdLinkCommon(prefix)
   let start = line('.')
@@ -102,21 +68,4 @@ func EditTogglePathFormat()
 
   call setline('.', l:str)
 endfunc
-
-"------------------------------------------------------
-" edit.command
-"------------------------------------------------------
-command MyUpdateLastChange       call s:MyUpdateLastChange()
-command MyAddTime                call s:MyAddTime()
-command -nargs=? MyAddDate       call s:MyAddDate(<f-args>)
-command MyUpdateDateHere         call s:MyAddDate(expand("<cWORD>"))
-
-"------------------------------------------------------
-" edit.autocmd
-"------------------------------------------------------
-augroup ag_my_edit
-  autocmd!
-  autocmd BufWritePre,FileWritePre *.html  MyUpdateLastChange
-  autocmd BufWritePre,FileWritePre *.txt   MyUpdateLastChange
-augroup END
 
