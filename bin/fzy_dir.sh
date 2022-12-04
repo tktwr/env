@@ -1,13 +1,5 @@
 #!/bin/bash
 
-cd_git_root() {
-  topdir=$(git rev-parse --show-toplevel 2> /dev/null)
-  if [ -n "$topdir" ]; then
-    cd $topdir
-    topdir="$topdir/"
-  fi
-}
-
 #------------------------------------------------------
 fzy_find_post() {
   awk '{print $1}'
@@ -25,6 +17,4 @@ fzy_find() {
 }
 
 #------------------------------------------------------
-cd_git_root
-
 fzy_find "$@"
