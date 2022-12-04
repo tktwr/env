@@ -11,6 +11,7 @@ vim \
 nodejs npm \
 python3-pip \
 python3-venv \
+python3-doc \
 fzy \
 zip unzip \
 universal-ctags \

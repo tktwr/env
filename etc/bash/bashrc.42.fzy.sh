@@ -42,6 +42,8 @@ alias    git?='fzy_cmd eval      "fzy_bmk.sh tcmd_git.txt"'
 alias    sys?='fzy_cmd eval      "fzy_bmk.sh tcmd_sys.txt"'
 alias  links?='fzy_cmd chrome.sh "fzy_bmk.sh links.txt"'
 alias papers?='fzy_cmd chrome.sh "fzy_bmk.sh papers.txt"'
+alias      l?='fzy_cmd chrome.sh "fzy_bmk.sh + links.txt"'
+alias      p?='fzy_cmd chrome.sh "fzy_bmk.sh + papers.txt"'
 
 alias     ff?='fzy_cmd echo      "fzy_file.sh"'
 alias     fd?='fzy_cmd echo      "fzy_dir.sh"'

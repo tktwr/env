@@ -1,7 +1,18 @@
 #!/bin/bash
 
+rm_pre() {
+  sed 's/^....//'
+}
+
 fzy_bmk_pre() {
-  grep -v '^#' | grep -v '\-\-\-'
+  case $pre_filter in
+    +)
+      grep '^+ ' | rm_pre
+      ;;
+    *)
+      grep '^[-+] ' | rm_pre
+      ;;
+  esac
 }
 
 fzy_bmk_post() {
@@ -21,5 +32,13 @@ fzy_bmk() {
 }
 
 #------------------------------------------------------
-fzy_bmk "$@"
-
+case "$1" in
+  +)
+    pre_filter=+
+    shift
+    fzy_bmk "$@"
+    ;;
+  *)
+    fzy_bmk "$@"
+    ;;
+esac

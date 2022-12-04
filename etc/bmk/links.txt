@@ -1,6 +1,6 @@
 [links] -----------------------------------------   | ----------------------------------------
 -   cpprefjp                                        | https://cpprefjp.github.io/
-- C cpprefjp.reference                              | https://cpprefjp.github.io/reference.html
++ C cpprefjp.reference                              | https://cpprefjp.github.io/reference.html
 -   cpprefjp.string                                 | https://cpprefjp.github.io/reference/string/basic_string.html
 -   cpprefjp.vector                                 | https://cpprefjp.github.io/reference/vector/vector.html
 -   cpprefjp.map                                    | https://cpprefjp.github.io/reference/map/map.html
@@ -10,11 +10,11 @@
 -   clang-format style options                      | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
     ------------------------------------            | ----------------------------------------
 -   python                                          | https://www.python.org/
-- P python.doc                                      | https://docs.python.org/ja/3/index.html
++ P python.doc                                      | https://docs.python.org/ja/3/index.html
 -   python.tutorial                                 | https://docs.python.org/ja/3/tutorial/
 -   python.tkinter                                  | https://docs.python.org/ja/3/library/tkinter.html
 -   nkmk                                            | https://note.nkmk.me/
-- p nkmk.python                                     | https://note.nkmk.me/python/
++ p nkmk.python                                     | https://note.nkmk.me/python/
 -   nkmk.numpy                                      | https://note.nkmk.me/numpy/
 -   Python入門                                      | https://algorithm.joho.info/programming/python/sample-code-py/
 -   Python入門.numpy                                | https://algorithm.joho.info/programming/python/numpy-sample-code/
@@ -55,13 +55,13 @@
 -   OpenGL 4                                        | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
 -   OpenGL ES 3.0                                   | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
 -   glTF                                            | https://www.khronos.org/gltf/
-- G glTF.Specification                              | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
-- E glTF.Extensions                                 | https://github.com/KhronosGroup/glTF/tree/main/extensions
++ G glTF.Specification                              | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
++ E glTF.Extensions                                 | https://github.com/KhronosGroup/glTF/tree/main/extensions
 -   glTF.KHR_materials_specular                     | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
 -   glTF extensions                                 | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
 -   glTF viewer (old)                               | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
 -   glTF viewer (new)                               | https://github.com/KhronosGroup/glTF-Sample-Viewer
-- V glTF-Sample-Viewer                              | https://github.khronos.org/glTF-Sample-Viewer-Release/
++ V glTF-Sample-Viewer                              | https://github.khronos.org/glTF-Sample-Viewer-Release/
 -   glTF-Sample-Models                              | https://github.com/KhronosGroup/glTF-Sample-Models
 -   OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
     ------------------------------------            | ----------------------------------------
@@ -73,11 +73,11 @@
 -   Blender.PrincipledBSDF                          | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
 -   Blender.PrincipledHairBSDF                      | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
 -   Blender.Open Shading Language                   | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
-- B Blender.Python API Documentation                | https://docs.blender.org/api/current/index.html
++ B Blender.Python API Documentation                | https://docs.blender.org/api/current/index.html
 -   Blender.bpy.Object(ID)                          | https://docs.blender.org/api/current/bpy.types.Object.html
 -   Blender.bpy.Material(ID)                        | https://docs.blender.org/api/current/bpy.types.Material.html
 -   Blender.bpy.UILayout                            | https://docs.blender.org/api/current/bpy.types.UILayout.html
-- a Blender.Develop Add-ons                         | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
++ a Blender.Develop Add-ons                         | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
 -   Blender入門(2.8版)                              | https://blender3d.biz/
 -   Bake texture                                    | https://3dcg-school.pro/blender-bake/
 -   Bake texture (TexTools)                         | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
@@ -90,7 +90,7 @@
 -   colmap                                          | https://github.com/colmap/colmap
 -   assimp                                          | https://github.com/assimp/assimp
     ------------------------------------            | ----------------------------------------
-- U Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
++ U Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
     ------------------------------------            | ----------------------------------------
 -   Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
 -   Character Creator 3 (blender addon)             | https://www.youtube.com/watch?v=Nt1MuyPjkiI
