@@ -61,7 +61,7 @@
 -   glTF extensions                                 | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
 -   glTF viewer (old)                               | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
 -   glTF viewer (new)                               | https://github.com/KhronosGroup/glTF-Sample-Viewer
-+ V glTF-Sample-Viewer                              | https://github.khronos.org/glTF-Sample-Viewer-Release/
+- V glTF-Sample-Viewer                              | https://github.khronos.org/glTF-Sample-Viewer-Release/
 -   glTF-Sample-Models                              | https://github.com/KhronosGroup/glTF-Sample-Models
 -   OpenGL Tutorial                                 | http://www.opengl-tutorial.org/jp/
     ------------------------------------            | ----------------------------------------
@@ -90,7 +90,7 @@
 -   colmap                                          | https://github.com/colmap/colmap
 -   assimp                                          | https://github.com/assimp/assimp
     ------------------------------------            | ----------------------------------------
-+ U Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
+- U Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
     ------------------------------------            | ----------------------------------------
 -   Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
 -   Character Creator 3 (blender addon)             | https://www.youtube.com/watch?v=Nt1MuyPjkiI
@@ -113,12 +113,15 @@
 -   Google.calendar                                 | https://www.google.com/calendar/render?hl=ja
 -   Google.keep                                     | https://keep.google.com/
 -   Google.drive                                    | https://drive.google.com/drive/my-drive
--   Google.translate                                | https://translate.google.co.jp/
++   Google.translate                                | https://translate.google.co.jp/
 -   DeepL                                           | https://www.deepl.com/ja/translator
+    ------------------------------------            | ----------------------------------------
+-   TV番組                                          | http://tv.yahoo.co.jp/listings/realtime/
     ------------------------------------            | ----------------------------------------
 -   git                                             | https://git-scm.com/docs
     ------------------------------------            | ----------------------------------------
 -   vim                                             | https://www.vim.org/
+-   vim.doc                                         | https://vim-jp.org/vimdoc-ja/
 -   vim.script                                      | https://knowledge.sakura.ad.jp/23436/
 -   vim.chrisatmachine                              | https://www.chrisatmachine.com/neovim
     ------------------------------------            | ----------------------------------------
