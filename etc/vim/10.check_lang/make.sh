@@ -16,7 +16,7 @@ f_py() {
 }
 
 f_vim() {
-  echo
+  /usr/bin/vim -u a.vim -c "quit"
 }
 
 f_sh() {
@@ -24,7 +24,20 @@ f_sh() {
 }
 
 #------------------------------------------------------
+f_all() {
+  echo "--- [cpp] ---"
+  f_cpp
+  echo "--- [py] ---"
+  f_py
+  echo "--- [vim] ---"
+  f_vim
+  echo "--- [sh] ---"
+  f_sh
+}
+
+#------------------------------------------------------
 f_help() {
+  echo "all"
   echo "cpp"
   echo "py"
   echo "vim"
@@ -33,7 +46,7 @@ f_help() {
 }
 
 f_default() {
-  f_help
+  f_all
 }
 
 #======================================================
@@ -42,4 +55,3 @@ f_default() {
 func_name=${1:-"default"}
 shift
 eval "f_$func_name $@"
-

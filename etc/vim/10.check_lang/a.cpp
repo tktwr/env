@@ -7,14 +7,6 @@
 
 using namespace std;
 
-void check_lsp() {
-    a = x;
-    a = y;
-    printf();
-    std::string s;
-    return true;
-}
-
 void func() {
     int* p                       = nullptr;
     bool bt                      = true;
