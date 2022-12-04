@@ -1,12 +1,12 @@
 [fzy] -------------------------------- | ----------------------------------------
-- f fzy bmk_file         (C-b)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
-- F fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh")
+- f fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh --git-root")
+- F fzy bmk_file         (C-b)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
     ---------------------------------- | ----------------------------------------
-- d fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
-- D fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
+- d fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh --git-root")
+- D fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
-- c fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
+- v fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
 - m fzy memo                           | :call FzyCommand("VisTjump",    "fzy_memo.sh")
 - t fzy tags                           | :call FzyCommand("VisTjump",    "fzy_tags.sh")
 - L fzy links                          | :call FzyCommand("BmkOpenURL",  "fzy_bmk.sh links.txt")
@@ -14,26 +14,30 @@
     ---------------------------------- | ----------------------------------------
 - B bmk file                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
-- d fzy bmk_dir          (C-b)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
-- D fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh")
+- d fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh --git-root")
+- D fzy bmk_dir          (C-b)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - B bmk item                           | :call VisFernBmkItem()
 [fzy.terminal] ----------------------- | ----------------------------------------
-- d  cd?                               | > cd?<CR>
-- .   .?                               | > .?<CR>
-- ,   ,?                               | > ,?<CR>
-- ?   ??                               | > ??<CR>
+- . .?                                 | > .?<CR>
+- , ,?                                 | > ,?<CR>
+- ? ??                                 | > ??<CR>
     ---------------------------------- | ----------------------------------------
-- v     vi?                            | > vi?<CR>
-- c    cmd?                            | > cmd?<CR>
-- g    git?                            | > git?<CR>
-- s    sys?                            | > sys?<CR>
+- f   vi?                              | > vi?<CR>
+- F bmkf?                              | > bmkf?<CR>
+- d   cd?                              | > cd?<CR>
+- D bmkd?                              | > bmkd?<CR>
+    ---------------------------------- | ----------------------------------------
+- t tcmd?                              | > tcmd?<CR>
+- g  git?                              | > git?<CR>
+- s  sys?                              | > sys?<CR>
+    ---------------------------------- | ----------------------------------------
 - L  links?                            | > links?<CR>
 - P papers?                            | > papers?<CR>
     ---------------------------------- | ----------------------------------------
-- F   ff?                              | > ff?<CR>
-- D   fd?                              | > fd?<CR>
-- r   rg?                              | > rg?<CR>
+-     ff?                              | > ff?<CR>
+-     fd?                              | > fd?<CR>
+-     rg?                              | > rg?<CR>
 - m make?                              | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
