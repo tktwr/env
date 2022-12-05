@@ -21,7 +21,7 @@ wsl_proxy() {
   export http_PROXY="$HTTP_PROXY"
   export https_PROXY="$HTTP_PROXY"
   export FTP_PROXY="$HTTP_PROXY"
-  export NO_PROXY="example.com,localhost,127.0.0.1"
+  export NO_PROXY=".example.com,localhost,127.0.0.1"
   export no_proxy="$NO_PROXY"
 
   export GIT_SSL_NO_VERIFY=1
