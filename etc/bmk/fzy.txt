@@ -17,27 +17,29 @@
 - d fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh --git-root")
 - D fzy bmk_dir          (C-b)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
-- B bmk item                           | :call VisFernBmkItem()
+- B bmk dir/file                       | :call VisFernBmkItem()
 [fzy.terminal] ----------------------- | ----------------------------------------
-- . .?                                 | > .?<CR>
-- , ,?                                 | > ,?<CR>
-- ? ??                                 | > ??<CR>
+- .      .?                            | > .?<CR>
+- ,      ,?                            | > ,?<CR>
+- ?      ??                            | > ??<CR>
     ---------------------------------- | ----------------------------------------
-- f   vi?                              | > vi?<CR>
-- F bmkf?                              | > bmkf?<CR>
-- d   cd?                              | > cd?<CR>
-- D bmkd?                              | > bmkd?<CR>
+- f     vi?                            | > vi?<CR>
+- F   bmkf?                            | > bmkf?<CR>
+- d     cd?                            | > cd?<CR>
+- D   bmkd?                            | > bmkd?<CR>
     ---------------------------------- | ----------------------------------------
-- t tcmd?                              | > tcmd?<CR>
-- g  git?                              | > git?<CR>
-- s  sys?                              | > sys?<CR>
+- t   tcmd?                            | > tcmd?<CR>
+- g    git?                            | > git?<CR>
+- s    sys?                            | > sys?<CR>
     ---------------------------------- | ----------------------------------------
 - L  links?                            | > links?<CR>
+-        l?                            | > l?<CR>
 - P papers?                            | > papers?<CR>
+-        p?                            | > p?<CR>
     ---------------------------------- | ----------------------------------------
--     ff?                              | > ff?<CR>
--     fd?                              | > fd?<CR>
--     rg?                              | > rg?<CR>
-- m make?                              | > make?<CR>
+-       ff?                            | > ff?<CR>
+-       fd?                            | > fd?<CR>
+-       rg?                            | > rg?<CR>
+- m   make?                            | > make?<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
