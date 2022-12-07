@@ -7,3 +7,6 @@ def check_lsp():
 
     print()
 
+    lst = [0, 1, 2]
+    lst2 = lst
+

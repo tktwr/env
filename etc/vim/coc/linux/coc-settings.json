@@ -5,6 +5,18 @@
   // "http.proxyStrictSSL": false,
 
   // --------------------------------------------------
+  // floating window
+  // --------------------------------------------------
+  "hover.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "diagnostic.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+
+  // --------------------------------------------------
   // snippets
   // --------------------------------------------------
   "snippets.ultisnips.directories": [

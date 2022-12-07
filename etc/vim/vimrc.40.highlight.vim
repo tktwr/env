@@ -43,6 +43,8 @@ hi MyNormal        ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
 hi MyStatusLine    cterm=reverse ctermfg=239 ctermbg=223 gui=reverse guifg=#504945 guibg=#ebdbb2 term=reverse,bold
 hi MyStatusLineNC  cterm=reverse ctermfg=237 ctermbg=246 gui=reverse guifg=#3c3836 guibg=#a89984 term=reverse
 
+hi! link CocFloating      MyNormal
+
 hi! link StatusLine       MyStatusLine
 hi! link StatusLineNC     MyStatusLineNC
 hi! link StatusLineTerm   MyAquaRevBold
