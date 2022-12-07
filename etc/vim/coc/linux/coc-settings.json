@@ -15,6 +15,14 @@
     "border": true,
     "rounded": true
   },
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
+  "signature.floatConfig": {
+    "border": true,
+    "rounded": true
+  },
 
   // --------------------------------------------------
   // snippets
