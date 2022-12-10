@@ -122,7 +122,7 @@ hi link myLowProgress      MyRed
 hi link myMidProgress      MyOrange
 hi link myHighProgress     MyGreen
 
-hi link mySeparator        MyAqua
+hi link mySeparator        Comment
 
 hi link myHyperTextJump    MyYellow
 hi link myHyperTextEntry   MyAqua

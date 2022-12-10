@@ -30,41 +30,48 @@ hi MyFg1           ctermfg=223 guifg=#ebdbb2
 hi MyFg2           ctermfg=250 guifg=#d5c4a1
 hi MyFg3           ctermfg=248 guifg=#bdae93
 hi MyFg4           ctermfg=246 guifg=#a89984
-hi MyBg5           ctermbg=245 guibg=#928374
-hi MyBg4           ctermbg=243 guibg=#7c6f64
-hi MyBg3           ctermbg=241 guibg=#665c54
-hi MyBg2           ctermbg=239 guibg=#504945
-hi MyBg1a          ctermbg=237 guibg=#3c3c36
-hi MyBg1           ctermbg=237 guibg=#3c3836
+hi MyGray          ctermfg=245 guifg=#928374
+
 hi MyBg0           ctermbg=236 guibg=#32302f
+hi MyBg1           ctermbg=237 guibg=#3c3836
+hi MyBg2           ctermbg=239 guibg=#504945
+hi MyBg3           ctermbg=241 guibg=#665c54
+hi MyBg4           ctermbg=243 guibg=#7c6f64
+
+hi MyBg1a          ctermbg=237 guibg=#3c3c36
 hi MyBgTerm        ctermbg=235 guibg=#252525
 
-hi MyNormal        ctermfg=223 ctermbg=236 guifg=#ebdbb2 guibg=#32302f
-hi MyStatusLine    cterm=reverse ctermfg=239 ctermbg=223 gui=reverse guifg=#504945 guibg=#ebdbb2 term=reverse,bold
-hi MyStatusLineNC  cterm=reverse ctermfg=237 ctermbg=246 gui=reverse guifg=#3c3836 guibg=#a89984 term=reverse
+hi MyNormal        ctermfg=223 guifg=#ebdbb2 ctermbg=236 guibg=#32302f
+hi MyStatusLineNC  ctermfg=237 guifg=#3c3836 ctermbg=246 guibg=#a89984 cterm=reverse gui=reverse
+hi MyStatusLine    ctermfg=239 guifg=#504945 ctermbg=223 guibg=#ebdbb2 cterm=reverse gui=reverse
 
-hi! link CocFloating      MyNormal
+"------------------------------------------------------
+" highlight link
+"------------------------------------------------------
+hi! link StatusLine         MyStatusLine
+hi! link StatusLineNC       MyStatusLineNC
+hi! link StatusLineTerm     MyAquaRevBold
+hi! link StatusLineTermNC   MyStatusLineNC
 
-hi! link StatusLine       MyStatusLine
-hi! link StatusLineNC     MyStatusLineNC
-hi! link StatusLineTerm   MyAquaRevBold
-hi! link StatusLineTermNC MyStatusLineNC
+hi! link TabLineSel         MyAquaRevBold
+hi! link TabLine            MyStatusLine
+hi! link TabLineFill        MyStatusLineNC
 
-hi! link TabLineSel       MyAquaRevBold
-hi! link TabLine          MyStatusLine
-hi! link TabLineFill      MyStatusLineNC
+hi! link Folded             MyYellowSign
+hi! link FoldColumn         MyYellowSign
 
-hi! link Folded           MyYellowSign
-hi! link FoldColumn       MyYellowSign
+hi! link Terminal           MyBgTerm
 
-hi! link WildMenu         MyYellowRevBold
-hi! link WhichKeyFloating MyYellowSign
-hi! link IndentGuidesOdd  MyBg0
-hi! link IndentGuidesEven MyBg1a
-
-hi! link Terminal         MyBgTerm
+hi! link Pmenu              MyNormal
+hi! link PmenuSel           MyBg3
 
 hi! link CocErrorHighlight  MyRedRevBold
+hi! link CocFloating        MyNormal
+
+hi! link WildMenu           MyYellowRevBold
+hi! link WhichKeyFloating   MyYellowSign
+hi! link IndentGuidesOdd    MyBg0
+hi! link IndentGuidesEven   MyBg1a
 
 hi! link User1   MyRedRevBold
 hi! link User2   MyGreenRevBold
