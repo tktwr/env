@@ -1,7 +1,7 @@
 [fern.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- f fern menu            (C-x)         | :CpmOpen fern
 - y fzy menu             (C-y)         | :CpmOpen fzy
-- f fern menu            (C-c)         | :CpmOpen fern
 [fern.external] ---------------------- | ----------------------------------------
 - V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()

@@ -43,8 +43,8 @@ nnoremap ==      zi
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- nnoremap <silent> <C-B>   :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")<CR>
- nnoremap <silent> <C-C>   <C-W>:CpmOpen coc<CR>
+ nnoremap <silent> <C-B>   :echo<CR>
+ nnoremap <silent> <C-C>   :echo<CR>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [FIXED] next page
@@ -65,7 +65,7 @@ nnoremap ==      zi
  nnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
- nnoremap <silent> <C-X>   :echo<CR>
+ nnoremap <silent> <C-X>   <C-W>:CpmOpen coc<CR>
  nnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
  nnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
 

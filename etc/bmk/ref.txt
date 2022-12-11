@@ -24,20 +24,20 @@
 -   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
 -   help                  (F1)         | :echo
--   desktop left          (F2)         | :echo
--   desktop right         (F3)         | :echo
+-   x                     (F2)         | :echo
+-   x                     (F3)         | :echo
 -   desktop               (F4)         | :echo
 -   reload                (F5)         | :echo
--   screen info           (F6)         | :echo
+-   x                     (F6)         | :echo
 -   maximize left         (F7)         | :echo
 -   maximize              (F8)         | :echo
 -   maximize right        (F9)         | :echo
 -   maximize toggle      (F10)         | :echo
--   screenshot           (F11)         | :echo
+-   xbox game bar        (F11)         | :echo
 -   system               (F12)         | :echo
     ---------------------------------- | ----------------------------------------
--   menu               (Space)         | :echo
--   win buf list         (End)         | :echo
+-   cpm menu           (Space)         | :echo
+-   wbl menu             (End)         | :echo
 -   page up               (BS)         | :echo
 -   page down           (PgDn)         | :echo
 -   tab prev            (PgUp)         | :echo
@@ -62,8 +62,8 @@
 -   window 0 bottom      (C-0)         | :echo
     ---------------------------------- | ----------------------------------------
 -   quickhl              (C-a)         | :echo
--   bmk                  (C-b)         | :echo
--   interrupt            (C-c)         | :echo
+-   x                    (C-b)         | :echo
+-   x                    (C-c)         | :echo
 -   page up              (C-d)         | :echo
 -   close                (C-e)         | :echo
 -   page down            (C-f)         | :echo
@@ -75,17 +75,17 @@
 -   window right         (C-l)         | :echo
 -   CR                   (C-m)         | :echo
 -   cn                   (C-n)         | :echo
--   WblPop               (C-o)         | :echo
+-   wbl pop              (C-o)         | :echo
 -   cp                   (C-p)         | :echo
 -   @q                   (C-q)         | :echo
 -   redo                 (C-r)         | :echo
 -   x                    (C-s)         | :echo
 -   tag back             (C-t)         | :echo
--   WblNext              (C-u)         | :echo
+-   wbl menu             (C-u)         | :echo
 -   block select         (C-v)         | :echo
 -   window command       (C-w)         | :echo
--   x                    (C-x)         | :echo
--   WblPrev              (C-y)         | :echo
--   menu ref             (C-z)         | :echo
+-   coc menu             (C-x)         | :echo
+-   fzy menu             (C-y)         | :echo
+-   ref menu             (C-z)         | :echo
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -1,6 +1,6 @@
 [coc] -------------------------------- | ----------------------------------------
 - D CocDiagnostics                     | :CocDiagnostics
--   CocAction('doHover')  (CR)         | :call CocAction('doHover')
+-   CocAction('doHover')   (K)         | :call CocAction('doHover')
 -   CocAction('showIncomingCalls')     | :call CocAction('showIncomingCalls')
 -   CocAction('showOutgoingCalls')     | :call CocAction('showOutgoingCalls')
     ---------------------------------- | ----------------------------------------

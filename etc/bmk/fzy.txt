@@ -1,9 +1,9 @@
 [fzy] -------------------------------- | ----------------------------------------
 - f fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh --git-root")
-- F fzy bmk_file         (C-b)         | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
+- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
     ---------------------------------- | ----------------------------------------
-- d fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh --git-root")
-- D fzy bmk_dir                        | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+- d fzy find_dir                       | :call FzyCommand("BmkEditDir",  "fzy_dir.sh --git-root")
+- D fzy bmk_dir                        | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
 - v fzy vcmd                           | :call FzyCommand("BmkEdit",     "fzy_bmk.sh vcmd.txt")
@@ -14,8 +14,8 @@
     ---------------------------------- | ----------------------------------------
 - B bmk file                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
-- d fzy find_dir                       | :call FzyCommand("BmkEditDir", "fzy_dir.sh --git-root")
-- D fzy bmk_dir          (C-b)         | :call FzyCommand("BmkEditDir", "fzy_bmk.sh bmk_dir.txt")
+- d fzy find_dir                       | :call FzyCommand("BmkEditDir",  "fzy_dir.sh --git-root")
+- D fzy bmk_dir                        | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - B bmk dir/file                       | :call VisFernBmkItem()
 [fzy.terminal] ----------------------- | ----------------------------------------

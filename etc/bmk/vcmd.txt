@@ -1,20 +1,20 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- c coc menu             (C-x)         | :CpmOpen coc
 - y fzy menu             (C-y)         | :CpmOpen fzy
 - r ref menu         (F1, C-z)         | :CpmOpen ref
-- c coc menu             (C-c)         | :CpmOpen coc
 [vcmd.external] ---------------------- | ----------------------------------------
 - V BmkOpenURL                         | :call BmkOpenURL('%:p')
 - O BmkOpenFile                        | :call BmkOpenFile('%:p')
-- x BmkOpenDir                         | :call BmkOpenDir('%:p:h')
+- D BmkOpenDir                         | :call BmkOpenDir('%:p:h')
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
 - > TagBar                             | :MyTagbarToggle
-- _ Cd                                 | :VisSendCdE2T
-- D Fern                               | :VisFernDrawer %:p:h
+- F Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :VisTerm
+- _ Cd                                 | :VisSendCdE2T
 - M Memo                               | :Memo
 - H Help                               | :VisHelp
     --- (Develop) -------------------- | ----------------------------------------
@@ -24,12 +24,12 @@
 - A vim grep all                       | :call MyVimgrepAll('??')
 - ] tjump                              | :call VisTjumpPrompt()
     --- (Edit) ----------------------- | ----------------------------------------
+- x Wx                                 | :Wx ?
 - p paste                 (,p)         | ,p
 -   yank                   (Y)         | "*y
--   YankFilePath                       | :call YankFilePath()
+- Y YankFilePath                       | :call YankFilePath()
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
-- X Wx                                 | :Wx ?
 - R CpmReload                          | :CpmReload
 - S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------

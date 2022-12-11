@@ -4,9 +4,6 @@
 - d dia                                       | $MY_DIARY/diary.md.html
 - t todo                                      | $MY_DIARY/todo.md.html
     ----------------------------------        | ----------------------------------------
-- B bmk_dir                                   | $MY_BMK/bmk_dir.txt
-- F bmk_file                                  | $MY_BMK/bmk_file.txt
-- C vcmd                                      | $MY_BMK/vcmd.txt
 - L links                                     | $MY_BMK/links.txt
 - P papers                                    | $MY_BMK/papers.txt
 [bmk.file.ext] -----------------------        | ----------------------------------------

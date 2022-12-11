@@ -31,7 +31,7 @@ wsl_proxy() {
 wsl_settings() {
   export WSLENV=MY_LIBTT_WIN:MY_OPT_WIN:MY_DATA_WIN
 
-  alias x='te.sh'
+  alias D='te.sh'
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
@@ -67,7 +67,7 @@ msys_settings() {
   # adb
   #PATH="$ANDROID_SDK/platform-tools:$PATH"
 
-  alias x='te.sh'
+  alias D='te.sh'
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
 
@@ -87,9 +87,9 @@ linux_settings() {
   #export XDG_DATA_HOME="~/.local/share"
   #export XDG_CACHE_HOME="~/.cache"
 
-  #alias x='nautilus'
+  #alias D='nautilus'
   #alias p='evince'
-  alias x='exo-open --launch FileManager'
+  alias D='exo-open --launch FileManager'
   alias p='qpdfview --unique'
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
