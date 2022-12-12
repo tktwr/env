@@ -26,3 +26,34 @@ if $MY_PROMPT_TYPE >= 1
     highlight SignColumn ctermbg=0
   endif
 endif
+
+"======================================================
+" gv
+"======================================================
+Plug 'junegunn/gv.vim'
+
+func s:my_gv_settings()
+endfunc
+
+func s:my_git_settings()
+  nmap <buffer> D       O
+endfunc
+
+augroup ag_gv
+  autocmd!
+  autocmd FileType GV       call s:my_gv_settings()
+  autocmd FileType git      call s:my_git_settings()
+augroup END
+
+func MyGV()
+  GV --all
+endfunc
+
+"------------------------------------------------------
+command MyGV             call MyGV()
+
+"======================================================
+" agit
+"======================================================
+"Plug 'cohama/agit.vim'
+

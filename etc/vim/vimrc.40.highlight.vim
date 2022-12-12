@@ -2,28 +2,28 @@
 " highlight
 "======================================================
 hi MyRed           ctermfg=167 guifg=#fb4934
-hi MyGreen         ctermfg=142 guifg=#b8bb26
+hi MyOrange        ctermfg=208 guifg=#fe8019
 hi MyYellow        ctermfg=214 guifg=#fabd2f
+hi MyGreen         ctermfg=142 guifg=#b8bb26
+hi MyAqua          ctermfg=108 guifg=#8ec07c
 hi MyBlue          ctermfg=109 guifg=#707fd9
 hi MyPurple        ctermfg=175 guifg=#d3869b
-hi MyAqua          ctermfg=108 guifg=#8ec07c
-hi MyOrange        ctermfg=208 guifg=#fe8019
 
 hi MyRedRevBold    ctermfg=167 guifg=#fb4934 cterm=reverse,bold gui=reverse,bold
-hi MyGreenRevBold  ctermfg=142 guifg=#b8bb26 cterm=reverse,bold gui=reverse,bold
+hi MyOrangeRevBold ctermfg=208 guifg=#fe8019 cterm=reverse,bold gui=reverse,bold
 hi MyYellowRevBold ctermfg=214 guifg=#fabd2f cterm=reverse,bold gui=reverse,bold
+hi MyGreenRevBold  ctermfg=142 guifg=#b8bb26 cterm=reverse,bold gui=reverse,bold
+hi MyAquaRevBold   ctermfg=108 guifg=#8ec07c cterm=reverse,bold gui=reverse,bold
 hi MyBlueRevBold   ctermfg=109 guifg=#707fd9 cterm=reverse,bold gui=reverse,bold
 hi MyPurpleRevBold ctermfg=175 guifg=#d3869b cterm=reverse,bold gui=reverse,bold
-hi MyAquaRevBold   ctermfg=108 guifg=#8ec07c cterm=reverse,bold gui=reverse,bold
-hi MyOrangeRevBold ctermfg=208 guifg=#fe8019 cterm=reverse,bold gui=reverse,bold
 
 hi MyRedSign       ctermfg=167 guifg=#fb4934 ctermbg=237 guibg=#3c3836
-hi MyGreenSign     ctermfg=142 guifg=#b8bb26 ctermbg=237 guibg=#3c3836
-hi MyYellowSign    ctermfg=214 guifg=#fabd2f ctermbg=237 guibg=#3c3836
-hi MyBlueSign      ctermfg=109 guifg=#83a598 ctermbg=237 guibg=#3c3836
-hi MyPurpleSign    ctermfg=175 guifg=#d3869b ctermbg=237 guibg=#3c3836
-hi MyAquaSign      ctermfg=108 guifg=#8ec07c ctermbg=237 guibg=#3c3836
 hi MyOrangeSign    ctermfg=208 guifg=#fe8019 ctermbg=237 guibg=#3c3836
+hi MyYellowSign    ctermfg=214 guifg=#fabd2f ctermbg=237 guibg=#3c3836
+hi MyGreenSign     ctermfg=142 guifg=#b8bb26 ctermbg=237 guibg=#3c3836
+hi MyAquaSign      ctermfg=108 guifg=#8ec07c ctermbg=237 guibg=#3c3836
+hi MyBlueSign      ctermfg=109 guifg=#707fd9 ctermbg=237 guibg=#3c3836
+hi MyPurpleSign    ctermfg=175 guifg=#d3869b ctermbg=237 guibg=#3c3836
 
 hi MyFg0           ctermfg=229 guifg=#fbf1c7
 hi MyFg1           ctermfg=223 guifg=#ebdbb2
@@ -73,11 +73,11 @@ hi! link WhichKeyFloating   MyYellowSign
 hi! link IndentGuidesOdd    MyBg0
 hi! link IndentGuidesEven   MyBg1a
 
-hi! link User1   MyRedRevBold
-hi! link User2   MyGreenRevBold
-hi! link User3   MyYellowRevBold
-hi! link User4   MyBlueRevBold
-hi! link User5   MyPurpleRevBold
-hi! link User6   MyAquaRevBold
-hi! link User7   MyOrangeRevBold
+hi! link User1              MyRedRevBold
+hi! link User2              MyGreenRevBold
+hi! link User3              MyYellowRevBold
+hi! link User4              MyBlueRevBold
+hi! link User5              MyPurpleRevBold
+hi! link User6              MyAquaRevBold
+hi! link User7              MyOrangeRevBold
 
