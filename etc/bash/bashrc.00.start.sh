@@ -23,7 +23,7 @@ f_time_end() {
   fi
   TIME_END[$1]=$(/usr/bin/date +"%s.%3N")
   TIME_DURATION[$1]=`echo "scale=1; ${TIME_END[$1]} - ${TIME_START[$1]}" | bc`
-  echo "$1: ${TIME_DURATION[$1]} sec"
+  printf "%-80s ${TIME_DURATION[$1]} sec\n" $1
 }
 
 #------------------------------------------------------
@@ -36,14 +36,15 @@ echo_err() {
 source_file() {
   local files="$@"
 
-  for i in $files; do
-    if [ -f $i ]; then
-      f_time_start $i
-      source $i
-      f_time_end $i
+  local I
+  for I in $files; do
+    if [ -f $I ]; then
+      f_time_start $I
+      source $I
+      f_time_end $I
     else
       if [ $MY_DEBUG -eq 1 ]; then
-        echo_err "no file: $i"
+        echo_err "no file: $I"
       fi
     fi
   done

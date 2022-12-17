@@ -23,14 +23,7 @@ f_zero() {
 
 #------------------------------------------------------
 f_log() {
-  f_log_clean
-  vim -c "q" --startuptime $HOME/vim_log.txt
-  vim -u NONE -c "q" --startuptime $HOME/vim_log_zero.txt
-}
-
-f_log_clean() {
-  rm -f $HOME/vim_log.txt
-  rm -f $HOME/vim_log_zero.txt
+  vim-log.sh
 }
 
 #------------------------------------------------------
@@ -41,7 +34,6 @@ f_help() {
   echo "zero        ... minimum settings without any dependencies"
   echo "----------- ... -----------------------------"
   echo "log         ... measure startuptime"
-  echo "log_clean   ... clean log files"
   echo "----------- ... -----------------------------"
   echo "help        ... print this help"
 }

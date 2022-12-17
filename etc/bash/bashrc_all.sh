@@ -8,5 +8,12 @@ rc_files="$rc_files $MY_COMMON_SETTING/bashrc.??.*.sh"
 
 for fname in $rc_files; do
   #echo $fname
-  source $fname
+  case $fname in
+    */bashrc.00.*.sh)
+      source $fname
+      ;;
+    *)
+      source_file $fname
+      ;;
+  esac
 done
