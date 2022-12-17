@@ -25,10 +25,6 @@ mycmake-set() {
 # vim terminal
 #------------------------------------------------------
 if [ "$VIM_TERMINAL" ]; then
-  alias TV='vimapi.sh VisTermV'
-  alias GL='vimapi.sh --in-above-win GitLog $PWD'
-
-  alias ,tabe='vimapi.sh tabedit'
-  alias ,termcd='vimapi-termcd'
+  alias GL='vimapi_exec_in_above_win GitLog $PWD'
 fi
 
