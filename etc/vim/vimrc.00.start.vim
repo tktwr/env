@@ -3,7 +3,7 @@
 "------------------------------------------------------
 func IsWsl()
   if has('unix')
-    if (match(system('uname -a'), 'WSL') != -1)
+    if has_key(environ(), 'WSL_DISTRO_NAME')
       return 1
     endif
   endif
