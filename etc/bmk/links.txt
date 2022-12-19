@@ -119,11 +119,13 @@
 -   TV番組                                          | http://tv.yahoo.co.jp/listings/realtime/
     ------------------------------------            | ----------------------------------------
 -   git                                             | https://git-scm.com/docs
-    ------------------------------------            | ----------------------------------------
+    --- (Vim) --------------------------            | ----------------------------------------
 -   vim                                             | https://www.vim.org/
 -   vim.doc                                         | https://vim-jp.org/vimdoc-ja/
 -   vim.script                                      | https://knowledge.sakura.ad.jp/23436/
 -   vim.chrisatmachine                              | https://www.chrisatmachine.com/neovim
+    --- (Neovim) -----------------------            | ----------------------------------------
+-   Getting started using Lua in Neovim             | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
     ------------------------------------            | ----------------------------------------
 -   snapcraft                                       | https://snapcraft.io/
 -   flathub                                         | https://flathub.org/

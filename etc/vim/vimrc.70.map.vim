@@ -214,5 +214,7 @@ tnoremap <C-K>   <C-\><C-N><C-W>W
 tnoremap <C-L>   <C-\><C-N><C-W>l
 
 tnoremap <C-O>   <C-\><C-N>
+
+tnoremap <silent> <PageDown> <C-\><C-N>:silent call VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>i
 endif
 
