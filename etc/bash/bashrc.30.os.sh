@@ -35,7 +35,6 @@ wsl_settings() {
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
-  alias git='git.sh'
 }
 
 #======================================================

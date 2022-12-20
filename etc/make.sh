@@ -26,14 +26,6 @@ DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 #======================================================
 # functions
 #======================================================
-f_get_date() {
-  env LC_TIME=C date '+%Y%m%d'
-}
-
-f_get_time() {
-  env LC_TIME=C date '+%H%M%S'
-}
-
 f_sub() {
   cd $1
   ./make.sh $2
@@ -83,16 +75,8 @@ f_init() {
 }
 
 f_backup() {
-  local BACKUP_DIR=$HOME/.backup/dotfiles_$(f_get_date)_$(f_get_time)
-  if [ ! -d $BACKUP_DIR ]; then
-    mkdir -p $BACKUP_DIR
-  fi
-
   cd
-
-  # backup original files
-  cp --parents $DOT_FILES_ALL  $BACKUP_DIR
-  cp --parents $DOT_FILES_INIT $BACKUP_DIR
+  snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT
 }
 
 #------------------------------------------------------

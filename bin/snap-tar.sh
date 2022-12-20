@@ -2,6 +2,8 @@
 
 source common.sh
 
-dst=`f_get_git_snapfname $1.tar.gz`
-f_eval "tar czvf $dst $1"
+dst_tar=$(f_get_git_snapfname $1.tar.gz)
+shift
 
+echo $dst_tar
+tar czvf $dst_tar "$@"
