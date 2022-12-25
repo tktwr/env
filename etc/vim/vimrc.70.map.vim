@@ -208,13 +208,14 @@ tnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
 " nvim
 "======================================================
 if has('nvim')
+tnoremap <C-O>   <C-\><C-N>
+
 tnoremap <C-H>   <C-\><C-N><C-W>h
 tnoremap <C-J>   <C-\><C-N><C-W>w
 tnoremap <C-K>   <C-\><C-N><C-W>W
 tnoremap <C-L>   <C-\><C-N><C-W>l
 
-tnoremap <C-O>   <C-\><C-N>
-
+tnoremap <silent> <C-Space>  <C-\><C-N>:CpmOpen<CR>
 tnoremap <silent> <PageDown> <C-\><C-N>:silent call VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>i
 endif
 
