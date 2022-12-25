@@ -44,7 +44,7 @@ hi MyBgTerm        ctermbg=235 guibg=#252525
 hi MyNormal        ctermfg=223 guifg=#ebdbb2 ctermbg=236 guibg=#32302f
 hi MyStatusLineNC  ctermfg=237 guifg=#3c3836 ctermbg=246 guibg=#a89984 cterm=reverse gui=reverse
 hi MyStatusLine    ctermfg=239 guifg=#504945 ctermbg=223 guibg=#ebdbb2 cterm=reverse gui=reverse
-hi MyTabLine       ctermfg=64 cterm=reverse,bold gui=reverse,bold
+hi MyTabLine       ctermfg=100 guifg=#79740e ctermbg=236 guibg=#32302f cterm=reverse,bold gui=reverse,bold
 
 "------------------------------------------------------
 " highlight link
