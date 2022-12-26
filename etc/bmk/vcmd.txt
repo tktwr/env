@@ -33,6 +33,7 @@
 - R CpmReload                          | :CpmReload
 - S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
+- R MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
 -   MySetIgnoreCase                    | :call MySetIgnoreCase()
 -   MySetSmartCase                     | :call MySetSmartCase()

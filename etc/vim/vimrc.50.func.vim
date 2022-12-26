@@ -33,3 +33,9 @@ func MyEndProf()
   noautocmd qall!
 endfunc
 
+"------------------------------------------------------
+func MyRunTest()
+  source %
+  call Test()
+endfunc
+

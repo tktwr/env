@@ -1,8 +1,8 @@
 [fzy] -------------------------------- | ----------------------------------------
 - f fzy find_file                      | :call FzyCommand("BmkEditFile", "fzy_file.sh --git-root")
-- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
+- d fzy find_dir                       | :call FzyCommand("BmkEditDir",  "fzy_dir.sh  --git-root")
     ---------------------------------- | ----------------------------------------
-- d fzy find_dir                       | :call FzyCommand("BmkEditDir",  "fzy_dir.sh --git-root")
+- F fzy bmk_file                       | :call FzyCommand("BmkEditFile", "fzy_bmk.sh bmk_file.txt")
 - D fzy bmk_dir                        | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - r fzy rg                             | :call FzyCommand("BmkEditFile", "fzy_rg.sh", "??")
@@ -14,8 +14,11 @@
     ---------------------------------- | ----------------------------------------
 - B bmk file                           | :call CpmSave()
 [fzy.fern] --------------------------- | ----------------------------------------
-- d fzy find_dir                       | :call FzyCommand("BmkEditDir",  "fzy_dir.sh --git-root")
-- D fzy bmk_dir                        | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_dir.txt")
+- f fzy.fern find_file                 | :call FzyCommand("BmkEditDir",  "fzy_file.sh --git-root")
+- d fzy.fern find_dir                  | :call FzyCommand("BmkEditDir",  "fzy_dir.sh  --git-root")
+    ---------------------------------- | ----------------------------------------
+- F fzy.fern bmk_file                  | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_file.txt")
+- D fzy.fern bmk_dir                   | :call FzyCommand("BmkEditDir",  "fzy_bmk.sh bmk_dir.txt")
     ---------------------------------- | ----------------------------------------
 - B bmk dir/file                       | :call VisFernBmkItem()
 [fzy.terminal] ----------------------- | ----------------------------------------
