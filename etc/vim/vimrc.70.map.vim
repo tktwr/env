@@ -93,7 +93,8 @@ nnoremap ==      zi
 "------------------------------------------------------
 " vmap
 "------------------------------------------------------
-vmap C  <Plug>NERDCommenterToggle
+"vmap C  <Plug>NERDCommenterToggle
+ vmap C  gc
 
 "------------------------------------------------------
 " standard input
