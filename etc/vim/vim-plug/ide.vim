@@ -2,7 +2,7 @@
 " helper functions
 "------------------------------------------------------
 func MyVimgrepAll(word)
-  let word = vis#util#VisPrompt("Word? ", a:word)
+  let word = vis#util#prompt("Word? ", a:word)
   if word == ""
     return
   endif

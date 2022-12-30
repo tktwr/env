@@ -4,7 +4,7 @@ function! FzyCommand(vim_func, fzy_cmd, word='')
     let word = a:word
 
     if word != ''
-      let word = vis#util#VisPrompt("Word? ", word)
+      let word = vis#util#prompt("Word? ", word)
       if word != ''
         let fzy_cmd = printf('%s %s', fzy_cmd, word)
       endif

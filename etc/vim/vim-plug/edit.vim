@@ -1,4 +1,8 @@
 "------------------------------------------------------
+"Plug 'itchyny/vim-qfedit'
+Plug 'thinca/vim-qfreplace'
+
+"------------------------------------------------------
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
