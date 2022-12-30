@@ -233,7 +233,7 @@ func GitLogAction(word)
     call GitLogUpdate("")
   elseif (a:word == "Graph")
     call GitLogLcd()
-    tabedit +MyGV
+    tabedit +VisGV
   elseif (a:word == "Status")
     call GitLogLcd()
     tabedit +VisGstatusToggle

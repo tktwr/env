@@ -43,7 +43,7 @@
 -   BmkToggleDebug                     | :call BmkToggleDebug()
     ---------------------------------- | ----------------------------------------
 - s VisGstatusToggle                   | :VisGstatusToggle
-- v MyGV                               | :MyGV
+- v VisGV                              | :VisGV
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
 - C MyClangFormat                      | :MyClangFormat
