@@ -330,10 +330,11 @@ command -nargs=? -complete=dir GitLog call GitLog(<f-args>)
 " autocmd
 "------------------------------------------------------
 func GitLogStatusline()
-  let l:statusline = "%{vis#statusline#VisStatuslineWinNr()}"
-  let l:statusline.= "\ [gitlog]"
-  let l:statusline.= "\ %=%{vis#util#VisCWD()}"
-  return l:statusline
+  let stat = vis#statusline#win_nr()
+  let stat.= "\ [gitlog]"
+  let stat.= vis#statusline#separator()
+  let stat.= vis#statusline#cwd()
+  return stat
 endfunc
 
 func GitLogFileType()

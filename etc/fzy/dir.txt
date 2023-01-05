@@ -21,8 +21,8 @@ work           | MY_WORK           | $MY_PRIVATE/work
 git            | MY_GIT            | $MY_PRIVATE/work/git
 doc            | MY_DOC            | $MY_PRIVATE/doc
 office         | MY_OFFICE         | $MY_PRIVATE/office
-backup         | MY_BACKUP         | $MY_PRIVATE/backup/2022
-tmp            | MY_TMP            | $MY_PRIVATE/tmp/2022
+backup         | MY_BACKUP         | $MY_PRIVATE/backup/2023
+tmp            | MY_TMP            | $MY_PRIVATE/tmp/2023
 repo           | MY_REPO           | $MY_PRIVATE/repo
 snap           | MY_SNAP           | $MY_PRIVATE/snap
 #[public] ---  | ----------        | ----------

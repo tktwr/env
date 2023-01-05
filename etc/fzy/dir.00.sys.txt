@@ -26,8 +26,8 @@ share-home          | SYS_SHARE_HOME      | $SYS_SHARE_HOME
 user-local          | USER_LOCAL          | $SYS_WIN_HOME/AppData/Local
 user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
 user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs
-user-python-home    | USER_PYTHON_HOME    | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python39
-user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python39
+user-python-home    | USER_PYTHON_HOME    | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python310
+user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/sdk
 blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 

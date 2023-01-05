@@ -53,7 +53,7 @@ f_min_path() {
 f_min_python_win() {
   export MY_PYTHON_EXE="python"
   export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
-  export USER_PYTHON_HOME="$SYS_WIN_HOME/AppData/Local/Programs/Python/Python39"
+  export USER_PYTHON_HOME="$SYS_WIN_HOME/AppData/Local/Programs/Python/Python310"
   export PATH="$USER_PYTHON_HOME:$PATH"
   export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
 }

@@ -143,5 +143,7 @@
 -   Image Super-Resolution via Iterative Refinement                                                                    | https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
     --- [2022] ------------------------                                                                                | ----------------------------------------
 -   ReLU Fields: The Little Non-linearity That Could                                                                   | https://geometry.cs.ucl.ac.uk/group_website/projects/2022/relu_fields/
+-   Stable Diffusion                                                                                                   | https://github.com/CompVis/stable-diffusion
+-   Stable Diffusion Version 2                                                                                         | https://github.com/Stability-AI/stablediffusion
 
 # vim:set ft=bmk syntax=txt nowrap:
