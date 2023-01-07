@@ -23,6 +23,7 @@
 - v vim grep here                      | :VisVimgrep ?? *
 - A vim grep all                       | :call MyVimgrepAll('??')
 - ] tjump                              | :call VisTjumpPrompt()
+- Q Qfreplace                          | :Qfreplace
     --- (Edit) ----------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
 - p paste                 (,p)         | ,p
@@ -33,7 +34,7 @@
 - R CpmReload                          | :CpmReload
 - S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
-- R MyRunTest                          | :call MyRunTest()
+- T MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
 -   MySetIgnoreCase                    | :call MySetIgnoreCase()
 -   MySetSmartCase                     | :call MySetSmartCase()
@@ -64,8 +65,8 @@
 - p EditTogglePathFormat               | :call EditTogglePathFormat()
     ---------------------------------- | ----------------------------------------
 - c VisSendCurrCmdE2T                  | :call VisSendCurrCmdE2T()
--   VisWinInfo                         | :VisWinInfo
--   VisCheckEnv                        | :VisCheckEnv
+- W VisWinInfo                         | :VisWinInfo
+- E VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
 -   gruvbox                            | :colorscheme gruvbox
 -   molokai                            | :colorscheme molokai
