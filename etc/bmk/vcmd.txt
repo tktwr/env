@@ -1,5 +1,5 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- - winbuf menu     (End, C-u)         | :silent call wbl#open()
 - c coc menu             (C-x)         | :CpmOpen coc
 - y fzy menu             (C-y)         | :CpmOpen fzy
 - r ref menu         (F1, C-z)         | :CpmOpen ref

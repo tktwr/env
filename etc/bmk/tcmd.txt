@@ -1,5 +1,5 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- - winbuf menu     (End, C-u)         | :silent call wbl#open()
 - y fzy menu             (C-y)         | :CpmOpen fzy
 - g git menu                           | :CpmOpen tcmd.git
 - s system menu                        | :CpmOpen tcmd.system

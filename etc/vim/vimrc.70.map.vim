@@ -56,13 +56,13 @@ nnoremap ==      zi
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>  " [FIXED] right win
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [FIXED] CR
  nnoremap <silent> <C-N>   :cn<CR>
- nnoremap <silent> <C-O>   <C-W>:silent call WblPop()<CR>
+ nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>
  nnoremap <silent> <C-P>   :cp<CR>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [FIXED] redo
  nnoremap <silent> <C-S>   :echo<CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [FIXED] prev tag
- nnoremap <silent> <C-U>   <C-W>:silent call WblPrint()<CR>
+ nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
  nnoremap <silent> <C-X>   <C-W>:CpmOpen coc<CR>
@@ -172,8 +172,8 @@ tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
 tnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
 
-nnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
-tnoremap <silent> <End>      <C-W>:silent call WblPrint()<CR>
+nnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>
+tnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>
 
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)

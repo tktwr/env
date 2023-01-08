@@ -1,5 +1,5 @@
 [fern.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call WblPrint()
+- - winbuf menu     (End, C-u)         | :silent call wbl#open()
 - f fern menu            (C-x)         | :CpmOpen fern
 - y fzy menu             (C-y)         | :CpmOpen fzy
 [fern.external] ---------------------- | ----------------------------------------
