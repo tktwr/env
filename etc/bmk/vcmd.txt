@@ -4,9 +4,9 @@
 - y fzy menu             (C-y)         | :CpmOpen fzy
 - r ref menu         (F1, C-z)         | :CpmOpen ref
 [vcmd.external] ---------------------- | ----------------------------------------
-- V BmkOpenURL                         | :call BmkOpenURL('%:p')
-- O BmkOpenFile                        | :call BmkOpenFile('%:p')
-- D BmkOpenDir                         | :call BmkOpenDir('%:p:h')
+- V OpenURL                            | :call bmk#OpenURL('%:p')
+- O OpenFile                           | :call bmk#OpenFile('%:p')
+- D OpenDir                            | :call bmk#OpenDir('%:p:h')
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -39,9 +39,9 @@
 -   MySetIgnoreCase                    | :call MySetIgnoreCase()
 -   MySetSmartCase                     | :call MySetSmartCase()
     ---------------------------------- | ----------------------------------------
-- V BmkViewThis         (C-CR)         | :call BmkViewThis()
-- O BmkOpenThis         (S-CR)         | :call BmkOpenThis()
--   BmkToggleDebug                     | :call BmkToggleDebug()
+- V ViewThis            (C-CR)         | :call bmk#ViewThis()
+- O OpenThis            (S-CR)         | :call bmk#OpenThis()
+-   ToggleDebug                        | :call bmk#ToggleDebug()
     ---------------------------------- | ----------------------------------------
 - s VisGstatusToggle                   | :VisGstatusToggle
 - v VisGV                              | :VisGV
