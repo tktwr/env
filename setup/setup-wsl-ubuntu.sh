@@ -26,6 +26,7 @@ img2pdf \
 fontforge \
 subversion \
 ncdu \
+neofetch \
 "
 pkg_ext2="\
 blender \

@@ -1,4 +1,6 @@
 [tcmd.system] ------------------------ | ----------------------------------------
+-   neofetch                           | > neofetch<CR>
+-   ncdu                               | > ncdu<CR>
 -   htop                               | > htop -t<CR>
 -   nvidia-smi.exe                     | > nvidia-smi.exe -l<CR>
 -   killall nvidia-smi.exe             | > killall nvidia-smi.exe<CR>
