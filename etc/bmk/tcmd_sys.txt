@@ -1,9 +1,12 @@
 [tcmd.system] ------------------------ | ----------------------------------------
 -   neofetch                           | > neofetch<CR>
--   ncdu                               | > ncdu<CR>
+-   btop                               | > btop<CR>
 -   htop                               | > htop -t<CR>
 -   nvidia-smi.exe                     | > nvidia-smi.exe -l<CR>
 -   killall nvidia-smi.exe             | > killall nvidia-smi.exe<CR>
+    ---------------------------------- | ----------------------------------------
+-   ncdu                               | > ncdu<CR>
+-   cal -y                             | > cal -y<CR>
     ---------------------------------- | ----------------------------------------
 -   mypython-type python               | > mypython-type python<CR>
 -   mypython-type python-win           | > mypython-type python-win<CR>
@@ -29,19 +32,20 @@
 -   apt list <pkg>                     | > apt list
 -   apt search <pkg>                   | > apt search
 -   apt show <pkg>                     | > apt show
--   apt install <pkg>                  | > apt install
--   apt remove <pkg>                   | > apt remove
--   apt update                         | > apt update
--   apt upgrade                        | > apt upgrade
+-   sudo apt install <pkg>             | > sudo apt install
+-   sudo apt remove <pkg>              | > sudo apt remove
+-   sudo apt update                    | > sudo apt update
+-   sudo apt upgrade                   | > sudo apt upgrade
+-   sudo apt autoremove                | > sudo apt autoremove
     ---------------------------------- | ----------------------------------------
 -   pip list                           | > pip list<CR>
 -   pip search <pkg>                   | > pip search
 -   pip install <pkg>                  | > pip install
 -   pip uninstall <pkg>                | > pip uninstall
 -   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
-    ---------------------------------- | ----------------------------------------
+[tcmd.system.gitbash] ---------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
-    ---------------------------------- | ----------------------------------------
+[tcmd.system.msys] ------------------- | ----------------------------------------
 -   pacman -S -h                       | > pacman -S -h<CR>
 -   pacman -Syyu                       | > pacman -Syyu<CR>
 -   pacman -S <pkg>                    | > pacman -S

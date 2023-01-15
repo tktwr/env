@@ -1,12 +1,13 @@
 [fern.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- f fern menu            (C-x)         | :CpmOpen fern
-- y fzy menu             (C-y)         | :CpmOpen fzy
+- . fern menu            (C-x)         | :CpmOpen fern
+-   fzy menu             (C-y)         | :CpmOpen fzy
+- z fzf menu                           | :CpmOpen fzf
+    ---------------------------------- | ----------------------------------------
+- b Bmk                                | :VisFzfBmk
 [fern.external] ---------------------- | ----------------------------------------
 - V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
 - O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
--   VisTabGstatusToggle                | :call VisTabGstatusToggle()
--   VisTabGV                           | :call VisTabGV()
 -   yank an abs path                   | _Plug_(fern-action-yank)
 [fern] ------------------------------- | ----------------------------------------
 - - below split                        | :below split

@@ -1,14 +1,14 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
 - H HOME/                              | $HOME/
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
-- K Desktop/                           | $MY_DESKTOP/
+- D Desktop/                           | $MY_DESKTOP/
 - N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - R MyRoaming/                         | $MY_ROAMING/
 - C MyConfig/                          | $MY_CONFIG/
 - S MyShare/                           | $MY_SHARE/
     ---------------------------------- | ----------------------------------------
-- Y .my/                               | $MY_DOTMY/
+- y .my/                               | $MY_DOTMY/
 - c common/                            | $MY_COMMON_SETTING/
     ---------------------------------- | ----------------------------------------
 - E env/                               | $MY_ENV/
@@ -18,31 +18,32 @@
 - v vim/                               | $MY_VIM/
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/
-- t libtt/                             | $MY_LIBTT/
-    ---------------------------------- | ----------------------------------------
-- p proj/                              | $MY_PROJ/
-- w work/                              | $MY_WORK/
-- g git/                               | $MY_GIT/
-- d doc/                               | $MY_DOC/
-- o office/                            | $MY_OFFICE/
-    ---------------------------------- | ----------------------------------------
-- A arch/                              | $MY_ARCH/
-- B backup/                            | $MY_BACKUP/
-- D data/                              | $MY_DATA/
-- G github/                            | $MY_GITHUB/
-- M man/                               | $MY_MAN/
-- O opt/                               | $MY_OPT/
-- P papers/                            | $MY_PAPERS/
-- T tmp/                               | $MY_TMP/
 [bmk.dir.sys] ------------------------ | ----------------------------------------
 -   C:/                                | $SYS_C/
 -   D:/                                | $SYS_D/
 -   prog64/                            | $SYS_PROG64_DIR/
 -   prog32/                            | $SYS_PROG32_DIR/
     ---------------------------------- | ----------------------------------------
-- L user-local/                        | $USER_LOCAL/
-- R user-roaming/                      | $USER_ROAMING/
+-   user-local/                        | $USER_LOCAL/
+-   user-roaming/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
+-   libtt/                             | $MY_LIBTT/
+    ---------------------------------- | ----------------------------------------
+-   proj/                              | $MY_PROJ/
+-   work/                              | $MY_WORK/
+-   git/                               | $MY_GIT/
+-   doc/                               | $MY_DOC/
+-   office/                            | $MY_OFFICE/
+    ---------------------------------- | ----------------------------------------
+-   arch/                              | $MY_ARCH/
+-   backup/                            | $MY_BACKUP/
+-   data/                              | $MY_DATA/
+-   github/                            | $MY_GITHUB/
+-   man/                               | $MY_MAN/
+-   opt/                               | $MY_OPT/
+-   papers/                            | $MY_PAPERS/
+-   tmp/                               | $MY_TMP/
+    ---------------------------------- | ----------------------------------------
 -   rconfig/                           | $MY_REMOTE_CONFIG/
 -   lconfig/                           | $MY_LOCAL_CONFIG/
 -   pconfig/                           | $MY_PRIVATE_CONFIG/

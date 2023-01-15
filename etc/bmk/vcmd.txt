@@ -1,12 +1,13 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- c coc menu             (C-x)         | :CpmOpen coc
-- y fzy menu             (C-y)         | :CpmOpen fzy
-- r ref menu         (F1, C-z)         | :CpmOpen ref
+- . coc menu             (C-x)         | :CpmOpen coc
+-   ref menu         (F1, C-z)         | :CpmOpen ref
+-   fzy menu             (C-y)         | :CpmOpen fzy
+- z fzf menu                           | :CpmOpen fzf
 [vcmd.external] ---------------------- | ----------------------------------------
-- V OpenURL                            | :call bmk#OpenURL('%:p')
-- O OpenFile                           | :call bmk#OpenFile('%:p')
-- D OpenDir                            | :call bmk#OpenDir('%:p:h')
+- V OpenURL %                          | :call bmk#OpenURL('%:p')
+- O OpenFile %                         | :call bmk#OpenFile('%:p')
+- D OpenDir %                          | :call bmk#OpenDir('%:p:h')
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle

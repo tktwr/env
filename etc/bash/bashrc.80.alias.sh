@@ -45,8 +45,6 @@ alias vi='vim'
 alias vim-none='/usr/bin/vim -u NONE'
 alias vim-zero='/usr/bin/vim -u $MY_VIM/vimrc_zero.vim'
 alias vim-tags='/usr/bin/vim -e -c "helptags . | quit"'
-vim-which() { vim `which "$1"` $2; }
-vim-where() { vim `which "$1"` $2; }
 
 # vifm
 alias vf='vifm'

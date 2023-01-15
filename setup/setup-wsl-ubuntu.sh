@@ -8,7 +8,6 @@ ENV_DIR=~/MyRoaming/env
 
 pkg_min="\
 vim \
-nodejs npm \
 python3-pip \
 python3-venv \
 python3-doc \
@@ -27,11 +26,17 @@ fontforge \
 subversion \
 ncdu \
 neofetch \
+btop \
+ncal \
+googler \
+bat \
+fd-find \
 "
 pkg_ext2="\
 blender \
 nvidia-cuda-toolkit \
 baobab \
+nodejs npm \
 "
 pkg_dev="\
 cmake \
@@ -91,6 +96,10 @@ f_python_venv() {
   fi
 }
 
+f_nodejs() {
+  node-install.sh
+}
+
 f_vim() {
   # LSP for python for cv2, matplotlib, etc.
   cd $MY_GITHUB
@@ -135,6 +144,7 @@ f_help() {
   echo "----------- ... -----------------------------"
   echo "etc         ... etc"
   echo "python_venv ... python_venv"
+  echo "nodejs      ... nodejs"
   echo "vim         ... vim"
   echo "nvim        ... nvim"
   echo "----------- ... -----------------------------"

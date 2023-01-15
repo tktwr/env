@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export FZF_DEFAULT_COMMAND='fdfind --type f --strip-cwd-prefix'
+export FZF_DEFAULT_OPTS='--layout=reverse --exact'
+
 #======================================================
 # fzy
 #======================================================

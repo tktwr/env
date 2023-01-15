@@ -1,8 +1,11 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
 - - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- y fzy menu             (C-y)         | :CpmOpen fzy
-- g git menu                           | :CpmOpen tcmd.git
 - s system menu                        | :CpmOpen tcmd.system
+- g git menu                           | :CpmOpen tcmd.git
+-   fzy menu             (C-y)         | :CpmOpen fzy
+- z fzf menu                           | :CpmOpen fzf
+    ---------------------------------- | ----------------------------------------
+- b Bmk                                | :VisFzfBmk
 [tcmd.main] -------------------------- | ----------------------------------------
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
     ---------------------------------- | ----------------------------------------
