@@ -1,11 +1,9 @@
 [fzf] -------------------------------- | ----------------------------------------
-- b Bmk                                | :VisFzfBmk
 - f Files                              | :VisFzfFiles
 - r Rg                                 | :FzfRg
-    ---------------------------------- | ----------------------------------------
+- b Bmk                                | :VisFzfBmk
 - L Bmk links                          | :VisFzfBmkLinks
 - P Bmk papers                         | :VisFzfBmkPapers
-    ---------------------------------- | ----------------------------------------
 - S Git status                         | :FzfGFiles?
 - G Git graph                          | :FzfCommits
 [fzf.ext] ---------------------------- | ----------------------------------------

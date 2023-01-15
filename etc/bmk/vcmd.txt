@@ -11,7 +11,7 @@
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
-- > TagBar                             | :MyTagbarToggle
+- > TagBar                             | :VisTagbarToggle
 - F Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
 - T Term                               | :VisTerm
@@ -65,7 +65,7 @@
 -   EditBmkLink                        | :call EditBmkLink()
 - p EditTogglePathFormat               | :call EditTogglePathFormat()
     ---------------------------------- | ----------------------------------------
-- c VisSendCurrCmdE2T                  | :call VisSendCurrCmdE2T()
+- c VisSendCurrCmdE2T                  | :VisSendCurrCmdE2T
 - W VisWinInfo                         | :VisWinInfo
 - E VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
