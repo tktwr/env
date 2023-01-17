@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export FZF_DEFAULT_COMMAND='fdfind --type f --strip-cwd-prefix'
-export FZF_DEFAULT_OPTS='--layout=reverse --exact'
+export FZF_DEFAULT_OPTS='--exact --reverse --bind alt-p:preview-up,alt-n:preview-down'
 
 #======================================================
 # fzy
