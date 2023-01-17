@@ -5,6 +5,7 @@
 -   fzy menu             (C-y)         | :CpmOpen fzy
 - z fzf menu                           | :CpmOpen fzf
     ---------------------------------- | ----------------------------------------
+- f Dirs                               | :VisFzfDirs
 - b Bmk                                | :VisFzfBmk
 [tcmd.main] -------------------------- | ----------------------------------------
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label

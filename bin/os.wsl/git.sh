@@ -13,7 +13,9 @@ in_win_dir() {
 }
 
 if in_win_dir; then
+  echo "[git.exe]" 1>&2
   /mnt/c/Program\ Files/Git/cmd/git.exe "$@"
 else
+  echo "[/usr/bin/git]" 1>&2
   /usr/bin/git "$@"
 fi

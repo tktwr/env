@@ -6,6 +6,10 @@
 #------------------------------------------------------
 # print
 #------------------------------------------------------
+git-root() {
+  git rev-parse --show-toplevel 2> /dev/null
+}
+
 git-branch-name() {
   git rev-parse --abbrev-ref HEAD 2>/dev/null
   #git symbolic-ref --short HEAD 2>/dev/null
@@ -39,7 +43,7 @@ git-print-tag-all() {
 # cd
 #------------------------------------------------------
 git-cd-root() {
-  topdir=$(git rev-parse --show-toplevel 2> /dev/null)
+  topdir=$(git-root)
   if [ -n "$topdir" ]; then
     cd $topdir
   fi
@@ -264,12 +268,12 @@ git-dirdiff() {
 #------------------------------------------------------
 alias gs='git.sh status'
 alias gS='git.sh status -s'
-alias gd='git diff'
-alias gD='git diff --staged'
-alias gf='git fetch'
-alias gg='git graph'
-alias gb='git branch'
-alias gt='git tag'
+alias gd='git.sh diff'
+alias gD='git.sh diff --staged'
+alias gf='git.sh fetch'
+alias gg='git.sh graph'
+alias gb='git.sh branch'
+alias gt='git.sh tag'
 
 alias gA='git add'
 alias gAu='git add -u'

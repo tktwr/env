@@ -4,10 +4,11 @@
 -   fzy menu             (C-y)         | :CpmOpen fzy
 - z fzf menu                           | :CpmOpen fzf
     ---------------------------------- | ----------------------------------------
+- f Dirs                               | :VisFzfDirs
 - b Bmk                                | :VisFzfBmk
 [fern.external] ---------------------- | ----------------------------------------
-- V VisFernViewItem     (C-CR)         | :call VisFernViewItem()
-- O VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
+-   VisFernViewItem     (C-CR)         | :call VisFernViewItem()
+-   VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
 -   yank an abs path                   | _Plug_(fern-action-yank)
 [fern] ------------------------------- | ----------------------------------------
 - - below split                        | :below split
