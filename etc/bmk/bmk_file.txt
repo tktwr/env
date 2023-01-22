@@ -1,11 +1,12 @@
 [bmk.file] ---------------------------        | ----------------------------------------
-- d dia                                       | $MY_DIARY/diary.md.html
-- t todo                                      | $MY_DIARY/todo.md.html
-- i info                                      | $MY_DIARY/info.md.html
-- s scratchpad                                | $MY_DIARY/scratchpad.md.html
 [bmk.file.ext] -----------------------        | ----------------------------------------
-- L links                                     | $MY_BMK/links.txt
-- P papers                                    | $MY_BMK/papers.txt
++   dia                                       | $MY_DIARY/diary.md.html
++   todo                                      | $MY_DIARY/todo.md.html
++   info                                      | $MY_DIARY/info.md.html
++   scratchpad                                | $MY_DIARY/scratchpad.md.html
+    ----------------------------------        | ----------------------------------------
++   links                                     | $MY_BMK/links.txt
++   papers                                    | $MY_BMK/papers.txt
     ----------------------------------        | ----------------------------------------
 -   bmk_file (local)                          | $MY_COMMON_SETTING/bmk/bmk_file.txt
 -   engword                                   | $MY_LOCAL_CONFIG/eng/eng.txt

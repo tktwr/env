@@ -1,13 +1,19 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- . coc menu             (C-x)         | :CpmOpen coc
--   ref menu         (F1, C-z)         | :CpmOpen ref
--   fzy menu             (C-y)         | :CpmOpen fzy
-- z fzf menu                           | :CpmOpen fzf
+- f Bmk                                | :VisFzfBmk
+- d Files                              | :VisFzfFiles
+- r Rg                                 | :FzfRg
+- b Buffers                            | :FzfBuffers
+- t Tags                               | :FzfTags
+- H Helptags                           | :FzfHelptags
+- S Git status                         | :FzfGFiles?
+- G Git graph                          | :FzfCommits
 [vcmd.external] ---------------------- | ----------------------------------------
-- V OpenURL %                          | :call bmk#OpenURL('%:p')
-- O OpenFile %                         | :call bmk#OpenFile('%:p')
-- D OpenDir %                          | :call bmk#OpenDir('%:p:h')
+-   OpenURL  %                         | :call bmk#OpenURL('%:p')
+-   OpenFile %                         | :call bmk#OpenFile('%:p')
+-   OpenDir  %                         | :call bmk#OpenDir('%:p:h')
+    ---------------------------------- | ----------------------------------------
+-   ViewThis            (C-CR)         | :call bmk#ViewThis()
+-   OpenThis            (S-CR)         | :call bmk#OpenThis()
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -16,32 +22,25 @@
 - N Editor                             | :new
 - T Term                               | :VisTerm
 - _ Cd                                 | :VisSendCdE2T
-- M Memo                               | :Memo
-- H Help                               | :VisHelp
-    --- (Develop) -------------------- | ----------------------------------------
-- q quickhl              (C-a)         | :VisQuickhl ??
-- g git grep                           | :VisGgrep ??
-- v vim grep here                      | :VisVimgrep ?? *
-- A vim grep all                       | :call MyVimgrepAll('??')
-- ] tjump                              | :call VisTjumpPrompt()
-- Q Qfreplace                          | :Qfreplace
-    --- (Edit) ----------------------- | ----------------------------------------
+    ---------------------------------- | ----------------------------------------
+- g Git grep                           | :VisGgrep ??
+- v Vim grep here                      | :VisVimgrep ?? *
+- A Vim grep all                       | :call MyVimgrepAll('??')
+- ] Tjump                              | :call VisTjumpPrompt()
+    ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
-- p paste                 (,p)         | ,p
--   yank                   (Y)         | "*y
+- p Paste                 (,p)         | ,p
+-   Yank                   (Y)         | "*y
 - Y YankFilePath                       | :call YankFilePath()
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
 - R CpmReload                          | :CpmReload
-- S SourceVimrc                        | :SourceVimrc
 [vcmd.sub] --------------------------- | ----------------------------------------
 - T MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
 -   MySetIgnoreCase                    | :call MySetIgnoreCase()
 -   MySetSmartCase                     | :call MySetSmartCase()
     ---------------------------------- | ----------------------------------------
-- V ViewThis            (C-CR)         | :call bmk#ViewThis()
-- O OpenThis            (S-CR)         | :call bmk#OpenThis()
 -   ToggleDebug                        | :call bmk#ToggleDebug()
     ---------------------------------- | ----------------------------------------
 - s VisGstatusToggle                   | :VisGstatusToggle
@@ -75,7 +74,17 @@
 -   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
 -   vimdirdiff etc ~/WinHome           | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
-- P ctrlp                              | _Plug_(ctrlp)
+-   quickhl              (C-a)         | :VisQuickhl ??
+-   Memo                               | :Memo
+-   Help                               | :VisHelp
+-   SourceVimrc                        | :SourceVimrc
+-   Qfreplace                          | :Qfreplace
+    ---------------------------------- | ----------------------------------------
+-   winbuf menu     (End, C-u)         | :silent call wbl#open()
+-   coc menu             (C-x)         | :CpmOpen coc
+-   ref menu         (F1, C-z)         | :CpmOpen ref
+    ---------------------------------- | ----------------------------------------
+-   ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?
 -   VisBufDelete                       | :VisBufDelete
 -   vimgrep TODO                       | :vimgrep 'TODO' %

@@ -16,6 +16,7 @@ MEMO_DIRS="\
   $MY_MEMO \
   $MY_LOCAL_CONFIG/memo \
   $MY_SAMPLES \
+  $MY_DIARY \
   "
 for-dir.sh "mymake.sh tags_memo" ${MEMO_DIRS}
 

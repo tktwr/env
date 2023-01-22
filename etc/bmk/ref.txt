@@ -1,91 +1,91 @@
 [ref.main] --------------------------- | ----------------------------------------
-- H Help                               | :VisHelp
--   Help.index                         | :VisHelp index
--   Help.expression-syntax             | :VisHelp expression-syntax
--   Help.pattern-overview              | :VisHelp pattern-overview
-- M Memo                               | :Memo
-- m Man                                | :VisMan ??
-- p Pydoc                              | :VisPydoc ??
--   MyTrans                            | :MyTrans
--   MyDict                             | :MyDict
--   EJ                                 | :EJ ??
--   EE                                 | :EE ??
+- H ref.Help                           | :VisHelp
+-   ref.Help.index                     | :VisHelp index
+-   ref.Help.expression-syntax         | :VisHelp expression-syntax
+-   ref.Help.pattern-overview          | :VisHelp pattern-overview
+- M ref.Memo                           | :Memo
+- m ref.Man                            | :VisMan ??
+- p ref.Pydoc                          | :VisPydoc ??
+-   ref.MyTrans                        | :MyTrans
+-   ref.MyDict                         | :MyDict
+-   ref.EJ                             | :EJ ??
+-   ref.EE                             | :EE ??
     ---------------------------------- | ----------------------------------------
--   tags.bin_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
--   tags.bin_py                        | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
--   tags.etc_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
--   tags.etc_vim                       | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
--   tags.memo                          | :call TagCatalog("$MY_MEMO/tags.memo", "memo")
--   tags.libtt                         | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
+-   ref.tags.bin_sh                    | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
+-   ref.tags.bin_py                    | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
+-   ref.tags.etc_sh                    | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
+-   ref.tags.etc_vim                   | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
+-   ref.tags.memo                      | :call TagCatalog("$MY_MEMO/tags", "memo")
+-   ref.tags.libtt                     | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
     ---------------------------------- | ----------------------------------------
--   tags.imgui                         | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
--   tags.eigen                         | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
--   tags.glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
--   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
+-   ref.tags.imgui                     | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
+-   ref.tags.eigen                     | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
+-   ref.tags.glm                       | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
+-   ref.tags.opencv2                   | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
--   help                  (F1)         | :echo
--   x                     (F2)         | :echo
--   x                     (F3)         | :echo
--   desktop               (F4)         | :echo
--   reload                (F5)         | :echo
--   x                     (F6)         | :echo
--   maximize left         (F7)         | :echo
--   maximize              (F8)         | :echo
--   maximize right        (F9)         | :echo
--   maximize toggle      (F10)         | :echo
--   xbox game bar        (F11)         | :echo
--   system               (F12)         | :echo
+-   ref.help                  (F1)     | :echo
+-   ref.x                     (F2)     | :echo
+-   ref.x                     (F3)     | :echo
+-   ref.desktop               (F4)     | :echo
+-   ref.reload                (F5)     | :echo
+-   ref.x                     (F6)     | :echo
+-   ref.maximize left         (F7)     | :echo
+-   ref.maximize              (F8)     | :echo
+-   ref.maximize right        (F9)     | :echo
+-   ref.maximize toggle      (F10)     | :echo
+-   ref.xbox game bar        (F11)     | :echo
+-   ref.system               (F12)     | :echo
     ---------------------------------- | ----------------------------------------
--   cpm menu           (Space)         | :echo
--   wbl menu             (End)         | :echo
--   page up               (BS)         | :echo
--   page down           (PgDn)         | :echo
--   tab prev            (PgUp)         | :echo
--   tab next          (S-PgUp)         | :echo
--   tab new              (Ins)         | :echo
--   tab close            (Del)         | :echo
--   view                (C-CR)         | :echo
--   open                (S-CR)         | :echo
--   lcd                  (C-.)         | :echo
--   command mode         (C-;)         | :echo
--   tjump                (C-])         | :echo
+-   ref.cpm menu           (Space)     | :echo
+-   ref.wbl menu             (End)     | :echo
+-   ref.page up               (BS)     | :echo
+-   ref.page down           (PgDn)     | :echo
+-   ref.tab prev            (PgUp)     | :echo
+-   ref.tab next          (S-PgUp)     | :echo
+-   ref.tab new              (Ins)     | :echo
+-   ref.tab close            (Del)     | :echo
+-   ref.view                (C-CR)     | :echo
+-   ref.open                (S-CR)     | :echo
+-   ref.lcd                  (C-.)     | :echo
+-   ref.command mode         (C-;)     | :echo
+-   ref.tjump                (C-])     | :echo
 [ref.keys2] -------------------------- | ----------------------------------------
--   window 1 top         (C-1)         | :echo
--   window 2             (C-2)         | :echo
--   x                    (C-3)         | :echo
--   x                    (C-4)         | :echo
--   x                    (C-5)         | :echo
--   x                    (C-6)         | :echo
--   maximize x           (C-7)         | :echo
--   maximize xy          (C-8)         | :echo
--   maximize y           (C-9)         | :echo
--   window 0 bottom      (C-0)         | :echo
+-   ref.window 1 top         (C-1)     | :echo
+-   ref.window 2             (C-2)     | :echo
+-   ref.x                    (C-3)     | :echo
+-   ref.x                    (C-4)     | :echo
+-   ref.x                    (C-5)     | :echo
+-   ref.x                    (C-6)     | :echo
+-   ref.maximize x           (C-7)     | :echo
+-   ref.maximize xy          (C-8)     | :echo
+-   ref.maximize y           (C-9)     | :echo
+-   ref.window 0 bottom      (C-0)     | :echo
     ---------------------------------- | ----------------------------------------
--   quickhl              (C-a)         | :echo
--   x                    (C-b)         | :echo
--   x                    (C-c)         | :echo
--   page up              (C-d)         | :echo
--   close                (C-e)         | :echo
--   page down            (C-f)         | :echo
--   redraw               (C-g)         | :echo
--   window left          (C-h)         | :echo
--   TAB                  (C-i)         | :echo
--   window next          (C-j)         | :echo
--   window prev          (C-k)         | :echo
--   window right         (C-l)         | :echo
--   CR                   (C-m)         | :echo
--   cn                   (C-n)         | :echo
--   wbl pop              (C-o)         | :echo
--   cp                   (C-p)         | :echo
--   @q                   (C-q)         | :echo
--   redo                 (C-r)         | :echo
--   x                    (C-s)         | :echo
--   tag back             (C-t)         | :echo
--   wbl menu             (C-u)         | :echo
--   block select         (C-v)         | :echo
--   window command       (C-w)         | :echo
--   coc menu             (C-x)         | :echo
--   fzy menu             (C-y)         | :echo
--   ref menu             (C-z)         | :echo
+-   ref.quickhl              (C-a)     | :echo
+-   ref.x                    (C-b)     | :echo
+-   ref.x                    (C-c)     | :echo
+-   ref.page up              (C-d)     | :echo
+-   ref.close                (C-e)     | :echo
+-   ref.page down            (C-f)     | :echo
+-   ref.redraw               (C-g)     | :echo
+-   ref.window left          (C-h)     | :echo
+-   ref.TAB                  (C-i)     | :echo
+-   ref.window next          (C-j)     | :echo
+-   ref.window prev          (C-k)     | :echo
+-   ref.window right         (C-l)     | :echo
+-   ref.CR                   (C-m)     | :echo
+-   ref.cn                   (C-n)     | :echo
+-   ref.wbl pop              (C-o)     | :echo
+-   ref.cp                   (C-p)     | :echo
+-   ref.@q                   (C-q)     | :echo
+-   ref.redo                 (C-r)     | :echo
+-   ref.x                    (C-s)     | :echo
+-   ref.tag back             (C-t)     | :echo
+-   ref.wbl menu             (C-u)     | :echo
+-   ref.block select         (C-v)     | :echo
+-   ref.window command       (C-w)     | :echo
+-   ref.coc menu             (C-x)     | :echo
+-   ref.fzy menu             (C-y)     | :echo
+-   ref.ref menu             (C-z)     | :echo
 
 # vim:set ft=bmk syntax=txt nowrap:

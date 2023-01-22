@@ -11,6 +11,18 @@ if executable('rg')
 endif
 
 "------------------------------------------------------
+" runtimepath
+"------------------------------------------------------
+let $MY_MEMO_TAGS       = printf("%s_tags", expand($MY_MEMO))
+let $MY_SAMPLES_TAGS    = printf("%s_tags", expand($MY_SAMPLES))
+let $MY_DIARY_TAGS      = printf("%s_tags", expand($MY_DIARY))
+let $MY_LOCAL_MEMO_TAGS = printf("%s/memo_tags", expand($MY_LOCAL_CONFIG))
+
+set runtimepath+=$MY_MEMO_TAGS
+set runtimepath+=$MY_SAMPLES_TAGS
+set runtimepath+=$MY_DIARY_TAGS
+set runtimepath+=$MY_LOCAL_MEMO_TAGS
+"------------------------------------------------------
 " tags
 "------------------------------------------------------
 " tags for env

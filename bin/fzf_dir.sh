@@ -8,15 +8,15 @@ git-cd-root() {
 }
 
 #------------------------------------------------------
-fzy_find_post() {
+fzf_find_post() {
   awk '{print $1}'
 }
 
-fzy_find() {
+fzf_find() {
   depth=${1:-6}
-  cmd="find-dir.sh -maxdepth $depth"
+  cmd="fdfind --type d --strip-cwd-prefix --max-depth $depth"
 
-  p=$(eval $cmd | fzy | fzy_find_post)
+  p=$(eval $cmd | fzf | fzf_find_post)
   if [ -n "$p" ]; then
     p=$(pathconv.sh unix "$p")
   fi
@@ -31,4 +31,4 @@ case "$1" in
     ;;
 esac
 
-fzy_find "$@"
+fzf_find "$@"

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #------------------------------------------------------
-fzy_rg_post() {
+fzf_rg_post() {
   awk -F ':' '{print $1}'
 }
 
-fzy_rg() {
+fzf_rg() {
   cmd="rg --vimgrep $*"
 
-  p=$(eval $cmd | fzy | fzy_rg_post)
+  p=$(eval $cmd | fzf | fzf_rg_post)
   if [ -n "$p" ]; then
     p=$(pathconv.sh unix "$p")
   fi
@@ -19,6 +19,6 @@ fzy_rg() {
 arg=$(prompt.sh 'search pattern' '' "$*")
 
 if [ -n "$arg" ]; then
-  fzy_rg "$arg"
+  fzf_rg "$arg"
 fi
 

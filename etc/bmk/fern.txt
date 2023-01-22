@@ -1,39 +1,35 @@
 [fern.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- . fern menu            (C-x)         | :CpmOpen fern
--   fzy menu             (C-y)         | :CpmOpen fzy
-- z fzf menu                           | :CpmOpen fzf
-    ---------------------------------- | ----------------------------------------
-- f Dirs                               | :VisFzfDirs
-- b Bmk                                | :VisFzfBmk
+- f Bmk                                | :VisFzfBmk
+- d Dirs                               | :VisFzfDirs
+[fern.menu.ext] ---------------------- | ----------------------------------------
+-   winbuf menu     (End, C-u)         | :silent call wbl#open()
+-   fern menu            (C-x)         | :CpmOpen fern
 [fern.external] ---------------------- | ----------------------------------------
--   VisFernViewItem     (C-CR)         | :call VisFernViewItem()
--   VisFernOpenItem     (S-CR)         | :call VisFernOpenItem()
--   yank an abs path                   | _Plug_(fern-action-yank)
+-   fern.ViewItem     (C-CR)           | :call VisFernViewItem()
+-   fern.OpenItem     (S-CR)           | :call VisFernOpenItem()
+-   fern.yank an abs path              | _Plug_(fern-action-yank)
 [fern] ------------------------------- | ----------------------------------------
-- - below split                        | :below split
+-   fern.select-expand   (2-LMouse)    | _Plug_(my-fern-select-expand-collapse)
+-   fern.select-expand         (CR)    | _Plug_(my-fern-select-expand-collapse)
     ---------------------------------- | ----------------------------------------
--   select-expand   (2-LMouse)         | _Plug_(my-fern-select-expand-collapse)
--   select-expand         (CR)         | _Plug_(my-fern-select-expand-collapse)
+- N fern.new-path               (N)    | _Plug_(fern-action-new-path)
+- D fern.remove                 (D)    | _Plug_(fern-action-remove)
+- M fern.move                   (M)    | _Plug_(fern-action-move)
+- R fern.rename marked          (R)    | _Plug_(fern-action-rename)
     ---------------------------------- | ----------------------------------------
-- N new-path               (N)         | _Plug_(fern-action-new-path)
-- D remove                 (D)         | _Plug_(fern-action-remove)
-- M move                   (M)         | _Plug_(fern-action-move)
-- R rename marked          (R)         | _Plug_(fern-action-rename)
+-   fern.reload               (C-g)    | _Plug_(fern-action-reload)
+- ? fern.help                   (?)    | _Plug_(fern-action-help)
+- ! fern.hidden                 (!)    | _Plug_(fern-action-hidden)
+- m fern.mark                   (m)    | _Plug_(fern-action-mark)
+- c fern.mark clear                    | _Plug_(fern-action-mark:clear)
+- d fern.diff marked                   | _Plug_(fern-action-diff:tabedit:vert)
+- s fern.open:split             (s)    | _Plug_(fern-action-open:split)
+- v fern.open:vsplit            (v)    | _Plug_(fern-action-open:vsplit)
     ---------------------------------- | ----------------------------------------
--   reload               (C-g)         | _Plug_(fern-action-reload)
-- ? help                   (?)         | _Plug_(fern-action-help)
-- ! hidden                 (!)         | _Plug_(fern-action-hidden)
-- m mark                   (m)         | _Plug_(fern-action-mark)
-- c mark clear                         | _Plug_(fern-action-mark:clear)
-- d diff marked                        | _Plug_(fern-action-diff:tabedit:vert)
-- s open:split             (s)         | _Plug_(fern-action-open:split)
-- v open:vsplit            (v)         | _Plug_(fern-action-open:vsplit)
+- h fern.collapse               (h)    | _Plug_(fern-action-collapse)
+- l fern.VisFernPreview         (l)    | :call VisFernPreviewItem(-2)
     ---------------------------------- | ----------------------------------------
-- h collapse               (h)         | _Plug_(fern-action-collapse)
-- l VisFernPreview         (l)         | :call VisFernPreviewItem(-2)
-    ---------------------------------- | ----------------------------------------
-- < leave                  (<)         | _Plug_(fern-action-leave)
-- > enter                  (>)         | _Plug_(fern-action-enter)
+- < fern.leave                  (<)    | _Plug_(fern-action-leave)
+- > fern.enter                  (>)    | _Plug_(fern-action-enter)
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -50,7 +50,7 @@ let g:cpm_files =
   \ split(glob("$MY_BMK/*.txt")) +
   \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
-  \ 'default'          : ['vcmd.menu & fzf & local.bmk.file & bmk.file & vcmd.external & vcmd.ide', 'vcmd.sub'],
+  \ 'default'          : ['vcmd.menu & vcmd.external & vcmd.ide', 'vcmd.sub'],
   \ 'default.fern'     : ['fern.menu & fern.external & local.bmk.dir & bmk.dir', 'bmk.dir.sys'],
   \ 'default.terminal' : ['tcmd.menu & tcmd.main & local.bmk.dir', 'tcmd.sub'],
   \ 'default.diff'     : ['vcmd.diff'],
@@ -59,10 +59,6 @@ let g:cpm_titles = {
   \ 'default.fugitive' : ['vcmd.fugitive'],
   \ 'ref'              : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
   \ 'ref.terminal'     : ['ref.main'],
-  \ 'fzf'              : ['fzf & fzf.ext'],
-  \ 'fzy'              : ['fzy'],
-  \ 'fzy.fern'         : ['fzy.fern'],
-  \ 'fzy.terminal'     : ['fzy.terminal'],
   \ 'coc'              : ['coc'],
   \ 'fern'             : ['fern'],
   \ 'tcmd.git'         : ['tcmd.git'],

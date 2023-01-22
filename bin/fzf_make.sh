@@ -1,14 +1,14 @@
 #!/bin/bash
 
-fzy_make_post() {
+fzf_make_post() {
   awk '{print $1}'
 }
 
-fzy_make() {
+fzf_make() {
   cmd="mymake.sh help"
-  echo $(eval $cmd | fzy | fzy_make_post)
+  echo $(eval $cmd | fzf | fzf_make_post)
 }
 
 #------------------------------------------------------
-fzy_make "$@"
+fzf_make "$@"
 

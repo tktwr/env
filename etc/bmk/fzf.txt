@@ -1,30 +1,19 @@
 [fzf] -------------------------------- | ----------------------------------------
-- f Files                              | :VisFzfFiles
-- r Rg                                 | :FzfRg
-- b Bmk                                | :VisFzfBmk
-- L Bmk links                          | :VisFzfBmkLinks
-- P Bmk papers                         | :VisFzfBmkPapers
-- S Git status                         | :FzfGFiles?
-- G Git graph                          | :FzfCommits
-[fzf.ext] ---------------------------- | ----------------------------------------
-- B FzfBuffers                         | :FzfBuffers
-- F FzfFiles                           | :FzfFiles
+-   Git graph %                        | :FzfBCommits
     ---------------------------------- | ----------------------------------------
-- g FzfGitFiles                        | :FzfGFiles
--   FzfGitGraph %                      | :FzfBCommits
+-   FzfFiles                           | :FzfFiles
+-   FzfGFiles                          | :FzfGFiles
     ---------------------------------- | ----------------------------------------
-- V FzfCommands                        | :FzfCommands
-- C FzfColors                          | :FzfColors
-- T FzfTags                            | :FzfTags
-- H FzfHelptags                        | :FzfHelptags
+-   FzfCommands                        | :FzfCommands
+-   FzfColors                          | :FzfColors
     ---------------------------------- | ----------------------------------------
 -   CocFzfList                         | :CocFzfList
-- d CocFzfList diagnostics             | :CocFzfList diagnostics
+-   CocFzfList diagnostics             | :CocFzfList diagnostics
 -   CocFzfList diagnostics %           | :CocFzfList diagnostics --current-buf
 -   CocFzfList commands                | :CocFzfList commands
 -   CocFzfList extensions              | :CocFzfList extensions
 -   CocFzfList location                | :CocFzfList location
-- o CocFzfList outline                 | :CocFzfList outline
+-   CocFzfList outline                 | :CocFzfList outline
 -   CocFzfList symbols                 | :CocFzfList symbols
 -   CocFzfListResume                   | :CocFzfListResume
 

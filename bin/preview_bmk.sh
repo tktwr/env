@@ -6,4 +6,9 @@ bmk_get_value() {
 
 file=$(echo "$*" | bmk_get_value)
 file=$(eval "echo $file")
-batcat -n --color=always $file
+
+if [ -f "$file" ]; then
+  batcat -n --color=always "$file"
+else
+  echo "$file"
+fi

@@ -1,14 +1,13 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
-- - winbuf menu     (End, C-u)         | :silent call wbl#open()
-- s system menu                        | :CpmOpen tcmd.system
-- g git menu                           | :CpmOpen tcmd.git
--   fzy menu             (C-y)         | :CpmOpen fzy
-- z fzf menu                           | :CpmOpen fzf
-    ---------------------------------- | ----------------------------------------
-- f Dirs                               | :VisFzfDirs
-- b Bmk                                | :VisFzfBmk
+* f Bmk                                | :VisFzfBmk
+* d Dirs                               | :VisFzfDirs
+[tcmd.menu.ext] ---------------------- | ----------------------------------------
+-   winbuf menu     (End, C-u)         | :silent call wbl#open()
 [tcmd.main] -------------------------- | ----------------------------------------
 - L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
+    ---------------------------------- | ----------------------------------------
+- f bmkd?                              | > bmkd?<CR>
+- c tcmd?                              | > tcmd?<CR>
     ---------------------------------- | ----------------------------------------
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>
@@ -21,12 +20,12 @@
 -   GV                                 | > GV<CR>
     ---------------------------------- | ----------------------------------------
 -   IDE                    (I)         | > I<CR>
--   Fern                   (D)         | > D<CR>
+-   Fern                   (F)         | > F<CR>
 -   Editor                 (N)         | > N<CR>
 -   Term                   (T)         | > T<CR>
 -   TermV                 (TV)         | > TV<CR>
     ---------------------------------- | ----------------------------------------
-- c mycmake.sh                         | > mycmake.sh<CR>
-- b mycmake.sh --build                 | > mycmake.sh --build<CR>
++ c mycmake.sh                         | > mycmake.sh<CR>
++ b mycmake.sh --build                 | > mycmake.sh --build<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
