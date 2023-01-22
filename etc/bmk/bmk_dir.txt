@@ -1,24 +1,15 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
-- y .my/                               | $MY_DOTMY/
-- c common/                            | $MY_COMMON_SETTING/
-    ---------------------------------- | ----------------------------------------
 - E env/                               | $MY_ENV/
-- i bin/                               | $MY_BIN/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
+- i bin/                               | $MY_BIN/
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/
+    ---------------------------------- | ----------------------------------------
+- y .my/                               | $MY_DOTMY/
+- c common/                            | $MY_COMMON_SETTING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
--   HOME/                              | $HOME/
--   SYS_WIN_HOME/                      | $SYS_WIN_HOME/
--   Desktop/                           | $MY_DESKTOP/
--   Downloads/                         | $MY_DOWNLOADS/
-    ---------------------------------- | ----------------------------------------
--   MyRoaming/                         | $MY_ROAMING/
--   MyConfig/                          | $MY_CONFIG/
--   MyShare/                           | $MY_SHARE/
-    ---------------------------------- | ----------------------------------------
 -   libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
 -   proj/                              | $MY_PROJ/
@@ -47,13 +38,22 @@
 -   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
 -   MY_DIARY/                          | $MY_DIARY/
 [bmk.dir.sys] ------------------------ | ----------------------------------------
+-   HOME/                              | $HOME/
+-   SYS_WIN_HOME/                      | $SYS_WIN_HOME/
+-   Desktop/                           | $MY_DESKTOP/
+-   Downloads/                         | $MY_DOWNLOADS/
+    ---------------------------------- | ----------------------------------------
+- R MyRoaming/                         | $MY_ROAMING/
+- C MyConfig/                          | $MY_CONFIG/
+- S MyShare/                           | $MY_SHARE/
+    ---------------------------------- | ----------------------------------------
 -   C:/                                | $SYS_C/
 -   D:/                                | $SYS_D/
--   prog64/                            | $SYS_PROG64_DIR/
--   prog32/                            | $SYS_PROG32_DIR/
+- 6 PROG64/                            | $SYS_PROG64_DIR/
+- 3 PROG32/                            | $SYS_PROG32_DIR/
     ---------------------------------- | ----------------------------------------
--   user-local/                        | $USER_LOCAL/
--   user-roaming/                      | $USER_ROAMING/
+-   USER_LOCAL/                        | $USER_LOCAL/
+-   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.opt] ------------------------ | ----------------------------------------
 -   LearnOpenGL/                       | $MY_GITHUB/LearnOpenGL/
 -   glTF-Sample-Viewer/                | $MY_GITHUB/glTF-Sample-Viewer/

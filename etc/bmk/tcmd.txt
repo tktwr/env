@@ -1,13 +1,12 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
-* f Bmk                                | :VisFzfBmk
-* d Dirs                               | :VisFzfDirs
-[tcmd.menu.ext] ---------------------- | ----------------------------------------
--   winbuf menu     (End, C-u)         | :silent call wbl#open()
-[tcmd.main] -------------------------- | ----------------------------------------
-- L vimapi-tabline-set-label {name}    | > vimapi-tabline-set-label
-    ---------------------------------- | ----------------------------------------
 - f bmkd?                              | > bmkd?<CR>
 - c tcmd?                              | > tcmd?<CR>
+[tcmd.menu.ext] ---------------------- | ----------------------------------------
+-   fzf_apt.sh                         | > fzf_apt.sh<CR>
+-   fzf_dpkg.sh                        | > fzf_dpkg.sh<CR>
+-   fzf_man.sh                         | > fzf_man.sh<CR>
+[tcmd.main] -------------------------- | ----------------------------------------
+- L Set tab label {name}               | > vimapi-tabline-set-label
     ---------------------------------- | ----------------------------------------
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>

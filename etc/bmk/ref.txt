@@ -1,11 +1,11 @@
 [ref.main] --------------------------- | ----------------------------------------
-- H ref.Help                           | :VisHelp
+-   ref.Help                           | :VisHelp
 -   ref.Help.index                     | :VisHelp index
 -   ref.Help.expression-syntax         | :VisHelp expression-syntax
 -   ref.Help.pattern-overview          | :VisHelp pattern-overview
-- M ref.Memo                           | :Memo
-- m ref.Man                            | :VisMan ??
-- p ref.Pydoc                          | :VisPydoc ??
+-   ref.Memo                           | :Memo
+-   ref.Man                            | :VisMan ??
+-   ref.Pydoc                          | :VisPydoc ??
 -   ref.MyTrans                        | :MyTrans
 -   ref.MyDict                         | :MyDict
 -   ref.EJ                             | :EJ ??
@@ -85,7 +85,7 @@
 -   ref.block select         (C-v)     | :echo
 -   ref.window command       (C-w)     | :echo
 -   ref.coc menu             (C-x)     | :echo
--   ref.fzy menu             (C-y)     | :echo
--   ref.ref menu             (C-z)     | :echo
+-   ref.x                    (C-y)     | :echo
+-   ref.x                    (C-z)     | :echo
 
 # vim:set ft=bmk syntax=txt nowrap:

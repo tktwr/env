@@ -18,6 +18,8 @@ f_set_prompt
 # vim plugin
 #------------------------------------------------------
 f_ins_path $MY_VIM/plugged/fzf/bin
+source_file $MY_VIM/plugged/fzf/shell/completion.bash
+source_file $MY_VIM/plugged/fzf/shell/key-bindings.bash
 
 source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc
 source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias

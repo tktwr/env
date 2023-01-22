@@ -17,7 +17,6 @@ let g:fern#renderer = 'nerdfont'
 
 func s:my_fern_settings()
   nmap <buffer> <C-X>  :CpmOpen fern<CR>
-  nmap <buffer> <C-Y>  :CpmOpen fzy<CR>
 endfunc
 
 augroup ag_fern

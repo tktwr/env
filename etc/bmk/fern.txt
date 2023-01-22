@@ -2,8 +2,6 @@
 - f Bmk                                | :VisFzfBmk
 - d Dirs                               | :VisFzfDirs
 [fern.menu.ext] ---------------------- | ----------------------------------------
--   winbuf menu     (End, C-u)         | :silent call wbl#open()
--   fern menu            (C-x)         | :CpmOpen fern
 [fern.external] ---------------------- | ----------------------------------------
 -   fern.ViewItem     (C-CR)           | :call VisFernViewItem()
 -   fern.OpenItem     (S-CR)           | :call VisFernOpenItem()

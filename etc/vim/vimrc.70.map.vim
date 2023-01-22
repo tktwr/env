@@ -66,8 +66,8 @@ nnoremap ==      zi
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
  nnoremap <silent> <C-X>   <C-W>:CpmOpen coc<CR>
- nnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
- nnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
+ nnoremap <silent> <C-Y>   :echo<CR>
+ nnoremap <silent> <C-Z>   :echo<CR>
 
  nnoremap <C-;>   <C-W>:
  nnoremap <C-.>   :VisLcdHere<CR>
@@ -83,11 +83,7 @@ nnoremap ==      zi
  tnoremap <silent> <C-O>   <C-W>N
 " paste register
  tnoremap <silent> <C-V>   <C-W>""
- tnoremap <silent> <C-Y>   <C-W>:CpmOpen fzy<CR>
- tnoremap <silent> <C-Z>   <C-W>:CpmOpen ref<CR>
-
  tnoremap <silent> <C-;>   <C-W>:
-
  tnoremap <ScrollWheelUp>  <C-W>N<ScrollWheelUp>
 
 "------------------------------------------------------
@@ -168,9 +164,6 @@ tnoremap <silent> <C-0> <C-W>b
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 nnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
-
-nnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
-tnoremap <silent> <F1>       <C-W>:CpmOpen ref<CR>
 
 nnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>
 tnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>

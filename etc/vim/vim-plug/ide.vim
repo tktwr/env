@@ -57,12 +57,8 @@ let g:cpm_titles = {
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],
   \ 'default.fugitive' : ['vcmd.fugitive'],
-  \ 'ref'              : ['ref.main', 'ref.keys', 'ref.keys2', 'papers', 'links', 'local.links'],
-  \ 'ref.terminal'     : ['ref.main'],
   \ 'coc'              : ['coc'],
   \ 'fern'             : ['fern'],
-  \ 'tcmd.git'         : ['tcmd.git'],
-  \ 'tcmd.system'      : ['tcmd.system'],
   \ }
 
 Plug 'tktwr/vim-bmk-menu'

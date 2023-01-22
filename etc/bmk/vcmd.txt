@@ -74,15 +74,15 @@
 -   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
 -   vimdirdiff etc ~/WinHome           | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
+-   winbuf menu     (End, C-u)         | :silent call wbl#open()
+-   coc menu             (C-x)         | :CpmOpen coc
+-   fern menu            (C-x)         | :CpmOpen fern
+    ---------------------------------- | ----------------------------------------
 -   quickhl              (C-a)         | :VisQuickhl ??
 -   Memo                               | :Memo
 -   Help                               | :VisHelp
 -   SourceVimrc                        | :SourceVimrc
 -   Qfreplace                          | :Qfreplace
-    ---------------------------------- | ----------------------------------------
--   winbuf menu     (End, C-u)         | :silent call wbl#open()
--   coc menu             (C-x)         | :CpmOpen coc
--   ref menu         (F1, C-z)         | :CpmOpen ref
     ---------------------------------- | ----------------------------------------
 -   ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?

@@ -1,12 +1,12 @@
 [tcmd.system] ------------------------ | ----------------------------------------
--   neofetch                           | > neofetch<CR>
--   btop                               | > btop<CR>
--   htop                               | > htop -t<CR>
--   nvidia-smi.exe                     | > nvidia-smi.exe -l<CR>
--   killall nvidia-smi.exe             | > killall nvidia-smi.exe<CR>
+-   tcmd.neofetch                      | > neofetch<CR>
+-   tcmd.btop                          | > btop<CR>
+-   tcmd.htop                          | > htop -t<CR>
+-   tcmd.nvidia-smi.exe                | > nvidia-smi.exe -l<CR>
+-   tcmd.killall nvidia-smi.exe        | > killall nvidia-smi.exe<CR>
     ---------------------------------- | ----------------------------------------
--   ncdu                               | > ncdu<CR>
--   cal -y                             | > cal -y<CR>
+-   tcmd.ncdu                          | > ncdu<CR>
+-   tcmd.cal -y                        | > cal -y<CR>
     ---------------------------------- | ----------------------------------------
 -   mypython-type python               | > mypython-type python<CR>
 -   mypython-type python-win           | > mypython-type python-win<CR>
