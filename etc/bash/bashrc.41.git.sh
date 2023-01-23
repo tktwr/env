@@ -125,7 +125,7 @@ git-delete-branch() {
 git-delete-branch-origin() {
   br=$(prompt.sh 'Delete remote branch' '' "$*")
   if [ -n "$br" ]; then
-    git push origin :$br
+    git.sh push origin :$br
   fi
 }
 
@@ -190,14 +190,14 @@ git-reset-hard-origin() {
 git-push-origin() {
   br=$(prompt.sh 'Push branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git push origin $br
+    git.sh push origin $br
   fi
 }
 
 git-pull-origin() {
   br=$(prompt.sh 'Pull branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git pull origin $br
+    git.sh pull origin $br
   fi
 }
 
