@@ -8,8 +8,7 @@
 +   links                                     | $MY_BMK/links.txt
 +   papers                                    | $MY_BMK/papers.txt
     ----------------------------------        | ----------------------------------------
--   bmk_file (local)                          | $MY_COMMON_SETTING/bmk/bmk_file.txt
--   engword                                   | $MY_LOCAL_CONFIG/eng/eng.txt
+-   engword                                   | $MY_LOCAL_CONFIG/eng/engword.txt
 -   eng                                       | $MY_LOCAL_CONFIG/memo/eng.md.html
 -   math                                      | $MY_LOCAL_CONFIG/memo/math.md.html
     ----------------------------------        | ----------------------------------------

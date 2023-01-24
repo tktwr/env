@@ -1,12 +1,16 @@
 #!/bin/bash
 
+fzf_make_pre() {
+  grep -v '\-\-\-'
+}
+
 fzf_make_post() {
   awk '{print $1}'
 }
 
 fzf_make() {
   cmd="mymake.sh help"
-  echo $(eval $cmd | fzf | fzf_make_post)
+  echo $(eval $cmd | fzf_make_pre | fzf | fzf_make_post)
 }
 
 #------------------------------------------------------
