@@ -3,40 +3,45 @@
 #======================================================
 # git
 #======================================================
+case $MY_OS_NAME in
+  wsl) export GIT_EXE=git.sh ;;
+  *)   export GIT_EXE=git ;;
+esac
+
 #------------------------------------------------------
 # print
 #------------------------------------------------------
 git-root() {
-  git rev-parse --show-toplevel 2> /dev/null
+  $GIT_EXE rev-parse --show-toplevel 2> /dev/null
 }
 
 git-branch-name() {
-  git rev-parse --abbrev-ref HEAD 2>/dev/null
-  #git symbolic-ref --short HEAD 2>/dev/null
-  #git branch --show-current 2>/dev/null
+  $GIT_EXE rev-parse --abbrev-ref HEAD 2>/dev/null
+  #$GIT_EXE symbolic-ref --short HEAD 2>/dev/null
+  #$GIT_EXE branch --show-current 2>/dev/null
 }
 
 git-commit-hash() {
   commit=${1:-HEAD}
-  git rev-parse --short $commit 2>/dev/null
+  $GIT_EXE rev-parse --short $commit 2>/dev/null
 }
 
 git-commit-hash-long() {
   commit=${1:-HEAD}
-  git rev-parse $commit 2>/dev/null
+  $GIT_EXE rev-parse $commit 2>/dev/null
 }
 
 git-print-branch-all() {
   echo "[REMOTE]"
-  git remote -v
+  $GIT_EXE remote -v
   echo "[BRANCH]"
-  git branch -a -vv
+  $GIT_EXE branch -a -vv
 }
 
 git-print-tag-all() {
   echo "[TAG]"
-  git tag
-  git ls-remote --tags
+  $GIT_EXE tag
+  $GIT_EXE ls-remote --tags
 }
 
 #------------------------------------------------------
@@ -59,37 +64,37 @@ git-cd-root() {
 # -S or --chop-long-lines
 # -X or --no-init
 git-graph() {
-  git graph --color=always $* | less -EFRSX
+  $GIT_EXE graph --color=always $* | less -EFRSX
 }
 
 git-graph-date() {
-  git graph --color=always --date-order  $* | less -EFRSX
+  $GIT_EXE graph --color=always --date-order  $* | less -EFRSX
 }
 
 git-graph-status() {
-  git graph --color=always --name-status $* | less -EFRSX
+  $GIT_EXE graph --color=always --name-status $* | less -EFRSX
 }
 
 #------------------------------------------------------
 # ls
 #------------------------------------------------------
 git-ls-track() {
-  git ls-files -s
+  $GIT_EXE ls-files -s
 }
 
 git-ls-untrack() {
-  git ls-files -o --directory
+  $GIT_EXE ls-files -o --directory
 }
 
 git-ls-no-x() {
-  git ls-files -s | grep '^100644' | awk '{print $4}'
+  $GIT_EXE ls-files -s | grep '^100644' | awk '{print $4}'
 }
 
 #------------------------------------------------------
 # chmod
 #------------------------------------------------------
 git-chmod-x() {
-  git update-index --add --chmod=+x "$@"
+  $GIT_EXE update-index --add --chmod=+x "$@"
 }
 
 git-chmod-x-all() {
@@ -102,30 +107,30 @@ git-chmod-x-all() {
 git-reset-branch() {
   br=$(prompt.sh 'Reset branch' 'master' "$*")
   if [ -n "$br" ]; then
-    git branch -f $br HEAD
-    git checkout $br
+    $GIT_EXE branch -f $br HEAD
+    $GIT_EXE checkout $br
   fi
 }
 
 git-create-branch() {
   br=$(prompt.sh 'Create branch' 'tmp' "$*")
   if [ -n "$br" ]; then
-    git branch $br
+    $GIT_EXE branch $br
   fi
 }
 
 git-delete-branch() {
-  git branch
+  $GIT_EXE branch
   br=$(prompt.sh 'Delete branch' '' "$*")
   if [ -n "$br" ]; then
-    git branch -d $br
+    $GIT_EXE branch -d $br
   fi
 }
 
 git-delete-branch-origin() {
   br=$(prompt.sh 'Delete remote branch' '' "$*")
   if [ -n "$br" ]; then
-    git.sh push origin :$br
+    $GIT_EXE push origin :$br
   fi
 }
 
@@ -133,22 +138,22 @@ git-delete-branch-origin() {
 # stage/unstage
 #------------------------------------------------------
 git-stage() {
-  git add "$@"
+  $GIT_EXE add "$@"
 }
 
 git-unstage() {
-  git reset -- "$@"
+  $GIT_EXE reset -- "$@"
 }
 
 #------------------------------------------------------
 # track/untrack
 #------------------------------------------------------
 git-track() {
-  git add "$@"
+  $GIT_EXE add "$@"
 }
 
 git-untrack() {
-  git rm --cached -r "$@"
+  $GIT_EXE rm --cached -r "$@"
 }
 
 #------------------------------------------------------
@@ -156,32 +161,32 @@ git-untrack() {
 #------------------------------------------------------
 git-commit() {
   msg=$(prompt.sh 'Commit message' 'update' "$*")
-  git commit -m "$msg"
+  $GIT_EXE commit -m "$msg"
 }
 
 git-commit-add() {
   msg=$(prompt.sh 'Commit message' 'update' "$*")
-  git commit -a -m "$msg"
+  $GIT_EXE commit -a -m "$msg"
 }
 
 git-commit-amend() {
   msg=$(prompt.sh 'Amend commit message' 'amend' "$*")
-  git commit --amend -m "$msg"
+  $GIT_EXE commit --amend -m "$msg"
 }
 
 #------------------------------------------------------
 # reset
 #------------------------------------------------------
 git-reset-last() {
-  git reset HEAD~
+  $GIT_EXE reset HEAD~
 }
 
 git-reset-hard() {
-  git reset --hard "$@"
+  $GIT_EXE reset --hard "$@"
 }
 
 git-reset-hard-origin() {
-  git reset --hard origin/$(git-branch-name)
+  $GIT_EXE reset --hard origin/$(git-branch-name)
 }
 
 #------------------------------------------------------
@@ -190,14 +195,14 @@ git-reset-hard-origin() {
 git-push-origin() {
   br=$(prompt.sh 'Push branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git.sh push origin $br
+    $GIT_EXE push origin $br
   fi
 }
 
 git-pull-origin() {
   br=$(prompt.sh 'Pull branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git.sh pull origin $br
+    $GIT_EXE pull origin $br
   fi
 }
 
@@ -207,23 +212,23 @@ git-pull-origin() {
 git-merge() {
   br=$(prompt.sh 'Merge branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git merge --no-ff $br
+    $GIT_EXE merge --no-ff $br
   fi
 }
 
 git-merge-abort() {
-  git merge --abort
+  $GIT_EXE merge --abort
 }
 
 git-rebase() {
   br=$(prompt.sh 'Rebase branch' "$(git-branch-name)" "$*")
   if [ -n "$br" ]; then
-    git rebase $br
+    $GIT_EXE rebase $br
   fi
 }
 
 git-rebase-abort() {
-  git rebase --abort
+  $GIT_EXE rebase --abort
 }
 
 #------------------------------------------------------
@@ -232,55 +237,55 @@ git-rebase-abort() {
 git-tmp() {
   msg=$(prompt.sh 'Commit message' '[TMP] update' "$*")
   if [ -n "$msg" ]; then
-    git commit -a -m "$msg"
+    $GIT_EXE commit -a -m "$msg"
   fi
 }
 
 git-tmp-reset() {
-  git reset HEAD~
+  $GIT_EXE reset HEAD~
 }
 
 #------------------------------------------------------
 # others
 #------------------------------------------------------
 git-clone-shallow() {
-  git clone --depth 1 "$@"
+  $GIT_EXE clone --depth 1 "$@"
 }
 
 git-clone-shallow-recursive() {
-  git clone --depth 1 --recurse-submodules --shallow-submodules "$@"
+  $GIT_EXE clone --depth 1 --recurse-submodules --shallow-submodules "$@"
 }
 
 git-clone-recursive() {
-  git clone --recurse-submodules "$@"
+  $GIT_EXE clone --recurse-submodules "$@"
 }
 
 git-submodule-update-all() {
-  git submodule update --init --recursive
+  $GIT_EXE submodule update --init --recursive
 }
 
 git-dirdiff() {
-  git difftool --dir-diff
+  $GIT_EXE difftool --dir-diff
 }
 
 #------------------------------------------------------
 # alias
 #------------------------------------------------------
-alias gs='git.sh status'
-alias gS='git.sh status -s'
-alias gd='git.sh diff'
-alias gD='git.sh diff --staged'
-alias gf='git.sh fetch'
-alias gg='git.sh graph'
-alias gb='git.sh branch'
-alias gt='git.sh tag'
+alias gs='$GIT_EXE status'
+alias gS='$GIT_EXE status -s'
+alias gd='$GIT_EXE diff'
+alias gD='$GIT_EXE diff --staged'
+alias gf='$GIT_EXE fetch'
+alias gg='$GIT_EXE graph'
+alias gb='$GIT_EXE branch'
+alias gt='$GIT_EXE tag'
 
-alias gA='git add'
-alias gAu='git add -u'
+alias gA='$GIT_EXE add'
+alias gAu='$GIT_EXE add -u'
 alias gAC='git-commit-add'
 alias gC='git-commit'
 
-alias gR='git reset --hard'
+alias gR='$GIT_EXE reset --hard'
 alias gRom='git-reset-hard-origin'
 alias gPom='git-push-origin'
 
