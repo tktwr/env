@@ -11,81 +11,81 @@
 -   ref.EJ                             | :EJ ??
 -   ref.EE                             | :EE ??
     ---------------------------------- | ----------------------------------------
--   ref.tags.bin_sh                    | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
--   ref.tags.bin_py                    | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
--   ref.tags.etc_sh                    | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
--   ref.tags.etc_vim                   | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
--   ref.tags.memo                      | :call TagCatalog("$MY_MEMO/tags", "memo")
--   ref.tags.libtt                     | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
+-   tags.bin_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bin_sh", "sh")
+-   tags.bin_py                        | :call TagCatalog("$MY_ENV/tags/tags.bin_py", "py")
+-   tags.etc_sh                        | :call TagCatalog("$MY_ENV/tags/tags.bash", "sh")
+-   tags.etc_vim                       | :call TagCatalog("$MY_ENV/tags/tags.vim", "vim")
+-   tags.memo                          | :call TagCatalog("$MY_MEMO/tags", "memo")
+-   tags.libtt                         | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
     ---------------------------------- | ----------------------------------------
--   ref.tags.imgui                     | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
--   ref.tags.eigen                     | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
--   ref.tags.glm                       | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
--   ref.tags.opencv2                   | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
+-   tags.imgui                         | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
+-   tags.eigen                         | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
+-   tags.glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
+-   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
--   ref.help                  (F1)     | :echo
--   ref.x                     (F2)     | :echo
--   ref.x                     (F3)     | :echo
--   ref.desktop               (F4)     | :echo
--   ref.reload                (F5)     | :echo
--   ref.x                     (F6)     | :echo
--   ref.maximize left         (F7)     | :echo
--   ref.maximize              (F8)     | :echo
--   ref.maximize right        (F9)     | :echo
--   ref.maximize toggle      (F10)     | :echo
--   ref.xbox game bar        (F11)     | :echo
--   ref.system               (F12)     | :echo
+-   Fkey.help                  (F1)    | :echo
+-   Fkey.x                     (F2)    | :echo
+-   Fkey.x                     (F3)    | :echo
+-   Fkey.desktop               (F4)    | :echo
+-   Fkey.reload                (F5)    | :echo
+-   Fkey.x                     (F6)    | :echo
+-   Fkey.maximize left         (F7)    | :echo
+-   Fkey.maximize              (F8)    | :echo
+-   Fkey.maximize right        (F9)    | :echo
+-   Fkey.maximize toggle      (F10)    | :echo
+-   Fkey.xbox game bar        (F11)    | :echo
+-   Fkey.system               (F12)    | :echo
     ---------------------------------- | ----------------------------------------
--   ref.cpm menu           (Space)     | :echo
--   ref.wbl menu             (End)     | :echo
--   ref.page up               (BS)     | :echo
--   ref.page down           (PgDn)     | :echo
--   ref.tab prev            (PgUp)     | :echo
--   ref.tab next          (S-PgUp)     | :echo
--   ref.tab new              (Ins)     | :echo
--   ref.tab close            (Del)     | :echo
--   ref.view                (C-CR)     | :echo
--   ref.open                (S-CR)     | :echo
--   ref.lcd                  (C-.)     | :echo
--   ref.command mode         (C-;)     | :echo
--   ref.tjump                (C-])     | :echo
+-   map.cpm menu           (Space)     | :echo
+-   map.wbl menu             (End)     | :echo
+-   map.page up               (BS)     | :echo
+-   map.page down           (PgDn)     | :echo
+-   map.tab prev            (PgUp)     | :echo
+-   map.tab next          (S-PgUp)     | :echo
+-   map.tab new              (Ins)     | :echo
+-   map.tab close            (Del)     | :echo
+-   map.view                (C-CR)     | :echo
+-   map.open                (S-CR)     | :echo
+-   map.lcd                  (C-.)     | :echo
+-   map.command mode         (C-;)     | :echo
+-   map.tjump                (C-])     | :echo
 [ref.keys2] -------------------------- | ----------------------------------------
--   ref.window 1 top         (C-1)     | :echo
--   ref.window 2             (C-2)     | :echo
--   ref.x                    (C-3)     | :echo
--   ref.x                    (C-4)     | :echo
--   ref.x                    (C-5)     | :echo
--   ref.x                    (C-6)     | :echo
--   ref.maximize x           (C-7)     | :echo
--   ref.maximize xy          (C-8)     | :echo
--   ref.maximize y           (C-9)     | :echo
--   ref.window 0 bottom      (C-0)     | :echo
+-   map.window 1 top         (C-1)     | :echo
+-   map.window 2             (C-2)     | :echo
+-   map.x                    (C-3)     | :echo
+-   map.x                    (C-4)     | :echo
+-   map.x                    (C-5)     | :echo
+-   map.x                    (C-6)     | :echo
+-   map.maximize x           (C-7)     | :echo
+-   map.maximize xy          (C-8)     | :echo
+-   map.maximize y           (C-9)     | :echo
+-   map.window 0 bottom      (C-0)     | :echo
     ---------------------------------- | ----------------------------------------
--   ref.quickhl              (C-a)     | :echo
--   ref.x                    (C-b)     | :echo
--   ref.x                    (C-c)     | :echo
--   ref.page up              (C-d)     | :echo
--   ref.close                (C-e)     | :echo
--   ref.page down            (C-f)     | :echo
--   ref.redraw               (C-g)     | :echo
--   ref.window left          (C-h)     | :echo
--   ref.TAB                  (C-i)     | :echo
--   ref.window next          (C-j)     | :echo
--   ref.window prev          (C-k)     | :echo
--   ref.window right         (C-l)     | :echo
--   ref.CR                   (C-m)     | :echo
--   ref.cn                   (C-n)     | :echo
--   ref.wbl pop              (C-o)     | :echo
--   ref.cp                   (C-p)     | :echo
--   ref.@q                   (C-q)     | :echo
--   ref.redo                 (C-r)     | :echo
--   ref.x                    (C-s)     | :echo
--   ref.tag back             (C-t)     | :echo
--   ref.wbl menu             (C-u)     | :echo
--   ref.block select         (C-v)     | :echo
--   ref.window command       (C-w)     | :echo
--   ref.coc menu             (C-x)     | :echo
--   ref.x                    (C-y)     | :echo
--   ref.x                    (C-z)     | :echo
+-   map.quickhl              (C-a)     | :echo
+-   map.x                    (C-b)     | :echo
+-   map.x                    (C-c)     | :echo
+-   map.page up              (C-d)     | :echo
+-   map.close                (C-e)     | :echo
+-   map.page down            (C-f)     | :echo
+-   map.redraw               (C-g)     | :echo
+-   map.window left          (C-h)     | :echo
+-   map.TAB                  (C-i)     | :echo
+-   map.window next          (C-j)     | :echo
+-   map.window prev          (C-k)     | :echo
+-   map.window right         (C-l)     | :echo
+-   map.CR                   (C-m)     | :echo
+-   map.cn                   (C-n)     | :echo
+-   map.wbl pop              (C-o)     | :echo
+-   map.cp                   (C-p)     | :echo
+-   map.@q                   (C-q)     | :echo
+-   map.redo                 (C-r)     | :echo
+-   map.x                    (C-s)     | :echo
+-   map.tag back             (C-t)     | :echo
+-   map.wbl menu             (C-u)     | :echo
+-   map.block select         (C-v)     | :echo
+-   map.window command       (C-w)     | :echo
+-   map.coc menu             (C-x)     | :echo
+-   map.x                    (C-y)     | :echo
+-   map.x                    (C-z)     | :echo
 
 # vim:set ft=bmk syntax=txt nowrap:

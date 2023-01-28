@@ -5,6 +5,7 @@
 -   FzfGFiles                          | :FzfGFiles
     ---------------------------------- | ----------------------------------------
 -   FzfCommands                        | :FzfCommands
+-   FzfMaps                            | :FzfMaps
 -   FzfColors                          | :FzfColors
     ---------------------------------- | ----------------------------------------
 -   CocFzfList                         | :CocFzfList

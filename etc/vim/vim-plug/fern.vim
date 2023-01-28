@@ -16,7 +16,7 @@ let g:fern#renderer = 'nerdfont'
 "let g:fern#renderer#default#leading = "  "
 
 func s:my_fern_settings()
-  nmap <buffer> <C-X>  :CpmOpen fern<CR>
+  nmap <buffer> <C-Space>  :CpmOpen fern<CR>
 endfunc
 
 augroup ag_fern

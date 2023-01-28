@@ -25,6 +25,9 @@ endif
 let g:coc_disable_startup_warning = 1
 "let g:coc_uri_prefix_replace_patterns = {'/home': 'C:/msys64/home'}
 
+let g:coc_status_error_sign = ' '
+let g:coc_status_warning_sign = ' '
+
 "------------------------------------------------------
 " coc.func
 "------------------------------------------------------

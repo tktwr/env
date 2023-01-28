@@ -1,10 +1,10 @@
 [coc] -------------------------------- | ----------------------------------------
 - D CocDiagnostics                     | :CocDiagnostics
 -   CocAction('doHover')   (K)         | :call CocAction('doHover')
--   CocAction('showIncomingCalls')     | :call CocAction('showIncomingCalls')
--   CocAction('showOutgoingCalls')     | :call CocAction('showOutgoingCalls')
+- I CocAction('showIncomingCalls')     | :call CocAction('showIncomingCalls')
+- O CocAction('showOutgoingCalls')     | :call CocAction('showOutgoingCalls')
     ---------------------------------- | ----------------------------------------
-- I CocInfo                            | :CocInfo
+-   CocInfo                            | :CocInfo
 - L CocOpenLog                         | :CocOpenLog
 -   MyCocInstall                       | :MyCocInstall
 -   CocUpdate                          | :CocUpdate

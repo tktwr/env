@@ -65,7 +65,7 @@ nnoremap ==      zi
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
- nnoremap <silent> <C-X>   <C-W>:CpmOpen coc<CR>
+ nnoremap <silent> <C-X>   :echo<CR>
  nnoremap <silent> <C-Y>   :echo<CR>
  nnoremap <silent> <C-Z>   :echo<CR>
 
@@ -161,8 +161,10 @@ tnoremap <silent> <C-0> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
+nnoremap <silent> <F1>       <C-W>:FzfHelptags<CR>
+
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
-nnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
+nnoremap <silent> <C-Space>  <C-W>:CpmOpen coc<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 
 nnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>

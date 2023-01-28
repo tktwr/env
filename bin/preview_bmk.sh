@@ -27,6 +27,9 @@ case "$file" in
   ':'*)
     echo "vcmd: [$file]"
     ;;
+  '_Plug_'*)
+    echo "vcmd: [$file]"
+    ;;
   http*)
     echo "http: [$file]"
     ;;

@@ -1,29 +1,35 @@
 "======================================================
 " highlight
 "======================================================
-hi MyRed           ctermfg=167 guifg=#fb4934
-hi MyOrange        ctermfg=208 guifg=#fe8019
-hi MyYellow        ctermfg=214 guifg=#fabd2f
-hi MyGreen         ctermfg=142 guifg=#b8bb26
-hi MyAqua          ctermfg=108 guifg=#8ec07c
-hi MyBlue          ctermfg=109 guifg=#707fd9
-hi MyPurple        ctermfg=175 guifg=#d3869b
+let my_colors = [
+      \ {'name': 'MyRed'         , 'ctermfg': 167 , 'guifg': '#fb4934'} ,
+      \ {'name': 'MyOrange'      , 'ctermfg': 208 , 'guifg': '#fe8019'} ,
+      \ {'name': 'MyYellow'      , 'ctermfg': 214 , 'guifg': '#fabd2f'} ,
+      \ {'name': 'MyGreen'       , 'ctermfg': 142 , 'guifg': '#b8bb26'} ,
+      \ {'name': 'MyAqua'        , 'ctermfg': 108 , 'guifg': '#8ec07c'} ,
+      \ {'name': 'MyBlue'        , 'ctermfg': 109 , 'guifg': '#707fd9'} ,
+      \ {'name': 'MyPurple'      , 'ctermfg': 175 , 'guifg': '#d3869b'} ,
+      \ {'name': 'MyDark1Red'    , 'ctermfg': 124 , 'guifg': '#cc241d'} ,
+      \ {'name': 'MyDark1Orange' , 'ctermfg': 166 , 'guifg': '#d65d0e'} ,
+      \ {'name': 'MyDark1Yellow' , 'ctermfg': 172 , 'guifg': '#d79921'} ,
+      \ {'name': 'MyDark1Green'  , 'ctermfg': 106 , 'guifg': '#98971a'} ,
+      \ {'name': 'MyDark1Aqua'   , 'ctermfg': 72  , 'guifg': '#689d6a'} ,
+      \ {'name': 'MyDark1Blue'   , 'ctermfg': 66  , 'guifg': '#458588'} ,
+      \ {'name': 'MyDark1Purple' , 'ctermfg': 132 , 'guifg': '#b16286'} ,
+      \ {'name': 'MyDark2Red'    , 'ctermfg': 88  , 'guifg': '#9d0006'} ,
+      \ {'name': 'MyDark2Orange' , 'ctermfg': 130 , 'guifg': '#af3a03'} ,
+      \ {'name': 'MyDark2Yellow' , 'ctermfg': 136 , 'guifg': '#b57614'} ,
+      \ {'name': 'MyDark2Green'  , 'ctermfg': 100 , 'guifg': '#79740e'} ,
+      \ {'name': 'MyDark2Aqua'   , 'ctermfg': 66  , 'guifg': '#427b58'} ,
+      \ {'name': 'MyDark2Blue'   , 'ctermfg': 24  , 'guifg': '#076678'} ,
+      \ {'name': 'MyDark2Purple' , 'ctermfg': 96  , 'guifg': '#8f3f71'} ,
+      \ ]
 
-hi MyRedRevBold    ctermfg=167 guifg=#fb4934 cterm=reverse,bold gui=reverse,bold
-hi MyOrangeRevBold ctermfg=208 guifg=#fe8019 cterm=reverse,bold gui=reverse,bold
-hi MyYellowRevBold ctermfg=214 guifg=#fabd2f cterm=reverse,bold gui=reverse,bold
-hi MyGreenRevBold  ctermfg=142 guifg=#b8bb26 cterm=reverse,bold gui=reverse,bold
-hi MyAquaRevBold   ctermfg=108 guifg=#8ec07c cterm=reverse,bold gui=reverse,bold
-hi MyBlueRevBold   ctermfg=109 guifg=#707fd9 cterm=reverse,bold gui=reverse,bold
-hi MyPurpleRevBold ctermfg=175 guifg=#d3869b cterm=reverse,bold gui=reverse,bold
-
-hi MyRedSign       ctermfg=167 guifg=#fb4934 ctermbg=237 guibg=#3c3836
-hi MyOrangeSign    ctermfg=208 guifg=#fe8019 ctermbg=237 guibg=#3c3836
-hi MyYellowSign    ctermfg=214 guifg=#fabd2f ctermbg=237 guibg=#3c3836
-hi MyGreenSign     ctermfg=142 guifg=#b8bb26 ctermbg=237 guibg=#3c3836
-hi MyAquaSign      ctermfg=108 guifg=#8ec07c ctermbg=237 guibg=#3c3836
-hi MyBlueSign      ctermfg=109 guifg=#707fd9 ctermbg=237 guibg=#3c3836
-hi MyPurpleSign    ctermfg=175 guifg=#d3869b ctermbg=237 guibg=#3c3836
+for co in my_colors
+  exec printf('hi %s         ctermfg=%d guifg=%s', co['name'], co['ctermfg'], co['guifg'])
+  exec printf('hi %sSign     ctermfg=%d guifg=%s ctermbg=237 guibg=#3c3836', co['name'], co['ctermfg'], co['guifg'])
+  exec printf('hi %sRevBold  ctermfg=%d guifg=%s cterm=reverse,bold gui=reverse,bold', co['name'], co['ctermfg'], co['guifg'])
+endfor
 
 hi MyFg0           ctermfg=229 guifg=#fbf1c7
 hi MyFg1           ctermfg=223 guifg=#ebdbb2
@@ -42,9 +48,8 @@ hi MyBg1a          ctermbg=237 guibg=#3c3c36
 hi MyBgTerm        ctermbg=235 guibg=#252525
 
 hi MyNormal        ctermfg=223 guifg=#ebdbb2 ctermbg=236 guibg=#32302f
-hi MyStatusLineNC  ctermfg=237 guifg=#3c3836 ctermbg=246 guibg=#a89984 cterm=reverse gui=reverse
-hi MyStatusLine    ctermfg=239 guifg=#504945 ctermbg=223 guibg=#ebdbb2 cterm=reverse gui=reverse
-hi MyTabLine       ctermfg=100 guifg=#79740e ctermbg=236 guibg=#32302f cterm=reverse,bold gui=reverse,bold
+hi MyStatusLine    ctermfg=223 guifg=#ebdbb2 ctermbg=239 guibg=#504945
+hi MyStatusLineNC  ctermfg=246 guifg=#a89984 ctermbg=237 guibg=#3c3836
 
 "------------------------------------------------------
 " highlight link
@@ -55,7 +60,7 @@ hi! link StatusLineTerm     MyStatusLine
 hi! link StatusLineTermNC   MyStatusLineNC
 
 hi! link TabLineSel         MyGreenRevBold
-hi! link TabLine            MyTabLine
+hi! link TabLine            MyDark2GreenRevBold
 hi! link TabLineFill        MyStatusLineNC
 
 hi! link Folded             MyYellowSign

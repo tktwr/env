@@ -27,7 +27,7 @@ endif
 
 " popup menu support for nvim
 if has('nvim')
-  Plug 'kamykn/popup-menu.nvim'
+  Plug 'Ajnasz/vim-popup-menu'
 endif
 
 " ide
@@ -37,10 +37,10 @@ Plug 'tktwr/vim-ide-style'
 
 Plug 'tktwr/vim-memo'
 let g:memo_tags_files = [
-  \ "$MY_MEMO/tags.memo",
-  \ "$MY_SAMPLES/tags.memo",
-  \ "$MY_LOCAL_CONFIG/memo/tags.memo",
-  \ "$MY_DIARY/tags.memo",
+  \ "$MY_MEMO/tags",
+  \ "$MY_SAMPLES/tags",
+  \ "$MY_DIARY/tags",
+  \ "$MY_LOCAL_CONFIG/memo/tags",
   \ ]
 
 " color

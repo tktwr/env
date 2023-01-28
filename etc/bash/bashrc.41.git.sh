@@ -271,6 +271,7 @@ git-dirdiff() {
 #------------------------------------------------------
 # alias
 #------------------------------------------------------
+alias g='$GIT_EXE'
 alias gs='$GIT_EXE status'
 alias gS='$GIT_EXE status -s'
 alias gd='$GIT_EXE diff'

@@ -87,6 +87,8 @@ let g:vis_unexpand_env_list = [
   \ '$MY_PUBLIC',
   \ '$MY_DESKTOP',
   \ '$MY_DOWNLOADS',
+  \ '$USER_LOCAL',
+  \ '$USER_ROAMING',
   \ ]
 
 Plug 'tktwr/vim-ide-style'
@@ -94,10 +96,10 @@ Plug 'tktwr/vim-ide-style'
 " vim-memo
 "------------------------------------------------------
 let g:memo_tags_files = [
-  \ "$MY_MEMO/tags.memo",
-  \ "$MY_SAMPLES/tags.memo",
-  \ "$MY_LOCAL_CONFIG/memo/tags.memo",
-  \ "$MY_DIARY/tags.memo",
+  \ "$MY_MEMO/tags",
+  \ "$MY_SAMPLES/tags",
+  \ "$MY_DIARY/tags",
+  \ "$MY_LOCAL_CONFIG/memo/tags",
   \ ]
 
 Plug 'tktwr/vim-memo'
