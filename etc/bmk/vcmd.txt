@@ -1,32 +1,34 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
-- f Bmk                                | :VisFzfBmk
-- d Files                              | :VisFzfFiles
-- r Rg                                 | :FzfRg
-- b Buffers                            | :FzfBuffers
-- t Tags                               | :FzfTags
-- H Helptags                           | :FzfHelptags
-- S Git status                         | :FzfGFiles?
-- G Git graph                          | :FzfCommits
-[vcmd.external] ---------------------- | ----------------------------------------
--   OpenURL  %                         | :call bmk#OpenURL('%:p')
--   OpenFile %                         | :call bmk#OpenFile('%:p')
--   OpenDir  %                         | :call bmk#OpenDir('%:p:h')
+- f  Bmk                              | :VisFzfBmk
+- d  Files                            | :VisFzfFiles
+- b  Buffers                          | :FzfBuffers
+- r  Rg                               | :FzfRg
     ---------------------------------- | ----------------------------------------
--   ViewThis            (C-CR)         | :call bmk#ViewThis()
--   OpenThis            (S-CR)         | :call bmk#OpenThis()
+- t  Tags                             | :FzfTags
+- ?  Help                             | :FzfHelptags
+    ---------------------------------- | ----------------------------------------
+- s  Git status                       | :FzfGFiles?
+- g  Git graph                        | :FzfCommits
+[vcmd.external] ---------------------- | ----------------------------------------
+-    OpenURL  %                       | :call bmk#OpenURL('%:p')
+-    OpenFile %                       | :call bmk#OpenFile('%:p')
+-    OpenDir  %                       | :call bmk#OpenDir('%:p:h')
+    ---------------------------------- | ----------------------------------------
+-    ViewThis          (C-CR)         | :call bmk#ViewThis()
+-    OpenThis          (S-CR)         | :call bmk#OpenThis()
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
-- > TagBar                             | :VisTagbarToggle
+- >  TagBar                           | :VisTagbarToggle
 - F Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
-- T Term                               | :VisTerm
-- _ Cd                                 | :VisSendCdE2T
+- T  Term                             | :VisTerm
+- _  Cd                               | :VisSendCdE2T
     ---------------------------------- | ----------------------------------------
-- g Git grep                           | :VisGgrep ??
-- v Vim grep here                      | :VisVimgrep ?? *
-- A Vim grep all                       | :call MyVimgrepAll('??')
-- ] Tjump                              | :call VisTjumpPrompt()
+- G  Git grep                         | :VisGgrep ??
+- V  Vim grep here                    | :VisVimgrep ?? *
+- A  Vim grep all                     | :call MyVimgrepAll('??')
+- ]  Tag jump                         | :call VisTjumpPrompt()
     ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
 - p Paste                 (,p)         | ,p
@@ -34,7 +36,7 @@
 - Y YankFilePath                       | :call YankFilePath()
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
-- R CpmReload                          | :CpmReload
+- R  Reload menu                      | :CpmReload
 [vcmd.sub] --------------------------- | ----------------------------------------
 - T MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()

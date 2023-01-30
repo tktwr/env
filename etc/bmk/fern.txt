@@ -1,6 +1,6 @@
 [fern.menu] -------------------------- | ----------------------------------------
-- f Bmk                                | :VisFzfBmk
-- d Dirs                               | :VisFzfDirs
+- f  Bmk                              | :VisFzfBmk
+- d  Dirs                             | :VisFzfDirs
 [fern.menu.ext] ---------------------- | ----------------------------------------
 [fern.external] ---------------------- | ----------------------------------------
 -   fern.ViewItem     (C-CR)           | :call VisFernViewItem()

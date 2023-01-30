@@ -1,6 +1,6 @@
 [tcmd.menu] -------------------------- | ----------------------------------------
-- f bmkd?                              | > bmkd?<CR>
-- c tcmd?                              | > tcmd?<CR>
+- f  bmkd?                            | > bmkd?<CR>
+- c  tcmd?                            | > tcmd?<CR>
 [tcmd.menu.ext] ---------------------- | ----------------------------------------
 -   fzf_apt.sh                         | > fzf_apt.sh<CR>
 -   fzf_dpkg.sh                        | > fzf_dpkg.sh<CR>
