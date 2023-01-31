@@ -16,7 +16,7 @@ f_ins_path_man()  { export MANPATH="$*:$MANPATH"; }
 f_ins_path_info() { export INFOPATH="$*:$INFOPATH"; }
 
 #------------------------------------------------------
-f_path_init() {
+f_init_path() {
   if [ -z "$SYS_PATH" ]; then
     export SYS_PATH=$PATH
     export SYS_PYTHONPATH=$PYTHONPATH
@@ -32,7 +32,7 @@ f_path_init() {
   export INFOPATH="$SYS_INFOPATH"
 }
 
-f_path_local() {
+f_ins_path_local() {
   local pth=$1
   f_ins_path      "$pth/bin"
   f_ins_path_ld   "$pth/bin"
@@ -41,7 +41,7 @@ f_path_local() {
   f_ins_path_info "$pth/share/info"
 }
 
-f_path_env() {
+f_ins_path_env() {
   local pth=$1
   f_ins_path "$pth/bin"
   f_ins_path "$pth/bin/cron"
@@ -55,8 +55,7 @@ f_path_env() {
 }
 
 #------------------------------------------------------
-f_path_init
+f_init_path
 f_ins_path_man "/usr/local/share/man"
-#f_path_local $MY_OPT/usr/local
-f_path_env $MY_ENV
-
+#f_ins_path_local $MY_OPT/usr/local
+f_ins_path_env $MY_ENV

@@ -187,9 +187,12 @@
 -   link.cmake                                               | https://cmake.org/
 -   link.nodejs                                              | https://nodejs.org/ja/
     ------------------------------------                     | ----------------------------------------
+-   link.linux.new_commands                                  | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
+-   link.linux.exa                                           | https://github.com/ogham/exa
 -   link.linux.bat                                           | https://github.com/sharkdp/bat
 -   link.linux.fd                                            | https://github.com/sharkdp/fd
 -   link.linux.ripgrep                                       | https://github.com/BurntSushi/ripgrep
+-   link.linux.ncdu                                          | https://dev.yorhel.nl/ncdu
 -   link.linux.snapcraft                                     | https://snapcraft.io/
 -   link.linux.flathub                                       | https://flathub.org/
 -   link.linux.launchpad                                     | https://launchpad.net/ubuntu

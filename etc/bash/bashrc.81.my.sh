@@ -13,6 +13,7 @@ mv.G() { mv "$@" `mypushd.sh --get`; }
 cp.G() { cp "$@" `mypushd.sh --get`; }
 
 #------------------------------------------------------
+alias l='exa.sh'
 alias ls='ls.sh'
 alias make='mymake.sh'
 
