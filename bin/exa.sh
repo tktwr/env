@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec exa -lFG --icons --git --no-permissions --no-filesize --no-user --no-time "$@"
+exec exa -lFG --icons --git --group-directories-first --no-permissions --no-filesize --no-user --no-time "$@"

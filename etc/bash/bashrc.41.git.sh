@@ -271,7 +271,16 @@ git-dirdiff() {
 #------------------------------------------------------
 # alias
 #------------------------------------------------------
-alias g='$GIT_EXE'
+git-default() {
+  if [ $# -eq 0 ]; then
+    $GIT_EXE status -s
+  else
+    $GIT_EXE "$@"
+  fi
+}
+
+alias g='git-default'
+
 alias gs='$GIT_EXE status'
 alias gS='$GIT_EXE status -s'
 alias gd='$GIT_EXE diff'

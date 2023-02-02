@@ -1,4 +1,8 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
+- y .my/                               | $MY_DOTMY/
+- c local.common/                      | $MY_COMMON_SETTING/
+- M local.memo/                        | $MY_LOCAL_CONFIG/memo/
+    ---------------------------------- | ----------------------------------------
 - E env/                               | $MY_ENV/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
@@ -7,16 +11,14 @@
 - m memo/                              | $MY_MEMO/
 - s samples/                           | $MY_SAMPLES/
     ---------------------------------- | ----------------------------------------
-- y .my/                               | $MY_DOTMY/
-- c common/                            | $MY_COMMON_SETTING/
+- g git/                               | $MY_GIT/
+- p proj/                              | $MY_PROJ/
+- d doc/                               | $MY_DOC/
+- o office/                            | $MY_OFFICE/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
--   proj/                              | $MY_PROJ/
 -   work/                              | $MY_WORK/
--   git/                               | $MY_GIT/
--   doc/                               | $MY_DOC/
--   office/                            | $MY_OFFICE/
     ---------------------------------- | ----------------------------------------
 -   arch/                              | $MY_ARCH/
 -   backup/                            | $MY_BACKUP/

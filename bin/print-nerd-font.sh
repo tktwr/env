@@ -32,7 +32,7 @@ echo '    '
 echo '       '
 echo '       '
 
-echo 'fern:        '
+echo 'fern:                 '
 echo '    '
 echo '   '
 echo '       '
