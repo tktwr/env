@@ -1,7 +1,7 @@
 #!/bin/bash
 
 g_bin_name='fzf_bmk.sh'
-g_action='fzf'
+g_action='--fzf'
 g_pre_filter='-'
 g_files=""
 
@@ -14,9 +14,12 @@ f_help() {
   echo "  $g_bin_name [options] [file...]"
   echo
   echo "OPTIONS"
-  echo "  -h, --help ... print help"
-  echo "  --src      ... print source"
-  echo "  +          ... filter +"
+  echo "  --help       ... print help"
+  echo "  --print-args ... print args"
+  echo "  --src        ... print source lines"
+  echo "  --fzf        ... print the selected line by fzf"
+  echo "  --fzf-post   ... print the selected line by fzf (post processed)"
+  echo "  +            ... filter +"
 }
 
 #------------------------------------------------------
@@ -46,11 +49,18 @@ fzf_bmk() {
   done
 
   cmd="cat $files 2> /dev/null"
-  if [ $g_action = 'fzf' ]; then
-    eval "$cmd" | fzf_bmk_pre | fzf | fzf_bmk_post
-  else
-    eval "$cmd" | fzf_bmk_pre
-  fi
+
+  case $g_action in
+    --src)
+      eval "$cmd" | fzf_bmk_pre
+      ;;
+    --fzf)
+      eval "$cmd" | fzf_bmk_pre | fzf --prompt '   '
+      ;;
+    --fzf-post)
+      eval "$cmd" | fzf_bmk_pre | fzf --prompt '   ' | fzf_bmk_post
+      ;;
+  esac
 }
 
 #------------------------------------------------------
@@ -65,7 +75,7 @@ f_print_args() {
 f_parse_args() {
   while [ $# -gt 0 ]; do
     case "$1" in
-      -h|--help)
+      --help)
         f_help
         exit
         ;;
@@ -73,8 +83,8 @@ f_parse_args() {
         f_print_args 1>&2
         exit
         ;;
-      --src)
-        g_action='src'
+      --src|--fzf|--fzf-post)
+        g_action=$1
         ;;
       +)
         g_pre_filter='+'
@@ -89,4 +99,6 @@ f_parse_args() {
 
 #------------------------------------------------------
 f_parse_args "$@"
-fzf_bmk $g_files
+if [ "$g_files" != "" ]; then
+  fzf_bmk $g_files
+fi

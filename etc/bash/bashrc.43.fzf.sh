@@ -31,6 +31,51 @@ fzf_cmd() {
 }
 
 #------------------------------------------------------
+bmk_get_value() {
+  awk -F '|' '{print $2}' | sed -e 's+^ *++'
+}
+
+bmk_rm_tcmd() {
+  sed -e 's+> ++' -e 's+<CR>++'
+}
+
+bmk_expand() {
+  eval "echo $*"
+}
+
+bmk_exec() {
+  file=$(echo "$*" | bmk_get_value)
+
+  case "$file" in
+    '>'*)
+      echo "tcmd: [$file]"
+      file=$(echo "$file" | bmk_rm_tcmd)
+      eval "$file"
+      ;;
+    ':'*)
+      echo "vcmd: [$file]"
+      ;;
+    '_Plug_'*)
+      echo "vcmd: [$file]"
+      ;;
+    http*)
+      echo "http: [$file]"
+      chrome.sh "$file"
+      ;;
+    *)
+      file=$(bmk_expand "$file")
+      if [ -d "$file" ]; then
+        echo "dir: [$file]"
+        cd "$file"
+      elif [ -f "$file" ]; then
+        echo "file: [$file]"
+        vim.sh "$file"
+      fi
+      ;;
+  esac
+}
+
+#------------------------------------------------------
 fzf_rg() {
   fzf_cmd echo "fzf_rg.sh $*"
 }
@@ -38,26 +83,26 @@ fzf_rg() {
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
-alias      .?='fzf_cmd pushd     "fzf_bmk.sh bmk_dir.txt"'
+alias      .?='fzf_cmd pushd     "fzf_bmk.sh --fzf-post bmk_dir.txt"'
 alias      ,?='fzf_cmd popd       fzf_pushd'
 alias      ??='fzf_cmd pushd      fzf_pushd'
 
-alias     vi?='fzf_cmd vim       "fzf_file.sh"'
-alias   bmkf?='fzf_cmd vim       "fzf_bmk.sh bmk_file.txt"'
+alias       f='bmk_exec         $(fzf_bmk.sh bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
 
-alias     cd?='fzf_cmd cd        "fzf_dir.sh"'
-alias   bmkd?='fzf_cmd cd        "fzf_bmk.sh bmk_dir.txt"'
+alias   make?='fzf_cmd make       fzf_make.sh'
+alias     cd?='fzf_cmd cd        "fzf_fd.sh --type=d"'
+alias     vi?='fzf_cmd vim       "fzf_fd.sh --type=f"'
 
-alias   tcmd?='fzf_cmd eval      "fzf_bmk.sh tcmd.txt tcmd_git.txt tcmd_sys.txt"'
-alias  links?='fzf_cmd chrome.sh "fzf_bmk.sh links.txt"'
-alias papers?='fzf_cmd chrome.sh "fzf_bmk.sh papers.txt"'
-
-alias     ff?='fzf_file.sh'
-alias     fd?='fzf_dir.sh'
+alias     fd?='fzf_fd.sh --type=d'
+alias     ff?='fzf_fd.sh --type=f'
 
 alias     rg?='fzf_rg'
 
-alias   make?='fzf_cmd make       fzf_make.sh'
+# alias      h?='fzf_cmd "!"        fzf_hist'
 
-#alias      h?='fzf_cmd "!"        fzf_hist'
+# alias   bmkd?='fzf_cmd cd        "fzf_bmk.sh --fzf-post bmk_dir.txt"'
+# alias   bmkf?='fzf_cmd vim       "fzf_bmk.sh --fzf-post bmk_file.txt"'
+# alias   tcmd?='fzf_cmd eval      "fzf_bmk.sh --fzf-post tcmd.txt tcmd_git.txt tcmd_sys.txt"'
+# alias  links?='fzf_cmd chrome.sh "fzf_bmk.sh --fzf-post links.txt"'
+# alias papers?='fzf_cmd chrome.sh "fzf_bmk.sh --fzf-post papers.txt"'
 

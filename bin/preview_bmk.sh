@@ -4,7 +4,7 @@ bmk_get_value() {
   awk -F '|' '{print $2}' | sed -e 's+^ *++'
 }
 
-rm_tcmd() {
+bmk_rm_tcmd() {
   sed -e 's+> ++' -e 's+<CR>++'
 }
 
