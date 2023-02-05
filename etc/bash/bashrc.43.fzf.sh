@@ -19,13 +19,10 @@ fzf_hist() {
 }
 
 #------------------------------------------------------
-# fzf_cmd
-#------------------------------------------------------
-fzf_cmd() {
+eval_cmd() {
   cmd="$1"
-  arg=`$2`
+  arg="$2"
   if [ -n "$arg" ]; then
-    export FZF_SELECTED="$arg"
     eval "$cmd \"$arg\""
   fi
 }
@@ -66,43 +63,27 @@ bmk_exec() {
       file=$(bmk_expand "$file")
       if [ -d "$file" ]; then
         echo "dir: [$file]"
-        cd "$file"
+        eval_cmd cd "$file"
       elif [ -f "$file" ]; then
         echo "file: [$file]"
-        vim.sh "$file"
+        eval_cmd vim "$file"
       fi
       ;;
   esac
 }
 
 #------------------------------------------------------
-fzf_rg() {
-  fzf_cmd echo "fzf_rg.sh $*"
-}
-
-#------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
-alias      .?='fzf_cmd pushd     "fzf_bmk.sh --fzf-post bmk_dir.txt"'
-alias      ,?='fzf_cmd popd       fzf_pushd'
-alias      ??='fzf_cmd pushd      fzf_pushd'
+alias       f='bmk_exec           $(fzf_bmk.sh --prompt-all bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
 
-alias       f='bmk_exec         $(fzf_bmk.sh bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
+alias      .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
+alias      ,?='eval_cmd popd      $(fzf_pushd)'
+alias      ??='eval_cmd pushd     $(fzf_pushd)'
 
-alias   make?='fzf_cmd make       fzf_make.sh'
-alias     cd?='fzf_cmd cd        "fzf_fd.sh --type=d"'
-alias     vi?='fzf_cmd vim       "fzf_fd.sh --type=f"'
+alias   make?='eval_cmd make      $(fzf_make.sh)'
+alias     cd?='eval_cmd cd        $(fzf_fd.sh --type=d)'
+alias     vi?='eval_cmd vim       $(fzf_fd.sh --type=f)'
 
 alias     fd?='fzf_fd.sh --type=d'
 alias     ff?='fzf_fd.sh --type=f'
-
-alias     rg?='fzf_rg'
-
-# alias      h?='fzf_cmd "!"        fzf_hist'
-
-# alias   bmkd?='fzf_cmd cd        "fzf_bmk.sh --fzf-post bmk_dir.txt"'
-# alias   bmkf?='fzf_cmd vim       "fzf_bmk.sh --fzf-post bmk_file.txt"'
-# alias   tcmd?='fzf_cmd eval      "fzf_bmk.sh --fzf-post tcmd.txt tcmd_git.txt tcmd_sys.txt"'
-# alias  links?='fzf_cmd chrome.sh "fzf_bmk.sh --fzf-post links.txt"'
-# alias papers?='fzf_cmd chrome.sh "fzf_bmk.sh --fzf-post papers.txt"'
-

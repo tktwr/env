@@ -4,6 +4,7 @@ g_bin_name='fzf_bmk.sh'
 g_action='--fzf'
 g_pre_filter='-'
 g_files=""
+g_prompt='   '
 
 #------------------------------------------------------
 f_help() {
@@ -55,10 +56,10 @@ fzf_bmk() {
       eval "$cmd" | fzf_bmk_pre
       ;;
     --fzf)
-      eval "$cmd" | fzf_bmk_pre | fzf --prompt '   '
+      eval "$cmd" | fzf_bmk_pre | fzf --prompt="$g_prompt"
       ;;
     --fzf-post)
-      eval "$cmd" | fzf_bmk_pre | fzf --prompt '   ' | fzf_bmk_post
+      eval "$cmd" | fzf_bmk_pre | fzf --prompt="$g_prompt" | fzf_bmk_post
       ;;
   esac
 }
@@ -85,6 +86,9 @@ f_parse_args() {
         ;;
       --src|--fzf|--fzf-post)
         g_action=$1
+        ;;
+      --prompt-all)
+        g_prompt='       '
         ;;
       +)
         g_pre_filter='+'

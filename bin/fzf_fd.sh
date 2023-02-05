@@ -31,7 +31,17 @@ git-cd-root() {
 fzf_find() {
   cmd="fdfind $g_opt"
 
-  p=$(eval $cmd | fzf --prompt '  ')
+  prompt='  '
+  case $g_opt in
+    *--type=d*)
+      prompt='   '
+      ;;
+    *--type=f*)
+      prompt='   '
+      ;;
+  esac
+
+  p=$(eval $cmd | fzf --prompt "$prompt")
   if [ -n "$p" ]; then
     p=$(pathconv.sh unix "$p")
   fi
