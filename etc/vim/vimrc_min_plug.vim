@@ -11,55 +11,54 @@ func s:InstallVimPlug()
   endif
 endfunc
 
-"------------------------------------------------------
 call s:InstallVimPlug()
-call plug#begin('$MY_VIM/plugged')
 
-" fern
-if v:true
+"------------------------------------------------------
+func PlugFern()
   Plug 'lambdalisue/fern.vim'
   Plug 'lambdalisue/nerdfont.vim'
   Plug 'lambdalisue/fern-renderer-nerdfont.vim'
   Plug 'lambdalisue/glyph-palette.vim'
   let g:fern#disable_default_mappings = 1
   let g:fern#renderer = 'nerdfont'
-endif
+endfunc
 
-" popup menu support for nvim
-if has('nvim')
-  Plug 'Ajnasz/vim-popup-menu'
-endif
+func PlugIDE()
+  if has('nvim')
+    Plug 'Ajnasz/vim-popup-menu'
+  endif
 
-" ide
-Plug 'tktwr/vim-winbuf-menu'
-Plug 'tktwr/vim-bmk-menu'
-Plug 'tktwr/vim-ide-style'
+  Plug 'tktwr/vim-winbuf-menu'
+  Plug 'tktwr/vim-bmk-menu'
+  Plug 'tktwr/vim-ide-style'
+endfunc
 
-Plug 'tktwr/vim-memo'
-let g:memo_tags_files = [
-  \ "$MY_MEMO/tags",
-  \ "$MY_SAMPLES/tags",
-  \ "$MY_DIARY/tags",
-  \ "$MY_LOCAL_CONFIG/memo/tags",
-  \ ]
+func PlugColor()
+  Plug 'morhetz/gruvbox'
+  let g:gruvbox_contrast_dark = "soft"
+endfunc
 
-" color
-Plug 'morhetz/gruvbox'
-let g:gruvbox_contrast_dark = "soft"
+"======================================================
+" main
+"======================================================
+call plug#begin('$MY_VIM/plugged')
+
+call PlugFern()
+call PlugIDE()
+call PlugColor()
 
 call plug#end()
 
-"======================================================
+"------------------------------------------------------
 " color
-"======================================================
+"------------------------------------------------------
 colorscheme gruvbox
 
-"======================================================
+"------------------------------------------------------
 " map
-"======================================================
+"------------------------------------------------------
 nnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
 tnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
 
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
-

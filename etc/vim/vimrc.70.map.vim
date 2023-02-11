@@ -193,12 +193,12 @@ tnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
-nnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
+nnoremap <silent> <C-Down>   <C-W>:below VisTerm<CR>
 
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
 tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
-tnoremap <silent> <C-Down>   <C-W>:VisTerm<CR>
+tnoremap <silent> <C-Down>   <C-W>:below VisTerm<CR>
 
 "======================================================
 " nvim

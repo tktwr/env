@@ -22,9 +22,11 @@ f_zero_env() {
 f_zero_path() {
   if [ -z "$SYS_PATH" ]; then
     export SYS_PATH=$PATH
+    export SYS_PYTHONPATH=$PYTHONPATH
   fi
   export PATH="$SYS_PATH"
   export PATH="$HOME/bin:$PATH"
+  export PYTHONPATH="$SYS_PYTHONPATH"
 }
 
 f_zero_alias() {

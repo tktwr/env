@@ -236,7 +236,7 @@ func GitLogAction(word)
     tabedit +VisGV
   elseif (a:word == "Status")
     call GitLogLcd()
-    tabedit +VisGstatusToggle
+    tabedit +VisGS
   elseif (a:word == "Setting")
     call GitLogStoreBuf()
     call GitLogSetting()

@@ -40,10 +40,6 @@ f_min_env() {
 }
 
 f_min_path() {
-  if [ -z "$SYS_PATH" ]; then
-    export SYS_PATH=$PATH
-  fi
-  export PATH="$SYS_PATH"
   export PATH="$MY_BIN:$PATH"
 }
 
@@ -64,11 +60,6 @@ f_min_python_linux() {
 }
 
 f_min_python() {
-  if [ -z "$SYS_PYTHONPATH" ]; then
-    export SYS_PYTHONPATH=$PYTHONPATH
-  fi
-  export PYTHONPATH="$SYS_PYTHONPATH"
-
   case $MY_OS_NAME in
     msys|gitbash)
       f_min_python_win

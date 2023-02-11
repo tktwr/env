@@ -22,7 +22,7 @@
 - >  TagBar                           | :VisTagbarToggle
 - F Fern                               | :VisFernDrawer %:p:h
 - N Editor                             | :new
-- T  Term                             | :VisTerm
+- T  Term                             | :below VisTerm
 - _  Cd                               | :VisSendCdE2T
     ---------------------------------- | ----------------------------------------
 - G  Git grep                         | :VisGgrep ??
@@ -45,7 +45,7 @@
     ---------------------------------- | ----------------------------------------
 -   ToggleDebug                        | :call bmk#ToggleDebug()
     ---------------------------------- | ----------------------------------------
-- s VisGstatusToggle                   | :VisGstatusToggle
+- s VisGS                              | :VisGS
 - v VisGV                              | :VisGV
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
@@ -66,7 +66,7 @@
 -   EditBmkLink                        | :call EditBmkLink()
 - p EditTogglePathFormat               | :call EditTogglePathFormat()
     ---------------------------------- | ----------------------------------------
-- c VisSendCurrCmdE2T                  | :VisSendCurrCmdE2T
+- c VisSendCmdE2T                      | :VisSendCmdE2T
 - W VisWinInfo                         | :VisWinInfo
 - E VisCheckEnv                        | :VisCheckEnv
     ---------------------------------- | ----------------------------------------
