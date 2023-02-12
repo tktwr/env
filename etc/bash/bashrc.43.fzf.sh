@@ -72,18 +72,31 @@ bmk_exec() {
   esac
 }
 
+fd_exec() {
+  file="$*"
+
+  if [ -d "$file" ]; then
+    echo "dir: [$file]"
+    eval_cmd cd "$file"
+  elif [ -f "$file" ]; then
+    echo "file: [$file]"
+    eval_cmd vim "$file"
+  fi
+}
+
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
 alias       f='bmk_exec           $(fzf_bmk.sh --prompt-all bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
+alias       d='fd_exec            $(fzf_fd.sh --root)'
+
+alias     cd?='eval_cmd cd        $(fzf_fd.sh --root --type=d)'
+alias     vi?='eval_cmd vim       $(fzf_fd.sh --root --type=f)'
+alias     fd?='fzf_fd.sh --root --type=d'
+alias     ff?='fzf_fd.sh --root --type=f'
 
 alias      .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
 alias      ,?='eval_cmd popd      $(fzf_pushd)'
 alias      ??='eval_cmd pushd     $(fzf_pushd)'
 
 alias   make?='eval_cmd make      $(fzf_make.sh)'
-alias     cd?='eval_cmd cd        $(fzf_fd.sh --type=d)'
-alias     vi?='eval_cmd vim       $(fzf_fd.sh --type=f)'
-
-alias     fd?='fzf_fd.sh --type=d'
-alias     ff?='fzf_fd.sh --type=f'

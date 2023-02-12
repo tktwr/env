@@ -19,6 +19,7 @@ matplotlib \
 scipy \
 sklearn \
 tensorboard \
+tkinterdnd2 \
 "
 
 # pytorch with CUDA 10.2

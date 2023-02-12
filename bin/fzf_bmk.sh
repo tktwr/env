@@ -35,6 +35,11 @@ fzf_bmk_pre() {
   esac
 }
 
+fzf_bmk_exec() {
+  #fzf --prompt="$g_prompt" --preview 'preview_bmk.sh {}'
+  fzf --prompt="$g_prompt"
+}
+
 fzf_bmk_post() {
   awk -F '|' '{print $2}' | sed -e 's+^ *++' -e 's+> ++' -e 's+<CR>++'
 }
@@ -56,10 +61,10 @@ fzf_bmk() {
       eval "$cmd" | fzf_bmk_pre
       ;;
     --fzf)
-      eval "$cmd" | fzf_bmk_pre | fzf --prompt="$g_prompt"
+      eval "$cmd" | fzf_bmk_pre | fzf_bmk_exec
       ;;
     --fzf-post)
-      eval "$cmd" | fzf_bmk_pre | fzf --prompt="$g_prompt" | fzf_bmk_post
+      eval "$cmd" | fzf_bmk_pre | fzf_bmk_exec | fzf_bmk_post
       ;;
   esac
 }

@@ -303,6 +303,8 @@ alias G='git-graph-date -6'
 alias GA='git-graph-date -6 --all'
 alias GM='git-log.sh --log 4 --log-submodule 2'
 
-alias gls='git-ls.sh'
 alias gba='git-print-branch-all'
 alias gta='git-print-tag-all'
+
+alias cd.root='cd $(git-root)'
+alias .root='pushd $(git-root)'

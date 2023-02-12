@@ -2,8 +2,10 @@
 - f  Bmk                  (f)         | > f<CR>
 [tcmd.menu.ext] ---------------------- | ----------------------------------------
 -   fzf_apt.sh                         | > fzf_apt.sh<CR>
+-   fzf_pip.sh                         | > fzf_pip.sh<CR>
 -   fzf_dpkg.sh                        | > fzf_dpkg.sh<CR>
 -   fzf_man.sh                         | > fzf_man.sh<CR>
+-   fzf_make.sh                        | > fzf_make.sh<CR>
 [tcmd.main] -------------------------- | ----------------------------------------
 - L Set tab label {name}               | > vimapi-tabline-set-label
     ---------------------------------- | ----------------------------------------
