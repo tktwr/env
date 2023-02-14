@@ -2,7 +2,7 @@
 - f  Bmk                              | :VisFzfBmk
 - d  Files                            | :VisFzfFiles
 - b  Buffers                          | :FzfBuffers
-- r  Rg                               | :FzfRg
+- r  Rg                               | :VisFzfRg
     ---------------------------------- | ----------------------------------------
 - t  Tags                             | :FzfTags
 - ?  Help                             | :FzfHelptags

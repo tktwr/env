@@ -9,12 +9,9 @@ unalias -a
 # functions
 #======================================================
 f_zero_env() {
-  export HISTCONTROL=ignoreboth
-
-  # prompt
   export PS1="\u@\h[\w]\$ "
-
-  # color
+  export HISTCONTROL=ignoreboth
+  export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
   export LS_COLORS="di=31:ln=31:tw=31:ow=31"
   export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
 }
@@ -79,6 +76,9 @@ f_zero_alias() {
   alias vim-none='/usr/bin/vim -u NONE'
   alias T2='vim -c "term" -c "only" -c "term"'
   alias V2='vim -c "term" -c "only" -c "vert term"'
+
+  alias fd?="fdfind --type=d | fzf --preview 'ls -F {}'"
+  alias ff?='fdfind --type=f | fzf'
 }
 
 vim-which() { vim `which $*`; }

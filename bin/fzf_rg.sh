@@ -1,24 +1,8 @@
 #!/bin/bash
 
-#------------------------------------------------------
-fzf_rg_post() {
-  awk -F ':' '{print $1}'
-}
-
 fzf_rg() {
-  cmd="rg --vimgrep $*"
-
-  p=$(eval $cmd | fzf | fzf_rg_post)
-  if [ -n "$p" ]; then
-    p=$(pathconv.sh unix "$p")
-  fi
-  echo $p
+  cmd="rg --column --line-number --no-heading --color=always --smart-case -- '$*'"
+  eval $cmd | fzf --ansi
 }
 
-#------------------------------------------------------
-arg=$(prompt.sh 'search pattern' '' "$*")
-
-if [ -n "$arg" ]; then
-  fzf_rg "$arg"
-fi
-
+fzf_rg "$*"

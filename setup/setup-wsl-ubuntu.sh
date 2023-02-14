@@ -8,14 +8,16 @@ ENV_DIR=~/MyRoaming/env
 
 pkg_min="\
 vim \
+fzf \
+bat \
+fd-find \
+ripgrep \
 python3-pip \
 python3-venv \
 python3-doc \
-fzy \
 zip unzip \
 universal-ctags \
 eblook \
-ripgrep \
 "
 pkg_ext="\
 vim-gtk3 \
@@ -29,8 +31,6 @@ neofetch \
 btop \
 ncal \
 googler \
-bat \
-fd-find \
 "
 pkg_ext2="\
 blender \

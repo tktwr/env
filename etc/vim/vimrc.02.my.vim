@@ -35,11 +35,11 @@ set tags+=$MY_ENV/.tags.vim
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 
 " tags for opt
-"set tags+=$MY_OPT/tags.eigen
+set tags+=$MY_OPT/tags.opencv2
+set tags+=$MY_OPT/tags.eigen
 set tags+=$MY_OPT/tags.glm
 set tags+=$MY_OPT/tags.imgui
 set tags+=$MY_OPT/tags.nfd
-set tags+=$MY_OPT/tags.opencv2
 set tags+=$MY_OPT/tags.stb
 set tags+=$MY_OPT/tags.json11
 "set tags+=$MY_OPT/tags.win

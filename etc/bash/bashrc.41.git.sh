@@ -12,7 +12,7 @@ esac
 # print
 #------------------------------------------------------
 git-root() {
-  $GIT_EXE rev-parse --show-toplevel 2> /dev/null
+  git rev-parse --show-toplevel 2> /dev/null
 }
 
 git-branch-name() {
