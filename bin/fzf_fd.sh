@@ -1,8 +1,10 @@
 #!/bin/bash
 
 g_bin_name='fzf_fd.sh'
+
 g_action='--fzf'
-g_opt='--strip-cwd-prefix'
+g_prompt='    '
+g_fd_opt='--strip-cwd-prefix'
 g_topdir=''
 
 #------------------------------------------------------
@@ -16,6 +18,8 @@ f_help() {
   echo "OPTIONS"
   echo "  --help        ... print help"
   echo "  --print-args  ... print args"
+  echo "  --src         ... print source lines"
+  echo "  --fzf         ... print the selected line by fzf"
   echo "  --type=*      ... set type (f|d)"
   echo "  --max-depth=* ... set max depth (number)"
   echo "  --root        ... cd git root"
@@ -30,28 +34,25 @@ git-cd-root() {
 }
 
 #------------------------------------------------------
-fzf_fdfind_exec() {
-  fzf --prompt "$prompt" --preview 'preview.sh {}'
+fzf_fd_selector() {
+  opt="--prompt '$g_prompt'"
+  opt="$opt --preview 'preview.sh {}'"
+  opt="$opt --preview-window 'hidden'"
+  opt="$opt --header '[C-D:dir, C-F:file, C-T:preview, A-X:explorer, A-C:chrome, A-V:vscode]'"
+  opt="$opt --bind 'ctrl-d:reload(fzf_fd.sh --src --type=d)'"
+  opt="$opt --bind 'ctrl-f:reload(fzf_fd.sh --src --type=f)'"
+  opt="$opt --bind 'ctrl-t:toggle-preview'"
+  opt="$opt --bind 'alt-x:execute(te.sh {})'"
+  opt="$opt --bind 'alt-c:execute(chrome.sh {})'"
+  opt="$opt --bind 'alt-v:execute(vscode.sh {})'"
+  eval "fzf $opt"
 }
 
-fzf_fdfind() {
-  cmd="fdfind $g_opt"
-
-  prompt='  '
-  case $g_opt in
-    *--type=d*)
-      prompt=" $prompt"
-      ;;
-    *--type=f*)
-      prompt=" $prompt"
-      ;;
-    *)
-      prompt="  $prompt"
-      ;;
-  esac
+fzf_fd() {
+  cmd="fdfind $g_fd_opt"
 
   if [ -n "$g_topdir" ]; then
-    prompt=" $prompt"
+    g_prompt=" $g_prompt"
   fi
 
   case $g_action in
@@ -59,7 +60,7 @@ fzf_fdfind() {
       eval "$cmd"
       ;;
     --fzf)
-      p=$(eval "$cmd" | fzf_fdfind_exec)
+      p=$(eval "$cmd" | fzf_fd_selector)
       if [ -n "$p" ]; then
         p=$(pathconv.sh unix "$p")
       fi
@@ -71,8 +72,9 @@ fzf_fdfind() {
 #------------------------------------------------------
 f_print_args() {
   echo "== [args] ============================================="
-  echo "g_action     : $g_action"
-  echo "g_opt        : $g_opt"
+  echo "g_action : [$g_action]"
+  echo "g_prompt : [$g_prompt]"
+  echo "g_fd_opt : [$g_fd_opt]"
   echo "======================================================="
 }
 
@@ -87,11 +89,11 @@ f_parse_args() {
         f_print_args 1>&2
         exit
         ;;
-      --src|--fzf|--fzf-post)
+      --src|--fzf)
         g_action=$1
         ;;
       --type=*|--max-depth=*)
-        g_opt="$g_opt $1"
+        g_fd_opt="$g_fd_opt $1"
         ;;
       --root)
         git-cd-root
@@ -103,4 +105,4 @@ f_parse_args() {
 
 #------------------------------------------------------
 f_parse_args "$@"
-fzf_fdfind
+fzf_fd

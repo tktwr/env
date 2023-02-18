@@ -84,7 +84,21 @@ nnoremap ==      zi
 " paste register
  tnoremap <silent> <C-V>   <C-W>""
  tnoremap <silent> <C-;>   <C-W>:
- tnoremap <ScrollWheelUp>  <C-W>N<ScrollWheelUp>
+
+func s:term_map()
+  if &filetype == ''
+    tnoremap <buffer> <C-ScrollWheelUp>  <C-W>N<ScrollWheelUp>
+  endif
+endfunc
+
+augroup ag_my
+  autocmd!
+  if has('nvim')
+    autocmd TermOpen      *               call s:term_map()
+  else
+    autocmd TerminalOpen  *               call s:term_map()
+  endif
+augroup END
 
 "------------------------------------------------------
 " vmap

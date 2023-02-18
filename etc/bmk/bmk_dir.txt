@@ -1,8 +1,4 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
-- y .my/                               | $MY_DOTMY/
-- c local.common/                      | $MY_COMMON_SETTING/
-- M local.memo/                        | $MY_LOCAL_CONFIG/memo/
-    ---------------------------------- | ----------------------------------------
 - E env/                               | $MY_ENV/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
@@ -16,6 +12,10 @@
 - p proj/                              | $MY_PROJ/
 - D doc/                               | $MY_DOC/
 - o office/                            | $MY_OFFICE/
+    ---------------------------------- | ----------------------------------------
+- y .my/                               | $MY_DOTMY/
+- c local.common/                      | $MY_COMMON_SETTING/
+- M local.memo/                        | $MY_LOCAL_CONFIG/memo/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   work/                              | $MY_WORK/
     ---------------------------------- | ----------------------------------------
