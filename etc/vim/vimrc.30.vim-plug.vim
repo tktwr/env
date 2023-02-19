@@ -23,9 +23,8 @@ source $MY_VIM/vim-plug/git.vim
 source $MY_VIM/vim-plug/ide.vim
 source $MY_VIM/vim-plug/coc.vim
 source $MY_VIM/vim-plug/fern.vim
-source $MY_VIM/vim-plug/netrw.vim
 source $MY_VIM/vim-plug/tagbar.vim
-source $MY_VIM/vim-plug/fzy.vim
+source $MY_VIM/vim-plug/fzf.vim
 "source $MY_VIM/vim-plug/eskk.vim
 
 call plug#end()

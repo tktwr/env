@@ -2,10 +2,15 @@
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  below copen 10
+  cc
+endfunction
+
 let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ }
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_commits_log_options = "--graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'"
 

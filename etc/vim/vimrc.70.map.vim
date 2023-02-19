@@ -65,8 +65,8 @@ nnoremap ==      zi
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
- nnoremap <silent> <C-X>   :echo<CR>
- nnoremap <silent> <C-Y>   :echo<CR>
+ nnoremap <silent> <C-X>   d'm
+ nnoremap <silent> <C-Y>   y'm
  nnoremap <silent> <C-Z>   :echo<CR>
 
  nnoremap <C-;>   <C-W>:

@@ -1,8 +1,8 @@
 [vcmd.menu] -------------------------- | ----------------------------------------
 - f  Bmk                              | :VisFzfBmk
 - d  Files                            | :VisFzfFiles
-- b  Buffers                          | :FzfBuffers
 - r  Rg                               | :VisFzfRg
+- b  Buffers                          | :FzfBuffers
     ---------------------------------- | ----------------------------------------
 - t  Tags                             | :FzfTags
 - ?  Help                             | :FzfHelptags
@@ -24,6 +24,7 @@
 - N Editor                             | :new
 - T  Term                             | :below VisTerm
 - _  Cd                               | :VisSendCdE2T
+- Q  QuickFix                         | :VisQuickFix
     ---------------------------------- | ----------------------------------------
 - G  Git grep                         | :VisGgrep ??
 - V  Vim grep here                    | :VisVimgrep ?? *
