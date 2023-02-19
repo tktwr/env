@@ -8,13 +8,14 @@
 - s samples/                           | $MY_SAMPLES/
 - t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
+- D doc/                               | $MY_DOC/
 - g git/                               | $MY_GIT/
 - p proj/                              | $MY_PROJ/
-- D doc/                               | $MY_DOC/
+- c coop/                              | $MY_COOP/
 - o office/                            | $MY_OFFICE/
     ---------------------------------- | ----------------------------------------
-- y .my/                               | $MY_DOTMY/
-- c local.common/                      | $MY_COMMON_SETTING/
+- Y .my/                               | $MY_DOTMY/
+- C local.common/                      | $MY_COMMON_SETTING/
 - M local.memo/                        | $MY_LOCAL_CONFIG/memo/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   work/                              | $MY_WORK/
