@@ -51,8 +51,8 @@ let g:cpm_files =
   \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
   \ 'default'          : ['vcmd.menu & vcmd.external & vcmd.ide', 'vcmd.sub'],
-  \ 'default.fern'     : ['fern.menu & fern.external & local.bmk.dir & bmk.dir', 'bmk.dir.sys'],
-  \ 'default.terminal' : ['tcmd.menu & tcmd.main & local.bmk.dir', 'tcmd.sub'],
+  \ 'default.fern'     : ['fern.menu & fern.external & bmk.dir', 'bmk.dir.sys'],
+  \ 'default.terminal' : ['tcmd.menu & tcmd.main', 'tcmd.sub'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],
@@ -87,8 +87,14 @@ let g:vis_unexpand_env_list = [
   \ '$MY_PUBLIC',
   \ '$MY_DESKTOP',
   \ '$MY_DOWNLOADS',
+  \ '$MY_ROAMING',
+  \ '$MY_CONFIG',
+  \ '$MY_SHARE',
   \ '$USER_LOCAL',
   \ '$USER_ROAMING',
+  \ '$SYS_WIN_HOME',
+  \ '$SYS_PROG64_DIR',
+  \ '$SYS_PROG32_DIR',
   \ ]
 
 Plug 'tktwr/vim-ide-style'

@@ -15,11 +15,32 @@
 - o office/                            | $MY_OFFICE/
     ---------------------------------- | ----------------------------------------
 - Y .my/                               | $MY_DOTMY/
+- S secret/                            | $MY_SECRET/
 - C local.common/                      | $MY_COMMON_SETTING/
 - M local.memo/                        | $MY_LOCAL_CONFIG/memo/
+    ---------------------------------- | ----------------------------------------
+- W vim-winbuf-menu/                   | $MY_VIM/plugged/vim-winbuf-menu/
+- B vim-bmk-menu/                      | $MY_VIM/plugged/vim-bmk-menu/
+- I vim-ide-style/                     | $MY_VIM/plugged/vim-ide-style/
+[bmk.dir.sys] ------------------------ | ----------------------------------------
+-   HOME/                              | $HOME/
+-   SYS_WIN_HOME/                      | $SYS_WIN_HOME/
+-   Desktop/                           | $MY_DESKTOP/
+-   Downloads/                         | $MY_DOWNLOADS/
+    ---------------------------------- | ----------------------------------------
+- R MyRoaming/                         | $MY_ROAMING/
+- C MyConfig/                          | $MY_CONFIG/
+- S MyShare/                           | $MY_SHARE/
+    ---------------------------------- | ----------------------------------------
+-   C:/                                | $SYS_C/
+-   D:/                                | $SYS_D/
+- 6 PROG64/                            | $SYS_PROG64_DIR/
+- 3 PROG32/                            | $SYS_PROG32_DIR/
+    ---------------------------------- | ----------------------------------------
+-   USER_LOCAL/                        | $USER_LOCAL/
+-   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   work/                              | $MY_WORK/
-    ---------------------------------- | ----------------------------------------
 -   arch/                              | $MY_ARCH/
 -   backup/                            | $MY_BACKUP/
 -   data/                              | $MY_DATA/
@@ -39,31 +60,14 @@
     ---------------------------------- | ----------------------------------------
 -   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
 -   MY_DIARY/                          | $MY_DIARY/
-[bmk.dir.sys] ------------------------ | ----------------------------------------
--   HOME/                              | $HOME/
--   SYS_WIN_HOME/                      | $SYS_WIN_HOME/
--   Desktop/                           | $MY_DESKTOP/
--   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
-- R MyRoaming/                         | $MY_ROAMING/
-- C MyConfig/                          | $MY_CONFIG/
-- S MyShare/                           | $MY_SHARE/
-    ---------------------------------- | ----------------------------------------
--   C:/                                | $SYS_C/
--   D:/                                | $SYS_D/
-- 6 PROG64/                            | $SYS_PROG64_DIR/
-- 3 PROG32/                            | $SYS_PROG32_DIR/
-    ---------------------------------- | ----------------------------------------
--   USER_LOCAL/                        | $USER_LOCAL/
--   USER_ROAMING/                      | $USER_ROAMING/
-[bmk.dir.opt] ------------------------ | ----------------------------------------
--   LearnOpenGL/                       | $MY_GITHUB/LearnOpenGL/
--   glTF-Sample-Viewer/                | $MY_GITHUB/glTF-Sample-Viewer/
--   blender/                           | $MY_GITHUB/blender/
--   blender/eevee/                     | $MY_GITHUB/blender/source/blender/gpu/
--   blender/cycles/                    | $MY_GITHUB/blender/intern/cycles/
--   filament/                          | $MY_GITHUB/filament/
--   separable-sss/                     | $MY_GITHUB/separable-sss/
--   imgui/                             | $MY_GITHUB/imgui/
+-   github:LearnOpenGL/                | $MY_GITHUB/LearnOpenGL/
+-   github:glTF-Sample-Viewer/         | $MY_GITHUB/glTF-Sample-Viewer/
+-   github:blender/                    | $MY_GITHUB/blender/
+-   github:blender/eevee/              | $MY_GITHUB/blender/source/blender/gpu/
+-   github:blender/cycles/             | $MY_GITHUB/blender/intern/cycles/
+-   github:filament/                   | $MY_GITHUB/filament/
+-   github:separable-sss/              | $MY_GITHUB/separable-sss/
+-   github:imgui/                      | $MY_GITHUB/imgui/
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -1,31 +1,29 @@
-[bmk.file] ---------------------------        | ----------------------------------------
-[bmk.file.ext] -----------------------        | ----------------------------------------
-+   dia                                       | $MY_DIARY/diary.md.html
-+   todo                                      | $MY_DIARY/todo.md.html
-+   info                                      | $MY_DIARY/info.md.html
-+   scratchpad                                | $MY_DIARY/scratchpad.md.html
-    ----------------------------------        | ----------------------------------------
-+   links                                     | $MY_BMK/links.txt
-+   papers                                    | $MY_BMK/papers.txt
-    ----------------------------------        | ----------------------------------------
--   engword                                   | $MY_LOCAL_CONFIG/eng/engword.txt
--   eng                                       | $MY_LOCAL_CONFIG/memo/eng.md.html
--   math                                      | $MY_LOCAL_CONFIG/memo/math.md.html
-    ----------------------------------        | ----------------------------------------
--   Memo  Index                               | $MY_REMOTE_CONFIG/memo/index.html
--   Memo  Index (local)                       | $MY_LOCAL_CONFIG/memo/index.html
--   Diary Index                               | $MY_PRIVATE_CONFIG/diary/index.html
--   Proj  Index                               | $MY_PROJ/index.md.html
-[bmk.file.opt] -----------------------        | ----------------------------------------
--   cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
--   cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
--   cycles/node_principled_bsdf.osl           | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
--   eevee/gpu_shader_material_principled.glsl | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
--   eevee/common_utiltex_lib.glsl             | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/common_utiltex_lib.glsl
--   eevee/bsdf_common_lib.glsl                | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/bsdf_common_lib.glsl
-    ----------------------------------        | ----------------------------------------
--   gltf/pbr.frag                             | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
-    ----------------------------------        | ----------------------------------------
--   ssss/SeparableSSS.h                       | $MY_GITHUB/separable-sss/SeparableSSS.h
+[bmk.file] ---------------------------               | ----------------------------------------
+[bmk.file.ext] -----------------------               | ----------------------------------------
++   dia                                              | $MY_DIARY/diary.md.html
++   todo                                             | $MY_DIARY/todo.md.html
++   info                                             | $MY_DIARY/info.md.html
++   scratchpad                                       | $MY_DIARY/scratchpad.md.html
+    ----------------------------------               | ----------------------------------------
++   links                                            | $MY_BMK/links.txt
++   papers                                           | $MY_BMK/papers.txt
+    ----------------------------------               | ----------------------------------------
+-   engword                                          | $MY_LOCAL_CONFIG/eng/engword.txt
+-   eng                                              | $MY_LOCAL_CONFIG/memo/eng.md.html
+-   math                                             | $MY_LOCAL_CONFIG/memo/math.md.html
+    ----------------------------------               | ----------------------------------------
+-   index:memo                                       | $MY_REMOTE_CONFIG/memo/index.html
+-   index:memo.local                                 | $MY_LOCAL_CONFIG/memo/index.html
+-   index:diary                                      | $MY_PRIVATE_CONFIG/diary/index.html
+-   index:proj                                       | $MY_PROJ/index.md.html
+    ----------------------------------               | ----------------------------------------
+-   github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
+-   github:cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
+-   github:cycles/node_principled_bsdf.osl           | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
+-   github:eevee/gpu_shader_material_principled.glsl | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
+-   github:eevee/common_utiltex_lib.glsl             | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/common_utiltex_lib.glsl
+-   github:eevee/bsdf_common_lib.glsl                | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/bsdf_common_lib.glsl
+-   github:gltf/pbr.frag                             | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
+-   github:ssss/SeparableSSS.h                       | $MY_GITHUB/separable-sss/SeparableSSS.h
 
 # vim:set ft=bmk syntax=txt nowrap:
