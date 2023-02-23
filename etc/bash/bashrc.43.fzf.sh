@@ -86,11 +86,10 @@ eval_fd() {
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
-alias       f='eval_bmk           $(fzf_bmk.sh --prompt "       " bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
-alias       d='eval_fd            $(fzf_fd.sh --root)'
+alias f='eval_bmk           $(fzf_bmk.sh --prompt-icons "    " bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
+alias d='eval_fd            $(fzf_fd.sh --root)'
+alias m='eval_cmd make      $(fzf_make.sh)'
 
-alias      .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
-alias      ,?='eval_cmd popd      $(fzf_pushd)'
-alias      ??='eval_cmd pushd     $(fzf_pushd)'
-
-alias   make?='eval_cmd make      $(fzf_make.sh)'
+alias .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
+alias ,?='eval_cmd popd      $(fzf_pushd)'
+alias ??='eval_cmd pushd     $(fzf_pushd)'

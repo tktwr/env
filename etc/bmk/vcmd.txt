@@ -1,14 +1,3 @@
-[vcmd.menu] -------------------------- | ----------------------------------------
-- f  Bmk                              | :VisFzfBmk
-- d  Files                            | :VisFzfFiles
-- r  Rg                               | :VisFzfRg
-- b  Buffers                          | :FzfBuffers
-    ---------------------------------- | ----------------------------------------
-- t  Tags                             | :FzfTags
-- ?  Help                             | :FzfHelptags
-    ---------------------------------- | ----------------------------------------
-- s  Git status                       | :FzfGFiles?
-- g  Git graph                        | :FzfCommits
 [vcmd.external] ---------------------- | ----------------------------------------
 -    OpenURL  %                       | :call bmk#OpenURL('%:p')
 -    OpenFile %                       | :call bmk#OpenFile('%:p')
@@ -16,6 +5,18 @@
     ---------------------------------- | ----------------------------------------
 -    ViewThis          (C-CR)         | :call bmk#ViewThis()
 -    OpenThis          (S-CR)         | :call bmk#OpenThis()
+[vcmd.fzf] --------------------------- | ----------------------------------------
+- f  Bmk                              | :VisFzfBmk
+- d  Files                            | :VisFzfFiles
+- b  Buffers                          | :FzfBuffers
+    ---------------------------------- | ----------------------------------------
+- r  Rg                               | :VisFzfRg
+- a  Rg all                           | :call MyFzfRgAll()
+- t  Tags                             | :VisFzfTags
+- ?  Help                             | :FzfHelptags
+    ---------------------------------- | ----------------------------------------
+- s  Git status                       | :FzfGFiles?
+- g  Git graph                        | :FzfCommits
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -25,11 +26,6 @@
 - T  Term                             | :below VisTerm
 - _  Cd                               | :VisSendCdE2T
 - Q  QuickFix                         | :VisQuickFix
-    ---------------------------------- | ----------------------------------------
-- G  Git grep                         | :VisGgrep ??
-- V  Vim grep here                    | :VisVimgrep ?? *
-- A  Vim grep all                     | :call MyVimgrepAll('??')
-- ]  Tag jump                         | :call VisTjumpPrompt()
     ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
 - p Paste                 (,p)         | ,p
@@ -77,9 +73,14 @@
 -   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
 -   vimdirdiff etc ~/WinHome           | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
 [vcmd.ext] --------------------------- | ----------------------------------------
+-    Git grep                         | :VisGgrep ??
+-    Vim grep here                    | :VisVimgrep ?? *
+-    Vim grep all                     | :call MyVimgrepAll('??')
+-    Tag jump                         | :call VisTjumpPrompt()
+    ---------------------------------- | ----------------------------------------
 -   winbuf menu     (End, C-u)         | :silent call wbl#open()
--   coc menu             (C-x)         | :CpmOpen coc
--   fern menu            (C-x)         | :CpmOpen fern
+-   coc menu                           | :CpmOpen coc
+-   fern menu                          | :CpmOpen fern
     ---------------------------------- | ----------------------------------------
 -   quickhl              (C-a)         | :VisQuickhl ??
 -   Memo                               | :Memo

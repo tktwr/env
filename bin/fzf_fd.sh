@@ -3,7 +3,8 @@
 g_bin_name='fzf_fd.sh'
 
 g_action='--fzf'
-g_prompt='    '
+g_prompt_format='Fd(%s)>'
+g_prompt_icons='  '
 g_fd_opt='--strip-cwd-prefix'
 g_topdir=''
 
@@ -35,7 +36,8 @@ git-cd-root() {
 
 #------------------------------------------------------
 fzf_fd_selector() {
-  opt="--prompt '$g_prompt'"
+  prompt=$(printf "$g_prompt_format" "$g_prompt_icons")
+  opt="--prompt '$prompt'"
   opt="$opt --preview 'preview.sh {}'"
   opt="$opt --preview-window 'hidden'"
   opt="$opt --header '[C-D:dir, C-F:file, C-T:preview, A-X:explorer, A-C:chrome, A-V:vscode]'"
@@ -52,7 +54,7 @@ fzf_fd() {
   cmd="fdfind $g_fd_opt"
 
   if [ -n "$g_topdir" ]; then
-    g_prompt=" $g_prompt"
+    g_prompt_icons=" $g_prompt_icons"
   fi
 
   case $g_action in
@@ -72,9 +74,10 @@ fzf_fd() {
 #------------------------------------------------------
 f_print_args() {
   echo "== [args] ============================================="
-  echo "g_action : [$g_action]"
-  echo "g_prompt : [$g_prompt]"
-  echo "g_fd_opt : [$g_fd_opt]"
+  echo "g_action        : [$g_action]"
+  echo "g_prompt_format : [$g_prompt_format]"
+  echo "g_prompt_icons  : [$g_prompt_icons]"
+  echo "g_fd_opt        : [$g_fd_opt]"
   echo "======================================================="
 }
 

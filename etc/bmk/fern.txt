@@ -1,11 +1,10 @@
-[fern.menu] -------------------------- | ----------------------------------------
-- f  Bmk                              | :VisFzfBmk
-- d  Dirs                             | :VisFzfDirs
-[fern.menu.ext] ---------------------- | ----------------------------------------
 [fern.external] ---------------------- | ----------------------------------------
 -   fern.ViewItem            (C-CR)    | :call VisFernViewItem()
 -   fern.OpenItem            (S-CR)    | :call VisFernOpenItem()
 -   fern.yank an abs path              | _Plug_(fern-action-yank)
+[fern.fzf] --------------------------- | ----------------------------------------
+- f  Bmk                              | :VisFzfBmk
+- d  Dirs                             | :VisFzfDirs
 [fern] ------------------------------- | ----------------------------------------
 -   fern.select-expand   (2-LMouse)    | _Plug_(my-fern-select-expand-collapse)
 -   fern.select-expand         (CR)    | _Plug_(my-fern-select-expand-collapse)

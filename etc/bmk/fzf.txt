@@ -1,21 +1,19 @@
 [fzf] -------------------------------- | ----------------------------------------
--   Git graph %                        | :FzfBCommits
+-   fzf:Files                          | :FzfFiles
+-   fzf:GFiles                         | :FzfGFiles
+-   fzf:Commands                       | :FzfCommands
+-   fzf:Maps                           | :FzfMaps
+-   fzf:Colors                         | :FzfColors
+-   fzf:Git graph %                    | :FzfBCommits
     ---------------------------------- | ----------------------------------------
--   FzfFiles                           | :FzfFiles
--   FzfGFiles                          | :FzfGFiles
-    ---------------------------------- | ----------------------------------------
--   FzfCommands                        | :FzfCommands
--   FzfMaps                            | :FzfMaps
--   FzfColors                          | :FzfColors
-    ---------------------------------- | ----------------------------------------
--   CocFzfList                         | :CocFzfList
--   CocFzfList diagnostics             | :CocFzfList diagnostics
--   CocFzfList diagnostics %           | :CocFzfList diagnostics --current-buf
--   CocFzfList commands                | :CocFzfList commands
--   CocFzfList extensions              | :CocFzfList extensions
--   CocFzfList location                | :CocFzfList location
--   CocFzfList outline                 | :CocFzfList outline
--   CocFzfList symbols                 | :CocFzfList symbols
--   CocFzfListResume                   | :CocFzfListResume
+-   cocfzf:List                        | :CocFzfList
+-   cocfzf:List diagnostics            | :CocFzfList diagnostics
+-   cocfzf:List diagnostics %          | :CocFzfList diagnostics --current-buf
+-   cocfzf:List commands               | :CocFzfList commands
+-   cocfzf:List extensions             | :CocFzfList extensions
+-   cocfzf:List location               | :CocFzfList location
+-   cocfzf:List outline                | :CocFzfList outline
+-   cocfzf:List symbols                | :CocFzfList symbols
+-   cocfzf:ListResume                  | :CocFzfListResume
 
 # vim:set ft=bmk syntax=txt nowrap:

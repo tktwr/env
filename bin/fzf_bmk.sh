@@ -4,7 +4,8 @@ g_bin_name='fzf_bmk.sh'
 
 g_pre_filter='-'
 g_action='--fzf'
-g_prompt='   '
+g_prompt_format='Bmk(%s)>'
+g_prompt_icons='  '
 g_files=""
 
 #------------------------------------------------------
@@ -91,7 +92,8 @@ fzf_bmk_pre() {
 }
 
 fzf_bmk_selector() {
-  opt="--prompt '$g_prompt'"
+  prompt=$(printf "$g_prompt_format" "$g_prompt_icons")
+  opt="--prompt '$prompt'"
   opt="$opt --preview 'preview_bmk.sh {}'"
   opt="$opt --preview-window 'hidden'"
   opt="$opt --header '[C-R:open, C-T:preview]'"
@@ -135,10 +137,11 @@ fzf_bmk() {
 #------------------------------------------------------
 f_print_args() {
   echo "== [args] ============================================="
-  echo "g_pre_filter : [$g_pre_filter]"
-  echo "g_action     : [$g_action]"
-  echo "g_prompt     : [$g_prompt]"
-  echo "g_files      : [$g_files]"
+  echo "g_pre_filter    : [$g_pre_filter]"
+  echo "g_action        : [$g_action]"
+  echo "g_prompt_format : [$g_prompt_format]"
+  echo "g_prompt_icons  : [$g_prompt_icons]"
+  echo "g_files         : [$g_files]"
   echo "======================================================="
 }
 
@@ -161,9 +164,9 @@ f_parse_args() {
         bmk_open "$*"
         exit
         ;;
-      --prompt)
+      --prompt-icons)
         shift
-        g_prompt="$1"
+        g_prompt_icons="$1"
         ;;
       +)
         g_pre_filter='+'

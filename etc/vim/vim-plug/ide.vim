@@ -1,6 +1,17 @@
 "------------------------------------------------------
 " helper functions
 "------------------------------------------------------
+func MyFzfRgAll()
+  let dirs = [
+    \ '$MY_ENV',
+    \ '$MY_VIM/plugged/vim-ide-style',
+    \ '$MY_VIM/plugged/vim-bmk-menu',
+    \ '$MY_VIM/plugged/vim-winbuf-menu',
+    \ '$MY_VIM/plugged/vim-memo',
+    \ ]
+  call vis#external#fzf#rg('<cfile>', dirs)
+endfunc
+
 func MyVimgrepAll(word)
   let word = vis#util#prompt("Word? ", a:word)
   if word == ""
@@ -50,9 +61,9 @@ let g:cpm_files =
   \ split(glob("$MY_BMK/*.txt")) +
   \ split(glob("$MY_COMMON_SETTING/bmk/*.txt"))
 let g:cpm_titles = {
-  \ 'default'          : ['vcmd.menu & vcmd.external & vcmd.ide', 'vcmd.sub'],
-  \ 'default.fern'     : ['fern.menu & fern.external & bmk.dir', 'bmk.dir.sys'],
-  \ 'default.terminal' : ['tcmd.menu & tcmd.main', 'tcmd.sub'],
+  \ 'default'          : ['vcmd.external & vcmd.fzf & vcmd.ide', 'vcmd.sub'],
+  \ 'default.fern'     : ['fern.external & fern.fzf & bmk.dir', 'fern'],
+  \ 'default.terminal' : ['tcmd.fzf & tcmd.main', 'tcmd.sub'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],

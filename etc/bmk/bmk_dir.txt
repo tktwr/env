@@ -19,14 +19,15 @@
 - C local.common/                      | $MY_COMMON_SETTING/
 - M local.memo/                        | $MY_LOCAL_CONFIG/memo/
     ---------------------------------- | ----------------------------------------
+- H HOME/                              | $HOME/
+- W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
+- N Downloads/                         | $MY_DOWNLOADS/
+    ---------------------------------- | ----------------------------------------
 - W vim-winbuf-menu/                   | $MY_VIM/plugged/vim-winbuf-menu/
 - B vim-bmk-menu/                      | $MY_VIM/plugged/vim-bmk-menu/
 - I vim-ide-style/                     | $MY_VIM/plugged/vim-ide-style/
 [bmk.dir.sys] ------------------------ | ----------------------------------------
--   HOME/                              | $HOME/
--   SYS_WIN_HOME/                      | $SYS_WIN_HOME/
 -   Desktop/                           | $MY_DESKTOP/
--   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - R MyRoaming/                         | $MY_ROAMING/
 - C MyConfig/                          | $MY_CONFIG/
@@ -58,6 +59,7 @@
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
     ---------------------------------- | ----------------------------------------
+-   vim-memo/                          | $MY_VIM/plugged/vim-memo/
 -   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
 -   MY_DIARY/                          | $MY_DIARY/
     ---------------------------------- | ----------------------------------------

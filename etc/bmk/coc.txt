@@ -1,32 +1,32 @@
 [coc] -------------------------------- | ----------------------------------------
-- D CocDiagnostics                     | :CocDiagnostics
--   CocAction('doHover')   (K)         | :call CocAction('doHover')
-- I CocAction('showIncomingCalls')     | :call CocAction('showIncomingCalls')
-- O CocAction('showOutgoingCalls')     | :call CocAction('showOutgoingCalls')
+- D coc:Diagnostics                    | :CocDiagnostics
+-   coc:doHover                    (K) | :call CocAction('doHover')
+- I coc:showIncomingCalls              | :call CocAction('showIncomingCalls')
+- O coc:showOutgoingCalls              | :call CocAction('showOutgoingCalls')
     ---------------------------------- | ----------------------------------------
--   CocInfo                            | :CocInfo
-- L CocOpenLog                         | :CocOpenLog
--   MyCocInstall                       | :MyCocInstall
--   CocUpdate                          | :CocUpdate
+-   coc:Info                           | :CocInfo
+- L coc:OpenLog                        | :CocOpenLog
+-   coc:Install                        | :MyCocInstall
+-   coc:Update                         | :CocUpdate
     ---------------------------------- | ----------------------------------------
-- p coc-diagnostic-prev                | _Plug_(coc-diagnostic-prev)
-- n coc-diagnostic-next                | _Plug_(coc-diagnostic-next)
-- d coc-definition                     | _Plug_(coc-definition)
-- t coc-type-definition                | _Plug_(coc-type-definition)
-- i coc-implementation                 | _Plug_(coc-implementation)
-- r coc-references                     | _Plug_(coc-references)
-- R coc-rename                         | _Plug_(coc-rename)
-- F coc-format-selected                | _Plug_(coc-format-selected)
+- p coc:diagnostic-prev                | _Plug_(coc-diagnostic-prev)
+- n coc:diagnostic-next                | _Plug_(coc-diagnostic-next)
+- d coc:definition                     | _Plug_(coc-definition)
+- t coc:type-definition                | _Plug_(coc-type-definition)
+- i coc:implementation                 | _Plug_(coc-implementation)
+- r coc:references                     | _Plug_(coc-references)
+- R coc:rename                         | _Plug_(coc-rename)
+- F coc:format-selected                | _Plug_(coc-format-selected)
     ---------------------------------- | ----------------------------------------
-- S clangd.switchSourceHeader          | :CocCommand clangd.switchSourceHeader
--   workspace.inspectEdit              | :CocCommand workspace.inspectEdit
-- C document.checkBuffer               | :CocCommand document.checkBuffer
+- S coc:clangd.switchSourceHeader      | :CocCommand clangd.switchSourceHeader
+-   coc:workspace.inspectEdit          | :CocCommand workspace.inspectEdit
+- C coc:document.checkBuffer           | :CocCommand document.checkBuffer
     ---------------------------------- | ----------------------------------------
--   CocList extensions                 | :CocList extensions
--   CocList vimcommands                | :CocList vimcommands
--   CocList buffers                    | :CocList buffers
--   CocList words                      | :CocList words
--   CocList outline                    | :CocList outline
--   CocListResume                      | :CocListResume
+-   coc:List extensions                | :CocList extensions
+-   coc:List vimcommands               | :CocList vimcommands
+-   coc:List buffers                   | :CocList buffers
+-   coc:List words                     | :CocList words
+-   coc:List outline                   | :CocList outline
+-   coc:ListResume                     | :CocListResume
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -19,6 +19,7 @@ syn match    mySection3         "^### "
 
 syn match    myItem             "^\s*[-+*] "
 syn match    myCitation         "^\s*>.*$"
+syn match    myColon            "\f\+:"
 
 syn match    myString           '"[^"]*"'
 syn match    myString           "'[^']*'"
@@ -88,6 +89,7 @@ hi link mySection3         MyOrange
 
 hi link myItem             MyOrange
 hi link myCitation         MyPurple
+hi link myColon            MyYellow
 
 hi link myString           MyAqua
 hi link myHtml             MyPurple
