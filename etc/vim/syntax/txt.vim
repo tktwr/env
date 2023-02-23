@@ -4,6 +4,8 @@
 
 "------------------------------------------------------
 " syntax
+"
+" later rules override earlier rules
 "------------------------------------------------------
 syn clear
 " syntax is case sensitive

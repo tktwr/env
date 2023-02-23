@@ -23,69 +23,69 @@
 -   tags.glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
 -   tags.opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
--   Fkey.help                  (F1)    | :echo
--   Fkey.x                     (F2)    | :echo
--   Fkey.x                     (F3)    | :echo
--   Fkey.desktop               (F4)    | :echo
--   Fkey.reload                (F5)    | :echo
--   Fkey.x                     (F6)    | :echo
--   Fkey.maximize left         (F7)    | :echo
--   Fkey.maximize              (F8)    | :echo
--   Fkey.maximize right        (F9)    | :echo
--   Fkey.maximize toggle      (F10)    | :echo
--   Fkey.xbox game bar        (F11)    | :echo
--   Fkey.system               (F12)    | :echo
+-   Fkey.help                     (F1) | :call feedkeys("<F1>")
+-   Fkey.x                        (F2) | :call feedkeys("<F2>")
+-   Fkey.x                        (F3) | :call feedkeys("<F3>")
+-   Fkey.desktop                  (F4) | :call feedkeys("<F4>")
+-   Fkey.reload                   (F5) | :call feedkeys("<F5>")
+-   Fkey.x                        (F6) | :call feedkeys("<F6>")
+-   Fkey.maximize left            (F7) | :call feedkeys("<F7>")
+-   Fkey.maximize                 (F8) | :call feedkeys("<F8>")
+-   Fkey.maximize right           (F9) | :call feedkeys("<F9>")
+-   Fkey.maximize toggle         (F10) | :call feedkeys("<F10>")
+-   Fkey.xbox game bar           (F11) | :call feedkeys("<F11>")
+-   Fkey.system                  (F12) | :call feedkeys("<F12>")
     ---------------------------------- | ----------------------------------------
--   map.cpm menu           (Space)     | :echo
--   map.wbl menu             (End)     | :echo
--   map.page up               (BS)     | :echo
--   map.page down           (PgDn)     | :echo
--   map.tab prev            (PgUp)     | :echo
--   map.tab next          (S-PgUp)     | :echo
--   map.tab new              (Ins)     | :echo
--   map.tab close            (Del)     | :echo
--   map.view                (C-CR)     | :echo
--   map.open                (S-CR)     | :echo
--   map.lcd                  (C-.)     | :echo
--   map.command mode         (C-;)     | :echo
--   map.tjump                (C-])     | :echo
+-   map.cpm menu               (Space) | :call feedkeys("<Space>")
+-   map.wbl menu                 (End) | :call feedkeys("<End>")
+-   map.page up                   (BS) | :call feedkeys("<BS>")
+-   map.page down           (PageDown) | :call feedkeys("<PageDown>")
+-   map.tab prev              (PageUp) | :call feedkeys("<PageUp>")
+-   map.tab next            (S-PageUp) | :call feedkeys("<S-PageUp>")
+-   map.tab new               (Insert) | :call feedkeys("<Insert>")
+-   map.tab close                (Del) | :call feedkeys("<Del>")
+-   map.view                    (C-CR) | :call feedkeys("<C-CR>")
+-   map.open                    (S-CR) | :call feedkeys("<S-CR>")
+-   map.lcd                      (C-.) | :call feedkeys("<C-.>")
+-   map.command mode             (C-;) | :call feedkeys("<C-;>")
+-   map.tjump                    (C-]) | :call feedkeys("<C-]>")
 [ref.keys2] -------------------------- | ----------------------------------------
--   map.window 1 top         (C-1)     | :echo
--   map.window 2             (C-2)     | :echo
--   map.x                    (C-3)     | :echo
--   map.x                    (C-4)     | :echo
--   map.x                    (C-5)     | :echo
--   map.x                    (C-6)     | :echo
--   map.maximize x           (C-7)     | :echo
--   map.maximize xy          (C-8)     | :echo
--   map.maximize y           (C-9)     | :echo
--   map.window 0 bottom      (C-0)     | :echo
+-   map.window 1 top             (C-1) | :call feedkeys("<C-1>")
+-   map.window 2                 (C-2) | :call feedkeys("<C-2>")
+-   map.x                        (C-3) | :call feedkeys("<C-3>")
+-   map.x                        (C-4) | :call feedkeys("<C-4>")
+-   map.x                        (C-5) | :call feedkeys("<C-5>")
+-   map.x                        (C-6) | :call feedkeys("<C-6>")
+-   map.maximize x               (C-7) | :call feedkeys("<C-7>")
+-   map.maximize xy              (C-8) | :call feedkeys("<C-8>")
+-   map.maximize y               (C-9) | :call feedkeys("<C-9>")
+-   map.window 0 bottom          (C-0) | :call feedkeys("<C-0>")
     ---------------------------------- | ----------------------------------------
--   map.quickhl              (C-a)     | :echo
--   map.x                    (C-b)     | :echo
--   map.x                    (C-c)     | :echo
--   map.page up              (C-d)     | :echo
--   map.close                (C-e)     | :echo
--   map.page down            (C-f)     | :echo
--   map.redraw               (C-g)     | :echo
--   map.window left          (C-h)     | :echo
--   map.TAB                  (C-i)     | :echo
--   map.window next          (C-j)     | :echo
--   map.window prev          (C-k)     | :echo
--   map.window right         (C-l)     | :echo
--   map.CR                   (C-m)     | :echo
--   map.cn                   (C-n)     | :echo
--   map.wbl pop              (C-o)     | :echo
--   map.cp                   (C-p)     | :echo
--   map.@q                   (C-q)     | :echo
--   map.redo                 (C-r)     | :echo
--   map.x                    (C-s)     | :echo
--   map.tag back             (C-t)     | :echo
--   map.wbl menu             (C-u)     | :echo
--   map.block select         (C-v)     | :echo
--   map.window command       (C-w)     | :echo
--   map.coc menu             (C-x)     | :echo
--   map.x                    (C-y)     | :echo
--   map.x                    (C-z)     | :echo
+-   map.quickhl                  (C-a) | :call feedkeys("<C-a>")
+-   map.x                        (C-b) | :call feedkeys("<C-b>")
+-   map.x                        (C-c) | :call feedkeys("<C-c>")
+-   map.page up                  (C-d) | :call feedkeys("<C-d>")
+-   map.close                    (C-e) | :call feedkeys("<C-e>")
+-   map.page down                (C-f) | :call feedkeys("<C-f>")
+-   map.redraw                   (C-g) | :call feedkeys("<C-g>")
+-   map.window left              (C-h) | :call feedkeys("<C-h>")
+-   map.TAB                      (C-i) | :call feedkeys("<C-i>")
+-   map.window next              (C-j) | :call feedkeys("<C-j>")
+-   map.window prev              (C-k) | :call feedkeys("<C-k>")
+-   map.window right             (C-l) | :call feedkeys("<C-l>")
+-   map.CR                       (C-m) | :call feedkeys("<C-m>")
+-   map.cn                       (C-n) | :call feedkeys("<C-n>")
+-   map.wbl pop                  (C-o) | :call feedkeys("<C-o>")
+-   map.cp                       (C-p) | :call feedkeys("<C-p>")
+-   map.@q                       (C-q) | :call feedkeys("<C-q>")
+-   map.redo                     (C-r) | :call feedkeys("<C-r>")
+-   map.x                        (C-s) | :call feedkeys("<C-s>")
+-   map.tag back                 (C-t) | :call feedkeys("<C-t>")
+-   map.wbl menu                 (C-u) | :call feedkeys("<C-u>")
+-   map.block select             (C-v) | :call feedkeys("<C-v>")
+-   map.window command           (C-w) | :call feedkeys("<C-w>")
+-   map.cut                      (C-x) | :call feedkeys("<C-x>")
+-   map.copy                     (C-y) | :call feedkeys("<C-y>")
+-   map.x                        (C-z) | :call feedkeys("<C-z>")
 
 # vim:set ft=bmk syntax=txt nowrap:
