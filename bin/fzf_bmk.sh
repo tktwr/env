@@ -4,7 +4,7 @@ g_bin_name='fzf_bmk.sh'
 
 g_pre_filter='-'
 g_action='--fzf'
-g_prompt_format='Bmk(%s)>'
+g_prompt_format='Bmk(%s)> '
 g_prompt_icons='  '
 g_files=""
 

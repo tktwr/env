@@ -10,7 +10,7 @@ fzf_make_post() {
 
 fzf_make() {
   cmd="mymake.sh help"
-  echo $(eval $cmd | fzf_make_pre | fzf | fzf_make_post)
+  echo $(eval $cmd | fzf_make_pre | fzf --prompt 'make> ' | fzf_make_post)
 }
 
 #------------------------------------------------------

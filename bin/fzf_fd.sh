@@ -3,7 +3,7 @@
 g_bin_name='fzf_fd.sh'
 
 g_action='--fzf'
-g_prompt_format='Fd(%s)>'
+g_prompt_format='Fd(%s)> '
 g_prompt_icons='  '
 g_fd_opt='--strip-cwd-prefix'
 g_topdir=''
