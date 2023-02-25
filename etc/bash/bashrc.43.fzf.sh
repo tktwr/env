@@ -40,32 +40,43 @@ bmk_expand() {
   eval "echo $*"
 }
 
+fzf_print() {
+  debug=0
+  if [ $debug -eq 1 ]; then
+    echo "$*"
+  fi
+}
+
 eval_bmk() {
   file=$(echo "$*" | bmk_get_value)
 
   case "$file" in
     '>'*)
-      echo "tcmd: [$file]"
-      file=$(echo "$file" | bmk_rm_tcmd)
-      eval "$file"
+      fzf_print "tcmd: [$file]"
+      if [ "$VIM_TERMINAL" ]; then
+        vimapi_exec "call bmk#ExecTermCommand('$file')"
+      else
+        file=$(echo "$file" | bmk_rm_tcmd)
+        eval "$file"
+      fi
       ;;
     ':'*)
-      echo "vcmd: [$file]"
+      fzf_print "vcmd: [$file]"
       ;;
     '_Plug_'*)
-      echo "vcmd: [$file]"
+      fzf_print "vcmd: [$file]"
       ;;
     http*)
-      echo "http: [$file]"
+      fzf_print "http: [$file]"
       chrome.sh "$file"
       ;;
     *)
       file=$(bmk_expand "$file")
       if [ -d "$file" ]; then
-        echo "dir: [$file]"
+        fzf_print "dir: [$file]"
         eval_cmd cd "$file"
       elif [ -f "$file" ]; then
-        echo "file: [$file]"
+        fzf_print "file: [$file]"
         eval_cmd vim "$file"
       fi
       ;;
@@ -75,10 +86,10 @@ eval_bmk() {
 eval_fd() {
   file="$*"
   if [ -d "$file" ]; then
-    echo "dir: [$file]"
+    fzf_print "dir: [$file]"
     eval_cmd cd "$file"
   elif [ -f "$file" ]; then
-    echo "file: [$file]"
+    fzf_print "file: [$file]"
     eval_cmd vim "$file"
   fi
 }
@@ -86,6 +97,7 @@ eval_fd() {
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
+alias g?='eval_bmk          $(fzf_bmk.sh --prompt-icons " " tcmd_git.txt)'
 alias f='eval_bmk           $(fzf_bmk.sh --prompt-icons "    " bmk_dir.txt bmk_file.txt tcmd.txt tcmd_git.txt tcmd_sys.txt links.txt papers.txt)'
 alias d='eval_fd            $(fzf_fd.sh --root)'
 alias m='eval_cmd make      $(fzf_make.sh)'
