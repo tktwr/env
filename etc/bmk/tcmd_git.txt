@@ -1,6 +1,5 @@
 [tcmd.git] --------------------------- | ----------------------------------------
 -   git-root                           | > git-root<CR>
--   git-cd-root                        | > git-cd-root<CR>
 -   git-branch-name                    | > git-branch-name<CR>
 -   git-commit-hash                    | > git-commit-hash<CR>
 -   git-commit-hash-long               | > git-commit-hash-long<CR>
@@ -8,6 +7,8 @@
 -   git-print-branch-all               | > git-print-branch-all<CR>
 -   git-print-tag-all                  | > git-print-tag-all<CR>
 -   git config --list                  | > git config --list<CR>
+    ---------------------------------- | ----------------------------------------
+-   git-cd-root                        | > git-cd-root<CR>
     ---------------------------------- | ----------------------------------------
 -   git-graph                          | > git-graph<CR>
 -   git-graph-date                     | > git-graph-date<CR>

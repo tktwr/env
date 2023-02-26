@@ -15,8 +15,7 @@
 - t  Tags                             | :VisFzfTags
 - ?  Help                             | :FzfHelptags
     ---------------------------------- | ----------------------------------------
-- s  Git status                       | :FzfGFiles?
-- g  Git graph                        | :FzfCommits
+- g  Lazygit                          | :VisPopLazygit
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -77,6 +76,13 @@
 -    Vim grep here                    | :VisVimgrep ?? *
 -    Vim grep all                     | :call MyVimgrepAll('??')
 -    Tag jump                         | :call VisTjumpPrompt()
+    ---------------------------------- | ----------------------------------------
+-    Git status                       | :FzfGFiles?
+-    Git graph                        | :FzfCommits
+    ---------------------------------- | ----------------------------------------
+-    TabLazygit                       | :VisTabLazygit
+-    PopApt                           | :VisPopApt
+-    TabApt                           | :VisTabApt
     ---------------------------------- | ----------------------------------------
 -   winbuf menu     (End, C-u)         | :silent call wbl#open()
 -   coc menu                           | :CpmOpen coc

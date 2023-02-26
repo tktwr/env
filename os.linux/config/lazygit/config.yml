@@ -1,0 +1,21 @@
+gui:
+  sidePanelWidth: 0.3
+  language: 'en'
+  theme:
+    selectedLineBgColor:
+      - default
+    selectedRangeBgColor:
+      - default
+git:
+  showIcons: true
+  paging:
+    colorArg: always
+    # pager: delta -s --dark --paging=never
+  merging:
+    args: '--no-ff'
+  log:
+    order: 'topo-order'
+    #order: 'date-order'
+    showGraph: 'always'
+  branchLogCmd:      'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=oneline {{branchName}} --'
+  allBranchesLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=oneline --all'
