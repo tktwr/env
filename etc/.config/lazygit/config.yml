@@ -1,4 +1,6 @@
 gui:
+  #showIcons: true
+  showFileTree: false
   sidePanelWidth: 0.3
   language: 'en'
   theme:
@@ -7,10 +9,9 @@ gui:
     selectedRangeBgColor:
       - default
 git:
-  showIcons: true
   paging:
     colorArg: always
-    # pager: delta -s --dark --paging=never
+    #pager: delta -s --dark --paging=never
   merging:
     args: '--no-ff'
   log:

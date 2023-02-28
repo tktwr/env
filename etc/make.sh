@@ -4,6 +4,8 @@
 # variables
 #======================================================
 DOT_FILES_COMMON="\
+.config/lazygit \
+.config/nvim \
 .mintty \
 .minttyrc \
 .clang-format \

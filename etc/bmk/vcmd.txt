@@ -15,7 +15,9 @@
 - t  Tags                             | :VisFzfTags
 - ?  Help                             | :FzfHelptags
     ---------------------------------- | ----------------------------------------
-- g  Lazygit                          | :VisPopLazygit
+- L  Lazygit                          | :VisPopLazygit
+- s  Git status                       | :VisGS
+- g  Git graph                        | :VisGV
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -41,8 +43,6 @@
     ---------------------------------- | ----------------------------------------
 -   ToggleDebug                        | :call bmk#ToggleDebug()
     ---------------------------------- | ----------------------------------------
-- s VisGS                              | :VisGS
-- v VisGV                              | :VisGV
 - g Gllog                              | :Gllog
 -   Gllog %                            | :Gllog %
 - C MyClangFormat                      | :MyClangFormat
