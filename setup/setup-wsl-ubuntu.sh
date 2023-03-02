@@ -12,12 +12,11 @@ fzf \
 bat \
 fd-find \
 ripgrep \
-python3-pip \
-python3-venv \
-python3-doc \
 zip unzip \
 universal-ctags \
 eblook \
+python3-pip \
+python3-venv \
 "
 pkg_ext="\
 vim-gtk3 \
@@ -32,12 +31,6 @@ btop \
 ncal \
 googler \
 "
-pkg_ext2="\
-blender \
-nvidia-cuda-toolkit \
-baobab \
-nodejs npm \
-"
 pkg_dev="\
 cmake \
 clang \
@@ -47,6 +40,14 @@ libglfw3-dev \
 libopencv-dev \
 python3-tk \
 python3-opencv \
+python3-doc \
+"
+pkg_not_install="\
+blender \
+nvidia-cuda-toolkit \
+baobab \
+nodejs npm \
+exa \
 "
 
 #======================================================
@@ -110,7 +111,6 @@ f_vim() {
 }
 
 f_nvim() {
-  cp -a $MY_ENV/os.linux/config/nvim $HOME/.config
   sudo -E npm install -g neovim
 }
 

@@ -57,5 +57,5 @@ f_ins_path_env() {
 #------------------------------------------------------
 f_init_path
 f_ins_path_man "/usr/local/share/man"
-#f_ins_path_local $MY_OPT/usr/local
+#f_ins_path_local $MY_ROAMING/usr/local
 f_ins_path_env $MY_ENV
