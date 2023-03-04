@@ -27,6 +27,7 @@
 - T  Term                             | :below VisTerm
 - _  Cd                               | :VisSendCdE2T
 - Q  QuickFix                         | :VisQuickFix
+- R Qfreplace                          | :Qfreplace
     ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
 - p Paste                 (,p)         | ,p
@@ -34,7 +35,7 @@
 - Y YankFilePath                       | :call YankFilePath()
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
-- R  Reload menu                      | :CpmReload
+- M  Reload menu                      | :CpmReload
 [vcmd.sub] --------------------------- | ----------------------------------------
 - T MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
@@ -92,7 +93,6 @@
 -   Memo                               | :Memo
 -   Help                               | :VisHelp
 -   SourceVimrc                        | :SourceVimrc
--   Qfreplace                          | :Qfreplace
     ---------------------------------- | ----------------------------------------
 -   ctrlp                              | _Plug_(ctrlp)
 -   Wc                                 | :Wc ?

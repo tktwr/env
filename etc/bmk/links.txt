@@ -1,12 +1,13 @@
 [links] -----------------------------------------           | ----------------------------------------
--   link.google                                             | https://www.google.com/
-+   link.google.translate                                   | https://translate.google.co.jp/
--   link.google.gmail                                       | https://mail.google.com/mail/u/0/#inbox
--   link.google.calendar                                    | https://www.google.com/calendar/render?hl=ja
--   link.google.keep                                        | https://keep.google.com/
--   link.google.drive                                       | https://drive.google.com/drive/my-drive
--   link.DeepL                                              | https://www.deepl.com/ja/translator
--   link.TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
+-   link:google                                             | https://www.google.com/
++   link:google.translate                                   | https://translate.google.co.jp/
+-   link:google.gmail                                       | https://mail.google.com/mail/u/0/#inbox
+-   link:google.calendar                                    | https://www.google.com/calendar/render?hl=ja
+-   link:google.keep                                        | https://keep.google.com/
+-   link:google.drive                                       | https://drive.google.com/drive/my-drive
+-   link:DeepL                                              | https://www.deepl.com/ja/translator
+-   link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
+-   link:chrome.extensions                                  | https://chrome.google.com/webstore/category/extensions
     ------------------------------------                    | ----------------------------------------
 -   link.py:python                                          | https://www.python.org/
 + P link.py:python.doc                                      | https://docs.python.org/ja/3/index.html
@@ -17,6 +18,11 @@
 -   link.py:nkmk.numpy                                      | https://note.nkmk.me/numpy/
 -   link.py:Python入門                                      | https://algorithm.joho.info/programming/python/sample-code-py/
 -   link.py:Python入門.numpy                                | https://algorithm.joho.info/programming/python/numpy-sample-code/
+    ------------------------------------                    | ----------------------------------------
+-   link.py:pytorch                                         | https://pytorch.org/
+-   link.py:pytorch.transfer_learning                       | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+-   link.py:pytorch.tensorboard                             | https://pytorch.org/docs/stable/tensorboard.html
+-   link.py:pytorch3d                                       | https://github.com/facebookresearch/pytorch3d
     ------------------------------------                    | ----------------------------------------
 -   link.pylib:pypi                                         | https://pypi.org/
 -   link.pylib:numpy                                        | https://numpy.org/
@@ -30,11 +36,6 @@
 -   link.pylib:tkinter.widgets                              | https://www.python-beginners.com/entry/20210607/1623057987
 -   link.pylib:tkinter.pack                                 | https://imagingsolution.net/program/python/tkinter/widget_layout_pack/
 -   link.pylib:tkinter.1                                    | https://note.com/npaka/n/nfa8d16c3624e
-    ------------------------------------                    | ----------------------------------------
--   link.py:pytorch                                         | https://pytorch.org/
--   link.py:pytorch.transfer_learning                       | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
--   link.py:pytorch.tensorboard                             | https://pytorch.org/docs/stable/tensorboard.html
--   link.py:pytorch3d                                       | https://github.com/facebookresearch/pytorch3d
     ------------------------------------                    | ----------------------------------------
 -   link.cpp:cpprefjp                                       | https://cpprefjp.github.io/
 + C link.cpp:cpprefjp.reference                             | https://cpprefjp.github.io/reference.html
@@ -58,25 +59,25 @@
 -   link.cpplib:kissnet                                     | https://github.com/Ybalrid/kissnet
 -   link.cpplib:miniaudio                                   | https://github.com/mackron/miniaudio
     ------------------------------------                    | ----------------------------------------
--   link.OpenCV                                             | https://opencv.org/
--   link.OpenCV.doc                                         | https://docs.opencv.org/master/
--   link.OpenCV.cookbook                                    | http://opencv.jp/cookbook/index.html
+-   link:OpenCV                                             | https://opencv.org/
+-   link:OpenCV.doc                                         | https://docs.opencv.org/master/
+-   link:OpenCV.cookbook                                    | http://opencv.jp/cookbook/index.html
     ------------------------------------                    | ----------------------------------------
--   link.OpenGL 4                                           | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
--   link.OpenGL ES 3.0                                      | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
--   link.glTF                                               | https://www.khronos.org/gltf/
-+ G link.glTF.Specification                                 | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
-+ E link.glTF.Extensions                                    | https://github.com/KhronosGroup/glTF/tree/main/extensions
--   link.glTF.KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
--   link.glTF extensions                                    | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
--   link.glTF viewer (old)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
--   link.glTF viewer (new)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer
-- V link.glTF-Sample-Viewer                                 | https://github.khronos.org/glTF-Sample-Viewer-Release/
--   link.glTF-Sample-Models                                 | https://github.com/KhronosGroup/glTF-Sample-Models
--   link.OpenGL Tutorial                                    | http://www.opengl-tutorial.org/jp/
+-   link:OpenGL 4                                           | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+-   link:OpenGL ES 3.0                                      | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+-   link:glTF                                               | https://www.khronos.org/gltf/
++ G link:glTF.Specification                                 | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
++ E link:glTF.Extensions                                    | https://github.com/KhronosGroup/glTF/tree/main/extensions
+-   link:glTF.KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
+-   link:glTF extensions                                    | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
+-   link:glTF viewer (old)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
+-   link:glTF viewer (new)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer
+- V link:glTF-Sample-Viewer                                 | https://github.khronos.org/glTF-Sample-Viewer-Release/
+-   link:glTF-Sample-Models                                 | https://github.com/KhronosGroup/glTF-Sample-Models
+-   link:OpenGL Tutorial                                    | http://www.opengl-tutorial.org/jp/
     ------------------------------------                    | ----------------------------------------
--   link.vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
--   link.vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
+-   link:vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+-   link:vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
     ------------------------------------                    | ----------------------------------------
 -   link.blender:                                           | https://www.blender.org/
 -   link.blender:doc                                        | https://docs.blender.org/
@@ -94,9 +95,9 @@
 -   link.blender:Bake texture (TexTools)                    | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 -   link.blender:Environment                                | https://reflectorange.net/archives/041.html
 -   link.blender:Blenderではじめる画像処理                  | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
--   link.gimp-normalmap                                     | https://code.google.com/archive/p/gimp-normalmap/
+-   link:gimp-normalmap                                     | https://code.google.com/archive/p/gimp-normalmap/
     ------------------------------------                    | ----------------------------------------
-- U link.Unreal Engine 5                                    | https://docs.unrealengine.com/5.0/en-US/
+- U link:Unreal Engine 5                                    | https://docs.unrealengine.com/5.0/en-US/
     ------------------------------------                    | ----------------------------------------
 -   link.cv:OpenMVS                                         | https://github.com/cdcseacave/openMVS
 -   link.cv:colmap                                          | https://github.com/colmap/colmap
@@ -214,16 +215,16 @@
 -   link.windows:Dependency Walker                          | http://www.dependencywalker.com/
 -   link.windows:chocolatey                                 | https://chocolatey.org/
     ------------------------------------                    | ----------------------------------------
--   link.msys2                                              | https://www.msys2.org/
--   link.git                                                | https://git-scm.com/
--   link.git.doc                                            | https://git-scm.com/docs
--   link.cmake                                              | https://cmake.org/
--   link.nodejs                                             | https://nodejs.org/ja/
--   link.termux                                             | https://termux.com/
--   link.termux.wiki                                        | https://wiki.termux.com/wiki/Main_Page
+-   link:msys2                                              | https://www.msys2.org/
+-   link:git                                                | https://git-scm.com/
+-   link:git.doc                                            | https://git-scm.com/docs
+-   link:cmake                                              | https://cmake.org/
+-   link:nodejs                                             | https://nodejs.org/ja/
+-   link:termux                                             | https://termux.com/
+-   link:termux.wiki                                        | https://wiki.termux.com/wiki/Main_Page
     --- (2022) -------------------------                    | ----------------------------------------
--   link.Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
--   link.www.o3de.org                                       | https://www.o3de.org/
--   link.o3de                                               | https://github.com/o3de/o3de
+-   link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
+-   link:www.o3de.org                                       | https://www.o3de.org/
+-   link:o3de                                               | https://github.com/o3de/o3de
 
 # vim:set ft=bmk syntax=txt nowrap:

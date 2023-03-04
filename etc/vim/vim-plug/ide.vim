@@ -106,6 +106,7 @@ let g:vis_unexpand_env_list = [
   \ '$SYS_WIN_HOME',
   \ '$SYS_PROG64_DIR',
   \ '$SYS_PROG32_DIR',
+  \ '$BLENDER_ADDONS_DIR',
   \ ]
 
 Plug 'tktwr/vim-ide-style'
