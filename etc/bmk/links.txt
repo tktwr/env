@@ -122,10 +122,12 @@
     ------------------------------------                    | ----------------------------------------
 -   link.vim:                                               | https://www.vim.org/
 -   link.vim:doc                                            | https://vim-jp.org/vimdoc-ja/
--   link.vim:script                                         | https://knowledge.sakura.ad.jp/23436/
--   link.vim:chrisatmachine                                 | https://www.chrisatmachine.com/neovim
 -   link.vim:colorswat                                      | http://colorswat.ch/vim/
 -   link.vim:vim-plug                                       | https://github.com/junegunn/vim-plug
+-   link.vim:gorilla                                        | https://knowledge.sakura.ad.jp/author/gorilla/
+-   link.vim:gorilla.script                                 | https://knowledge.sakura.ad.jp/23436/
+-   link.vim:gorilla.translate                              | https://github.com/skanehira/translate.vim
+-   link.vim:chrisatmachine                                 | https://www.chrisatmachine.com/neovim
     ------------------------------------                    | ----------------------------------------
 -   link.vim:vim-winbuf-menu                                | https://github.com/tktwr/vim-winbuf-menu
 -   link.vim:vim-bmk-menu                                   | https://github.com/tktwr/vim-bmk-menu

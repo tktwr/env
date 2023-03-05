@@ -37,12 +37,13 @@ syn match    myTime             "\d\{1,2}:\d\{1,2}"
 syn match    myTime             "\d\{1,2}:\d\{1,2}:\d\{1,2}"
 syn keyword  mySat              Sat
 syn keyword  mySun              Sun
-syn keyword  myHoliday          ΩÀ∆¸
+syn keyword  myHoliday          Á•ùÊó•
 syn keyword  myHoliday          Holiday
 
 syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL
 syn match    myTagR             '([^)]*)' contains=mySat,mySun
 syn match    myTagC             '{[^}]*}'
+syn match    myIcon             '[ÓÄÄ-ÔµÜ]'
 
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
@@ -107,6 +108,7 @@ hi link myHoliday          MyRed
 hi link myTag              MyPurple
 hi link myTagR             MyAqua
 hi link myTagC             MyYellow
+hi link myIcon             MyGreen
 
 hi link myWORK             MyBlue
 hi link myINFO             MyYellow
