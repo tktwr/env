@@ -10,7 +10,7 @@
 [tcmd.main] -------------------------- | ----------------------------------------
 - L Set tab label {name}               | > vimapi-tabline-set-label
     ---------------------------------- | ----------------------------------------
--   ,resize                            | > ,resize
+- 0 ,resize                            | > ,resize
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>
 - 3 ,resize 30                         | > ,resize 30<CR>
@@ -25,7 +25,7 @@
 -   Fern                   (F)         | > F<CR>
 -   Editor                 (N)         | > N<CR>
 -   Term                   (T)         | > T<CR>
--   TermV                 (TV)         | > TV<CR>
+-   TermV                  (V)         | > V<CR>
     ---------------------------------- | ----------------------------------------
 + c mycmake.sh                         | > mycmake.sh<CR>
 + b mycmake.sh --build                 | > mycmake.sh --build<CR>

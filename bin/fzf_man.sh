@@ -1,4 +1,4 @@
 #!/bin/bash
 
-man -k $1 | awk '{print $1}' | \
-  fzf --prompt 'man> ' --preview 'man {}' --height 100% --preview-window up:70%;
+man -k '' | \
+  fzf --prompt 'man> ' --preview 'preview_man.sh {}'

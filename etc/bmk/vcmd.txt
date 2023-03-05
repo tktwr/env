@@ -10,14 +10,15 @@
 - d  Files                            | :VisFzfFiles
 - b  Buffers                          | :FzfBuffers
     ---------------------------------- | ----------------------------------------
-- r  Rg                               | :VisFzfRg
-- a  Rg all                           | :call MyFzfRgAll()
-- t  Tags                             | :VisFzfTags
+- r  Rg     <cfile>                   | :VisFzfRg
+- a  Rg all <cfile>                   | :call MyFzfRgAll()
+- t  Tags   <cfile>                   | :VisFzfTags
 - ?  Help                             | :FzfHelptags
     ---------------------------------- | ----------------------------------------
-- L  Lazygit                          | :VisPopLazygit
-- s  Git status                       | :VisGS
-- g  Git graph                        | :VisGV
+- M  Man                              | :VisFzfMan tab
+- A  Apt                              | :VisFzfApt tab
+- P  Pip                              | :VisFzfPip tab
+- D  Dpkg                             | :VisFzfDpkg tab
 [vcmd.ide] --------------------------- | ----------------------------------------
 - I IDE                                | :VisIDE
 - < SideBar                            | :VisSideBarToggle
@@ -29,13 +30,18 @@
 - Q  QuickFix                         | :VisQuickFix
 - R Qfreplace                          | :Qfreplace
     ---------------------------------- | ----------------------------------------
+- L  Lazygit                          | :VisLazygit tab
+- S  Git status                       | :VisGS
+- G  Git graph                        | :VisGV
+- g  Gllog %                          | :Gllog %
+    ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
 - p Paste                 (,p)         | ,p
 -   Yank                   (Y)         | "*y
 - Y YankFilePath                       | :call YankFilePath()
 - 1 EditTabBar                         | :EditTabBar
     ---------------------------------- | ----------------------------------------
-- M  Reload menu                      | :CpmReload
+- s  Reload menu                      | :CpmReload
 [vcmd.sub] --------------------------- | ----------------------------------------
 - T MyRunTest                          | :call MyRunTest()
 -   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
@@ -45,7 +51,6 @@
 -   ToggleDebug                        | :call bmk#ToggleDebug()
     ---------------------------------- | ----------------------------------------
 - g Gllog                              | :Gllog
--   Gllog %                            | :Gllog %
 - C MyClangFormat                      | :MyClangFormat
     ---------------------------------- | ----------------------------------------
 -   PlugInstall                        | :PlugInstall
@@ -80,10 +85,6 @@
     ---------------------------------- | ----------------------------------------
 -    Git status                       | :FzfGFiles?
 -    Git graph                        | :FzfCommits
-    ---------------------------------- | ----------------------------------------
--    TabLazygit                       | :VisTabLazygit
--    PopApt                           | :VisPopApt
--    TabApt                           | :VisTabApt
     ---------------------------------- | ----------------------------------------
 -   winbuf menu     (End, C-u)         | :silent call wbl#open()
 -   coc menu                           | :CpmOpen coc
