@@ -42,7 +42,7 @@
 -   pip search <pkg>                   | > pip search
 -   pip install <pkg>                  | > pip install
 -   pip uninstall <pkg>                | > pip uninstall
--   pip-upgrade                        | > python -m pip install --upgrade pip<CR>
+-   pip-upgrade                        | > pip install --upgrade pip<CR>
 [tcmd.system.gitbash] ---------------- | ----------------------------------------
 -   git-upgrade                        | > git update-git-for-windows<CR>
 [tcmd.system.msys] ------------------- | ----------------------------------------

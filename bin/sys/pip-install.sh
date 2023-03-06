@@ -7,6 +7,7 @@ pkg_min="\
 python-language-server \
 pylint \
 flake8 \
+autopep8 \
 pyinstaller \
 pynvim \
 "

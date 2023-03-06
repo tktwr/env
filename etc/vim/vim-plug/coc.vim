@@ -83,6 +83,7 @@ func s:MyCocInstall()
   CocInstall coc-tsserver coc-json coc-pyright coc-clangd coc-vimlsp coc-snippets coc-lists
 endfunc
 
-command MyCocInstall     call s:MyCocInstall()
+command           MyCocInstall     call s:MyCocInstall()
+command! -nargs=0 MyCocFormat      call CocActionAsync('format')
 
 imap <C-L>    <Plug>(coc-snippets-expand)

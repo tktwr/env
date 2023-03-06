@@ -16,7 +16,8 @@
 - i coc:implementation                 | _Plug_(coc-implementation)
 - r coc:references                     | _Plug_(coc-references)
 - R coc:rename                         | _Plug_(coc-rename)
-- F coc:format-selected                | _Plug_(coc-format-selected)
+-   coc:format-selected                | _Plug_(coc-format-selected)
+- F coc:Format %                       | :MyCocFormat
     ---------------------------------- | ----------------------------------------
 - S coc:clangd.switchSourceHeader      | :CocCommand clangd.switchSourceHeader
 -   coc:workspace.inspectEdit          | :CocCommand workspace.inspectEdit
