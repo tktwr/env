@@ -39,7 +39,7 @@ f_status() {
 }
 
 f_graph() {
-  for-dir.sh "git graph -1" ${GIT_DIRS}
+  for-dir.sh "git-graph.sh -1" ${GIT_DIRS}
 }
 
 f_fetch() {

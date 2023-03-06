@@ -57,22 +57,16 @@ git-cd-root() {
 #------------------------------------------------------
 # graph
 #------------------------------------------------------
-# less options
-# -E or --QUIT-AT-EOF
-# -F or --quit-if-one-screen
-# -R or --RAW-CONTROL-CHARS
-# -S or --chop-long-lines
-# -X or --no-init
 git-graph() {
-  $GIT_EXE graph --color=always $* | less -EFRSX
+  git-graph.sh "$@"
 }
 
 git-graph-date() {
-  $GIT_EXE graph --color=always --date-order  $* | less -EFRSX
+  git-graph.sh --date-order "$@"
 }
 
 git-graph-status() {
-  $GIT_EXE graph --color=always --name-status $* | less -EFRSX
+  git-graph.sh --name-status "$@"
 }
 
 #------------------------------------------------------
