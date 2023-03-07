@@ -71,6 +71,7 @@ nnoremap ==      zi
 
  nnoremap <C-;>   <C-W>:
  nnoremap <C-.>   :VisLcdHere<CR>
+ nnoremap <C-,>   :VisModifiable<CR>
 
 "nnoremap <C-]>   g<C-]>
  nnoremap <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
