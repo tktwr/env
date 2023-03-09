@@ -9,13 +9,13 @@ import cv2
 
 
 def make_img_list(wh, ifnames, label):
-    blank_img = np.zeros((wh[1], wh[0], 3), 'uint8')
-
     nr = 1
     l1 = []
     for i in ifnames:
-        if i == 'None':
-            img = blank_img
+        if i == 'BLACK':
+            img = np.zeros((wh[1], wh[0], 3), 'uint8')
+        elif i == 'WHITE':
+            img = np.ones((wh[1], wh[0], 3), 'uint8') * 255
         else:
             img = cu.cv_load(i)
             img = cu.cv_fit_img(img, wh)
