@@ -11,7 +11,13 @@ unalias -a
 f_zero_env() {
   export PS1="\u@\h[\w]\$ "
   export HISTCONTROL=ignoreboth
+
+  # fzf
+  export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix'
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
+  export RUNEWIDTH_EASTASIAN=0
+
+  # color
   export LS_COLORS="di=31:ln=31:tw=31:ow=31"
   export LS_COLORS="$LS_COLORS:ex=35:*.sh=35"
 }
@@ -79,10 +85,24 @@ f_zero_alias() {
 
   alias fd?="fdfind --type=d | fzf --preview 'ls -F {}'"
   alias ff?='fdfind --type=f | fzf'
+
+  alias d='fzf_fd'
+  alias m='fzf_make'
 }
 
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
+
+fzf_fd() {
+  opt="--header '[C-D:dir, C-F:file]'"
+  opt="$opt --bind 'ctrl-d:reload(fdfind --type=d)'"
+  opt="$opt --bind 'ctrl-f:reload(fdfind --type=f)'"
+  eval "fzf $opt"
+}
+
+fzf_make() {
+  ./make.sh $(./make.sh help | fzf | awk '{print $1}')
+}
 
 #======================================================
 # main
