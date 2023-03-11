@@ -94,11 +94,10 @@ fzf_bmk_pre() {
 fzf_bmk_selector() {
   prompt=$(printf "$g_prompt_format" "$g_prompt_icons")
   opt="--prompt '$prompt'"
+  opt="$opt --header '[C-R:open, A-T:preview, A-N:p-next, A-P:p-prev]'"
+  opt="$opt --bind 'ctrl-r:execute(fzf_bmk.sh --eval-open {})'"
   opt="$opt --preview 'preview_bmk.sh {}'"
   opt="$opt --preview-window 'hidden'"
-  opt="$opt --header '[C-R:open, C-T:preview]'"
-  opt="$opt --bind 'ctrl-r:execute(fzf_bmk.sh --eval-open {})'"
-  opt="$opt --bind 'ctrl-t:toggle-preview'"
   eval "fzf $opt"
 }
 

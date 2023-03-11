@@ -15,6 +15,9 @@ f_zero_env() {
   # fzf
   export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix'
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[C-N:next, C-P:prev, A-T:preview, A-N:p-next, A-P:p-prev]'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-page-down,alt-p:preview-page-up'"
   export RUNEWIDTH_EASTASIAN=0
 
   # color
@@ -83,26 +86,43 @@ f_zero_alias() {
   alias T2='vim -c "term" -c "only" -c "term"'
   alias V2='vim -c "term" -c "only" -c "vert term"'
 
-  alias fd?="fdfind --type=d | fzf --preview 'ls -F {}'"
-  alias ff?='fdfind --type=f | fzf'
-
-  alias d='fzf_fd'
-  alias m='fzf_make'
+  # fzf
+  alias d='fzf_fd_selector'
+  alias m='./make.sh $(fzf_make_selector)'
 }
 
 vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
-fzf_fd() {
-  opt="--header '[C-D:dir, C-F:file]'"
+#------------------------------------------------------
+# fzf
+#------------------------------------------------------
+fzf_fd_selector() {
+  opt="--header '[C-D:dir, C-F:file, A-T:preview, A-N:p-next, A-P:p-prev]'"
   opt="$opt --bind 'ctrl-d:reload(fdfind --type=d)'"
   opt="$opt --bind 'ctrl-f:reload(fdfind --type=f)'"
+  opt="$opt --preview 'fzf_preview {}'"
+  opt="$opt --preview-window 'hidden'"
   eval "fzf $opt"
 }
 
-fzf_make() {
-  ./make.sh $(./make.sh help | fzf | awk '{print $1}')
+fzf_make_selector() {
+  ./make.sh help | fzf | awk '{print $1}'
 }
+
+fzf_preview() {
+  file=$(eval "echo $1")
+  if [ -f "$file" ]; then
+    batcat -n --color=always "$file"
+  elif [ -d "$file" ]; then
+    if [ $COLUMNS -ge 80 ]; then
+      opt='-l'
+    fi
+    LANG=C ls -F --color=always $opt "$file"
+  fi
+}
+
+export -f fzf_preview
 
 #======================================================
 # main

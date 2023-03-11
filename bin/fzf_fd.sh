@@ -38,15 +38,14 @@ git-cd-root() {
 fzf_fd_selector() {
   prompt=$(printf "$g_prompt_format" "$g_prompt_icons")
   opt="--prompt '$prompt'"
-  opt="$opt --preview 'preview.sh {}'"
-  opt="$opt --preview-window 'hidden'"
-  opt="$opt --header '[C-D:dir, C-F:file, C-T:preview, A-X:explorer, A-C:chrome, A-V:vscode]'"
+  opt="$opt --header '[C-D:dir, C-F:file, A-X:explorer, A-C:chrome, A-V:vscode, A-T:preview, A-N:p-next, A-P:p-prev]'"
   opt="$opt --bind 'ctrl-d:reload(fzf_fd.sh --src --type=d)'"
   opt="$opt --bind 'ctrl-f:reload(fzf_fd.sh --src --type=f)'"
-  opt="$opt --bind 'ctrl-t:toggle-preview'"
   opt="$opt --bind 'alt-x:execute(te.sh {})'"
   opt="$opt --bind 'alt-c:execute(chrome.sh {})'"
   opt="$opt --bind 'alt-v:execute(vscode.sh {})'"
+  opt="$opt --preview 'preview.sh {}'"
+  opt="$opt --preview-window 'hidden'"
   eval "fzf $opt"
 }
 

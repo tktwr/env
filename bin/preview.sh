@@ -1,13 +1,15 @@
 #!/bin/bash
 
-f_preview() {
+fzf_preview() {
   file=$(eval "echo $1")
   if [ -f "$file" ]; then
     batcat -n --color=always "$file"
   elif [ -d "$file" ]; then
-    #LANG=C exa -lTF --icons --group-directories-first --level=1 "$file"
-    LANG=C ls -lF --color=always "$file"
+    if [ $COLUMNS -ge 80 ]; then
+      opt='-l'
+    fi
+    LANG=C ls -F --color=always $opt "$file"
   fi
 }
 
-f_preview "$*"
+fzf_preview "$*"

@@ -5,6 +5,7 @@
 #======================================================
 
 # shell
+alias s-zero='source $MY_BASH/bashrc_zero.sh'
 alias s='source $HOME/.bashrc'
 alias h='history 20'
 alias j='jobs -l'
