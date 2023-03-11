@@ -97,7 +97,9 @@ fzf_bmk_selector() {
   opt="$opt --header '[C-R:open, A-T:preview, A-N:p-next, A-P:p-prev]'"
   opt="$opt --bind 'ctrl-r:execute(fzf_bmk.sh --eval-open {})'"
   opt="$opt --preview 'preview_bmk.sh {}'"
-  opt="$opt --preview-window 'hidden'"
+  if [ $COLUMNS -lt 120 ]; then
+    opt="$opt --preview-window 'hidden'"
+  fi
   eval "fzf $opt"
 }
 

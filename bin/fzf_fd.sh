@@ -45,7 +45,9 @@ fzf_fd_selector() {
   opt="$opt --bind 'alt-c:execute(chrome.sh {})'"
   opt="$opt --bind 'alt-v:execute(vscode.sh {})'"
   opt="$opt --preview 'preview.sh {}'"
-  opt="$opt --preview-window 'hidden'"
+  if [ $COLUMNS -lt 120 ]; then
+    opt="$opt --preview-window 'hidden'"
+  fi
   eval "fzf $opt"
 }
 
