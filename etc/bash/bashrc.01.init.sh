@@ -9,6 +9,7 @@ unalias -a
 source_file $HOME/.my/*
 
 #------------------------------------------------------
+export COLUMNS
 export HISTCONTROL=ignoreboth
 export PAGER='less -FRX'
 export EDITOR='vim'

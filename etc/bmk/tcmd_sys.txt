@@ -8,6 +8,9 @@
 -   tcmd:ncdu                          | > ncdu<CR>
 -   tcmd:cal -y                        | > cal -y<CR>
     ---------------------------------- | ----------------------------------------
+-   tcmd:ip                            | > ip -4 a<CR>
+-   tcmd:ipconfig.exe                  | > ipconfig.exe<CR>
+    ---------------------------------- | ----------------------------------------
 -   mypython-type python               | > mypython-type python<CR>
 -   mypython-type python-win           | > mypython-type python-win<CR>
 -   mypython-venv-info                 | > mypython-venv-info<CR>

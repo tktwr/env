@@ -9,8 +9,9 @@ unalias -a
 # functions
 #======================================================
 f_zero_env() {
-  export PS1="\u@\h[\w]\$ "
+  export COLUMNS
   export HISTCONTROL=ignoreboth
+  export PS1="\u@\h[\w]\$ "
 
   # fzf
   export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix'

@@ -63,7 +63,7 @@ let g:cpm_files =
 let g:cpm_titles = {
   \ 'default'          : ['vcmd.external & vcmd.fzf & vcmd.ide', 'vcmd.sub', 'coc'],
   \ 'default.fern'     : ['fern.external & fern.fzf & bmk.dir', 'fern'],
-  \ 'default.terminal' : ['tcmd.fzf & tcmd.main', 'tcmd.sub'],
+  \ 'default.terminal' : ['tcmd.fzf & tcmd.main'],
   \ 'default.diff'     : ['vcmd.diff'],
   \ 'default.dirdiff'  : ['vcmd.dirdiff'],
   \ 'default.git'      : ['vcmd.git'],

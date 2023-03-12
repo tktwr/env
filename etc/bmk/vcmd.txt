@@ -20,15 +20,15 @@
 - P  Pip                              | :VisFzfPip tab
 - D  Dpkg                             | :VisFzfDpkg tab
 [vcmd.ide] --------------------------- | ----------------------------------------
-- I IDE                                | :VisIDE
-- < SideBar                            | :VisSideBarToggle
+- I  IDE                              | :VisIDE
+- <  SideBar                          | :VisSideBarToggle
 - >  TagBar                           | :VisTagbarToggle
-- F Fern                               | :VisFernDrawer %:p:h
-- N Editor                             | :new
+- F  Fern                             | :VisFernDrawer %:p:h
+- N  Editor                           | :new
 - T  Term                             | :below VisTerm
 - _  Cd                               | :VisSendCdE2T
 - Q  QuickFix                         | :VisQuickFix
-- R Qfreplace                          | :Qfreplace
+- R  Qfreplace                        | :Qfreplace
     ---------------------------------- | ----------------------------------------
 - L  Lazygit                          | :VisLazygit tab
 - S  Git status                       | :VisGS

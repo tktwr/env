@@ -1,25 +1,14 @@
-[tcmd.fzf] --------------------------- | ----------------------------------------
-- f  Bmk                  (f)         | > f<CR>
-- d  Dirs/Files           (d)         | > d<CR>
-[tcmd.fzf.ext] ----------------------- | ----------------------------------------
--   fzf_apt.sh                         | > fzf_apt.sh<CR>
--   fzf_pip.sh                         | > fzf_pip.sh<CR>
--   fzf_dpkg.sh                        | > fzf_dpkg.sh<CR>
--   fzf_man.sh                         | > fzf_man.sh<CR>
--   fzf_make.sh                        | > fzf_make.sh<CR>
 [tcmd.main] -------------------------- | ----------------------------------------
-- L Set tab label {name}               | > vimapi-tabline-set-label
+-   Lazygit              (,lg)         | > ,lg<CR>
+-   Git graph              (G)         | > G<CR>
+-   Git graph all         (GA)         | > GA<CR>
+-   Git status            (GS)         | > GS<CR>
+-   Git graph             (GV)         | > GV<CR>
     ---------------------------------- | ----------------------------------------
-- 0 ,resize                            | > ,resize
-- 1 ,resize 10                         | > ,resize 10<CR>
-- 2 ,resize 20                         | > ,resize 20<CR>
-- 3 ,resize 30                         | > ,resize 30<CR>
-- 4 ,resize 40                         | > ,resize 40<CR>
-[tcmd.sub] --------------------------- | ----------------------------------------
--   G                                  | > G<CR>
--   GA                                 | > GA<CR>
--   GS                                 | > GS<CR>
--   GV                                 | > GV<CR>
+-   Man                 (,man)         | > ,man<CR>
+-   Apt                 (,apt)         | > ,apt<CR>
+-   Pip                 (,pip)         | > ,pip<CR>
+-   Dpkg               (,dpkg)         | > ,dpkg<CR>
     ---------------------------------- | ----------------------------------------
 -   IDE                    (I)         | > I<CR>
 -   Fern                   (F)         | > F<CR>
@@ -27,7 +16,20 @@
 -   Term                   (T)         | > T<CR>
 -   TermV                  (V)         | > V<CR>
     ---------------------------------- | ----------------------------------------
+- L Set tab label {name}               | > vimapi-tabline-set-label
+    ---------------------------------- | ----------------------------------------
+- 0 ,resize                            | > ,resize
+- 1 ,resize 10                         | > ,resize 10<CR>
+- 2 ,resize 20                         | > ,resize 20<CR>
+- 3 ,resize 30                         | > ,resize 30<CR>
+- 4 ,resize 40                         | > ,resize 40<CR>
+    ---------------------------------- | ----------------------------------------
 + c mycmake.sh                         | > mycmake.sh<CR>
 + b mycmake.sh --build                 | > mycmake.sh --build<CR>
+[tcmd.fzf] --------------------------- | ----------------------------------------
+- f  Bmk                  (f)         | > f<CR>
+- d  Dirs/Files           (d)         | > d<CR>
+- m  Make                 (m)         | > m<CR>
+- c  Cmd                  (c)         | > c<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
