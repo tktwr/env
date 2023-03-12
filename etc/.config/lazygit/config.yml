@@ -11,7 +11,7 @@ gui:
 git:
   paging:
     colorArg: always
-    #pager: delta -s --dark --paging=never
+    pager: delta -s --dark --paging=never
   merging:
     args: '--no-ff'
   log:
