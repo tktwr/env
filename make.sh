@@ -73,7 +73,7 @@ f_tags() {
 
 #------------------------------------------------------
 f_help() {
-  echo "status      ... status in GIT_DIRS"
+  echo "status      ... status in GIT_DIRS (default)"
   echo "graph       ... graph  in GIT_DIRS"
   echo "fetch       ... fetch  in GIT_DIRS"
   echo "pull        ... pull   in GIT_DIRS"
@@ -84,7 +84,7 @@ f_help() {
   echo "snap        ... make a snapshot"
   echo "tags        ... make tags"
   echo "----------- ... -----------------------------"
-  echo "help        ... print this help (default)"
+  echo "help        ... print this help"
 }
 
 f_default() {

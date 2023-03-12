@@ -41,6 +41,7 @@
 -   USER_LOCAL/                        | $USER_LOCAL/
 -   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
+-   setup/wsl.ubuntu/                  | $MY_ENV/setup/wsl.ubuntu/
 -   work/                              | $MY_WORK/
 -   arch/                              | $MY_ARCH/
 -   backup/                            | $MY_BACKUP/

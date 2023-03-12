@@ -3,8 +3,8 @@
 #======================================================
 # variables
 #======================================================
-WIN_HOME=/mnt/c/Users/Takeh
-ENV_DIR=~/MyRoaming/env
+SYS_WIN_HOME=/mnt/c/Users/Takeh
+MY_ENV=~/MyRoaming/env
 
 pkg_min="\
 vim \
@@ -53,12 +53,52 @@ exa \
 #======================================================
 # functions
 #======================================================
-f_update() {
-  sudo -E apt update
-  sudo -E apt upgrade
-  sudo -E apt autoremove
+f_info() {
+  echo "SYS_WIN_HOME = $SYS_WIN_HOME"
+  echo "MY_ENV       = $MY_ENV"
 }
 
+f_check() {
+  cd
+
+  if [ ! -d "WinHome" ]; then
+    echo "make WinHome dir"
+    ln -s $SYS_WIN_HOME WinHome
+  else
+    echo "WinHome [OK]"
+  fi
+
+  if [ ! -d $MY_ENV ]; then
+    echo "$MY_ENV is not a directory"
+    exit
+  else
+    echo "MY_ENV [OK]"
+  fi
+}
+
+#------------------------------------------------------
+f_init() {
+  f_check
+
+  f_update_apt
+  f_install_min
+
+  f_wsltty
+  f_etc_init
+}
+
+f_wsltty() {
+  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
+  cp $MY_ENV/setup/win/wsltty/config $wsltty_dir
+}
+
+f_etc_init() {
+  cd $MY_ENV/etc
+  ./make.sh init
+  source $HOME/.bashrc
+}
+
+#------------------------------------------------------
 f_install_min() {
   sudo -E apt install $pkg_min
 }
@@ -67,26 +107,27 @@ f_install_ext() {
   sudo -E apt install $pkg_ext
 }
 
-#------------------------------------------------------
-f_dir() {
-  if [ ! -d "WinHome" ]; then
-    cd
-    ln -s $WIN_HOME WinHome
-  fi
-}
-
-f_wsltty() {
-  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
-  cp $ENV_DIR/os.windows/wsltty/config $wsltty_dir
+f_install_dev() {
+  sudo -E apt install $pkg_dev
 }
 
 #------------------------------------------------------
-f_etc() {
-  cd $ENV_DIR/etc
-  ./make.sh init
-  source $HOME/.bashrc
+f_update_apt() {
+  sudo -E apt update
+  sudo -E apt upgrade
+  sudo -E apt autoremove
 }
 
+f_update_vim() {
+  vim -c 'PlugUpdate'
+  vim -c 'CocUpdate'
+}
+
+f_update_pip() {
+  pip install --upgrade pip
+}
+
+#------------------------------------------------------
 f_python_venv() {
   mypython.sh --create-venv torch
   source $HOME/.bashrc
@@ -115,40 +156,26 @@ f_nvim() {
 }
 
 #------------------------------------------------------
-f_init() {
-  if [ ! -d $ENV_DIR ]; then
-    echo "$ENV_DIR is not a directory"
-    return
-  fi
-
-  f_update
-  f_install_min
-
-  f_dir
-  f_wsltty
-
-  f_etc
-  #f_python_venv
-  #f_vim
-  #f_nvim
-}
-
-#------------------------------------------------------
 f_help() {
-  echo "update      ... update"
+  echo "info        ... info"
+  echo "check       ... check"
+  echo "----------- ... -----------------------------"
+  echo "init        ... init"
+  echo "wsltty      ... wsltty"
+  echo "etc_init    ... etc_init"
+  echo "----------- ... -----------------------------"
   echo "install_min ... install_min"
   echo "install_ext ... install_ext"
+  echo "install_dev ... install_dev"
   echo "----------- ... -----------------------------"
-  echo "dir         ... dir"
-  echo "wsltty      ... wsltty"
+  echo "update_apt  ... update_apt"
+  echo "update_vim  ... update_vim"
+  echo "update_pip  ... update_pip"
   echo "----------- ... -----------------------------"
-  echo "etc         ... etc"
   echo "python_venv ... python_venv"
   echo "nodejs      ... nodejs"
   echo "vim         ... vim"
   echo "nvim        ... nvim"
-  echo "----------- ... -----------------------------"
-  echo "init        ... init"
   echo "----------- ... -----------------------------"
   echo "help        ... print this help (default)"
 }
