@@ -88,7 +88,11 @@ git-ls-no-x() {
 # chmod
 #------------------------------------------------------
 git-chmod-x() {
-  $GIT_EXE update-index --add --chmod=+x "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE update-index --add --chmod=+x "$@"
+  else
+    echo "git-chmod-x {file}"
+  fi
 }
 
 git-chmod-x-all() {
@@ -132,22 +136,30 @@ git-delete-branch-origin() {
 # stage/unstage
 #------------------------------------------------------
 git-stage() {
-  $GIT_EXE add "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE add "$@"
+  fi
 }
 
 git-unstage() {
-  $GIT_EXE reset -- "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE reset -- "$@"
+  fi
 }
 
 #------------------------------------------------------
 # track/untrack
 #------------------------------------------------------
 git-track() {
-  $GIT_EXE add "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE add "$@"
+  fi
 }
 
 git-untrack() {
-  $GIT_EXE rm --cached -r "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE rm --cached -r "$@"
+  fi
 }
 
 #------------------------------------------------------
@@ -243,15 +255,21 @@ git-tmp-reset() {
 # others
 #------------------------------------------------------
 git-clone-shallow() {
-  $GIT_EXE clone --depth 1 "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE clone --depth 1 "$@"
+  fi
 }
 
 git-clone-shallow-recursive() {
-  $GIT_EXE clone --depth 1 --recurse-submodules --shallow-submodules "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE clone --depth 1 --recurse-submodules --shallow-submodules "$@"
+  fi
 }
 
 git-clone-recursive() {
-  $GIT_EXE clone --recurse-submodules "$@"
+  if [ $# -gt 0 ]; then
+    $GIT_EXE clone --recurse-submodules "$@"
+  fi
 }
 
 git-submodule-update-all() {
