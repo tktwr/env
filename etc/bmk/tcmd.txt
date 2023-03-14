@@ -24,9 +24,10 @@
 - 3 ,resize 30                         | > ,resize 30<CR>
 - 4 ,resize 40                         | > ,resize 40<CR>
     ---------------------------------- | ----------------------------------------
-+ c mycmake.sh                         | > mycmake.sh<CR>
-+ b mycmake.sh --build                 | > mycmake.sh --build<CR>
++ C mycmake.sh                         | > mycmake.sh<CR>
++ B mycmake.sh --build                 | > mycmake.sh --build<CR>
 [tcmd.fzf] --------------------------- | ----------------------------------------
+- b  Buffers                          | :FzfBuffers
 - f  Bmk                  (f)         | > f<CR>
 - d  Dirs/Files           (d)         | > d<CR>
 - m  Make                 (m)         | > m<CR>

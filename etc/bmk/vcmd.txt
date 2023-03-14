@@ -6,9 +6,9 @@
 -    ViewThis          (C-CR)         | :call bmk#ViewThis()
 -    OpenThis          (S-CR)         | :call bmk#OpenThis()
 [vcmd.fzf] --------------------------- | ----------------------------------------
+- b  Buffers                          | :FzfBuffers
 - f  Bmk                              | :VisFzfBmk
 - d  Files                            | :VisFzfFiles
-- b  Buffers                          | :FzfBuffers
     ---------------------------------- | ----------------------------------------
 - r  Rg     <cfile>                   | :VisFzfRg
 - a  Rg all <cfile>                   | :call MyFzfRgAll()
