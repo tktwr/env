@@ -13,7 +13,7 @@
 
 export FZF_DEFAULT_COMMAND="fdfind --strip-cwd-prefix"
 export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[C-N:next, C-P:prev, A-T:preview, A-N:p-next, A-P:p-prev]'"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-page-down,alt-p:preview-page-up'"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color 'bg:#2a2a2a,bg+:#3c3836,fg:#ebdbb2,fg+:#ebdbb2,hl:#928374,hl+:#fb4934,preview-bg:#2a2a2a,spinner:#fb4934,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,prompt:#fb4934,border:#ebdbb2,separator:#504945'"
@@ -98,6 +98,11 @@ eval_fd() {
   fi
 }
 
+eval_rg() {
+  file=$(echo "$*" | awk -F ':' '{print $1}')
+  eval_cmd vim "$file"
+}
+
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
@@ -105,6 +110,7 @@ alias  c='eval_bmk           $(fzf_bmk.sh --prompt-icons " " tcmd.txt tcmd_sy
 alias  f='eval_bmk           $(fzf_bmk.sh --prompt-icons "   " bmk_dir.txt bmk_file.txt links.txt papers.txt)'
 alias  d='eval_fd            $(fzf_fd.sh --root)'
 alias  m='eval_cmd make      $(fzf_make.sh)'
+alias  r='eval_rg            $(fzf_rg.sh)'
 
 alias .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
 alias ,?='eval_cmd popd      $(fzf_pushd)'

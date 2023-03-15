@@ -99,9 +99,10 @@ vim-where() { vim `which $*`; }
 # fzf
 #------------------------------------------------------
 fzf_fd_selector() {
-  opt="--header '[C-D:dir, C-F:file, A-T:preview, A-N:p-next, A-P:p-prev]'"
-  opt="$opt --bind 'ctrl-d:reload(fdfind --type=d)'"
-  opt="$opt --bind 'ctrl-f:reload(fdfind --type=f)'"
+  opt="--header '[A-A:all, A-D:dir, A-F:file, A-T:preview, A-N:p-next, A-P:p-prev]'"
+  opt="$opt --bind 'alt-a:reload(fdfind)'"
+  opt="$opt --bind 'alt-d:reload(fdfind --type=d)'"
+  opt="$opt --bind 'alt-f:reload(fdfind --type=f)'"
   opt="$opt --preview 'fzf_preview {}'"
   opt="$opt --preview-window 'hidden'"
   eval "fzf $opt"
