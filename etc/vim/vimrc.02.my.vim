@@ -56,7 +56,6 @@ let g:my_term_winheight_max = 20
 let g:my_trans_winheight = 10
 
 " width
-let g:my_winwidth_max = 150
 let g:my_left_winwidth = 30
 let g:my_right_winwidth = 30
-
+let g:my_winwidth_max = float2nr(3.0 / 4.0 * (&columns - g:my_left_winwidth))

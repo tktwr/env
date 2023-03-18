@@ -109,8 +109,8 @@ eval_rg() {
 alias  c='eval_bmk           $(fzf_bmk.sh --prompt-icons " " tcmd.txt tcmd_sys.txt tcmd_git.txt)'
 alias  f='eval_bmk           $(fzf_bmk.sh --prompt-icons "   " bmk_dir.txt bmk_file.txt links.txt papers.txt)'
 alias  d='eval_fd            $(fzf_fd.sh --root)'
-alias  m='eval_cmd make      $(fzf_make.sh)'
 alias  r='eval_rg            $(fzf_rg.sh)'
+alias  m='eval_cmd make      $(fzf_make.sh)'
 
 alias .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
 alias ,?='eval_cmd popd      $(fzf_pushd)'
