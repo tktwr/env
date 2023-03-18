@@ -8,9 +8,9 @@
 #------------------------------------------------------
 mypython-win() {
   export MY_PYTHON_EXE="python"
-  export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
-  export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
   export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
+  export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
+  export PYTHONPATH="$MY_BIN_WIN/py;$PYTHONPATH"
   export PATH="$USER_PYTHON_ROAMING:$PATH"
   export PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
   export PATH="$USER_PYTHON_HOME:$PATH"
@@ -21,9 +21,9 @@ mypython-win() {
 
 mypython-linux() {
   export MY_PYTHON_EXE="python3"
-  export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
-  export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
   export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
+  export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
+  export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
 }
 
 mypython-type() {

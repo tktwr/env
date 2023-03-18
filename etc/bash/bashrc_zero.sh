@@ -16,7 +16,7 @@ f_zero_env() {
   # fzf
   export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix'
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[C-N:next, C-P:prev, A-T:preview, A-N:p-next, A-P:p-prev]'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-page-down,alt-p:preview-page-up'"
   export RUNEWIDTH_EASTASIAN=0

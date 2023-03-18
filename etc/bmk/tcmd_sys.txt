@@ -11,6 +11,15 @@
 -   tcmd:ip                            | > ip -4 a<CR>
 -   tcmd:ipconfig.exe                  | > ipconfig.exe<CR>
     ---------------------------------- | ----------------------------------------
+-   tcmd:print-env.sh                  | > print-env.sh<CR>
+-   tcmd:print-path.sh                 | > print-path.sh<CR>
+-   tcmd:print-version.sh              | > print-version.sh<CR>
+-   tcmd:print-nerd-font.sh            | > print-nerd-font.sh<CR>
+-   tcmd.color:print-256colors.py      | > print-256colors.py<CR>
+-   tcmd.color:print-truecolors.py     | > print-truecolors.py<CR>
+-   tcmd.color:print-colors.sh         | > print-colors.sh<CR>
+-   tcmd.color:print-esc.sh            | > print-esc.sh<CR>
+    ---------------------------------- | ----------------------------------------
 -   mypython-type python               | > mypython-type python<CR>
 -   mypython-type python-win           | > mypython-type python-win<CR>
 -   mypython-venv-info                 | > mypython-venv-info<CR>

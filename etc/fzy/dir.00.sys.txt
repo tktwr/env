@@ -24,11 +24,12 @@ config-home         | SYS_CONFIG_HOME     | $SYS_CONFIG_HOME
 share-home          | SYS_SHARE_HOME      | $SYS_SHARE_HOME
 #----------         | ----------          | ----------
 user-local          | USER_LOCAL          | $SYS_WIN_HOME/AppData/Local
-user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
 user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs
 user-python-home    | USER_PYTHON_HOME    | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python310
-user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/sdk
+#----------         | ----------          | ----------
+user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
+user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 
 # vim:set nowrap:

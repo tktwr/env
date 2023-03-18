@@ -1,6 +1,6 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
-- E env/                               | $MY_ENV/
 - e etc/                               | $MY_ETC/
+- E env/                               | $MY_ENV/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
 - i bin/                               | $MY_BIN/
@@ -41,6 +41,7 @@
 -   USER_LOCAL/                        | $USER_LOCAL/
 -   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
+-   setup/ahk/                         | $MY_ENV/setup/win/ahk/
 -   setup/wsl.ubuntu/                  | $MY_ENV/setup/wsl.ubuntu/
 -   work/                              | $MY_WORK/
 -   arch/                              | $MY_ARCH/
