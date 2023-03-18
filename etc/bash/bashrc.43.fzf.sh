@@ -28,15 +28,41 @@ fzf_hist() {
   echo $(history 40 | fzf | awk '{print $1}')
 }
 
+fzf_print() {
+  debug=0
+  if [ $debug -eq 1 ]; then
+    echo "$*"
+  fi
+}
+
+#------------------------------------------------------
+# eval
 #------------------------------------------------------
 eval_cmd() {
   cmd="$1"
   arg="$2"
+  fzf_print "eval_cmd: [$cmd] [$arg]"
   if [ -n "$arg" ]; then
     eval "$cmd \"$arg\""
   fi
 }
 
+eval_fd() {
+  file="$*"
+  if [ -d "$file" ]; then
+    eval_cmd cd "$file"
+  elif [ -f "$file" ]; then
+    eval_cmd vim "$file"
+  fi
+}
+
+eval_rg() {
+  file=$(echo "$*" | awk -F ':' '{print $1}')
+  eval_cmd vim "$file"
+}
+
+#------------------------------------------------------
+# bmk
 #------------------------------------------------------
 bmk_get_value() {
   awk -F '|' '{print $2}' | sed -e 's+^ *++'
@@ -48,13 +74,6 @@ bmk_rm_tcmd() {
 
 bmk_expand() {
   eval "echo $*"
-}
-
-fzf_print() {
-  debug=0
-  if [ $debug -eq 1 ]; then
-    echo "$*"
-  fi
 }
 
 eval_bmk() {
@@ -85,22 +104,6 @@ eval_bmk() {
       eval_fd "$file"
       ;;
   esac
-}
-
-eval_fd() {
-  file="$*"
-  if [ -d "$file" ]; then
-    fzf_print "dir: [$file]"
-    eval_cmd cd "$file"
-  elif [ -f "$file" ]; then
-    fzf_print "file: [$file]"
-    eval_cmd vim "$file"
-  fi
-}
-
-eval_rg() {
-  file=$(echo "$*" | awk -F ':' '{print $1}')
-  eval_cmd vim "$file"
 }
 
 #------------------------------------------------------

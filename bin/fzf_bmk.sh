@@ -2,11 +2,11 @@
 
 g_bin_name='fzf_bmk.sh'
 
-g_pre_filter='-'
 g_action='--fzf'
 g_prompt_format='Bmk(%s)> '
 g_prompt_icons='  '
-g_files=""
+g_bmk_pre_filter='-'
+g_bmk_files=""
 
 #------------------------------------------------------
 f_help() {
@@ -17,14 +17,14 @@ f_help() {
   echo "  $g_bin_name [options] [file...]"
   echo
   echo "OPTIONS"
-  echo "  --help       ... print help"
-  echo "  --print-args ... print args"
-  echo "  --src        ... print source lines"
-  echo "  --fzf        ... print the selected line by fzf"
-  echo "  --fzf-post   ... print the selected line by fzf (post processed)"
-  echo "  --fzf-open   ... open the selected line by fzf"
-  echo "  --eval-open  ... open line"
-  echo "  +            ... filter +"
+  echo "  --help      ... print help"
+  echo "  --args      ... print args"
+  echo "  --src       ... print source lines"
+  echo "  --fzf       ... print the selected line by fzf"
+  echo "  --fzf-post  ... print the selected line by fzf (post processed)"
+  echo "  --fzf-open  ... open the selected line by fzf"
+  echo "  --eval-open ... open line"
+  echo "  +           ... filter +"
 }
 
 #------------------------------------------------------
@@ -81,7 +81,7 @@ bmk_open() {
 
 #------------------------------------------------------
 fzf_bmk_pre() {
-  case $g_pre_filter in
+  case $g_bmk_pre_filter in
     +)
       grep '^+ '
       ;;
@@ -138,11 +138,11 @@ fzf_bmk() {
 #------------------------------------------------------
 f_print_args() {
   echo "== [args] ============================================="
-  echo "g_pre_filter    : [$g_pre_filter]"
-  echo "g_action        : [$g_action]"
-  echo "g_prompt_format : [$g_prompt_format]"
-  echo "g_prompt_icons  : [$g_prompt_icons]"
-  echo "g_files         : [$g_files]"
+  echo "g_action         : [$g_action]"
+  echo "g_prompt_format  : [$g_prompt_format]"
+  echo "g_prompt_icons   : [$g_prompt_icons]"
+  echo "g_bmk_pre_filter : [$g_bmk_pre_filter]"
+  echo "g_bmk_files      : [$g_bmk_files]"
   echo "======================================================="
 }
 
@@ -153,7 +153,7 @@ f_parse_args() {
         f_help
         exit
         ;;
-      --print-args)
+      --args)
         f_print_args 1>&2
         exit
         ;;
@@ -170,10 +170,10 @@ f_parse_args() {
         g_prompt_icons="$1"
         ;;
       +)
-        g_pre_filter='+'
+        g_bmk_pre_filter='+'
         ;;
       *)
-        g_files="$g_files $1"
+        g_bmk_files="$g_bmk_files $1"
         ;;
     esac
     shift
@@ -182,6 +182,6 @@ f_parse_args() {
 
 #------------------------------------------------------
 f_parse_args "$@"
-if [ "$g_files" != "" ]; then
-  fzf_bmk $g_files
+if [ -n "$g_bmk_files" ]; then
+  fzf_bmk $g_bmk_files
 fi

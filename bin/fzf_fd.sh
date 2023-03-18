@@ -18,7 +18,7 @@ f_help() {
   echo
   echo "OPTIONS"
   echo "  --help        ... print help"
-  echo "  --print-args  ... print args"
+  echo "  --args        ... print args"
   echo "  --src         ... print source lines"
   echo "  --fzf         ... print the selected line by fzf"
   echo "  --type=*      ... set type (f|d)"
@@ -90,7 +90,7 @@ f_parse_args() {
         f_help
         exit
         ;;
-      --print-args)
+      --args)
         f_print_args 1>&2
         exit
         ;;

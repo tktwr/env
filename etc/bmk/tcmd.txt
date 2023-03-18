@@ -30,6 +30,7 @@
 - b  Buffers                          | :FzfBuffers
 - f  Bmk                  (f)         | > f<CR>
 - d  Dirs/Files           (d)         | > d<CR>
+- r  Rg                   (r)         | > r<CR>
 - m  Make                 (m)         | > m<CR>
 - c  Cmd                  (c)         | > c<CR>
 
