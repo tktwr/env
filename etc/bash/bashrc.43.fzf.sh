@@ -19,6 +19,13 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-page-down,alt-p
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color 'bg:#2a2a2a,bg+:#3c3836,fg:#ebdbb2,fg+:#ebdbb2,hl:#928374,hl+:#fb4934,preview-bg:#2a2a2a,spinner:#fb4934,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,prompt:#fb4934,border:#ebdbb2,separator:#504945'"
 export RUNEWIDTH_EASTASIAN=0
 
+case $MY_OS_NAME in
+  gitbash)
+    export FZF_DEFAULT_COMMAND="find"
+    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
+    alias fzf='winpty fzf'
+    ;;
+esac
 #------------------------------------------------------
 fzf_pushd() {
   echo $(dirs -v | fzf | awk '{print "+"$1}')

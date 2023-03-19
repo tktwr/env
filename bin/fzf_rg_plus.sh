@@ -13,4 +13,4 @@ fzf --prompt 'rg> ' \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $dirs || true" \
     --delimiter : \
     --preview 'batcat -n --color=always {1} --highlight-line {2}' \
-    --preview-window 'hidden,up,60%,border-bottom,+{2}/3'
+    --preview-window 'hidden,up,60%,+{2}/3'
