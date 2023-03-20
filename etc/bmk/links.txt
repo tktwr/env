@@ -194,6 +194,7 @@
 -   link.linux:fd                                           | https://github.com/sharkdp/fd
 -   link.linux:ripgrep                                      | https://github.com/BurntSushi/ripgrep
 -   link.linux:regex                                        | https://docs.rs/regex/1.7.1/regex/index.html
+-   link.linux:universal-ctags                              | https://github.com/universal-ctags/ctags
 -   link.linux:exa                                          | https://github.com/ogham/exa
 -   link.linux:delta                                        | https://github.com/dandavison/delta
 -   link.linux:lazygit                                      | https://github.com/jesseduffield/lazygit

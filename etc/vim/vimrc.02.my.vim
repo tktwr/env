@@ -11,18 +11,6 @@ if executable('rg')
 endif
 
 "------------------------------------------------------
-" runtimepath
-"------------------------------------------------------
-let $MY_MEMO_TAGS       = printf("%s_tags", expand($MY_MEMO))
-let $MY_SAMPLES_TAGS    = printf("%s_tags", expand($MY_SAMPLES))
-let $MY_DIARY_TAGS      = printf("%s_tags", expand($MY_DIARY))
-let $MY_LOCAL_MEMO_TAGS = printf("%s/memo_tags", expand($MY_LOCAL_CONFIG))
-
-set runtimepath+=$MY_MEMO_TAGS
-set runtimepath+=$MY_SAMPLES_TAGS
-set runtimepath+=$MY_DIARY_TAGS
-set runtimepath+=$MY_LOCAL_MEMO_TAGS
-"------------------------------------------------------
 " tags
 "------------------------------------------------------
 " tags for env
@@ -30,6 +18,12 @@ set tags+=$MY_ENV/.tags.bin_sh
 set tags+=$MY_ENV/.tags.bin_py
 set tags+=$MY_ENV/.tags.bash
 set tags+=$MY_ENV/.tags.vim
+
+" tags for memo
+set tags+=$MY_MEMO/tags
+set tags+=$MY_SAMPLES/tags
+set tags+=$MY_DIARY/tags
+set tags+=$MY_LOCAL_CONFIG/memo/tags
 
 " tags for libtt
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
@@ -42,7 +36,6 @@ set tags+=$MY_OPT/tags.imgui
 set tags+=$MY_OPT/tags.nfd
 set tags+=$MY_OPT/tags.stb
 set tags+=$MY_OPT/tags.json11
-"set tags+=$MY_OPT/tags.win
 "------------------------------------------------------
 
 let g:mapleader = ','
