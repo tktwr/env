@@ -43,14 +43,13 @@ f_ins_path_local() {
 
 f_ins_path_env() {
   local pth=$1
+
   f_ins_path "$pth/bin"
-  f_ins_path "$pth/bin/cron"
-  f_ins_path "$pth/bin/sys"
-  f_ins_path "$pth/bin/gfx"
-  f_ins_path "$pth/bin/external"
-  f_ins_path "$pth/bin/external/dict"
+  dirs=$(/bin/ls -d $pth/bin/[0-9]?.*/)
+  for i in $dirs; do
+    f_ins_path "$i"
+  done
   f_ins_path "$pth/bin/os.$MY_OS_NAME"
-  f_ins_path "$pth/bin/test"
   f_ins_path "$pth/setup"
 }
 

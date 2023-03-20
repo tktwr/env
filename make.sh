@@ -65,10 +65,10 @@ f_snap() {
 }
 
 f_tags() {
-  myctags.sh bin/*.sh > .tags.bin_sh
-  myctags.sh bin/py/*.py > .tags.bin_py
-  myctags.sh etc/bash/*.sh > .tags.bash
-  myctags.sh $VIM_FILES > .tags.vim
+  ctags -o .tags.bin_sh -R bin/*.sh     
+  ctags -o .tags.bin_py -R bin/py/*.py  
+  ctags -o .tags.bash   -R etc/bash/*.sh
+  ctags -o .tags.vim    -R $VIM_FILES   
 }
 
 #------------------------------------------------------
