@@ -22,6 +22,12 @@
 [difftool]
   prompt = false
 
+[delta]
+  # minus-style = 1 reverse
+  # minus-emph-style = 124 reverse
+  # plus-style = 2 reverse
+  # plus-emph-style = 28 reverse
+
 [alias]
   graph     = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
   graph-all = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --all

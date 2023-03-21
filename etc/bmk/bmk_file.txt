@@ -9,12 +9,7 @@
 +   papers                                           | $MY_BMK/papers.txt
     ----------------------------------               | ----------------------------------------
 -   local:engword                                    | $MY_LOCAL_CONFIG/eng/engword.txt
--   local.memo:english                               | $MY_LOCAL_CONFIG/memo/eng.md.html
--   local.memo:math                                  | $MY_LOCAL_CONFIG/memo/math.md.html
     ----------------------------------               | ----------------------------------------
--   index:memo                                       | $MY_REMOTE_CONFIG/memo/index.html
--   index:memo.local                                 | $MY_LOCAL_CONFIG/memo/index.html
--   index:diary                                      | $MY_PRIVATE_CONFIG/diary/index.html
 -   index:proj                                       | $MY_PROJ/index.md.html
     ----------------------------------               | ----------------------------------------
 -   github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h

@@ -1,7 +1,7 @@
 gui:
   #showIcons: true
   showFileTree: false
-  sidePanelWidth: 0.3
+  sidePanelWidth: 0.25
   language: 'en'
   theme:
     selectedLineBgColor:
@@ -11,7 +11,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta -s --dark --paging=never
+    pager: delta -s --wrap-max-lines 0 --dark --paging=never
   merging:
     args: '--no-ff'
   log:

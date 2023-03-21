@@ -10,9 +10,11 @@
 - f  Bmk                              | :VisFzfBmk
 - d  Files                            | :VisFzfFiles
     ---------------------------------- | ----------------------------------------
-- r  Rg     <cfile>                   | :VisFzfRg
-- a  Rg all <cfile>                   | :call MyFzfRgAll()
-- t  Tags   <cfile>                   | :VisFzfTags
+- r  Rg <cfile>                       | :VisFzfRg
+- a  Rg <cfile> all                   | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
+- %  Rg <cfile> %                     | :call vis#external#fzf#rg('<cfile>', ['%'])
+- t  Tags <cfile>       (C-])         | :VisFzfTags
+- m  Memo                             | :VisFzfMemo
 - ?  Help                             | :FzfHelptags
     ---------------------------------- | ----------------------------------------
 - M  Man                              | :VisFzfMan tab
@@ -31,8 +33,8 @@
 - R  Qfreplace                        | :Qfreplace
     ---------------------------------- | ----------------------------------------
 - L  Lazygit                          | :VisLazygit tab
-- S  Git status                       | :VisGS
-- G  Git graph                        | :VisGV
+- S  Git status                       | :FzfGFiles?
+- G  Git graph                        | :FzfCommits
 - g  Gllog %                          | :Gllog %
     ---------------------------------- | ----------------------------------------
 - x Wx                                 | :Wx ?
@@ -80,11 +82,10 @@
 [vcmd.ext] --------------------------- | ----------------------------------------
 -    Git grep                         | :VisGgrep ??
 -    Vim grep here                    | :VisVimgrep ?? *
--    Vim grep all                     | :call MyVimgrepAll('??')
 -    Tag jump                         | :call VisTjumpPrompt()
     ---------------------------------- | ----------------------------------------
--    Git status                       | :FzfGFiles?
--    Git graph                        | :FzfCommits
+-    Git status                       | :VisGS
+-    Git graph                        | :VisGV
     ---------------------------------- | ----------------------------------------
 -   winbuf menu     (End, C-u)         | :silent call wbl#open()
 -   coc menu                           | :CpmOpen coc

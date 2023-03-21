@@ -1,28 +1,4 @@
 "------------------------------------------------------
-" helper functions
-"------------------------------------------------------
-func MyFzfRgAll()
-  let dirs = [
-    \ '$MY_ENV',
-    \ '$MY_VIM/plugged/vim-ide-style',
-    \ '$MY_VIM/plugged/vim-bmk-menu',
-    \ '$MY_VIM/plugged/vim-winbuf-menu',
-    \ '$MY_VIM/plugged/vim-memo',
-    \ ]
-  call vis#external#fzf#rg('<cfile>', dirs)
-endfunc
-
-func MyVimgrepAll(word)
-  let word = vis#util#prompt("Word? ", a:word)
-  if word == ""
-    return
-  endif
-
-  lcd %:h
-  silent exec "vimgrep" word '$MY_BMK/*' '$MY_BIN/**/*' '$MY_BASH/*' '$MY_VIM/*' '$MY_VIM/*/*' '$MY_VIM/plugged/vim-ide-style/**/*' '$MY_VIM/plugged/vim-bmk-menu/**/*' '$MY_VIM/plugged/vim-winbuf-menu/**/*' '$MY_VIM/plugged/vim-memo/**/*'
-endfunc
-
-"------------------------------------------------------
 " plugin
 "------------------------------------------------------
 " popup menu support for nvim
@@ -107,6 +83,14 @@ let g:vis_unexpand_env_list = [
   \ '$SYS_PROG64_DIR',
   \ '$SYS_PROG32_DIR',
   \ '$BLENDER_ADDONS_DIR',
+  \ ]
+
+let g:my_rg_dirs = [
+  \ '$MY_ENV',
+  \ '$MY_VIM/plugged/vim-ide-style',
+  \ '$MY_VIM/plugged/vim-bmk-menu',
+  \ '$MY_VIM/plugged/vim-winbuf-menu',
+  \ '$MY_VIM/plugged/vim-memo',
   \ ]
 
 Plug 'tktwr/vim-ide-style'

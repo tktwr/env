@@ -74,7 +74,8 @@ nnoremap ==      zi
  nnoremap <C-,>   :VisModifiable<CR>
 
 "nnoremap <C-]>   g<C-]>
- nnoremap <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
+"nnoremap <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
+ nnoremap <C-]>   :VisFzfTags<CR>
 
 "------------------------------------------------------
 " tmap

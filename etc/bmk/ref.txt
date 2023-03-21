@@ -1,8 +1,9 @@
 [ref.main] --------------------------- | ----------------------------------------
--   ref:Help                           | :VisHelp
--   ref:Help.index                     | :VisHelp index
--   ref:Help.expression-syntax         | :VisHelp expression-syntax
--   ref:Help.pattern-overview          | :VisHelp pattern-overview
+-   help:                              | :help
+-   help:index                         | :help index
+-   help:expression-syntax             | :help expression-syntax
+-   help:pattern-overview              | :help pattern-overview
+    ---------------------------------- | ----------------------------------------
 -   ref:Memo                           | :Memo
 -   ref:Man                            | :VisMan ??
 -   ref:Pydoc                          | :VisPydoc ??

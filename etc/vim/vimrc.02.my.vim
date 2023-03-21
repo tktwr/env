@@ -21,9 +21,9 @@ set tags+=$MY_ENV/.tags.vim
 
 " tags for memo
 set tags+=$MY_MEMO/tags
-set tags+=$MY_SAMPLES/tags
-set tags+=$MY_DIARY/tags
 set tags+=$MY_LOCAL_CONFIG/memo/tags
+set tags+=$MY_DIARY/tags
+set tags+=$MY_SAMPLES/tags
 
 " tags for libtt
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
