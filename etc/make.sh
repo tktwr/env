@@ -9,14 +9,14 @@ DOT_FILES_COMMON="\
 .mintty \
 .minttyrc \
 .clang-format \
+.gitconfig \
 .gitignore_global \
 .rsync_exclude \
-.my/pushdrc \
+.my/pushdrc.sh \
 "
 DOT_FILES_DIFF="\
-.gitconfig \
-.my/buildrc \
-.my/pythonrc \
+.my/buildrc.sh \
+.my/pythonrc.sh \
 "
 DOT_FILES_INIT="\
 .bash_logout \

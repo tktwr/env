@@ -3,7 +3,7 @@
 CMAKE=cmake
 MY_BUILD_SYS=make
 MY_BUILD_CONFIG=Release
-BUILDRC=$HOME/.my/buildrc
+BUILDRC=$HOME/.my/buildrc.sh
 
 if [ -f $BUILDRC ]; then
   source $BUILDRC

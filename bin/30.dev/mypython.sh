@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PYTHONRC=$HOME/.my/pythonrc
+PYTHONRC=$HOME/.my/pythonrc.sh
 
 if [ -f $PYTHONRC ]; then
   source $PYTHONRC

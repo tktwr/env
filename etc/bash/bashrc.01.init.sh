@@ -6,7 +6,7 @@
 #umask 022
 unalias -a
 
-source_file $HOME/.my/*
+source_file $HOME/.my/*.sh
 
 #------------------------------------------------------
 export COLUMNS

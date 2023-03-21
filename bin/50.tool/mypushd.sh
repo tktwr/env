@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PUSHDRC=$HOME/.my/pushdrc
+PUSHDRC=$HOME/.my/pushdrc.sh
 
 if [ -f $PUSHDRC ]; then
   source $PUSHDRC

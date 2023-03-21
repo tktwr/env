@@ -1,8 +1,11 @@
 # gitconfig
 
-[user]
-  name = username
-  email = username@example.com
+[include]
+  path = ~/.my/gitconfig
+
+# [user]
+#   name = username
+#   email = username@example.com
 [core]
   autocrlf = input
   quotepath = false
@@ -22,11 +25,17 @@
 [difftool]
   prompt = false
 
-[delta]
-  # minus-style = 1 reverse
-  # minus-emph-style = 124 reverse
-  # plus-style = 2 reverse
-  # plus-emph-style = 28 reverse
+# [delta]
+#   true-color = always
+#   features = my_theme
+[delta "my_theme"]
+  minus-style      = reverse 1
+  minus-emph-style = reverse 124
+  plus-style       = reverse 2
+  plus-emph-style  = reverse 28
+[delta "my_theme_true_color"]
+  minus-style = reverse "#fb4934"
+  plus-style  = reverse "#b8bb26"
 
 [alias]
   graph     = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
@@ -34,10 +43,9 @@
   co = checkout
   dd = difftool -d
 
-## wsl
-[credential]
-  helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-
-## gitbash/msys2
-#[credential]
-#  helper = manager
+# ## wsl
+# [credential]
+#   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+# ## gitbash/msys2
+# [credential]
+#   helper = manager
