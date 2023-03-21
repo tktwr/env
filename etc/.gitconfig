@@ -49,3 +49,5 @@
 # ## gitbash/msys2
 # [credential]
 #   helper = manager
+
+# vim:set ft=gitconfig:

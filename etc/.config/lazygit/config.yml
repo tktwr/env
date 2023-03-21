@@ -20,3 +20,7 @@ git:
     showGraph: 'always'
   branchLogCmd:      'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=oneline {{branchName}} --'
   allBranchesLogCmd: 'git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=oneline --all'
+# keybinding:
+#   universal:
+#     scrollUpMain-alt2: '<c-u>' # main panel scroll up
+#     scrollDownMain-alt2: '<c-d>' # main panel scroll down
