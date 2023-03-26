@@ -11,7 +11,7 @@
 # - preview-up
 # - preview-down
 
-export FZF_DEFAULT_COMMAND="fdfind --strip-cwd-prefix"
+export FZF_DEFAULT_COMMAND="fdfind"
 export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
@@ -55,11 +55,13 @@ eval_cmd() {
 }
 
 eval_fd() {
-  file="$*"
-  if [ -d "$file" ]; then
-    eval_cmd cd "$file"
-  elif [ -f "$file" ]; then
-    eval_cmd vim "$file"
+  # expand env variables
+  line=$(eval "echo $*")
+
+  if [ -d "$line" ]; then
+    eval_cmd cd "$line"
+  elif [ -f "$line" ]; then
+    eval_cmd vim "$line"
   fi
 }
 
@@ -79,49 +81,53 @@ bmk_rm_tcmd() {
   sed -e 's+> ++' -e 's+<CR>++'
 }
 
-bmk_expand() {
-  eval "echo $*"
-}
-
 eval_bmk() {
-  file=$(echo "$*" | bmk_get_value)
+  line=$(echo "$*" | bmk_get_value)
 
-  case "$file" in
+  case "$line" in
     '>'*)
-      fzf_print "tcmd: [$file]"
+      fzf_print "tcmd: [$line]"
       if [ "$VIM_TERMINAL" ]; then
-        vimapi_exec "call bmk#ExecTermCommand('$file')"
+        vimapi_exec "call bmk#ExecTermCommand('$line')"
       else
-        file=$(echo "$file" | bmk_rm_tcmd)
-        eval "$file"
+        line=$(echo "$line" | bmk_rm_tcmd)
+        eval "$line"
       fi
       ;;
     ':'*)
-      fzf_print "vcmd: [$file]"
+      fzf_print "vcmd: [$line]"
       ;;
     '_Plug_'*)
-      fzf_print "vcmd: [$file]"
+      fzf_print "vcmd: [$line]"
       ;;
     http*)
-      fzf_print "http: [$file]"
-      chrome.sh "$file"
+      fzf_print "http: [$line]"
+      chrome.sh "$line"
       ;;
     *)
-      file=$(bmk_expand "$file")
-      eval_fd "$file"
+      eval_fd "$line"
       ;;
   esac
 }
 
 #------------------------------------------------------
+eval_fzf_fd() {
+  eval_fd $(fzf_fd.sh "$@")
+}
+
+eval_fzf_rg() {
+  eval_rg $(fzf_rg.sh "$@")
+}
+
+#------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
-alias  c='eval_bmk           $(fzf_bmk.sh --prompt-icons " " tcmd.txt tcmd_sys.txt tcmd_git.txt)'
-alias  f='eval_bmk           $(fzf_bmk.sh --prompt-icons "   " bmk_dir.txt bmk_file.txt links.txt papers.txt)'
-alias  d='eval_fd            $(fzf_fd.sh --root)'
-alias  r='eval_rg            $(fzf_rg.sh)'
+alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
+alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
+alias  d='eval_fzf_fd'
+alias  r='eval_fzf_rg'
 alias  m='eval_cmd make      $(fzf_make.sh)'
 
-alias .?='eval_cmd pushd     $(fzf_bmk.sh --fzf-post bmk_dir.txt)'
+alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
 alias ,?='eval_cmd popd      $(fzf_pushd)'
 alias ??='eval_cmd pushd     $(fzf_pushd)'

@@ -19,8 +19,9 @@ case "$line" in
     ;;
   http*)
     echo "http: [$line]"
+    chrome.sh "$line"
     ;;
   *)
-    preview.sh "$line"
+    open.sh "$line"
     ;;
 esac

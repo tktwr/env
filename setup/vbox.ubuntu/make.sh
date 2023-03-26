@@ -9,11 +9,11 @@ FONTS=Cica.ttc
 
 pkg_min="\
 vim \
+fzf \
 nodejs npm \
 python3-pip \
 python3-venv \
-fzf \
-fzy \
+git-lfs \
 "
 pkg_ext="\
 vim-gtk3 \

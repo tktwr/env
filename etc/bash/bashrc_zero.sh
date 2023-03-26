@@ -14,11 +14,11 @@ f_zero_env() {
   export PS1="\u@\h[\w]\$ "
 
   # fzf
-  export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix'
+  export FZF_DEFAULT_COMMAND="fdfind"
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-page-down,alt-p:preview-page-up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down,alt-p:preview-up'"
   export RUNEWIDTH_EASTASIAN=0
 
   # color
