@@ -35,7 +35,7 @@ git-print-branch-all() {
   echo "[REMOTE]"
   $GIT_EXE remote -v
   echo "[BRANCH]"
-  $GIT_EXE branch -a -vv
+  $GIT_EXE branch --color=always -a -vv | $GIT_PAGER
 }
 
 git-print-tag-all() {

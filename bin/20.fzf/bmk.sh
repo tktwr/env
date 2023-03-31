@@ -30,7 +30,7 @@ bmk() {
       "
   done
 
-  cat $files 2> /dev/null | bmk_pre
+  cat $files 2> /dev/null | bmk_pre | batcat -l bash -pp --color=always
 }
 
 #------------------------------------------------------
