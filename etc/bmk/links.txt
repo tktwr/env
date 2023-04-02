@@ -234,5 +234,7 @@
 -   link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
 -   link:www.o3de.org                                       | https://www.o3de.org/
 -   link:o3de                                               | https://github.com/o3de/o3de
+    ------------------------------------                    | ----------------------------------------
+-   link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
 
 # vim:set ft=bmk syntax=txt nowrap:

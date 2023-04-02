@@ -8,7 +8,7 @@ import cv_util as cu
 import cv2
 
 
-def make_img_list(wh, ifnames, label):
+def make_img_list(wh, ifnames, label_type):
     nr = 1
     l1 = []
     for i in ifnames:
@@ -21,12 +21,12 @@ def make_img_list(wh, ifnames, label):
             img = cu.cv_fit_img(img, wh)
             img = cu.cv_crop_img(img, (0, 0), wh, True)
 
-            if label == 'FILE':
+            if label_type == 'FILE':
                 name = i.split('/')[-1]
-            elif label == 'NUM':
+            elif label_type == 'NUM':
                 name = f'{nr})'
                 nr += 1
-            elif label == 'ALPHA':
+            elif label_type == 'ALPHA':
                 ch = chr(ord('a') + nr - 1)
                 name = f'{ch})'
                 nr += 1
@@ -42,17 +42,16 @@ def make_img_list(wh, ifnames, label):
     return l1
 
 
-def make_vtile(tile_wh, cols, ifnames, label):
-    l1 = make_img_list(tile_wh, ifnames, label)
-    rows = len(l1) // cols
-    l2 = cu.cv_convert_1d_to_2d(l1, rows)
-    return cu.cv_vtile(l2)
-
-
-def make_htile(tile_wh, cols, ifnames, label):
-    l1 = make_img_list(tile_wh, ifnames, label)
-    l2 = cu.cv_convert_1d_to_2d(l1, cols)
+def make_htile(tile_wh, nx, ifnames, label_type):
+    l1 = make_img_list(tile_wh, ifnames, label_type)
+    l2 = cu.cv_convert_1d_to_2d(l1, nx)
     return cu.cv_htile(l2)
+
+
+def make_vtile(tile_wh, ny, ifnames, label_type):
+    l1 = make_img_list(tile_wh, ifnames, label_type)
+    l2 = cu.cv_convert_1d_to_2d(l1, ny)
+    return cu.cv_vtile(l2)
 
 
 def parse_args():
@@ -66,25 +65,31 @@ def parse_args():
                         help="show this help message and exit")
     parser.add_argument('-o', '--output',
                         type=str,
-                        default='tile.png',
+                        default='tile.jpg',
                         help="set output file name")
-    parser.add_argument('-l', '--label',
+    parser.add_argument('-nx',
+                        type=int,
+                        default=0,
+                        help="set nx")
+    parser.add_argument('-ny',
+                        type=int,
+                        default=0,
+                        help="set ny")
+    parser.add_argument('--tile-wh',
+                        type=int,
+                        nargs=2,
+                        default=[500, 500],
+                        help='set each tile size (w, h)')
+    parser.add_argument('--file-order',
+                        type=str,
+                        choices=['X', 'Y'],
+                        default='X',
+                        help="the order of input files")
+    parser.add_argument('--label-type',
                         type=str,
                         choices=['NONE', 'FILE', 'NUM', 'ALPHA'],
                         default='NONE',
                         help="set label type")
-    parser.add_argument('--tile_wh',
-                        type=int,
-                        nargs=2,
-                        default=[500, 500],
-                        help='set each tile size')
-    parser.add_argument('-c', '--cols',
-                        type=int,
-                        default=2,
-                        help="set columns")
-    parser.add_argument('-h', '--htile',
-                        action='store_true',
-                        help="input files are in horizontal order")
     parser.add_argument('files',
                         type=str,
                         nargs='+',
@@ -93,12 +98,29 @@ def parse_args():
     return parser.parse_args()
 
 
+def compute_nsize(nelm, nx, ny):
+    if nx == 0 and ny > 0:
+        nx = nelm // ny
+    elif ny == 0 and nx > 0:
+        ny = nelm // nx
+    return (nx, ny)
+
+
+def run(args):
+    nx, ny = compute_nsize(len(args.files), args.nx, args.ny)
+    if not (nx > 0 and ny > 0):
+        print('Valid args are nx > 0 and ny > 0')
+        return
+
+    img = None
+    if args.file_order == 'X':
+        img = make_htile(args.tile_wh, nx, args.files, args.label_type)
+    elif args.file_order == 'Y':
+        img = make_vtile(args.tile_wh, ny, args.files, args.label_type)
+
+    if img is not None:
+        cu.cv_save(args.output, img)
+
+
 if __name__ == "__main__":
-    args = parse_args()
-
-    if args.htile:
-        img = make_htile(args.tile_wh, args.cols, args.files, args.label)
-    else:
-        img = make_vtile(args.tile_wh, args.cols, args.files, args.label)
-
-    cu.cv_save(args.output, img)
+    run(parse_args())
