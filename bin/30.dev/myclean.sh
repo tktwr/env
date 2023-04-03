@@ -30,17 +30,23 @@ f_args() {
         f_help
         exit
         ;;
-      -py|--python)
+      --pycache-dir)
         opt="$opt -type d -name '__pycache__' -prune"
         ;;
-      -b|--build)
-        opt="$out -type d -name 'build*' -prune"
+      --build-dir)
+        opt="$opt -type d -name 'build*' -prune"
         ;;
-      -o|--output)
-        opt="$out -type d -name '_output' -prune"
+      --output-dir)
+        opt="$opt -type d -name '_output' -prune"
+        ;;
+      --doxygen-dir)
+        opt="$opt -type d -name 'doxygen' -prune"
+        ;;
+      --blender-backup)
+        opt="$opt -type f -name '*.blend1'"
         ;;
       -rm)
-        opt="$opt -exec rm -rf {} +"
+        opt="$opt -print -exec rm -rf {} +"
         ;;
     esac
   done

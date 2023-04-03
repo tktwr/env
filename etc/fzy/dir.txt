@@ -16,7 +16,7 @@ dict           | MY_DICT           | $MY_LOCAL_CONFIG/share/dict
 #[pconfig] --- | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
 #[private] --- | ----------        | ----------
-proj           | MY_PROJ           | $MY_PRIVATE/proj
+proj           | MY_PROJ           | $MY_PRIVATE/proj/2023
 work           | MY_WORK           | $MY_PRIVATE/work
 git            | MY_GIT            | $MY_PRIVATE/work/git
 doc            | MY_DOC            | $MY_PRIVATE/doc
