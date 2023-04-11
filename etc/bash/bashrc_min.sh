@@ -30,6 +30,7 @@ f_min_env() {
   export MY_ETC="$MY_ENV/etc"
   export MY_VIM="$MY_ETC/vim"
   export MY_FZY="$MY_ETC/fzy"
+  export MY_VIM_PLUGGED_DIR=~/.mycache/vim_plugged
 
   case $MY_OS_NAME in
     msys|gitbash)
@@ -94,6 +95,6 @@ f_min_alias
 #------------------------------------------------------
 # vim plugin
 #------------------------------------------------------
-source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc
-source_file $MY_VIM/plugged/vim-ide-style/etc/bashrc.alias
-source_file $MY_VIM/plugged/vim-memo/etc/bashrc
+source_file $MY_VIM_PLUGGED_DIR/vim-ide-style/etc/bashrc
+source_file $MY_VIM_PLUGGED_DIR/vim-ide-style/etc/bashrc.alias
+source_file $MY_VIM_PLUGGED_DIR/vim-memo/etc/bashrc

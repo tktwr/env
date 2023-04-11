@@ -24,10 +24,10 @@ for-dir.sh "mymake.sh tags_memo" ${MEMO_DIRS}
 # help tags
 #------------------------------------------------------
 PLUG_DIRS="\
-  $MY_VIM/plugged/vim-winbuf-menu \
-  $MY_VIM/plugged/vim-bmk-menu \
-  $MY_VIM/plugged/vim-ide-style \
-  $MY_VIM/plugged/vim-memo \
+  $MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
+  $MY_VIM_PLUGGED_DIR/vim-bmk-menu \
+  $MY_VIM_PLUGGED_DIR/vim-ide-style \
+  $MY_VIM_PLUGGED_DIR/vim-memo \
   "
 for-dir.sh "mymake.sh tags" ${PLUG_DIRS}
 

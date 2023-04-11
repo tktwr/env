@@ -41,7 +41,7 @@ endfunc
 "======================================================
 " main
 "======================================================
-call plug#begin('$MY_VIM/plugged')
+call plug#begin($MY_VIM_PLUGGED_DIR)
 
 call PlugFern()
 call PlugIDE()

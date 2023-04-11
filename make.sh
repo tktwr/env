@@ -9,10 +9,10 @@ $MY_MEMO \
 $MY_SAMPLES \
 $MY_LIBTT \
 $MY_REMOTE_CONFIG/templates \
-$MY_VIM/plugged/vim-winbuf-menu \
-$MY_VIM/plugged/vim-bmk-menu \
-$MY_VIM/plugged/vim-ide-style \
-$MY_VIM/plugged/vim-memo \
+$MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
+$MY_VIM_PLUGGED_DIR/vim-bmk-menu \
+$MY_VIM_PLUGGED_DIR/vim-ide-style \
+$MY_VIM_PLUGGED_DIR/vim-memo \
 "
 
 BUILD_DIRS="\
@@ -25,10 +25,10 @@ VIM_FILES="\
 etc/vim/*.vim \
 etc/vim/vim-plug/*.vim \
 etc/vim/plugin \
-etc/vim/plugged/vim-winbuf-menu \
-etc/vim/plugged/vim-bmk-menu \
-etc/vim/plugged/vim-ide-style \
-etc/vim/plugged/vim-memo \
+$MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
+$MY_VIM_PLUGGED_DIR/vim-bmk-menu \
+$MY_VIM_PLUGGED_DIR/vim-ide-style \
+$MY_VIM_PLUGGED_DIR/vim-memo \
 "
 
 #======================================================

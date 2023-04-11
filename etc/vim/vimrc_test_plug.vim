@@ -4,7 +4,7 @@
 func PlugCoc()
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   let g:coc_config_home = expand('$MY_VIM/coc/linux')
-  let g:coc_data_home = expand('$MY_VIM/coc_data/linux')
+  let g:coc_data_home = $MY_COC_DATA_DIR
 endfunc
 
 func PlugFzf()
@@ -56,7 +56,7 @@ set background=dark
 set hlsearch
 syntax on
 
-call plug#begin('$MY_VIM/plugged')
+call plug#begin($MY_VIM_PLUGGED_DIR)
 
 call PlugCoc()
 call PlugFzf()

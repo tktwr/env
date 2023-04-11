@@ -11,6 +11,8 @@ if has('win32') || has('win64')
   endif
 endif
 
+let $MY_VIM_PLUGGED_DIR = expand('~/.mycache/vim_plugged')
+
 set runtimepath-=~/.vim
 set runtimepath-=~/.vim/after
 set runtimepath^=$MY_VIM

@@ -23,9 +23,9 @@
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
 - N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
-- W vim-winbuf-menu/                   | $MY_VIM/plugged/vim-winbuf-menu/
-- B vim-bmk-menu/                      | $MY_VIM/plugged/vim-bmk-menu/
-- I vim-ide-style/                     | $MY_VIM/plugged/vim-ide-style/
+- W vim-winbuf-menu/                   | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/
+- B vim-bmk-menu/                      | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
+- I vim-ide-style/                     | $MY_VIM_PLUGGED_DIR/vim-ide-style/
 [bmk.dir.sys] ------------------------ | ----------------------------------------
 -   Desktop/                           | $MY_DESKTOP/
     ---------------------------------- | ----------------------------------------
@@ -61,7 +61,7 @@
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
     ---------------------------------- | ----------------------------------------
--   vim-memo/                          | $MY_VIM/plugged/vim-memo/
+-   vim-memo/                          | $MY_VIM_PLUGGED_DIR/vim-memo/
 -   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
 -   MY_DIARY/                          | $MY_DIARY/
     ---------------------------------- | ----------------------------------------

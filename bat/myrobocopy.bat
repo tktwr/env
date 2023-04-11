@@ -11,7 +11,7 @@ rem opt:
 rem  /L ... no run
 rem  /NP ... no progress
 
-robocopy %* /R:3 /MIR /SL /XD ".git" ".svn" "build.*" "plugged" "coc_data" "__pycache__" /XJD /XJF /TEE /NP /LOG+:myrobocopy.log
+robocopy %* /R:3 /MIR /SL /XD ".git" ".svn" "build.*" "__pycache__" /XJD /XJF /TEE /NP /LOG+:myrobocopy.log
 
 pause
 
