@@ -10,7 +10,10 @@ share       | MY_SHARE           | $SYS_SHARE_HOME
 #---------- | ----------         | ----------
 my          | MY_DOTMY           | $MY_LOCAL/.my
 #---------- | ----------         | ----------
-python-venv | MY_PYTHON_VENV_DIR | $MY_ROAMING/python-venv
+python_venv | MY_PYTHON_VENV_DIR | $MY_LOCAL/.mycache/python_venv
+vim_plugged | MY_VIM_PLUGGED_DIR | $MY_LOCAL/.mycache/vim_plugged
+coc_data    | MY_COC_DATA_DIR    | $MY_LOCAL/.mycache/coc_data
+#---------- | ----------         | ----------
 env         | MY_ENV             | $MY_ROAMING/env
 #---------- | ----------         | ----------
 rconfig     | MY_REMOTE_CONFIG   | $MY_CONFIG/rconfig

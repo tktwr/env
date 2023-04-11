@@ -14,7 +14,7 @@ endfunc
 "------------------------------------------------------
 call s:InstallVimPlug()
 
-call plug#begin('$MY_VIM/plugged')
+call plug#begin($MY_VIM_PLUGGED_DIR)
 
 source $MY_VIM/vim-plug/color.vim
 source $MY_VIM/vim-plug/edit.vim

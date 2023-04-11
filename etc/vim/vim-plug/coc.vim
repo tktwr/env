@@ -14,13 +14,7 @@ else
   let g:coc_config_home = expand('$MY_VIM/coc/linux')
 endif
 
-if isdirectory(expand('~/.vim/coc_data'))
-  let g:coc_data_home = expand('~/.vim/coc_data')
-elseif has("win32unix") || has("win32") || has("win64")
-  let g:coc_data_home = expand('$MY_VIM_WIN/coc_data/win')
-else
-  let g:coc_data_home = expand('$MY_VIM/coc_data/linux')
-endif
+let g:coc_data_home = $MY_COC_DATA_DIR
 
 let g:coc_disable_startup_warning = 1
 "let g:coc_uri_prefix_replace_patterns = {'/home': 'C:/msys64/home'}
