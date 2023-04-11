@@ -45,6 +45,9 @@ f_args() {
       --doxygen-dir)
         opt="$opt -I -t d --prune -g 'doxygen'"
         ;;
+      --git-dir)
+        opt="$opt -IH -t d --prune -g '.git'"
+        ;;
       --svn-dir)
         opt="$opt -IH -t d --prune -g '.svn'"
         ;;
@@ -53,6 +56,9 @@ f_args() {
         ;;
       -rm)
         opt="$opt -X rm -rf {}"
+        ;;
+      -du)
+        opt="$opt -X du -hs {}"
         ;;
     esac
   done

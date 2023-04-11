@@ -62,6 +62,7 @@
 - , EditTabComma                       | :EditTabComma
 - . EditTabDots                        | :EditTabDots
 - = EditTabEqual                       | :EditTabEqual
+- [ EditTabLabel                       | :EditTabLabel
     ---------------------------------- | ----------------------------------------
 - L EditMdLink                         | :call EditMdLink()
 - I EditMdImgLink                      | :call EditMdImgLink()

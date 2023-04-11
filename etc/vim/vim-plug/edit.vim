@@ -14,6 +14,7 @@ command EditTabColon           Tabularize /:
 command EditTabComma           Tabularize /,
 command EditTabDots            Tabularize /\.\.\.
 command EditTabEqual           Tabularize /=
+command EditTabLabel           Tabularize /\[.*\]
 
 "======================================================
 " comment

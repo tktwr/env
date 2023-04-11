@@ -12,6 +12,7 @@ fzf \
 bat \
 fd-find \
 ripgrep \
+ncdu \
 zip unzip \
 universal-ctags \
 eblook \
@@ -25,7 +26,6 @@ imagemagick \
 img2pdf \
 fontforge \
 subversion \
-ncdu \
 neofetch \
 btop \
 ncal \

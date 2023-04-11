@@ -10,7 +10,6 @@
 -   link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
 -   link:chrome.extensions                                  | https://chrome.google.com/webstore/category/extensions
     ------------------------------------                    | ----------------------------------------
--   link.py:python                                          | https://www.python.org/
 + P link.py:python.doc                                      | https://docs.python.org/ja/3/index.html
 -   link.py:python.tutorial                                 | https://docs.python.org/ja/3/tutorial/
 -   link.py:python.tkinter                                  | https://docs.python.org/ja/3/library/tkinter.html
@@ -80,7 +79,6 @@
 -   link:vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
 -   link:vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
     ------------------------------------                    | ----------------------------------------
--   link.blender:                                           | https://www.blender.org/
 -   link.blender:doc                                        | https://docs.blender.org/
 -   link.blender:Reference Manual                           | https://docs.blender.org/manual/en/latest/
 -   link.blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
@@ -121,7 +119,6 @@
 -   link.cg:PFM                                             | http://www.pauldebevec.com/Research/HDR/PFM/
 -   link.cg:ambientcg                                       | https://ambientcg.com/
     ------------------------------------                    | ----------------------------------------
--   link.vim:                                               | https://www.vim.org/
 -   link.vim:doc                                            | https://vim-jp.org/vimdoc-ja/
 -   link.vim:colorswat                                      | http://colorswat.ch/vim/
 -   link.vim:vim-plug                                       | https://github.com/junegunn/vim-plug
@@ -186,55 +183,64 @@
     ------------------------------------                    | ----------------------------------------
 -   link.nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
     ------------------------------------                    | ----------------------------------------
--   link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
 -   link.font:HackGen                                       | https://github.com/yuru7/HackGen
+-   link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
     ------------------------------------                    | ----------------------------------------
--   link.linux:new_commands                                 | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
--   link.linux:bat                                          | https://github.com/sharkdp/bat
--   link.linux:fd                                           | https://github.com/sharkdp/fd
--   link.linux:ripgrep                                      | https://github.com/BurntSushi/ripgrep
--   link.linux:regex                                        | https://docs.rs/regex/1.7.1/regex/index.html
--   link.linux:universal-ctags                              | https://github.com/universal-ctags/ctags
--   link.linux:exa                                          | https://github.com/ogham/exa
--   link.linux:delta                                        | https://github.com/dandavison/delta
--   link.linux:delta doc                                    | https://dandavison.github.io/delta/
--   link.linux:delta themes.gitconfig                       | https://github.com/dandavison/delta/blob/master/themes.gitconfig
--   link.linux:lazygit                                      | https://github.com/jesseduffield/lazygit
--   link.linux:lazygit Config.md                            | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
--   link.linux:gitui                                        | https://github.com/extrawurst/gitui
--   link.linux:ncdu                                         | https://dev.yorhel.nl/ncdu
--   link.linux:snapcraft                                    | https://snapcraft.io/
--   link.linux:flathub                                      | https://flathub.org/
--   link.linux:launchpad                                    | https://launchpad.net/ubuntu
--   link.linux:ArchWiki                                     | https://wiki.archlinux.jp/
--   link.linux:SSL Certificate Verification                 | https://curl.se/docs/sslcerts.html
+-   link.soft:vim                                           | https://www.vim.org/
+-   link.soft:git                                           | https://git-scm.com/
+-   link.soft:git doc                                       | https://git-scm.com/docs
+-   link.soft:python                                        | https://www.python.org/
+-   link.soft:blender                                       | https://www.blender.org/
+-   link.soft:gimp                                          | https://www.gimp.org/
+-   link.soft:cmake                                         | https://cmake.org/
+-   link.soft:nodejs                                        | https://nodejs.org/ja/
     ------------------------------------                    | ----------------------------------------
--   link.windows:wsltty                                     | https://github.com/mintty/wsltty
--   link.windows:AutoHotkey                                 | https://www.autohotkey.com/
--   link.windows:AutoHotkey.doc                             | https://www.autohotkey.com/docs/AutoHotkey.htm
--   link.windows:AutoHotkey.wiki                            | http://ahkwiki.net/Top
--   link.windows:Tablacus                                   | https://tablacus.github.io/explorer.html
--   link.windows:Ctrl2cap                                   | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
--   link.windows:PowerToys                                  | https://github.com/microsoft/PowerToys
--   link.windows:faststone                                  | https://www.faststone.org/
--   link.windows:WinDirStat                                 | https://windirstat.net/
--   link.windows:CrystalDiskMark                            | https://crystalmark.info/ja/software/crystaldiskmark/
--   link.windows:Process Explorer                           | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
--   link.windows:Dependency Walker                          | http://www.dependencywalker.com/
--   link.windows:chocolatey                                 | https://chocolatey.org/
+-   link.soft.linux:new_commands                            | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
+-   link.soft.linux:bat                                     | https://github.com/sharkdp/bat
+-   link.soft.linux:fd                                      | https://github.com/sharkdp/fd
+-   link.soft.linux:ripgrep                                 | https://github.com/BurntSushi/ripgrep
+-   link.soft.linux:regex                                   | https://docs.rs/regex/1.7.1/regex/index.html
+-   link.soft.linux:universal-ctags                         | https://github.com/universal-ctags/ctags
+-   link.soft.linux:exa                                     | https://github.com/ogham/exa
+-   link.soft.linux:delta                                   | https://github.com/dandavison/delta
+-   link.soft.linux:delta doc                               | https://dandavison.github.io/delta/
+-   link.soft.linux:delta themes.gitconfig                  | https://github.com/dandavison/delta/blob/master/themes.gitconfig
+-   link.soft.linux:lazygit                                 | https://github.com/jesseduffield/lazygit
+-   link.soft.linux:lazygit Config.md                       | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+-   link.soft.linux:gitui                                   | https://github.com/extrawurst/gitui
+-   link.soft.linux:ncdu                                    | https://dev.yorhel.nl/ncdu
     ------------------------------------                    | ----------------------------------------
--   link:msys2                                              | https://www.msys2.org/
--   link:git                                                | https://git-scm.com/
--   link:git.doc                                            | https://git-scm.com/docs
--   link:cmake                                              | https://cmake.org/
--   link:nodejs                                             | https://nodejs.org/ja/
--   link:termux                                             | https://termux.com/
--   link:termux.wiki                                        | https://wiki.termux.com/wiki/Main_Page
-    --- (2022) -------------------------                    | ----------------------------------------
+-   link.soft.windows:wsltty                                | https://github.com/mintty/wsltty
+-   link.soft.windows:AutoHotkey                            | https://www.autohotkey.com/
+-   link.soft.windows:AutoHotkey.doc                        | https://www.autohotkey.com/docs/AutoHotkey.htm
+-   link.soft.windows:AutoHotkey.wiki                       | http://ahkwiki.net/Top
+-   link.soft.windows:Tablacus                              | https://tablacus.github.io/explorer.html
+-   link.soft.windows:Ctrl2cap                              | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
+-   link.soft.windows:PowerToys                             | https://github.com/microsoft/PowerToys
+-   link.soft.windows:faststone                             | https://www.faststone.org/
+-   link.soft.windows:WinDirStat                            | https://windirstat.net/
+-   link.soft.windows:CrystalDiskMark                       | https://crystalmark.info/ja/software/crystaldiskmark/
+-   link.soft.windows:Process Explorer                      | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+-   link.soft.windows:Dependency Walker                     | http://www.dependencywalker.com/
+-   link.soft.windows:chocolatey                            | https://chocolatey.org/
+-   link.soft.windows:7z                                    | https://www.7-zip.org/
+    ------------------------------------                    | ----------------------------------------
+-   link.os.linux:snapcraft                                 | https://snapcraft.io/
+-   link.os.linux:flathub                                   | https://flathub.org/
+-   link.os.linux:launchpad                                 | https://launchpad.net/ubuntu
+-   link.os.linux:ArchWiki                                  | https://wiki.archlinux.jp/
+-   link.os.linux:SSL Certificate Verification              | https://curl.se/docs/sslcerts.html
+    ------------------------------------                    | ----------------------------------------
+-   link.os:msys2                                           | https://www.msys2.org/
+-   link.os:termux                                          | https://termux.com/
+-   link.os:termux.wiki                                     | https://wiki.termux.com/wiki/Main_Page
+    ------------------------------------                    | ----------------------------------------
 -   link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
 -   link:www.o3de.org                                       | https://www.o3de.org/
 -   link:o3de                                               | https://github.com/o3de/o3de
     ------------------------------------                    | ----------------------------------------
+-   link:sd-webui                                           | https://github.com/AUTOMATIC1111/stable-diffusion-webui
 -   link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
+-   link:EasyNegative                                       | https://huggingface.co/datasets/gsdf/EasyNegative
 
 # vim:set ft=bmk syntax=txt nowrap:
