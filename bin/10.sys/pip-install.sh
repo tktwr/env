@@ -48,11 +48,17 @@ f_install_torch() {
   pip install $pkg_torch
 }
 
+f_upgrade() {
+  python_exe=${MY_PYTHON_EXE:-"python"}
+  $python_exe -m pip install --upgrade pip
+}
+
 #------------------------------------------------------
 f_help() {
-  echo "install_min   ... install min"
-  echo "install_dev   ... install dev"
-  echo "install_torch ... install torch"
+  echo "install_min   ... install min pkg"
+  echo "install_dev   ... install dev pkg"
+  echo "install_torch ... install torch pkg"
+  echo "upgrade       ... upgrade pip"
   echo "help          ... print help"
 }
 

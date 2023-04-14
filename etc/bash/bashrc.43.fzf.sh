@@ -51,6 +51,8 @@ eval_cmd() {
   fzf_print "eval_cmd: [$cmd] [$arg]"
   if [ -n "$arg" ]; then
     eval "$cmd \"$arg\""
+  else
+    echo "Canceled"
   fi
 }
 
@@ -119,14 +121,20 @@ eval_fzf_rg() {
   eval_rg $(fzf_rg.sh "$@")
 }
 
+eval_fzf_cmd() {
+  eval_cmd "$1" $(fzf_cmd.sh "$1")
+}
+
 #------------------------------------------------------
 # fzf alias
 #------------------------------------------------------
+alias  z='eval_fzf_cmd'
+alias  m='eval_fzf_cmd mymake.sh'
+
 alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
 alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
 alias  d='eval_fzf_fd'
 alias  r='eval_fzf_rg'
-alias  m='eval_cmd make      $(fzf_make.sh)'
 
 alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
 alias ,?='eval_cmd popd      $(fzf_pushd)'
