@@ -130,6 +130,7 @@ eval_fzf_cmd() {
 #------------------------------------------------------
 alias  z='eval_fzf_cmd'
 alias  m='eval_fzf_cmd mymake.sh'
+alias  S='eval_fzf_cmd setup.sh'
 
 alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
 alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
@@ -139,3 +140,7 @@ alias  r='eval_fzf_rg'
 alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
 alias ,?='eval_cmd popd      $(fzf_pushd)'
 alias ??='eval_cmd pushd     $(fzf_pushd)'
+
+export -f fzf_print
+export -f eval_cmd
+export -f eval_fzf_cmd

@@ -37,6 +37,7 @@ alias psall='ps -aefH'
 alias lsd='\ls -d --color=auto */'
 ll() { ls -l --color $* | $PAGER; }
 lst() { ls -lt --color $* | grep -v "/$" | head -5; }
+alias tree2='tree -L 2'
 
 # find
 ff() { find . -name "$*" -print; }

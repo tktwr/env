@@ -11,19 +11,23 @@ f_help() {
   echo
   echo "OPTIONS:"
   echo "  --help                                 print help"
+  echo "  --print-env                            print env"
+  echo "  --create-venv venv_name                create venv"
+  echo "  --list-venv                            list venv"
   echo "  --set MY_PYTHON_TYPE MY_PYTHON_VENV    set env vars"
   echo "  --python-type                          print MY_PYTHON_TYPE"
   echo "  --python-venv                          print MY_PYTHON_VENV"
-  echo "  --list-venv                            list venv"
-  echo "  --create-venv venv_name                create venv"
   echo
   echo "PYTHON_TYPE:"
   echo "  python-win"
   echo "  python"
-  echo
-  echo "ENVS:"
-  echo "  MY_PYTHON_TYPE=$MY_PYTHON_TYPE"
-  echo "  MY_PYTHON_VENV=$MY_PYTHON_VENV"
+}
+
+f_print_env() {
+  echo "MY_PYTHON_EXE=$MY_PYTHON_EXE"
+  echo "MY_PYTHON_VENV_DIR=$MY_PYTHON_VENV_DIR"
+  echo "MY_PYTHON_TYPE=$MY_PYTHON_TYPE"
+  echo "MY_PYTHON_VENV=$MY_PYTHON_VENV"
 }
 
 f_print_export() {
@@ -60,6 +64,9 @@ f_venv_create() {
 case $1 in
   --help)
     f_help
+    ;;
+  --print-env)
+    f_print_env
     ;;
   --set)
     shift
