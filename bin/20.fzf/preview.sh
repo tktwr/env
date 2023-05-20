@@ -9,5 +9,9 @@ if [ -d "$line" ]; then
   fi
   LANG=C ls -F --color=always $opt "$line"
 elif [ -f "$line" ]; then
-  batcat -n --color=always "$line"
+  if $(has_bin batcat); then
+    batcat -n --color=always "$line"
+  else
+    cat -n "$line"
+  fi
 fi
