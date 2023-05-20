@@ -9,15 +9,6 @@ g_bmk_files=""
 #------------------------------------------------------
 # functions
 #------------------------------------------------------
-has_bin() {
-  which $1 > /dev/null 2>&1
-  if [ $? -eq 0 ]; then
-    echo true
-  else
-    echo false
-  fi
-}
-
 bmk_pre() {
   case $g_bmk_pre_filter in
     +)

@@ -26,3 +26,13 @@ export WWW_HOME="https://tktwr.github.io/memo/"
 
 shopt -s no_empty_cmd_completion
 
+has_bin() {
+  which $1 > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo true
+  else
+    echo false
+  fi
+}
+
+export -f has_bin
