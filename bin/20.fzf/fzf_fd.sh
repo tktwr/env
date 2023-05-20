@@ -5,9 +5,9 @@ fd_all()  { fdfind --color=always . "$@"; }
 fd_dir()  { fdfind --color=always . "$@" --type=d; }
 fd_file() { fdfind --color=always . "$@" --type=f; }
 else
-fd_all()  { find "$@"; }
-fd_dir()  { find "$@" -type d; }
-fd_file() { find "$@" -type f; }
+fd_all()  { find "$@" \( -type d \( -name '.git' -o -name 'build*' -o -name '__pycache__' \) -prune \) -o -print; }
+fd_dir()  { find "$@" \( -type d \( -name '.git' -o -name 'build*' -o -name '__pycache__' \) -prune \) -o -type d; }
+fd_file() { find "$@" \( -type d \( -name '.git' -o -name 'build*' -o -name '__pycache__' \) -prune \) -o -type f; }
 fi
 
 export -f fd_all
