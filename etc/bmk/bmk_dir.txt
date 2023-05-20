@@ -1,6 +1,5 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
 - e etc/                               | $MY_ETC/
-- E env/                               | $MY_ENV/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
 - i bin/                               | $MY_BIN/
@@ -15,19 +14,23 @@
 - o office/                            | $MY_OFFICE/
     ---------------------------------- | ----------------------------------------
 - Y .my/                               | $MY_DOTMY/
-- S secret/                            | $MY_SECRET/
 - C local.common/                      | $MY_COMMON_SETTING/
 - M local.memo/                        | $MY_LOCAL_CONFIG/memo/
     ---------------------------------- | ----------------------------------------
+- E env/                               | $MY_ENV/
+- R rconfig/                           | $MY_REMOTE_CONFIG/
+- L lconfig/                           | $MY_LOCAL_CONFIG/
+- P pconfig/                           | $MY_PRIVATE_CONFIG/
+    ---------------------------------- | ----------------------------------------
 - H HOME/                              | $HOME/
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
-- N Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
-- W vim-winbuf-menu/                   | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/
-- B vim-bmk-menu/                      | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
 - I vim-ide-style/                     | $MY_VIM_PLUGGED_DIR/vim-ide-style/
+- B vim-bmk-menu/                      | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
+- U vim-winbuf-menu/                   | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/
 [bmk.dir.sys] ------------------------ | ----------------------------------------
 -   Desktop/                           | $MY_DESKTOP/
+-   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
 - R MyRoaming/                         | $MY_ROAMING/
 - C MyConfig/                          | $MY_CONFIG/
@@ -42,28 +45,26 @@
 -   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
 -   setup/ahk/                         | $MY_ENV/setup/win/ahk/
--   setup/wsl.ubuntu/                  | $MY_ENV/setup/wsl.ubuntu/
 -   work/                              | $MY_WORK/
--   arch/                              | $MY_ARCH/
 -   backup/                            | $MY_BACKUP/
--   data/                              | $MY_DATA/
--   github/                            | $MY_GITHUB/
--   man/                               | $MY_MAN/
--   opt/                               | $MY_OPT/
--   papers/                            | $MY_PAPERS/
 -   tmp/                               | $MY_TMP/
     ---------------------------------- | ----------------------------------------
--   rconfig/                           | $MY_REMOTE_CONFIG/
--   lconfig/                           | $MY_LOCAL_CONFIG/
--   pconfig/                           | $MY_PRIVATE_CONFIG/
+-   arch/                              | $MY_ARCH/
+-   papers/                            | $MY_PAPERS/
+-   github/                            | $MY_GITHUB/
+-   opt/                               | $MY_OPT/
+-   man/                               | $MY_MAN/
+-   data/                              | $MY_DATA/
     ---------------------------------- | ----------------------------------------
 -   private/                           | $MY_PRIVATE/
 -   protected/                         | $MY_PROTECTED/
 -   public/                            | $MY_PUBLIC/
     ---------------------------------- | ----------------------------------------
+-   diary/                             | $MY_DIARY/
+-   secret/                            | $MY_SECRET/
+    ---------------------------------- | ----------------------------------------
 -   vim-memo/                          | $MY_VIM_PLUGGED_DIR/vim-memo/
--   BLENDER_ADDONS_DIR/                | $BLENDER_ADDONS_DIR/
--   MY_DIARY/                          | $MY_DIARY/
+-   blender-addons/                    | $BLENDER_ADDONS_DIR/
     ---------------------------------- | ----------------------------------------
 -   github:LearnOpenGL/                | $MY_GITHUB/LearnOpenGL/
 -   github:glTF-Sample-Viewer/         | $MY_GITHUB/glTF-Sample-Viewer/

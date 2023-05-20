@@ -20,6 +20,11 @@ f_print_version() {
 }
 
 #------------------------------------------------------
+f_set_hwclock() {
+  set-hwclock.sh
+}
+
+#------------------------------------------------------
 f_setup_wsl() {
   eval_fzf_cmd setup_wsl.sh
 }
@@ -41,6 +46,8 @@ f_help() {
   echo "print_env     ... print env"
   echo "print_path    ... print path"
   echo "print_version ... print version"
+  echo "-----------   ... -----------------------------"
+  echo "set_hwclock   ... set hwclock"
   echo "-----------   ... -----------------------------"
   echo "setup_wsl     ... setup wsl"
   echo "setup_ubuntu  ... setup ubuntu"

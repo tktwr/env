@@ -7,10 +7,6 @@
 #======================================================
 # functions
 #======================================================
-f_set_hwclock() {
-  set-hwclock.sh
-}
-
 f_install_nodejs() {
   install-nodejs.sh
 }
@@ -28,7 +24,6 @@ f_info() {
 f_help() {
   echo "info                  ... print info"
   echo "-----------           ... -----------------------------"
-  echo "set_hwclock           ... set hwclock"
   echo "install_nodejs        ... install nodejs"
   echo "install_wsltty_config ... install wsltty config"
   echo "-----------           ... -----------------------------"

@@ -28,6 +28,7 @@ neofetch \
 btop \
 ncal \
 googler \
+ghostscript \
 "
 pkg_dev="\
 cmake \

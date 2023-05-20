@@ -10,8 +10,8 @@ prog64              | SYS_PROG64_DIR      | C:\Program Files
 prog32              | SYS_PROG32_DIR      | C:\Program Files (x86)
 nodejs-home         | NODEJS_HOME         | C:\Program Files\nodejs
 java-home           | JAVA_HOME           | C:\Program Files\Android\Android Studio\jre
-sys-blender         | SYS_BLENDER         | C:\Program Files\Blender Foundation\Blender 3.5
-sys-blender-py      | SYS_BLENDER_PY      | C:\Program Files\Blender Foundation\Blender 3.5\3.5\scripts\modules
+sys-blender         | SYS_BLENDER         | C:\Program Files\Blender Foundation\Blender 3.3
+sys-blender-py      | SYS_BLENDER_PY      | C:\Program Files\Blender Foundation\Blender 3.3\3.3\scripts\modules
 sys-git             | SYS_GIT             | C:\Program Files\Git
 sys-cmake           | SYS_CMAKE           | C:\Program Files\CMake
 sys-vulkan-sdk      | SYS_VULKAN_SDK      | $VULKAN_SDK
@@ -30,6 +30,6 @@ android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/
 #----------         | ----------          | ----------
 user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
 user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
-blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.5/scripts/addons
+blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 
 # vim:set nowrap:

@@ -43,7 +43,7 @@
   "python.analysis.stubPath": "${env:MY_GITHUB}/python-type-stubs",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
 
   // error numbers:

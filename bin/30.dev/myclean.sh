@@ -33,11 +33,11 @@ f_args() {
       --pycache-dir)
         opt="$opt -type d -name '__pycache__' -prune"
         ;;
-      --build-dir)
-        opt="$opt -type d -name 'build*' -prune"
-        ;;
       --output-dir)
         opt="$opt -type d -name '_output' -prune"
+        ;;
+      --build-dir)
+        opt="$opt -type d -name 'build*' -prune"
         ;;
       --doxygen-dir)
         opt="$opt -type d -name 'doxygen' -prune"

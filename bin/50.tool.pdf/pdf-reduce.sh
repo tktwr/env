@@ -10,11 +10,11 @@ declare -A OPT
 # printer  : 300dpi
 # default  :
 
-OPT["screen"]="-dPDFSETTINGS=//screen"
-OPT["ebook"]="-dPDFSETTINGS=//ebook"
-OPT["prepress"]="-dPDFSETTINGS=//prepress"
-OPT["printer"]="-dPDFSETTINGS=//printer"
-OPT["default"]="-dPDFSETTINGS=//default"
+OPT["screen"]="-dPDFSETTINGS=/screen"
+OPT["ebook"]="-dPDFSETTINGS=/ebook"
+OPT["prepress"]="-dPDFSETTINGS=/prepress"
+OPT["printer"]="-dPDFSETTINGS=/printer"
+OPT["default"]="-dPDFSETTINGS=/default"
 
 files="$@"
 
