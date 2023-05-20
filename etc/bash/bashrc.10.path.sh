@@ -41,20 +41,20 @@ f_ins_path_local() {
   f_ins_path_info "$pth/share/info"
 }
 
-f_ins_path_env() {
-  local pth=$1
-
-  f_ins_path "$pth/bin"
-  dirs=$(/bin/ls -d $pth/bin/[0-9]?.*/)
+my_setup_path_env() {
+  f_ins_path "$MY_ENV/bin"
+  dirs=$(/bin/ls -d $MY_ENV/bin/[0-9]?.*/)
   for i in $dirs; do
     f_ins_path "$i"
   done
-  f_ins_path "$pth/bin/os.$MY_OS_NAME"
-  f_ins_path "$pth/setup"
+}
+
+my_setup_path_os() {
+  f_ins_path "$MY_ENV/bin/os.$MY_OS_NAME"
 }
 
 #------------------------------------------------------
 f_init_path
 f_ins_path_man "/usr/local/share/man"
 #f_ins_path_local $MY_ROAMING/usr/local
-f_ins_path_env $MY_ENV
+my_setup_path_env

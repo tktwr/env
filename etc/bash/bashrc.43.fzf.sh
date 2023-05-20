@@ -23,7 +23,7 @@ case $MY_OS_NAME in
   gitbash)
     export FZF_DEFAULT_COMMAND="find"
     export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
-    alias fzf='winpty fzf'
+    #alias fzf='winpty fzf'
     ;;
 esac
 #------------------------------------------------------
