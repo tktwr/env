@@ -1,14 +1,13 @@
 #!/bin/bash
 
-files="$@"
-
 pw_opt=''
 if [ $COLUMNS -lt 120 ]; then
   pw_opt='hidden'
 fi
 
-BMK_PREFIX="bmk.sh"
-FZF_DEFAULT_COMMAND="$BMK_PREFIX $files" \
+files="$@"
+
+FZF_DEFAULT_COMMAND="bmk.sh $files" \
 fzf --prompt 'Bmk> ' \
     --ansi \
     --header '[A-O:open, A-T:preview, A-N:p-next, A-P:p-prev]' \

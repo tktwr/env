@@ -6,7 +6,7 @@
 #------------------------------------------------------
 # type
 #------------------------------------------------------
-mypython-win() {
+_my_setup_python_win() {
   export MY_PYTHON_EXE="python"
   export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
   export PYTHONPATH="$MY_SAMPLES_WIN/py/lib;$PYTHONPATH"
@@ -15,11 +15,12 @@ mypython-win() {
   export PATH="$USER_PYTHON_ROAMING/Scripts:$PATH"
   export PATH="$USER_PYTHON_HOME:$PATH"
   export PATH="$USER_PYTHON_HOME/Scripts:$PATH"
+
   alias pip='winpty pip'
   alias python='winpty python'
 }
 
-mypython-linux() {
+_my_setup_python_linux() {
   export MY_PYTHON_EXE="python3"
   export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
   export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
@@ -31,10 +32,10 @@ mypython-type() {
 
   case $python_type in
     python-win)
-      mypython-win
+      _my_setup_python_win
       ;;
     python)
-      mypython-linux
+      _my_setup_python_linux
       ;;
   esac
 }

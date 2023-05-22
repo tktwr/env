@@ -3,30 +3,6 @@
 #======================================================
 # fzf
 #======================================================
-# fzf functions:
-# - page-up
-# - page-down
-# - preview-page-up
-# - preview-page-down
-# - preview-up
-# - preview-down
-
-export FZF_DEFAULT_COMMAND="fdfind"
-export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down,alt-p:preview-up'"
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color 'bg:#2a2a2a,bg+:#3c3836,fg:#ebdbb2,fg+:#ebdbb2,hl:#928374,hl+:#fb4934,preview-bg:#2a2a2a,spinner:#fb4934,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,prompt:#fb4934,border:#ebdbb2,separator:#504945'"
-export RUNEWIDTH_EASTASIAN=0
-
-case $MY_OS_NAME in
-  gitbash)
-    export FZF_DEFAULT_COMMAND="find"
-    export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
-    #alias fzf='winpty fzf'
-    ;;
-esac
-#------------------------------------------------------
 fzf_pushd() {
   echo $(dirs -v | fzf | awk '{print "+"$1}')
 }
@@ -126,21 +102,68 @@ eval_fzf_cmd() {
 }
 
 #------------------------------------------------------
-# fzf alias
+# setup
 #------------------------------------------------------
-alias  z='eval_fzf_cmd'
-alias  m='eval_fzf_cmd mymake.sh'
-alias  S='eval_fzf_cmd setup.sh'
+# fzf functions:
+# - page-up
+# - page-down
+# - preview-page-up
+# - preview-page-down
+# - preview-up
+# - preview-down
 
-alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
-alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
-alias  d='eval_fzf_fd'
-alias  r='eval_fzf_rg'
+_my_setup_fzf_common() {
+  export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-p:preview-up'"
+}
 
-alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
-alias ,?='eval_cmd popd      $(fzf_pushd)'
-alias ??='eval_cmd pushd     $(fzf_pushd)'
+_my_setup_fzf_linux() {
+  _my_setup_fzf_common
+  export FZF_DEFAULT_COMMAND="fdfind"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color 'bg:#2a2a2a,bg+:#3c3836,fg:#ebdbb2,fg+:#ebdbb2,hl:#928374,hl+:#fb4934,preview-bg:#2a2a2a,spinner:#fb4934,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,prompt:#fb4934,border:#ebdbb2,separator:#504945'"
+  export RUNEWIDTH_EASTASIAN=0
+}
 
-export -f fzf_print
-export -f eval_cmd
-export -f eval_fzf_cmd
+_my_setup_fzf_gitbash() {
+  _my_setup_fzf_common
+  export FZF_DEFAULT_COMMAND="find"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
+}
+
+_my_setup_fzf_alias() {
+  alias  z='eval_fzf_cmd'
+  alias  m='eval_fzf_cmd mymake.sh'
+  alias  S='eval_fzf_cmd setup.sh'
+
+  alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
+  alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
+  alias  d='eval_fzf_fd'
+  alias  r='eval_fzf_rg'
+
+  alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
+  alias ,?='eval_cmd popd      $(fzf_pushd)'
+  alias ??='eval_cmd pushd     $(fzf_pushd)'
+}
+
+my_setup_fzf() {
+  case $MY_OS_NAME in
+    wsl|linux)
+      _my_setup_fzf_linux
+      ;;
+    gitbash)
+      _my_setup_fzf_gitbash
+      ;;
+  esac
+
+  _my_setup_fzf_alias
+
+  export -f fzf_print
+  export -f eval_cmd
+  export -f eval_fzf_cmd
+}
+
+#------------------------------------------------------
+my_setup_fzf
