@@ -41,6 +41,10 @@ f_setup_vim() {
   eval_fzf_cmd setup_vim.sh
 }
 
+f_setup_win() {
+  eval_fzf_cmd setup_win.sh
+}
+
 #------------------------------------------------------
 f_help() {
   echo "print_env     ... print env"
@@ -53,6 +57,7 @@ f_help() {
   echo "setup_ubuntu  ... setup ubuntu"
   echo "setup_python  ... setup python"
   echo "setup_vim     ... setup vim"
+  echo "setup_win     ... setup win"
   echo "-----------   ... -----------------------------"
   echo "help          ... print help"
 }
