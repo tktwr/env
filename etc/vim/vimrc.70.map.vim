@@ -125,7 +125,7 @@ endfunc
 if IsWsl()
   "nnoremap ,p            "+p
   nnoremap ,p            :r !paste.sh<CR>
-  vnoremap <silent> Y    y:silent '<,'>w !clip.exe<CR>
+  vnoremap <silent> Y    y:silent '<,'>w !clip.sh<CR>
 else
   nnoremap ,p      "+p
   vnoremap Y       "+y

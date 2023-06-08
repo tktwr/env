@@ -29,6 +29,7 @@ btop \
 ncal \
 googler \
 ghostscript \
+x11-apps \
 "
 pkg_dev="\
 cmake \
