@@ -22,6 +22,7 @@ vim-gtk3 \
 neovim \
 imagemagick \
 img2pdf \
+poppler-utils \
 fontforge \
 subversion \
 neofetch \

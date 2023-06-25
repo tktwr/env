@@ -74,5 +74,7 @@
 -   github:filament/                   | $MY_GITHUB/filament/
 -   github:separable-sss/              | $MY_GITHUB/separable-sss/
 -   github:imgui/                      | $MY_GITHUB/imgui/
+    ---------------------------------- | ----------------------------------------
+-   win_setting:wt                     | $SYS_WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
 
 # vim:set ft=bmk syntax=txt nowrap:

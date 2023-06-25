@@ -180,11 +180,9 @@ tnoremap <silent> <C-0> <C-W>b
 nnoremap <silent> <F1>       <C-W>:FzfHelptags<CR>
 
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
-nnoremap <silent> <C-Space>  <C-W>:CpmOpen coc<CR>
-tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>
 
-nnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>
-tnoremap <silent> <End>      <C-W>:silent call wbl#open()<CR>
+nnoremap <silent> <End>      <C-W>:CpmOpen<CR>
+tnoremap <silent> <End>      <C-W>:CpmOpen<CR>
 
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)
@@ -227,7 +225,6 @@ tnoremap <C-J>   <C-\><C-N><C-W>w
 tnoremap <C-K>   <C-\><C-N><C-W>W
 tnoremap <C-L>   <C-\><C-N><C-W>l
 
-tnoremap <silent> <C-Space>  <C-\><C-N>:CpmOpen<CR>
 tnoremap <silent> <PageDown> <C-\><C-N>:silent call VisWinMaximizeYToggle(g:my_term_winheight_max)<CR>i
 endif
 

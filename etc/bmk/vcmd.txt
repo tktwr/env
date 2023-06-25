@@ -32,6 +32,10 @@
 - Q  QuickFix                         | :VisQuickFix
 - R  Qfreplace                        | :Qfreplace
     ---------------------------------- | ----------------------------------------
+- 7  MaximizeX                        | :VisWinMaximizeXToggle
+- 8  MaximizeXY                       | :VisWinMaximizeXYToggle
+- 9  MaximizeY                        | :VisWinMaximizeYToggle
+    ---------------------------------- | ----------------------------------------
 - L  Lazygit                          | :VisLazygit tab
 - S  Git status                       | :FzfGFiles?
 - G  Git graph                        | :FzfCommits

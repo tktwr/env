@@ -30,7 +30,7 @@ let g:bmk_open_dir_prog = "te.sh"
 let g:bmk_open_file_prog = "vscode.sh"
 
 let g:cpm_key = "\<Space>"
-let g:cpm_term_key = "\<C-Space>"
+let g:cpm_term_key = "\<End>"
 let g:cpm_user_bmk_dir = '$MY_DOTMY/bmk/bmk_dir.txt'
 let g:cpm_user_bmk_file = '$MY_DOTMY/bmk/bmk_file.txt'
 let g:cpm_files = 
