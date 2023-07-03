@@ -195,14 +195,6 @@ tnoremap <silent> <Insert>   <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 tnoremap <silent> <Del>      <C-W>:VisTabClosePrev<CR>
 "------------------------------------------------------
-nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-
-nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
-tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
-
-tnoremap <silent> <PageDown> <C-W>:VisWinMaximizeYToggleTerm<CR>
-"------------------------------------------------------
 nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
 
@@ -214,6 +206,14 @@ tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
 
 nnoremap <silent> <C-Down>   <C-W>:below VisTerm<CR>
 tnoremap <silent> <C-Down>   <C-W>:below VisTerm<CR>
+"------------------------------------------------------
+nnoremap <silent> <C-PageUp>   <C-W>:VisWinMaximizeXToggle<CR>
+tnoremap <silent> <C-PageUp>   <C-W>:VisWinMaximizeXToggleTerm<CR>
+tnoremap <silent> <PageUp>     <C-W>:VisWinMaximizeXToggleTerm<CR>
+
+nnoremap <silent> <C-PageDown> <C-W>:VisWinMaximizeYToggle<CR>
+tnoremap <silent> <C-PageDown> <C-W>:VisWinMaximizeYToggleTerm<CR>
+tnoremap <silent> <PageDown>   <C-W>:VisWinMaximizeYToggleTerm<CR>
 
 "======================================================
 " nvim
