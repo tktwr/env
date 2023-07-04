@@ -80,15 +80,21 @@ RShift::send,{vkF3sc029}
 ;------------------------------------------------------
 ; combination
 ;------------------------------------------------------
-SC07B & 0::Send,{Bind}^0
-SC07B & 1::Send,{Bind}^1
-SC07B & 2::Send,{Bind}^2
-SC07B & h::Send,{Bind}^{Left}
-SC07B & j::Send,{Bind}^{Down}
-SC07B & k::Send,{Bind}^{Up}
-SC07B & l::Send,{Bind}^{Right}
-SC07B & n::Send,{Bind}^{PgDn}
-SC07B & p::Send,{Bind}^{PgUp}
+SC07B & 0::Send,{Blind}^0
+SC07B & 1::Send,{Blind}^1
+SC07B & 2::Send,{Blind}^2
+SC07B & h::Send,{Blind}^{Left}
+SC07B & j::Send,{Blind}^{Down}
+SC07B & k::Send,{Blind}^{Up}
+SC07B & l::Send,{Blind}^{Right}
+SC07B & n::Send,{Blind}^{PgDn}
+SC07B & p::Send,{Blind}^{PgUp}
+SC07B & d::Send,{Blind}#d
+SC07B & g::Send,{Blind}#g
+SC07B & r::
+  MsgBox, Reloaded
+  Reload
+  return
 
 ;------------------------------------------------------
 ; Function Keys
