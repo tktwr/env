@@ -3,7 +3,12 @@
 ;------------------------------------------------------
 ; functions
 ;------------------------------------------------------
-; screen info
+ReloadScript() {
+  MsgBox, Reloaded
+  Reload
+  return
+}
+
 ScreenInfo() {
   w = %A_ScreenWidth%
   w_half = %A_ScreenWidth%
@@ -21,7 +26,7 @@ ToggleHalfMaximize() {
   If (W < screen_w_75) {
     WinMaximize,A
   } Else {
-    IfWinActive ahk_exe mintty.exe
+    IfWinActive ahk_exe WindowsTerminal.exe
       send,#{Right}
     Else
       send,#{Left}
@@ -80,58 +85,30 @@ RShift::send,{vkF3sc029}
 ;------------------------------------------------------
 ; combination
 ;------------------------------------------------------
-SC07B & 0::Send,{Blind}^0
-SC07B & 1::Send,{Blind}^1
-SC07B & 2::Send,{Blind}^2
-SC07B & h::Send,{Blind}^{Left}
-SC07B & j::Send,{Blind}^{Down}
-SC07B & k::Send,{Blind}^{Up}
-SC07B & l::Send,{Blind}^{Right}
-SC07B & n::Send,{Blind}^{PgDn}
-SC07B & p::Send,{Blind}^{PgUp}
-SC07B & d::Send,{Blind}#d
-SC07B & g::Send,{Blind}#g
-SC07B & r::
-  MsgBox, Reloaded
-  Reload
-  return
+SC07B & 0::Send,^0
+SC07B & 1::Send,^1
+SC07B & 2::Send,^2
+SC07B & h::Send,^{Left}
+SC07B & j::Send,^{Down}
+SC07B & k::Send,^{Up}
+SC07B & l::Send,^{Right}
+SC07B & n::Send,^{PgDn}
+SC07B & p::Send,^{PgUp}
+
+SC079 & q::Send,#d              ; display desktop
+SC079 & g::Send,#g              ; Xbox Game Bar
+SC079 & a::send,#{Left}         ; maximize window in left
+SC079 & s::send,#{Up}           ; maximize window
+SC079 & d::send,#{Right}        ; maximize window in right
+SC079 & f::ToggleHalfMaximize() ; toggle maximize / half maximize window
+SC079 & r::ReloadScript()
 
 ;------------------------------------------------------
 ; Function Keys
 ;------------------------------------------------------
-; help
-;F1::
-
 ; virtual desktop left
 ;F2::send,#^{Left}
 
 ; virtual desktop right
 ;F3::send,#^{Right}
-
-; display desktop
-F4::send,#d
-
-; reload
-;F5::
-
-; screen info
-;F6::ScreenInfo()
-
-; maximize window in left
-F7::send,#{Left}
-
-; maximize window
-F8::send,#{Up}
-
-; maximize window in right
-F9::send,#{Right}
-
-; toggle maximize / half maximize window
-F10::ToggleHalfMaximize()
-
-; Xbox Game Bar
-F11::send,#g
-
-; system
-;F12::
 
