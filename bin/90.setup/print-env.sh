@@ -9,7 +9,9 @@ f_print_env_config() {
   echo "SYS_LOCAL_HOME     = $SYS_LOCAL_HOME"
   echo "SYS_ROAMING_HOME   = $SYS_ROAMING_HOME"
   echo "SYS_CONFIG_HOME    = $SYS_CONFIG_HOME"
-  echo "SYS_SHARE_HOME     = $SYS_SHARE_HOME"
+  echo "SYS_WORK_HOME      = $SYS_WORK_HOME"
+  echo "SYS_PROJ_HOME      = $SYS_PROJ_HOME"
+  echo "SYS_DATA_HOME      = $SYS_DATA_HOME"
 
   echo "MY_DOTMY           = $MY_DOTMY"
   echo "MY_PYTHON_VENV_DIR = $MY_PYTHON_VENV_DIR"
@@ -18,10 +20,6 @@ f_print_env_config() {
   echo "MY_REMOTE_CONFIG   = $MY_REMOTE_CONFIG"
   echo "MY_LOCAL_CONFIG    = $MY_LOCAL_CONFIG"
   echo "MY_PRIVATE_CONFIG  = $MY_PRIVATE_CONFIG"
-
-  echo "MY_PRIVATE         = $MY_PRIVATE"
-  echo "MY_PROTECTED       = $MY_PROTECTED"
-  echo "MY_PUBLIC          = $MY_PUBLIC"
 }
 
 f_print_env_python() {

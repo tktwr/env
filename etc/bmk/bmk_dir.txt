@@ -32,9 +32,11 @@
 -   Desktop/                           | $MY_DESKTOP/
 -   Downloads/                         | $MY_DOWNLOADS/
     ---------------------------------- | ----------------------------------------
-- R MyRoaming/                         | $MY_ROAMING/
-- C MyConfig/                          | $MY_CONFIG/
-- S MyShare/                           | $MY_SHARE/
+- R MyRoaming/                         | $SYS_ROAMING_HOME/
+- C MyConfig/                          | $SYS_CONFIG_HOME/
+- W MyWork/                            | $SYS_WORK_HOME/
+- P MyProj/                            | $SYS_PROJ_HOME/
+- D MyData/                            | $SYS_DATA_HOME/
     ---------------------------------- | ----------------------------------------
 -   C:/                                | $SYS_C/
 -   D:/                                | $SYS_D/
@@ -55,10 +57,6 @@
 -   opt/                               | $MY_OPT/
 -   man/                               | $MY_MAN/
 -   data/                              | $MY_DATA/
-    ---------------------------------- | ----------------------------------------
--   private/                           | $MY_PRIVATE/
--   protected/                         | $MY_PROTECTED/
--   public/                            | $MY_PUBLIC/
     ---------------------------------- | ----------------------------------------
 -   diary/                             | $MY_DIARY/
 -   secret/                            | $MY_SECRET/

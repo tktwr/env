@@ -21,7 +21,9 @@ win-home            | SYS_WIN_HOME        | $SYS_WIN_HOME
 local-home          | SYS_LOCAL_HOME      | $SYS_LOCAL_HOME
 roaming-home        | SYS_ROAMING_HOME    | $SYS_ROAMING_HOME
 config-home         | SYS_CONFIG_HOME     | $SYS_CONFIG_HOME
-share-home          | SYS_SHARE_HOME      | $SYS_SHARE_HOME
+work-home           | SYS_WORK_HOME       | $SYS_WORK_HOME
+proj-home           | SYS_PROJ_HOME       | $SYS_PROJ_HOME
+data-home           | SYS_DATA_HOME       | $SYS_DATA_HOME
 #----------         | ----------          | ----------
 user-local          | USER_LOCAL          | $SYS_WIN_HOME/AppData/Local
 user-prog           | USER_PROG_DIR       | $SYS_WIN_HOME/AppData/Local/Programs

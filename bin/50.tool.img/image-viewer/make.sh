@@ -16,7 +16,7 @@ f_dist() {
 
 f_install() {
   cd $build_dir
-  cp dist/image-viewer.exe $MY_PUBLIC/bin
+  cp dist/image-viewer.exe $SYS_CONFIG_HOME/opt/bin
 }
 
 f_clean() {

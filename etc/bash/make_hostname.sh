@@ -50,21 +50,12 @@ f_sys_win_home() {
   fi
 }
 
-f_sys_local_home() {
-  echo $HOME
-}
-
-f_sys_roaming_home() {
-    echo $(realpath "$HOME/MyRoaming")
-}
-
-f_sys_config_home() {
-    echo $(realpath "$HOME/MyConfig")
-}
-
-f_sys_share_home() {
-    echo $(realpath "$HOME/MyShare")
-}
+f_sys_local_home()   { echo $HOME; }
+f_sys_roaming_home() { echo $(realpath "$HOME/MyRoaming"); }
+f_sys_config_home()  { echo $(realpath "$HOME/MyConfig"); }
+f_sys_work_home()    { echo $(realpath "$HOME/MyWork"); }
+f_sys_proj_home()    { echo $(realpath "$HOME/MyProj"); }
+f_sys_data_home()    { echo $(realpath "$HOME/MyData"); }
 
 #------------------------------------------------------
 f_min() {
@@ -76,7 +67,9 @@ f_min() {
   echo "export SYS_LOCAL_HOME=$(f_sys_local_home)"
   echo "export SYS_ROAMING_HOME=$(f_sys_roaming_home)"
   echo "export SYS_CONFIG_HOME=$(f_sys_config_home)"
-  echo "export SYS_SHARE_HOME=$(f_sys_share_home)"
+  echo "export SYS_WORK_HOME=$(f_sys_work_home)"
+  echo "export SYS_PROJ_HOME=$(f_sys_proj_home)"
+  echo "export SYS_DATA_HOME=$(f_sys_data_home)"
 }
 
 f_default() {

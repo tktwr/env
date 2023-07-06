@@ -1,36 +1,35 @@
 # NAME         | ENV_VAR           | DIR
-#[env] ------- | ----------        | ----------
+#----------    | ----------        | ----------
 bin            | MY_BIN            | $MY_ENV/bin
 etc            | MY_ETC            | $MY_ENV/etc
 bash           | MY_BASH           | $MY_ETC/bash
 vim            | MY_VIM            | $MY_ETC/vim
 bmk            | MY_BMK            | $MY_ETC/bmk
 fzy            | MY_FZY            | $MY_ETC/fzy
-#[rconfig] --- | ----------        | ----------
+#----------    | ----------        | ----------
 memo           | MY_MEMO           | $MY_REMOTE_CONFIG/memo
 samples        | MY_SAMPLES        | $MY_REMOTE_CONFIG/samples
 libtt          | MY_LIBTT          | $MY_REMOTE_CONFIG/libtt
-#[lconfig] --- | ----------        | ----------
+#----------    | ----------        | ----------
 common         | MY_COMMON_SETTING | $MY_LOCAL_CONFIG/common
 dict           | MY_DICT           | $MY_LOCAL_CONFIG/share/dict
-#[pconfig] --- | ----------        | ----------
+#----------    | ----------        | ----------
 dia            | MY_DIARY          | $MY_PRIVATE_CONFIG/diary
-#[private] --- | ----------        | ----------
-proj           | MY_PROJ           | $MY_PRIVATE/proj/2023
-work           | MY_WORK           | $MY_PRIVATE/work
-git            | MY_GIT            | $MY_PRIVATE/work/git
-doc            | MY_DOC            | $MY_PRIVATE/doc
-office         | MY_OFFICE         | $MY_PRIVATE/office
-backup         | MY_BACKUP         | $MY_PRIVATE/backup/2023
-tmp            | MY_TMP            | $MY_PRIVATE/tmp/2023
-repo           | MY_REPO           | $MY_PRIVATE/repo
-snap           | MY_SNAP           | $MY_PRIVATE/snap
-#[public] ---  | ----------        | ----------
-arch           | MY_ARCH           | $MY_PUBLIC/arch
-papers         | MY_PAPERS         | $MY_PUBLIC/Papers
-github         | MY_GITHUB         | $MY_PUBLIC/github
-opt            | MY_OPT            | $MY_PUBLIC/opt
-man            | MY_MAN            | $MY_PUBLIC/man
-data           | MY_DATA           | $MY_PUBLIC/data
+#----------    | ----------        | ----------
+git            | MY_GIT            | $SYS_WORK_HOME/git
+proj           | MY_PROJ           | $SYS_WORK_HOME/proj
+backup         | MY_BACKUP         | $SYS_WORK_HOME/backup/2023
+tmp            | MY_TMP            | $SYS_WORK_HOME/tmp/2023
+#----------    | ----------        | ----------
+doc            | MY_DOC            | $SYS_PROJ_HOME/doc
+office         | MY_OFFICE         | $SYS_PROJ_HOME/office
+snap           | MY_SNAP           | $SYS_PROJ_HOME/snap
+#----------    | ----------        | ----------
+arch           | MY_ARCH           | $SYS_DATA_HOME/arch
+papers         | MY_PAPERS         | $SYS_DATA_HOME/Papers
+github         | MY_GITHUB         | $SYS_DATA_HOME/github
+opt            | MY_OPT            | $SYS_DATA_HOME/opt
+man            | MY_MAN            | $SYS_DATA_HOME/man
+data           | MY_DATA           | $SYS_DATA_HOME/data
 
 # vim:set nowrap:

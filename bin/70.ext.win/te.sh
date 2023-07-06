@@ -1,7 +1,7 @@
 #!/bin/bash
 
-export PATH="$MY_PUBLIC/bin/te210114:$PATH"
-export PATH="$MY_PUBLIC/bin/te220627:$PATH"
+export PATH="$SYS_CONFIG_HOME/opt/te210114:$PATH"
+export PATH="$SYS_CONFIG_HOME/opt/te220627:$PATH"
 
 dir="${*:-$PWD}"
 wp=$(pathconv.sh win "$dir")

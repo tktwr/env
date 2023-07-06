@@ -56,5 +56,5 @@ my_setup_path_os() {
 #------------------------------------------------------
 f_init_path
 f_ins_path_man "/usr/local/share/man"
-#f_ins_path_local $MY_ROAMING/usr/local
+#f_ins_path_local $SYS_ROAMING_HOME/usr/local
 my_setup_path_env
