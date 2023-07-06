@@ -13,7 +13,7 @@ f_exec_in_dirs() {
       echo "=== [$i]($cmd) ==="
       cd "$i"
       eval "$cmd"
-      cd $top_dir
+      cd "$top_dir"
     fi
   done
 }
