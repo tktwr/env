@@ -148,37 +148,17 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " C-Number
 "------------------------------------------------------
-nnoremap <silent> <C-1> <C-W>t
-nnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
-nnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
-nnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
-nnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
-nnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
-nnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
-nnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-nnoremap <silent> <C-7> <C-W>:echo 'C-7'<CR>
-nnoremap <silent> <C-8> <C-W>:echo 'C-8'<CR>
-nnoremap <silent> <C-9> <C-W>:echo 'C-9'<CR>
-nnoremap <silent> <C-0> <C-W>b
+nnoremap <silent> <F1>  <C-W>t
+nnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
+nnoremap <silent> <F12> <C-W>b
 
-tnoremap <silent> <C-1> <C-W>t
-tnoremap <silent> <C-2> <C-W>:2wincmd w<CR>
-tnoremap <silent> <C-@> <C-W>:2wincmd w<CR>
-tnoremap <silent> <C-3> <C-W>:echo 'C-3'<CR>
-tnoremap <silent> <C-4> <C-W>:echo 'C-4'<CR>
-tnoremap <silent> <C-5> <C-W>:echo 'C-5'<CR>
-tnoremap <silent> <C-6> <C-W>:echo 'C-6'<CR>
-tnoremap <silent> <C-^> <C-W>:echo 'C-^'<CR>
-tnoremap <silent> <C-7> <C-W>:echo 'C-7'<CR>
-tnoremap <silent> <C-8> <C-W>:echo 'C-8'<CR>
-tnoremap <silent> <C-9> <C-W>:echo 'C-9'<CR>
-tnoremap <silent> <C-0> <C-W>b
+tnoremap <silent> <F1>  <C-W>t
+tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
+tnoremap <silent> <F12> <C-W>b
 
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <silent> <F1>       <C-W>:FzfHelptags<CR>
-
 nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 nnoremap <silent> <End>      <C-W>:CpmOpen<CR>
 tnoremap <silent> <End>      <C-W>:CpmOpen<CR>

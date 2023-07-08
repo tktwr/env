@@ -85,9 +85,6 @@ RShift::send,{vkF3sc029}
 ;------------------------------------------------------
 ; combination
 ;------------------------------------------------------
-SC07B & 0::Send,^0
-SC07B & 1::Send,^1
-SC07B & 2::Send,^2
 SC07B & h::Send,^{Left}
 SC07B & j::Send,^{Down}
 SC07B & k::Send,^{Up}
@@ -95,13 +92,14 @@ SC07B & l::Send,^{Right}
 SC07B & n::Send,^{PgDn}
 SC07B & p::Send,^{PgUp}
 
-SC079 & q::Send,#d              ; display desktop
-SC079 & g::Send,#g              ; Xbox Game Bar
-SC079 & a::send,#{Left}         ; maximize window in left
-SC079 & s::send,#{Up}           ; maximize window
-SC079 & d::send,#{Right}        ; maximize window in right
-SC079 & f::ToggleHalfMaximize() ; toggle maximize / half maximize window
-SC079 & r::ReloadScript()
+SC07B & 1::send,#{Left}         ; maximize window in left
+SC07B & 2::send,#{Up}           ; maximize window
+SC07B & 3::send,#{Right}        ; maximize window in right
+SC07B & a::ToggleHalfMaximize() ; toggle maximize / half maximize window
+SC07B & s::Send,#+s             ; screenshot
+SC07B & d::Send,#d              ; display desktop
+SC07B & g::Send,#g              ; Xbox Game Bar
+SC07B & r::ReloadScript()
 
 ;------------------------------------------------------
 ; Function Keys
