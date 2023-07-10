@@ -1,4 +1,5 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
+- E env/                               | $MY_ENV/
 - e etc/                               | $MY_ETC/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
@@ -7,23 +8,21 @@
 - s samples/                           | $MY_SAMPLES/
 - t libtt/                             | $MY_LIBTT/
     ---------------------------------- | ----------------------------------------
-- D doc/                               | $MY_DOC/
 - g git/                               | $MY_GIT/
 - p proj/                              | $MY_PROJ/
-- c coop/                              | $MY_COOP/
-- o office/                            | $MY_OFFICE/
     ---------------------------------- | ----------------------------------------
 - Y .my/                               | $MY_DOTMY/
-- C local.common/                      | $MY_COMMON_SETTING/
+- S local.common/                      | $MY_COMMON_SETTING/
 - M local.memo/                        | $MY_LOCAL_CONFIG/memo/
-    ---------------------------------- | ----------------------------------------
-- E env/                               | $MY_ENV/
-- R rconfig/                           | $MY_REMOTE_CONFIG/
-- L lconfig/                           | $MY_LOCAL_CONFIG/
-- P pconfig/                           | $MY_PRIVATE_CONFIG/
     ---------------------------------- | ----------------------------------------
 - H HOME/                              | $HOME/
 - W SYS_WIN_HOME/                      | $SYS_WIN_HOME/
+    ---------------------------------- | ----------------------------------------
+- R MyRoaming/                         | $SYS_ROAMING_HOME/
+- C MyConfig/                          | $SYS_CONFIG_HOME/
+- K MyWork/                            | $SYS_WORK_HOME/
+- P MyProj/                            | $SYS_PROJ_HOME/
+- D MyData/                            | $SYS_DATA_HOME/
     ---------------------------------- | ----------------------------------------
 - I vim-ide-style/                     | $MY_VIM_PLUGGED_DIR/vim-ide-style/
 - B vim-bmk-menu/                      | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
@@ -31,12 +30,6 @@
 [bmk.dir.sys] ------------------------ | ----------------------------------------
 -   Desktop/                           | $MY_DESKTOP/
 -   Downloads/                         | $MY_DOWNLOADS/
-    ---------------------------------- | ----------------------------------------
-- R MyRoaming/                         | $SYS_ROAMING_HOME/
-- C MyConfig/                          | $SYS_CONFIG_HOME/
-- W MyWork/                            | $SYS_WORK_HOME/
-- P MyProj/                            | $SYS_PROJ_HOME/
-- D MyData/                            | $SYS_DATA_HOME/
     ---------------------------------- | ----------------------------------------
 -   C:/                                | $SYS_C/
 -   D:/                                | $SYS_D/
@@ -46,12 +39,22 @@
 -   USER_LOCAL/                        | $USER_LOCAL/
 -   USER_ROAMING/                      | $USER_ROAMING/
 [bmk.dir.ext] ------------------------ | ----------------------------------------
--   setup/ahk/                         | $MY_ENV/setup/win/ahk/
--   work/                              | $MY_WORK/
+-   rconfig/                           | $MY_REMOTE_CONFIG/
+-   lconfig/                           | $MY_LOCAL_CONFIG/
+-   pconfig/                           | $MY_PRIVATE_CONFIG/
+    ---------------------------------- | ----------------------------------------
+-   ahk/                               | $MY_ENV/setup/win/ahk/
+    ---------------------------------- | ----------------------------------------
+-   repo/                              | $MY_REPO/
 -   backup/                            | $MY_BACKUP/
 -   tmp/                               | $MY_TMP/
     ---------------------------------- | ----------------------------------------
+-   doc/                               | $MY_DOC/
+-   office/                            | $MY_OFFICE/
+-   coop/                              | $MY_COOP/
+    ---------------------------------- | ----------------------------------------
 -   arch/                              | $MY_ARCH/
+-   snap/                              | $MY_SNAP/
 -   papers/                            | $MY_PAPERS/
 -   github/                            | $MY_GITHUB/
 -   opt/                               | $MY_OPT/
