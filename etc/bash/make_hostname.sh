@@ -6,7 +6,8 @@ f_user_name() {
   elif [ -n "$USERNAME" ]; then
     echo $USERNAME
   else
-    echo "unknown_user_name"
+    #echo "unknown_user_name"
+    echo $(whoami)
   fi
 }
 
@@ -58,7 +59,7 @@ f_sys_proj_home()    { echo $(realpath "$HOME/MyProj"); }
 f_sys_data_home()    { echo $(realpath "$HOME/MyData"); }
 
 #------------------------------------------------------
-f_min() {
+f_all() {
   echo "export MY_USER_NAME=$(f_user_name)"
   echo "export MY_HOST_NAME=$(f_host_name)"
   echo "export MY_OS_NAME=$(f_os_name)"
@@ -73,7 +74,7 @@ f_min() {
 }
 
 f_default() {
-  f_min
+  f_all
 }
 
 #======================================================

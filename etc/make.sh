@@ -28,6 +28,11 @@ DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 #======================================================
 # functions
 #======================================================
+f_cp_all() {
+  cp -a --parents    $DOT_FILES_COMMON $HOME
+  cp -a --parents -n $DOT_FILES_DIFF   $HOME
+}
+
 f_sub() {
   cd $1
   ./make.sh $2
@@ -35,47 +40,31 @@ f_sub() {
 }
 
 #------------------------------------------------------
-f_cp_common() {
-  cp -a --parents $DOT_FILES_COMMON $HOME
-}
-
-f_cp_diff() {
-  cp -a --parents -n $DOT_FILES_DIFF $HOME
-}
-
-f_cp_all() {
-  f_cp_common
-  f_cp_diff
-}
-
-#------------------------------------------------------
 f_all() {
-  f_cp_common
+  f_cp_all
   f_sub bash
   f_sub vim
 }
 
 f_min_plug() {
+  f_cp_all
   f_sub bash min
   f_sub vim min_plug
 }
 
 f_min() {
+  f_cp_all
   f_sub bash min
   f_sub vim min
 }
 
 f_zero() {
+  f_cp_all
   f_sub bash zero
   f_sub vim zero
 }
 
 #------------------------------------------------------
-f_init() {
-  f_cp_all
-  f_min
-}
-
 f_backup() {
   cd
   snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT
@@ -105,7 +94,6 @@ f_help() {
   echo "min                 ... minimum settings"
   echo "zero                ... minimum settings without any dependencies"
   echo "-----------         ... -----------------------------"
-  echo "init                ... init"
   echo "backup              ... backup"
   echo "-----------         ... -----------------------------"
   echo "cmp                 ... cmp"
