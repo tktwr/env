@@ -67,7 +67,7 @@ nnoremap ==      zi
 "nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [FIXED] window command
  nnoremap <silent> <C-X>   d'm
  nnoremap <silent> <C-Y>   y'm
- nnoremap <silent> <C-Z>   :echo<CR>
+ nnoremap <silent> <C-Z>   :setl wrap! wrap?<CR>
 
  nnoremap <C-;>   <C-W>:
  nnoremap <C-.>   :VisLcdHere<CR>
