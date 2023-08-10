@@ -45,10 +45,8 @@ let g:dia_file = "$MY_DIARY/diary.md.html"
 let g:todo_file = "$MY_DIARY/todo.md.html"
 
 " height
-let g:my_term_winheight_max = 20
 let g:my_trans_winheight = 10
 
 " width
 let g:my_left_winwidth  = &columns >= (82 * 2 + 30) ? 30 : 20
 let g:my_right_winwidth = &columns >= (82 * 2 + 30) ? 30 : 20
-let g:my_winwidth_max = float2nr(3.0 / 4.0 * (&columns - g:my_left_winwidth))

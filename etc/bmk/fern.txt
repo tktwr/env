@@ -4,7 +4,7 @@
 -   fern:yank an abs path              | _Plug_(fern-action-yank)
 [fern.fzf] --------------------------- | ----------------------------------------
 - f  Bmk                              | :VisFzfBmk
-- d  Dirs                             | :VisFzfDirs
+- d  FindAll                          | :VisFzfAll
 [fern] ------------------------------- | ----------------------------------------
 -   fern:select-expand   (2-LMouse)    | _Plug_(my-fern-select-expand-collapse)
 -   fern:select-expand         (CR)    | _Plug_(my-fern-select-expand-collapse)

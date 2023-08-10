@@ -114,7 +114,7 @@ eval_fzf_cmd() {
 
 _my_setup_fzf_common() {
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview|A-N:p-next|A-P:p-prev]'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-p:preview-up'"
