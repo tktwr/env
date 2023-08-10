@@ -9,7 +9,7 @@ files="$@"
 
 FZF_DEFAULT_COMMAND="bmk.sh $files" \
 fzf --prompt 'Bmk> ' \
-    --ansi --info 'inline-right' \
+    --ansi \
     --header '[A-O:open|A-T:preview|A-N:p-next|A-P:p-prev]' \
     --bind 'alt-o:execute(open_bmk.sh {})' \
     --preview 'preview_bmk.sh {}' \

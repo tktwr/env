@@ -8,7 +8,7 @@ dirs="$@"
 RG_PREFIX="rg.sh"
 FZF_DEFAULT_COMMAND="$RG_PREFIX $query $dirs" \
 fzf --prompt 'Rg> ' \
-    --ansi --info 'inline-right' \
+    --ansi \
     --disabled \
     --query "$query" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $dirs || true" \

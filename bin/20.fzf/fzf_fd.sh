@@ -24,7 +24,7 @@ dirs="$@"
 
 FZF_DEFAULT_COMMAND="fd_all $dirs" \
 fzf --prompt 'Fd> ' \
-    --ansi --info 'inline-right' \
+    --ansi \
     --header '[A-A:all|A-E:dir|A-F:file|A-X:explorer|A-C:chrome|A-V:vscode|A-T:preview|A-N:p-next|A-P:p-prev]' \
     --bind "alt-a:reload(fd_all  $dirs)" \
     --bind "alt-e:reload(fd_dir  $dirs)" \
