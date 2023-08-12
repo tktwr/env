@@ -5,6 +5,20 @@
 set nocompatible
 
 "------------------------------------------------------
+func My_set_default_val(var, val)
+  exec printf("set %s=%d", a:var, a:val)
+endfunc
+
+func My_default_term_height()
+  let l = float2nr(0.1 * &lines)
+  return l < 4 ? 4 : l
+endfunc
+
+func My_default_side_width()
+  return &columns >= (82 * 2 + 30) ? 30 : 20
+endfunc
+
+"------------------------------------------------------
 " path
 "------------------------------------------------------
 "set shell=/bin/sh
@@ -45,9 +59,14 @@ set scrolloff=0
 set backspace=2
 set cmdheight=2
 set showtabline=2
+
 set winheight=10
 set previewheight=10
 "set previewpopup=height:10,width:60
+
+call My_set_default_val('winheight', My_default_term_height())
+call My_set_default_val('previewheight', My_default_term_height())
+
 set eadirection=ver
 set listchars=tab:>-,trail:-,eol:$
 

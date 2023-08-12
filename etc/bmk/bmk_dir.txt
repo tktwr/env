@@ -1,6 +1,6 @@
 [bmk.dir] ---------------------------- | ----------------------------------------
-- E env/                               | $MY_ENV/
 - e etc/                               | $MY_ETC/
+- E env/                               | $MY_ENV/
 - b bash/                              | $MY_BASH/
 - v vim/                               | $MY_VIM/
 - i bin/                               | $MY_BIN/

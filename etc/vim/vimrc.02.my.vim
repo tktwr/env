@@ -45,8 +45,8 @@ let g:dia_file = "$MY_DIARY/diary.md.html"
 let g:todo_file = "$MY_DIARY/todo.md.html"
 
 " height
-let g:my_trans_winheight = 10
+let g:my_trans_winheight = My_default_term_height()
 
 " width
-let g:my_left_winwidth  = &columns >= (82 * 2 + 30) ? 30 : 20
-let g:my_right_winwidth = &columns >= (82 * 2 + 30) ? 30 : 20
+let g:my_left_winwidth  = My_default_side_width()
+let g:my_right_winwidth = My_default_side_width()

@@ -134,9 +134,8 @@ _my_setup_fzf_gitbash() {
 }
 
 _my_setup_fzf_alias() {
-  alias  z='eval_fzf_cmd'
-  alias  m='eval_fzf_cmd mymake.sh'
   alias  S='eval_fzf_cmd setup.sh'
+  alias  m='eval_fzf_cmd mymake.sh'
 
   alias  c='eval_bmk           $(fzf_bmk.sh tcmd.txt tcmd_sys.txt tcmd_git.txt)'
   alias  f='eval_bmk           $(fzf_bmk.sh bmk_dir.txt bmk_file.txt links.txt papers.txt)'
