@@ -10,8 +10,8 @@ func My_set_default_val(var, val)
 endfunc
 
 func My_default_term_height()
-  let l = float2nr(0.1 * &lines)
-  return l < 4 ? 4 : l
+  let l = float2nr(0.2 * &lines)
+  return l < 5 ? 5 : l > 10 ? 10 : l
 endfunc
 
 func My_default_side_width()
