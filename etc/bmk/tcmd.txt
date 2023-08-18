@@ -17,7 +17,7 @@
     ---------------------------------- | ----------------------------------------
 - L Set tab label {name}               | > vimapi-tabline-set-label
     ---------------------------------- | ----------------------------------------
-- 0 ,resize                            | > ,resize 4<CR>
+- 0 ,resize 5                          | > ,resize 5<CR>
 - 1 ,resize 10                         | > ,resize 10<CR>
 - 2 ,resize 20                         | > ,resize 20<CR>
 - 3 ,resize 30                         | > ,resize 30<CR>
