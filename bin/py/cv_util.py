@@ -114,6 +114,13 @@ def cv_cvt_channels(img, dst_ch):
     return img
 
 
+def cv_cvt_2d_to_3d(img):
+    if len(img.shape) > 2:
+        return img
+    h, w = img.shape
+    return img.reshape([h, w, 1])
+
+
 # -----------------------------------------------------
 # convert pixel value
 # -----------------------------------------------------
@@ -122,6 +129,15 @@ def cv_mult_img(img, val):
     img = cv_cvt_dtype(img, 'float32')
     img *= val
     return cv_cvt_dtype(img, dtype)
+
+
+def cv_diff_img(img1, img2):
+    dtype = img1.dtype
+    img1 = cv_cvt_dtype(img1, 'float32')
+    img2 = cv_cvt_dtype(img2, 'float32')
+    oimg = np.abs(img1 - img2)
+    oimg = cv_cvt_dtype(oimg, dtype)
+    return cv_cvt_channels(oimg, 3)
 
 
 # brightness: [-1, 1]

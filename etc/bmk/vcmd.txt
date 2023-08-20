@@ -35,12 +35,14 @@
 - 7  MaximizeX                        | :VisWinMaximizeXToggle
 - 8  MaximizeXY                       | :VisWinMaximizeXYToggle
 - 9  MaximizeY                        | :VisWinMaximizeYToggle
+- 0  MinimizeY                        | :VisWinResize 5
     ---------------------------------- | ----------------------------------------
-- L  Lazygit                          | :VisLazygit tab
+-    Lazygit                          | :VisLazygit tab
 - S  Git status                       | :FzfGFiles?
 - G  Git graph                        | :FzfCommits
 - g  Gllog %                          | :Gllog %
     ---------------------------------- | ----------------------------------------
+- L Lcd                                | :VisLcdHere
 - x Wx                                 | :Wx ?
 - p Paste                 (,p)         | ,p
 -   Yank                   (Y)         | "*y

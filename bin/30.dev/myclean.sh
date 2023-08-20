@@ -9,17 +9,20 @@ f_help() {
   echo "  $bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $bin_name [options]"
+  echo "  $bin_name [option] [-rm]"
   echo
   echo "OPTIONS"
-  echo "  -h, --help    ... print help"
-  echo "  -py, --python ... print python dirs"
-  echo "  -b, --build   ... print build dirs"
-  echo "  -o, --output  ... print output dirs"
-  echo "  -rm           ... remove dirs"
+  echo "  -h, --help       ... print help"
+  echo "  --output-dir     ... print output dirs"
+  echo "  --build-dir      ... print build dirs"
+  echo "  --pycache-dir    ... print pycache dirs"
+  echo "  --doxygen-dir    ... print doxygen dirs"
+  echo "  --blender-backup ... print blender backup files"
+  echo "  -rm              ... remove files and dirs"
 }
 
 f_clean() {
+  echo "=== [find . $opt] ===================="
   eval "find . $opt"
 }
 
@@ -30,14 +33,14 @@ f_args() {
         f_help
         exit
         ;;
-      --pycache-dir)
-        opt="$opt -type d -name '__pycache__' -prune"
-        ;;
       --output-dir)
         opt="$opt -type d -name '_output' -prune"
         ;;
       --build-dir)
         opt="$opt -type d -name 'build*' -prune"
+        ;;
+      --pycache-dir)
+        opt="$opt -type d -name '__pycache__' -prune"
         ;;
       --doxygen-dir)
         opt="$opt -type d -name 'doxygen' -prune"
@@ -54,4 +57,3 @@ f_args() {
 
 f_args "$@"
 f_clean
-

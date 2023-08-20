@@ -2,10 +2,61 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 import time
 import json
 import argparse
 import numpy as np
+
+
+# -----------------------------------------------------
+# log
+# -----------------------------------------------------
+def log(s):
+    print(f'{s}', file=sys.stderr)
+
+
+def log_sep(s):
+    print(f'--- {s} --------------------', file=sys.stderr)
+
+
+def log_sep_0(s):
+    print(f'=== {s} ====================', file=sys.stderr)
+
+
+def log_title(title, sep='-', sep_n=55, place='center'):
+    separator = sep * sep_n
+    n = len(title)
+    out = separator
+    if place == 'left':
+        out = title + separator[n:]
+    elif place == 'right':
+        out = separator[:-n] + title
+    elif place == 'center':
+        nn = len(separator) - n
+        r = nn % 2
+        nl = int(nn / 2)
+        nr = int(nn / 2) + r
+        sepl = separator[:nl]
+        sepr = separator[-nr:]
+        out = sepl + title + sepr
+    print(f'{out}', flush=True, file=sys.stderr)
+
+
+# -----------------------------------------------------
+#
+# -----------------------------------------------------
+def list_startswith(lst, start_str):
+    return [i for i in lst if i.startswith(start_str)]
+
+
+def get_all_funcs(lst):
+    if len(sys.argv) == 1:
+        func_lst = list_startswith(lst, 'f_')
+    else:
+        func_lst = sys.argv[1:]
+    log(f'func_lst: {func_lst}')
+    return func_lst
 
 
 # -----------------------------------------------------
@@ -47,12 +98,19 @@ class FileName():
 # -----------------------------------------------------
 # image size
 # -----------------------------------------------------
-# dst_wh:
-#   (0, 0) : source size
-#   (w, 0) : set width, keep aspect ratio
-#   (0, h) : set height, keep aspect ratio
-#   (w, h) : set width and height, not keep aspect ratio
-def fix_size(src_wh, dst_wh):
+def fix_size(src_wh: tuple[int, int], dst_wh: tuple[int, int]):
+    '''
+    Args:
+        src_wh: src size
+        dst_wh: dst size
+
+    Note:
+        dst_wh:
+            (0, 0): source size
+            (w, 0): set width, keep aspect ratio
+            (0, h): set height, keep aspect ratio
+            (w, h): set width and height, not keep aspect ratio
+    '''
     sw, sh = src_wh
     w, h = dst_wh
 
@@ -125,22 +183,3 @@ def write_json(fname, data):
         f.write(json.dumps(data, sort_keys=True, indent=4))
 
 
-# -----------------------------------------------------
-# print
-# -----------------------------------------------------
-def print_title(title, separator, place='left'):
-    n = len(title)
-    out = separator
-    if place == 'left':
-        out = title + separator[n:]
-    elif place == 'right':
-        out = separator[:-n] + title
-    elif place == 'center':
-        nn = len(separator) - n
-        r = nn % 2
-        nl = int(nn / 2)
-        nr = int(nn / 2) + r
-        sepl = separator[:nl]
-        sepr = separator[-nr:]
-        out = sepl + title + sepr
-    print(f'{out}', flush=True)

@@ -32,6 +32,13 @@ def f_image_merge(ofname, ifnames):
     cu.cv_save(ofname, img_out)
 
 
+def f_image_diff(ofname, ifname1, ifname2):
+    img1 = cu.cv_load(ifname1)
+    img2 = cu.cv_load(ifname2)
+    img_out = cu.cv_diff_img(img1, img2)
+    cu.cv_save(ofname, img_out)
+
+
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
@@ -43,6 +50,9 @@ def parse_args():
     parser.add_argument('--merge',
                         action='store_true',
                         help='merge')
+    parser.add_argument('--diff',
+                        action='store_true',
+                        help='diff')
     parser.add_argument('-o', '--ofname',
                         type=str,
                         default='output.png',
@@ -62,4 +72,6 @@ if __name__ == "__main__":
         f_image_split(args.files[0])
     elif args.merge:
         f_image_merge(args.ofname, args.files)
+    elif args.diff:
+        f_image_diff(args.ofname, args.files[0], args.files[1])
 

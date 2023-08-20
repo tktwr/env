@@ -13,6 +13,9 @@ endif
 "------------------------------------------------------
 " tags
 "------------------------------------------------------
+" bmk
+set tags+=$MY_GITHUB/tags.bmk
+
 " tags for env
 set tags+=$MY_ENV/.tags.bin_sh
 set tags+=$MY_ENV/.tags.bin_py
@@ -29,13 +32,13 @@ set tags+=$MY_SAMPLES/tags
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 
 " tags for opt
-set tags+=$MY_OPT/tags.opencv2
-set tags+=$MY_OPT/tags.eigen
-set tags+=$MY_OPT/tags.glm
-set tags+=$MY_OPT/tags.imgui
-set tags+=$MY_OPT/tags.nfd
-set tags+=$MY_OPT/tags.stb
-set tags+=$MY_OPT/tags.json11
+set tags+=$MY_GITHUB/tags.opencv2
+set tags+=$MY_GITHUB/tags.eigen
+set tags+=$MY_GITHUB/tags.glm
+set tags+=$MY_GITHUB/tags.imgui
+set tags+=$MY_GITHUB/tags.nfd
+set tags+=$MY_GITHUB/tags.stb
+set tags+=$MY_GITHUB/tags.json11
 "------------------------------------------------------
 
 let g:mapleader = ','

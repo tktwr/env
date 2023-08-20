@@ -19,10 +19,10 @@
 -   tags:memo                          | :call TagCatalog("$MY_MEMO/tags", "memo")
 -   tags:libtt                         | :call TagCatalog("$MY_LIBTT/tags.libtt", "cpp")
     ---------------------------------- | ----------------------------------------
--   tags:imgui                         | :call TagCatalog("$MY_OPT/tags.imgui", "cpp")
--   tags:eigen                         | :call TagCatalog("$MY_OPT/tags.eigen", "cpp")
--   tags:glm                           | :call TagCatalog("$MY_OPT/tags.glm", "cpp")
--   tags:opencv2                       | :call TagCatalog("$MY_OPT/tags.opencv2", "cpp")
+-   tags:imgui                         | :call TagCatalog("$MY_GITHUB/tags.imgui", "cpp")
+-   tags:eigen                         | :call TagCatalog("$MY_GITHUB/tags.eigen", "cpp")
+-   tags:glm                           | :call TagCatalog("$MY_GITHUB/tags.glm", "cpp")
+-   tags:opencv2                       | :call TagCatalog("$MY_GITHUB/tags.opencv2", "cpp")
 [ref.keys] --------------------------- | ----------------------------------------
 -   map.Fkey:help                 (F1) | :call feedkeys("<F1>")
 -   map.Fkey:x                    (F2) | :call feedkeys("<F2>")

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd $MY_OPT
+cd $MY_GITHUB
 mymake.sh tags
 
