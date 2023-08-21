@@ -38,6 +38,7 @@ nnoremap ==      zi
 
 map , <Nop>
 
+nnoremap <Space> :VisFzfBmk<CR>
 nnoremap ,, :VisFzfBmk<CR>
 nnoremap ,f :VisFzfAll<CR>
 nnoremap ,r :VisFzfRg<CR>
@@ -45,6 +46,7 @@ nnoremap ,t :VisFzfTags<CR>
 nnoremap ,m :VisFzfMemo<CR>
 nnoremap ,b :FzfBuffers<CR>
 nnoremap ,h :FzfHelptags<CR>
+nnoremap ,w <C-W>:silent call wbl#open()<CR>
 
 "------------------------------------------------------
 " nmap C-?
@@ -169,7 +171,7 @@ tnoremap <silent> <F12> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
+"nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
 nnoremap <silent> <End>      <C-W>:CpmOpen<CR>
 tnoremap <silent> <End>      <C-W>:CpmOpen<CR>
 

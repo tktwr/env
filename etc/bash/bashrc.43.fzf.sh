@@ -134,16 +134,15 @@ _my_setup_fzf_gitbash() {
 }
 
 _my_setup_fzf_alias() {
-  alias ,S='eval_fzf_cmd setup.sh'
-  alias  m='eval_fzf_cmd mymake.sh'
+  alias  f='eval_bmk      $(fzf_bmk.sh bmk_dir.txt tcmd.txt tcmd_sys.txt tcmd_git.txt bmk_file.txt links.txt papers.txt)'
+  alias  d='eval_fzf_fd'
+  alias  r='eval_fzf_rg'
+  alias  m='eval_fzf_cmd  mymake.sh'
+  alias  S='eval_fzf_cmd  setup.sh'
 
-  alias ,,='eval_bmk           $(fzf_bmk.sh bmk_dir.txt tcmd.txt tcmd_sys.txt tcmd_git.txt bmk_file.txt links.txt papers.txt)'
-  alias ,f='eval_fzf_fd'
-  alias ,r='eval_fzf_rg'
-
-  alias .?='eval_cmd pushd     $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
-  alias ,?='eval_cmd popd      $(fzf_pushd)'
-  alias ??='eval_cmd pushd     $(fzf_pushd)'
+  alias .?='eval_cmd      pushd $(fzf_bmk.sh bmk_dir.txt | bmk_get_value)'
+  alias ,?='eval_cmd      popd  $(fzf_pushd)'
+  alias ??='eval_cmd      pushd $(fzf_pushd)'
 }
 
 my_setup_fzf() {

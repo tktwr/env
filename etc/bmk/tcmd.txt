@@ -1,4 +1,21 @@
+[tcmd.fzf] --------------------------- | ----------------------------------------
+- ,f  Bmk                             | > f<CR>
+- ,d  Dirs/Files                      | > d<CR>
+- ,r  Rg                              | > r<CR>
+- ,m  Make                            | > m<CR>
+- ,S Setup                             | > S<CR>
 [tcmd.main] -------------------------- | ----------------------------------------
+- ,t  Toggle term size                 | > ,toggle<CR>
+- ,tx Toggle term size x               | > ,toggle_x<CR>
+    ---------------------------------- | ----------------------------------------
+- ,0 Term resize 5                     | > ,resize 5<CR>
+- ,1 Term resize 10                    | > ,resize 10<CR>
+- ,2 Term resize 20                    | > ,resize 20<CR>
+- ,3 Term resize 30                    | > ,resize 30<CR>
+- ,4 Term resize 40                    | > ,resize 40<CR>
+    ---------------------------------- | ----------------------------------------
+- ,L Set tab label {name}              | > vimapi-tabline-set-label
+    ---------------------------------- | ----------------------------------------
 -   Lazygit              (,lg)         | > ,lg<CR>
 -   Git graph              (G)         | > G<CR>
 -   Git graph all         (GA)         | > GA<CR>
@@ -15,29 +32,11 @@
 -   Editor                 (N)         | > N<CR>
 -   Term                   (T)         | > T<CR>
     ---------------------------------- | ----------------------------------------
-- L Set tab label {name}               | > vimapi-tabline-set-label
-    ---------------------------------- | ----------------------------------------
-- 0 ,resize 5                          | > ,resize 5<CR>
-- 1 ,resize 10                         | > ,resize 10<CR>
-- 2 ,resize 20                         | > ,resize 20<CR>
-- 3 ,resize 30                         | > ,resize 30<CR>
-- 4 ,resize 40                         | > ,resize 40<CR>
-    ---------------------------------- | ----------------------------------------
--   ,toggle                            | > ,toggle<CR>
--   ,toggle_x                          | > ,toggle_x<CR>
-    ---------------------------------- | ----------------------------------------
 + C mycmake.sh                         | > mycmake.sh<CR>
 + B mycmake.sh --build                 | > mycmake.sh --build<CR>
 [tcmd.ext] --------------------------- | ----------------------------------------
 -   Fern 2                (F2)         | > F2<CR>
 -   vert Editor           (vN)         | > vN<CR>
 -   vert Term             (vT)         | > vT<CR>
-[tcmd.fzf] --------------------------- | ----------------------------------------
-- b  Buffers                          | :FzfBuffers
-- f  Bmk                  (f)         | > f<CR>
-- d  Dirs/Files           (d)         | > d<CR>
-- r  Rg                   (r)         | > r<CR>
-- m  Make                 (m)         | > m<CR>
-- c  Cmd                  (c)         | > c<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
