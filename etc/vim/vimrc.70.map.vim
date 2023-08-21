@@ -36,6 +36,16 @@ nnoremap '       `
 " fold on/off
 nnoremap ==      zi
 
+map , <Nop>
+
+nnoremap ,, :VisFzfBmk<CR>
+nnoremap ,f :VisFzfAll<CR>
+nnoremap ,r :VisFzfRg<CR>
+nnoremap ,t :VisFzfTags<CR>
+nnoremap ,m :VisFzfMemo<CR>
+nnoremap ,b :FzfBuffers<CR>
+nnoremap ,h :FzfHelptags<CR>
+
 "------------------------------------------------------
 " nmap C-?
 "------------------------------------------------------

@@ -23,9 +23,8 @@
 - 3 ,resize 30                         | > ,resize 30<CR>
 - 4 ,resize 40                         | > ,resize 40<CR>
     ---------------------------------- | ----------------------------------------
-- 7  MaximizeX Term                   | :VisWinMaximizeXToggleTerm
-- 8  MaximizeXY Term                  | :VisWinMaximizeXYToggleTerm
-- 9  MaximizeY Term                   | :VisWinMaximizeYToggleTerm
+-   ,toggle                            | > ,toggle<CR>
+-   ,toggle_x                          | > ,toggle_x<CR>
     ---------------------------------- | ----------------------------------------
 + C mycmake.sh                         | > mycmake.sh<CR>
 + B mycmake.sh --build                 | > mycmake.sh --build<CR>

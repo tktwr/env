@@ -28,7 +28,7 @@ mycmake-set() {
 if [ "$VIM_TERMINAL" ]; then
   alias GL='vimapi_exec_above GitLog $PWD'
   alias t=',toggle'
-  alias tv=',toggle_v'
+  alias tx=',toggle_x'
   alias t0=',resize 5'
   alias t1=',resize 10'
   alias t2=',resize 20'
