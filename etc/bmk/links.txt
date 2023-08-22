@@ -1,247 +1,215 @@
-[links] -----------------------------------------           | ----------------------------------------
--   link:ChatGPT                                            | https://chat.openai.com/
--   link:google                                             | https://www.google.com/
-+   link:google.translate                                   | https://translate.google.co.jp/
--   link:google.gmail                                       | https://mail.google.com/mail/u/0/#inbox
--   link:google.calendar                                    | https://www.google.com/calendar/render?hl=ja
--   link:google.keep                                        | https://keep.google.com/
--   link:google.drive                                       | https://drive.google.com/drive/my-drive
--   link:DeepL                                              | https://www.deepl.com/ja/translator
--   link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
--   link:chrome.extensions                                  | https://chrome.google.com/webstore/category/extensions
-    ------------------------------------                    | ----------------------------------------
-+ P link.py:python.doc                                      | https://docs.python.org/ja/3/index.html
--   link.py:python.tutorial                                 | https://docs.python.org/ja/3/tutorial/
--   link.py:python.tkinter                                  | https://docs.python.org/ja/3/library/tkinter.html
--   link.py:nkmk                                            | https://note.nkmk.me/
-+ p link.py:nkmk.python                                     | https://note.nkmk.me/python/
--   link.py:nkmk.numpy                                      | https://note.nkmk.me/numpy/
--   link.py:Python入門                                      | https://algorithm.joho.info/programming/python/sample-code-py/
--   link.py:Python入門.numpy                                | https://algorithm.joho.info/programming/python/numpy-sample-code/
-    ------------------------------------                    | ----------------------------------------
--   link.py:pytorch                                         | https://pytorch.org/
--   link.py:pytorch.transfer_learning                       | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
--   link.py:pytorch.tensorboard                             | https://pytorch.org/docs/stable/tensorboard.html
--   link.py:pytorch3d                                       | https://github.com/facebookresearch/pytorch3d
-    ------------------------------------                    | ----------------------------------------
--   link.pylib:pypi                                         | https://pypi.org/
--   link.pylib:numpy                                        | https://numpy.org/
--   link.pylib:numpy.reference                              | https://numpy.org/doc/stable/reference/index.html
--   link.pylib:pillow                                       | https://pillow.readthedocs.io/en/stable/
--   link.pylib:matplotlib                                   | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
--   link.pylib:scipy                                        | https://www.scipy.org/
--   link.pylib:scikit-learn                                 | https://scikit-learn.org/stable/
--   link.pylib:scikit-image                                 | https://scikit-image.org/
--   link.pylib:tkinter                                      | https://www.python-beginners.com/archive/category/Python-tkinter
--   link.pylib:tkinter.widgets                              | https://www.python-beginners.com/entry/20210607/1623057987
--   link.pylib:tkinter.pack                                 | https://imagingsolution.net/program/python/tkinter/widget_layout_pack/
--   link.pylib:tkinter.1                                    | https://note.com/npaka/n/nfa8d16c3624e
-    ------------------------------------                    | ----------------------------------------
--   link.cpp:cpprefjp                                       | https://cpprefjp.github.io/
-+ C link.cpp:cpprefjp.reference                             | https://cpprefjp.github.io/reference.html
--   link.cpp:cpprefjp.string                                | https://cpprefjp.github.io/reference/string/basic_string.html
--   link.cpp:cpprefjp.vector                                | https://cpprefjp.github.io/reference/vector/vector.html
--   link.cpp:cpprefjp.map                                   | https://cpprefjp.github.io/reference/map/map.html
--   link.cpp:cpprefjp.filesystem                            | https://cpprefjp.github.io/reference/filesystem.html
--   link.cpp:cpprefjp.path                                  | https://cpprefjp.github.io/reference/filesystem/path.html
--   link.cpp:cppreference                                   | https://ja.cppreference.com/w/
--   link.cpp:clang-format style options                     | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
-    ------------------------------------                    | ----------------------------------------
--   link.cpplib:glm                                         | https://glm.g-truc.net/
--   link.cpplib:glm.doc                                     | https://glm.g-truc.net/0.9.8/api/modules.html
--   link.cpplib:glm.howto                                   | https://qiita.com/usagi/items/f34976a3d3011506ff7d
--   link.cpplib:Eigen                                       | http://eigen.tuxfamily.org/
--   link.cpplib:Eigen.howto                                 | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
--   link.cpplib:glfw                                        | http://www.glfw.org/
--   link.cpplib:glad                                        | https://github.com/Dav1dde/glad
--   link.cpplib:imgui                                       | https://github.com/ocornut/imgui
--   link.cpplib:stb                                         | https://github.com/nothings/stb
--   link.cpplib:kissnet                                     | https://github.com/Ybalrid/kissnet
--   link.cpplib:miniaudio                                   | https://github.com/mackron/miniaudio
-    ------------------------------------                    | ----------------------------------------
--   link:OpenCV                                             | https://opencv.org/
--   link:OpenCV.doc                                         | https://docs.opencv.org/master/
--   link:OpenCV.cookbook                                    | http://opencv.jp/cookbook/index.html
-    ------------------------------------                    | ----------------------------------------
--   link:OpenGL 4                                           | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
--   link:OpenGL ES 3.0                                      | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
--   link:glTF                                               | https://www.khronos.org/gltf/
-+ G link:glTF.Specification                                 | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
-+ E link:glTF.Extensions                                    | https://github.com/KhronosGroup/glTF/tree/main/extensions
--   link:glTF.KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
--   link:glTF extensions                                    | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
--   link:glTF viewer (old)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
--   link:glTF viewer (new)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer
-- V link:glTF-Sample-Viewer                                 | https://github.khronos.org/glTF-Sample-Viewer-Release/
--   link:glTF-Sample-Models                                 | https://github.com/KhronosGroup/glTF-Sample-Models
--   link:OpenGL Tutorial                                    | http://www.opengl-tutorial.org/jp/
-    ------------------------------------                    | ----------------------------------------
--   link:vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
--   link:vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
-    ------------------------------------                    | ----------------------------------------
--   link.blender:doc                                        | https://docs.blender.org/
--   link.blender:Reference Manual                           | https://docs.blender.org/manual/en/latest/
--   link.blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
--   link.blender:PrincipledHairBSDF                         | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
--   link.blender:Open Shading Language                      | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
-+   link.blender:Python API Documentation 3.3               | https://docs.blender.org/api/3.3/
-+ B link.blender:Python API Documentation                   | https://docs.blender.org/api/current/index.html
--   link.blender:bpy.Object(ID)                             | https://docs.blender.org/api/current/bpy.types.Object.html
--   link.blender:bpy.Material(ID)                           | https://docs.blender.org/api/current/bpy.types.Material.html
--   link.blender:bpy.UILayout                               | https://docs.blender.org/api/current/bpy.types.UILayout.html
-+ a link.blender:Develop Add-ons                            | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
--   link.blender:blender入門(2.8版)                         | https://blender3d.biz/
--   link.blender:Bake texture                               | https://3dcg-school.pro/blender-bake/
--   link.blender:Bake texture (TexTools)                    | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
--   link.blender:Environment                                | https://reflectorange.net/archives/041.html
--   link.blender:Blenderではじめる画像処理                  | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
--   link:gimp-normalmap                                     | https://code.google.com/archive/p/gimp-normalmap/
-    ------------------------------------                    | ----------------------------------------
-- U link:Unreal Engine 5                                    | https://docs.unrealengine.com/5.0/en-US/
-    ------------------------------------                    | ----------------------------------------
--   link.cv:OpenMVS                                         | https://github.com/cdcseacave/openMVS
--   link.cv:colmap                                          | https://github.com/colmap/colmap
-    ------------------------------------                    | ----------------------------------------
--   link.cg:Wrap3                                           | https://www.russian3dscanner.com/
--   link.cg:assimp                                          | https://github.com/assimp/assimp
--   link.cg:Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
--   link.cg:Character Creator 3 (blender addon)             | https://www.youtube.com/watch?v=Nt1MuyPjkiI
--   link.cg:Daz3d                                           | https://www.daz3d.com/
--   link.cg:Human Generator                                 | https://www.humgen3d.com/
--   link.cg:Human Generator (blendermarket)                 | https://blendermarket.com/products/humgen3d?ref=311
-    ------------------------------------                    | ----------------------------------------
--   link.cg:Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
--   link.cg:A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
--   link.cg:DANIEL BOSCHUNG – Face Cartography              | https://www.danielboschung.com/
--   link.cg:USC ICT                                         | https://vgl.ict.usc.edu/
-    --- (Resources) --------------------                    | ----------------------------------------
--   link.cg:sketchfab                                       | https://sketchfab.com/
--   link.cg:Poly Haven                                      | https://polyhaven.com/
--   link.cg:PFM                                             | http://www.pauldebevec.com/Research/HDR/PFM/
--   link.cg:ambientcg                                       | https://ambientcg.com/
-    ------------------------------------                    | ----------------------------------------
--   link.vim:doc                                            | https://vim-jp.org/vimdoc-ja/
--   link.vim:colorswat                                      | http://colorswat.ch/vim/
--   link.vim:vim-plug                                       | https://github.com/junegunn/vim-plug
--   link.vim:gorilla                                        | https://knowledge.sakura.ad.jp/author/gorilla/
--   link.vim:gorilla.script                                 | https://knowledge.sakura.ad.jp/23436/
--   link.vim:gorilla.translate                              | https://github.com/skanehira/translate.vim
--   link.vim:chrisatmachine                                 | https://www.chrisatmachine.com/neovim
-    ------------------------------------                    | ----------------------------------------
--   link.vim:vim-winbuf-menu                                | https://github.com/tktwr/vim-winbuf-menu
--   link.vim:vim-bmk-menu                                   | https://github.com/tktwr/vim-bmk-menu
--   link.vim:vim-ide-style                                  | https://github.com/tktwr/vim-ide-style
--   link.vim:vim-memo                                       | https://github.com/tktwr/vim-memo
-    ------------------------------------                    | ----------------------------------------
--   link.vim:fzf                                            | https://github.com/junegunn/fzf
--   link.vim:fzf/README-VIM.md                              | https://github.com/junegunn/fzf/blob/master/README-VIM.md
--   link.vim:fzf/ADVANCED.md                                | https://github.com/junegunn/fzf/blob/master/ADVANCED.md
--   link.vim:fzf/examples                                   | https://github.com/junegunn/fzf/wiki/examples
--   link.vim:fzf.vim                                        | https://github.com/junegunn/fzf.vim
--   link.vim:fzf-git.sh                                     | https://github.com/junegunn/fzf-git.sh
--   link.vim:ctrlp.vim                                      | https://github.com/ctrlpvim/ctrlp.vim
--   link.vim:vim-fzy                                        | https://github.com/bfrg/vim-fzy
--   link.vim:coc.nvim                                       | https://github.com/neoclide/coc.nvim
--   link.vim:coc-fzf                                        | https://github.com/antoinemadec/coc-fzf
-    ------------------------------------                    | ----------------------------------------
--   link.vim:vim-fugitive                                   | https://github.com/tpope/vim-fugitive
--   link.vim:vim-gitgutter                                  | https://github.com/airblade/vim-gitgutter
--   link.vim:gv.vim                                         | https://github.com/junegunn/gv.vim
--   link.vim:agit.vim                                       | https://github.com/cohama/agit.vim
-    ------------------------------------                    | ----------------------------------------
--   link.vim:tagbar                                         | https://github.com/majutsushi/tagbar
--   link.vim:vim-ref                                        | https://github.com/thinca/vim-ref
--   link.vim:fern.vim                                       | https://github.com/lambdalisue/fern.vim
--   link.vim:nerdfont.vim                                   | https://github.com/lambdalisue/nerdfont.vim
--   link.vim:fern-renderer-nerdfont.vim                     | https://github.com/lambdalisue/fern-renderer-nerdfont.vim
--   link.vim:glyph-palette.vim                              | https://github.com/lambdalisue/glyph-palette.vim
--   link.vim:fern-git-status.vim                            | https://github.com/lambdalisue/fern-git-status.vim
-    ------------------------------------                    | ----------------------------------------
--   link.vim:gruvbox                                        | https://github.com/morhetz/gruvbox
--   link.vim:molokai                                        | https://github.com/tomasr/molokai
--   link.vim:vim-cpp-enhanced-highlight                     | https://github.com/octol/vim-cpp-enhanced-highlight
--   link.vim:vim-glsl                                       | https://github.com/tikhomirov/vim-glsl
--   link.vim:vim-coloresque                                 | https://github.com/gko/vim-coloresque
--   link.vim:vim-quickhl                                    | https://github.com/t9md/vim-quickhl
--   link.vim:vim-indent-guides                              | https://github.com/nathanaelkane/vim-indent-guides
-    ------------------------------------                    | ----------------------------------------
--   link.vim:popup-menu.nvim                                | https://github.com/kamykn/popup-menu.nvim
--   link.vim:vim-popup-menu                                 | https://github.com/Ajnasz/vim-popup-menu
--   link.vim:plenary.nvim                                   | https://github.com/nvim-lua/plenary.nvim
--   link.vim:popup.nvim                                     | https://github.com/nvim-lua/popup.nvim
-    ------------------------------------                    | ----------------------------------------
--   link.vim:tcomment_vim                                   | https://github.com/tomtom/tcomment_vim
--   link.vim:vim-commentary                                 | https://github.com/tpope/vim-commentary
--   link.vim:nerdcommenter                                  | https://github.com/scrooloose/nerdcommenter
-    ------------------------------------                    | ----------------------------------------
--   link.vim:eskk.vim                                       | https://github.com/tyru/eskk.vim
--   link.vim:vim-qfedit                                     | https://github.com/itchyny/vim-qfedit
--   link.vim:vim-qfreplace                                  | https://github.com/thinca/vim-qfreplace
--   link.vim:vim-repeat                                     | https://github.com/tpope/vim-repeat
--   link.vim:vim-surround                                   | https://github.com/tpope/vim-surround
--   link.vim:tabular                                        | https://github.com/godlygeek/tabular
--   link.vim:vim-dirdiff                                    | https://github.com/will133/vim-dirdiff
-    ------------------------------------                    | ----------------------------------------
--   link.nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
-    ------------------------------------                    | ----------------------------------------
--   link.font:HackGen                                       | https://github.com/yuru7/HackGen
--   link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
-    ------------------------------------                    | ----------------------------------------
--   link.soft:vim                                           | https://www.vim.org/
--   link.soft:git                                           | https://git-scm.com/
--   link.soft:git doc                                       | https://git-scm.com/docs
--   link.soft:python                                        | https://www.python.org/
--   link.soft:blender                                       | https://www.blender.org/
--   link.soft:gimp                                          | https://www.gimp.org/
--   link.soft:cmake                                         | https://cmake.org/
--   link.soft:nodejs                                        | https://nodejs.org/ja/
-    ------------------------------------                    | ----------------------------------------
--   link.soft.linux:new_commands                            | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
--   link.soft.linux:bat                                     | https://github.com/sharkdp/bat
--   link.soft.linux:fd                                      | https://github.com/sharkdp/fd
--   link.soft.linux:ripgrep                                 | https://github.com/BurntSushi/ripgrep
--   link.soft.linux:regex                                   | https://docs.rs/regex/1.7.1/regex/index.html
--   link.soft.linux:universal-ctags                         | https://github.com/universal-ctags/ctags
--   link.soft.linux:exa                                     | https://github.com/ogham/exa
--   link.soft.linux:delta                                   | https://github.com/dandavison/delta
--   link.soft.linux:delta doc                               | https://dandavison.github.io/delta/
--   link.soft.linux:delta themes.gitconfig                  | https://github.com/dandavison/delta/blob/master/themes.gitconfig
--   link.soft.linux:lazygit                                 | https://github.com/jesseduffield/lazygit
--   link.soft.linux:lazygit Config.md                       | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
--   link.soft.linux:gitui                                   | https://github.com/extrawurst/gitui
--   link.soft.linux:ncdu                                    | https://dev.yorhel.nl/ncdu
-    ------------------------------------                    | ----------------------------------------
--   link.soft.windows:wsltty                                | https://github.com/mintty/wsltty
--   link.soft.windows:AutoHotkey                            | https://www.autohotkey.com/
--   link.soft.windows:AutoHotkey.doc                        | https://www.autohotkey.com/docs/AutoHotkey.htm
--   link.soft.windows:AutoHotkey.wiki                       | http://ahkwiki.net/Top
--   link.soft.windows:Tablacus                              | https://tablacus.github.io/explorer.html
--   link.soft.windows:Ctrl2cap                              | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
--   link.soft.windows:PowerToys                             | https://github.com/microsoft/PowerToys
--   link.soft.windows:faststone                             | https://www.faststone.org/
--   link.soft.windows:WinDirStat                            | https://windirstat.net/
--   link.soft.windows:CrystalDiskMark                       | https://crystalmark.info/ja/software/crystaldiskmark/
--   link.soft.windows:Process Explorer                      | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
--   link.soft.windows:Dependency Walker                     | http://www.dependencywalker.com/
--   link.soft.windows:chocolatey                            | https://chocolatey.org/
--   link.soft.windows:7z                                    | https://www.7-zip.org/
-    ------------------------------------                    | ----------------------------------------
--   link.os.linux:snapcraft                                 | https://snapcraft.io/
--   link.os.linux:flathub                                   | https://flathub.org/
--   link.os.linux:launchpad                                 | https://launchpad.net/ubuntu
--   link.os.linux:ArchWiki                                  | https://wiki.archlinux.jp/
--   link.os.linux:SSL Certificate Verification              | https://curl.se/docs/sslcerts.html
-    ------------------------------------                    | ----------------------------------------
--   link.os:msys2                                           | https://www.msys2.org/
--   link.os:termux                                          | https://termux.com/
--   link.os:termux.wiki                                     | https://wiki.termux.com/wiki/Main_Page
-    ------------------------------------                    | ----------------------------------------
--   link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
--   link:www.o3de.org                                       | https://www.o3de.org/
--   link:o3de                                               | https://github.com/o3de/o3de
-    ------------------------------------                    | ----------------------------------------
--   link:sd-webui                                           | https://github.com/AUTOMATIC1111/stable-diffusion-webui
--   link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
--   link:EasyNegative                                       | https://huggingface.co/datasets/gsdf/EasyNegative
+----- | ------------------------------                          | ------------------------------
+-     | link:ChatGPT                                            | https://chat.openai.com/
+-     | link:google                                             | https://www.google.com/
++     | link:google.translate                                   | https://translate.google.co.jp/
+-     | link:google.gmail                                       | https://mail.google.com/mail/u/0/#inbox
+-     | link:google.calendar                                    | https://www.google.com/calendar/render?hl=ja
+-     | link:google.keep                                        | https://keep.google.com/
+-     | link:google.drive                                       | https://drive.google.com/drive/my-drive
+-     | link:DeepL                                              | https://www.deepl.com/ja/translator
+-     | link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
+-     | link:chrome.extensions                                  | https://chrome.google.com/webstore/category/extensions
++ P   | link.py:python.doc                                      | https://docs.python.org/ja/3/index.html
+-     | link.py:python.tutorial                                 | https://docs.python.org/ja/3/tutorial/
+-     | link.py:python.tkinter                                  | https://docs.python.org/ja/3/library/tkinter.html
+-     | link.py:nkmk                                            | https://note.nkmk.me/
++ p   | link.py:nkmk.python                                     | https://note.nkmk.me/python/
+-     | link.py:nkmk.numpy                                      | https://note.nkmk.me/numpy/
+-     | link.py:Python入門                                      | https://algorithm.joho.info/programming/python/sample-code-py/
+-     | link.py:Python入門.numpy                                | https://algorithm.joho.info/programming/python/numpy-sample-code/
+-     | link.py:pytorch                                         | https://pytorch.org/
+-     | link.py:pytorch.transfer_learning                       | https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html
+-     | link.py:pytorch.tensorboard                             | https://pytorch.org/docs/stable/tensorboard.html
+-     | link.py:pytorch3d                                       | https://github.com/facebookresearch/pytorch3d
+-     | link.pylib:pypi                                         | https://pypi.org/
+-     | link.pylib:numpy                                        | https://numpy.org/
+-     | link.pylib:numpy.reference                              | https://numpy.org/doc/stable/reference/index.html
+-     | link.pylib:pillow                                       | https://pillow.readthedocs.io/en/stable/
+-     | link.pylib:matplotlib                                   | https://qiita.com/skotaro/items/08dc0b8c5704c94eafb9
+-     | link.pylib:scipy                                        | https://www.scipy.org/
+-     | link.pylib:scikit-learn                                 | https://scikit-learn.org/stable/
+-     | link.pylib:scikit-image                                 | https://scikit-image.org/
+-     | link.pylib:tkinter                                      | https://www.python-beginners.com/archive/category/Python-tkinter
+-     | link.pylib:tkinter.widgets                              | https://www.python-beginners.com/entry/20210607/1623057987
+-     | link.pylib:tkinter.pack                                 | https://imagingsolution.net/program/python/tkinter/widget_layout_pack/
+-     | link.pylib:tkinter.1                                    | https://note.com/npaka/n/nfa8d16c3624e
+-     | link.cpp:cpprefjp                                       | https://cpprefjp.github.io/
++ C   | link.cpp:cpprefjp.reference                             | https://cpprefjp.github.io/reference.html
+-     | link.cpp:cpprefjp.string                                | https://cpprefjp.github.io/reference/string/basic_string.html
+-     | link.cpp:cpprefjp.vector                                | https://cpprefjp.github.io/reference/vector/vector.html
+-     | link.cpp:cpprefjp.map                                   | https://cpprefjp.github.io/reference/map/map.html
+-     | link.cpp:cpprefjp.filesystem                            | https://cpprefjp.github.io/reference/filesystem.html
+-     | link.cpp:cpprefjp.path                                  | https://cpprefjp.github.io/reference/filesystem/path.html
+-     | link.cpp:cppreference                                   | https://ja.cppreference.com/w/
+-     | link.cpp:clang-format style options                     | https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+-     | link.cpplib:glm                                         | https://glm.g-truc.net/
+-     | link.cpplib:glm.doc                                     | https://glm.g-truc.net/0.9.8/api/modules.html
+-     | link.cpplib:glm.howto                                   | https://qiita.com/usagi/items/f34976a3d3011506ff7d
+-     | link.cpplib:Eigen                                       | http://eigen.tuxfamily.org/
+-     | link.cpplib:Eigen.howto                                 | http://blog.livedoor.jp/tek_nishi/archives/8623876.html
+-     | link.cpplib:glfw                                        | http://www.glfw.org/
+-     | link.cpplib:glad                                        | https://github.com/Dav1dde/glad
+-     | link.cpplib:imgui                                       | https://github.com/ocornut/imgui
+-     | link.cpplib:stb                                         | https://github.com/nothings/stb
+-     | link.cpplib:kissnet                                     | https://github.com/Ybalrid/kissnet
+-     | link.cpplib:miniaudio                                   | https://github.com/mackron/miniaudio
+-     | link:OpenCV                                             | https://opencv.org/
+-     | link:OpenCV.doc                                         | https://docs.opencv.org/master/
+-     | link:OpenCV.cookbook                                    | http://opencv.jp/cookbook/index.html
+-     | link:OpenGL 4                                           | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+-     | link:OpenGL ES 3.0                                      | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+-     | link:glTF                                               | https://www.khronos.org/gltf/
++ G   | link:glTF.Specification                                 | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
++ E   | link:glTF.Extensions                                    | https://github.com/KhronosGroup/glTF/tree/main/extensions
+-     | link:glTF.KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
+-     | link:glTF extensions                                    | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
+-     | link:glTF viewer (old)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
+-     | link:glTF viewer (new)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer
+- V   | link:glTF-Sample-Viewer                                 | https://github.khronos.org/glTF-Sample-Viewer-Release/
+-     | link:glTF-Sample-Models                                 | https://github.com/KhronosGroup/glTF-Sample-Models
+-     | link:OpenGL Tutorial                                    | http://www.opengl-tutorial.org/jp/
+-     | link:vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+-     | link:vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
+-     | link.blender:doc                                        | https://docs.blender.org/
+-     | link.blender:Reference Manual                           | https://docs.blender.org/manual/en/latest/
+-     | link.blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
+-     | link.blender:PrincipledHairBSDF                         | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
+-     | link.blender:Open Shading Language                      | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
++     | link.blender:Python API Documentation 3.3               | https://docs.blender.org/api/3.3/
++ B   | link.blender:Python API Documentation                   | https://docs.blender.org/api/current/index.html
+-     | link.blender:bpy.Object(ID)                             | https://docs.blender.org/api/current/bpy.types.Object.html
+-     | link.blender:bpy.Material(ID)                           | https://docs.blender.org/api/current/bpy.types.Material.html
+-     | link.blender:bpy.UILayout                               | https://docs.blender.org/api/current/bpy.types.UILayout.html
++ a   | link.blender:Develop Add-ons                            | https://colorful-pico.net/introduction-to-addon-development-in-blender/2.8/
+-     | link.blender:blender入門(2.8版)                         | https://blender3d.biz/
+-     | link.blender:Bake texture                               | https://3dcg-school.pro/blender-bake/
+-     | link.blender:Bake texture (TexTools)                    | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
+-     | link.blender:Environment                                | https://reflectorange.net/archives/041.html
+-     | link.blender:Blenderではじめる画像処理                  | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
+-     | link:gimp-normalmap                                     | https://code.google.com/archive/p/gimp-normalmap/
+- U   | link:Unreal Engine 5                                    | https://docs.unrealengine.com/5.0/en-US/
+-     | link.cv:OpenMVS                                         | https://github.com/cdcseacave/openMVS
+-     | link.cv:colmap                                          | https://github.com/colmap/colmap
+-     | link.cg:Wrap3                                           | https://www.russian3dscanner.com/
+-     | link.cg:assimp                                          | https://github.com/assimp/assimp
+-     | link.cg:Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
+-     | link.cg:Character Creator 3 (blender addon)             | https://www.youtube.com/watch?v=Nt1MuyPjkiI
+-     | link.cg:Daz3d                                           | https://www.daz3d.com/
+-     | link.cg:Human Generator                                 | https://www.humgen3d.com/
+-     | link.cg:Human Generator (blendermarket)                 | https://blendermarket.com/products/humgen3d?ref=311
+-     | link.cg:Sculpting SKIN DETAILS with Zbrush              | https://www.youtube.com/watch?v=HlHoIGE2Ocs&t=8
+-     | link.cg:A REALTIME PORTRAIT - HUGE MAKING OF / TUTORIAL | https://www.zbrushcentral.com/t/a-realtime-portrait-huge-making-of-tutorial/205877/13
+-     | link.cg:DANIEL BOSCHUNG – Face Cartography              | https://www.danielboschung.com/
+-     | link.cg:USC ICT                                         | https://vgl.ict.usc.edu/
+-     | link.cg:sketchfab                                       | https://sketchfab.com/
+-     | link.cg:Poly Haven                                      | https://polyhaven.com/
+-     | link.cg:PFM                                             | http://www.pauldebevec.com/Research/HDR/PFM/
+-     | link.cg:ambientcg                                       | https://ambientcg.com/
+-     | link.vim:doc                                            | https://vim-jp.org/vimdoc-ja/
+-     | link.vim:colorswat                                      | http://colorswat.ch/vim/
+-     | link.vim:vim-plug                                       | https://github.com/junegunn/vim-plug
+-     | link.vim:gorilla                                        | https://knowledge.sakura.ad.jp/author/gorilla/
+-     | link.vim:gorilla.script                                 | https://knowledge.sakura.ad.jp/23436/
+-     | link.vim:gorilla.translate                              | https://github.com/skanehira/translate.vim
+-     | link.vim:chrisatmachine                                 | https://www.chrisatmachine.com/neovim
+-     | link.vim:vim-winbuf-menu                                | https://github.com/tktwr/vim-winbuf-menu
+-     | link.vim:vim-bmk-menu                                   | https://github.com/tktwr/vim-bmk-menu
+-     | link.vim:vim-ide-style                                  | https://github.com/tktwr/vim-ide-style
+-     | link.vim:vim-memo                                       | https://github.com/tktwr/vim-memo
+-     | link.vim:fzf                                            | https://github.com/junegunn/fzf
+-     | link.vim:fzf/README-VIM.md                              | https://github.com/junegunn/fzf/blob/master/README-VIM.md
+-     | link.vim:fzf/ADVANCED.md                                | https://github.com/junegunn/fzf/blob/master/ADVANCED.md
+-     | link.vim:fzf/examples                                   | https://github.com/junegunn/fzf/wiki/examples
+-     | link.vim:fzf.vim                                        | https://github.com/junegunn/fzf.vim
+-     | link.vim:fzf-git.sh                                     | https://github.com/junegunn/fzf-git.sh
+-     | link.vim:ctrlp.vim                                      | https://github.com/ctrlpvim/ctrlp.vim
+-     | link.vim:vim-fzy                                        | https://github.com/bfrg/vim-fzy
+-     | link.vim:coc.nvim                                       | https://github.com/neoclide/coc.nvim
+-     | link.vim:coc-fzf                                        | https://github.com/antoinemadec/coc-fzf
+-     | link.vim:vim-fugitive                                   | https://github.com/tpope/vim-fugitive
+-     | link.vim:vim-gitgutter                                  | https://github.com/airblade/vim-gitgutter
+-     | link.vim:gv.vim                                         | https://github.com/junegunn/gv.vim
+-     | link.vim:agit.vim                                       | https://github.com/cohama/agit.vim
+-     | link.vim:tagbar                                         | https://github.com/majutsushi/tagbar
+-     | link.vim:vim-ref                                        | https://github.com/thinca/vim-ref
+-     | link.vim:fern.vim                                       | https://github.com/lambdalisue/fern.vim
+-     | link.vim:nerdfont.vim                                   | https://github.com/lambdalisue/nerdfont.vim
+-     | link.vim:fern-renderer-nerdfont.vim                     | https://github.com/lambdalisue/fern-renderer-nerdfont.vim
+-     | link.vim:glyph-palette.vim                              | https://github.com/lambdalisue/glyph-palette.vim
+-     | link.vim:fern-git-status.vim                            | https://github.com/lambdalisue/fern-git-status.vim
+-     | link.vim:gruvbox                                        | https://github.com/morhetz/gruvbox
+-     | link.vim:molokai                                        | https://github.com/tomasr/molokai
+-     | link.vim:vim-cpp-enhanced-highlight                     | https://github.com/octol/vim-cpp-enhanced-highlight
+-     | link.vim:vim-glsl                                       | https://github.com/tikhomirov/vim-glsl
+-     | link.vim:vim-coloresque                                 | https://github.com/gko/vim-coloresque
+-     | link.vim:vim-quickhl                                    | https://github.com/t9md/vim-quickhl
+-     | link.vim:vim-indent-guides                              | https://github.com/nathanaelkane/vim-indent-guides
+-     | link.vim:popup-menu.nvim                                | https://github.com/kamykn/popup-menu.nvim
+-     | link.vim:vim-popup-menu                                 | https://github.com/Ajnasz/vim-popup-menu
+-     | link.vim:plenary.nvim                                   | https://github.com/nvim-lua/plenary.nvim
+-     | link.vim:popup.nvim                                     | https://github.com/nvim-lua/popup.nvim
+-     | link.vim:tcomment_vim                                   | https://github.com/tomtom/tcomment_vim
+-     | link.vim:vim-commentary                                 | https://github.com/tpope/vim-commentary
+-     | link.vim:nerdcommenter                                  | https://github.com/scrooloose/nerdcommenter
+-     | link.vim:eskk.vim                                       | https://github.com/tyru/eskk.vim
+-     | link.vim:vim-qfedit                                     | https://github.com/itchyny/vim-qfedit
+-     | link.vim:vim-qfreplace                                  | https://github.com/thinca/vim-qfreplace
+-     | link.vim:vim-repeat                                     | https://github.com/tpope/vim-repeat
+-     | link.vim:vim-surround                                   | https://github.com/tpope/vim-surround
+-     | link.vim:tabular                                        | https://github.com/godlygeek/tabular
+-     | link.vim:vim-dirdiff                                    | https://github.com/will133/vim-dirdiff
+-     | link.nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
+-     | link.font:HackGen                                       | https://github.com/yuru7/HackGen
+-     | link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
+-     | link.soft:vim                                           | https://www.vim.org/
+-     | link.soft:git                                           | https://git-scm.com/
+-     | link.soft:git doc                                       | https://git-scm.com/docs
+-     | link.soft:python                                        | https://www.python.org/
+-     | link.soft:blender                                       | https://www.blender.org/
+-     | link.soft:gimp                                          | https://www.gimp.org/
+-     | link.soft:cmake                                         | https://cmake.org/
+-     | link.soft:nodejs                                        | https://nodejs.org/ja/
+-     | link.soft.linux:new_commands                            | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
+-     | link.soft.linux:bat                                     | https://github.com/sharkdp/bat
+-     | link.soft.linux:fd                                      | https://github.com/sharkdp/fd
+-     | link.soft.linux:ripgrep                                 | https://github.com/BurntSushi/ripgrep
+-     | link.soft.linux:regex                                   | https://docs.rs/regex/1.7.1/regex/index.html
+-     | link.soft.linux:universal-ctags                         | https://github.com/universal-ctags/ctags
+-     | link.soft.linux:exa                                     | https://github.com/ogham/exa
+-     | link.soft.linux:delta                                   | https://github.com/dandavison/delta
+-     | link.soft.linux:delta doc                               | https://dandavison.github.io/delta/
+-     | link.soft.linux:delta themes.gitconfig                  | https://github.com/dandavison/delta/blob/master/themes.gitconfig
+-     | link.soft.linux:lazygit                                 | https://github.com/jesseduffield/lazygit
+-     | link.soft.linux:lazygit Config.md                       | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+-     | link.soft.linux:gitui                                   | https://github.com/extrawurst/gitui
+-     | link.soft.linux:ncdu                                    | https://dev.yorhel.nl/ncdu
+-     | link.soft.windows:wsltty                                | https://github.com/mintty/wsltty
+-     | link.soft.windows:AutoHotkey                            | https://www.autohotkey.com/
+-     | link.soft.windows:AutoHotkey.doc                        | https://www.autohotkey.com/docs/AutoHotkey.htm
+-     | link.soft.windows:AutoHotkey.wiki                       | http://ahkwiki.net/Top
+-     | link.soft.windows:Tablacus                              | https://tablacus.github.io/explorer.html
+-     | link.soft.windows:Ctrl2cap                              | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
+-     | link.soft.windows:PowerToys                             | https://github.com/microsoft/PowerToys
+-     | link.soft.windows:faststone                             | https://www.faststone.org/
+-     | link.soft.windows:WinDirStat                            | https://windirstat.net/
+-     | link.soft.windows:CrystalDiskMark                       | https://crystalmark.info/ja/software/crystaldiskmark/
+-     | link.soft.windows:Process Explorer                      | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+-     | link.soft.windows:Dependency Walker                     | http://www.dependencywalker.com/
+-     | link.soft.windows:chocolatey                            | https://chocolatey.org/
+-     | link.soft.windows:7z                                    | https://www.7-zip.org/
+-     | link.os.linux:snapcraft                                 | https://snapcraft.io/
+-     | link.os.linux:flathub                                   | https://flathub.org/
+-     | link.os.linux:launchpad                                 | https://launchpad.net/ubuntu
+-     | link.os.linux:ArchWiki                                  | https://wiki.archlinux.jp/
+-     | link.os.linux:SSL Certificate Verification              | https://curl.se/docs/sslcerts.html
+-     | link.os:msys2                                           | https://www.msys2.org/
+-     | link.os:termux                                          | https://termux.com/
+-     | link.os:termux.wiki                                     | https://wiki.termux.com/wiki/Main_Page
+-     | link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
+-     | link:www.o3de.org                                       | https://www.o3de.org/
+-     | link:o3de                                               | https://github.com/o3de/o3de
+-     | link:sd-webui                                           | https://github.com/AUTOMATIC1111/stable-diffusion-webui
+-     | link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
+-     | link:EasyNegative                                       | https://huggingface.co/datasets/gsdf/EasyNegative
 
 # vim:set ft=bmk syntax=txt nowrap:

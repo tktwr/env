@@ -39,8 +39,7 @@ nnoremap ==      zi
 map , <Nop>
 
 nnoremap <Space> :VisFzfBmk<CR>
-nnoremap ,, :VisFzfBmk<CR>
-nnoremap ,f :VisFzfAll<CR>
+nnoremap ,d :VisFzfAll<CR>
 nnoremap ,r :VisFzfRg<CR>
 nnoremap ,t :VisFzfTags<CR>
 nnoremap ,m :VisFzfMemo<CR>

@@ -52,7 +52,7 @@ eval_rg() {
 # bmk
 #------------------------------------------------------
 bmk_get_value() {
-  awk -F '|' '{print $2}' | sed -e 's+^ *++'
+  awk -F '|' '{print $3}' | sed -e 's+^ *++'
 }
 
 bmk_rm_tcmd() {

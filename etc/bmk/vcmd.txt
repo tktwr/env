@@ -1,131 +1,103 @@
-[vcmd.external] ---------------------- | ----------------------------------------
--    OpenURL  %                       | :call bmk#OpenURL('%:p')
--    OpenFile %                       | :call bmk#OpenFile('%:p')
--    OpenDir  %                       | :call bmk#OpenDir('%:p:h')
-    ---------------------------------- | ----------------------------------------
--    ViewThis          (C-CR)         | :call bmk#ViewThis()
--    OpenThis          (S-CR)         | :call bmk#OpenThis()
-[vcmd.fzf] --------------------------- | ----------------------------------------
-- b  Buffers                          | :FzfBuffers
-- f  Bmk                              | :VisFzfBmk
-- d  Files                            | :VisFzfFiles
-    ---------------------------------- | ----------------------------------------
-- r  Rg <cfile>                       | :VisFzfRg
-- a  Rg <cfile> all                   | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
-- %  Rg <cfile> %                     | :call vis#external#fzf#rg('<cfile>', ['%'])
-- t  Tags <cfile>       (C-])         | :VisFzfTags
-- m  Memo                             | :VisFzfMemo
-- ?  Help                             | :FzfHelptags
-    ---------------------------------- | ----------------------------------------
-- M  Man                              | :VisFzfMan tab
-- A  Apt                              | :VisFzfApt tab
-- P  Pip                              | :VisFzfPip tab
-- D  Dpkg                             | :VisFzfDpkg tab
-[vcmd.ide] --------------------------- | ----------------------------------------
-- I  IDE                              | :VisIDE
-- <  SideBar                          | :VisSideBarToggle
-- >  TagBar                           | :VisTagbarToggle
-- F  Fern                             | :VisFernDrawer %:p:h
-- N  Editor                           | :new
-- T  Term                             | :below VisTerm
-- _  Cd                               | :VisSendCdE2T
-- Q  QuickFix                         | :VisQuickFix
-- R  Qfreplace                        | :Qfreplace
-    ---------------------------------- | ----------------------------------------
-- 7  MaximizeX                        | :VisWinMaximizeXToggle
-- 8  MaximizeXY                       | :VisWinMaximizeXYToggle
-- 9  MaximizeY                        | :VisWinMaximizeYToggle
-- 0  MinimizeY                        | :VisWinResize 5
-    ---------------------------------- | ----------------------------------------
--    Lazygit                          | :VisLazygit tab
-- S  Git status                       | :FzfGFiles?
-- G  Git graph                        | :FzfCommits
-- g  Gllog %                          | :Gllog %
-    ---------------------------------- | ----------------------------------------
-- L Lcd                                | :VisLcdHere
-- x Wx                                 | :Wx ?
-- p Paste                 (,p)         | ,p
--   Yank                   (Y)         | "*y
-- Y YankFilePath                       | :call YankFilePath()
-- 1 EditTabBar                         | :EditTabBar
-    ---------------------------------- | ----------------------------------------
-- s  Reload menu                      | :CpmReload
-[vcmd.sub] --------------------------- | ----------------------------------------
-- T MyRunTest                          | :call MyRunTest()
--   MySetNoIgnoreCase                  | :call MySetNoIgnoreCase()
--   MySetIgnoreCase                    | :call MySetIgnoreCase()
--   MySetSmartCase                     | :call MySetSmartCase()
-    ---------------------------------- | ----------------------------------------
--   ToggleDebug                        | :call bmk#ToggleDebug()
-    ---------------------------------- | ----------------------------------------
-- g Gllog                              | :Gllog
-- C MyClangFormat                      | :MyClangFormat
-    ---------------------------------- | ----------------------------------------
--   PlugInstall                        | :PlugInstall
--   PlugUpdate                         | :PlugUpdate
-    ---------------------------------- | ----------------------------------------
-- : EditTabColon                       | :EditTabColon
-- , EditTabComma                       | :EditTabComma
-- . EditTabDots                        | :EditTabDots
-- = EditTabEqual                       | :EditTabEqual
-- [ EditTabLabel                       | :EditTabLabel
-    ---------------------------------- | ----------------------------------------
-- L EditMdLink                         | :call EditMdLink()
-- I EditMdImgLink                      | :call EditMdImgLink()
--   EditHtmlLink                       | :call EditHtmlLink()
--   EditHtmlImgLink                    | :call EditHtmlImgLink()
--   EditBmkLink                        | :call EditBmkLink()
-- p EditTogglePathFormat               | :call EditTogglePathFormat()
-    ---------------------------------- | ----------------------------------------
-- c VisSendCmdE2T                      | :VisSendCmdE2T
-- W VisWinInfo                         | :VisWinInfo
-- E VisCheckEnv                        | :VisCheckEnv
-    ---------------------------------- | ----------------------------------------
--   gruvbox                            | :colorscheme gruvbox
--   molokai                            | :colorscheme molokai
-    ---------------------------------- | ----------------------------------------
--   vimdirdiff etc ~                   | :VisTabDirDiff $MY_ETC $HOME
--   vimdirdiff etc ~/WinHome           | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
-[vcmd.ext] --------------------------- | ----------------------------------------
--    Git grep                         | :VisGgrep ??
--    Vim grep here                    | :VisVimgrep ?? *
--    Tag jump                         | :call VisTjumpPrompt()
-    ---------------------------------- | ----------------------------------------
--    Git status                       | :VisGS
--    Git graph                        | :VisGV
-    ---------------------------------- | ----------------------------------------
--   winbuf menu     (End, C-u)         | :silent call wbl#open()
--   coc menu                           | :CpmOpen coc
--   fern menu                          | :CpmOpen fern
-    ---------------------------------- | ----------------------------------------
--   quickhl              (C-a)         | :VisQuickhl ??
--   Memo                               | :Memo
--   Help                               | :VisHelp
--   SourceVimrc                        | :SourceVimrc
-    ---------------------------------- | ----------------------------------------
--   ctrlp                              | _Plug_(ctrlp)
--   Wc                                 | :Wc ?
--   VisBufDelete                       | :VisBufDelete
--   vimgrep TODO                       | :vimgrep 'TODO' %
-    ---------------------------------- | ----------------------------------------
--   quit                   (Q)         | :confirm qall
-[vcmd.diff] -------------------------- | ----------------------------------------
-- o do                                 | do
-- p dp                                 | dp
-- u diffupdate                         | :diffupdate
-[vcmd.dirdiff] ----------------------- | ----------------------------------------
-- q quit dirdiff                       | :VisTabDirDiffQuit
-[vcmd.git] --------------------------- | ----------------------------------------
-- D GV diff                            | O
-- ( GV prev                            | (
-- ) GV next                            | )
-[vcmd.fugitive] ---------------------- | ----------------------------------------
-- - toggle stage / unstage             | -
-- = toggle inline diff                 | =
-- C commit                             | cc
-- D diff                               | dd
-- X discard changes                    | X
-- R reload the status buffer           | R
-- q quit fugitive                      | :VisTabClosePrev
+----- | ------------------------------    | ------------------------------
+- ,d  | Files                             | :VisFzfFiles
+- ,b  | Buffers                           | :FzfBuffers
+- ,r  | Rg <cfile>                        | :VisFzfRg
+- ,a  | Rg <cfile> all                    | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
+- ,%  | Rg <cfile> %                      | :call vis#external#fzf#rg('<cfile>', ['%'])
+- ,t  | Tags <cfile>       (C-])          | :VisFzfTags
+- ,m  | Memo                              | :VisFzfMemo
+- ,?  | Help                              | :FzfHelptags
+- ,M  | Man                               | :VisFzfMan tab
+- ,A  | Apt                               | :VisFzfApt tab
+- ,P  | Pip                               | :VisFzfPip tab
+- ,D  | Dpkg                              | :VisFzfDpkg tab
+- ,U  | OpenURL  %                        | :call bmk#OpenURL('%:p')
+- ,F  | OpenFile %                        | :call bmk#OpenFile('%:p')
+- ,D  | OpenDir  %                        | :call bmk#OpenDir('%:p:h')
+- ,V  | ViewThis          (C-CR)          | :call bmk#ViewThis()
+- ,O  | OpenThis          (S-CR)          | :call bmk#OpenThis()
+- ,I  | IDE                               | :VisIDE
+- ,<  | SideBar                           | :VisSideBarToggle
+- ,>  | TagBar                            | :VisTagbarToggle
+- ,F  | Fern                              | :VisFernDrawer %:p:h
+- ,N  | Editor                            | :new
+- ,T  | Term                              | :below VisTerm
+- ,_  | Cd                                | :VisSendCdE2T
+- ,Q  | QuickFix                          | :VisQuickFix
+- ,R  | Qfreplace                         | :Qfreplace
+- ,7  | MaximizeX                         | :VisWinMaximizeXToggle
+- ,8  | MaximizeXY                        | :VisWinMaximizeXYToggle
+- ,9  | MaximizeY                         | :VisWinMaximizeYToggle
+- ,0  | MinimizeY                         | :VisWinResize 5
+-     | Lazygit                           | :VisLazygit tab
+- ,S  | Git status                        | :FzfGFiles?
+- ,G  | Git graph                         | :FzfCommits
+- ,g  | Gllog %                           | :Gllog %
+- ,L  | Lcd                               | :VisLcdHere
+- ,x  | Wx                                | :Wx ?
+- ,p  | Paste                 (,p)        | ,p
+-     | Yank                   (Y)        | "*y
+- ,Y  | YankFilePath                      | :call YankFilePath()
+- ,T  | MyRunTest                         | :call MyRunTest()
+-     | MySetNoIgnoreCase                 | :call MySetNoIgnoreCase()
+-     | MySetIgnoreCase                   | :call MySetIgnoreCase()
+-     | MySetSmartCase                    | :call MySetSmartCase()
+-     | ToggleDebug                       | :call bmk#ToggleDebug()
+- ,g  | Gllog                             | :Gllog
+- ,C  | MyClangFormat                     | :MyClangFormat
+-     | PlugInstall                       | :PlugInstall
+-     | PlugUpdate                        | :PlugUpdate
+- ,T1 | EditTabBar                        | :EditTabBar
+- ,T: | EditTabColon                      | :EditTabColon
+- ,T, | EditTabComma                      | :EditTabComma
+- ,T. | EditTabDots                       | :EditTabDots
+- ,T= | EditTabEqual                      | :EditTabEqual
+- ,T[ | EditTabLabel                      | :EditTabLabel
+- ,L  | EditMdLink                        | :call EditMdLink()
+- ,I  | EditMdImgLink                     | :call EditMdImgLink()
+-     | EditHtmlLink                      | :call EditHtmlLink()
+-     | EditHtmlImgLink                   | :call EditHtmlImgLink()
+-     | EditBmkLink                       | :call EditBmkLink()
+- ,p  | EditTogglePathFormat              | :call EditTogglePathFormat()
+- ,c  | VisSendCmdE2T                     | :VisSendCmdE2T
+- ,W  | VisWinInfo                        | :VisWinInfo
+- ,E  | VisCheckEnv                       | :VisCheckEnv
+-     | gruvbox                           | :colorscheme gruvbox
+-     | molokai                           | :colorscheme molokai
+-     | vimdirdiff etc ~                  | :VisTabDirDiff $MY_ETC $HOME
+-     | vimdirdiff etc ~/WinHome          | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
+-     | Git grep                          | :VisGgrep ??
+-     | Vim grep here                     | :VisVimgrep ?? *
+-     | Tag jump                          | :call VisTjumpPrompt()
+-     | Git status                        | :VisGS
+-     | Git graph                         | :VisGV
+-     | winbuf menu     (End, C-u)        | :silent call wbl#open()
+-     | quickhl              (C-a)        | :VisQuickhl ??
+-     | Memo                              | :Memo
+-     | Help                              | :VisHelp
+-     | SourceVimrc                       | :SourceVimrc
+-     | ctrlp                             | _Plug_(ctrlp)
+-     | Wc                                | :Wc ?
+-     | VisBufDelete                      | :VisBufDelete
+-     | vimgrep TODO                      | :vimgrep 'TODO' %
+-     | quit                   (Q)        | :confirm qall
+----- | ------------------------------    | ------------------------------
+- o   | diff:do                           | do
+- p   | diff:dp                           | dp
+- u   | diff:diffupdate                   | :diffupdate
+----- | ------------------------------    | ------------------------------
+- q   | dirdiff:quit dirdiff              | :VisTabDirDiffQuit
+----- | ------------------------------    | ------------------------------
+- D   | gv:diff                           | O
+- (   | gv:prev                           | (
+- )   | gv:next                           | )
+----- | ------------------------------    | ------------------------------
+- -   | fugitive:toggle stage / unstage   | -
+- =   | fugitive:toggle inline diff       | =
+- C   | fugitive:commit                   | cc
+- D   | fugitive:diff                     | dd
+- X   | fugitive:discard changes          | X
+- R   | fugitive:reload the status buffer | R
+- q   | fugitive:quit fugitive            | :VisTabClosePrev
 
 # vim:set ft=bmk syntax=txt nowrap:

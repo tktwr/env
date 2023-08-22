@@ -1,19 +1,9 @@
-[fzf] -------------------------------- | ----------------------------------------
--   fzf:Files                          | :FzfFiles
--   fzf:GFiles                         | :FzfGFiles
--   fzf:Commands                       | :FzfCommands
--   fzf:Maps                           | :FzfMaps
--   fzf:Colors                         | :FzfColors
--   fzf:Git graph %                    | :FzfBCommits
-    ---------------------------------- | ----------------------------------------
--   cocfzf:List                        | :CocFzfList
--   cocfzf:List diagnostics            | :CocFzfList diagnostics
--   cocfzf:List diagnostics %          | :CocFzfList diagnostics --current-buf
--   cocfzf:List commands               | :CocFzfList commands
--   cocfzf:List extensions             | :CocFzfList extensions
--   cocfzf:List location               | :CocFzfList location
--   cocfzf:List outline                | :CocFzfList outline
--   cocfzf:List symbols                | :CocFzfList symbols
--   cocfzf:ListResume                  | :CocFzfListResume
+----- | ------------------------------ | ------------------------------
+-     | fzf:Files                      | :FzfFiles
+-     | fzf:GFiles                     | :FzfGFiles
+-     | fzf:Commands                   | :FzfCommands
+-     | fzf:Maps                       | :FzfMaps
+-     | fzf:Colors                     | :FzfColors
+-     | fzf:Git graph %                | :FzfBCommits
 
 # vim:set ft=bmk syntax=txt nowrap:
