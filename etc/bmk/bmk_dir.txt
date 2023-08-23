@@ -1,27 +1,28 @@
 ----- | ------------------------------ | ------------------------------
-- ,e  | etc/                           | $MY_ETC/
-- ,E  | env/                           | $MY_ENV/
-- ,b  | bash/                          | $MY_BASH/
-- ,v  | vim/                           | $MY_VIM/
-- ,i  | bin/                           | $MY_BIN/
-- ,m  | memo/                          | $MY_MEMO/
-- ,s  | samples/                       | $MY_SAMPLES/
-- ,t  | libtt/                         | $MY_LIBTT/
-- ,g  | git/                           | $MY_GIT/
-- ,p  | proj/                          | $MY_PROJ/
-- ,Y  | .my/                           | $MY_DOTMY/
-- ,S  | local.common/                  | $MY_COMMON_SETTING/
-- ,M  | local.memo/                    | $MY_LOCAL_CONFIG/memo/
-- ,H  | HOME/                          | $HOME/
-- ,W  | SYS_WIN_HOME/                  | $SYS_WIN_HOME/
-- ,R  | MyRoaming/                     | $SYS_ROAMING_HOME/
-- ,C  | MyConfig/                      | $SYS_CONFIG_HOME/
-- ,K  | MyWork/                        | $SYS_WORK_HOME/
-- ,P  | MyProj/                        | $SYS_PROJ_HOME/
-- ,D  | MyData/                        | $SYS_DATA_HOME/
-- ,I  | vim-ide-style/                 | $MY_VIM_PLUGGED_DIR/vim-ide-style/
-- ,B  | vim-bmk-menu/                  | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
-- ,U  | vim-winbuf-menu/               | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/
+-     | etc/                           | $MY_ETC/
+-     | env/                           | $MY_ENV/
+-     | bash/                          | $MY_BASH/
+-     | vim/                           | $MY_VIM/
+-     | bin/                           | $MY_BIN/
+-     | memo/                          | $MY_MEMO/
+-     | samples/                       | $MY_SAMPLES/
+-     | libtt/                         | $MY_LIBTT/
+-     | git/                           | $MY_GIT/
+-     | proj/                          | $MY_PROJ/
+-     | .my/                           | $MY_DOTMY/
+-     | local.common/                  | $MY_COMMON_SETTING/
+-     | local.memo/                    | $MY_LOCAL_CONFIG/memo/
+-     | HOME/                          | $HOME/
+-     | SYS_WIN_HOME/                  | $SYS_WIN_HOME/
+-     | MyRoaming/                     | $SYS_ROAMING_HOME/
+-     | MyConfig/                      | $SYS_CONFIG_HOME/
+-     | MyWork/                        | $SYS_WORK_HOME/
+-     | MyProj/                        | $SYS_PROJ_HOME/
+-     | MyData/                        | $SYS_DATA_HOME/
+-     | vim-ide-style/                 | $MY_VIM_PLUGGED_DIR/vim-ide-style/
+-     | vim-bmk-menu/                  | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
+-     | vim-winbuf-menu/               | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/
+-     | vim-memo/                      | $MY_VIM_PLUGGED_DIR/vim-memo/
 -     | Desktop/                       | $MY_DESKTOP/
 -     | Downloads/                     | $MY_DOWNLOADS/
 -     | C:/                            | $SYS_C/
@@ -49,7 +50,6 @@
 -     | data/                          | $MY_DATA/
 -     | diary/                         | $MY_DIARY/
 -     | secret/                        | $MY_SECRET/
--     | vim-memo/                      | $MY_VIM_PLUGGED_DIR/vim-memo/
 -     | blender-addons/                | $BLENDER_ADDONS_DIR/
 -     | github:LearnOpenGL/            | $MY_GITHUB/LearnOpenGL/
 -     | github:glTF-Sample-Viewer/     | $MY_GITHUB/glTF-Sample-Viewer/

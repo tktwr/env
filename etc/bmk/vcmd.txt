@@ -2,38 +2,34 @@
 - ,d  | Files                             | :VisFzfFiles
 - ,b  | Buffers                           | :FzfBuffers
 - ,r  | Rg <cfile>                        | :VisFzfRg
-- ,a  | Rg <cfile> all                    | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
-- ,%  | Rg <cfile> %                      | :call vis#external#fzf#rg('<cfile>', ['%'])
+- ,ra | Rg <cfile> all                    | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
+- ,r% | Rg <cfile> %                      | :call vis#external#fzf#rg('<cfile>', ['%'])
 - ,t  | Tags <cfile>       (C-])          | :VisFzfTags
 - ,m  | Memo                              | :VisFzfMemo
 - ,?  | Help                              | :FzfHelptags
-- ,M  | Man                               | :VisFzfMan tab
-- ,A  | Apt                               | :VisFzfApt tab
-- ,P  | Pip                               | :VisFzfPip tab
-- ,D  | Dpkg                              | :VisFzfDpkg tab
-- ,U  | OpenURL  %                        | :call bmk#OpenURL('%:p')
-- ,F  | OpenFile %                        | :call bmk#OpenFile('%:p')
-- ,D  | OpenDir  %                        | :call bmk#OpenDir('%:p:h')
+- ,ou | OpenURL  %                        | :call bmk#OpenURL('%:p')
+- ,of | OpenFile %                        | :call bmk#OpenFile('%:p')
+- ,od | OpenDir  %                        | :call bmk#OpenDir('%:p:h')
 - ,V  | ViewThis          (C-CR)          | :call bmk#ViewThis()
 - ,O  | OpenThis          (S-CR)          | :call bmk#OpenThis()
 - ,I  | IDE                               | :VisIDE
-- ,<  | SideBar                           | :VisSideBarToggle
-- ,>  | TagBar                            | :VisTagbarToggle
 - ,F  | Fern                              | :VisFernDrawer %:p:h
 - ,N  | Editor                            | :new
 - ,T  | Term                              | :below VisTerm
+- ,<  | SideBar                           | :VisSideBarToggle
+- ,>  | TagBar                            | :VisTagbarToggle
 - ,_  | Cd                                | :VisSendCdE2T
-- ,Q  | QuickFix                          | :VisQuickFix
-- ,R  | Qfreplace                         | :Qfreplace
-- ,7  | MaximizeX                         | :VisWinMaximizeXToggle
-- ,8  | MaximizeXY                        | :VisWinMaximizeXYToggle
-- ,9  | MaximizeY                         | :VisWinMaximizeYToggle
-- ,0  | MinimizeY                         | :VisWinResize 5
--     | Lazygit                           | :VisLazygit tab
-- ,S  | Git status                        | :FzfGFiles?
-- ,G  | Git graph                         | :FzfCommits
-- ,g  | Gllog %                           | :Gllog %
+- ,qf | QuickFix                          | :VisQuickFix
+- ,qr | Qfreplace                         | :Qfreplace
+- ,t  | MaximizeY                         | :VisWinMaximizeYToggle
+- ,tx | MaximizeX                         | :VisWinMaximizeXToggle
+- ,t0 | MinimizeY                         | :VisWinResize 5
 - ,L  | Lcd                               | :VisLcdHere
+-     | Lazygit                           | :VisLazygit tab
+- ,gs | Git status                        | :FzfGFiles?
+- ,gg | Git graph                         | :FzfCommits
+- ,gl | Gllog %                           | :Gllog %
+- ,gl | Gllog                             | :Gllog
 - ,x  | Wx                                | :Wx ?
 - ,p  | Paste                 (,p)        | ,p
 -     | Yank                   (Y)        | "*y
@@ -43,7 +39,6 @@
 -     | MySetIgnoreCase                   | :call MySetIgnoreCase()
 -     | MySetSmartCase                    | :call MySetSmartCase()
 -     | ToggleDebug                       | :call bmk#ToggleDebug()
-- ,g  | Gllog                             | :Gllog
 - ,C  | MyClangFormat                     | :MyClangFormat
 -     | PlugInstall                       | :PlugInstall
 -     | PlugUpdate                        | :PlugUpdate
@@ -53,8 +48,8 @@
 - ,T. | EditTabDots                       | :EditTabDots
 - ,T= | EditTabEqual                      | :EditTabEqual
 - ,T[ | EditTabLabel                      | :EditTabLabel
-- ,L  | EditMdLink                        | :call EditMdLink()
-- ,I  | EditMdImgLink                     | :call EditMdImgLink()
+- ,eL | EditMdLink                        | :call EditMdLink()
+- ,eI | EditMdImgLink                     | :call EditMdImgLink()
 -     | EditHtmlLink                      | :call EditHtmlLink()
 -     | EditHtmlImgLink                   | :call EditHtmlImgLink()
 -     | EditBmkLink                       | :call EditBmkLink()
@@ -73,6 +68,10 @@
 -     | Git graph                         | :VisGV
 -     | winbuf menu     (End, C-u)        | :silent call wbl#open()
 -     | quickhl              (C-a)        | :VisQuickhl ??
+-     | Man                               | :VisFzfMan tab
+-     | Apt                               | :VisFzfApt tab
+-     | Pip                               | :VisFzfPip tab
+-     | Dpkg                              | :VisFzfDpkg tab
 -     | Memo                              | :Memo
 -     | Help                              | :VisHelp
 -     | SourceVimrc                       | :SourceVimrc
