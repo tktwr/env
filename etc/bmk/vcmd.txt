@@ -1,12 +1,12 @@
 ----- | ------------------------------    | ------------------------------
 - ,d  | Files                             | :VisFzfFiles
-- ,b  | Buffers                           | :FzfBuffers
 - ,r  | Rg <cfile>                        | :VisFzfRg
 - ,ra | Rg <cfile> all                    | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
 - ,r% | Rg <cfile> %                      | :call vis#external#fzf#rg('<cfile>', ['%'])
 - ,t  | Tags <cfile>       (C-])          | :VisFzfTags
 - ,m  | Memo                              | :VisFzfMemo
-- ,?  | Help                              | :FzfHelptags
+- ,h  | Help                              | :FzfHelptags
+- ,b  | Buffers                           | :FzfBuffers
 - ,ou | OpenURL  %                        | :call bmk#OpenURL('%:p')
 - ,of | OpenFile %                        | :call bmk#OpenFile('%:p')
 - ,od | OpenDir  %                        | :call bmk#OpenDir('%:p:h')
@@ -34,29 +34,29 @@
 - ,p  | Paste                 (,p)        | ,p
 -     | Yank                   (Y)        | "*y
 - ,Y  | YankFilePath                      | :call YankFilePath()
-- ,T  | MyRunTest                         | :call MyRunTest()
+-     | MyRunTest                         | :call MyRunTest()
 -     | MySetNoIgnoreCase                 | :call MySetNoIgnoreCase()
 -     | MySetIgnoreCase                   | :call MySetIgnoreCase()
 -     | MySetSmartCase                    | :call MySetSmartCase()
 -     | ToggleDebug                       | :call bmk#ToggleDebug()
-- ,C  | MyClangFormat                     | :MyClangFormat
+-     | MyClangFormat                     | :MyClangFormat
 -     | PlugInstall                       | :PlugInstall
 -     | PlugUpdate                        | :PlugUpdate
-- ,T1 | EditTabBar                        | :EditTabBar
-- ,T: | EditTabColon                      | :EditTabColon
-- ,T, | EditTabComma                      | :EditTabComma
-- ,T. | EditTabDots                       | :EditTabDots
-- ,T= | EditTabEqual                      | :EditTabEqual
-- ,T[ | EditTabLabel                      | :EditTabLabel
+- ,c1 | EditTabBar                        | :EditTabBar
+- ,c: | EditTabColon                      | :EditTabColon
+- ,c, | EditTabComma                      | :EditTabComma
+- ,c. | EditTabDots                       | :EditTabDots
+- ,c= | EditTabEqual                      | :EditTabEqual
+- ,c[ | EditTabLabel                      | :EditTabLabel
 - ,eL | EditMdLink                        | :call EditMdLink()
 - ,eI | EditMdImgLink                     | :call EditMdImgLink()
 -     | EditHtmlLink                      | :call EditHtmlLink()
 -     | EditHtmlImgLink                   | :call EditHtmlImgLink()
 -     | EditBmkLink                       | :call EditBmkLink()
 - ,p  | EditTogglePathFormat              | :call EditTogglePathFormat()
-- ,c  | VisSendCmdE2T                     | :VisSendCmdE2T
-- ,W  | VisWinInfo                        | :VisWinInfo
-- ,E  | VisCheckEnv                       | :VisCheckEnv
+-     | VisSendCmdE2T                     | :VisSendCmdE2T
+-     | VisWinInfo                        | :VisWinInfo
+-     | VisCheckEnv                       | :VisCheckEnv
 -     | gruvbox                           | :colorscheme gruvbox
 -     | molokai                           | :colorscheme molokai
 -     | vimdirdiff etc ~                  | :VisTabDirDiff $MY_ETC $HOME

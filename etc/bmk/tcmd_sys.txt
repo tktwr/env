@@ -22,7 +22,7 @@
 -     | mypython-venv-create torch        | > mypython-venv-create torch<CR>
 -     | mypython-set python torch         | > mypython-set python torch<CR>
 -     | mypython-set python-win torch     | > mypython-set python-win torch<CR>
-+ m   | mycmake-set make   Release        | > mycmake-set make   Release<CR>
++ ,mk | mycmake-set make   Release        | > mycmake-set make   Release<CR>
 -     | mycmake-set make   Debug          | > mycmake-set make   Debug<CR>
 -     | mycmake-set ninja  Release        | > mycmake-set ninja  Release<CR>
 -     | mycmake-set ninja  Debug          | > mycmake-set ninja  Debug<CR>
@@ -32,7 +32,7 @@
 -     | mycmake-set vs2019 Release        | > mycmake-set vs2019 Release<CR>
 -     | mycmake-set vs2019 Debug          | > mycmake-set vs2019 Debug<CR>
 -     | mycmake-set vs2019 RelWithDebInfo | > mycmake-set vs2019 RelWithDebInfo<CR>
-+ v   | mycmake-set vs2022 Release        | > mycmake-set vs2022 Release<CR>
++ ,vs | mycmake-set vs2022 Release        | > mycmake-set vs2022 Release<CR>
 -     | mycmake-set vs2022 Debug          | > mycmake-set vs2022 Debug<CR>
 -     | mycmake-set vs2022 RelWithDebInfo | > mycmake-set vs2022 RelWithDebInfo<CR>
 -     | apt list <pkg>                    | > apt list

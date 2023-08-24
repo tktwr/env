@@ -1,26 +1,26 @@
 ----- | ------------------------------                                                                                           | ------------------------------
-+     | paper:project-asura.com: 超雑訳                                                                                          | http://project-asura.com/blog/?s=%E8%B6%85%E9%9B%91%E8%A8%B3
-+     | paper:超雑訳 A Multiple-Scattering Microfacet Model for Real-Time Image-based Lighting                                   | http://project-asura.com/blog/archives/5850
-+     | paper:超雑訳 Real Shading in Unreal Engine 4                                                                             | http://project-asura.com/blog/archives/3124
-+     | paper:超雑訳 [UE SSS] Real-time subsurface scattering with single pass variance-guided adaptive importance sampling      | http://project-asura.com/blog/archives/8307
-+     | paper:超雑訳 [SSSS] Separable Subsurface Scattering Supplementary Materials                                              | http://project-asura.com/blog/archives/6283
-+     | paper:超雑訳 [SSSS] Separable Subsurface Scattering: Expanded Technical Report                                           | http://project-asura.com/blog/archives/6098
-+     | paper:超雑訳 [Disney SSS] Approximate Reflectance Profiles for Efficient Subsurface Scattering                           | http://project-asura.com/blog/archives/6217
-+     | paper:超雑訳 [Disney BSDF] Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering                     | http://project-asura.com/blog/archives/2175
-+     | paper:超雑訳 [Disney BRDF] Physically Based Shading at Disney                                                            | http://project-asura.com/blog/archives/1972
-+     | paper:超雑訳 Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                         | http://project-asura.com/blog/archives/4181
-+     | paper:SIGGRAPH2019: Advances in Real-Time Rendering in Games                                                             | https://advances.realtimerendering.com/s2019/index.htm
-+     | paper.textbook:PBRT                                                                                                      | https://pbr-book.org/3ed-2018/contents
-+     | paper.textbook:Physically Based Rendering in Filament                                                                    | https://google.github.io/filament/Filament.md.html
-+     | paper.textbook:Filament [github]                                                                                         | https://github.com/google/filament
-+     | paper.textbook:Learn OpenGL                                                                                              | https://learnopengl.com/
-+     | paper.textbook:Learn OpenGL [github]                                                                                     | https://github.com/JoeyDeVries/LearnOpenGL
-+     | paper.textbook:Enterprise PBR Shading Model                                                                              | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
-+     | paper.textbook:Adobe: THE PBR GUIDE - PART 1                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
-+     | paper.textbook:Adobe: THE PBR GUIDE - PART 2                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
-+     | paper.textbook:GPU Gems 3                                                                                                | https://developer.nvidia.com/gpugems/gpugems3/foreword
-+     | paper.textbook:GPU Gems 3.Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                         | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
-+     | paper.textbook:GPU Gems 3.Chapter 24. The Importance of Being Linear                                                     | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+-     | paper:project-asura.com: 超雑訳                                                                                          | http://project-asura.com/blog/?s=%E8%B6%85%E9%9B%91%E8%A8%B3
+-     | paper:超雑訳 A Multiple-Scattering Microfacet Model for Real-Time Image-based Lighting                                   | http://project-asura.com/blog/archives/5850
+-     | paper:超雑訳 Real Shading in Unreal Engine 4                                                                             | http://project-asura.com/blog/archives/3124
+-     | paper:超雑訳 [UE SSS] Real-time subsurface scattering with single pass variance-guided adaptive importance sampling      | http://project-asura.com/blog/archives/8307
+-     | paper:超雑訳 [SSSS] Separable Subsurface Scattering Supplementary Materials                                              | http://project-asura.com/blog/archives/6283
+-     | paper:超雑訳 [SSSS] Separable Subsurface Scattering: Expanded Technical Report                                           | http://project-asura.com/blog/archives/6098
+-     | paper:超雑訳 [Disney SSS] Approximate Reflectance Profiles for Efficient Subsurface Scattering                           | http://project-asura.com/blog/archives/6217
+-     | paper:超雑訳 [Disney BSDF] Extending the Disney BRDF to a BSDF with Integrated Subsurface Scattering                     | http://project-asura.com/blog/archives/2175
+-     | paper:超雑訳 [Disney BRDF] Physically Based Shading at Disney                                                            | http://project-asura.com/blog/archives/1972
+-     | paper:超雑訳 Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                         | http://project-asura.com/blog/archives/4181
+-     | paper:SIGGRAPH2019: Advances in Real-Time Rendering in Games                                                             | https://advances.realtimerendering.com/s2019/index.htm
+-     | paper.textbook:PBRT                                                                                                      | https://pbr-book.org/3ed-2018/contents
+-     | paper.textbook:Physically Based Rendering in Filament                                                                    | https://google.github.io/filament/Filament.md.html
+-     | paper.textbook:Filament [github]                                                                                         | https://github.com/google/filament
+-     | paper.textbook:Learn OpenGL                                                                                              | https://learnopengl.com/
+-     | paper.textbook:Learn OpenGL [github]                                                                                     | https://github.com/JoeyDeVries/LearnOpenGL
+-     | paper.textbook:Enterprise PBR Shading Model                                                                              | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
+-     | paper.textbook:Adobe: THE PBR GUIDE - PART 1                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
+-     | paper.textbook:Adobe: THE PBR GUIDE - PART 2                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
+-     | paper.textbook:GPU Gems 3                                                                                                | https://developer.nvidia.com/gpugems/gpugems3/foreword
+-     | paper.textbook:GPU Gems 3.Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                         | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
+-     | paper.textbook:GPU Gems 3.Chapter 24. The Importance of Being Linear                                                     | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
 -     | paper.dr:nvdiffrec                                                                                                       | https://nvlabs.github.io/nvdiffrec/
 -     | paper.dr:nvdiffmodeling                                                                                                  | https://github.com/NVlabs/nvdiffmodeling
 -     | paper.dr:nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [arxiv]                             | https://arxiv.org/abs/2011.03277
@@ -37,8 +37,8 @@
 -     | paper.nerf:NeRF: Neural Radiance Fields                                                                                  | https://www.matthewtancik.com/nerf
 -     | paper:Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/
 -     | paper:Tone Mapping                                                                                                       | https://64.github.io/tonemapping/
-+     | paper.bsdf:SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2015-shading-course/
-+     | paper.bsdf:SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2017-shading-course/
+-     | paper.bsdf:SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2015-shading-course/
+-     | paper.bsdf:SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2017-shading-course/
 -     | paper.bsdf:Image Based Lighting with Multiple Scattering                                                                 | https://bruop.github.io/ibl/
 -     | paper.bsdf:Lafortune BRDF: Non-linear approximation of reflectance functions                                             | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
 -     | paper.bsdf:Lafortune BRDF: Reflectance Data                                                                              | http://www.graphics.cornell.edu/online/measurements/reflectance/
@@ -54,7 +54,7 @@
 -     | paper:SIGGRAPH Papers                                                                                                    | http://kesen.realtimerendering.com/
 -     | paper:SIGGRAPH Courses                                                                                                   | https://blog.selfshadow.com/publications/
 -     | paper:What Makes a (Graphics) Systems Paper Beautiful                                                                    | https://graphics.stanford.edu/~kayvonf/notes/systemspaper/
-- t   | paper:Two Minute Papers                                                                                                  | https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg
+-     | paper:Two Minute Papers                                                                                                  | https://www.youtube.com/channel/UCbfYPyITQ-7l4upoX8nvctg
 -     | paper:Seamless                                                                                                           | https://shiropen.com/
 -     | paper:SelfShadow                                                                                                         | https://blog.selfshadow.com/
 -     | paper:ゲームグラフィックス特論 A / B                                                                                     | https://tokoik.github.io/gg/
@@ -75,13 +75,13 @@
 -     | paper.material:Neural Radiosity                                                                                          | https://arxiv.org/abs/2105.12319
 -     | paper.material:MATch: Differentiable Material Graphs for Procedural Material Capture                                     | http://match.csail.mit.edu/
 -     | paper.material:NeuMIP: Multi-Resolution Neural Materials                                                                 | https://arxiv.org/abs/2104.02789
-.     | paper:A Biophysical 3D Morphable Model of Face Appearance                                                                |
-.     | paper:BioFaceNet: Deep Biophysical Face Image Interpretation                                                             |
-.     | paper:DECOMPOSING MULTISPECTRAL FACE IMAGES INTO DIFFUSE AND SPECULAR SHADING AND BIOPHYSICAL PARAMETERS                 | http://www-users.cs.york.ac.uk/~wsmith/
-.     | paper:Image-based skin color and texture analysis/synthesis by extracting hemoglobin and melanin information in the skin |
-.     | paper:Monte Carlo Simulation of Spectral Reflectance Using a Multilayered Skin Tissue Model                              |
-.     | paper:Monte Carlo simulation of light reflection from cosmetic powder particles near the human skin surface              |
-.     | paper:The Appearance of Human Skin: A Survey                                                                             |
+-     | paper:A Biophysical 3D Morphable Model of Face Appearance                                                                |
+-     | paper:BioFaceNet: Deep Biophysical Face Image Interpretation                                                             |
+-     | paper:DECOMPOSING MULTISPECTRAL FACE IMAGES INTO DIFFUSE AND SPECULAR SHADING AND BIOPHYSICAL PARAMETERS                 | http://www-users.cs.york.ac.uk/~wsmith/
+-     | paper:Image-based skin color and texture analysis/synthesis by extracting hemoglobin and melanin information in the skin |
+-     | paper:Monte Carlo Simulation of Spectral Reflectance Using a Multilayered Skin Tissue Model                              |
+-     | paper:Monte Carlo simulation of light reflection from cosmetic powder particles near the human skin surface              |
+-     | paper:The Appearance of Human Skin: A Survey                                                                             |
 -     | paper:SfSNet: Learning Shape, Reflectance and Illuminance of Faces in the Wild                                           | https://arxiv.org/abs/1712.01261
 -     | paper:HairGANs                                                                                                           | https://github.com/MengZephyr/HairGANs
 -     | paper:Robust High-Resolution Video Matting with Temporal Guidance                                                        | https://arxiv.org/abs/2108.11515

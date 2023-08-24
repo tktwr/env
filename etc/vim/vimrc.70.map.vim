@@ -43,8 +43,8 @@ nnoremap ,d :VisFzfAll<CR>
 nnoremap ,r :VisFzfRg<CR>
 nnoremap ,t :VisFzfTags<CR>
 nnoremap ,m :VisFzfMemo<CR>
-nnoremap ,b :FzfBuffers<CR>
 nnoremap ,h :FzfHelptags<CR>
+nnoremap ,b :FzfBuffers<CR>
 nnoremap ,w <C-W>:silent call wbl#open()<CR>
 
 "------------------------------------------------------
