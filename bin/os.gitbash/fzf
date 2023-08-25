@@ -13,11 +13,11 @@ args=
 
 if [[ -t 0 ]]; then
   winpty </dev/tty >/dev/tty -- bash -c \
-    "command fzf.exe ${args} >'${tmpdir}'/output"
+    "command $MY_VIM_PLUGGED_DIR/fzf/bin/fzf.exe ${args} >'${tmpdir}'/output"
   cat "${tmpdir}"/output
 else
   cat - >"${tmpdir}"/input
   winpty </dev/tty >/dev/tty -- bash -c \
-    "command fzf.exe ${args} <'${tmpdir}'/input >'${tmpdir}'/output"
+    "command $MY_VIM_PLUGGED_DIR/fzf/bin/fzf.exe ${args} <'${tmpdir}'/input >'${tmpdir}'/output"
   cat "${tmpdir}"/output
 fi
