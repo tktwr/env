@@ -3,24 +3,24 @@
 - ,r  | Rg                             | > r<CR>
 - ,m  | Make                           | > m<CR>
 - ,S  | Setup                          | > S<CR>
-- ,t  | Toggle term size               | > ,toggle<CR>
-- ,tx | Toggle term size x             | > ,toggle_x<CR>
-- ,t0 | Term resize 5                  | > ,resize 5<CR>
-- ,t1 | Term resize 10                 | > ,resize 10<CR>
-- ,t2 | Term resize 20                 | > ,resize 20<CR>
-- ,t3 | Term resize 30                 | > ,resize 30<CR>
-- ,t4 | Term resize 40                 | > ,resize 40<CR>
+- ,t  | Toggle size                    | > ,toggle<CR>
+- ,tx | Toggle size x                  | > ,toggle_x<CR>
+- ,t0 | Resize 5                       | > ,resize 5<CR>
+- ,t1 | Resize 10                      | > ,resize 10<CR>
+- ,t2 | Resize 20                      | > ,resize 20<CR>
+- ,t3 | Resize 30                      | > ,resize 30<CR>
+- ,t4 | Resize 40                      | > ,resize 40<CR>
 - ,L  | Set tab label {name}           | > vimapi-tabline-set-label
--     | Fern                           | > F<CR>
--     | Fern 2nd                       | > F2<CR>
--     | IDE                            | > I<CR>
--     | IDE tab                        | > It<CR>
--     | Editor                         | > N<CR>
--     | Editor vert                    | > Nv<CR>
--     | Editor tab                     | > Nt<CR>
--     | Term                           | > T<CR>
--     | Term vert                      | > Tv<CR>
--     | Term tab                       | > Tt<CR>
+- ,F  | Fern                           | > F<CR>
+- ,F2 | Fern 2nd                       | > F2<CR>
+- ,I  | IDE                            | > I<CR>
+- ,It | IDE tab                        | > It<CR>
+- ,N  | Editor                         | > N<CR>
+- ,Nv | Editor vert                    | > Nv<CR>
+- ,Nt | Editor tab                     | > Nt<CR>
+- ,T  | Term                           | > T<CR>
+- ,Tv | Term vert                      | > Tv<CR>
+- ,Tt | Term tab                       | > Tt<CR>
 -     | Git graph                      | > G<CR>
 -     | Git graph all                  | > GA<CR>
 -     | Git status                     | > GS<CR>

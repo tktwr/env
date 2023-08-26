@@ -1,6 +1,6 @@
 ----- | ------------------------------  | ------------------------------
-- ,d  | FindAll                         | :VisFzfAll
 - ,b  | Buffers                         | :FzfBuffers
+- ,d  | FindAll                         | :VisFzfAll
 -     | fern:ViewItem            (C-CR) | :call VisFernViewItem()
 -     | fern:OpenItem            (S-CR) | :call VisFernOpenItem()
 -     | fern:yank an abs path           | _Plug_(fern-action-yank)
