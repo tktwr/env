@@ -5,10 +5,6 @@ if [ $COLUMNS -lt 120 ]; then
   pw_opt='hidden'
 fi
 
-if [ $MY_OS_NAME = 'gitbash' ]; then
-  pw_opt='hidden'
-fi
-
 files="$@"
 
 FZF_DEFAULT_COMMAND="bmk.sh $files" \
