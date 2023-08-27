@@ -12,6 +12,8 @@ f_winget_install_min() {
   winget.exe install sharkdp.bat
   winget.exe install junegunn.fzf
   winget.exe install BurntSushi.ripgrep.MSVC
+  winget.exe install dandavison.delta
+  winget.exe install JesseDuffield.lazygit
 }
 
 f_winget_cp_exe() {

@@ -33,5 +33,7 @@ android-sdk         | ANDROID_SDK         | $SYS_WIN_HOME/AppData/Local/Android/
 user-roaming        | USER_ROAMING        | $SYS_WIN_HOME/AppData/Roaming
 user-python-roaming | USER_PYTHON_ROAMING | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 blender-addons      | BLENDER_ADDONS_DIR  | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
+winget-dir          | WINGET_DIR          | $SYS_WIN_HOME/AppData/Local/Microsoft/WinGet/Packages
+winapp-dir          | WINAPP_DIR          | $SYS_WIN_HOME/AppData/Local/Microsoft/WindowsApps
 
 # vim:set nowrap:
