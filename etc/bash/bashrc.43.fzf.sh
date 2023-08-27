@@ -151,7 +151,8 @@ my_setup_fzf() {
       _my_setup_fzf_linux
       ;;
     gitbash)
-      _my_setup_fzf_gitbash
+      #_my_setup_fzf_gitbash
+      _my_setup_fzf_linux
       ;;
   esac
 

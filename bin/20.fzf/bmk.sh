@@ -30,11 +30,7 @@ bmk() {
       "
   done
 
-  if $(has_bin batcat); then
-    cat $files 2> /dev/null | bmk_pre | batcat -l bash -pp --color=always
-  else
-    cat $files 2> /dev/null | bmk_pre
-  fi
+  cat $files 2> /dev/null | bmk_pre | batcat -l bash -pp --color=always
 }
 
 #------------------------------------------------------
