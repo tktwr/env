@@ -26,7 +26,7 @@ source $MY_VIM/vim-plug/tagbar.vim
 source $MY_VIM/vim-plug/fzf.vim
 "source $MY_VIM/vim-plug/eskk.vim
 
-if has('pythonx') && executable('node')
+if executable('node')
   source $MY_VIM/vim-plug/coc.vim
 endif
 

@@ -37,9 +37,9 @@
   // python
   // --------------------------------------------------
   "python.venvPath": "${env:MY_PYTHON_VENV_DIR}",
-  "python.pythonPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/python",
-  "python.linting.pylintPath": "${env:MY_PYTHON_VENV_DIR}/torch/bin/pylint",
-  "python.linting.flake8Path": "${env:MY_PYTHON_VENV_DIR}/torch/bin/flake8",
+  "python.pythonPath": "${env:MY_PYTHON_VENV_DIR}/default/bin/python",
+  "python.linting.pylintPath": "${env:MY_PYTHON_VENV_DIR}/default/bin/pylint",
+  "python.linting.flake8Path": "${env:MY_PYTHON_VENV_DIR}/default/bin/flake8",
   "python.analysis.stubPath": "${env:MY_GITHUB}/python-type-stubs",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": false,

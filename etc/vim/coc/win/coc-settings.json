@@ -11,13 +11,13 @@
   // --------------------------------------------------
   // python
   // --------------------------------------------------
-  "python.venvPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv",
-  "python.pythonPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\python.exe",
-  "python.linting.pylintPath": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\pylint.exe",
-  "python.linting.flake8Path": "C:\\Users\\Takeh\\MyRoaming\\python-venv\\torch\\Scripts\\flake8.exe",
+  "python.venvPath": "C:\\Users\\Takeh\\.mycache\\python_venv",
+  "python.pythonPath": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\python.exe",
+  "python.linting.pylintPath": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\pylint.exe",
+  "python.linting.flake8Path": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\flake8.exe",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Enabled": false,
   "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
 
   // --------------------------------------------------
@@ -29,7 +29,6 @@
   // --------------------------------------------------
   // session
   // --------------------------------------------------
-  // "session.directory": "C:\\Users\\Takeh\\.vim\\sessions",
   "session.saveOnVimLeave": false
 }
 // vim: ft=jsonc
