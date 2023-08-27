@@ -39,6 +39,10 @@ f_print_ver_all() {
   make \
   git \
   vim \
+  fzf \
+  batcat \
+  fdfind \
+  rg \
   "
   for i in $BIN_NAMES; do
     f_print_ver $i

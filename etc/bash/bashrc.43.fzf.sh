@@ -120,14 +120,14 @@ _my_setup_fzf_common() {
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-p:preview-up'"
 }
 
-_my_setup_fzf_linux() {
+_my_setup_fzf_fdfind() {
   _my_setup_fzf_common
   export FZF_DEFAULT_COMMAND="fdfind"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --color 'bg:#2a2a2a,bg+:#3c3836,fg:#ebdbb2,fg+:#ebdbb2,hl:#928374,hl+:#fb4934,preview-bg:#2a2a2a,spinner:#fb4934,header:#928374,info:#8ec07c,pointer:#fb4934,marker:#fb4934,prompt:#fb4934,border:#ebdbb2,separator:#504945'"
   export RUNEWIDTH_EASTASIAN=0
 }
 
-_my_setup_fzf_gitbash() {
+_my_setup_fzf_find() {
   _my_setup_fzf_common
   export FZF_DEFAULT_COMMAND="find"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
@@ -148,11 +148,10 @@ _my_setup_fzf_alias() {
 my_setup_fzf() {
   case $MY_OS_NAME in
     wsl|linux)
-      _my_setup_fzf_linux
+      _my_setup_fzf_fdfind
       ;;
     gitbash)
-      #_my_setup_fzf_gitbash
-      _my_setup_fzf_linux
+      _my_setup_fzf_fdfind
       ;;
   esac
 
