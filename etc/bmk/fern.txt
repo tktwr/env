@@ -1,6 +1,7 @@
 ----- | ------------------------------  | ------------------------------
+- ,d  | Dirs/Files                      | :VisFzfAll
 - ,b  | Buffers                         | :FzfBuffers
-- ,d  | FindAll                         | :VisFzfAll
+----- | ------------------------------  | ------------------------------
 - ,V  | fern:ViewItem            (C-CR) | :call VisFernViewItem()
 - ,O  | fern:OpenItem            (S-CR) | :call VisFernOpenItem()
 - ,Y  | fern:yank an abs path           | _Plug_(fern-action-yank)

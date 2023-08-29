@@ -1,5 +1,4 @@
 ----- | ------------------------------ | ------------------------------
-- ,b  | Buffers                        | :FzfBuffers
 - ,d  | Files                          | :VisFzfFiles
 - ,r  | Rg <cfile>                     | :VisFzfRg
 - ,ra | Rg <cfile> all                 | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
@@ -7,6 +6,8 @@
 - ,t  | Tags <cfile>             (C-]) | :VisFzfTags
 - ,m  | Memo                           | :VisFzfMemo
 - ,h  | Help                           | :FzfHelptags
+- ,b  | Buffers                        | :FzfBuffers
+----- | ------------------------------ | ------------------------------
 - ,ou | OpenURL  %                     | :call bmk#OpenURL('%:p')
 - ,of | OpenFile %                     | :call bmk#OpenFile('%:p')
 - ,od | OpenDir  %                     | :call bmk#OpenDir('%:p:h')
