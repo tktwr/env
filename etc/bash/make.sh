@@ -3,37 +3,26 @@
 #======================================================
 # functions
 #======================================================
-f_all() {
+f_10_install_all() {
   ./make_hostname.sh > $HOME/.my/hostname.sh
   ./make_env.sh > $HOME/.my/env.sh
   cat bashrc_all.sh > $HOME/.bashrc
 }
 
-f_min() {
-  ./make_hostname.sh > $HOME/.my/hostname.sh
-  cat bashrc_zero.sh bashrc_min.sh > $HOME/.bashrc
-}
-
-f_zero() {
+f_11_install_zero() {
   cat bashrc_zero.sh > $HOME/.bashrc
 }
 
-#------------------------------------------------------
-f_help() {
-  echo "all         ... full settings (default)"
-  echo "min         ... minimum settings"
-  echo "zero        ... minimum settings without any dependencies"
-  echo "----------- ... -----------------------------"
-  echo "help        ... print this help"
-}
-
-f_default() {
-  f_all
+f_12_install_min() {
+  ./make_hostname.sh > $HOME/.my/hostname.sh
+  cat bashrc_zero.sh bashrc_min.sh > $HOME/.bashrc
 }
 
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_default() {
+  f_10_install_all
+}
+
+f_fzf_main "$@"

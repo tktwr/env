@@ -10,7 +10,7 @@ fzf_cmd_post() {
 
 fzf_cmd() {
   cmd="$1"
-  echo $(eval "$cmd help" | fzf_cmd_pre | fzf --prompt "$cmd> " | fzf_cmd_post)
+  echo $(eval "$cmd f_fzf_help" | fzf_cmd_pre | fzf --prompt "$cmd> " | fzf_cmd_post)
 }
 
 #------------------------------------------------------

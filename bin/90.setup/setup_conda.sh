@@ -22,26 +22,7 @@ f_install() {
   #conda install -c conda-forge opencv
 }
 
-#------------------------------------------------------
-f_info() {
-  echo
-}
-
-f_help() {
-  echo "info        ... print info"
-  echo "----------- ... -----------------------------"
-  echo "install     ... install"
-  echo "----------- ... -----------------------------"
-  echo "help        ... print help"
-}
-
-f_default() {
-  f_help
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"

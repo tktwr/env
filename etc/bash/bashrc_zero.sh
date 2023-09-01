@@ -15,10 +15,11 @@ f_zero_env() {
 
   # fzf
   export FZF_DEFAULT_COMMAND="fdfind"
-  export FZF_DEFAULT_OPTS="--exact --no-sort --reverse"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview, A-N:p-next, A-P:p-prev]'"
+  export FZF_DEFAULT_OPTS="--exact --no-sort --reverse --info 'inline-right'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-T:preview|A-N:p-next|A-P:p-prev]'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down,alt-p:preview-up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-p:preview-up'"
   export RUNEWIDTH_EASTASIAN=0
 
   # color
@@ -99,7 +100,7 @@ vim-where() { vim `which $*`; }
 # fzf
 #------------------------------------------------------
 fzf_fd_selector() {
-  opt="--header '[A-A:all, A-D:dir, A-F:file, A-T:preview, A-N:p-next, A-P:p-prev]'"
+  opt="--header '[A-A:all|A-D:dir|A-F:file|A-T:preview|A-N:p-next|A-P:p-prev]'"
   opt="$opt --bind 'alt-a:reload(fdfind)'"
   opt="$opt --bind 'alt-d:reload(fdfind --type=d)'"
   opt="$opt --bind 'alt-f:reload(fdfind --type=f)'"
@@ -109,7 +110,7 @@ fzf_fd_selector() {
 }
 
 fzf_make_selector() {
-  ./make.sh help | fzf | awk '{print $1}'
+  ./make.sh f_fzf_help | fzf | awk '{print $1}'
 }
 
 fzf_preview() {

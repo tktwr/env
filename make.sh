@@ -34,28 +34,28 @@ $MY_VIM_PLUGGED_DIR/vim-memo \
 #======================================================
 # functions
 #======================================================
-f_status() {
+f_10_git_status() {
   for-dir.sh "git status -s" ${GIT_DIRS}
 }
 
-f_graph() {
+f_11_git_graph() {
   for-dir.sh "git-graph.sh -1" ${GIT_DIRS}
 }
 
-f_fetch() {
+f_12_git_fetch() {
   for-dir.sh "git fetch" ${GIT_DIRS}
 }
 
-f_pull() {
+f_13_git_pull() {
   for-dir.sh "git pull" ${GIT_DIRS}
 }
 
 #------------------------------------------------------
-f_build() {
+f_20_cpp_build() {
   for-dir.sh "make all" ${BUILD_DIRS}
 }
 
-f_clean() {
+f_21_cpp_clean() {
   for-dir.sh "make all.clean" ${BUILD_DIRS}
 }
 
@@ -87,13 +87,11 @@ f_help() {
   echo "help        ... print this help"
 }
 
-f_default() {
-  f_status
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_default() {
+  f_10_git_status
+}
+
+f_fzf_main "$@"

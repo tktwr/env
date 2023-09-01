@@ -73,13 +73,11 @@ f_all() {
   echo "export SYS_DATA_HOME=$(f_sys_data_home)"
 }
 
-f_default() {
-  f_all
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_default() {
+  f_all
+}
+
+f_fzf_main "$@"

@@ -22,20 +22,7 @@ f_gitbash() {
   cp "$COMPLETION_PATH/git-completion.bash" .
 }
 
-#------------------------------------------------------
-f_help() {
-  echo "wsl"
-  echo "gitbash"
-  echo "help"
-}
-
-f_default() {
-  f_help
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"

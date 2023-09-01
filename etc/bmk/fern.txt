@@ -1,5 +1,5 @@
 ----- | ------------------------------  | ------------------------------
-- ,d  | Dirs/Files                      | :VisFzfAll
+- ,d  | Fd                              | :VisFzfAll
 - ,b  | Buffers                         | :FzfBuffers
 ----- | ------------------------------  | ------------------------------
 - ,V  | fern:ViewItem            (C-CR) | :call VisFernViewItem()

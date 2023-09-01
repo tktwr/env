@@ -54,49 +54,26 @@ exa \
 #======================================================
 # functions
 #======================================================
-f_update() {
+f_apt_update() {
   sudo -E apt update
   sudo -E apt upgrade
   sudo -E apt autoremove
 }
 
 #------------------------------------------------------
-f_install_min() {
+f_apt_install_min() {
   sudo -E apt install $pkg_min
 }
 
-f_install_ext() {
+f_apt_install_ext() {
   sudo -E apt install $pkg_ext
 }
 
-f_install_dev() {
+f_apt_install_dev() {
   sudo -E apt install $pkg_dev
-}
-
-#------------------------------------------------------
-f_info() {
-  echo
-}
-
-f_help() {
-  echo "info        ... print info"
-  echo "----------- ... -----------------------------"
-  echo "update      ... update"
-  echo "----------- ... -----------------------------"
-  echo "install_min ... install min pkg"
-  echo "install_ext ... install ext pkg"
-  echo "install_dev ... install dev pkg"
-  echo "----------- ... -----------------------------"
-  echo "help        ... print help"
-}
-
-f_default() {
-  f_help
 }
 
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"

@@ -1,5 +1,5 @@
 ----- | ------------------------------ | ------------------------------
-- ,d  | Files                          | :VisFzfFiles
+- ,d  | Fd                             | :VisFzfAll
 - ,r  | Rg <cfile>                     | :VisFzfRg
 - ,ra | Rg <cfile> all                 | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
 - ,r% | Rg <cfile> %                   | :call vis#external#fzf#rg('<cfile>', ['%'])
