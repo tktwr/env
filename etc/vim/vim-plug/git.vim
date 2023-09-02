@@ -4,7 +4,9 @@
 "Plug 'tpope/vim-fugitive', { 'tag': 'v2.5' }
 Plug 'tpope/vim-fugitive'
 
-let g:fugitive_git_executable='/usr/bin/git'
+if IsWsl()
+  let g:fugitive_git_executable='/usr/bin/git'
+endif
 
 "------------------------------------------------------
 func MyGitLog()
