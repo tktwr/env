@@ -7,7 +7,7 @@ TAGS_DIRS="\
   $MY_ENV \
   $MY_LIBTT \
   "
-for-dir.sh "mymake.sh tags" ${TAGS_DIRS}
+for-dir.sh "mymake.sh f_tags" ${TAGS_DIRS}
 
 #------------------------------------------------------
 # memo tags
@@ -18,16 +18,15 @@ MEMO_DIRS="\
   $MY_SAMPLES \
   $MY_DIARY \
   "
-for-dir.sh "mymake.sh tags_memo" ${MEMO_DIRS}
+for-dir.sh "mymake.sh f_tags" ${MEMO_DIRS}
 
 #------------------------------------------------------
 # help tags
 #------------------------------------------------------
 PLUG_DIRS="\
-  $MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
-  $MY_VIM_PLUGGED_DIR/vim-bmk-menu \
-  $MY_VIM_PLUGGED_DIR/vim-ide-style \
-  $MY_VIM_PLUGGED_DIR/vim-memo \
+  $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/doc \
+  $MY_VIM_PLUGGED_DIR/vim-bmk-menu/doc \
+  $MY_VIM_PLUGGED_DIR/vim-ide-style/doc \
+  $MY_VIM_PLUGGED_DIR/vim-memo/doc \
   "
-for-dir.sh "mymake.sh tags" ${PLUG_DIRS}
-
+for-dir.sh "helptags.sh" ${PLUG_DIRS}

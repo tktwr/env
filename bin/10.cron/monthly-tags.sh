@@ -1,5 +1,4 @@
 #!/bin/bash
 
 cd $MY_GITHUB
-mymake.sh tags
-
+mymake.sh f_tags

@@ -1,6 +1,5 @@
 #!/bin/bash
 
 cd $MY_BIN/50.tool.img/image-viewer
-make.sh dist
-make.sh install
-
+mymake.sh f_dist
+mymake.sh f_install

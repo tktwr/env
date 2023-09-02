@@ -24,21 +24,7 @@ f_clean() {
   rm -rf __pycache__
 }
 
-#------------------------------------------------------
-f_help() {
-  echo "dist"
-  echo "install"
-  echo "clean"
-  echo "help"
-}
-
-f_default() {
-  f_help
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"
