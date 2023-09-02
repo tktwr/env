@@ -21,6 +21,10 @@ echo '  '
 echo '  '
 echo '  '
 echo '  '
+
+echo 'selected:      '
+echo 'fern:                    '
+
 echo '  '
 echo '    '
 echo '    '
@@ -32,7 +36,6 @@ echo '    '
 echo '       '
 echo '       '
 
-echo 'fern:                    '
 echo '    '
 echo '   '
 echo '       '
