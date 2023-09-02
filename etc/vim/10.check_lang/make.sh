@@ -35,23 +35,11 @@ f_all() {
   f_sh
 }
 
-#------------------------------------------------------
-f_help() {
-  echo "all"
-  echo "cpp"
-  echo "py"
-  echo "vim"
-  echo "sh"
-  echo "help"
-}
-
-f_default() {
-  f_all
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_default() {
+  f_all
+}
+
+f_fzf_main "$@"
