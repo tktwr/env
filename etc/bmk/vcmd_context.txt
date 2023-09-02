@@ -1,0 +1,20 @@
+===== | ============================== | ==============================
+- ,-  | fugitive:toggle stage          | -
+- ,=  | fugitive:toggle inline diff    | =
+- ,C  | fugitive:commit                | cc
+- ,D  | fugitive:diff                  | dd
+- ,X  | fugitive:discard changes       | X
+- ,R  | fugitive:reload                | R
+- ,q  | fugitive:quit                  | :VisTabClosePrev
+===== | ============================== | ==============================
+- ,D  | gv.git:diff                    | O
+- ,(  | gv.git:prev                    | (
+- ,)  | gv.git:next                    | )
+===== | ============================== | ==============================
+- ,q  | Dirdiff:quit                   | :VisTabDirDiffQuit
+===== | ============================== | ==============================
+- ,o  | Diff:do                        | do
+- ,p  | Diff:dp                        | dp
+- ,u  | Diff:update                    | :diffupdate
+
+# vim:set ft=bmk syntax=txt nowrap:

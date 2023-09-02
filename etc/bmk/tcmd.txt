@@ -23,6 +23,7 @@
 - ,T  | Term                           | > T<CR>
 - ,Tv | Term vert                      | > Tv<CR>
 - ,Tt | Term tab                       | > Tt<CR>
+----- | ------------------------------ | ------------------------------
 -     | Git graph                      | > G<CR>
 -     | Git graph all                  | > GA<CR>
 -     | Git status                     | > GS<CR>

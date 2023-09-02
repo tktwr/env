@@ -1,4 +1,4 @@
------ | ------------------------------ | ------------------------------
+===== | ============================== | ==============================
 - ,d  | Fd                             | :VisFzfAll
 - ,r  | Rg <cfile>                     | :VisFzfRg
 - ,ra | Rg <cfile> all                 | :call vis#external#fzf#rg('<cfile>', g:my_rg_dirs)
@@ -23,26 +23,20 @@
 - ,T  | Term                           | :below VisTerm
 - ,<  | SideBar                        | :VisSideBarToggle
 - ,>  | TagBar                         | :VisTagbarToggle
-- ,_  | Cd                             | :VisSendCdE2T
+- ,_  | Cd in term                     | :VisSendCdE2T
+-     | Cmd in term                    | :VisSendCmdE2T
 - ,qf | QuickFix                       | :VisQuickFix
 - ,qr | Qfreplace                      | :Qfreplace
--     | Lazygit                        | :VisLazygit tab
-- ,gs | Git status                     | :FzfGFiles?
-- ,gg | Git graph                      | :FzfCommits
-- ,gl | Gllog %                        | :Gllog %
-- ,gl | Gllog                          | :Gllog
+- ,gs | fzf:Git status                 | :FzfGFiles?
+- ,gg | fzf:Git graph                  | :FzfCommits
+- ,gl | fugitive:Gllog %               | :Gllog %
+- ,gl | fugitive:Gllog                 | :Gllog
 - ,x  | Wx                             | :Wx ?
 - ,p  | Paste                     (,p) | ,p
 -     | Yank                       (Y) | "*y
 - ,Y  | YankFilePath                   | :call YankFilePath()
--     | MyRunTest                      | :call MyRunTest()
--     | MySetNoIgnoreCase              | :call MySetNoIgnoreCase()
--     | MySetIgnoreCase                | :call MySetIgnoreCase()
--     | MySetSmartCase                 | :call MySetSmartCase()
--     | ToggleDebug                    | :call bmk#ToggleDebug()
+----- | ------------------------------ | ------------------------------
 -     | MyClangFormat                  | :MyClangFormat
--     | PlugInstall                    | :PlugInstall
--     | PlugUpdate                     | :PlugUpdate
 - ,c1 | EditTabBar                     | :EditTabBar
 - ,c: | EditTabColon                   | :EditTabColon
 - ,c, | EditTabComma                   | :EditTabComma
@@ -55,13 +49,10 @@
 -     | EditHtmlImgLink                | :call EditHtmlImgLink()
 -     | EditBmkLink                    | :call EditBmkLink()
 - ,p  | EditTogglePathFormat           | :call EditTogglePathFormat()
--     | VisSendCmdE2T                  | :VisSendCmdE2T
--     | VisWinInfo                     | :VisWinInfo
--     | VisCheckEnv                    | :VisCheckEnv
--     | gruvbox                        | :colorscheme gruvbox
--     | molokai                        | :colorscheme molokai
--     | vimdirdiff etc ~               | :VisTabDirDiff $MY_ETC $HOME
--     | vimdirdiff etc ~/WinHome       | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
+-     | MySetNoIgnoreCase              | :call MySetNoIgnoreCase()
+-     | MySetIgnoreCase                | :call MySetIgnoreCase()
+-     | MySetSmartCase                 | :call MySetSmartCase()
+----- | ------------------------------ | ------------------------------
 -     | Git grep                       | :VisGgrep ??
 -     | Vim grep here                  | :VisVimgrep ?? *
 -     | Tag jump                       | :call VisTjumpPrompt()
@@ -69,35 +60,29 @@
 -     | Git graph                      | :VisGV
 -     | winbuf menu         (End, C-u) | :silent call wbl#open()
 -     | quickhl                  (C-a) | :VisQuickhl ??
+-     | Lazygit                        | :VisLazygit tab
 -     | Man                            | :VisFzfMan tab
 -     | Apt                            | :VisFzfApt tab
 -     | Pip                            | :VisFzfPip tab
 -     | Dpkg                           | :VisFzfDpkg tab
 -     | Memo                           | :Memo
 -     | Help                           | :VisHelp
+----- | ------------------------------ | ------------------------------
+-     | VisWinInfo                     | :VisWinInfo
+-     | VisCheckEnv                    | :VisCheckEnv
+-     | vimdirdiff etc ~               | :VisTabDirDiff $MY_ETC $HOME
+-     | vimdirdiff etc ~/WinHome       | :VisTabDirDiff $MY_ETC $SYS_WIN_HOME
+-     | gruvbox                        | :colorscheme gruvbox
+-     | molokai                        | :colorscheme molokai
+-     | PlugInstall                    | :PlugInstall
+-     | PlugUpdate                     | :PlugUpdate
 -     | SourceVimrc                    | :SourceVimrc
+-     | MyRunTest                      | :call MyRunTest()
+-     | ToggleDebug                    | :call bmk#ToggleDebug()
 -     | ctrlp                          | _Plug_(ctrlp)
 -     | Wc                             | :Wc ?
 -     | VisBufDelete                   | :VisBufDelete
 -     | vimgrep TODO                   | :vimgrep 'TODO' %
 -     | quit                       (Q) | :confirm qall
------ | ------------------------------ | ------------------------------
-- ,o  | diff:do                        | do
-- ,p  | diff:dp                        | dp
-- ,u  | diff:update                    | :diffupdate
------ | ------------------------------ | ------------------------------
-- ,q  | dirdiff:quit                   | :VisTabDirDiffQuit
------ | ------------------------------ | ------------------------------
-- ,D  | gv.git:diff                    | O
-- ,(  | gv.git:prev                    | (
-- ,)  | gv.git:next                    | )
------ | ------------------------------ | ------------------------------
-- ,-  | fugitive:toggle stage          | -
-- ,=  | fugitive:toggle inline diff    | =
-- ,C  | fugitive:commit                | cc
-- ,D  | fugitive:diff                  | dd
-- ,X  | fugitive:discard changes       | X
-- ,R  | fugitive:reload                | R
-- ,q  | fugitive:quit                  | :VisTabClosePrev
 
 # vim:set ft=bmk syntax=txt nowrap:

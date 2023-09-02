@@ -44,6 +44,7 @@
 -     | MyWork/                        | $SYS_WORK_HOME/
 -     | MyProj/                        | $SYS_PROJ_HOME/
 -     | MyData/                        | $SYS_DATA_HOME/
+----- | ------------------------------ | ------------------------------
 -     | C:/                            | $SYS_C/
 -     | D:/                            | $SYS_D/
 -     | PROG64/                        | $SYS_PROG64_DIR/
@@ -54,13 +55,5 @@
 -     | winget/                        | $WINGET_DIR/
 -     | winapp/                        | $WINAPP_DIR/
 -     | win_setting:wt                 | $SYS_WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
--     | github:LearnOpenGL/            | $MY_GITHUB/LearnOpenGL/
--     | github:glTF-Sample-Viewer/     | $MY_GITHUB/glTF-Sample-Viewer/
--     | github:blender/                | $MY_GITHUB/blender/
--     | github:blender/eevee/          | $MY_GITHUB/blender/source/blender/gpu/
--     | github:blender/cycles/         | $MY_GITHUB/blender/intern/cycles/
--     | github:filament/               | $MY_GITHUB/filament/
--     | github:separable-sss/          | $MY_GITHUB/separable-sss/
--     | github:imgui/                  | $MY_GITHUB/imgui/
 
 # vim:set ft=bmk syntax=txt nowrap:

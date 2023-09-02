@@ -1,19 +1,10 @@
------ | ------------------------------                   | ------------------------------
-+     | dia                                              | $MY_DIARY/diary.md.html
-+     | todo                                             | $MY_DIARY/todo.md.html
-+     | info                                             | $MY_DIARY/info.md.html
-+     | scratchpad                                       | $MY_DIARY/scratchpad.md.html
-+     | links                                            | $MY_BMK/links.txt
-+     | papers                                           | $MY_BMK/papers.txt
--     | local:engword                                    | $MY_LOCAL_CONFIG/eng/engword.txt
--     | index:proj                                       | $MY_PROJ/index.md.html
--     | github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
--     | github:cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
--     | github:cycles/node_principled_bsdf.osl           | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
--     | github:eevee/gpu_shader_material_principled.glsl | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
--     | github:eevee/common_utiltex_lib.glsl             | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/common_utiltex_lib.glsl
--     | github:eevee/bsdf_common_lib.glsl                | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/bsdf_common_lib.glsl
--     | github:gltf/pbr.frag                             | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
--     | github:ssss/SeparableSSS.h                       | $MY_GITHUB/separable-sss/SeparableSSS.h
+----- | ------------------------------ | ------------------------------
++     | dia                            | $MY_DIARY/diary.md.html
++     | todo                           | $MY_DIARY/todo.md.html
++     | info                           | $MY_DIARY/info.md.html
++     | scratchpad                     | $MY_DIARY/scratchpad.md.html
++     | links                          | $MY_BMK/links.txt
++     | papers                         | $MY_BMK/papers.txt
+-     | index:proj                     | $MY_PROJ/index.md.html
 
 # vim:set ft=bmk syntax=txt nowrap:
