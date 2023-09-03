@@ -19,6 +19,8 @@
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": false,
   "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
 
   // --------------------------------------------------
   // clangd
