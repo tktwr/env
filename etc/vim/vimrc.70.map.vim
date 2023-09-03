@@ -39,13 +39,15 @@ nnoremap ==      zi
 map , <Nop>
 
 nnoremap <Space> :VisFzfBmk<CR>
-nnoremap ,d :VisFzfAll<CR>
-nnoremap ,r :VisFzfRg<CR>
-nnoremap ,t :VisFzfTags<CR>
-nnoremap ,m :VisFzfMemo<CR>
-nnoremap ,h :FzfHelptags<CR>
-nnoremap ,b :FzfBuffers<CR>
-nnoremap ,w <C-W>:silent call wbl#open()<CR>
+nnoremap ,d      :VisFzfAll<CR>
+nnoremap ,r      :VisFzfRg<CR>
+nnoremap ,a      :VisFzfRgAll<CR>
+nnoremap ,c      :VisFzfRgCur<CR>
+nnoremap ,t      :VisFzfTags<CR>
+nnoremap ,m      :VisFzfMemo<CR>
+nnoremap ,h      :FzfHelptags<CR>
+nnoremap ,b      :FzfBuffers<CR>
+nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 
 "------------------------------------------------------
 " nmap C-?
@@ -171,8 +173,8 @@ tnoremap <silent> <F12> <C-W>b
 " special keys
 "------------------------------------------------------
 "nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
-nnoremap <silent> <End>      <C-W>:CpmOpen<CR>
-tnoremap <silent> <End>      <C-W>:CpmOpen<CR>
+"nnoremap <silent> <End>      <C-W>:CpmOpen<CR>
+"tnoremap <silent> <End>      <C-W>:CpmOpen<CR>
 
 nnoremap <silent> <BS>       <C-B>
 nmap     <silent> <C-BS>     <Plug>(easymotion-overwin-line)

@@ -3,7 +3,6 @@
 - ,r  | Rg                             | > r<CR>
 - ,m  | Make                           | > m<CR>
 - ,S  | Setup                          | > S<CR>
-- ,w  | Dir stack                      | > ??<CR>
 ----- | ------------------------------ | ------------------------------
 - ,t  | Toggle size                    | > ,toggle<CR>
 - ,tx | Toggle size x                  | > ,toggle_x<CR>
