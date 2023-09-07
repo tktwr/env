@@ -17,7 +17,7 @@ python-graphviz graphviz \
 #======================================================
 # functions
 #======================================================
-f_install() {
+f_conda_install() {
   conda install $pkg
   #conda install -c conda-forge opencv
 }

@@ -2,6 +2,7 @@
   // --------------------------------------------------
   // snippets
   // --------------------------------------------------
+  "snippets.ultisnips.pythonPrompt": false,
   "snippets.ultisnips.directories": [
     "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
     "C:\\Users\\Takeh\\MyRoaming\\env\\etc\\vim\\UltiSnips"
