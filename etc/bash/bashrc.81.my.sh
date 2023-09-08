@@ -16,6 +16,7 @@ cp.G() { cp "$@" `mypushd.sh --get`; }
 alias l='exa-short.sh'
 alias ls='ls.sh'
 alias make='mymake.sh'
+alias m='mymake.sh'
 
 mycmake-set() {
   mycmake.sh --set $1 $2
