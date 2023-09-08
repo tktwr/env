@@ -87,29 +87,29 @@ def cv_cvt_channels(img, dst_ch):
         return img
 
     img_list = list(cv2.split(img))
-    img_a = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
+    img_one = np.ones_like(img_list[0]) * cv_maximum(img.dtype)
 
-    if ch == 1 and dst_ch == 4:
-        img_list.append(img_list[0])
-        img_list.append(img_list[0])
-        img_list.append(img_a)
-        return cv2.merge(img_list)
-
-    if ch == 3 and dst_ch == 4:
-        img_list.append(img_a)
-        return cv2.merge(img_list)
-
-    if ch == 4 and dst_ch == 3:
-        return cv2.merge([img_list[0], img_list[1], img_list[2]])
+    # -----------------------------------------------------
+    if ch == 3 and dst_ch == 1:
+        return img_list[0]
 
     if ch == 4 and dst_ch == 1:
         return img_list[0]
 
+    # -----------------------------------------------------
     if ch == 1 and dst_ch == 3:
         return cv2.merge([img_list[0], img_list[0], img_list[0]])
 
-    if ch == 2 and dst_ch == 3:
-        return cv2.merge([img_list[0], img_list[0], img_list[0]])
+    if ch == 4 and dst_ch == 3:
+        return cv2.merge([img_list[0], img_list[1], img_list[2]])
+
+    # -----------------------------------------------------
+    if ch == 1 and dst_ch == 4:
+        return cv2.merge([img_list[0], img_list[0], img_list[0], img_one])
+
+    if ch == 3 and dst_ch == 4:
+        img_list.append(img_one)
+        return cv2.merge(img_list)
 
     return img
 

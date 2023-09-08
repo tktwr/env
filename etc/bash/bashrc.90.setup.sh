@@ -7,22 +7,37 @@
 # the following env variable enable it
 export OPENCV_IO_ENABLE_OPENEXR=1
 
-mypython-type $MY_PYTHON_TYPE
-mypython-venv-activate $MY_PYTHON_VENV
-
 f_set_core_off
 f_set_prompt
 
 #------------------------------------------------------
-my_setup_vim
-my_setup_path_os
+# python
+#------------------------------------------------------
+mypython-type $MY_PYTHON_TYPE
+mypython-venv-activate $MY_PYTHON_VENV
 
-# on WSL FS
-f_ins_path "$SYS_ROAMING_HOME/opt/exa/bin"
-f_ins_path "$SYS_ROAMING_HOME/opt/delta"
-f_ins_path "$SYS_ROAMING_HOME/opt/lazygit"
-f_ins_path "$SYS_ROAMING_HOME/opt/bin"
+#------------------------------------------------------
+# vim
+#------------------------------------------------------
+my_setup_vim
+
+#------------------------------------------------------
+# path
+#------------------------------------------------------
+case $MY_OS_NAME in
+  wsl)
+    f_ins_path "$SYS_ROAMING_HOME/opt/delta"
+    f_ins_path "$SYS_ROAMING_HOME/opt/exa/bin"
+    f_ins_path "$SYS_ROAMING_HOME/opt/lazygit"
+    ;;
+  msys|gitbash)
+    f_ins_path "$SYS_CONFIG_HOME/opt/winget"
+    ;;
+esac
 
 # on Windows FS
 f_add_path "$MY_LOCAL_CONFIG/bin"
+f_add_path "$SYS_CONFIG_HOME/opt/bin"
 
+# OS dependent wrapper
+f_ins_path "$MY_ENV/bin/os.$MY_OS_NAME"

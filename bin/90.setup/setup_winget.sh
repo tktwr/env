@@ -18,7 +18,7 @@ f_winget_install_min() {
 
 f_winget_cp_exe() {
   src_dir=$SYS_WIN_HOME/AppData/Local/Microsoft/WinGet/Packages
-  dst_dir=$SYS_ROAMING_HOME/opt/bin
+  dst_dir=$SYS_CONFIG_HOME/opt/winget
   mkdir -p $dst_dir
   find $src_dir -name '*.exe' -exec cp {} $dst_dir \;
   cd $dst_dir

@@ -49,10 +49,6 @@ my_setup_path_env() {
   done
 }
 
-my_setup_path_os() {
-  f_ins_path "$MY_ENV/bin/os.$MY_OS_NAME"
-}
-
 #------------------------------------------------------
 f_init_path
 f_ins_path_man "/usr/local/share/man"
