@@ -4,6 +4,7 @@ desktop     | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
 downloads   | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
 #---------- | ----------         | ----------
 my          | MY_DOTMY           | $SYS_LOCAL_HOME/.my
+mycache     | MY_DOTMYCACHE      | $SYS_LOCAL_HOME/.mycache
 python_venv | MY_PYTHON_VENV_DIR | $SYS_LOCAL_HOME/.mycache/python_venv
 vim_plugged | MY_VIM_PLUGGED_DIR | $SYS_LOCAL_HOME/.mycache/vim_plugged
 coc_data    | MY_COC_DATA_DIR    | $SYS_LOCAL_HOME/.mycache/coc_data

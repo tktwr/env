@@ -27,8 +27,10 @@
 -     | Cmd in term                    | :VisSendCmdE2T
 - ,qf | QuickFix                       | :VisQuickFix
 - ,qr | Qfreplace                      | :Qfreplace
-- ,gs | fzf:Git status                 | :FzfGFiles?
-- ,gg | fzf:Git graph                  | :FzfCommits
+- ,gs | fzf:Git status                 | :VisFzfGitStatus
+- ,gg | fzf:Git graph                  | :VisFzfGitLog
+# ,gs | fzf:Git status                 | :FzfGFiles?
+# ,gg | fzf:Git graph                  | :FzfCommits
 - ,gl | fugitive:Gllog %               | :Gllog %
 - ,gl | fugitive:Gllog                 | :Gllog
 - ,x  | Wx                             | :Wx ?

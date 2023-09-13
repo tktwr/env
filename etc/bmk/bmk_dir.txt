@@ -10,6 +10,7 @@
 -     | git/                           | $MY_GIT/
 -     | proj/                          | $MY_PROJ/
 -     | .my/                           | $MY_DOTMY/
+-     | .mycache/                      | $MY_DOTMYCACHE/
 -     | local.common/                  | $MY_COMMON_SETTING/
 -     | local.memo/                    | $MY_LOCAL_CONFIG/memo/
 -     | vim-ide-style/                 | $MY_VIM_PLUGGED_DIR/vim-ide-style/
