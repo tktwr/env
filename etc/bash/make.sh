@@ -3,17 +3,17 @@
 #======================================================
 # functions
 #======================================================
-f_10_install_all() {
+f_install_all() {
   ./make_hostname.sh > $HOME/.my/hostname.sh
   ./make_env.sh > $HOME/.my/env.sh
   cat bashrc_all.sh > $HOME/.bashrc
 }
 
-f_11_install_zero() {
+f_install_zero() {
   cat bashrc_zero.sh > $HOME/.bashrc
 }
 
-f_12_install_min() {
+f_install_min() {
   ./make_hostname.sh > $HOME/.my/hostname.sh
   cat bashrc_zero.sh bashrc_min.sh > $HOME/.bashrc
 }
@@ -21,8 +21,5 @@ f_12_install_min() {
 #======================================================
 # main
 #======================================================
-f_fzf_default() {
-  f_10_install_all
-}
-
+f_fzf_default() { f_install_all; }
 f_fzf_main "$@"

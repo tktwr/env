@@ -3,34 +3,29 @@
 #======================================================
 # functions
 #======================================================
-f_10_install_all() {
+f_install_all() {
   cat vimrc_all.vim  > $HOME/.vimrc
   cat vimrc_zero.vim > $HOME/_vimrc
   cat vimrc_zero.vim > $SYS_WIN_HOME/_vimrc
 }
 
-f_11_install_zero() {
+f_install_zero() {
   cat vimrc_zero.vim > $HOME/.vimrc
 }
 
-f_12_install_min() {
+f_install_min() {
   cat vimrc_zero.vim > $HOME/.vimrc
 }
 
-f_13_install_min_plug() {
+f_install_min_plug() {
   cat vimrc_zero.vim vimrc_min_plug.vim > $HOME/.vimrc
 }
 
 #------------------------------------------------------
-f_20_prof() {
-  vim-log.sh
-}
+f_prof() { vim-log.sh; }
 
 #======================================================
 # main
 #======================================================
-f_fzf_default() {
-  f_10_install_all
-}
-
+f_fzf_default() { f_install_all; }
 f_fzf_main "$@"

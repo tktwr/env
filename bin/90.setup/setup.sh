@@ -7,6 +7,15 @@
 #======================================================
 # functions
 #======================================================
+f_10_update_vim() {
+  vim -c 'PlugUpdate'
+  vim -c 'CocUpdate'
+}
+
+f_11_set_hwclock() {
+  set-hwclock.sh
+}
+
 #------------------------------------------------------
 # vim
 #------------------------------------------------------
@@ -19,11 +28,6 @@ f_install_vim_stubs() {
 f_install_vim() {
   vim -c 'PlugInstall'
   vim -c 'MyCocInstall'
-}
-
-f_update_vim() {
-  vim -c 'PlugUpdate'
-  vim -c 'CocUpdate'
 }
 
 #------------------------------------------------------
@@ -58,9 +62,8 @@ f_print_version() {
   print-version.sh
 }
 
-#------------------------------------------------------
-f_set_hwclock() {
-  set-hwclock.sh
+f_print_netsh() {
+  print-netsh.sh
 }
 
 #------------------------------------------------------
