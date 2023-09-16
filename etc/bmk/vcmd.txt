@@ -16,8 +16,13 @@
 - ,tx | Toggle size x                  | :VisWinMaximizeXToggle
 - ,ty | Toggle size                    | :VisWinMaximizeYToggle
 - ,t0 | Resize 5                       | :VisWinResize 5
+- ,t1 | Resize 10                      | :VisWinResize 10
+- ,t2 | Resize 20                      | :VisWinResize 20
+- ,t3 | Resize 30                      | :VisWinResize 30
+- ,t4 | Resize 40                      | :VisWinResize 40
 - ,L  | Lcd                            | :VisLcdHere
 - ,I  | IDE                            | :VisIDE
+- ,I2 | IDE2                           | :VisIDE 2
 - ,F  | Fern                           | :VisFernDrawer %:p:h
 - ,N  | Editor                         | :new
 - ,T  | Term                           | :below VisTerm
