@@ -3,6 +3,7 @@
 +     | todo                           | $MY_DIARY/todo.md.html
 +     | info                           | $MY_DIARY/info.md.html
 +     | scratchpad                     | $MY_DIARY/scratchpad.md.html
++     | keymap                         | $MY_MEMO/my.md.html
 +     | links                          | $MY_BMK/links.txt
 +     | papers                         | $MY_BMK/papers.txt
 -     | index:proj                     | $MY_PROJ/index.md.html

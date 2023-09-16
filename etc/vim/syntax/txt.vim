@@ -51,6 +51,13 @@ syn keyword  myTODO             TODO
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
+syn keyword  myPgUp             PgUp
+syn keyword  myPgDn             PgDn
+syn keyword  myVim              vim
+syn keyword  myWin              win
+syn keyword  myWt               wt
+syn keyword  myBash             bash
+
 syn match    myRed              "\[ *Red *\]"
 syn match    myGreen            "\[ *Green *\]"
 syn match    myYellow           "\[ *Yellow *\]"
@@ -115,6 +122,13 @@ hi link myINFO             MyYellow
 hi link myTODO             MyOrange
 hi link myOK               MyGreen
 hi link myFAIL             MyRed
+
+hi link myPgUp             MyRed
+hi link myPgDn             MyGreen
+hi link myVim              MyRed
+hi link myWin              MyBlue
+hi link myWt               MyGreen
+hi link myBash             MyYellow
 
 hi link myRed              MyRed  
 hi link myGreen            MyGreen 
