@@ -218,7 +218,5 @@ tnoremap <C-H>   <C-\><C-N><C-W>h
 tnoremap <C-J>   <C-\><C-N><C-W>w
 tnoremap <C-K>   <C-\><C-N><C-W>W
 tnoremap <C-L>   <C-\><C-N><C-W>l
-
-tnoremap <silent> <PageDown> <C-\><C-N>:VisWinMaximizeYToggleTerm<CR>i
 endif
 
