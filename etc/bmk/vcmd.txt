@@ -13,8 +13,8 @@
 - ,od | OpenDir  %                     | :call bmk#OpenDir('%:p:h')
 - ,V  | ViewThis                (C-CR) | :call bmk#ViewThis()
 - ,O  | OpenThis                (S-CR) | :call bmk#OpenThis()
-- ,t  | Toggle size                    | :VisWinMaximizeYToggle
 - ,tx | Toggle size x                  | :VisWinMaximizeXToggle
+- ,ty | Toggle size                    | :VisWinMaximizeYToggle
 - ,t0 | Resize 5                       | :VisWinResize 5
 - ,L  | Lcd                            | :VisLcdHere
 - ,I  | IDE                            | :VisIDE
