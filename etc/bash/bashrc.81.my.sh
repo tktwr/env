@@ -31,8 +31,9 @@ f_alias_vim_term() {
   alias ,F2='vimapi-edit-dir-2'
 
   alias ,I='vimapi_exec VisIDE'
-  alias ,I2='vimapi_exec VisIDE 2'
   alias ,It='vimapi_exec_tab VisIDE'
+  alias ,I2='vimapi_exec VisIDE 2'
+  alias ,I2t='vimapi_exec_tab VisIDE 2'
 
   alias ,N='vimapi_exec new'
   alias ,Nv='vimapi_exec vnew'
@@ -125,11 +126,3 @@ f_alias_common() {
   alias vim-where='vim-which.sh'
 }
 
-#------------------------------------------------------
-f_alias_common
-f_alias_$MY_OS_NAME
-if [ "$VIM_TERMINAL" ]; then
-  f_alias_vim_term
-else
-  f_alias_term
-fi
