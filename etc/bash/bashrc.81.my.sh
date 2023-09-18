@@ -37,6 +37,9 @@ if [ "$VIM_TERMINAL" ]; then
   alias ,t4=',resize 40'
 fi
 
+#======================================================
+# os
+#======================================================
 f_alias_wsl() {
   alias D='te.sh'
   alias gvim='gvim.sh'
@@ -45,16 +48,6 @@ f_alias_wsl() {
 }
 
 f_alias_msys() {
-  alias D='te.sh'
-  alias gvim='gvim.sh'
-  alias gvimdiff='gvim.sh -d'
-
-  #alias adb='winpty adb'
-  alias net='winpty net'
-  alias ping='winpty ping'
-  alias ipconfig='winpty ipconfig'
-  alias tracert='winpty tracert'
-  alias wsl='winpty wsl'
 }
 
 f_alias_gitbash() {
