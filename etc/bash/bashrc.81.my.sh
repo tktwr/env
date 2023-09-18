@@ -41,24 +41,25 @@ fi
 # os
 #======================================================
 f_alias_wsl() {
-  alias D='te.sh'
+  alias ,D='te.sh'
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
 }
 
 f_alias_msys() {
+  :
 }
 
 f_alias_gitbash() {
-  alias D='te.sh'
+  alias ,D='te.sh'
 }
 
 f_alias_linux() {
-  #alias D='nautilus'
-  #alias p='evince'
-  alias D='exo-open --launch FileManager'
-  alias p='qpdfview --unique'
+  #alias ,D='nautilus'
+  #alias ,pdf='evince'
+  alias ,D='exo-open --launch FileManager'
+  alias ,pdf='qpdfview --unique'
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
 
