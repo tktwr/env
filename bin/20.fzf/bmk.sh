@@ -9,14 +9,13 @@ g_bmk_files=""
 #------------------------------------------------------
 # functions
 #------------------------------------------------------
+f_batcat() { batcat -l bash -pp --color=always; }
+f_cat()    { cat; }
+
 bmk_pre() {
   case $g_bmk_pre_filter in
-    +)
-      grep '^+ '
-      ;;
-    *)
-      grep '^[-+] '
-      ;;
+    +) grep '^+ '    ;;
+    *) grep '^[-+] ' ;;
   esac
 }
 
@@ -30,7 +29,7 @@ bmk() {
       "
   done
 
-  cat $files 2> /dev/null | bmk_pre | batcat -l bash -pp --color=always
+  cat $files 2> /dev/null | bmk_pre | f_$SYS_CAT_EXE
 }
 
 #------------------------------------------------------

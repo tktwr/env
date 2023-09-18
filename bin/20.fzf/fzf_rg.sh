@@ -13,5 +13,5 @@ fzf --prompt 'Rg> ' \
     --query "$query" \
     --bind "change:reload:sleep 0.1; $RG_PREFIX {q} $dirs || true" \
     --delimiter : \
-    --preview 'batcat -n --color=always {1} --highlight-line {2}' \
+    --preview 'preview_rg.sh {1} {2}' \
     --preview-window 'hidden,up,60%,+{2}/3'
