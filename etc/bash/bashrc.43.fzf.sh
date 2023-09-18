@@ -146,15 +146,7 @@ _my_setup_fzf_alias() {
 }
 
 my_setup_fzf() {
-  case $MY_OS_NAME in
-    wsl|linux)
-      _my_setup_fzf_fdfind
-      ;;
-    gitbash)
-      _my_setup_fzf_fdfind
-      ;;
-  esac
-
+  _my_setup_fzf_$SYS_FIND_EXE
   _my_setup_fzf_alias
 
   export -f fzf_print
