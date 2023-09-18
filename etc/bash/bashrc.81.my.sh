@@ -68,15 +68,15 @@ f_alias_vim_term() {
 
 f_alias_term() {
   if [ $MY_OS_NAME = 'gitbash' ]; then
-    export TERM_cygwin='TERM=cygwin'
+    TERM_cygwin='TERM=cygwin'
   else
-    export TERM_cygwin=''
+    TERM_cygwin=''
   fi
-  alias ,I='$TERM_cygwin vim -c "VisIDE"'
-  alias ,I2='$TERM_cygwin vim -c "VisIDE 2"'
-  alias ,T='$TERM_cygwin vim -c "VisTerm" -c "only"'
-  alias ,T2='$TERM_cygwin vim -c "VisTerm" -c "only" -c "VisTerm"'
-  alias ,T2v='$TERM_cygwin vim -c "VisTerm" -c "only" -c "vert VisTerm"'
+  alias ,I="$TERM_cygwin vim -c 'VisIDE'"
+  alias ,I2="$TERM_cygwin vim -c 'VisIDE 2'"
+  alias ,T="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
+  alias ,T2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
+  alias ,T2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
 
   alias ,nI='nvim -c "VisIDE"'
   alias ,nT='nvim -c "VisTerm" -c "only"'
