@@ -30,11 +30,6 @@ wsl_proxy() {
 
 wsl_settings() {
   export WSLENV=MY_LIBTT_WIN:MY_OPT_WIN:MY_DATA_WIN
-
-  alias D='te.sh'
-  alias gvim='gvim.sh'
-  alias gvimdiff='gvim.sh -d'
-  alias gitbash='gitbash.sh'
 }
 
 #======================================================
@@ -65,24 +60,13 @@ msys_settings() {
   #PATH="$ANDROID_SDK/ndk-bundle/prebuilt/windows-x86_64/bin:$PATH"
   # adb
   #PATH="$ANDROID_SDK/platform-tools:$PATH"
-
-  alias D='te.sh'
-  alias gvim='gvim.sh'
-  alias gvimdiff='gvim.sh -d'
-
-  #alias adb='winpty adb'
-  alias net='winpty net'
-  alias ping='winpty ping'
-  alias ipconfig='winpty ipconfig'
-  alias tracert='winpty tracert'
-  alias wsl='winpty wsl'
 }
 
 #======================================================
 # gitbash
 #======================================================
 gitbash_settings() {
-  alias D='te.sh'
+  :
 }
 
 #======================================================
@@ -92,17 +76,15 @@ linux_settings() {
   #export XDG_CONFIG_HOME="~/.config"
   #export XDG_DATA_HOME="~/.local/share"
   #export XDG_CACHE_HOME="~/.cache"
-
-  #alias D='nautilus'
-  #alias p='evince'
-  alias D='exo-open --launch FileManager'
-  alias p='qpdfview --unique'
-  alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
+  :
 }
 
 #======================================================
-case $MY_OS_NAME in
-  wsl|msys|gitbash|linux)
-    eval "${MY_OS_NAME}_settings"
-    ;;
-esac
+# termux
+#======================================================
+termux_settings() {
+  :
+}
+
+#======================================================
+${MY_OS_NAME}_settings
