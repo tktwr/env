@@ -9,7 +9,7 @@ g_bmk_files=""
 #------------------------------------------------------
 # functions
 #------------------------------------------------------
-f_batcat() { batcat -l bash -pp --color=always; }
+f_batcat() { batcat -l mytxt -pp --color=always; }
 f_cat()    { cat; }
 
 bmk_pre() {

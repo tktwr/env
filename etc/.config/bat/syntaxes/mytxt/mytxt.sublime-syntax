@@ -1,0 +1,44 @@
+%YAML 1.2
+---
+name: mytxt
+file_extensions: [mytxt, txt, html]
+scope: source.mytxt
+
+contexts:
+  main:
+    - match: \bPgUp\b
+      scope: mytxt.red
+    - match: \bPgDn\b
+      scope: mytxt.green
+    - match: \bvim\b
+      scope: mytxt.red
+    - match: \bwin\b
+      scope: mytxt.blue
+    - match: \bwt\b
+      scope: mytxt.green
+    - match: \bbash\b
+      scope: mytxt.yellow
+
+    - match: \bcall\b
+      scope: mytxt.red
+
+    - match: \[TODO\]
+      scope: mytxt.orange
+    - match: \[(OK|DONE|FIXED|SOLVED)\]
+      scope: mytxt.green
+    - match: \[(FAIL|CANCEL|OBSOLETE)\]
+      scope: mytxt.red
+
+    - match: ^[-+] ,[^ ]+ 
+      scope: mytxt.orange
+    - match: ^[-+] 
+      scope: mytxt.orange
+    - match: \$[A-Z_]+
+      scope: mytxt.green
+    - match: \b[0-9]+\b
+      scope: mytxt.purple
+
+    - match: \<[^>]+\>
+      scope: mytxt.purple
+    - match: \([^)]+\)
+      scope: mytxt.aqua

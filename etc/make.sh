@@ -4,6 +4,7 @@
 # variables
 #======================================================
 DOT_FILES_COMMON="\
+.config/bat \
 .config/lazygit \
 .config/nvim \
 .mintty \

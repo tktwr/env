@@ -3,7 +3,8 @@
 #======================================================
 # colors
 #======================================================
-export BAT_THEME='gruvbox-dark'
+#export BAT_THEME='gruvbox-dark'
+export BAT_THEME='mytxt'
 
 # tw: スティッキビットありother書き込み権限つきディレクトリ
 # ow: スティッキビットなしother書き込み権限つきディレクトリ
