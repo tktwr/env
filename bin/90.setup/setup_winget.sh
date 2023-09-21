@@ -3,17 +3,32 @@
 #======================================================
 # variables
 #======================================================
+pkg="\
+  sharkdp.fd \
+  sharkdp.bat \
+  junegunn.fzf \
+  BurntSushi.ripgrep.MSVC \
+  dandavison.delta \
+  JesseDuffield.lazygit \
+  "
 
 #======================================================
 # functions
 #======================================================
-f_winget_install_min() {
-  winget.exe install sharkdp.fd
-  winget.exe install sharkdp.bat
-  winget.exe install junegunn.fzf
-  winget.exe install BurntSushi.ripgrep.MSVC
-  winget.exe install dandavison.delta
-  winget.exe install JesseDuffield.lazygit
+f_winget_install() {
+  for i in $pkg; do
+    winget.exe install --id $i
+  done
+}
+
+f_winget_upgrade() {
+  for i in $pkg; do
+    winget.exe upgrade --id $i
+  done
+}
+
+f_winget_upgradable() {
+  winget.exe upgrade
 }
 
 f_winget_cp_exe() {
@@ -30,4 +45,3 @@ f_winget_cp_exe() {
 # main
 #======================================================
 f_fzf_main "$@"
-
