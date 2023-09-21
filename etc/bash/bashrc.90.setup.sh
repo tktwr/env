@@ -42,9 +42,10 @@ fi
 #------------------------------------------------------
 case $MY_OS_NAME in
   wsl)
+    f_ins_path "$SYS_ROAMING_HOME/opt/bat"
     f_ins_path "$SYS_ROAMING_HOME/opt/delta"
-    f_ins_path "$SYS_ROAMING_HOME/opt/exa/bin"
     f_ins_path "$SYS_ROAMING_HOME/opt/lazygit"
+    f_ins_path "$SYS_ROAMING_HOME/opt/exa/bin"
     ;;
   msys|gitbash)
     f_ins_path "$SYS_CONFIG_HOME/opt/winget"

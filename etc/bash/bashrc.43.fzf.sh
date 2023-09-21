@@ -140,7 +140,7 @@ _my_setup_fzf_alias() {
   alias  M='eval_fzf_cmd  mymake.sh'
   alias  S='eval_fzf_cmd  setup.sh'
 
-  alias ,f='eval_cmd      pushd $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt | bmk_get_value)'
+  alias ,+='eval_cmd      pushd $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt | bmk_get_value)'
   alias ,,='eval_cmd      pushd $(fzf_pushd)'
   alias ,-='eval_cmd      popd  $(fzf_pushd)'
 }
