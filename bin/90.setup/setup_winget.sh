@@ -17,13 +17,13 @@ pkg="\
 #======================================================
 f_winget_install() {
   for i in $pkg; do
-    winget.exe install --id $i
+    winget.exe install -e --id $i
   done
 }
 
 f_winget_upgrade() {
   for i in $pkg; do
-    winget.exe upgrade --id $i
+    winget.exe upgrade -e --id $i
   done
 }
 
