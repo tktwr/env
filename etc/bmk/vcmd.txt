@@ -28,8 +28,8 @@
 - ,T  | Term                           | :below VisTerm
 - ,<  | SideBar                        | :VisSideBarToggle
 - ,>  | TagBar                         | :VisTagbarToggle
-- ,_  | Cd in term                     | :VisSendCdE2T
--     | Cmd in term                    | :VisSendCmdE2T
+- ,cd | Cd in term                     | :VisSendCdE2T
+- ,cm | Cmd in term                    | :VisSendCmdE2T
 - ,qf | QuickFix                       | :VisQuickFix
 - ,qr | Qfreplace                      | :Qfreplace
 - ,gs | fzf:Git status                 | :VisFzfGitStatus
