@@ -10,14 +10,22 @@ contexts:
       scope: mytxt.red
     - match: \bPgDn\b
       scope: mytxt.green
+
     - match: \bvim\b
       scope: mytxt.red
-    - match: \bwin\b
-      scope: mytxt.blue
     - match: \bwt\b
       scope: mytxt.green
     - match: \bbash\b
       scope: mytxt.yellow
+
+    - match: \bwsl\b
+      scope: mytxt.red
+    - match: \blinux\b
+      scope: mytxt.yellow
+    - match: \bgitbash\b
+      scope: mytxt.green
+    - match: \bwin\b
+      scope: mytxt.blue
 
     - match: \bcall\b
       scope: mytxt.red
@@ -39,6 +47,8 @@ contexts:
       scope: mytxt.purple
 
     - match: \<[^>]+\>
+      scope: mytxt.purple
+    - match: \[[^]]*\]
       scope: mytxt.purple
     - match: \([^)]+\)
       scope: mytxt.aqua
