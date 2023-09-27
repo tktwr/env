@@ -3,10 +3,13 @@
 #======================================================
 # variables
 #======================================================
-DOT_FILES_COMMON="\
+DOT_FILES_CONFIG="\
 .config/bat \
 .config/lazygit \
 .config/nvim \
+"
+DOT_FILES_COMMON="\
+$DOT_FILES_CONFIG \
 .mintty \
 .minttyrc \
 .clang-format \
@@ -32,6 +35,10 @@ DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 _f_cp_all() {
   cp -a --parents    $DOT_FILES_COMMON $HOME
   cp -a --parents -n $DOT_FILES_DIFF   $HOME
+
+  if [ -n "$APPDATA" ]; then
+    cp -a $DOT_FILES_CONFIG $APPDATA
+  fi
 }
 
 _f_sub() {
