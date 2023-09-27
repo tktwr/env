@@ -6,8 +6,8 @@ f_os_wsl() {
   if [ -z "$WSL_HOST_IP" ]; then
     export WSL_HOST_IP=$(grep nameserver /etc/resolv.conf | cut -d " " -f 2)
   fi
-  export DISPLAY="$WSL_HOST_IP:0"
 
+  #export DISPLAY="$WSL_HOST_IP:0"
 }
 
 f_os_msys() {
