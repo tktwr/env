@@ -24,7 +24,7 @@ my_setup_vim
 #------------------------------------------------------
 # os
 #------------------------------------------------------
-${MY_OS_NAME}_settings
+f_os_$MY_OS_NAME
 
 #------------------------------------------------------
 # alias
@@ -53,7 +53,7 @@ case $MY_OS_NAME in
 esac
 
 # on Windows FS
-f_add_path "$MY_LOCAL_CONFIG/bin"
+f_add_path "$SYS_CONFIG_HOME/lconfig/bin"
 f_add_path "$SYS_CONFIG_HOME/opt/bin"
 
 # OS dependent wrapper
