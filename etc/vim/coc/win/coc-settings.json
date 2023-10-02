@@ -1,27 +1,48 @@
 {
   // --------------------------------------------------
+  // proxy
+  // --------------------------------------------------
+  "http.proxyStrictSSL": false,
+
+  // --------------------------------------------------
+  // floating window
+  // --------------------------------------------------
+  "hover.floatConfig"      : { "border" : true, "rounded" : true },
+  "diagnostic.floatConfig" : { "border" : true, "rounded" : true },
+  "suggest.floatConfig"    : { "border" : true, "rounded" : true },
+  "signature.floatConfig"  : { "border" : true, "rounded" : true },
+
+  // --------------------------------------------------
   // snippets
   // --------------------------------------------------
   "snippets.ultisnips.pythonPrompt": false,
   "snippets.ultisnips.directories": [
-    "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
-    "C:\\Users\\Takeh\\MyRoaming\\env\\etc\\vim\\UltiSnips"
+    "${env:MY_COMMON_SETTING_WIN}/UltiSnips",
+    "${env:MY_VIM_WIN}/UltiSnips"
   ],
-  "snippets.userSnippetsDirectory": "C:\\Users\\Takeh\\MyConfig\\lconfig\\common\\UltiSnips",
+  "snippets.userSnippetsDirectory": "${env:MY_COMMON_SETTING_WIN}/UltiSnips",
 
   // --------------------------------------------------
   // python
   // --------------------------------------------------
-  "python.venvPath": "C:\\Users\\Takeh\\.mycache\\python_venv",
-  "python.pythonPath": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\python.exe",
-  "python.linting.pylintPath": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\pylint.exe",
-  "python.linting.flake8Path": "C:\\Users\\Takeh\\.mycache\\python_venv\\default\\Scripts\\flake8.exe",
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": false,
-  "python.linting.flake8Args": ["--ignore=E203,E221,E501,F541"],
-  "pyright.inlayHints.functionReturnTypes": false,
-  "pyright.inlayHints.variableTypes": false,
+  "python.venvPath"                        : "${env:MY_PYTHON_VENV_DIR_WIN}",
+  "python.pythonPath"                      : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/python.exe",
+  "python.linting.pylintPath"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/pylint.exe",
+  "python.linting.flake8Path"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/flake8.exe",
+  "python.analysis.stubPath"               : "${env:MY_GITHUB_WIN}/python-type-stubs",
+  "python.linting.enabled"                 : true,
+  "python.linting.pylintEnabled"           : false,
+  "python.linting.flake8Enabled"           : false,
+  "python.linting.flake8Args"              : ["--ignore=E203,E221,E501,F541"],
+  "pyright.inlayHints.functionReturnTypes" : false,
+  "pyright.inlayHints.variableTypes"       : false,
+
+  // error numbers:
+  //   E203: whitespace before ':'
+  //   E203: whitespace before ','
+  //   E221: multiple spaces before operator
+  //   E501: line too long
+  //   F541: f-string is missing placeholders
 
   // --------------------------------------------------
   // clangd
