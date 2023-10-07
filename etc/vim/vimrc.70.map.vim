@@ -56,8 +56,8 @@ nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- nnoremap <silent> <C-B>   :echo<CR>
- nnoremap <silent> <C-C>   :echo<CR>
+ nnoremap <silent> <C-B>   <Nop>
+ nnoremap <silent> <C-C>   <Nop>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [FIXED] next page
@@ -68,12 +68,12 @@ nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>  " [FIXED] prev win
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>  " [FIXED] right win
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [FIXED] CR
- nnoremap <silent> <C-N>   :cn<CR>
+ nnoremap <silent> <C-N>   <C-E>
  nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>
- nnoremap <silent> <C-P>   :cp<CR>
+ nnoremap <silent> <C-P>   <C-Y>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [FIXED] redo
- nnoremap <silent> <C-S>   :echo<CR>
+ nnoremap <silent> <C-S>   <Nop>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [FIXED] prev tag
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [FIXED] block visual mode
@@ -186,6 +186,12 @@ tnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
 
 nnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
 tnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
+"------------------------------------------------------
+nnoremap <silent> <C-^>        <C-W>:tabprev<CR>
+tnoremap <silent> <C-^>        <C-W>:tabprev<CR>
+
+nnoremap <silent> <C-_>        <C-W>:tabnext<CR>
+tnoremap <silent> <C-_>        <C-W>:tabnext<CR>
 "------------------------------------------------------
 nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>

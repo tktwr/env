@@ -51,12 +51,13 @@ syn keyword  myTODO             TODO
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
-syn keyword  myPgUp             PgUp
-syn keyword  myPgDn             PgDn
-syn keyword  myVim              vim
-syn keyword  myWin              win
-syn keyword  myWt               wt
-syn keyword  myBash             bash
+syn keyword  mykRed             PgUp wsl vim
+syn keyword  mykGreen           PgDn gitbash wt
+syn keyword  mykYellow          bash linux
+syn keyword  mykBlue            win
+syn keyword  mykPurple          py readline
+syn keyword  mykAqua            term
+syn keyword  mykOrange          tab
 
 syn match    myRed              "\[ *Red *\]"
 syn match    myGreen            "\[ *Green *\]"
@@ -123,12 +124,13 @@ hi link myTODO             MyOrange
 hi link myOK               MyGreen
 hi link myFAIL             MyRed
 
-hi link myPgUp             MyRed
-hi link myPgDn             MyGreen
-hi link myVim              MyRed
-hi link myWin              MyBlue
-hi link myWt               MyGreen
-hi link myBash             MyYellow
+hi link mykRed             MyRed
+hi link mykGreen           MyGreen
+hi link mykYellow          MyYellow
+hi link mykBlue            MyBlue
+hi link mykPurple          MyPurple
+hi link mykAqua            MyAqua
+hi link mykOrange          MyOrange
 
 hi link myRed              MyRed  
 hi link myGreen            MyGreen 

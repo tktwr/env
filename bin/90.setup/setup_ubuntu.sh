@@ -31,6 +31,7 @@ ncal \
 googler \
 ghostscript \
 x11-apps \
+lhasa \
 "
 pkg_dev="\
 cmake \
