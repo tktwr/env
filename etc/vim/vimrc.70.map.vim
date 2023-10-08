@@ -157,29 +157,22 @@ tnoremap <C-H>   <C-W>h
 tnoremap <C-J>   <C-W>w
 tnoremap <C-K>   <C-W>W
 tnoremap <C-L>   <C-W>l
-
 "------------------------------------------------------
-" C-Number
+" function keys
 "------------------------------------------------------
 nnoremap <silent> <F1>  <C-W>t
-nnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
-nnoremap <silent> <F10> <C-W>b
-
 tnoremap <silent> <F1>  <C-W>t
-tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
-tnoremap <silent> <F10> <C-W>b
 
+nnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
+tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
+
+nnoremap <silent> <F10> <C-W>b
+tnoremap <silent> <F10> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <silent> <End>        <Nop>
-tnoremap <silent> <End>        <Nop>
-
 nnoremap <silent> <BS>         <C-B>
 nmap     <silent> <C-BS>       <Plug>(easymotion-overwin-line)
-
-nnoremap <silent> <C-CR>       <Nop>
-nnoremap <silent> <S-CR>       <Nop>
 "------------------------------------------------------
 nnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
 tnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
@@ -210,10 +203,6 @@ tnoremap <silent> <C-PageUp>   <Nop>
 
 nnoremap <silent> <C-PageDown> <Nop>
 tnoremap <silent> <C-PageDown> <Nop>
-
-tnoremap <silent> <PageUp>     <Nop>
-tnoremap <silent> <PageDown>   <Nop>
-
 "======================================================
 " nvim
 "======================================================

@@ -7,8 +7,6 @@
 F13::LCtrl               ; CapsLock to LCtrl
 RShift::Send,{vkF3sc029} ; RShift to Hankaku/Zenkaku
 RAlt::`
-;LCtrl::PgUp
-;RCtrl::PgDn
 
 ;------------------------------------------------------
 ; combination
