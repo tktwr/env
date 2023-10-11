@@ -68,9 +68,9 @@ nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-K>   :echo 'C-K'<CR>  " [FIXED] prev win
 "nnoremap <silent> <C-L>   :echo 'C-L'<CR>  " [FIXED] right win
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [FIXED] CR
- nnoremap <silent> <C-N>   <C-E>
+ nnoremap <silent> <C-N>   5<C-E>
  nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>
- nnoremap <silent> <C-P>   <C-Y>
+ nnoremap <silent> <C-P>   5<C-Y>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [FIXED] redo
  nnoremap <silent> <C-S>   <Nop>

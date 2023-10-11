@@ -118,6 +118,8 @@ _my_setup_fzf_common() {
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-t:toggle-preview'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-n:preview-down'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-p:preview-up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-j:preview-page-down'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-k:preview-page-up'"
 }
 
 _my_setup_fzf_fdfind() {
