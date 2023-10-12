@@ -66,7 +66,3 @@ IME_SET(SetSts, WinTitle="A")    {
     ,  Int, SetSts) ;lParam  : 0 or 1
 }
 
-; IME off
-~Esc::IME_SET(0)
-~^[::IME_SET(0)
-

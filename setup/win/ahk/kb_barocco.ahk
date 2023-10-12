@@ -1,17 +1,14 @@
-#Include autohotkey_common.ahk
+#Include common_func.ahk
+#Include common_map.ahk
 
 ;------------------------------------------------------
 ; remap
 ;------------------------------------------------------
 
-RShift::Send,{vkF3sc029} ; RShift to Hankaku/Zenkaku
-
 ;------------------------------------------------------
 ; combination
 ;------------------------------------------------------
 
-RCtrl & 1::Send,^+{Tab}         ; wt tab prev
-RCtrl & 2::Send,^{Tab}          ; wt tab next
 RCtrl & 7::Send,#{Left}         ; maximize window in left
 RCtrl & 8::Send,#{Up}           ; maximize window
 RCtrl & 9::Send,#{Right}        ; maximize window in right
