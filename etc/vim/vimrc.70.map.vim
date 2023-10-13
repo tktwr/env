@@ -180,12 +180,6 @@ tnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
 tnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
 "------------------------------------------------------
-nnoremap <silent> <C-^>        <C-W>:tabprev<CR>
-tnoremap <silent> <C-^>        <C-W>:tabprev<CR>
-
-nnoremap <silent> <C-_>        <C-W>:tabnext<CR>
-tnoremap <silent> <C-_>        <C-W>:tabnext<CR>
-"------------------------------------------------------
 nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 

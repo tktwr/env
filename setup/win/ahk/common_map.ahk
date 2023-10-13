@@ -13,8 +13,6 @@ Space::Space
 ;------------------------------------------------------
 
 #IfWinActive ahk_exe WindowsTerminal.exe
-LCtrl & Space::Send,{Esc}
-Space & LCtrl::Send,{Esc}
 Space & i::Send,{Ins}
 Space & o::Send,{Del}
 Space & n::Send,!n
@@ -25,8 +23,20 @@ Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 #IfWinActive
 
+LCtrl & Space::Send,{Esc}
+Space & LCtrl::Send,{Esc}
+
 Space & Esc::AltTab             ; app next
 Space & 1::ShiftAltTab          ; app prev
 Space & 4::Send,^+{Tab}         ; app tab prev
 Space & 5::Send,^{Tab}          ; app tab next
+Space & 6::Send,^{Left}         ; vim tab prev
+Space & 7::Send,^{Right}        ; vim tab next
+
+LCtrl & Esc::AltTab             ; app next
+LCtrl & 1::ShiftAltTab          ; app prev
+LCtrl & 4::Send,^+{Tab}         ; app tab prev
+LCtrl & 5::Send,^{Tab}          ; app tab next
+LCtrl & 6::Send,^{Left}         ; vim tab prev
+LCtrl & 7::Send,^{Right}        ; vim tab next
 
