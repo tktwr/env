@@ -22,7 +22,7 @@
 -     | rconfig/                       | $MY_REMOTE_CONFIG/
 -     | lconfig/                       | $MY_LOCAL_CONFIG/
 -     | pconfig/                       | $MY_PRIVATE_CONFIG/
--     | ahk/                           | $MY_ENV/setup/win/ahk/
+-     | ahk/                           | $MY_ENV/ahk/
 -     | repo/                          | $MY_REPO/
 -     | backup/                        | $MY_BACKUP/
 -     | tmp/                           | $MY_TMP/
