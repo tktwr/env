@@ -10,12 +10,13 @@ dirs="$@"
 FZF_DEFAULT_COMMAND="fd.sh a $dirs" \
 fzf --prompt 'Fd> ' \
     --ansi \
-    --header '[A-A:all|A-D:dir|A-F:file|A-X:explorer|A-C:chrome|A-V:vscode|A-T:preview|A-N:p-next|A-P:p-prev]' \
+    --header '[A-adf] All|Dir|File, [A-xcgv] Explorer|Chrome|Gvim|Vscode, [A-t] Preview' \
     --bind "alt-a:reload(fd.sh a $dirs)" \
     --bind "alt-d:reload(fd.sh d $dirs)" \
     --bind "alt-f:reload(fd.sh f $dirs)" \
     --bind 'alt-x:execute(te.sh {})' \
     --bind 'alt-c:execute(chrome.sh {})' \
+    --bind 'alt-g:execute(gvim.sh {})' \
     --bind 'alt-v:execute(vscode.sh {})' \
     --preview 'preview.sh {}' \
     --preview-window "$pw_opt"

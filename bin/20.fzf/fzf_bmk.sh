@@ -10,7 +10,7 @@ files="$@"
 FZF_DEFAULT_COMMAND="bmk.sh $files" \
 fzf --prompt 'Bmk> ' \
     --ansi \
-    --header '[A-O:open|A-T:preview|A-N:p-next|A-P:p-prev]' \
+    --header '[A-o] Open, [A-t] Preview' \
     --bind 'alt-o:execute(open_bmk.sh {})' \
     --preview 'preview_bmk.sh {}' \
     --preview-window "$pw_opt"
