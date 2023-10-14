@@ -6,26 +6,20 @@ scope: source.mytxt
 
 contexts:
   main:
-    - match: \bPgUp\b
+    - match: \b(LCtrl|PgUp|wsl|vim)\b
       scope: mytxt.red
-    - match: \bPgDn\b
+    - match: \b(RCtrl|PgDn|gitbash|wt)\b
       scope: mytxt.green
-
-    - match: \bvim\b
-      scope: mytxt.red
-    - match: \bwt\b
-      scope: mytxt.green
-    - match: \bbash\b
+    - match: \b(Space|bash|linux)\b
       scope: mytxt.yellow
-
-    - match: \bwsl\b
-      scope: mytxt.red
-    - match: \blinux\b
-      scope: mytxt.yellow
-    - match: \bgitbash\b
-      scope: mytxt.green
-    - match: \bwin\b
+    - match: \b(win)\b
       scope: mytxt.blue
+    - match: \b(py|readline)\b
+      scope: mytxt.purple
+    - match: \b(term)\b
+      scope: mytxt.aqua
+    - match: \b(tab)\b
+      scope: mytxt.orange
 
     - match: \bcall\b
       scope: mytxt.red
