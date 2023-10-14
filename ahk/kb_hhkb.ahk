@@ -13,10 +13,10 @@ SC079::PgDn              ; RMeta 変換キー
 ; combination
 ;------------------------------------------------------
 
-SC079 & 7::Send,#{Left}         ; maximize window in left
-SC079 & 8::Send,#{Up}           ; maximize window
-SC079 & 9::Send,#{Right}        ; maximize window in right
-SC079 & 0::ToggleHalfMaximize() ; toggle maximize / half maximize window
+SC079 & 1::Send,#{Left}         ; maximize window in left
+SC079 & 2::Send,#{Up}           ; maximize window
+SC079 & 3::Send,#{Right}        ; maximize window in right
+SC079 & 4::ToggleHalfMaximize() ; toggle maximize / half maximize window
 SC079 & s::Send,#+s             ; screenshot
 SC079 & d::Send,#d              ; display desktop
 SC079 & g::Send,#g              ; Xbox Game Bar

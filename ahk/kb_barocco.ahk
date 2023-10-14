@@ -9,10 +9,10 @@
 ; combination
 ;------------------------------------------------------
 
-RCtrl & 7::Send,#{Left}         ; maximize window in left
-RCtrl & 8::Send,#{Up}           ; maximize window
-RCtrl & 9::Send,#{Right}        ; maximize window in right
-RCtrl & 0::ToggleHalfMaximize() ; toggle maximize / half maximize window
+RCtrl & 1::Send,#{Left}         ; maximize window in left
+RCtrl & 2::Send,#{Up}           ; maximize window
+RCtrl & 3::Send,#{Right}        ; maximize window in right
+RCtrl & 4::ToggleHalfMaximize() ; toggle maximize / half maximize window
 RCtrl & s::Send,#+s             ; screenshot
 RCtrl & d::Send,#d              ; display desktop
 RCtrl & g::Send,#g              ; Xbox Game Bar
