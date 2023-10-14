@@ -21,12 +21,6 @@ Space & o::Send,^{Down}
 Space & n::Send,!n
 Space & p::Send,!p
 Space & t::Send,!t
-
-Space & h::Send,!h
-Space & j::Send,!j
-Space & k::Send,!k
-Space & l::Send,!l
-
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 #IfWinActive
