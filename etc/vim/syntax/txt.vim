@@ -52,10 +52,10 @@ syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
 syn keyword  mykRed             LCtrl PgUp wsl vim
-syn keyword  mykGreen           RCtrl PgDn gitbash wt
-syn keyword  mykYellow          Space bash linux
+syn keyword  mykGreen           RCtrl PgDn gitbash app
+syn keyword  mykYellow          Space linux bash
 syn keyword  mykBlue            win
-syn keyword  mykPurple          py readline
+syn keyword  mykPurple          py readline fzf
 syn keyword  mykAqua            term
 syn keyword  mykOrange          tab
 

@@ -8,13 +8,13 @@ contexts:
   main:
     - match: \b(LCtrl|PgUp|wsl|vim)\b
       scope: mytxt.red
-    - match: \b(RCtrl|PgDn|gitbash|wt)\b
+    - match: \b(RCtrl|PgDn|gitbash|app)\b
       scope: mytxt.green
-    - match: \b(Space|bash|linux)\b
+    - match: \b(Space|linux|bash)\b
       scope: mytxt.yellow
     - match: \b(win)\b
       scope: mytxt.blue
-    - match: \b(py|readline)\b
+    - match: \b(py|readline|fzf)\b
       scope: mytxt.purple
     - match: \b(term)\b
       scope: mytxt.aqua
