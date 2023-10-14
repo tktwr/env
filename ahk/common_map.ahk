@@ -12,19 +12,36 @@ Space::Space
 ; combination
 ;------------------------------------------------------
 
+LCtrl & Space::Send,{Esc}
+Space & LCtrl::Send,{Esc}
+
 #IfWinActive ahk_exe WindowsTerminal.exe
-Space & i::Send,{Ins}
-Space & o::Send,{Del}
+Space & i::Send,^{Up}
+Space & o::Send,^{Down}
 Space & n::Send,!n
 Space & p::Send,!p
+
+Space & h::Send,!h
 Space & j::Send,!j
 Space & k::Send,!k
+Space & l::Send,!l
+
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 #IfWinActive
 
-LCtrl & Space::Send,{Esc}
-Space & LCtrl::Send,{Esc}
+Space & h::Send,{PgUp}
+Space & j::Send,{Down}
+Space & k::Send,{Up}
+Space & l::Send,{PgDn}
+
+Space & a::Send,{Home}
+Space & e::Send,{End}
+Space & b::Send,{Left}
+Space & f::Send,{Right}
+Space & s::Send,{BS}
+Space & d::Send,{Del}
+Space & g::Send,{F5}
 
 Space & Esc::AltTab             ; app next
 Space & 1::ShiftAltTab          ; app prev

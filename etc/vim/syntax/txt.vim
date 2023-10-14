@@ -51,9 +51,9 @@ syn keyword  myTODO             TODO
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
-syn keyword  mykRed             PgUp wsl vim
-syn keyword  mykGreen           PgDn gitbash wt
-syn keyword  mykYellow          bash linux
+syn keyword  mykRed             LCtrl PgUp wsl vim
+syn keyword  mykGreen           RCtrl PgDn gitbash wt
+syn keyword  mykYellow          Space bash linux
 syn keyword  mykBlue            win
 syn keyword  mykPurple          py readline
 syn keyword  mykAqua            term

@@ -5,7 +5,7 @@
 ; remap
 ;------------------------------------------------------
 
-;RAlt::LWin              ; RAlt
+RAlt::LWin               ; RAlt
 SC07B::PgUp              ; LMeta 無変換キー
 SC079::PgDn              ; RMeta 変換キー
 
@@ -23,13 +23,4 @@ SC079 & g::Send,#g              ; Xbox Game Bar
 SC079 & c::Send,^+c             ; copy
 SC079 & v::Send,^+v             ; paste
 SC079 & r::ReloadScript()       ; reload ahk
-
-SC07B & h::Send,{Left}
-SC07B & j::Send,{Down}
-SC07B & k::Send,{Up}
-SC07B & l::Send,{Right}
-SC07B & p::Send,{PgUp}
-SC07B & n::Send,{PgDn}
-SC07B & a::Send,{Home}
-SC07B & e::Send,{End}
 

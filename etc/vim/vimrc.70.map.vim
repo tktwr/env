@@ -103,6 +103,10 @@ nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 func s:term_map()
   if &filetype == ''
     tnoremap <buffer> <C-ScrollWheelUp>  <C-W>N<ScrollWheelUp>
+    tnoremap <buffer> <C-H>   <C-W>h
+    tnoremap <buffer> <C-J>   <C-W>w
+    tnoremap <buffer> <C-K>   <C-W>W
+    tnoremap <buffer> <C-L>   <C-W>l
   endif
 endfunc
 
@@ -152,11 +156,6 @@ nnoremap <C-H>   <C-W>h
 nnoremap <C-J>   <C-W>w
 nnoremap <C-K>   <C-W>W
 nnoremap <C-L>   <C-W>l
-
-tnoremap <C-H>   <C-W>h
-tnoremap <C-J>   <C-W>w
-tnoremap <C-K>   <C-W>W
-tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " function keys
 "------------------------------------------------------
@@ -168,29 +167,23 @@ tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
 
 nnoremap <silent> <F10> <C-W>b
 tnoremap <silent> <F10> <C-W>b
+
+nnoremap <silent> <F5>  :VisRedraw<CR>
+tnoremap <silent> <F5>  <C-L>
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <BS>         <C-B>
 nmap     <silent> <C-BS>       <Plug>(easymotion-overwin-line)
 "------------------------------------------------------
-nnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
-tnoremap <silent> <Insert>     <C-W>:call VisTabEdit()<CR>
-
-nnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
-tnoremap <silent> <Del>        <C-W>:VisTabClosePrev<CR>
-"------------------------------------------------------
 nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
-
 nnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
 tnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
-
-nnoremap <silent> <C-Up>       <Nop>
-tnoremap <silent> <C-Up>       <Nop>
-
-nnoremap <silent> <C-Down>     <Nop>
-tnoremap <silent> <C-Down>     <Nop>
+nnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
+tnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
+nnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
+tnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
 "------------------------------------------------------
 nnoremap <silent> <C-PageUp>   <Nop>
 tnoremap <silent> <C-PageUp>   <Nop>
