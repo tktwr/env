@@ -18,17 +18,17 @@ Space & LCtrl::Send,{Esc}
 #IfWinActive ahk_exe WindowsTerminal.exe
 Space & i::Send,^{Up}
 Space & o::Send,^{Down}
-Space & n::Send,!n
-Space & p::Send,!p
 Space & t::Send,!t
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 #IfWinActive
 
-Space & h::Send,{PgUp}
+Space & h::Send,{Left}
 Space & j::Send,{Down}
 Space & k::Send,{Up}
-Space & l::Send,{PgDn}
+Space & l::Send,{Right}
+Space & n::Send,{PgDn}
+Space & p::Send,{PgUp}
 
 Space & a::Send,{Home}
 Space & e::Send,{End}
