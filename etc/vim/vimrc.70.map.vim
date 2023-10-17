@@ -93,6 +93,7 @@ nnoremap ,b      :FzfBuffers<CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
+ tnoremap <silent> <C-S>   <BS>
  tnoremap <silent> <C-G>   <C-L>
 " go to Terminal-Normal
  tnoremap <silent> <C-O>   <C-W>N
