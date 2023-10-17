@@ -47,8 +47,8 @@ nnoremap ,t      :VisFzfTags<CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
-nnoremap ,,      <C-W>:silent call wbl#open()<CR>
 
+"nmap ,s <Plug>(easymotion-overwin-f2)
 "------------------------------------------------------
 " nmap C-?
 "------------------------------------------------------
@@ -174,7 +174,6 @@ tnoremap <silent> <F5>  <C-L>
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <BS>         <C-B>
-nmap     <silent> <C-BS>       <Plug>(easymotion-overwin-line)
 "------------------------------------------------------
 nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
