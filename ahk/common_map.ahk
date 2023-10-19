@@ -5,7 +5,6 @@
 ~Esc::IME_SET(0)         ; IME off
 ~^[::IME_SET(0)          ; IME off
 RShift::Send,{vkF3sc029} ; RShift to Hankaku/Zenkaku
-LCtrl::Enter
 Space::Space
 
 ;------------------------------------------------------
@@ -16,6 +15,7 @@ LCtrl & Space::Send,{Esc}
 Space & LCtrl::Send,{Esc}
 
 #IfWinActive ahk_exe WindowsTerminal.exe
+LCtrl::Enter
 Space & i::Send,^{Up}
 Space & o::Send,^{Down}
 Space & t::Send,!t
