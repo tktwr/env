@@ -1,9 +1,10 @@
 ===== | ============================== | ==============================
 - ,d  | Fd                             | :VisFzfAll
-- ,r  | Rg <cfile>                     | :VisFzfRg
-- ,ra | Rg <cfile> all                 | :VisFzfRgAll
-- ,rc | Rg <cfile> %                   | :VisFzfRgCur
-- ,t  | Tags <cfile>             (C-]) | :VisFzfTags
+- ,r  | Rg <cword>                     | :VisFzfRg <cword>
+- ,R  | Rg <cfile>                     | :VisFzfRg <cfile>
+- ,Ra | Rg <cfile> all                 | :VisFzfRgAll <cfile>
+- ,Rc | Rg <cfile> %                   | :VisFzfRgCur <cfile>
+- ,t  | Tags <cfile>             (C-]) | :VisFzfTags <cfile>
 - ,m  | Memo                           | :VisFzfMemo
 - ,h  | Help                           | :FzfHelptags
 - ,b  | Buffers                        | :FzfBuffers

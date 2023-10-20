@@ -7,11 +7,12 @@
 " emacs-style editing in the insert mode
 inoremap <C-A>   <Home>
 inoremap <C-E>   <End>
-inoremap <C-D>   <Del>
 inoremap <C-B>   <Left>
 inoremap <C-F>   <Right>
-"inoremap <C-P>   <Up>
+inoremap <C-S>   <BS>
+inoremap <C-D>   <Del>
 "inoremap <C-N>   <Down>
+"inoremap <C-P>   <Up>
 
 "------------------------------------------------------
 " cmap
@@ -19,11 +20,12 @@ inoremap <C-F>   <Right>
 " emacs-style editing in the command mode
 cnoremap <C-A>   <Home>
 cnoremap <C-E>   <End>
-cnoremap <C-D>   <Del>
 cnoremap <C-B>   <Left>
 cnoremap <C-F>   <Right>
-cnoremap <C-P>   <Up>
+cnoremap <C-S>   <BS>
+cnoremap <C-D>   <Del>
 cnoremap <C-N>   <Down>
+cnoremap <C-P>   <Up>
 
 "------------------------------------------------------
 " nmap
@@ -41,9 +43,7 @@ map , <Nop>
 nnoremap <Space> :VisFzfBmk<CR>
 nnoremap ,d      :VisFzfAll<CR>
 nnoremap ,r      :VisFzfRg<CR>
-nnoremap ,a      :VisFzfRgAll<CR>
-nnoremap ,c      :VisFzfRgCur<CR>
-nnoremap ,t      :VisFzfTags<CR>
+nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
@@ -88,7 +88,7 @@ nnoremap ,b      :FzfBuffers<CR>
 
 "nnoremap <C-]>   g<C-]>
 "nnoremap <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
- nnoremap <C-]>   :VisFzfTags<CR>
+ nnoremap <C-]>   :VisFzfTags <cfile><CR>
 
 "------------------------------------------------------
 " tmap
