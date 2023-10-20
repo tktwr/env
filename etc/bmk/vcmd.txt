@@ -1,7 +1,8 @@
 ===== | ============================== | ==============================
 - ,d  | Fd                             | :VisFzfAll
-- ,r  | Rg <cword>                     | :VisFzfRg <cword>
-- ,R  | Rg <cfile>                     | :VisFzfRg <cfile>
+- ,r  | Rg                             | :VisFzfRg
+- ,rw | Rg <cword>                     | :VisFzfRg <cword>
+- ,rf | Rg <cfile>                     | :VisFzfRg <cfile>
 - ,Ra | Rg <cfile> all                 | :VisFzfRgAll <cfile>
 - ,Rc | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,t  | Tags <cfile>             (C-]) | :VisFzfTags <cfile>
