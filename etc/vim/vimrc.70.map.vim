@@ -53,7 +53,7 @@ nnoremap ,b      :FzfBuffers<CR>
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- nnoremap <silent> <C-B>   <Nop>
+ nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
  nnoremap <silent> <C-C>   <Nop>
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
@@ -70,7 +70,7 @@ nnoremap ,b      :FzfBuffers<CR>
  nnoremap <silent> <C-P>   5<C-Y>
  nnoremap <silent> <C-Q>   @q
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [ORIG] redo
- nnoremap <silent> <C-S>   <Nop>
+ nnoremap <silent> <C-S>   :VisFzfRg <cword><CR>
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [ORIG] prev tag
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
