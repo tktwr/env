@@ -158,6 +158,7 @@
 -     | link.vim:vim-surround                                   | https://github.com/tpope/vim-surround
 -     | link.vim:tabular                                        | https://github.com/godlygeek/tabular
 -     | link.vim:vim-dirdiff                                    | https://github.com/will133/vim-dirdiff
+-     | link.vim:vim-easymotion                                 | https://github.com/easymotion/vim-easymotion
 -     | link.nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
 -     | link.font:HackGen                                       | https://github.com/yuru7/HackGen
 -     | link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts

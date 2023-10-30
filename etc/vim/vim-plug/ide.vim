@@ -13,9 +13,9 @@ endif
 
 Plug 'thinca/vim-ref'
 
-" Plug 'easymotion/vim-easymotion'
-" let g:EasyMotion_do_mapping = 0  " Disable default mappings
-" let g:EasyMotion_smartcase  = 1  " Turn on case-insensitive feature
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0  " Disable default mappings
+let g:EasyMotion_smartcase  = 1  " Turn on case-insensitive feature
 "------------------------------------------------------
 " vim-winbuf-menu
 "------------------------------------------------------

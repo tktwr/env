@@ -45,7 +45,6 @@ nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
-"nmap    ,s      <Plug>(easymotion-overwin-f2)
 "------------------------------------------------------
 " nmap C-?
 "------------------------------------------------------
@@ -54,7 +53,7 @@ nnoremap ,b      :FzfBuffers<CR>
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
- nnoremap <silent> <C-C>   <Nop>
+ nmap     <silent> <C-C>   <Plug>(easymotion-overwin-f2)
  nnoremap <silent> <C-D>   <C-B>
  nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [ORIG] next page
