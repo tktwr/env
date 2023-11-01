@@ -3,18 +3,7 @@
 ;           | vkBCsc033 `,
 ; backslash | vkE2sc073
 
-`;::`;
-`; & h::Send,^h
-`; & j::Send,^j
-`; & k::Send,^k
-`; & l::Send,^l
-
-a::a
-a & s::Send,^h
-a & d::Send,^k
-a & f::Send,^j
-a & g::Send,^l
-
+;------------------------------------------------------
 z::z
 z & x::Send,1
 z & c::Send,2
@@ -33,16 +22,31 @@ z & u::Send,{/}
 z & n::Send,{=}
 z & i::Send,{(}
 z & o::Send,{)}
+z & k::Send,{{}
+z & l::Send,{}}
 
-b::b
-b & i::Send,{(}
-b & o::Send,{)}
-b & k::Send,{[}
-b & l::Send,{]}
-b & ,::Send,{{}
-b & .::Send,{}}
+;------------------------------------------------------
+a::a
+a & s::Send,^h
+a & d::Send,^k
+a & f::Send,^j
+a & g::Send,^l
 
-b &  /::Send,{\}
-b & `;::Send,{|}
-b &  p::Send,{~}
+a & i::Send,{(}
+a & o::Send,{)}
+a & k::Send,{{}
+a & l::Send,{}}
+a & ,::Send,{[}
+a & .::Send,{]}
+
+a &  /::Send,{\}
+a & `;::Send,{|}
+a &  p::Send,{~}
+
+;------------------------------------------------------
+`;::`;
+`; & h::Send,^h
+`; & j::Send,^j
+`; & k::Send,^k
+`; & l::Send,^l
 
