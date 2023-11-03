@@ -65,34 +65,17 @@ f_install_wsltty_config() {
 }
 
 #------------------------------------------------------
-f_print_env() {
-  print-env.sh
-}
-
-f_print_path() {
-  print-path.sh
-}
-
-f_print_version() {
-  print-version.sh
-}
-
-f_print_netsh() {
-  print-netsh.sh
-}
-
+f_print_env()     { print-env.sh; }
+f_print_path()    { print-path.sh; }
+f_print_version() { print-version.sh; }
+f_print_netsh()   { print-netsh.sh; }
 #------------------------------------------------------
-f_setup_ubuntu() {
-  eval_fzf_cmd setup_ubuntu.sh
-}
-
-f_setup_python() {
-  eval_fzf_cmd setup_python.sh
-}
-
-f_setup_winget() {
-  eval_fzf_cmd setup_winget.sh
-}
+f_setup_winget()  { eval_fzf_cmd setup_winget.sh; }
+f_setup_wsl()     { eval_fzf_cmd setup_wsl.sh; }
+f_setup_ubuntu()  { eval_fzf_cmd setup_ubuntu.sh; }
+f_setup_python()  { eval_fzf_cmd setup_python.sh; }
+f_setup_ssh()     { eval_fzf_cmd setup_ssh.sh; }
+f_setup_docker()  { eval_fzf_cmd setup_docker.sh; }
 
 #======================================================
 # main

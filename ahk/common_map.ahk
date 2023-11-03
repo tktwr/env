@@ -4,51 +4,66 @@
 
 ~Esc::IME_SET(0)         ; IME off
 ~^[::IME_SET(0)          ; IME off
+
 RShift::Send,{vkF3sc029} ; RShift to Hankaku/Zenkaku
+
+LCtrl::LCtrl
 Space::Space
+
+;LCtrl & Space::Send,{Esc}
+;Space & LCtrl::Send,{Esc}
 
 ;------------------------------------------------------
 ; combination
 ;------------------------------------------------------
 
-LCtrl & Space::Send,{Esc}
-Space & LCtrl::Send,{Esc}
-
 #IfWinActive ahk_exe WindowsTerminal.exe
-LCtrl::Enter
-Space & i::Send,^{Up}
-Space & o::Send,^{Down}
-Space & t::Send,!t
+;LCtrl::Enter
+Space & /::Send,!/
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 #IfWinActive
 
-Space & h::Send,{Left}
-Space & j::Send,{Down}
-Space & k::Send,{Up}
-Space & l::Send,{Right}
-Space & n::Send,{PgDn}
-Space & p::Send,{PgUp}
+;------------------------------------------------------
+LCtrl & Esc::AltTab             ; win_next
+LCtrl & 1::ShiftAltTab          ; win_prev
+LCtrl & 4::Send,^+{Tab}         ; app_prev
+LCtrl & 5::Send,^{Tab}          ; app_next
+LCtrl & 6::Send,^{Home}         ; tab_prev
+LCtrl & 7::Send,^{End}          ; tab_next
+;------------------------------------------------------
+Space & Esc::AltTab             ; win_next
+Space & 1::ShiftAltTab          ; win_prev
+Space & 4::Send,^+{Tab}         ; app_prev
+Space & 5::Send,^{Tab}          ; app_next
+Space & 6::Send,^{Home}         ; tab_prev
+Space & 7::Send,^{End}          ; tab_next
+;------------------------------------------------------
+Space & q::AltTab               ; win_next
+Space & w::ShiftAltTab          ; win_prev
+Space & e::Send,{Blind}{End}
+Space & r::Send,^+{Tab}         ; app_prev
+Space & t::Send,^{Tab}          ; app_next
 
-Space & a::Send,{Home}
-Space & e::Send,{End}
-Space & b::Send,{Left}
-Space & f::Send,{Right}
+Space & a::Send,{Blind}{Home}
 Space & s::Send,{BS}
 Space & d::Send,{Del}
+Space & f::Send,{Right}
 Space & g::Send,{F5}
 
-Space & Esc::AltTab             ; app next
-Space & 1::ShiftAltTab          ; app prev
-Space & 4::Send,^+{Tab}         ; app tab prev
-Space & 5::Send,^{Tab}          ; app tab next
-Space & 6::Send,^{Left}         ; vim tab prev
-Space & 7::Send,^{Right}        ; vim tab next
+Space & b::Send,{Left}
+;------------------------------------------------------
+Space & y::Send,^{Home}
+Space & u::Send,^{End}
+Space & i::Send,^{PgUp}
+Space & o::Send,^{PgDn}
+Space & p::Send,{PgUp}
 
-LCtrl & Esc::AltTab             ; app next
-LCtrl & 1::ShiftAltTab          ; app prev
-LCtrl & 4::Send,^+{Tab}         ; app tab prev
-LCtrl & 5::Send,^{Tab}          ; app tab next
-LCtrl & 6::Send,^{Left}         ; vim tab prev
-LCtrl & 7::Send,^{Right}        ; vim tab next
+Space & h::Send,{Blind}{Left}
+Space & j::Send,{Blind}{Down}
+Space & k::Send,{Blind}{Up}
+Space & l::Send,{Blind}{Right}
+Space & `;::Send,{PgDn}
 
+Space & n::Send,{PgDn}
+;------------------------------------------------------

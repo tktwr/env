@@ -150,22 +150,51 @@ nnoremap <silent> <F10> <C-W>b
 tnoremap <silent> <F10> <C-W>b
 nnoremap <silent> <F5>  :VisRedraw<CR>
 tnoremap <silent> <F5>  <C-L>
+
+nnoremap <silent> <C-F1>  <Nop>
+tnoremap <silent> <C-F1>  <Nop>
+nnoremap <silent> <C-F2>  <Nop>
+tnoremap <silent> <C-F2>  <Nop>
+nnoremap <silent> <C-F3>  <Nop>
+tnoremap <silent> <C-F3>  <Nop>
+nnoremap <silent> <C-F4>  <Nop>
+tnoremap <silent> <C-F4>  <Nop>
+nnoremap <silent> <C-F5>  <Nop>
+tnoremap <silent> <C-F5>  <Nop>
+nnoremap <silent> <C-F6>  <C-W>:tabprev<CR>
+tnoremap <silent> <C-F6>  <C-W>:tabprev<CR>
+nnoremap <silent> <C-F7>  <C-W>:tabnext<CR>
+tnoremap <silent> <C-F7>  <C-W>:tabnext<CR>
+nnoremap <silent> <C-F8>  <C-W>:call VisTabEdit()<CR>
+tnoremap <silent> <C-F8>  <C-W>:call VisTabEdit()<CR>
+nnoremap <silent> <C-F9>  <C-W>:VisTabClosePrev<CR>
+tnoremap <silent> <C-F9>  <C-W>:VisTabClosePrev<CR>
+nnoremap <silent> <C-F10> <Nop>
+tnoremap <silent> <C-F10> <Nop>
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <BS>         <C-B>
-nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
-tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
-nnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
-tnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
-nnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
-tnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
-nnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
-tnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
-nnoremap <silent> <C-PageUp>   <Nop>
-tnoremap <silent> <C-PageUp>   <Nop>
-nnoremap <silent> <C-PageDown> <Nop>
-tnoremap <silent> <C-PageDown> <Nop>
+nnoremap <silent> <C-Left>     <C-W>h
+tnoremap <silent> <C-Left>     <C-W>h
+nnoremap <silent> <C-Right>    <C-W>l
+tnoremap <silent> <C-Right>    <C-W>l
+nnoremap <silent> <C-Up>       <C-W>W
+tnoremap <silent> <C-Up>       <C-W>W
+nnoremap <silent> <C-Down>     <C-W>w
+tnoremap <silent> <C-Down>     <C-W>w
+nnoremap <silent> <C-Home>     <C-W>:tabprev<CR>
+tnoremap <silent> <C-Home>     <C-W>:tabprev<CR>
+nnoremap <silent> <C-End>      <C-W>:tabnext<CR>
+tnoremap <silent> <C-End>      <C-W>:tabnext<CR>
+nnoremap <silent> <C-PageUp>   <C-W>:call VisTabEdit()<CR>
+tnoremap <silent> <C-PageUp>   <C-W>:call VisTabEdit()<CR>
+nnoremap <silent> <C-PageDown> <C-W>:VisTabClosePrev<CR>
+tnoremap <silent> <C-PageDown> <C-W>:VisTabClosePrev<CR>
+nnoremap <silent> <C-Insert>   <C-W>:call VisTabEdit()<CR>
+tnoremap <silent> <C-Insert>   <C-W>:call VisTabEdit()<CR>
+nnoremap <silent> <C-Del>      <Nop>
+tnoremap <silent> <C-Del>      <Nop>
 "======================================================
 " nvim
 "======================================================

@@ -15,22 +15,35 @@ z & w::Send,7
 z & e::Send,8
 z & r::Send,9
 z & t::Send,0
+
 z & h::Send,{-}
 z & y::Send,{+}
 z & j::Send,{*}
 z & u::Send,{/}
 z & n::Send,{=}
+
 z & i::Send,{(}
 z & o::Send,{)}
 z & k::Send,{{}
 z & l::Send,{}}
 
+z &  p::Send,{BS}
+z & `;::Send,{f}
+z &  /::Send,{l}
+
 ;------------------------------------------------------
 a::a
-a & s::Send,^h
-a & d::Send,^k
-a & f::Send,^j
-a & g::Send,^l
+a & r::Send,{!}
+a & t::Send,{@}
+a & y::Send,{^}
+a & u::Send,{$}
+a & v::Send,{#}
+a & b::Send,{`%}
+a & n::Send,{&}
+a & m::Send,{_}
+a & f::Send,{``}
+a & h::Send,{'}
+a & j::Send,{"}
 
 a & i::Send,{(}
 a & o::Send,{)}
@@ -39,9 +52,9 @@ a & l::Send,{}}
 a & ,::Send,{[}
 a & .::Send,{]}
 
-a &  /::Send,{\}
-a & `;::Send,{|}
 a &  p::Send,{~}
+a & `;::Send,{|}
+a &  /::Send,{\}
 
 ;------------------------------------------------------
 `;::`;
