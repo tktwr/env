@@ -146,10 +146,10 @@ nnoremap <silent> <F1>  <C-W>t
 tnoremap <silent> <F1>  <C-W>t
 nnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
 tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
-nnoremap <silent> <F10> <C-W>b
-tnoremap <silent> <F10> <C-W>b
 nnoremap <silent> <F5>  :VisRedraw<CR>
 tnoremap <silent> <F5>  <C-L>
+nnoremap <silent> <F10> <C-W>b
+tnoremap <silent> <F10> <C-W>b
 
 nnoremap <silent> <C-F1>  <Nop>
 tnoremap <silent> <C-F1>  <Nop>
@@ -175,6 +175,7 @@ tnoremap <silent> <C-F10> <Nop>
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <BS>         <C-B>
+
 nnoremap <silent> <C-Left>     <C-W>h
 tnoremap <silent> <C-Left>     <C-W>h
 nnoremap <silent> <C-Right>    <C-W>l
@@ -191,10 +192,13 @@ nnoremap <silent> <C-PageUp>   <C-W>:call VisTabEdit()<CR>
 tnoremap <silent> <C-PageUp>   <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <C-PageDown> <C-W>:VisTabClosePrev<CR>
 tnoremap <silent> <C-PageDown> <C-W>:VisTabClosePrev<CR>
-nnoremap <silent> <C-Insert>   <C-W>:call VisTabEdit()<CR>
-tnoremap <silent> <C-Insert>   <C-W>:call VisTabEdit()<CR>
+nnoremap <silent> <C-Insert>   <Nop>
+tnoremap <silent> <C-Insert>   <Nop>
 nnoremap <silent> <C-Del>      <Nop>
 tnoremap <silent> <C-Del>      <Nop>
+
+nnoremap <silent> <S-PageUp>   5<C-Y>
+nnoremap <silent> <S-PageDown> 5<C-E>
 "======================================================
 " nvim
 "======================================================

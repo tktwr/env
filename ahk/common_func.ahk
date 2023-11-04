@@ -7,6 +7,11 @@
 ; Reload without dialog
 ;#SingleInstance force
 
+;           | vkBBsc027 `;
+;           | vkBAsc028 `:
+;           | vkBCsc033 `,
+; backslash | vkE2sc073
+
 ;------------------------------------------------------
 ; functions
 ;------------------------------------------------------

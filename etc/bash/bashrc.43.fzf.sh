@@ -116,12 +116,10 @@ _my_setup_fzf_common() {
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse --info 'inline-right'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-/] Preview'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-/:toggle-preview'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'left:preview-page-up'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'down:preview-down+preview-down+preview-down+preview-down+preview-down'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'up:preview-up+preview-up+preview-up+preview-up+preview-up'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'right:preview-page-down'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgdn:down'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgup:up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgup:preview-page-up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgdn:preview-page-down'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-p:preview-up+preview-up+preview-up+preview-up+preview-up'"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-n:preview-down+preview-down+preview-down+preview-down+preview-down'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-s:backward-delete-char'"
 }
 

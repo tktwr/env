@@ -1,9 +1,8 @@
-;           | vkBBsc027 `;
-;           | vkBAsc028 `:
-;           | vkBCsc033 `,
-; backslash | vkE2sc073
+;======================================================
+q::q
+q & Esc::Return
 
-;------------------------------------------------------
+;======================================================
 a::a
 a & Esc::Return
 
@@ -29,7 +28,7 @@ a & .::Send,{]}
 a &  p::Send,{~}
 a & `;::Send,{|}
 a &  /::Send,{\}
-;------------------------------------------------------
+;======================================================
 z::z
 z & Esc::Return
 
@@ -58,25 +57,47 @@ z & l::Send,{}}
 z &  p::Send,{BS}
 z & `;::Send,{f}
 z &  /::Send,{l}
-;------------------------------------------------------
+;======================================================
+p::p
+p & Esc::Return
+
+p & r::ReloadScript()       ; reload ahk
+
+p & s::Send,#+s             ; screenshot
+p & d::Send,#d              ; display desktop
+p & g::Send,#g              ; Xbox Game Bar
+
+p & y::Send,#{Left}         ; maximize window in left
+p & u::Send,#{Up}           ; maximize window
+p & i::Send,#{Right}        ; maximize window in right
+p & o::ToggleHalfMaximize() ; toggle maximize / half maximize window
+;======================================================
 `;::`;
 `; & Esc::Return
 
-`; & q::Send,#{Left}         ; maximize window in left
-`; & w::Send,#{Up}           ; maximize window
-`; & e::Send,#{Right}        ; maximize window in right
-`; & r::ReloadScript()       ; reload ahk
-`; & t::ToggleHalfMaximize() ; toggle maximize / half maximize window
+`; & q::Send,{Blind}{Esc}
+`; & w::Send,{Blind}{Tab}
 
-`; & s::Send,#+s             ; screenshot
-`; & d::Send,#d              ; display desktop
-`; & g::Send,#g              ; Xbox Game Bar
+`; & a::Send,{Blind}{Home}
+`; & s::Send,{Blind}{BS}
+`; & d::Send,{Blind}{Left}
+`; & f::Send,{Blind}{Right}
+`; & g::Send,{Blind}{End}
 
-`; & h::Send,^h
-`; & j::Send,^j
-`; & k::Send,^k
-`; & l::Send,^l
+`; & z::Send,{Blind}{Ins}
+`; & x::Send,{Blind}{Del}
+`; & c::Send,{vkF3sc029} ; Hankaku/Zenkaku
 ;------------------------------------------------------
+`; & y::Send,{Blind}{Home}
+`; & u::Send,{Blind}{End}
+`; & i::Send,{Blind}{PgUp}
+`; & o::Send,{Blind}{PgDn}
+
+`; & h::Send,{Blind}{Left}
+`; & j::Send,{Blind}{Down}
+`; & k::Send,{Blind}{Up}
+`; & l::Send,{Blind}{Right}
+;======================================================
 /::/
 / & Esc::Return
 
@@ -92,4 +113,4 @@ z &  /::Send,{l}
 / & b::Send,{F10}
 / & g::Send,{F11}
 / & t::Send,{F12}
-;------------------------------------------------------
+;======================================================
