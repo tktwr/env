@@ -30,17 +30,17 @@ Space & l::Send,{PgDn}
 Space & /::Send,!/
 #IfWinActive
 
-Space & q::AltTab               ; win_next
-Space & w::ShiftAltTab          ; win_prev
+Space & w::AltTab               ; win_next
+Space & e::ShiftAltTab          ; win_prev
 Space & r::Send,^+{Tab}         ; app_prev
 Space & t::Send,^{Tab}          ; app_next
 
 Space & g::Send,{F5}
 ;------------------------------------------------------
-Space & y::Send,^{Home}
-Space & u::Send,^{End}
-Space & i::Send,^{PgUp}
-Space & o::Send,^{PgDn}
+Space & y::Send,^{Left}
+Space & u::Send,^{Right}
+Space & i::Send,^{Up}
+Space & o::Send,^{Down}
 Space & p::Send,{Blind}{PgUp}
 
 Space & h::Send,{PgUp}
