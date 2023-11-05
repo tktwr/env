@@ -48,43 +48,48 @@ nnoremap ,b      :FzfBuffers<CR>
 "------------------------------------------------------
 " nmap C-?
 "------------------------------------------------------
+ nnoremap <silent> <C-Q>   @q
+"nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [ORIG] window command
+ nnoremap <silent> <C-E>   :close<CR>
+"nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [ORIG] redo
+"nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [ORIG] prev tag
+
 "nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
 "xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
  nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
- nmap     <silent> <C-C>   <Plug>(easymotion-overwin-f2)
+ nnoremap <silent> <C-S>   :VisFzfRg <cword><CR>
  nnoremap <silent> <C-D>   <C-B>
- nnoremap <silent> <C-E>   :close<CR>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [ORIG] next page
  nnoremap <silent> <C-G>   :VisRedraw<CR>
- nnoremap <silent> <C-H>   <C-W>h
+
+ nnoremap <silent> <C-Z>   :setl wrap! wrap?<CR>
+ nnoremap <silent> <C-X>   d'm
+ nmap     <silent> <C-C>   <Plug>(easymotion-overwin-f2)
+"nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
+ nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
+"------------------------------------------------------
+ nnoremap <silent> <C-Y>   y'm
+ nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-I>   :echo 'C-I'<CR>  " [ORIG] TAB
+ nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>
+ nnoremap <silent> <C-P>   5<C-Y>
+
+ nnoremap <silent> <C-H>   <C-W>h
  nnoremap <silent> <C-J>   <C-W>w
  nnoremap <silent> <C-K>   <C-W>W
  nnoremap <silent> <C-L>   <C-W>l
-"nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [ORIG] CR
+ nnoremap <silent> <C-;>   <C-W>:
+
  nnoremap <silent> <C-N>   5<C-E>
- nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>
- nnoremap <silent> <C-P>   5<C-Y>
- nnoremap <silent> <C-Q>   @q
-"nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [ORIG] redo
- nnoremap <silent> <C-S>   :VisFzfRg <cword><CR>
-"nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [ORIG] prev tag
- nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
-"nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
-"nnoremap <silent> <C-W>   :echo 'C-W'<CR>  " [ORIG] window command
- nnoremap <silent> <C-X>   d'm
- nnoremap <silent> <C-Y>   y'm
- nnoremap <silent> <C-Z>   :setl wrap! wrap?<CR>
+"nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [ORIG] CR
+ nnoremap <silent> <C-,>   :VisModifiable<CR>
+ nnoremap <silent> <C-.>   :VisLcdHere<CR>
+"nnoremap <silent> <C-/>   <Nop>
 
- nnoremap <C-;>   <C-W>:
- nnoremap <C-.>   :VisLcdHere<CR>
- nnoremap <C-,>   :VisModifiable<CR>
-
-"nnoremap <C-]>   g<C-]>
-"nnoremap <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
- nnoremap <C-]>   :VisFzfTags <cfile><CR>
+"nnoremap <silent> <C-]>   g<C-]>
+"nnoremap <silent> <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
+ nnoremap <silent> <C-]>   :VisFzfTags <cfile><CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
@@ -174,8 +179,6 @@ tnoremap <silent> <C-F10> <Nop>
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
-nnoremap <silent> <BS>         <C-B>
-
 nnoremap <silent> <C-Left>     <C-W>h
 tnoremap <silent> <C-Left>     <C-W>h
 nnoremap <silent> <C-Right>    <C-W>l

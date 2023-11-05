@@ -74,6 +74,10 @@ f_apt_install_dev() {
   sudo -E apt install $pkg_dev
 }
 
+f_service_list() {
+  systemctl list-unit-files -t service
+}
+
 #======================================================
 # main
 #======================================================
