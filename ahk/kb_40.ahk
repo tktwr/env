@@ -67,11 +67,11 @@ p & s::Send,#+s             ; screenshot
 p & d::Send,#d              ; display desktop
 p & g::Send,#g              ; Xbox Game Bar
 
-p & y::Send,#{Left}         ; maximize window in left
-p & u::Send,#{Up}           ; maximize window
-p & i::Send,#{Right}        ; maximize window in right
-p & o::ToggleHalfMaximize() ; toggle maximize / half maximize window
-;======================================================
+p & y::ToggleHalfMaximize() ; toggle maximize / half maximize window
+p & u::Send,#{Left}         ; maximize window in left
+p & i::Send,#{Up}           ; maximize window
+p & o::Send,#{Right}        ; maximize window in right
+;===================================================
 `;::`;
 `; & Esc::Return
 

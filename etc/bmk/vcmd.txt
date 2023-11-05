@@ -22,6 +22,7 @@
 - ,t2 | Resize 20                      | :VisWinResize 20
 - ,t3 | Resize 30                      | :VisWinResize 30
 - ,t4 | Resize 40                      | :VisWinResize 40
+- ,tv | VResize 172                    | :VisWinVResize 172
 - ,L  | Lcd                            | :VisLcdHere
 - ,I  | IDE                            | :VisIDE
 - ,I2 | IDE2                           | :VisIDE 2
