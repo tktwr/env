@@ -27,21 +27,21 @@ mycmake-set() {
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
-  alias ,F='vimapi-edit-dir'
-  alias ,F2='vimapi-edit-dir-2'
+  alias ,f='vimapi-edit-dir'
+  alias ,f2='vimapi-edit-dir-2'
 
-  alias ,I='vimapi_exec VisIDE'
-  alias ,It='vimapi_exec_tab VisIDE'
-  alias ,I2='vimapi_exec VisIDE 2'
-  alias ,I2t='vimapi_exec_tab VisIDE 2'
+  alias ,i='vimapi_exec VisIDE'
+  alias ,it='vimapi_exec_tab VisIDE'
+  alias ,i2='vimapi_exec VisIDE 2'
+  alias ,i2t='vimapi_exec_tab VisIDE 2'
 
-  alias ,N='vimapi_exec new'
-  alias ,Nv='vimapi_exec vnew'
-  alias ,Nt='vimapi_exec tabedit'
+  alias ,n='vimapi_exec new'
+  alias ,nv='vimapi_exec vnew'
+  alias ,nt='vimapi_exec tabedit'
 
-  alias ,T='vimapi_exec VisTerm'
-  alias ,Tv='vimapi_exec VisTermV'
-  alias ,Tt='vimapi_exec tab VisTerm'
+  alias ,t='vimapi_exec VisTerm'
+  alias ,tv='vimapi_exec VisTermV'
+  alias ,tt='vimapi_exec tab VisTerm'
 
   alias ,resize='vimapi_exec VisWinResize'
   alias ,resize_x='vimapi_exec VisWinVResize'
@@ -54,17 +54,17 @@ f_alias_vim_term() {
   alias ,pip='vimapi_exec VisFzfPip tab'
   alias ,dpkg='vimapi_exec VisFzfDpkg tab'
 
-  alias ,GS='vimapi_exec VisGS'
-  alias ,GV='vimapi_exec VisGV'
-  alias ,GL='vimapi_exec_above GitLog $PWD'
+  alias ,gs='vimapi_exec VisGS'
+  alias ,gv='vimapi_exec VisGV'
+  alias ,gl='vimapi_exec_above GitLog $PWD'
 
-  alias ,t=',toggle'
-  alias ,tx=',toggle_x'
-  alias ,t0=',resize 5'
-  alias ,t1=',resize 10'
-  alias ,t2=',resize 20'
-  alias ,t3=',resize 30'
-  alias ,t4=',resize 40'
+  alias ,r=',toggle'
+  alias ,rx=',toggle_x'
+  alias ,r0=',resize 5'
+  alias ,r1=',resize 10'
+  alias ,r2=',resize 20'
+  alias ,r3=',resize 30'
+  alias ,r4=',resize 40'
 }
 
 f_alias_term() {
@@ -73,26 +73,26 @@ f_alias_term() {
   else
     TERM_cygwin=''
   fi
-  alias ,I="$TERM_cygwin vim -c 'VisIDE'"
-  alias ,I2="$TERM_cygwin vim -c 'VisIDE 2'"
-  alias ,T="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
-  alias ,T2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
-  alias ,T2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
+  alias ,i="$TERM_cygwin vim -c 'VisIDE'"
+  alias ,i2="$TERM_cygwin vim -c 'VisIDE 2'"
+  alias ,t="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
+  alias ,t2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
+  alias ,t2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
 
-  alias ,nI='nvim -c "VisIDE"'
-  alias ,nT='nvim -c "VisTerm" -c "only"'
-  alias ,nT2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
-  alias ,nT2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
+  alias ,ni='nvim -c "VisIDE"'
+  alias ,nt='nvim -c "VisTerm" -c "only"'
+  alias ,nt2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
+  alias ,nt2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
 
-  alias ,GS='vim -c "VisGS"'
-  alias ,GV='vim -c "VisGV"'
+  alias ,gs='vim -c "VisGS"'
+  alias ,gv='vim -c "VisGV"'
 }
 
 #======================================================
 # os
 #======================================================
 f_alias_wsl() {
-  alias ,D='te.sh'
+  alias ,d='te.sh'
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
@@ -103,13 +103,13 @@ f_alias_msys() {
 }
 
 f_alias_gitbash() {
-  alias ,D='te.sh'
+  alias ,d='te.sh'
 }
 
 f_alias_linux() {
-  #alias ,D='nautilus'
+  #alias ,d='nautilus'
   #alias ,pdf='evince'
-  alias ,D='exo-open --launch FileManager'
+  alias ,d='exo-open --launch FileManager'
   alias ,pdf='qpdfview --unique'
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
