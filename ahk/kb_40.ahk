@@ -1,116 +1,92 @@
 ;======================================================
-q::q
-q & Esc::Return
+Tab::Tab
+Tab & Esc::Return
 
-;======================================================
-a::a
-a & Esc::Return
+Tab & q::AltTab               ; win_next
+Tab & w::ShiftAltTab          ; win_prev
+Tab & e::Send,^+{Tab}         ; app_prev
+Tab & r::Send,^{Tab}          ; app_next
+Tab & t::Send,{F5}
 
-a & r::Send,{!}
-a & t::Send,{@}
-a & y::Send,{^}
-a & u::Send,{$}
-a & v::Send,{#}
-a & b::Send,{`%}
-a & n::Send,{&}
-a & m::Send,{_}
-a & f::Send,{``}
-a & h::Send,{'}
-a & j::Send,{"}
+Tab & s::Send,#+s             ; screenshot
+Tab & d::Send,#d              ; display desktop
+Tab & g::Send,#g              ; Xbox Game Bar
 
-a & i::Send,{(}
-a & o::Send,{)}
-a & k::Send,{{}
-a & l::Send,{}}
-a & ,::Send,{[}
-a & .::Send,{]}
+Tab & i::Send,{(}
+Tab & o::Send,{)}
+Tab & k::Send,{{}
+Tab & l::Send,{}}
+Tab & ,::Send,{[}
+Tab & .::Send,{]}
 
-a &  p::Send,{~}
-a & `;::Send,{|}
-a &  /::Send,{\}
-;======================================================
-z::z
-z & Esc::Return
-
-z & x::Send,1
-z & c::Send,2
-z & v::Send,3
-z & s::Send,4
-z & d::Send,5
-z & f::Send,6
-z & w::Send,7
-z & e::Send,8
-z & r::Send,9
-z & b::Send,0
-
-z & h::Send,{-}
-z & y::Send,{+}
-z & j::Send,{*}
-z & u::Send,{/}
-z & n::Send,{=}
-
-z & i::Send,{(}
-z & o::Send,{)}
-z & k::Send,{{}
-z & l::Send,{}}
-
-z &  p::Send,{BS}
-z & `;::Send,{f}
-z &  /::Send,{l}
-;======================================================
-p::p
-p & Esc::Return
-
-p & r::ReloadScript()       ; reload ahk
-
-p & s::Send,#+s             ; screenshot
-p & d::Send,#d              ; display desktop
-p & g::Send,#g              ; Xbox Game Bar
-
-p & y::ToggleHalfMaximize() ; toggle maximize / half maximize window
-p & u::Send,#{Left}         ; maximize window in left
-p & i::Send,#{Up}           ; maximize window
-p & o::Send,#{Right}        ; maximize window in right
+Tab &  p::Send,#{Left}        ; maximize window in left
+Tab & `;::Send,#{Up}          ; maximize window
+Tab &  /::Send,#{Right}       ; maximize window in right
 ;===================================================
-`;::`;
-`; & Esc::Return
+BS::BS
+BS & Esc::Return
 
-`; & q::Send,{Blind}{Esc}
-`; & w::Send,{Blind}{Tab}
-
-`; & a::Send,{Blind}{Home}
-`; & s::Send,{Blind}{BS}
-`; & d::Send,{Blind}{Left}
-`; & f::Send,{Blind}{Right}
-`; & g::Send,{Blind}{End}
-
-`; & z::Send,{Blind}{Ins}
-`; & x::Send,{Blind}{Del}
-`; & c::Send,{vkF3sc029} ; Hankaku/Zenkaku
-;------------------------------------------------------
-`; & y::Send,{Blind}{Home}
-`; & u::Send,{Blind}{End}
-`; & i::Send,{Blind}{PgUp}
-`; & o::Send,{Blind}{PgDn}
-
-`; & h::Send,{Blind}{Left}
-`; & j::Send,{Blind}{Down}
-`; & k::Send,{Blind}{Up}
-`; & l::Send,{Blind}{Right}
+BS & x::Send,{F1}
+BS & c::Send,{F2}
+BS & v::Send,{F3}
+BS & s::Send,{F4}
+BS & d::Send,{F5}
+BS & f::Send,{F6}
+BS & w::Send,{F7}
+BS & e::Send,{F8}
+BS & r::Send,{F9}
+BS & b::Send,{F10}
+BS & g::Send,{F11}
+BS & t::Send,{F12}
 ;======================================================
-/::/
-/ & Esc::Return
+Enter::Enter
+Enter & Esc::Return
 
-/ & x::Send,{F1}
-/ & c::Send,{F2}
-/ & v::Send,{F3}
-/ & s::Send,{F4}
-/ & d::Send,{F5}
-/ & f::Send,{F6}
-/ & w::Send,{F7}
-/ & e::Send,{F8}
-/ & r::Send,{F9}
-/ & b::Send,{F10}
-/ & g::Send,{F11}
-/ & t::Send,{F12}
+Enter & q::Send,{!}
+Enter & w::Send,{@}
+Enter & e::Send,{^}
+Enter & r::Send,{$}
+Enter & t::Send,{`%}
+
+Enter & a::Send,{#}
+Enter & s::Send,{~}
+Enter & d::Send,{"}
+Enter & f::Send,{'}
+Enter & g::Send,{``}
+
+Enter & z::Send,{/}
+Enter & x::Send,{\}
+Enter & c::Send,{&}
+Enter & v::Send,{|}
+Enter & b::Send,{_}
 ;======================================================
+;RShift::RShift
+RShift & Esc::Return
+
+RShift & z::Send,0
+RShift & x::Send,1
+RShift & c::Send,2
+RShift & v::Send,3
+RShift & s::Send,4
+RShift & d::Send,5
+RShift & f::Send,6
+RShift & w::Send,7
+RShift & e::Send,8
+RShift & r::Send,9
+
+RShift & a::Send,{-}
+RShift & q::Send,{+}
+RShift & g::Send,{*}
+RShift & t::Send,{/}
+RShift & b::Send,{=}
+;======================================================
+; #IfTimeout 500 ; Set the timeout to 10 ms.
+;
+; n::
+; If (A_PriorHotKey == A_ThisHotKey and A_TimeSincePriorHotkey < 800) {
+;   Send,{m}
+;   Return
+; } Else {
+;   Send,{n}
+; }
+; Return
