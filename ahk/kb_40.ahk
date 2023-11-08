@@ -53,11 +53,11 @@ Enter & d::Send,{"}
 Enter & f::Send,{'}
 Enter & g::Send,{``}
 
-Enter & z::Send,{/}
+Enter & z::Send,{_}
 Enter & x::Send,{\}
-Enter & c::Send,{&}
-Enter & v::Send,{|}
-Enter & b::Send,{_}
+Enter & c::Send,{|}
+Enter & v::Send,{/}
+Enter & b::Send,{&}
 ;======================================================
 ;RShift::RShift
 RShift & Esc::Return
