@@ -6,7 +6,6 @@ Tab & q::AltTab               ; win_next
 Tab & w::ShiftAltTab          ; win_prev
 Tab & e::Send,^+{Tab}         ; app_prev
 Tab & r::Send,^{Tab}          ; app_next
-Tab & t::Send,{F5}
 
 Tab & s::Send,#+s             ; screenshot
 Tab & d::Send,#d              ; display desktop

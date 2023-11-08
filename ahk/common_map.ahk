@@ -22,10 +22,10 @@ Space & Esc::Return
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 ;------------------------------------------------------
-Space & h::Send,{PgUp}
+Space & h::Send,{Blind}{PgUp}
 Space & j::Send,^n
 Space & k::Send,^p
-Space & l::Send,{PgDn}
+Space & l::Send,{Blind}{PgDn}
 
 Space & /::Send,!/
 #IfWinActive
@@ -34,7 +34,6 @@ Space & q::AltTab               ; win_next
 Space & w::ShiftAltTab          ; win_prev
 Space & e::Send,^+{Tab}         ; app_prev
 Space & r::Send,^{Tab}          ; app_next
-Space & t::Send,{F5}
 
 Space & a::Send,{Blind}{Home}
 Space & s::Send,{Blind}{BS}
@@ -49,15 +48,15 @@ Space & y::Send,^{Left}
 Space & u::Send,^{Right}
 Space & i::Send,^{Up}
 Space & o::Send,^{Down}
-Space & p::Send,{Esc}
+Space & p::Send,{Blind}{Esc}
 
-Space & h::Send,{PgUp}
+Space & h::Send,{Blind}{PgUp}
 Space & j::Send,{Down 5}
 Space & k::Send,{Up 5}
-Space & l::Send,{PgDn}
+Space & l::Send,{Blind}{PgDn}
 
-Space & n::Send,{Down}
-Space & m::Send,{Up}
+Space & n::Send,{Blind}{Down}
+Space & m::Send,{Blind}{Up}
 Space & ,::ReloadScript()       ; reload ahk
 Space & .::Suspend              ; suspend ahk
 ;======================================================
