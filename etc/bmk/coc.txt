@@ -1,40 +1,40 @@
------ | ------------------------------ | ------------------------------
-- ,D  | coc:Diagnostics                | :CocDiagnostics
--     | coc:doHover                (K) | :call CocAction('doHover')
-- ,I  | coc:showIncomingCalls          | :call CocAction('showIncomingCalls')
-- ,O  | coc:showOutgoingCalls          | :call CocAction('showOutgoingCalls')
--     | coc:Info                       | :CocInfo
-- ,L  | coc:OpenLog                    | :CocOpenLog
--     | coc:Install                    | :MyCocInstall
--     | coc:Update                     | :CocUpdate
-- ,p  | coc:diagnostic-prev            | _Plug_(coc-diagnostic-prev)
-- ,n  | coc:diagnostic-next            | _Plug_(coc-diagnostic-next)
-- ,d  | coc:definition                 | _Plug_(coc-definition)
-- ,t  | coc:type-definition            | _Plug_(coc-type-definition)
-- ,i  | coc:implementation             | _Plug_(coc-implementation)
-- ,r  | coc:references                 | _Plug_(coc-references)
-- ,R  | coc:rename                     | _Plug_(coc-rename)
--     | coc:format-selected            | _Plug_(coc-format-selected)
-- ,F  | coc:Format %                   | :MyCocFormat
-- ,S  | coc:clangd.switchSourceHeader  | :CocCommand clangd.switchSourceHeader
--     | coc:workspace.inspectEdit      | :CocCommand workspace.inspectEdit
-- ,C  | coc:document.checkBuffer       | :CocCommand document.checkBuffer
------ | ------------------------------ | ------------------------------
--     | coclist:extensions             | :CocList extensions
--     | coclist:vimcommands            | :CocList vimcommands
--     | coclist:buffers                | :CocList buffers
--     | coclist:words                  | :CocList words
--     | coclist:outline                | :CocList outline
--     | coclist:resume                 | :CocListResume
------ | ------------------------------ | ------------------------------
--     | cocfzflist:                    | :CocFzfList
--     | cocfzflist:diagnostics         | :CocFzfList diagnostics
--     | cocfzflist:diagnostics %       | :CocFzfList diagnostics --current-buf
--     | cocfzflist:commands            | :CocFzfList commands
--     | cocfzflist:extensions          | :CocFzfList extensions
--     | cocfzflist:location            | :CocFzfList location
--     | cocfzflist:outline             | :CocFzfList outline
--     | cocfzflist:symbols             | :CocFzfList symbols
--     | cocfzflist:resume              | :CocFzfListResume
+---------- | ------------------------------ | ------------------------------
+- ,D       | coc:Diagnostics                | :CocDiagnostics
+-          | coc:doHover                (K) | :call CocAction('doHover')
+- ,I       | coc:showIncomingCalls          | :call CocAction('showIncomingCalls')
+- ,O       | coc:showOutgoingCalls          | :call CocAction('showOutgoingCalls')
+-          | coc:Info                       | :CocInfo
+- ,L       | coc:OpenLog                    | :CocOpenLog
+-          | coc:Install                    | :MyCocInstall
+-          | coc:Update                     | :CocUpdate
+- ,p       | coc:diagnostic-prev            | _Plug_(coc-diagnostic-prev)
+- ,n       | coc:diagnostic-next            | _Plug_(coc-diagnostic-next)
+- ,d       | coc:definition                 | _Plug_(coc-definition)
+- ,t       | coc:type-definition            | _Plug_(coc-type-definition)
+- ,i       | coc:implementation             | _Plug_(coc-implementation)
+- ,r       | coc:references                 | _Plug_(coc-references)
+- ,R       | coc:rename                     | _Plug_(coc-rename)
+-          | coc:format-selected            | _Plug_(coc-format-selected)
+- ,F       | coc:Format %                   | :MyCocFormat
+- ,S       | coc:clangd.switchSourceHeader  | :CocCommand clangd.switchSourceHeader
+-          | coc:workspace.inspectEdit      | :CocCommand workspace.inspectEdit
+- ,C       | coc:document.checkBuffer       | :CocCommand document.checkBuffer
+-----      | ------------------------------ | ------------------------------
+-          | coclist:extensions             | :CocList extensions
+-          | coclist:vimcommands            | :CocList vimcommands
+-          | coclist:buffers                | :CocList buffers
+-          | coclist:words                  | :CocList words
+-          | coclist:outline                | :CocList outline
+-          | coclist:resume                 | :CocListResume
+-----      | ------------------------------ | ------------------------------
+-          | cocfzflist:                    | :CocFzfList
+-          | cocfzflist:diagnostics         | :CocFzfList diagnostics
+-          | cocfzflist:diagnostics %       | :CocFzfList diagnostics --current-buf
+-          | cocfzflist:commands            | :CocFzfList commands
+-          | cocfzflist:extensions          | :CocFzfList extensions
+-          | cocfzflist:location            | :CocFzfList location
+-          | cocfzflist:outline             | :CocFzfList outline
+-          | cocfzflist:symbols             | :CocFzfList symbols
+-          | cocfzflist:resume              | :CocFzfListResume
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -1,12 +1,12 @@
------ | ------------------------------                   | ------------------------------
--     | local:engword                                    | $MY_LOCAL_CONFIG/eng/engword.txt
--     | github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
--     | github:cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
--     | github:cycles/node_principled_bsdf.osl           | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
--     | github:eevee/gpu_shader_material_principled.glsl | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
--     | github:eevee/common_utiltex_lib.glsl             | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/common_utiltex_lib.glsl
--     | github:eevee/bsdf_common_lib.glsl                | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/bsdf_common_lib.glsl
--     | github:gltf/pbr.frag                             | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
--     | github:ssss/SeparableSSS.h                       | $MY_GITHUB/separable-sss/SeparableSSS.h
+---------- | ------------------------------                   | ------------------------------
+-          | local:engword                                    | $MY_LOCAL_CONFIG/eng/engword.txt
+-          | github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
+-          | github:cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
+-          | github:cycles/node_principled_bsdf.osl           | $MY_GITHUB/blender/intern/cycles/kernel/osl/shaders/node_principled_bsdf.osl
+-          | github:eevee/gpu_shader_material_principled.glsl | $MY_GITHUB/blender/source/blender/gpu/shaders/material/gpu_shader_material_principled.glsl
+-          | github:eevee/common_utiltex_lib.glsl             | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/common_utiltex_lib.glsl
+-          | github:eevee/bsdf_common_lib.glsl                | $MY_GITHUB/blender/source/blender/draw/engines/eevee/shaders/bsdf_common_lib.glsl
+-          | github:gltf/pbr.frag                             | $MY_GITHUB/glTF-Sample-Viewer/source/Renderer/shaders/pbr.frag
+-          | github:ssss/SeparableSSS.h                       | $MY_GITHUB/separable-sss/SeparableSSS.h
 
 # vim:set ft=bmk syntax=txt nowrap:

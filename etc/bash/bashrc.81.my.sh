@@ -30,18 +30,18 @@ f_alias_vim_term() {
   alias ,f='vimapi-edit-dir'
   alias ,f2='vimapi-edit-dir-2'
 
-  alias ,i='vimapi_exec VisIDE'
-  alias ,it='vimapi_exec_tab VisIDE'
-  alias ,i2='vimapi_exec VisIDE 2'
-  alias ,i2t='vimapi_exec_tab VisIDE 2'
+  alias ,ide='vimapi_exec VisIDE'
+  alias ,idetab='vimapi_exec_tab VisIDE'
+  alias ,ide2='vimapi_exec VisIDE 2'
+  alias ,ide2tab='vimapi_exec_tab VisIDE 2'
 
-  alias ,n='vimapi_exec new'
-  alias ,nv='vimapi_exec vnew'
-  alias ,nt='vimapi_exec tabedit'
+  alias ,edit='vimapi_exec new'
+  alias ,editv='vimapi_exec vnew'
+  alias ,edittab='vimapi_exec tabedit'
 
-  alias ,t='vimapi_exec VisTerm'
-  alias ,tv='vimapi_exec VisTermV'
-  alias ,tt='vimapi_exec tab VisTerm'
+  alias ,term='vimapi_exec VisTerm'
+  alias ,termv='vimapi_exec VisTermV'
+  alias ,termtab='vimapi_exec tab VisTerm'
 
   alias ,resize='vimapi_exec VisWinResize'
   alias ,resize_x='vimapi_exec VisWinVResize'
@@ -73,16 +73,16 @@ f_alias_term() {
   else
     TERM_cygwin=''
   fi
-  alias ,i="$TERM_cygwin vim -c 'VisIDE'"
-  alias ,i2="$TERM_cygwin vim -c 'VisIDE 2'"
-  alias ,t="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
-  alias ,t2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
-  alias ,t2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
+  alias ,ide="$TERM_cygwin vim -c 'VisIDE'"
+  alias ,ide2="$TERM_cygwin vim -c 'VisIDE 2'"
+  alias ,term="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
+  alias ,term2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
+  alias ,term2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
 
-  alias ,ni='nvim -c "VisIDE"'
-  alias ,nt='nvim -c "VisTerm" -c "only"'
-  alias ,nt2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
-  alias ,nt2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
+  alias ,nide='nvim -c "VisIDE"'
+  alias ,nterm='nvim -c "VisTerm" -c "only"'
+  alias ,nterm2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
+  alias ,nterm2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
 
   alias ,gs='vim -c "VisGS"'
   alias ,gv='vim -c "VisGV"'
