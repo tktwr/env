@@ -34,6 +34,7 @@ Space & q::AltTab               ; win_next
 Space & w::ShiftAltTab          ; win_prev
 Space & e::Send,^+{Tab}         ; app_prev
 Space & r::Send,^{Tab}          ; app_next
+Space & t::Send,^+{t}           ; app_tab
 
 Space & a::Send,{Blind}{Home}
 Space & s::Send,{Blind}{BS}
@@ -57,6 +58,6 @@ Space & l::Send,{Blind}{PgDn}
 
 Space & n::Send,{Blind}{Down}
 Space & m::Send,{Blind}{Up}
-Space & ,::ReloadScript()       ; reload ahk
-Space & .::Suspend              ; suspend ahk
+Space & ,::ReloadScript()
+Space & .::SuspendScript()
 ;======================================================

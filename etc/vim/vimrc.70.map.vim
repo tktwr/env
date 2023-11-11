@@ -45,6 +45,12 @@ nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
+
+nmap ,s          <Plug>(easymotion-overwin-f2)
+nmap ,j          <Plug>(easymotion-j)
+vmap ,j          <Plug>(easymotion-j)
+nmap ,k          <Plug>(easymotion-k)
+vmap ,k          <Plug>(easymotion-k)
 "------------------------------------------------------
 " nmap C-?
 "------------------------------------------------------
@@ -65,11 +71,11 @@ nnoremap ,b      :FzfBuffers<CR>
 
  nnoremap <silent> <C-Z>   :setl wrap! wrap?<CR>
  nnoremap <silent> <C-X>   d'm
- nmap     <silent> <C-C>   <Plug>(easymotion-overwin-f2)
+ nnoremap <silent> <C-C>   y'm
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
  nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
 "------------------------------------------------------
- nnoremap <silent> <C-Y>   y'm
+ nmap     <silent> <C-Y>   <Plug>(easymotion-overwin-f2)
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
 "nnoremap <silent> <C-I>   :echo 'C-I'<CR>  " [ORIG] TAB
  nnoremap <silent> <C-O>   <C-W>:silent call wbl#pop()<CR>

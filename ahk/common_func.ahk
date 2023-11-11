@@ -21,6 +21,12 @@ ReloadScript() {
   return
 }
 
+SuspendScript() {
+  MsgBox, Suspend
+  Suspend
+  return
+}
+
 ScreenInfo() {
   w = %A_ScreenWidth%
   w_half = %A_ScreenWidth%

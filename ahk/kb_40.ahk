@@ -11,6 +11,10 @@ Tab & s::Send,#+s             ; screenshot
 Tab & d::Send,#d              ; display desktop
 Tab & g::Send,#g              ; Xbox Game Bar
 
+Tab & u::Send,{(}{)}
+Tab & j::Send,{{}{}}
+Tab & m::Send,{[}{]}
+
 Tab & i::Send,{(}
 Tab & o::Send,{)}
 Tab & k::Send,{{}
@@ -18,9 +22,9 @@ Tab & l::Send,{}}
 Tab & ,::Send,{[}
 Tab & .::Send,{]}
 
-Tab &  p::Send,#{Left}        ; maximize window in left
-Tab & `;::Send,#{Up}          ; maximize window
-Tab &  /::Send,#{Right}       ; maximize window in right
+Tab & z::Send,#{Left}        ; maximize window in left
+Tab & x::Send,#{Up}          ; maximize window
+Tab & c::Send,#{Right}       ; maximize window in right
 ;===================================================
 BS::BS
 BS & Esc::Return
@@ -58,6 +62,8 @@ Enter & x::Send,{\}
 Enter & c::Send,{|}
 Enter & v::Send,{/}
 Enter & b::Send,{&}
+
+Enter & /::Send,{BS}
 ;======================================================
 ;RShift::RShift
 RShift & Esc::Return
@@ -78,6 +84,10 @@ RShift & q::Send,{+}
 RShift & g::Send,{*}
 RShift & t::Send,{/}
 RShift & b::Send,{=}
+
+RShift & ,::Send,{,}
+RShift & .::Send,{.}
+RShift & /::Send,{BS}
 ;======================================================
 ; #IfTimeout 500 ; Set the timeout to 10 ms.
 ;
