@@ -56,7 +56,7 @@ f_alias_vim_term() {
 
   alias ,gs='vimapi_exec VisGS'
   alias ,gv='vimapi_exec VisGV'
-  alias ,gl='vimapi_exec_above GitLog $PWD'
+  #alias ,gl='vimapi_exec_above GitLog $PWD'
 
   alias ,r=',toggle'
   alias ,rx=',toggle_x'
