@@ -8,13 +8,14 @@ Tab & e::Send,^+{Tab}         ; app_prev
 Tab & r::Send,^{Tab}          ; app_next
 Tab & t::Send,^+{t}           ; app_tab
 
+Tab & a::Send,#{``}           ; quake mode
 Tab & s::Send,#+s             ; screenshot
 Tab & d::Send,#d              ; display desktop
 Tab & g::Send,#g              ; Xbox Game Bar
 
-Tab & z::Send,#{Left}        ; maximize window in left
-Tab & x::Send,#{Up}          ; maximize window
-Tab & c::Send,#{Right}       ; maximize window in right
+Tab & z::Send,#{Left}         ; maximize window in left
+Tab & x::Send,#{Up}           ; maximize window
+Tab & c::Send,#{Right}        ; maximize window in right
 
 Tab &  m::Send,{F1}
 Tab &  ,::Send,{F2}
