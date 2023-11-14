@@ -65,6 +65,17 @@ Enter & c::Send,{|}
 Enter & v::Send,{/}
 Enter & b::Send,{&}
 
+Enter & u::Send,{(}{)}
+Enter & j::Send,{{}{}}
+Enter & m::Send,{[}{]}
+
+Enter & i::Send,{(}
+Enter & o::Send,{)}
+Enter & k::Send,{{}
+Enter & l::Send,{}}
+Enter & ,::Send,{[}
+Enter & .::Send,{]}
+
 Enter & /::Send,{BS}
 ;======================================================
 ;RShift::RShift
