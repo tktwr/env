@@ -44,6 +44,8 @@ Space & g::Send,{Blind}{End}
 
 Space & z::Send,{Blind}{Ins}
 Space & x::Send,{Blind}{Del}
+Space & c::Send,^c              ; copy
+Space & v::Send,^v              ; paste
 ;------------------------------------------------------
 Space & y::Send,^{Left}
 Space & u::Send,^{Right}
