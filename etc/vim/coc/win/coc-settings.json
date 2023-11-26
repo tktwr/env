@@ -36,6 +36,7 @@
   "python.linting.flake8Args"              : ["--ignore=E203,E221,E501,F541"],
   "pyright.inlayHints.functionReturnTypes" : false,
   "pyright.inlayHints.variableTypes"       : false,
+  "pyright.inlayHints.parameterTypes"      : false,
 
   // error numbers:
   //   E203: whitespace before ':'
