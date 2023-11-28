@@ -7,6 +7,9 @@
 - ,rgc     | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tags    | Tags <cfile>             (C-]) | :VisFzfTags <cfile>
 - ,memo    | Memo                           | :VisFzfMemo
+- ,msmpl   | MemoSample                     | :VisFzfMemoSample
+- ,mbmk    | MemoBmk                        | :VisFzfMemoBmk
+- ,mall    | MemoAll                        | :VisFzfMemoAll
 - ,help    | Help                           | :FzfHelptags
 - ,buf     | Buffers                        | :FzfBuffers
 -----      | ------------------------------ | ------------------------------
