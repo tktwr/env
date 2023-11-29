@@ -4,14 +4,14 @@
 #IFS=\
 
 
-function f_get_dirname() {
-  #echo ${1%/*}
-  echo `dirname $1`
-}
+function f_get_date()       { env LC_TIME=C date '+%Y%m%d'; }
+function f_get_time()       { env LC_TIME=C date '+%H%M%S'; }
+function f_get_git_branch() { git rev-parse --abbrev-ref HEAD 2>/dev/null; }
+function f_get_git_commit() { git rev-parse --short HEAD 2>/dev/null; }
 
-function f_get_fname() {
-  echo ${1##*/}
-}
+function f_get_dirname()  { echo $(dirname $1); }
+function f_get_dirname2() { echo ${1%/*}; }
+function f_get_fname()    { echo ${1##*/}; }
 
 function f_get_name() {
   local fname=`f_get_fname $1`
@@ -43,22 +43,6 @@ function f_get_ext() {
   else
     echo .$ext
   fi
-}
-
-function f_get_date() {
-  env LC_TIME=C date '+%Y%m%d'
-}
-
-function f_get_time() {
-  env LC_TIME=C date '+%H%M%S'
-}
-
-function f_get_git_branch() {
-  git rev-parse --abbrev-ref HEAD 2>/dev/null
-}
-
-function f_get_git_commit() {
-  git rev-parse --short HEAD 2>/dev/null
 }
 
 function f_get_snapfname() {
@@ -114,9 +98,5 @@ function f_rmdir() {
   if [ -d $1 ]; then
     f_eval "rm -rf $1"
   fi
-}
-
-f_helptags() {
-  vim -e -c 'helptags . | quit'
 }
 
