@@ -14,6 +14,7 @@ let g:fern#drawer_width = g:my_left_winwidth
 let g:fern#disable_default_mappings = 1
 let g:fern#renderer = 'nerdfont'
 "let g:fern#renderer#default#leading = "  "
+let g:fern#renderer#nerdfont#padding = " "
 
 func s:my_fern_settings()
   nmap <buffer> <C-Space>  :CpmOpen fern<CR>

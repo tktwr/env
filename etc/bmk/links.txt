@@ -212,5 +212,6 @@
 -          | link:sd-webui                                           | https://github.com/AUTOMATIC1111/stable-diffusion-webui
 -          | link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
 -          | link:EasyNegative                                       | https://huggingface.co/datasets/gsdf/EasyNegative
+-          | link:WezTerm                                            | https://wezfurlong.org/wezterm/index.html
 
 # vim:set ft=bmk syntax=txt nowrap:

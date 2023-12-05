@@ -31,17 +31,16 @@ f_alias_vim_term() {
   alias ,f2='vimapi-edit-dir-2'
 
   alias ,ide='vimapi_exec VisIDE'
-  alias ,idetab='vimapi_exec_tab VisIDE'
   alias ,ide2='vimapi_exec VisIDE 2'
-  alias ,ide2tab='vimapi_exec_tab VisIDE 2'
-
   alias ,edit='vimapi_exec new'
   alias ,editv='vimapi_exec vnew'
-  alias ,edittab='vimapi_exec tabedit'
-
   alias ,term='vimapi_exec VisTerm'
   alias ,termv='vimapi_exec VisTermV'
-  alias ,termtab='vimapi_exec tab VisTerm'
+
+  alias ,tab_ide='vimapi_exec_tab VisIDE'
+  alias ,tab_ide2='vimapi_exec_tab VisIDE 2'
+  alias ,tab_edit='vimapi_exec tabedit'
+  alias ,tab_term='vimapi_exec tab VisTerm'
 
   alias ,resize='vimapi_exec VisWinResize'
   alias ,resize_x='vimapi_exec VisWinVResize'
@@ -55,7 +54,7 @@ f_alias_vim_term() {
   alias ,dpkg='vimapi_exec VisFzfDpkg tab'
 
   alias ,gs='vimapi_exec VisGS'
-  alias ,gv='vimapi_exec VisGV'
+  alias ,gg='vimapi_exec VisGV'
   #alias ,gl='vimapi_exec_above GitLog $PWD'
 
   alias ,r=',toggle'
@@ -85,7 +84,7 @@ f_alias_term() {
   alias ,nterm2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
 
   alias ,gs='vim -c "VisGS"'
-  alias ,gv='vim -c "VisGV"'
+  alias ,gg='vim -c "VisGV"'
 }
 
 #======================================================

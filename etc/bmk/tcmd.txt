@@ -26,7 +26,7 @@
 -          | Git graph                      | > G<CR>
 -          | Git graph all                  | > GA<CR>
 -          | Git status                     | > ,gs<CR>
--          | Git graph                      | > ,gv<CR>
+-          | Git graph                      | > ,gg<CR>
 -          | Lazygit                        | > ,lg<CR>
 -          | Man                            | > ,man<CR>
 -          | Apt                            | > ,apt<CR>
