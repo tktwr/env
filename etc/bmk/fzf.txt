@@ -1,9 +1,9 @@
----------- | ------------------------------ | ------------------------------
--          | fzf:Files                      | :FzfFiles
--          | fzf:GFiles                     | :FzfGFiles
--          | fzf:Commands                   | :FzfCommands
--          | fzf:Maps                       | :FzfMaps
--          | fzf:Colors                     | :FzfColors
--          | fzf:Git graph %                | :FzfBCommits
+-------------- | ------------------------------ | ------------------------------
+-              | fzf:Files                      | :FzfFiles
+-              | fzf:GFiles                     | :FzfGFiles
+-              | fzf:Commands                   | :FzfCommands
+-              | fzf:Maps                       | :FzfMaps
+-              | fzf:Colors                     | :FzfColors
+-              | fzf:Git graph %                | :FzfBCommits
 
 # vim:set ft=bmk syntax=txt nowrap:

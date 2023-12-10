@@ -1,27 +1,27 @@
----------- | ------------------------------  | ------------------------------
-- ,d       | Fd                              | :VisFzfAll
-- ,b       | Buffers                         | :FzfBuffers
------      | ------------------------------  | ------------------------------
-- ,V       | fern:ViewItem            (C-CR) | :call VisFernViewItem()
-- ,O       | fern:OpenItem            (S-CR) | :call VisFernOpenItem()
-- ,Y       | fern:yank an abs path           | _Plug_(fern-action-yank)
--          | fern:select-expand   (2-LMouse) | _Plug_(my-fern-select-expand-collapse)
--          | fern:select-expand         (CR) | _Plug_(my-fern-select-expand-collapse)
-- ,N       | fern:new-path               (N) | _Plug_(fern-action-new-path)
-- ,D       | fern:remove                 (D) | _Plug_(fern-action-remove)
-- ,M       | fern:move                   (M) | _Plug_(fern-action-move)
-- ,R       | fern:rename marked          (R) | _Plug_(fern-action-rename)
-- ,g       | fern:reload               (C-g) | _Plug_(fern-action-reload)
-- ,?       | fern:help                   (?) | _Plug_(fern-action-help)
-- ,!       | fern:hidden                 (!) | _Plug_(fern-action-hidden)
-- ,m       | fern:mark                   (m) | _Plug_(fern-action-mark)
-- ,c       | fern:mark clear                 | _Plug_(fern-action-mark:clear)
-- ,d       | fern:diff marked                | _Plug_(fern-action-diff:tabedit:vert)
-- ,s       | fern:split                  (s) | _Plug_(fern-action-open:split)
-- ,v       | fern:vsplit                 (v) | _Plug_(fern-action-open:vsplit)
-- ,h       | fern:collapse               (h) | _Plug_(fern-action-collapse)
-- ,l       | fern:VisFernPreview         (l) | :call VisFernPreviewItem(-2)
-- ,<       | fern:leave                  (<) | _Plug_(fern-action-leave)
-- ,>       | fern:enter                  (>) | _Plug_(fern-action-enter)
+-------------- | ------------------------------  | ------------------------------
+- ,fd          | Fd                              | :VisFzfAll
+- ,buf         | Buffers                         | :FzfBuffers
+-----          | ------------------------------  | ------------------------------
+- ,V           | fern:ViewItem            (C-CR) | :call VisFernViewItem()
+- ,O           | fern:OpenItem            (S-CR) | :call VisFernOpenItem()
+- ,Y           | fern:yank an abs path           | _Plug_(fern-action-yank)
+-              | fern:select-expand   (2-LMouse) | _Plug_(my-fern-select-expand-collapse)
+-              | fern:select-expand         (CR) | _Plug_(my-fern-select-expand-collapse)
+- ,N           | fern:new-path               (N) | _Plug_(fern-action-new-path)
+- ,D           | fern:remove                 (D) | _Plug_(fern-action-remove)
+- ,M           | fern:move                   (M) | _Plug_(fern-action-move)
+- ,R           | fern:rename marked          (R) | _Plug_(fern-action-rename)
+- ,g           | fern:reload               (C-g) | _Plug_(fern-action-reload)
+- ,?           | fern:help                   (?) | _Plug_(fern-action-help)
+- ,!           | fern:hidden                 (!) | _Plug_(fern-action-hidden)
+- ,m           | fern:mark                   (m) | _Plug_(fern-action-mark)
+- ,c           | fern:mark clear                 | _Plug_(fern-action-mark:clear)
+- ,d           | fern:diff marked                | _Plug_(fern-action-diff:tabedit:vert)
+- ,s           | fern:split                  (s) | _Plug_(fern-action-open:split)
+- ,v           | fern:vsplit                 (v) | _Plug_(fern-action-open:vsplit)
+- ,h           | fern:collapse               (h) | _Plug_(fern-action-collapse)
+- ,l           | fern:VisFernPreview         (l) | :call VisFernPreviewItem(-2)
+- ,<           | fern:leave                  (<) | _Plug_(fern-action-leave)
+- ,>           | fern:enter                  (>) | _Plug_(fern-action-enter)
 
 # vim:set ft=bmk syntax=txt nowrap:

@@ -1,14 +1,14 @@
----------- | ------------------------------ | ------------------------------
-+          | dia                            | $MY_DIARY/diary.md.html
-+          | todo                           | $MY_DIARY/todo.md.html
-+          | info                           | $MY_DIARY/info.md.html
-+          | scratchpad                     | $MY_DIARY/scratchpad.md.html
-+          | keymap                         | $MY_MEMO/my.md.html
-+          | vim                            | $MY_MEMO/vim.md.html
-+          | git                            | $MY_MEMO/git.md.html
-+          | lang                           | $MY_MEMO/lang.md.html
-+          | links                          | $MY_BMK/links.txt
-+          | papers                         | $MY_BMK/papers.txt
--          | index:proj                     | $MY_PROJ/index.md.html
+-------------- | ------------------------------ | ------------------------------
++              | dia                            | $MY_DIARY/diary.md.html
++              | todo                           | $MY_DIARY/todo.md.html
++              | info                           | $MY_DIARY/info.md.html
++              | scratchpad                     | $MY_DIARY/scratchpad.md.html
++              | keymap                         | $MY_MEMO/my.md.html
++              | vim                            | $MY_MEMO/vim.md.html
++              | git                            | $MY_MEMO/git.md.html
++              | lang                           | $MY_MEMO/lang.md.html
++              | links                          | $MY_BMK/links.txt
++              | papers                         | $MY_BMK/papers.txt
+-              | index:proj                     | $MY_PROJ/index.md.html
 
 # vim:set ft=bmk syntax=txt nowrap:

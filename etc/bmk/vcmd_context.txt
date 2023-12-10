@@ -1,27 +1,27 @@
-========== | ============================== | ==============================
-- ,-       | fugitive:toggle stage          | -
-- ,=       | fugitive:toggle inline diff    | =
-- ,C       | fugitive:commit                | cc
-- ,D       | fugitive:diff                  | dd
-- ,X       | fugitive:discard changes       | X
-- ,R       | fugitive:reload                | R
-- ,q       | fugitive:quit                  | :VisTabClosePrev
------      | ------------------------------ | ------------------------------
-- ,ty      | fugitive:Toggle size           | :VisWinMaximizeYToggle
-- ,t0      | fugitive:Resize 5              | :VisWinResize 5
-- ,t1      | fugitive:Resize 10             | :VisWinResize 10
-- ,t2      | fugitive:Resize 20             | :VisWinResize 20
-- ,t3      | fugitive:Resize 30             | :VisWinResize 30
-- ,t4      | fugitive:Resize 40             | :VisWinResize 40
-=====      | ============================== | ==============================
-- ,D       | gv.git:diff                    | O
-- ,(       | gv.git:prev                    | (
-- ,)       | gv.git:next                    | )
-=====      | ============================== | ==============================
-- ,q       | Dirdiff:quit                   | :VisTabDirDiffQuit
-=====      | ============================== | ==============================
-- ,o       | Diff:do                        | do
-- ,p       | Diff:dp                        | dp
-- ,u       | Diff:update                    | :diffupdate
+============== | ============================== | ==============================
+- ,-           | fugitive:toggle stage          | -
+- ,=           | fugitive:toggle inline diff    | =
+- ,C           | fugitive:commit                | cc
+- ,D           | fugitive:diff                  | dd
+- ,X           | fugitive:discard changes       | X
+- ,R           | fugitive:reload                | R
+- ,q           | fugitive:quit                  | :VisTabClosePrev
+-------------- | ------------------------------ | ------------------------------
+- ,ry          | fugitive:Toggle size           | :VisWinMaximizeYToggle
+- ,r0          | fugitive:Resize 5              | :VisWinResize 5
+- ,r1          | fugitive:Resize 10             | :VisWinResize 10
+- ,r2          | fugitive:Resize 20             | :VisWinResize 20
+- ,r3          | fugitive:Resize 30             | :VisWinResize 30
+- ,r4          | fugitive:Resize 40             | :VisWinResize 40
+============== | ============================== | ==============================
+- ,D           | gv.git:diff                    | O
+- ,(           | gv.git:prev                    | (
+- ,)           | gv.git:next                    | )
+============== | ============================== | ==============================
+- ,q           | Dirdiff:quit                   | :VisTabDirDiffQuit
+============== | ============================== | ==============================
+- ,o           | Diff:do                        | do
+- ,p           | Diff:dp                        | dp
+- ,u           | Diff:update                    | :diffupdate
 
 # vim:set ft=bmk syntax=txt nowrap:
