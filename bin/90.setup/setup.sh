@@ -12,8 +12,8 @@ f_10_update_vim() {
   vim -c 'CocUpdate'
 }
 
-f_11_set_hwclock() {
-  set-hwclock.sh
+f_11_sync_time() {
+  sync-time.sh
 }
 
 #------------------------------------------------------
