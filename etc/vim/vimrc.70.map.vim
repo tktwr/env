@@ -60,20 +60,20 @@ vmap ,k          <Plug>(easymotion-k)
 "nnoremap <silent> <C-R>   :echo 'C-R'<CR>  " [ORIG] redo
 "nnoremap <silent> <C-T>   :echo 'C-T'<CR>  " [ORIG] prev tag
 
-"nmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
-"xmap     <silent> <C-A>   <Plug>(quickhl-manual-this-whole-word)
- nmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
- xmap     <silent> <C-A>   <Plug>(quickhl-manual-this)
+ nnoremap <silent> <C-A>   :VisFzfRg <cfile><CR>
  nnoremap <silent> <C-S>   :VisFzfRg <cword><CR>
  nnoremap <silent> <C-D>   <C-B>
 "nnoremap <silent> <C-F>   :echo 'C-F'<CR>  " [ORIG] next page
  nnoremap <silent> <C-G>   :VisRedraw<CR>
 
- nnoremap <silent> <C-Z>   :setl wrap! wrap?<CR>
+"nmap     <silent> <C-Z>   <Plug>(quickhl-manual-this-whole-word)
+"xmap     <silent> <C-Z>   <Plug>(quickhl-manual-this-whole-word)
+ nmap     <silent> <C-Z>   <Plug>(quickhl-manual-this)
+ xmap     <silent> <C-Z>   <Plug>(quickhl-manual-this)
  nnoremap <silent> <C-X>   d'm
  nnoremap <silent> <C-C>   y'm
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
- nnoremap <silent> <C-B>   :VisFzfRg <cfile><CR>
+ nnoremap <silent> <C-B>   :setl wrap! wrap?<CR>
 "------------------------------------------------------
  nmap     <silent> <C-Y>   <Plug>(easymotion-overwin-f2)
  nnoremap <silent> <C-U>   <C-W>:silent call wbl#open()<CR>
