@@ -91,7 +91,7 @@ f_alias_term() {
 # os
 #======================================================
 f_alias_wsl() {
-  alias ,d='te.sh'
+  alias ,D='open_dir.sh'
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
@@ -102,13 +102,12 @@ f_alias_msys() {
 }
 
 f_alias_gitbash() {
-  alias ,d='te.sh'
+  alias ,D='open_dir.sh'
 }
 
 f_alias_linux() {
-  #alias ,d='nautilus'
+  alias ,D='open_dir.sh'
   #alias ,pdf='evince'
-  alias ,d='exo-open --launch FileManager'
   alias ,pdf='qpdfview --unique'
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
