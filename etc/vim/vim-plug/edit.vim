@@ -11,6 +11,7 @@ Plug 'godlygeek/tabular'
 
 command EditTabBar             Tabularize /|
 command EditTabColon           Tabularize /:
+command EditTabSemicolon       Tabularize /;
 command EditTabComma           Tabularize /,
 command EditTabDots            Tabularize /\.\.\.
 command EditTabEqual           Tabularize /=

@@ -17,10 +17,6 @@ case "$line" in
   '_Plug_'*)
     echo "vcmd: [$line]"
     ;;
-  http*)
-    echo "http: [$line]"
-    chrome.sh "$line"
-    ;;
   *)
     open.sh "$line"
     ;;

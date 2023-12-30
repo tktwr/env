@@ -56,6 +56,7 @@
 -              | MyClangFormat                  | :MyClangFormat
 - ,c1          | EditTabBar                     | :EditTabBar
 - ,c:          | EditTabColon                   | :EditTabColon
+- ,c;          | EditTabSemicolon               | :EditTabSemicolon
 - ,c,          | EditTabComma                   | :EditTabComma
 - ,c.          | EditTabDots                    | :EditTabDots
 - ,c=          | EditTabEqual                   | :EditTabEqual

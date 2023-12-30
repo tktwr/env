@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# expand env variables
+url=$(eval "echo $*")
+
 case $MY_OS_NAME in
   linux)
-    #nautilus "$@"
-    exo-open --launch FileManager "$@"
+    exo-open --launch FileManager "$url"
+    #nautilus "$url"
     ;;
   *)
-    te.sh "$@"
-    #explorer.sh "$@"
+    te.sh "$url"
+    #explorer.sh "$url"
     ;;
 esac

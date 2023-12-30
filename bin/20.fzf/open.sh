@@ -1,12 +1,20 @@
 #!/bin/bash
 
 # expand env variables
-line=$(eval "echo $*")
+url=$(eval "echo $*")
 
-if [ -d "$line" ]; then
-  echo "dir: [$line]"
-  te.sh "$line"
-elif [ -f "$line" ]; then
-  echo "file: [$line]"
-  vscode.sh "$line"
-fi
+case "$url" in
+  http*)
+    open_web.sh "$url"
+    ;;
+  *.pdf)
+    open_web.sh "$url"
+    ;;
+  *)
+    if [ -d "$url" ]; then
+      open_dir.sh "$url"
+    elif [ -f "$url" ]; then
+      open_file.sh "$url"
+    fi
+    ;;
+esac
