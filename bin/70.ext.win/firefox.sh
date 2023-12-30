@@ -12,7 +12,7 @@ f_expand() {
 #------------------------------------------------------
 export PATH="$SYS_PROG64_DIR/Mozilla Firefox:$PATH"
 
-url="$*"
+url=$(eval "echo $*")  # expand env variables
 wp=$(f_expand "$url")
 
 exec $WINPTY firefox.exe "$wp" > /dev/null 2>&1 &

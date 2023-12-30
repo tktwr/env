@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# expand env variables
-url=$(eval "echo $*")
+url="$*"
 
 gvim.sh "$url"

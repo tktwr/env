@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# expand env variables
-url=$(eval "echo $*")
+url="$*"
 
 case $MY_OS_NAME in
   linux)

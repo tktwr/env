@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# expand env variables
-url=$(eval "echo $*")
+url="$*"
 
 case "$url" in
   http*)
