@@ -32,6 +32,7 @@ googler \
 ghostscript \
 x11-apps \
 lhasa \
+encfs \
 "
 pkg_dev="\
 cmake \

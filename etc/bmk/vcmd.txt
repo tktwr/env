@@ -33,7 +33,7 @@
 - ,lcd         | Lcd                            | :VisLcdHere
 - ,ide         | IDE                            | :VisIDE
 - ,ide2        | IDE2                           | :VisIDE 2
-- ,fern        | Fern                           | :VisFernDrawer %:p:h
+- ,fern        | Fern                           | :VisFernDrawer %:p
 - ,edit        | Editor                         | :new
 - ,term        | Term                           | :below VisTerm
 - ,<           | SideBar                        | :VisSideBarToggle
