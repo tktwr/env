@@ -16,6 +16,9 @@ case $MY_OS_NAME in
   msys|gitbash)
     export MY_PROMPT_TYPE=1
     ;;
+  *)
+    export MY_PROMPT_TYPE=1
+    ;;
 esac
 
 #------------------------------------------------------
