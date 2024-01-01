@@ -1,3 +1,3 @@
 #!/bin/bash
 
-git grep -I "$@"
+git.sh grep -I "$@"

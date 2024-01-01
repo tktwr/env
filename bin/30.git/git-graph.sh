@@ -1,3 +1,3 @@
 #!/bin/bash
 
-$GIT_EXE graph "$@" | $GIT_PAGER
+git.sh graph "$@" | $GIT_PAGER
