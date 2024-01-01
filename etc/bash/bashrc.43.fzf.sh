@@ -80,7 +80,7 @@ eval_bmk() {
       ;;
     http*)
       fzf_print "http: [$line]"
-      chrome.sh "$line"
+      open_web.sh "$line"
       ;;
     *)
       eval_fd "$line"

@@ -28,9 +28,9 @@ Plug 'tktwr/vim-winbuf-menu'
 "------------------------------------------------------
 let g:bmk_winwidth = g:my_left_winwidth
 let g:bmk_edit_dir_func = "VisFern"
-let g:bmk_open_url_prog = "chrome.sh"
-let g:bmk_open_dir_prog = "te.sh"
-let g:bmk_open_file_prog = "vscode.sh"
+let g:bmk_open_url_prog = "open_web.sh"
+let g:bmk_open_dir_prog = "open_dir.sh"
+let g:bmk_open_file_prog = "open_file.sh"
 
 let g:cpm_key = "\<Space>"
 let g:cpm_term_key = "\<End>"
