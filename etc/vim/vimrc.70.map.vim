@@ -154,56 +154,37 @@ endif
 " function keys
 "------------------------------------------------------
 nnoremap <silent> <F1>  <C-W>t
-tnoremap <silent> <F1>  <C-W>t
 nnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
-tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
 nnoremap <silent> <F5>  :VisRedraw<CR>
-tnoremap <silent> <F5>  <C-L>
 nnoremap <silent> <F10> <C-W>b
-tnoremap <silent> <F10> <C-W>b
 
-nnoremap <silent> <C-F1>  <Nop>
-tnoremap <silent> <C-F1>  <Nop>
-nnoremap <silent> <C-F2>  <Nop>
-tnoremap <silent> <C-F2>  <Nop>
-nnoremap <silent> <C-F3>  <Nop>
-tnoremap <silent> <C-F3>  <Nop>
-nnoremap <silent> <C-F4>  <Nop>
-tnoremap <silent> <C-F4>  <Nop>
-nnoremap <silent> <C-F5>  <Nop>
-tnoremap <silent> <C-F5>  <Nop>
-nnoremap <silent> <C-F6>  <C-W>:tabprev<CR>
-tnoremap <silent> <C-F6>  <C-W>:tabprev<CR>
-nnoremap <silent> <C-F7>  <C-W>:tabnext<CR>
-tnoremap <silent> <C-F7>  <C-W>:tabnext<CR>
-nnoremap <silent> <C-F8>  <C-W>:call VisTabEdit()<CR>
-tnoremap <silent> <C-F8>  <C-W>:call VisTabEdit()<CR>
-nnoremap <silent> <C-F9>  <C-W>:VisTabClosePrev<CR>
-tnoremap <silent> <C-F9>  <C-W>:VisTabClosePrev<CR>
-nnoremap <silent> <C-F10> <Nop>
-tnoremap <silent> <C-F10> <Nop>
+tnoremap <silent> <F1>  <C-W>t
+tnoremap <silent> <F2>  <C-W>:2wincmd w<CR>
+tnoremap <silent> <F5>  <C-L>
+tnoremap <silent> <F10> <C-W>b
 "------------------------------------------------------
 " special keys
 "------------------------------------------------------
 nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
-tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
-tnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
-tnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
-tnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
 nnoremap <silent> <C-Home>     <Nop>
-tnoremap <silent> <C-Home>     <Nop>
 nnoremap <silent> <C-End>      <Nop>
-tnoremap <silent> <C-End>      <Nop>
 nnoremap <silent> <C-PageUp>   <Nop>
-tnoremap <silent> <C-PageUp>   <Nop>
 nnoremap <silent> <C-PageDown> <Nop>
-tnoremap <silent> <C-PageDown> <Nop>
 nnoremap <silent> <C-Insert>   <Nop>
-tnoremap <silent> <C-Insert>   <Nop>
 nnoremap <silent> <C-Del>      <Nop>
+
+tnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
+tnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
+tnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
+tnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
+tnoremap <silent> <C-Home>     <Nop>
+tnoremap <silent> <C-End>      <Nop>
+tnoremap <silent> <C-PageUp>   <Nop>
+tnoremap <silent> <C-PageDown> <Nop>
+tnoremap <silent> <C-Insert>   <Nop>
 tnoremap <silent> <C-Del>      <Nop>
 
 nnoremap <silent> <S-PageUp>   5<C-Y>

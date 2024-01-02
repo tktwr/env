@@ -90,15 +90,15 @@ tnoremap <C-L>   <C-W>l
 "------------------------------------------------------
 " map: tab
 "------------------------------------------------------
-nnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-nnoremap <silent> <Del>      <C-W>:tabclose<CR>
-nnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-nnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+nnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
+nnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
+nnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
+nnoremap <silent> <C-Down>   <C-W>:tabclose<CR>
 
-tnoremap <silent> <Insert>   <C-W>:tabedit<CR>
-tnoremap <silent> <Del>      <C-W>:tabclose<CR>
-tnoremap <silent> <PageUp>   <C-W>:tabprev<CR>
-tnoremap <silent> <S-PageUp> <C-W>:tabnext<CR>
+tnoremap <silent> <C-Left>   <C-W>:tabprev<CR>
+tnoremap <silent> <C-Right>  <C-W>:tabnext<CR>
+tnoremap <silent> <C-Up>     <C-W>:tabedit<CR>
+tnoremap <silent> <C-Down>   <C-W>:tabclose<CR>
 "------------------------------------------------------
 " map: clipboard
 "------------------------------------------------------
@@ -108,12 +108,11 @@ vnoremap Y       "*y
 " nvim
 "======================================================
 if has('nvim')
+tnoremap <C-O>   <C-\><C-N>
 tnoremap <C-H>   <C-\><C-N><C-W>h
 tnoremap <C-J>   <C-\><C-N><C-W>w
 tnoremap <C-K>   <C-\><C-N><C-W>W
 tnoremap <C-L>   <C-\><C-N><C-W>l
-
-tnoremap <C-O>   <C-\><C-N>
 endif
 "======================================================
 " gui

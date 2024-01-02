@@ -9,6 +9,7 @@
 -              | link:DeepL                                              | https://www.deepl.com/ja/translator
 -              | link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
 -              | link:chrome.extensions                                  | https://chrome.google.com/webstore/category/extensions
+-              | link.py:python                                          | https://www.python.org/
 + ,lp          | link.py:python.doc                                      | https://docs.python.org/ja/3/index.html
 -              | link.py:python.tutorial                                 | https://docs.python.org/ja/3/tutorial/
 -              | link.py:python.tkinter                                  | https://docs.python.org/ja/3/library/tkinter.html
@@ -53,23 +54,28 @@
 -              | link.cpplib:stb                                         | https://github.com/nothings/stb
 -              | link.cpplib:kissnet                                     | https://github.com/Ybalrid/kissnet
 -              | link.cpplib:miniaudio                                   | https://github.com/mackron/miniaudio
--              | link:OpenCV                                             | https://opencv.org/
--              | link:OpenCV.doc                                         | https://docs.opencv.org/master/
--              | link:OpenCV.cookbook                                    | http://opencv.jp/cookbook/index.html
--              | link:OpenGL 4                                           | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
--              | link:OpenGL ES 3.0                                      | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
--              | link:glTF                                               | https://www.khronos.org/gltf/
--              | link:glTF.Specification                                 | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
--              | link:glTF.Extensions                                    | https://github.com/KhronosGroup/glTF/tree/main/extensions
--              | link:glTF.KHR_materials_specular                        | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
--              | link:glTF extensions                                    | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
--              | link:glTF viewer (old)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
--              | link:glTF viewer (new)                                  | https://github.com/KhronosGroup/glTF-Sample-Viewer
--              | link:glTF-Sample-Viewer                                 | https://github.khronos.org/glTF-Sample-Viewer-Release/
--              | link:glTF-Sample-Models                                 | https://github.com/KhronosGroup/glTF-Sample-Models
--              | link:OpenGL Tutorial                                    | http://www.opengl-tutorial.org/jp/
--              | link:vulkan                                             | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
--              | link:vulkan.raytracing                                  | https://developer.nvidia.com/rtx/raytracing/vkray
+-              | link.dev:git                                            | https://git-scm.com/
+-              | link.dev:git doc                                        | https://git-scm.com/docs
+-              | link.dev:cmake                                          | https://cmake.org/
+-              | link.dev:nodejs                                         | https://nodejs.org/ja/
+-              | link.dev:OpenCV                                         | https://opencv.org/
+-              | link.dev:OpenCV.doc                                     | https://docs.opencv.org/master/
+-              | link.dev:OpenCV.cookbook                                | http://opencv.jp/cookbook/index.html
+-              | link.dev:OpenGL 4                                       | https://www.khronos.org/registry/OpenGL-Refpages/gl4/
+-              | link.dev:OpenGL ES 3.0                                  | https://www.khronos.org/registry/OpenGL-Refpages/es3.0/
+-              | link.dev:glTF                                           | https://www.khronos.org/gltf/
+-              | link.dev:glTF.Specification                             | https://www.khronos.org/registry/glTF/specs/2.0/glTF-2.0.html
+-              | link.dev:glTF.Extensions                                | https://github.com/KhronosGroup/glTF/tree/main/extensions
+-              | link.dev:glTF.KHR_materials_specular                    | https://github.com/KhronosGroup/glTF/blob/main/extensions/2.0/Khronos/KHR_materials_specular/README.md
+-              | link.dev:glTF extensions                                | https://jp.khronos.org/news/press/new-gltf-extensions-raise-the-bar-on-3d-asset-visual-realism
+-              | link.dev:glTF viewer (old)                              | https://github.com/KhronosGroup/glTF-Sample-Viewer/tree/glTF-WebGL-PBR
+-              | link.dev:glTF viewer (new)                              | https://github.com/KhronosGroup/glTF-Sample-Viewer
+-              | link.dev:glTF-Sample-Viewer                             | https://github.khronos.org/glTF-Sample-Viewer-Release/
+-              | link.dev:glTF-Sample-Models                             | https://github.com/KhronosGroup/glTF-Sample-Models
+-              | link.dev:OpenGL Tutorial                                | http://www.opengl-tutorial.org/jp/
+-              | link.dev:vulkan                                         | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
+-              | link.dev:vulkan.raytracing                              | https://developer.nvidia.com/rtx/raytracing/vkray
+-              | link.blender:blender                                    | https://www.blender.org/
 -              | link.blender:doc                                        | https://docs.blender.org/
 -              | link.blender:Reference Manual                           | https://docs.blender.org/manual/en/latest/
 -              | link.blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
@@ -86,10 +92,12 @@
 -              | link.blender:Bake texture (TexTools)                    | https://virtualcast.jp/blog/2020/04/blender_bake_ao/
 -              | link.blender:Environment                                | https://reflectorange.net/archives/041.html
 -              | link.blender:Blenderではじめる画像処理                  | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
--              | link:gimp-normalmap                                     | https://code.google.com/archive/p/gimp-normalmap/
-+ ,lu          | link:Unreal Engine 5                                    | https://docs.unrealengine.com/5.0/en-US/
+-              | link.blender:Principled-Baker                           | https://github.com/danielenger/Principled-Baker
 -              | link.cv:OpenMVS                                         | https://github.com/cdcseacave/openMVS
 -              | link.cv:colmap                                          | https://github.com/colmap/colmap
++ ,lu          | link.cg:Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
+-              | link.cg:gimp                                            | https://www.gimp.org/
+-              | link.cg:gimp-normalmap                                  | https://code.google.com/archive/p/gimp-normalmap/
 -              | link.cg:Wrap3                                           | https://www.russian3dscanner.com/
 -              | link.cg:assimp                                          | https://github.com/assimp/assimp
 -              | link.cg:Character Creator 3                             | https://www.reallusion.com/jp/character-creator/
@@ -105,6 +113,9 @@
 -              | link.cg:Poly Haven                                      | https://polyhaven.com/
 -              | link.cg:PFM                                             | http://www.pauldebevec.com/Research/HDR/PFM/
 -              | link.cg:ambientcg                                       | https://ambientcg.com/
+-              | link.cg:www.o3de.org                                    | https://www.o3de.org/
+-              | link.cg:o3de                                            | https://github.com/o3de/o3de
+-              | link.vim:vim                                            | https://www.vim.org/
 -              | link.vim:doc                                            | https://vim-jp.org/vimdoc-ja/
 -              | link.vim:colorswat                                      | http://colorswat.ch/vim/
 -              | link.vim:vim-plug                                       | https://github.com/junegunn/vim-plug
@@ -162,56 +173,47 @@
 -              | link.nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
 -              | link.font:HackGen                                       | https://github.com/yuru7/HackGen
 -              | link.font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
--              | link.soft:vim                                           | https://www.vim.org/
--              | link.soft:git                                           | https://git-scm.com/
--              | link.soft:git doc                                       | https://git-scm.com/docs
--              | link.soft:python                                        | https://www.python.org/
--              | link.soft:blender                                       | https://www.blender.org/
--              | link.soft:gimp                                          | https://www.gimp.org/
--              | link.soft:cmake                                         | https://cmake.org/
--              | link.soft:nodejs                                        | https://nodejs.org/ja/
--              | link.soft.linux:new_commands                            | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
--              | link.soft.linux:bat                                     | https://github.com/sharkdp/bat
--              | link.soft.linux:fd                                      | https://github.com/sharkdp/fd
--              | link.soft.linux:ripgrep                                 | https://github.com/BurntSushi/ripgrep
--              | link.soft.linux:regex                                   | https://docs.rs/regex/1.7.1/regex/index.html
--              | link.soft.linux:universal-ctags                         | https://github.com/universal-ctags/ctags
--              | link.soft.linux:exa                                     | https://github.com/ogham/exa
--              | link.soft.linux:delta                                   | https://github.com/dandavison/delta
--              | link.soft.linux:delta doc                               | https://dandavison.github.io/delta/
--              | link.soft.linux:delta themes.gitconfig                  | https://github.com/dandavison/delta/blob/master/themes.gitconfig
--              | link.soft.linux:lazygit                                 | https://github.com/jesseduffield/lazygit
--              | link.soft.linux:lazygit Config.md                       | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
--              | link.soft.linux:gitui                                   | https://github.com/extrawurst/gitui
--              | link.soft.linux:ncdu                                    | https://dev.yorhel.nl/ncdu
--              | link.soft.windows:wsltty                                | https://github.com/mintty/wsltty
--              | link.soft.windows:AutoHotkey                            | https://www.autohotkey.com/
--              | link.soft.windows:AutoHotkey.doc                        | https://www.autohotkey.com/docs/AutoHotkey.htm
--              | link.soft.windows:AutoHotkey.wiki                       | http://ahkwiki.net/Top
--              | link.soft.windows:Tablacus                              | https://tablacus.github.io/explorer.html
--              | link.soft.windows:Ctrl2cap                              | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
--              | link.soft.windows:PowerToys                             | https://github.com/microsoft/PowerToys
--              | link.soft.windows:faststone                             | https://www.faststone.org/
--              | link.soft.windows:WinDirStat                            | https://windirstat.net/
--              | link.soft.windows:CrystalDiskMark                       | https://crystalmark.info/ja/software/crystaldiskmark/
--              | link.soft.windows:Process Explorer                      | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
--              | link.soft.windows:Dependency Walker                     | http://www.dependencywalker.com/
--              | link.soft.windows:chocolatey                            | https://chocolatey.org/
--              | link.soft.windows:7z                                    | https://www.7-zip.org/
--              | link.os.linux:snapcraft                                 | https://snapcraft.io/
--              | link.os.linux:flathub                                   | https://flathub.org/
--              | link.os.linux:launchpad                                 | https://launchpad.net/ubuntu
--              | link.os.linux:ArchWiki                                  | https://wiki.archlinux.jp/
--              | link.os.linux:SSL Certificate Verification              | https://curl.se/docs/sslcerts.html
+-              | link.cui:new_commands                                   | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
+-              | link.cui:bat                                            | https://github.com/sharkdp/bat
+-              | link.cui:fd                                             | https://github.com/sharkdp/fd
+-              | link.cui:ripgrep                                        | https://github.com/BurntSushi/ripgrep
+-              | link.cui:regex                                          | https://docs.rs/regex/1.7.1/regex/index.html
+-              | link.cui:universal-ctags                                | https://github.com/universal-ctags/ctags
+-              | link.cui:exa                                            | https://github.com/ogham/exa
+-              | link.cui:delta                                          | https://github.com/dandavison/delta
+-              | link.cui:delta doc                                      | https://dandavison.github.io/delta/
+-              | link.cui:delta themes.gitconfig                         | https://github.com/dandavison/delta/blob/master/themes.gitconfig
+-              | link.cui:lazygit                                        | https://github.com/jesseduffield/lazygit
+-              | link.cui:lazygit Config.md                              | https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md
+-              | link.cui:gitui                                          | https://github.com/extrawurst/gitui
+-              | link.cui:ncdu                                           | https://dev.yorhel.nl/ncdu
+-              | link.cui:WezTerm                                        | https://wezfurlong.org/wezterm/index.html
+-              | link.windows:wsltty                                     | https://github.com/mintty/wsltty
+-              | link.windows:AutoHotkey                                 | https://www.autohotkey.com/
+-              | link.windows:AutoHotkey.doc                             | https://www.autohotkey.com/docs/AutoHotkey.htm
+-              | link.windows:AutoHotkey.wiki                            | http://ahkwiki.net/Top
+-              | link.windows:Tablacus                                   | https://tablacus.github.io/explorer.html
+-              | link.windows:Ctrl2cap                                   | https://technet.microsoft.com/ja-jp/sysinternals/bb897578.aspx
+-              | link.windows:PowerToys                                  | https://github.com/microsoft/PowerToys
+-              | link.windows:faststone                                  | https://www.faststone.org/
+-              | link.windows:WinDirStat                                 | https://windirstat.net/
+-              | link.windows:CrystalDiskMark                            | https://crystalmark.info/ja/software/crystaldiskmark/
+-              | link.windows:Process Explorer                           | https://docs.microsoft.com/en-us/sysinternals/downloads/process-explorer
+-              | link.windows:Dependency Walker                          | http://www.dependencywalker.com/
+-              | link.windows:chocolatey                                 | https://chocolatey.org/
+-              | link.windows:7z                                         | https://www.7-zip.org/
+-              | link.windows:encfsy                                     | https://github.com/mimidesunya/encfsy
+-              | link.linux:ArchWiki                                     | https://wiki.archlinux.jp/
+-              | link.linux:snapcraft                                    | https://snapcraft.io/
+-              | link.linux:flathub                                      | https://flathub.org/
+-              | link.linux:launchpad                                    | https://launchpad.net/ubuntu
+-              | link.linux:SSL Certificate Verification                 | https://curl.se/docs/sslcerts.html
+-              | link.linux:EncFS                                        | https://wiki.archlinux.jp/index.php/EncFS
 -              | link.os:msys2                                           | https://www.msys2.org/
 -              | link.os:termux                                          | https://termux.com/
 -              | link.os:termux.wiki                                     | https://wiki.termux.com/wiki/Main_Page
--              | link:Principled-Baker                                   | https://github.com/danielenger/Principled-Baker
--              | link:www.o3de.org                                       | https://www.o3de.org/
--              | link:o3de                                               | https://github.com/o3de/o3de
--              | link:sd-webui                                           | https://github.com/AUTOMATIC1111/stable-diffusion-webui
--              | link:sd-webui-controlnet                                | https://github.com/Mikubill/sd-webui-controlnet
--              | link:EasyNegative                                       | https://huggingface.co/datasets/gsdf/EasyNegative
--              | link:WezTerm                                            | https://wezfurlong.org/wezterm/index.html
+-              | link.sd:sd-webui                                        | https://github.com/AUTOMATIC1111/stable-diffusion-webui
+-              | link.sd:sd-webui-controlnet                             | https://github.com/Mikubill/sd-webui-controlnet
+-              | link.sd:EasyNegative                                    | https://huggingface.co/datasets/gsdf/EasyNegative
 
 # vim:set ft=bmk syntax=txt nowrap:
