@@ -61,6 +61,10 @@
 - ,c.          | EditTabDots                    | :EditTabDots
 - ,c=          | EditTabEqual                   | :EditTabEqual
 - ,c[          | EditTabLabel                   | :EditTabLabel
+- ,sumcol0     | SumCol(0)                      | :call SumCol(0)
+- ,sumcol1     | SumCol(1)                      | :call SumCol(1)
+- ,sumcol2     | SumCol(2)                      | :call SumCol(2)
+- ,sumcol3     | SumCol(3)                      | :call SumCol(3)
 - ,eL          | EditMdLink                     | :call EditMdLink()
 - ,eI          | EditMdImgLink                  | :call EditMdImgLink()
 -              | EditHtmlLink                   | :call EditHtmlLink()

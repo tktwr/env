@@ -38,6 +38,7 @@ nnoremap ==      zi
 
 map , <Nop>
 
+vnoremap <Space> y:VisFzfBmk<CR>
 nnoremap <Space> :VisFzfBmk<CR>
 nnoremap ,,      :VisFzfAll<CR>
 nnoremap ,r      :VisFzfRg<CR>
@@ -93,9 +94,9 @@ vmap ,k          <Plug>(easymotion-k)
  nnoremap <silent> <C-.>   :VisLcdHere<CR>
 "nnoremap <silent> <C-/>   <Nop>
 
-"nnoremap <silent> <C-]>   g<C-]>
+ nnoremap <silent> <C-]>   g<C-]>
 "nnoremap <silent> <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
- nnoremap <silent> <C-]>   :VisFzfTags <cfile><CR>
+"nnoremap <silent> <C-]>   :VisFzfTags <cfile><CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
@@ -132,6 +133,12 @@ augroup END
  vmap C  gc
 
 vnoremap A       y:'<,'>w !sumcol.py<CR>
+
+func SumCol(col=1, sep='|')
+  echom printf("SumCol: col=%d sep=%s", a:col, a:sep)
+  echom system(printf("sumcol.py -c %d -s '%s'", a:col, a:sep), @")
+endfunc
+
 "------------------------------------------------------
 " clipboard
 "------------------------------------------------------

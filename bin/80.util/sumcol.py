@@ -21,14 +21,12 @@ def sumcol(fp, col, sep):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('file', nargs='*')
-    parser.add_argument('-s', '--separator',
-                        type=str,
-                        default='|',
-                        help="set separator (default='|')")
+    parser.add_argument('-c', '--column',    type=int, default=1,   help="set column (default=1)")
+    parser.add_argument('-s', '--separator', type=str, default='|', help="set separator (default='|')")
     args = parser.parse_args()
 
     with fileinput.input(args.file) as f:
-        total = sumcol(f, 1, args.separator)
+        total = sumcol(f, args.column, args.separator)
         print(f"{total:,d}")
 
 
