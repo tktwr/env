@@ -14,5 +14,8 @@ f_set_proxy() {
 
   #export GIT_SSL_NO_VERIFY=1
   #export CURL_SSL_NO_VERIFY=1
+
+  export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+  export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 }
 
