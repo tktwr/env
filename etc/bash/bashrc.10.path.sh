@@ -41,16 +41,33 @@ f_ins_path_local() {
   f_ins_path_info "$pth/share/info"
 }
 
-my_setup_path_env() {
+my_setup_path() {
+  f_init_path
+  f_ins_path_man "/usr/local/share/man"
+  #f_ins_path_local $SYS_ROAMING_HOME/usr/local
   f_ins_path "$MY_ENV/bin"
   dirs=$(/bin/ls -d $MY_ENV/bin/[0-9]?.*/)
   for i in $dirs; do
     f_ins_path "$i"
   done
+
+  case $MY_OS_NAME in
+    wsl)
+      f_ins_path "$SYS_ROAMING_HOME/opt/bat"
+      f_ins_path "$SYS_ROAMING_HOME/opt/delta"
+      f_ins_path "$SYS_ROAMING_HOME/opt/lazygit"
+      f_ins_path "$SYS_ROAMING_HOME/opt/exa/bin"
+      ;;
+    msys|gitbash)
+      f_ins_path "$SYS_CONFIG_HOME/opt/winget"
+      ;;
+  esac
+
+  # on Windows FS
+  f_add_path "$SYS_CONFIG_HOME/lconfig/bin"
+  f_add_path "$SYS_CONFIG_HOME/opt/bin"
+
+  # OS dependent wrapper
+  f_ins_path "$MY_ENV/bin/os.$MY_OS_NAME"
 }
 
-#------------------------------------------------------
-f_init_path
-f_ins_path_man "/usr/local/share/man"
-#f_ins_path_local $SYS_ROAMING_HOME/usr/local
-my_setup_path_env

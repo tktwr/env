@@ -4,10 +4,6 @@
 # vim plugin
 #------------------------------------------------------
 my_setup_vim() {
-  f_ins_path  $MY_VIM_PLUGGED_DIR/fzf/bin
-  source_file $MY_VIM_PLUGGED_DIR/fzf/shell/completion.bash
-  source_file $MY_VIM_PLUGGED_DIR/fzf/shell/key-bindings.bash
-
   source_file $MY_VIM_PLUGGED_DIR/vim-ide-style/etc/bashrc
   source_file $MY_VIM_PLUGGED_DIR/vim-ide-style/etc/bashrc.alias
   source_file $MY_VIM_PLUGGED_DIR/vim-memo/etc/bashrc

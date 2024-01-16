@@ -149,6 +149,10 @@ _my_setup_fzf_alias() {
 }
 
 my_setup_fzf() {
+  f_ins_path  $MY_VIM_PLUGGED_DIR/fzf/bin
+  source_file $MY_VIM_PLUGGED_DIR/fzf/shell/completion.bash
+  source_file $MY_VIM_PLUGGED_DIR/fzf/shell/key-bindings.bash
+
   _my_setup_fzf_$SYS_FIND_EXE
   _my_setup_fzf_alias
 
@@ -157,5 +161,3 @@ my_setup_fzf() {
   export -f eval_fzf_cmd
 }
 
-#------------------------------------------------------
-my_setup_fzf

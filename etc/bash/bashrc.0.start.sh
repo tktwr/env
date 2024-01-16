@@ -40,6 +40,7 @@ source_file() {
   for I in $files; do
     if [ -f $I ]; then
       f_time_start $I
+      #echo $I
       source $I
       f_time_end $I
     else

@@ -124,3 +124,14 @@ f_alias_common() {
   alias vim-where='vim-which.sh'
 }
 
+#------------------------------------------------------
+my_setup_alias() {
+  f_alias_common
+  f_alias_$MY_OS_NAME
+  if [ "$VIM_TERMINAL" ]; then
+    f_alias_vim_term
+  else
+    f_alias_term
+  fi
+}
+

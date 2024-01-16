@@ -71,8 +71,8 @@ f_set_prompt_git_branch() {
 }
 
 f_set_prompt_git() {
-  source "$MY_ENV/etc/git/git-prompt.sh"
-  source "$MY_ENV/etc/git/git-completion.bash"
+  source_file "$MY_ENV/etc/git/git-prompt.sh"
+  source_file "$MY_ENV/etc/git/git-completion.bash"
 
   local PS1_HOST=$(f_get_prompt_color_host)
   local PS1_OS=$(f_get_prompt_color_os)
