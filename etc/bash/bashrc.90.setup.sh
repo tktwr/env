@@ -11,12 +11,6 @@ f_set_core_off
 f_set_prompt
 
 #------------------------------------------------------
-# python
-#------------------------------------------------------
-mypython-type $MY_PYTHON_TYPE
-mypython-venv-activate $MY_PYTHON_VENV
-
-#------------------------------------------------------
 # vim
 #------------------------------------------------------
 my_setup_vim
@@ -58,3 +52,4 @@ f_add_path "$SYS_CONFIG_HOME/opt/bin"
 
 # OS dependent wrapper
 f_ins_path "$MY_ENV/bin/os.$MY_OS_NAME"
+

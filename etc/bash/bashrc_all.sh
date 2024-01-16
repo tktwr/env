@@ -6,14 +6,11 @@ export MY_COMMON_SETTING=$HOME/MyConfig/lconfig/common
 rc_files="$MY_BASH/bashrc.??.*.sh"
 rc_files="$rc_files $MY_COMMON_SETTING/bashrc.??.*.sh"
 
+source $MY_BASH/bashrc.0.start.sh
+
 for fname in $rc_files; do
   #echo $fname
-  case $fname in
-    */bashrc.00.*.sh)
-      source $fname
-      ;;
-    *)
-      source_file $fname
-      ;;
-  esac
+  source_file $fname
 done
+
+source $MY_BASH/bashrc.999.end.sh
