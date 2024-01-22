@@ -27,6 +27,7 @@ doxygen/
 # python
 __pycache__
 *.model
+.venv/
 
 # local
 _output*/
