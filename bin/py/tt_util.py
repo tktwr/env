@@ -4,6 +4,7 @@
 import os
 import sys
 import time
+import subprocess
 import json
 import argparse
 import numpy as np
@@ -183,3 +184,13 @@ def write_json(fname, data):
         f.write(json.dumps(data, sort_keys=True, indent=4))
 
 
+# -----------------------------------------------------
+def run(command):
+    proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+    while True:
+        line = proc.stdout.readline().decode('utf-8', 'replace')
+        if line:
+            sys.stdout.write(line)
+        if not line and proc.poll() is not None:
+            break
