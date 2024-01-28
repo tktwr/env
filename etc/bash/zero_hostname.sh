@@ -1,5 +1,24 @@
 #!/bin/bash
 
+#------------------------------------------------------
+f_has_bin() {
+  which $1 > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo true
+  else
+    echo false
+  fi
+}
+
+f_sys_exe() {
+  if $(f_has_bin $1); then
+    echo $1
+  else
+    echo $2
+  fi
+}
+
+#------------------------------------------------------
 f_user_name() {
   if [ -n "$USER" ]; then
     echo $USER
@@ -60,14 +79,6 @@ f_sys_config_home()  { echo $(realpath "$HOME/MyConfig"); }
 f_sys_work_home()    { echo $(realpath "$HOME/MyWork"); }
 f_sys_proj_home()    { echo $(realpath "$HOME/MyProj"); }
 f_sys_data_home()    { echo $(realpath "$HOME/MyData"); }
-
-f_sys_exe() {
-  if $(has_bin $1); then
-    echo $1
-  else
-    echo $2
-  fi
-}
 
 #------------------------------------------------------
 f_all() {
