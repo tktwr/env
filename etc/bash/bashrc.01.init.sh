@@ -26,6 +26,9 @@ export WWW_HOME="https://tktwr.github.io/memo/"
 
 shopt -s no_empty_cmd_completion
 
+#------------------------------------------------------
+# fzf
+#------------------------------------------------------
 f_fzf_help() {
   declare -F | grep '\-f ' | awk '{print $3}' | grep '\<f_' | grep -v 'f_fzf_help'
 }
