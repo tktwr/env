@@ -43,8 +43,17 @@ f_zero_symlink() {
   f_symlink WinHome/MyWork   MyWork
 }
 
+f_zero_batcat() {
+  if [ $SYS_CAT_EXE = 'batcat' ]; then
+    echo "[batcat] build"
+    batcat cache --build
+  fi
+}
+
+#------------------------------------------------------
 f_zero_backup
 f_zero_init
 f_zero_bash
 f_zero_vim
 f_zero_symlink
+f_zero_batcat
