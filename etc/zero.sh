@@ -7,7 +7,7 @@ f_zero_init() {
 
 f_zero_bash() {
   cd bash
-  ./make_hostname.sh > $HOME/.my/hostname.sh
+  ./zero_hostname.sh > $HOME/.my/hostname.sh
   cat bashrc_zero.sh > $HOME/.bashrc
   cd ..
 }
