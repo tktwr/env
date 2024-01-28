@@ -14,17 +14,6 @@ f_10_update_vim() {
 
 f_11_sync_time() { sync-time.sh; }
 
-f_symlink() {
-  # ln -s /mnt/c/Users/$USER      WinHome
-  # ln -s /mnt/hgfs/$USER         WinHome
-  # ln -s /cygdrive/c/Users/$USER WinHome
-
-  ln -s WinHome/MyConfig .
-  ln -s WinHome/MyData   .
-  ln -s WinHome/MyProj   .
-  ln -s WinHome/MyWork   .
-}
-
 #------------------------------------------------------
 # batcat
 #------------------------------------------------------
