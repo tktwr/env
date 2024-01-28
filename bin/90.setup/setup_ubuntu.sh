@@ -6,10 +6,10 @@
 pkg_min="\
 vim \
 fzf \
-bat \
-tree \
 fd-find \
 ripgrep \
+bat \
+tree \
 ncdu \
 zip unzip \
 universal-ctags \
