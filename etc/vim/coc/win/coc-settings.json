@@ -26,9 +26,9 @@
   // python
   // --------------------------------------------------
   "python.venvPath"                        : "${env:MY_PYTHON_VENV_DIR_WIN}",
-  "python.pythonPath"                      : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/python.exe",
-  "python.linting.pylintPath"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/pylint.exe",
-  "python.linting.flake8Path"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/flake8.exe",
+  //"python.pythonPath"                      : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/python.exe",
+  //"python.linting.pylintPath"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/pylint.exe",
+  //"python.linting.flake8Path"              : "${env:MY_PYTHON_VENV_DIR_WIN}/default/Scripts/flake8.exe",
   "python.analysis.stubPath"               : "${env:MY_GITHUB_WIN}/python-type-stubs",
   "python.linting.enabled"                 : true,
   "python.linting.pylintEnabled"           : false,
