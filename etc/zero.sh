@@ -31,14 +31,16 @@ f_zero_vim() {
 }
 
 f_zero_symlink() {
+  cd
+
   # ln -s /mnt/c/Users/$USER      WinHome
   # ln -s /mnt/hgfs/$USER         WinHome
   # ln -s /cygdrive/c/Users/$USER WinHome
 
-  f_symlink WinHome/MyConfig .
-  f_symlink WinHome/MyData   .
-  f_symlink WinHome/MyProj   .
-  f_symlink WinHome/MyWork   .
+  f_symlink WinHome/MyConfig MyConfig
+  f_symlink WinHome/MyData   MyData
+  f_symlink WinHome/MyProj   MyProj
+  f_symlink WinHome/MyWork   MyWork
 }
 
 f_zero_backup
