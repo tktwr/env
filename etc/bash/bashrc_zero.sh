@@ -39,7 +39,8 @@ f_zero_python() {
 
 f_zero_alias() {
   # shell
-  alias s='source $HOME/.bashrc; source $HOME/.venv/bin/activate'
+  alias s='source $HOME/.bashrc'
+  alias ss='source $HOME/.bashrc; source $HOME/.venv/bin/activate'
   alias h='history 20'
   alias j='jobs -l'
   alias where='type -all'
