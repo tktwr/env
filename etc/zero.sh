@@ -43,8 +43,18 @@ f_zero_symlink() {
   f_symlink WinHome/MyWork   MyWork
 }
 
+f_zero_python() {
+  MY_PYTHON_VENV_DIR=$HOME/.mycache/python_venv/default
+  local dir=$MY_PYTHON_VENV_DIR
+  if [ ! -d "$dir" ]; then
+    echo "python3 -m venv $dir"
+    python3 -m venv $dir
+  fi
+}
+
 f_zero_backup
 f_zero_init
 f_zero_bash
 f_zero_vim
 f_zero_symlink
+f_zero_python
