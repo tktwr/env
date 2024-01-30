@@ -7,10 +7,20 @@
 #======================================================
 # functions
 #======================================================
-f_wsl_install()          { wsl.exe --install Ubuntu; }
-f_wsl_update()           { wsl.exe --update; }
-f_wsl_list_installed()   { wsl.exe -l -v; }
-f_wsl_list_installable() { wsl.exe -l -o; }
+f_install_nodejs() {
+sudo -E apt purge nodejs
+sudo -E apt autoremove
+
+#curl -L https://deb.nodesource.com/setup_18.x -o nodesource_setup_18.sh
+curl -L https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo -E apt install -y nodejs
+}
+
+f_nodejs_version() {
+  cat /etc/apt/sources.list.d/nodesource.list
+  node --version
+  npm --version
+}
 
 #======================================================
 # main
