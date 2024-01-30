@@ -1,7 +1,7 @@
 #!/bin/bash
 
 f_symlink() {
-  if [ ! -d "$2" ]; then
+  if [ ! -e "$2" -a ! -L "$2" ]; then
     echo "ln -s $1 $2"
     ln -s $1 $2
   fi
@@ -44,7 +44,7 @@ f_zero_symlink() {
 }
 
 f_zero_batcat() {
-  if [ $SYS_CAT_EXE = 'batcat' ]; then
+  if [ "$SYS_CAT_EXE" = 'batcat' ]; then
     echo "[batcat] build"
     batcat cache --build
   fi
