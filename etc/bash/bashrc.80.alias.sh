@@ -3,11 +3,12 @@
 #======================================================
 # alias
 #======================================================
+# source
+alias s='source $HOME/.bashrc'
+alias s-venv='source .venv/bin/activate'
+alias s-zero='source $MY_BASH/bashrc_zero.sh'
 
 # shell
-alias s-zero='source $MY_BASH/bashrc_zero.sh'
-alias s='source $HOME/.bashrc'
-alias ss='source $HOME/.bashrc; source $HOME/.venv/bin/activate'
 alias h='history 20'
 alias j='jobs -l'
 alias where='type -all'

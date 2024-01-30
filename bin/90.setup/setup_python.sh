@@ -32,15 +32,18 @@ torch==1.8.2+cu102 torchvision==0.9.2+cu102 torchaudio===0.8.2 -f https://downlo
 #======================================================
 # functions
 #======================================================
-f_venv_create_default() {
-  mypython.sh --create-venv default
-  source $HOME/.bashrc
+f_venv_create() {
+  local dir=.venv
+  if [ ! -d "$dir" ]; then
+    echo "python3 -m venv $dir"
+    python3 -m venv $dir
+  fi
+  source $dir/bin/activate
 }
 
 f_venv_info() {
-  mypython.sh --print-env
-  echo "VENVS:"
-  mypython.sh --list-venv
+  which python
+  which pip
 }
 
 #------------------------------------------------------
@@ -49,8 +52,7 @@ f_pip_upgrade() {
 }
 
 f_pip_upgrade_old() {
-  python_exe=${MY_PYTHON_EXE:-"python"}
-  $python_exe -m pip install --upgrade pip
+  python -m pip install --upgrade pip
 }
 
 #------------------------------------------------------
