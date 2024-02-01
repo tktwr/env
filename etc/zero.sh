@@ -43,6 +43,14 @@ f_zero_symlink() {
   f_symlink WinHome/MyWork   MyWork
 }
 
+f_zero_venv() {
+  local dir=$HOME/.venv
+  if [ ! -d "$dir" ]; then
+    echo "python3 -m venv $dir"
+    python3 -m venv $dir
+  fi
+}
+
 f_zero_batcat() {
   if [ "$SYS_CAT_EXE" = 'batcat' ]; then
     echo "[batcat] build"
@@ -56,4 +64,5 @@ f_zero_init
 f_zero_bash
 f_zero_vim
 f_zero_symlink
+f_zero_venv
 f_zero_batcat

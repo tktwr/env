@@ -16,6 +16,8 @@ universal-ctags \
 eblook \
 python3-pip \
 python3-venv \
+python3-poetry \
+pipx \
 "
 pkg_ext="\
 vim-gtk3 \
@@ -75,8 +77,12 @@ f_apt_install_dev() {
   sudo -E apt install $pkg_dev
 }
 
-f_service_list() {
+f_list_services() {
   systemctl list-unit-files -t service
+}
+
+f_list_mount() {
+  mount | grep 9p | $GIT_PAGER
 }
 
 #======================================================

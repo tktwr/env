@@ -19,14 +19,13 @@ matplotlib \
 tkinterdnd2 \
 "
 pkg_dev_ext="\
+gradio \
 scipy \
-sklearn \
+scikit-learn \
 tensorboard \
 "
-# pytorch with CUDA 10.2
-pkg_torch182_cu102="\
---trusted-host download.pytorch.org \
-torch==1.8.2+cu102 torchvision==0.9.2+cu102 torchaudio===0.8.2 -f https://download.pytorch.org/whl/lts/1.8/torch_lts.html \
+pkg_torch="\
+torch torchvision torchaudio xformers --index-url https://download.pytorch.org/whl/cu118 \
 "
 
 #======================================================
@@ -38,7 +37,6 @@ f_venv_create() {
     echo "python3 -m venv $dir"
     python3 -m venv $dir
   fi
-  source $dir/bin/activate
 }
 
 f_venv_info() {

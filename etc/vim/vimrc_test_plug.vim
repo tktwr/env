@@ -76,6 +76,3 @@ colorscheme gruvbox
 "------------------------------------------------------
 nnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
 tnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
-
-nnoremap <silent> <Space>    <C-W>:CpmOpen<CR>
-tnoremap <silent> <C-Space>  <C-W>:CpmOpen<CR>

@@ -28,19 +28,10 @@ f_zero_path() {
   export PYTHONPATH="$SYS_PYTHONPATH"
 }
 
-f_zero_python() {
-  local dir=$HOME/.venv
-  if [ ! -d "$dir" ]; then
-    echo "python3 -m venv $dir"
-    python3 -m venv $dir
-  fi
-  source $dir/bin/activate
-}
-
 f_zero_alias() {
   # source
   alias s='source $HOME/.bashrc'
-  alias s-venv='source .venv/bin/activate'
+  alias s.='source .venv/bin/activate'
 
   # shell
   alias h='history 20'
@@ -121,5 +112,6 @@ export -f f_fzf_main
 #======================================================
 f_zero_env
 f_zero_path
-f_zero_python
 f_zero_alias
+
+source $HOME/.venv/bin/activate
