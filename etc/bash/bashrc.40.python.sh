@@ -3,9 +3,6 @@
 #======================================================
 # python
 #======================================================
-#------------------------------------------------------
-# type
-#------------------------------------------------------
 _my_setup_python_win() {
   export MY_PYTHON_EXE="python"
   export PYTHONPATH="$SYS_BLENDER_PY_WIN;$PYTHONPATH"
@@ -27,14 +24,12 @@ _my_setup_python_linux() {
   export PYTHONPATH="$MY_BIN/py:$PYTHONPATH"
 }
 
-mypython-type() {
-  local python_type=$1
-
-  case $python_type in
-    python-win)
+my_setup_python() {
+  case $MY_OS_NAME in
+    msys|gitbash)
       _my_setup_python_win
       ;;
-    python)
+    *)
       _my_setup_python_linux
       ;;
   esac
@@ -43,38 +38,34 @@ mypython-type() {
 #------------------------------------------------------
 # venv
 #------------------------------------------------------
-mypython-venv-info() {
-  mypython.sh --list-venv
+venv-create() {
+  local dir=$HOME/.venv
+  if [ ! -d "$dir" ]; then
+    echo "$MY_PYTHON_EXE -m venv $dir"
+    $MY_PYTHON_EXE -m venv $dir
+  fi
 }
 
-mypython-venv-create() {
-  local venv_name=${1:-"default"}
-  mypython.sh --create-venv $venv_name
-  source_bashrc
-}
+venv-activate() {
+  local dir=$HOME/.venv
 
-mypython-venv-activate() {
-  local venv_name=${1:-"default"}
-  local venv_dir=$MY_PYTHON_VENV_DIR/$venv_name
-
-  if [ ! -d "$venv_dir" ]; then
+  if [ ! -d "$dir" ]; then
     return
   fi
 
   case $MY_OS_NAME in
     msys|gitbash)
       MY_OLD_PATH=$PATH
-      PATH="$venv_dir:$PATH"
-      PATH="$venv_dir/Scripts:$PATH"
+      PATH="$dir:$PATH"
+      PATH="$dir/Scripts:$PATH"
       ;;
     *)
-      source $venv_dir/bin/activate
+      source $dir/bin/activate
       ;;
   esac
-  MY_PYTHON_VENV="$venv_name"
 }
 
-mypython-venv-deactivate() {
+venv-deactivate() {
   case $MY_OS_NAME in
     msys|gitbash)
       PATH=$MY_OLD_PATH
@@ -83,17 +74,5 @@ mypython-venv-deactivate() {
       deactivate
       ;;
   esac
-  MY_PYTHON_VENV=""
-}
-
-#------------------------------------------------------
-# mypython.sh
-#------------------------------------------------------
-mypython-set() {
-  local python_type=${1:-"python"}
-  local venv_name=${2:-"default"}
-
-  mypython.sh --set $python_type $venv_name
-  source_bashrc
 }
 

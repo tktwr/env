@@ -82,28 +82,7 @@ f_init() {
   #f_python
 }
 
-f_help() {
-  echo "init        ... init"
-  echo "mirror      ... mirror"
-  echo "update      ... update"
-  echo "install_min ... install_min"
-  echo "install_ext ... install_ext"
-  echo "desktop     ... desktop"
-  echo "font        ... font"
-  echo "im          ... im"
-  echo "dir         ... dir"
-  echo "python      ... python"
-  echo "help        ... print help"
-}
-
-f_default() {
-  f_help
-}
-
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
-
+f_fzf_main "$@"

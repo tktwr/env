@@ -9,11 +9,11 @@ FONTS=Cica.ttc
 
 pkg_min="\
 vim \
-fzf \
 nodejs npm \
 python3-pip \
 python3-venv \
-git-lfs \
+fzf \
+fzy \
 "
 pkg_ext="\
 vim-gtk3 \
@@ -23,22 +23,18 @@ cmake \
 clang \
 clang-tools \
 python3-dev \
-img2pdf \
-ffmpeg \
-ffmpegthumbnailer \
-gstreamer1.0-libav \
-vlc \
-gimp \
-imagemagick \
 "
 
 #======================================================
 # functions
 #======================================================
+f_mirror() {
+  echo "f_mirror: use MX Tools"
+}
+
 f_update() {
   sudo apt update
   sudo apt upgrade
-  sudo apt autoremove
 }
 
 f_install_min() {
@@ -50,29 +46,45 @@ f_install_ext() {
 }
 
 #------------------------------------------------------
-f_init() {
-  f_update
-  f_install_min
+f_desktop() {
+  LC_ALL=C xdg-user-dirs-gtk-update
+}
+
+f_font() {
+  cp $FONTS ~/.local/share/fonts
+}
+
+f_im() {
+  echo "f_im: use MX Tools"
+}
+
+f_dir() {
+  sudo mkdir -p $WIN_HOME
+
+  cd
+  ln -s $WIN_HOME WinHome
+  ln -s WinHome/MyConfig .
+  ln -s WinHome/MyShare .
 }
 
 #------------------------------------------------------
-f_help() {
-  echo "update      ... update"
-  echo "install_min ... install_min"
-  echo "install_ext ... install_ext"
-  echo "----------- ... -----------------------------"
-  echo "init        ... init"
-  echo "----------- ... -----------------------------"
-  echo "help        ... print this help (default)"
-}
+f_init() {
+  if [ ! -d $ENV_DIR ]; then
+    echo "$ENV_DIR is not a directory"
+    return
+  fi
 
-f_default() {
-  f_help
+  f_mirror
+  f_update
+  f_install_min
+
+  f_desktop
+  #f_font
+  #f_im
+  f_dir
 }
 
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"

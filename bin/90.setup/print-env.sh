@@ -25,8 +25,6 @@ f_print_env_config() {
 f_print_env_python() {
   echo "MY_PYTHON_EXE      = $MY_PYTHON_EXE"
   echo "                   = $(which $MY_PYTHON_EXE)"
-  echo "MY_PYTHON_TYPE     = $MY_PYTHON_TYPE"
-  echo "MY_PYTHON_VENV     = $MY_PYTHON_VENV"
 }
 
 f_print_env_build() {

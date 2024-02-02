@@ -20,7 +20,6 @@ $DOT_FILES_CONFIG \
 "
 DOT_FILES_DIFF="\
 .my/buildrc.sh \
-.my/pythonrc.sh \
 "
 DOT_FILES_INIT="\
 .bash_logout \
