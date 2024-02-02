@@ -8,36 +8,37 @@ VSCODE=$SYS_WIN_HOME/AppData/Roaming/Code/User
 #======================================================
 # functions
 #======================================================
-f_vimdiff() {
+#------------------------------------------------------
+# vscode
+#------------------------------------------------------
+f_vscode_diff() {
+  cd vscode
   vimdiff.sh settings.json $VSCODE/settings.json
   vimdiff.sh keybindings.json $VSCODE/keybindings.json
 }
 
-f_push() {
+f_vscode_push() {
+  cd vscode
   cp settings.json $VSCODE
   cp keybindings.json $VSCODE
 }
 
-f_pull() {
+f_vscode_pull() {
+  cd vscode
   cp $VSCODE/settings.json .
   cp $VSCODE/keybindings.json .
 }
 
 #------------------------------------------------------
-f_help() {
-  echo "vimdiff"
-  echo "push"
-  echo "pull"
-  echo "help"
-}
-
-f_default() {
-  f_help
+# wsltty
+#------------------------------------------------------
+f_install_wsltty_config() {
+  cd wsltty
+  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
+  cp config $wsltty_dir
 }
 
 #======================================================
 # main
 #======================================================
-func_name=${1:-"default"}
-shift
-eval "f_$func_name $@"
+f_fzf_main "$@"

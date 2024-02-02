@@ -14,14 +14,6 @@ f_batcat_list()  { batcat -L; }
 f_batcat_build() { batcat cache --build; }
 f_batcat_clear() { batcat cache --clear; }
 
-#------------------------------------------------------
-# wsltty
-#------------------------------------------------------
-f_install_wsltty_config() {
-  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
-  cp $MY_ENV/setup/win/wsltty/config $wsltty_dir
-}
-
 #======================================================
 # main
 #======================================================
