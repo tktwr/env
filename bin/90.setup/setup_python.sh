@@ -34,8 +34,8 @@ torch torchvision torchaudio xformers --index-url https://download.pytorch.org/w
 f_venv_create() {
   local dir=.venv
   if [ ! -d "$dir" ]; then
-    echo "python3 -m venv $dir"
-    python3 -m venv $dir
+    echo "python -m venv $dir"
+    python -m venv $dir
   fi
 }
 

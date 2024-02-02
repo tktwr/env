@@ -26,8 +26,6 @@ f_help() {
 f_print_env() {
   echo "MY_PYTHON_EXE=$MY_PYTHON_EXE"
   echo "MY_PYTHON_VENV_DIR=$MY_PYTHON_VENV_DIR"
-  echo "MY_PYTHON_TYPE=$MY_PYTHON_TYPE"
-  echo "MY_PYTHON_VENV=$MY_PYTHON_VENV"
 }
 
 f_print_export() {
