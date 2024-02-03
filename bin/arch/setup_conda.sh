@@ -3,7 +3,7 @@
 #======================================================
 # variables
 #======================================================
-pkg="\
+conda_pkg="\
 numpy \
 opencv \
 matplotlib \
@@ -18,11 +18,7 @@ python-graphviz graphviz \
 # functions
 #======================================================
 f_conda_install() {
-  conda install $pkg
+  conda install $conda_pkg
   #conda install -c conda-forge opencv
 }
 
-#======================================================
-# main
-#======================================================
-f_fzf_main "$@"

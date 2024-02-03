@@ -6,7 +6,7 @@
 # ncurses-utils   # tput
 # util-linux      # column
 
-pkg="\
+termux_pkg="\
 git \
 vim \
 tmux \
@@ -25,11 +25,7 @@ openssh \
 #======================================================
 # functions
 #======================================================
-f_install() {
-  pkg install $pkg
+f_termux_install() {
+  pkg install $termux_pkg
 }
 
-#======================================================
-# main
-#======================================================
-f_fzf_main "$@"

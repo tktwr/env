@@ -3,14 +3,9 @@
 #======================================================
 # variables
 #======================================================
-pkg_min="\
-vim \
-fzf \
-fd-find \
-ripgrep \
-bat \
-tree \
-ncdu \
+apt_pkg_min="\
+vim fzf fd-find ripgrep bat \
+tree ncdu \
 zip unzip \
 universal-ctags \
 eblook \
@@ -19,7 +14,7 @@ python3-venv \
 python3-poetry \
 pipx \
 "
-pkg_ext="\
+apt_pkg_ext="\
 vim-gtk3 \
 neovim \
 imagemagick \
@@ -36,7 +31,7 @@ x11-apps \
 lhasa \
 encfs \
 "
-pkg_dev="\
+apt_pkg_dev="\
 cmake \
 clang \
 clangd \
@@ -47,14 +42,13 @@ python3-tk \
 python3-opencv \
 python3-doc \
 "
-pkg_not_install="\
+apt_pkg_not_install="\
 blender \
 nvidia-cuda-toolkit \
 baobab \
 nodejs npm \
 exa \
 "
-
 #======================================================
 # functions
 #======================================================
@@ -63,34 +57,25 @@ f_apt_update() {
   sudo -E apt upgrade
   sudo -E apt autoremove
 }
-
 #------------------------------------------------------
-f_apt_install_min() {
-  sudo -E apt install $pkg_min
-}
-
-f_apt_install_ext() {
-  sudo -E apt install $pkg_ext
-}
-
-f_apt_install_dev() {
-  sudo -E apt install $pkg_dev
-}
-
-f_list_services() {
-  systemctl list-unit-files -t service
-}
-
-f_list_mount() {
-  mount | grep 9p | $GIT_PAGER
-}
-
+f_apt_install_min() { sudo -E apt install $apt_pkg_min; }
+f_apt_install_ext() { sudo -E apt install $apt_pkg_ext; }
+f_apt_install_dev() { sudo -E apt install $apt_pkg_dev; }
+#------------------------------------------------------
+# linux
+#------------------------------------------------------
+f_linux_services() { systemctl list-unit-files -t service; }
+f_linux_mount()    { mount | grep 9p | $GIT_PAGER; }
+#------------------------------------------------------
+# nvidia
+#------------------------------------------------------
 f_nvidia_smi()          { nvidia-smi; }
 f_nvidia_smi_loop()     { nvidia-smi -l; }
 f_nvidia_smi_exe()      { nvidia-smi.exe; }
 f_nvidia_smi_exe_loop() { nvidia-smi.exe -l; }
-
-#======================================================
-# main
-#======================================================
-f_fzf_main "$@"
+#------------------------------------------------------
+# batcat
+#------------------------------------------------------
+f_batcat_list()  { batcat -L; }
+f_batcat_build() { batcat cache --build; }
+f_batcat_clear() { batcat cache --clear; }

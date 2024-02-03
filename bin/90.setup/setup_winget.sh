@@ -3,7 +3,7 @@
 #======================================================
 # variables
 #======================================================
-pkg="\
+winget_pkg="\
   sharkdp.fd \
   sharkdp.bat \
   junegunn.fzf \
@@ -16,13 +16,13 @@ pkg="\
 # functions
 #======================================================
 f_winget_install() {
-  for i in $pkg; do
+  for i in $winget_pkg; do
     winget.exe install -e --id $i
   done
 }
 
 f_winget_upgrade() {
-  for i in $pkg; do
+  for i in $winget_pkg; do
     winget.exe upgrade -e --id $i
   done
 }
@@ -41,7 +41,3 @@ f_winget_cp_exe() {
   mv bat.exe batcat.exe
 }
 
-#======================================================
-# main
-#======================================================
-f_fzf_main "$@"

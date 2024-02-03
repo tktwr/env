@@ -3,7 +3,7 @@
 #======================================================
 # variables
 #======================================================
-pkg_min="\
+pip_pkg_min="\
 python-language-server \
 pylint \
 flake8 \
@@ -11,20 +11,20 @@ autopep8 \
 pyinstaller \
 pynvim \
 "
-pkg_dev="\
+pip_pkg_dev="\
 parse \
 numpy \
 opencv-python \
 matplotlib \
 tkinterdnd2 \
 "
-pkg_dev_ext="\
+pip_pkg_dev_ext="\
 gradio \
 scipy \
 scikit-learn \
 tensorboard \
 "
-pkg_torch="\
+pip_pkg_torch="\
 torch torchvision torchaudio xformers --index-url https://download.pytorch.org/whl/cu118 \
 "
 
@@ -56,18 +56,14 @@ f_pip_upgrade_old() {
 #------------------------------------------------------
 f_pip_install_min() {
   pip install wheel
-  pip install $pkg_min
+  pip install $pip_pkg_min
 }
 
 f_pip_install_dev() {
-  pip install $pkg_dev
+  pip install $pip_pkg_dev
 }
 
 f_pip_install_torch() {
-  pip install $pkg_torch
+  pip install $pip_pkg_torch
 }
 
-#======================================================
-# main
-#======================================================
-f_fzf_main "$@"
