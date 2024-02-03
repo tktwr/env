@@ -10,7 +10,7 @@ f_unexpand_env() {
   sed "s+$MY_PYTHON_VENV_DIR+\$MY_PYTHON_VENV_DIR+"
 }
 
-f_print_ver() {
+_f_print_ver() {
   cmd=$1
   abspath=$(which $cmd 2> /dev/null)
   ver=$($cmd --version 2> /dev/null | head -1)
@@ -45,7 +45,7 @@ f_print_ver_all() {
   rg \
   "
   for i in $BIN_NAMES; do
-    f_print_ver $i
+    _f_print_ver $i
   done
 }
 
