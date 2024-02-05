@@ -3,11 +3,6 @@
 #======================================================
 # minimal bashrc without any dependencies
 #======================================================
-unalias -a
-
-#======================================================
-# functions
-#======================================================
 f_zero_env() {
   export COLUMNS
   export HISTCONTROL=ignoreboth
@@ -29,6 +24,8 @@ f_zero_path() {
 }
 
 f_zero_alias() {
+  unalias -a
+
   # source
   alias s='source $HOME/.bashrc'
   alias s.='source .venv/bin/activate'
@@ -89,6 +86,14 @@ vim-where() { vim `which $*`; }
 #------------------------------------------------------
 # fzf
 #------------------------------------------------------
+f_fzf_pw_opt() {
+  pw_opt='hidden,right,60%,border-left,+{2}/3'
+  if [ $COLUMNS -lt 120 ]; then
+    pw_opt='hidden,down,60%,border-top,+{2}/3'
+  fi
+  echo $pw_opt
+}
+#------------------------------------------------------
 f_fzf_help() {
   declare -F | grep '\-f ' | awk '{print $3}' | grep '\<f_' | grep -v 'f_fzf_help'
 }
@@ -102,11 +107,11 @@ f_fzf_main() {
   shift
   eval "$func_name $@"
 }
-
+#------------------------------------------------------
+export -f f_fzf_pw_opt
 export -f f_fzf_help
 export -f f_fzf_default
 export -f f_fzf_main
-
 #======================================================
 # main
 #======================================================

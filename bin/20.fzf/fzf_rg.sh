@@ -1,15 +1,5 @@
 #!/bin/bash
 
-f_pw_opt() {
-  pw_opt='hidden,right,60%,border-left,+{2}/3'
-  if [ $COLUMNS -lt 120 ]; then
-    pw_opt='hidden,down,60%,border-top,+{2}/3'
-  fi
-  echo $pw_opt
-}
-
-#------------------------------------------------------
-pw_opt=$(f_pw_opt)
 query="${1:-}"
 query="-w $query"
 shift
@@ -27,4 +17,4 @@ fzf --prompt 'Rg> ' \
     --bind 'alt-o:execute(open.sh {1})' \
     --bind 'alt-i:execute(open_web.sh {1})' \
     --preview 'preview_rg.sh {1} {2}' \
-    --preview-window "$pw_opt"
+    --preview-window "$(f_fzf_pw_opt)"

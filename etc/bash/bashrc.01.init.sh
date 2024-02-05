@@ -29,6 +29,14 @@ shopt -s no_empty_cmd_completion
 #------------------------------------------------------
 # fzf
 #------------------------------------------------------
+f_fzf_pw_opt() {
+  pw_opt='hidden,right,60%,border-left,+{2}/3'
+  if [ $COLUMNS -lt 120 ]; then
+    pw_opt='hidden,down,60%,border-top,+{2}/3'
+  fi
+  echo $pw_opt
+}
+#------------------------------------------------------
 f_fzf_help() {
   declare -F | grep '\-f ' | awk '{print $3}' | grep '\<f_' | grep -v 'f_fzf_help'
 }
@@ -42,7 +50,8 @@ f_fzf_main() {
   shift
   eval "$func_name $@"
 }
-
+#------------------------------------------------------
+export -f f_fzf_pw_opt
 export -f f_fzf_help
 export -f f_fzf_default
 export -f f_fzf_main
