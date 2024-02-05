@@ -88,7 +88,7 @@ vim-where() { vim `which $*`; }
 #------------------------------------------------------
 f_fzf_pw_opt() {
   pw_opt='hidden,right,60%,border-left,+{2}/3'
-  if [ $COLUMNS -lt 120 ]; then
+  if [ $COLUMNS -lt 80 ]; then
     pw_opt='hidden,down,60%,border-top,+{2}/3'
   fi
   echo $pw_opt
