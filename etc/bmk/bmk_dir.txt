@@ -53,6 +53,9 @@
 -              | USER_LOCAL/                    | $USER_LOCAL/
 -              | USER_ROAMING/                  | $USER_ROAMING/
 -              | blender-addons/                | $BLENDER_ADDONS_DIR/
+-              | blender33-addons/              | $BLENDER33_ADDONS_DIR/
+-              | blender36-addons/              | $BLENDER36_ADDONS_DIR/
+-              | blender40-addons/              | $BLENDER40_ADDONS_DIR/
 -              | winget/                        | $WINGET_DIR/
 -              | winapp/                        | $WINAPP_DIR/
 -              | win_setting:wt                 | $SYS_WIN_HOME/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState
