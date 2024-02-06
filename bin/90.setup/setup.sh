@@ -7,8 +7,32 @@
 #======================================================
 # functions
 #======================================================
-f_10_vim_plug_update() { f_vim_plug_update; }
-f_11_sync_time()       { sync-time.sh; }
+f_10_setup_daily() {
+  f_vim_plug_update
+}
+f_11_setup_time() {
+  sync-time.sh
+}
+f_21_setup_weekly() {
+  weekly-tags.sh
+}
+f_22_setup_monthly() {
+  monthly-tags.sh
+}
+f_90_setup_init() {
+  f_apt_update
+  f_apt_install_min
+  f_pip_upgrade
+  f_pip_install_min
+  f_nodejs_install
+  f_vim_plug_upgrade
+  f_vim_plug_install
+}
+f_91_setup_update() {
+  f_apt_update
+  f_pip_upgrade
+  f_vim_plug_update
+}
 #------------------------------------------------------
 f_print_env()     { print-env.sh; }
 f_print_path()    { print-path.sh; }
