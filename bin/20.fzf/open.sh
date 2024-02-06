@@ -7,7 +7,7 @@ case "$url" in
     open_web.sh "$url"
     ;;
   *.pdf)
-    open_web.sh "$url"
+    open_pdf.sh "$url"
     ;;
   *)
     if [ -d "$url" ]; then
