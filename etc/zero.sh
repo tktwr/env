@@ -13,10 +13,12 @@ f_symlink() {
 
 #------------------------------------------------------
 f_zero_sys() {
-  sudo -E apt update
-  sudo -E apt upgrade
-  sudo -E apt autoremove
-  sudo -E apt install python3-venv python3-pip
+  if [ ! -d $HOME/.venv ]; then
+    sudo -E apt update
+    sudo -E apt upgrade
+    sudo -E apt autoremove
+    sudo -E apt install python3-venv python3-pip
+  fi
 }
 
 f_zero_dir() {
@@ -63,7 +65,7 @@ f_zero_batcat() {
 }
 
 #------------------------------------------------------
-#f_zero_sys
+f_zero_sys
 f_zero_dir
 f_zero_bash
 f_zero_vim
