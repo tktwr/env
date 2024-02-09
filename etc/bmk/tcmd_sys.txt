@@ -1,21 +1,23 @@
 -------------- | ------------------------------    | ------------------------------
--              | tcmd:neofetch                     | > neofetch<CR>
--              | tcmd:btop                         | > btop<CR>
--              | tcmd:htop                         | > htop -t<CR>
--              | tcmd:nvidia-smi.exe               | > nvidia-smi.exe -l<CR>
--              | tcmd:killall nvidia-smi.exe       | > killall nvidia-smi.exe<CR>
--              | tcmd:ncdu                         | > ncdu<CR>
--              | tcmd:cal -y                       | > cal -y<CR>
--              | tcmd:ip                           | > ip -4 a<CR>
--              | tcmd:ipconfig.exe                 | > ipconfig.exe<CR>
--              | tcmd:print-env.sh                 | > print-env.sh<CR>
--              | tcmd:print-path.sh                | > print-path.sh<CR>
--              | tcmd:print-version.sh             | > print-version.sh<CR>
--              | tcmd:print-nerd-font.sh           | > print-nerd-font.sh<CR>
--              | tcmd.color:print-256colors.py     | > print-256colors.py<CR>
--              | tcmd.color:print-truecolors.py    | > print-truecolors.py<CR>
--              | tcmd.color:print-colors.sh        | > print-colors.sh<CR>
--              | tcmd.color:print-esc.sh           | > print-esc.sh<CR>
+-              | cmd:neofetch                      | > neofetch<CR>
+-              | cmd:btop                          | > btop<CR>
+-              | cmd:htop                          | > htop -t<CR>
+-              | cmd:ncdu                          | > ncdu<CR>
+-              | cmd:cal -y                        | > cal -y<CR>
+-              | cmd:ip                            | > ip -4 a<CR>
+-              | cmd:win:nvidia-smi.exe            | > nvidia-smi.exe -l<CR>
+-              | cmd:win:killall nvidia-smi.exe    | > killall nvidia-smi.exe<CR>
+-              | cmd:win:ipconfig.exe              | > ipconfig.exe<CR>
+-              | cmd:print-env.sh                  | > print-env.sh<CR>
+-              | cmd:print-path.sh                 | > print-path.sh<CR>
+-              | cmd:print-version.sh              | > print-version.sh<CR>
+-              | cmd:print-nerd-font.sh            | > print-nerd-font.sh<CR>
+-              | cmd:print-256colors.py            | > print-256colors.py<CR>
+-              | cmd:print-truecolors.py           | > print-truecolors.py<CR>
+-              | cmd:print-colors.sh               | > print-colors.sh<CR>
+-              | cmd:print-colors-esc.sh           | > print-colors-esc.sh<CR>
+-              | mycmake.sh                        | > mycmake.sh<CR>
+-              | mycmake.sh --build                | > mycmake.sh --build<CR>
 + ,mk          | mycmake-set make   Release        | > mycmake-set make   Release<CR>
 -              | mycmake-set make   Debug          | > mycmake-set make   Debug<CR>
 -              | mycmake-set ninja  Release        | > mycmake-set ninja  Release<CR>
@@ -32,11 +34,11 @@
 -              | apt list <pkg>                    | > apt list
 -              | apt search <pkg>                  | > apt search
 -              | apt show <pkg>                    | > apt show
--              | sudo apt install <pkg>            | > sudo apt install
--              | sudo apt remove <pkg>             | > sudo apt remove
--              | sudo apt update                   | > sudo apt update
--              | sudo apt upgrade                  | > sudo apt upgrade
--              | sudo apt autoremove               | > sudo apt autoremove
+-              | apt install <pkg>                 | > sudo -E apt install
+-              | apt remove <pkg>                  | > sudo -E apt remove
+-              | apt update                        | > sudo -E apt update
+-              | apt upgrade                       | > sudo -E apt upgrade
+-              | apt autoremove                    | > sudo -E apt autoremove
 -              | pip list                          | > pip list<CR>
 -              | pip search <pkg>                  | > pip search
 -              | pip install <pkg>                 | > pip install

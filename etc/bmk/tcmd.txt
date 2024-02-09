@@ -34,7 +34,5 @@
 -              | Apt                            | > ,apt<CR>
 -              | Pip                            | > ,pip<CR>
 -              | Dpkg                           | > ,dpkg<CR>
--              | mycmake.sh                     | > mycmake.sh<CR>
--              | mycmake.sh --build             | > mycmake.sh --build<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
