@@ -69,3 +69,32 @@ func EditTogglePathFormat()
   call setline('.', l:str)
 endfunc
 
+"------------------------------------------------------
+func! RngRemoveSpaces() range
+  exec printf('%d,%ds/ //g', a:firstline, a:lastline)
+endfunc
+
+func! FormatLines() range
+  exec printf('%d,%ds/ //g', a:firstline, a:lastline)
+  Tabularize /=dict
+  Tabularize /|dict
+  Tabularize /,
+endfunc
+
+"------------------------------------------------------
+func! PgrRemoveSpaces()
+  '{,'}call RngRemoveSpaces()
+endfunc
+
+func! PgrFormat()
+  '{,'}call FormatLines()
+endfunc
+
+func! PgrIndentLeft()
+  normal <ap
+endfunc
+
+func! PgrIndentRight()
+  normal >ap
+endfunc
+

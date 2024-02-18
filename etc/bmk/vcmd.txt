@@ -61,6 +61,12 @@
 - ,c.          | EditTabDots                    | :EditTabDots
 - ,c=          | EditTabEqual                   | :EditTabEqual
 - ,c[          | EditTabLabel                   | :EditTabLabel
+-----          | ------------------------------ | ------------------------------
+- ,pr          | PgrRemoveSpaces                | :call PgrRemoveSpaces()
+- ,pf          | PgrFormat                      | :call PgrFormat()
+- ,p<          | PgrIndentLeft                  | :call PgrIndentLeft()
+- ,p>          | PgrIndentRight                 | :call PgrIndentRight()
+-----          | ------------------------------ | ------------------------------
 - ,sumcol0     | SumCol(0)                      | :call SumCol(0)
 - ,sumcol1     | SumCol(1)                      | :call SumCol(1)
 - ,sumcol2     | SumCol(2)                      | :call SumCol(2)
