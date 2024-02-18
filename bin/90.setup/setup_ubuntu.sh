@@ -69,10 +69,8 @@ f_linux_mount()    { mount | grep 9p | $GIT_PAGER; }
 #------------------------------------------------------
 # nvidia
 #------------------------------------------------------
-f_nvidia_smi()          { nvidia-smi; }
-f_nvidia_smi_loop()     { nvidia-smi -l; }
-f_nvidia_smi_exe()      { nvidia-smi.exe; }
-f_nvidia_smi_exe_loop() { nvidia-smi.exe -l; }
+f_nvidia_smi()          { watch nvidia-smi; }
+f_nvidia_smi_exe()      { watch nvidia-smi.exe; }
 #------------------------------------------------------
 # batcat
 #------------------------------------------------------
