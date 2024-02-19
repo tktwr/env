@@ -13,14 +13,6 @@ f_install_zero() {
   cat vimrc_zero.vim > $HOME/.vimrc
 }
 
-f_install_min() {
-  cat vimrc_zero.vim > $HOME/.vimrc
-}
-
-f_install_min_plug() {
-  cat vimrc_zero.vim vimrc_min_plug.vim > $HOME/.vimrc
-}
-
 #------------------------------------------------------
 f_prof() { vim-log.sh; }
 

@@ -115,6 +115,10 @@ snippet print "print"
 print(f'${1:val}: {$1}')
 endsnippet
 
+snippet print_stderr "print stderr"
+print(f'${1:val}: {$1}', file=sys.stderr)
+endsnippet
+
 snippet range "range"
 range(${1:0}, ${2:5}, ${3:1})
 endsnippet

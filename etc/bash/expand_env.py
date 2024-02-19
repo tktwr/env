@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
+import sys
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../bin/py'))
 import re
 import argparse
 import tt_path_util as ttp

@@ -59,18 +59,6 @@ f_11_install_zero() {
   _f_sub vim  f_install_zero
 }
 
-f_12_install_min() {
-  _f_cp_all
-  _f_sub bash f_install_min
-  _f_sub vim  f_install_min
-}
-
-f_13_install_min_plug() {
-  _f_cp_all
-  _f_sub bash f_install_min
-  _f_sub vim  f_install_min_plug
-}
-
 #------------------------------------------------------
 f_cmp()            { diff-files.sh -c cmp        -d $HOME $DOT_FILES_ALL; }
 f_cmp_diff()       { diff-files.sh -c diff       -d $HOME $DOT_FILES_ALL; }

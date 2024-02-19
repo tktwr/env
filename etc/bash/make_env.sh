@@ -1,7 +1,10 @@
 #!/bin/bash
 
 source bashrc_zero.sh
-source bashrc_min.sh
+
+export MY_FZY="$SYS_ROAMING_HOME/env/etc/fzy"
+export MY_COMMON_SETTING="$SYS_CONFIG_HOME/lconfig/common"
+export MY_DOTMY="$SYS_LOCAL_HOME/.my"
 
 FILES="\
 $MY_FZY/dir.00.sys.txt \

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source $HOME/.my/hostname.sh
+
 #======================================================
 # minimal bashrc without any dependencies
 #======================================================
@@ -84,6 +86,41 @@ vim-which() { vim `which $*`; }
 vim-where() { vim `which $*`; }
 
 #------------------------------------------------------
+# venv
+#------------------------------------------------------
+f_zero_venv_activate() {
+  local dir=$HOME/.venv
+  if [ -d "$dir" ]; then
+    case $MY_OS_NAME in
+      msys|gitbash)
+        MY_OLD_PATH=$PATH
+        PATH="$dir:$PATH"
+        PATH="$dir/Scripts:$PATH"
+        ;;
+      *)
+        source $dir/bin/activate
+        ;;
+    esac
+  fi
+}
+
+f_zero_venv_deactivate() {
+  local dir=$HOME/.venv
+  if [ -d "$dir" ]; then
+    case $MY_OS_NAME in
+      msys|gitbash)
+        PATH=$MY_OLD_PATH
+        ;;
+      *)
+        deactivate
+        ;;
+    esac
+  fi
+}
+
+export -f f_zero_venv_activate
+export -f f_zero_venv_deactivate
+#------------------------------------------------------
 # fzf
 #------------------------------------------------------
 f_fzf_pw_opt() {
@@ -118,5 +155,4 @@ export -f f_fzf_main
 f_zero_env
 f_zero_path
 f_zero_alias
-
-source $HOME/.venv/bin/activate
+f_zero_venv_activate

@@ -9,4 +9,4 @@ f_set_prompt
 # python
 #------------------------------------------------------
 my_setup_python
-source $HOME/.venv/bin/activate
+f_zero_venv_activate

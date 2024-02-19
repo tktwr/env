@@ -63,6 +63,18 @@ f_os_name() {
   esac
 }
 
+f_my_python_exe() {
+  os_name=$(f_os_name)
+  case $os_name in
+    gitbash)
+      echo "python"
+      ;;
+    *)
+      echo "python3"
+      ;;
+  esac
+}
+
 #------------------------------------------------------
 f_sys_win_home() {
   local dir=$HOME/WinHome
@@ -96,9 +108,35 @@ f_all() {
   echo
   echo "export SYS_CAT_EXE=$(f_sys_exe batcat cat)"
   echo "export SYS_FIND_EXE=$(f_sys_exe fdfind find)"
+  echo "export MY_PYTHON_EXE=$(f_my_python_exe)"
+}
+
+#------------------------------------------------------
+f_symlink() {
+  if [ ! -e "$2" -a ! -L "$2" ]; then
+    echo "ln -s $1 $2"
+    ln -s $1 $2
+  fi
+}
+
+f_zero_dir() {
+  cd
+  os_name=$(f_os_name)
+  case $os_name in
+    wsl)
+      f_symlink WinHome/MyConfig MyConfig
+      f_symlink WinHome/MyData   MyData
+      f_symlink WinHome/MyProj   MyProj
+      f_symlink WinHome/MyWork   MyWork
+      ;;
+  esac
+
+  mkdir -p $HOME/.my
+  mkdir -p $HOME/.mycache
 }
 
 #======================================================
 # main
 #======================================================
-f_all
+f_zero_dir
+f_all > $HOME/.my/hostname.sh
