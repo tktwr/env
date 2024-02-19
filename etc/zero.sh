@@ -23,7 +23,7 @@ f_zero_sys() {
 f_zero_bash() {
   cd $BASE_DIR/bash
   cp -n $HOME/.bashrc $HOME/.bashrc.orig
-  cat bashrc_zero.sh > $HOME/.bashrc
+  cat bashrc_zero_func.sh bashrc_zero.sh > $HOME/.bashrc
 }
 
 f_zero_vim() {

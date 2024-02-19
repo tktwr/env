@@ -9,4 +9,5 @@ f_set_prompt
 # python
 #------------------------------------------------------
 my_setup_python
-f_zero_venv_activate
+
+f_venv_activate
