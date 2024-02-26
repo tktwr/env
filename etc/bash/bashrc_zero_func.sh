@@ -30,9 +30,6 @@ f_venv_deactivate() {
     esac
   fi
 }
-
-export -f f_venv_activate
-export -f f_venv_deactivate
 #------------------------------------------------------
 # fzf
 #------------------------------------------------------
@@ -58,6 +55,10 @@ f_fzf_main() {
   eval "$func_name $@"
 }
 #------------------------------------------------------
+# export functions
+#------------------------------------------------------
+export -f f_venv_activate
+export -f f_venv_deactivate
 export -f f_fzf_pw_opt
 export -f f_fzf_help
 export -f f_fzf_default

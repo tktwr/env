@@ -4,26 +4,6 @@
 # my
 #======================================================
 #------------------------------------------------------
-# mypushd.sh
-#------------------------------------------------------
-alias set.G='mypushd.sh --set `pwd`'
-alias get.G='mypushd.sh --get'
-alias cd.G='cd `mypushd.sh --get`'
-mv.G() { mv "$@" `mypushd.sh --get`; }
-cp.G() { cp "$@" `mypushd.sh --get`; }
-
-#------------------------------------------------------
-alias l='exa-short.sh'
-alias ls='ls.sh'
-alias make='mymake.sh'
-alias m='mymake.sh'
-
-mycmake-set() {
-  mycmake.sh --set $1 $2
-  source_bashrc
-}
-
-#------------------------------------------------------
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
@@ -66,6 +46,9 @@ f_alias_vim_term() {
   alias ,r4=',resize 40'
 }
 
+#------------------------------------------------------
+# terminal
+#------------------------------------------------------
 f_alias_term() {
   if [ $MY_OS_NAME = 'gitbash' ]; then
     TERM_cygwin='TERM=cygwin'
@@ -87,45 +70,67 @@ f_alias_term() {
   alias ,gg='vim -c "VisGV"'
 }
 
-#======================================================
+#------------------------------------------------------
 # os
-#======================================================
-f_alias_wsl() {
+#------------------------------------------------------
+f_alias_os_wsl() {
   alias gvim='gvim.sh'
   alias gvimdiff='gvim.sh -d'
   alias gitbash='gitbash.sh'
 }
 
-f_alias_msys() {
+f_alias_os_msys() {
   :
 }
 
-f_alias_gitbash() {
+f_alias_os_gitbash() {
   :
 }
 
-f_alias_linux() {
+f_alias_os_linux() {
   alias nvim-0.7='flatpak run --user io.neovim.nvim -u ~/.vimrc'
 }
 
-f_alias_termux() {
+f_alias_os_termux() {
   :
 }
 
-f_alias_common() {
+f_alias_os_common() {
   alias ,D='open_dir.sh'
   alias ,E='explorer.sh'
+
   alias vim='vim.sh'
   alias vimdiff='vimdiff.sh'
   alias vimdirdiff='vimdirdiff.sh'
   alias vim-which='vim-which.sh'
   alias vim-where='vim-which.sh'
+
+  alias l='exa-short.sh'
+  alias ls='ls.sh'
+  alias make='mymake.sh'
+  alias m='mymake.sh'
+
+  alias set.G='mypushd.sh --set `pwd`'
+  alias get.G='mypushd.sh --get'
+  alias cd.G='cd `mypushd.sh --get`'
+  alias mv.G='f_mv_g_dir'
+  alias cp.G='f_cp_g_dir'
+}
+
+#------------------------------------------------------
+f_mv_g_dir() { mv "$@" `mypushd.sh --get`; }
+f_cp_g_dir() { cp "$@" `mypushd.sh --get`; }
+
+mycmake-set() {
+  mycmake.sh --set $1 $2
+  source_bashrc
 }
 
 #------------------------------------------------------
 my_setup_alias() {
-  f_alias_common
-  f_alias_$MY_OS_NAME
+  f_alias
+  f_alias_os_common
+  f_alias_os_$MY_OS_NAME
   if [ "$VIM_TERMINAL" ]; then
     f_alias_vim_term
   else

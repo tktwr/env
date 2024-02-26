@@ -157,9 +157,10 @@ my_setup_fzf() {
 
   _my_setup_fzf_$SYS_FIND_EXE
   _my_setup_fzf_alias
-
-  export -f fzf_print
-  export -f eval_cmd
-  export -f eval_fzf_cmd
 }
-
+#------------------------------------------------------
+# export functions
+#------------------------------------------------------
+export -f fzf_print
+export -f eval_cmd
+export -f eval_fzf_cmd

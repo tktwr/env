@@ -15,6 +15,7 @@ $MY_VIM_PLUGGED_DIR/vim-ide-style \
 $MY_VIM_PLUGGED_DIR/vim-memo \
 "
 SNAP_DIRS="\
+$MY_ENV \
 $MY_DIARY \
 $MY_SECRET \
 "
@@ -24,9 +25,9 @@ $MY_SAMPLES/cpp \
 $MY_SAMPLES/cpp_lib \
 "
 VIM_FILES="\
-etc/vim/*.vim \
-etc/vim/vim-plug/*.vim \
-etc/vim/plugin \
+$MY_ENV/etc/vim/*.vim \
+$MY_ENV/etc/vim/vim-plug/*.vim \
+$MY_ENV/etc/vim/plugin \
 $MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
 $MY_VIM_PLUGGED_DIR/vim-bmk-menu \
 $MY_VIM_PLUGGED_DIR/vim-ide-style \
@@ -41,8 +42,7 @@ f_11_git_graph()  { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
 f_12_git_fetch()  { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
 f_13_git_pull()   { for-dir.sh "git.sh pull"         $GIT_DIRS; }
 
-f_20_snap_dirs()  { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
-f_21_snap()       { git-tar.sh $MY_SNAP; }
+f_20_git_tar()    { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
 
 f_30_cpp_build()  { for-dir.sh "make all"            $BUILD_DIRS; }
 f_31_cpp_clean()  { for-dir.sh "make all.clean"      $BUILD_DIRS; }
