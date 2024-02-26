@@ -65,7 +65,7 @@ f_apt_install_dev() { sudo -E apt install $apt_pkg_dev; }
 # linux
 #------------------------------------------------------
 f_linux_services() { systemctl list-unit-files -t service; }
-f_linux_mount()    { mount | grep 9p | $GIT_PAGER; }
+f_linux_ls_mount() { mount | grep 9p | $GIT_PAGER; }
 #------------------------------------------------------
 # nvidia
 #------------------------------------------------------

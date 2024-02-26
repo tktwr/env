@@ -1,5 +1,0 @@
-#!/bin/bash
-
-export PATH="$ANDROID_SDK/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin:$PATH"
-
-exec clang-format "$@"

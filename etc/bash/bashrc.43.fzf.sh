@@ -142,6 +142,7 @@ _my_setup_fzf_alias() {
   alias ,rg='eval_fzf_rg'
   alias ,m='eval_fzf_cmd  mymake.sh'
   alias ,S='eval_fzf_cmd  setup.sh'
+  alias ,c='eval_fzf_cmd  cmd.sh'
   alias ,fzf='eval_fzf_cmd'
 
   alias ,.='eval_cmd      pushd $(fzf_pushd)'

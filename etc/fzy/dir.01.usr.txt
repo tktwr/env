@@ -14,5 +14,9 @@ env         | MY_ENV             | $SYS_ROAMING_HOME/env
 rconfig     | MY_REMOTE_CONFIG   | $SYS_CONFIG_HOME/rconfig
 lconfig     | MY_LOCAL_CONFIG    | $SYS_CONFIG_HOME/lconfig
 pconfig     | MY_PRIVATE_CONFIG  | $SYS_CONFIG_HOME/pconfig
+#---------- | ----------         | ----------
+ropt        | MY_ROAMING_OPT     | $SYS_ROAMING_HOME/opt
+copt        | MY_CONFIG_OPT      | $SYS_CONFIG_HOME/opt
+winget      | MY_CONFIG_WINGET   | $SYS_CONFIG_HOME/opt/winget
 
 # vim:set nowrap:
