@@ -36,7 +36,9 @@ hi MyFg1           ctermfg=223 guifg=#ebdbb2
 hi MyFg2           ctermfg=250 guifg=#d5c4a1
 hi MyFg3           ctermfg=248 guifg=#bdae93
 hi MyFg4           ctermfg=246 guifg=#a89984
+
 hi MyGray          ctermfg=245 guifg=#928374
+hi MyDarkGray      ctermfg=239 guifg=#504945
 
 hi MyBg0           ctermbg=236 guibg=#32302f
 hi MyBg1           ctermbg=237 guibg=#3c3836

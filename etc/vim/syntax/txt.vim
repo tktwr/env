@@ -15,6 +15,14 @@ syn match    myComment          "#.*$"
 syn region   myComment          start="/\*" end="\*/"
 syn region   myDetails          start=+<details>+ end=+</details>+
 
+syn match    mySeparator        "<!--.*-->"
+syn match    mySeparator        "^\s*\~\~\+$"
+syn match    mySeparator        "^\s*==\+$"
+syn match    mySeparator        "^#==\+$"
+
+syn match    mySeparator2       "^\s*--\+$"
+syn match    mySeparator2       "^#--\+$"
+
 syn match    mySection1         "^# "
 syn match    mySection2         "^## "
 syn match    mySection3         "^### "
@@ -73,11 +81,6 @@ syn match    myMidProgress      "\[ *[3-7].%\]"
 syn match    myHighProgress     "\[ *[8-9].%\]"
 syn match    myHighProgress     "\[100%\]"
 
-syn match    mySeparator        "<!--.*-->"
-syn match    mySeparator        "^\s*--\+$"
-syn match    mySeparator        "^\s*==\+$"
-syn match    mySeparator        "^\s*\~\~\+$"
-
 if has("ebcdic")
   syn match myHyperTextJump     "|[^"*|]\+|"
   syn match myHyperTextEntry    "\*[^"*|]\+\*\s"he=e-1
@@ -91,8 +94,10 @@ endif
 "------------------------------------------------------
 " highlight
 "------------------------------------------------------
-hi link myComment          MyBlue
-hi link myDetails          MyBlue
+hi link myComment          MyGray
+hi link myDetails          MyGray
+hi link mySeparator        MyGray
+hi link mySeparator2       MyDarkGray
 
 hi link mySection1         MyOrange
 hi link mySection2         MyOrange
@@ -143,8 +148,6 @@ hi link myOrange           MyOrange
 hi link myLowProgress      MyRed
 hi link myMidProgress      MyOrange
 hi link myHighProgress     MyGreen
-
-hi link mySeparator        Comment
 
 hi link myHyperTextJump    MyYellow
 hi link myHyperTextEntry   MyAqua
