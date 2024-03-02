@@ -41,8 +41,8 @@ f_zero_batcat() {
 f_zero_venv_create() {
   local dir=$HOME/.venv
   if [ ! -d "$dir" ]; then
-    echo "$MY_PYTHON_EXE -m venv $dir"
-    $MY_PYTHON_EXE -m venv $dir
+    echo "$SYS_PYTHON_EXE -m venv $dir"
+    $SYS_PYTHON_EXE -m venv $dir
   fi
 }
 

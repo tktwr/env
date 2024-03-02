@@ -111,7 +111,7 @@ f_all() {
   echo "export SYS_CAT_EXE=$(f_sys_exe batcat cat)"
   echo "export SYS_FIND_EXE=$(f_sys_exe fdfind find)"
   echo "export SYS_FZF_EXE=$(f_sys_exe fzf)"
-  echo "export MY_PYTHON_EXE=$(f_my_python_exe)"
+  echo "export SYS_PYTHON_EXE=$(f_my_python_exe)"
 }
 
 #------------------------------------------------------

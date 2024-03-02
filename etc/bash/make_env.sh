@@ -26,5 +26,5 @@ case $MY_OS_NAME in
     ;;
 esac
 
-$MY_PYTHON_EXE ./expand_env.py $opt $FILES
+$SYS_PYTHON_EXE ./expand_env.py $opt $FILES
 

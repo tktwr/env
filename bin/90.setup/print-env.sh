@@ -40,10 +40,10 @@ f_print_env_config() {
 f_print_env_exe() {
   _f_title env_exe
 
-  _f_print_env_exe SYS_CAT_EXE   $SYS_CAT_EXE
-  _f_print_env_exe SYS_FIND_EXE  $SYS_FIND_EXE
-  _f_print_env_exe SYS_FZF_EXE   $SYS_FZF_EXE
-  _f_print_env_exe MY_PYTHON_EXE $MY_PYTHON_EXE
+  _f_print_env_exe SYS_CAT_EXE    $SYS_CAT_EXE
+  _f_print_env_exe SYS_FIND_EXE   $SYS_FIND_EXE
+  _f_print_env_exe SYS_FZF_EXE    $SYS_FZF_EXE
+  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
 }
 
 f_print_env_build() {
