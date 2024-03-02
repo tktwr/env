@@ -219,5 +219,6 @@
 -              | link:ai:huggingface                                     | https://huggingface.co/
 -              | link:ai:huggingface/mmnga                               | https://huggingface.co/mmnga
 -              | link:ai:huggingface/TheBloke                            | https://huggingface.co/TheBloke
+-              | link:ai:github:Stability-AI                             | https://github.com/Stability-AI
 
 # vim:set ft=bmk syntax=txt nowrap:

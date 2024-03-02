@@ -11,11 +11,13 @@ f_has_bin() {
 }
 
 f_sys_exe() {
-  if $(f_has_bin $1); then
-    echo $1
-  else
-    echo $2
-  fi
+  for i in "$@"; do
+    if $(f_has_bin $i); then
+      echo $i
+      return
+    fi
+  done
+  echo "NONE"
 }
 
 #------------------------------------------------------
@@ -108,6 +110,7 @@ f_all() {
   echo
   echo "export SYS_CAT_EXE=$(f_sys_exe batcat cat)"
   echo "export SYS_FIND_EXE=$(f_sys_exe fdfind find)"
+  echo "export SYS_FZF_EXE=$(f_sys_exe fzf)"
   echo "export MY_PYTHON_EXE=$(f_my_python_exe)"
 }
 
