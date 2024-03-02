@@ -1,13 +1,12 @@
 #!/bin/bash
 
-f_print_os() {
-  echo "=== [OS] ==="
-  lsb_release -dc
+_f_title() {
+  echo "--- [$*] ----------"
 }
 
-#------------------------------------------------------
-f_unexpand_env() {
-  sed "s+$MY_PYTHON_VENV_DIR+\$MY_PYTHON_VENV_DIR+"
+_f_unexpand_env() {
+  #sed "s+$MY_PYTHON_VENV_DIR+\$MY_PYTHON_VENV_DIR+"
+  cat
 }
 
 _f_print_ver() {
@@ -15,14 +14,22 @@ _f_print_ver() {
   abspath=$(which $cmd 2> /dev/null)
   ver=$($cmd --version 2> /dev/null | head -1)
 
-  abspath=$(echo $abspath | f_unexpand_env)
+  abspath=$(echo $abspath | _f_unexpand_env)
   if [ -n "$abspath" ]; then
-    printf "%-40s $ver\n" $abspath
+    printf "%-40s %s\n" "$abspath" "$ver"
   fi
 }
 
+#------------------------------------------------------
+f_print_os() {
+  _f_title "OS"
+
+  lsb_release -dc
+}
+
 f_print_ver_all() {
-  echo "=== [version] ==="
+  _f_title "VERSION"
+
   BIN_NAMES="\
   python \
   pip \

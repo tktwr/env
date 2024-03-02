@@ -12,6 +12,15 @@ _f_print_env_exe() {
   printf "%-20s = %s [%s]\n" $1 $2 $(which $2)
 }
 
+_f_print_env_dir() {
+  dir="$1"
+  if [ -d "$dir" ]; then
+    echo "[OK  ] $dir"
+  else
+    echo "[FAIL] $dir"
+  fi
+}
+
 #------------------------------------------------------
 f_print_env_config() {
   _f_title env_config
@@ -37,15 +46,6 @@ f_print_env_config() {
   _f_print_env MY_PRIVATE_CONFIG  $MY_PRIVATE_CONFIG
 }
 
-f_print_env_exe() {
-  _f_title env_exe
-
-  _f_print_env_exe SYS_CAT_EXE    $SYS_CAT_EXE
-  _f_print_env_exe SYS_FIND_EXE   $SYS_FIND_EXE
-  _f_print_env_exe SYS_FZF_EXE    $SYS_FZF_EXE
-  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
-}
-
 f_print_env_build() {
   _f_title env_build
 
@@ -64,6 +64,15 @@ f_print_env_proxy() {
   _f_print_env CURL_SSL_NO_VERIFY $CURL_SSL_NO_VERIFY
   _f_print_env WSL_HOST_IP        $WSL_HOST_IP
   _f_print_env WSL_GUEST_IP       $WSL_GUEST_IP
+}
+
+f_print_env_exe() {
+  _f_title env_exe
+
+  _f_print_env_exe SYS_CAT_EXE    $SYS_CAT_EXE
+  _f_print_env_exe SYS_FIND_EXE   $SYS_FIND_EXE
+  _f_print_env_exe SYS_FZF_EXE    $SYS_FZF_EXE
+  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
 }
 
 f_check_env_dir() {
@@ -96,19 +105,15 @@ f_check_env_dir() {
     $data_dirs \
     "
   for i in $dirs; do
-    if [ -d "$i" ]; then
-      echo "[OK  ] $i"
-    else
-      echo "[FAIL] $i"
-    fi
+    _f_print_env_dir "$i"
   done
 }
 
 f_print_env() {
   f_print_env_config
-  f_print_env_exe
   f_print_env_build
   f_print_env_proxy
+  f_print_env_exe
   f_check_env_dir
 }
 

@@ -61,19 +61,3 @@ f_apt_update() {
 f_apt_install_min() { sudo -E apt install $apt_pkg_min; }
 f_apt_install_ext() { sudo -E apt install $apt_pkg_ext; }
 f_apt_install_dev() { sudo -E apt install $apt_pkg_dev; }
-#------------------------------------------------------
-# linux
-#------------------------------------------------------
-f_linux_services() { systemctl list-unit-files -t service; }
-f_linux_ls_mount() { mount | grep 9p | $GIT_PAGER; }
-#------------------------------------------------------
-# nvidia
-#------------------------------------------------------
-f_nvidia_smi()          { watch nvidia-smi; }
-f_nvidia_smi_exe()      { watch nvidia-smi.exe; }
-#------------------------------------------------------
-# batcat
-#------------------------------------------------------
-f_batcat_list()  { batcat -L; }
-f_batcat_build() { batcat cache --build; }
-f_batcat_clear() { batcat cache --clear; }

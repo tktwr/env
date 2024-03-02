@@ -31,20 +31,6 @@ torch torchvision torchaudio xformers --index-url https://download.pytorch.org/w
 #======================================================
 # functions
 #======================================================
-f_venv_create() {
-  local dir=.venv
-  if [ ! -d "$dir" ]; then
-    echo "python -m venv $dir"
-    python -m venv $dir
-  fi
-}
-
-f_venv_info() {
-  which python
-  which pip
-}
-
-#------------------------------------------------------
 f_pip_upgrade() {
   pip install --upgrade pip
 }
