@@ -40,6 +40,13 @@ f_fzf_pw_opt() {
   fi
   echo $pw_opt
 }
+f_fzf_pw_opt_cmd() {
+  pw_opt='right,30%,border-left,+{2}/3'
+  if [ $COLUMNS -lt 80 ]; then
+    pw_opt='down,30%,border-top,+{2}/3'
+  fi
+  echo $pw_opt
+}
 #------------------------------------------------------
 f_fzf_help() {
   declare -F | grep '\-f ' | awk '{print $3}' | grep '\<f_'
@@ -60,6 +67,7 @@ f_fzf_main() {
 export -f f_venv_activate
 export -f f_venv_deactivate
 export -f f_fzf_pw_opt
+export -f f_fzf_pw_opt_cmd
 export -f f_fzf_help
 export -f f_fzf_default
 export -f f_fzf_main

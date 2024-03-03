@@ -14,10 +14,10 @@ fzf_cmd_rg () {
 
 fzf_cmd_preview() {
   local setup_files="\
-    $MY_BIN/90.setup/setup*.sh \
-    $SYS_CONFIG_HOME/lconfig/bin/setup*.sh \
+    $MY_BIN/90.setup/*.sh \
+    $SYS_CONFIG_HOME/lconfig/bin/*.sh \
     "
-  args=$(fzf_cmd_rg -w "$1" $setup_files | awk -F ':' '{print $1,$2}')
+      args=$(fzf_cmd_rg -w "$1\(\)" $setup_files | awk -F ':' '{print $1,$2}')
   if [ -n "$args" ]; then
     eval "preview_rg.sh $args"
   fi
@@ -25,7 +25,7 @@ fzf_cmd_preview() {
 
 fzf_cmd() {
   cmd="$1"
-  echo $(eval "$cmd f_fzf_help" | fzf_cmd_pre | fzf --prompt "$cmd> " --preview 'fzf_cmd_preview {}' --preview-window "$(f_fzf_pw_opt)" | fzf_cmd_post)
+  echo $(eval "$cmd f_fzf_help" | fzf_cmd_pre | fzf --prompt "$cmd> " --preview 'fzf_cmd_preview {}' --preview-window "$(f_fzf_pw_opt_cmd)" | fzf_cmd_post)
 }
 
 export -f fzf_cmd_rg
