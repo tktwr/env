@@ -44,8 +44,6 @@ let g:my_rg_dirs = [
   \ '$MY_ENV',
   \ '$MY_COMMON_SETTING',
   \ '$MY_VIM_PLUGGED_DIR/vim-ide-style',
-  \ '$MY_VIM_PLUGGED_DIR/vim-bmk-menu',
-  \ '$MY_VIM_PLUGGED_DIR/vim-winbuf-menu',
   \ '$MY_VIM_PLUGGED_DIR/vim-memo',
   \ ]
 let g:wbl_max = 10

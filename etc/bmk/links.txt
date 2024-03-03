@@ -189,6 +189,7 @@
 -              | link:cui:gitui                                          | https://github.com/extrawurst/gitui
 -              | link:cui:ncdu                                           | https://dev.yorhel.nl/ncdu
 -              | link:cui:WezTerm                                        | https://wezfurlong.org/wezterm/index.html
+-              | link:cui:warp                                           | https://www.warp.dev/
 -              | link:win:wsltty                                         | https://github.com/mintty/wsltty
 -              | link:win:AutoHotkey                                     | https://www.autohotkey.com/
 -              | link:win:AutoHotkey/doc                                 | https://www.autohotkey.com/docs/AutoHotkey.htm
