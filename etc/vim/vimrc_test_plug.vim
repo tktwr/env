@@ -22,17 +22,6 @@ func PlugFern()
 endfunc
 
 func PlugIDE()
-  if has('nvim')
-    Plug 'Ajnasz/vim-popup-menu'
-  endif
-
-  let g:cpm_key = "\<Space>"
-  let g:cpm_term_key = "\<C-Space>"
-  let g:cpm_files = split(glob("$MY_BMK/*.txt"))
-  let g:cpm_titles = { 'default' : ['vcmd.menu & vcmd.external & vcmd.ide', 'vcmd.sub'] }
-
-  Plug 'tktwr/vim-winbuf-menu'
-  Plug 'tktwr/vim-bmk-menu'
   Plug 'tktwr/vim-ide-style'
 endfunc
 
@@ -70,9 +59,3 @@ call plug#end()
 " color
 "------------------------------------------------------
 colorscheme gruvbox
-
-"------------------------------------------------------
-" map
-"------------------------------------------------------
-nnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
-tnoremap <silent> <End>      <C-W>:call wbl#open()<CR>
