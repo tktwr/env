@@ -48,6 +48,10 @@
 # ,gg          | fzf:Git graph                  | :FzfCommits
 - ,gl          | fugitive:Gllog %               | :Gllog %
 - ,gl          | fugitive:Gllog                 | :Gllog
+- ,xh          | Wx left                        | :WxDir h
+- ,xj          | Wx down                        | :WxDir j
+- ,xk          | Wx up                          | :WxDir k
+- ,xl          | Wx right                       | :WxDir l
 - ,x           | Wx                             | :Wx ?
 - ,p           | Paste                     (,p) | ,p
 -              | Yank                       (Y) | "*y
@@ -86,7 +90,6 @@
 -              | Tag jump                       | :call VisTjumpPrompt()
 -              | Git status                     | :VisGS
 -              | Git graph                      | :VisGV
--              | winbuf menu         (End, C-u) | :silent call wbl#open()
 -              | quickhl                  (C-a) | :VisQuickhl ??
 -              | Lazygit                        | :VisLazygit tab
 -              | Man                            | :VisFzfMan tab
