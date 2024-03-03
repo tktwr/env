@@ -46,6 +46,7 @@ nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
+nnoremap ,w      :VisFzfWinbuf<CR>
 
 nmap ,s          <Plug>(easymotion-overwin-f2)
 nmap ,j          <Plug>(easymotion-j)
