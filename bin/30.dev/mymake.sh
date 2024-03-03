@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mymake() {
+f_make() {
   if [ -x "make.sh" ]; then
     ./make.sh "$@"
   elif [ -f "Makefile" ]; then
@@ -8,4 +8,4 @@ mymake() {
   fi
 }
 
-mymake "$@"
+f_make "$@"

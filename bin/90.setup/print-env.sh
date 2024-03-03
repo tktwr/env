@@ -69,10 +69,13 @@ f_print_env_proxy() {
 f_print_env_exe() {
   _f_title env_exe
 
+  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
+  _f_print_env_exe SYS_GIT_EXE    $SYS_GIT_EXE
+  _f_print_env_exe SYS_VIM_EXE    $SYS_VIM_EXE
+  _f_print_env_exe SYS_LS_EXE     $SYS_LS_EXE
   _f_print_env_exe SYS_CAT_EXE    $SYS_CAT_EXE
   _f_print_env_exe SYS_FIND_EXE   $SYS_FIND_EXE
   _f_print_env_exe SYS_FZF_EXE    $SYS_FZF_EXE
-  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
 }
 
 f_check_env_dir() {

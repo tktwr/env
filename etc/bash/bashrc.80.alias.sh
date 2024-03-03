@@ -6,7 +6,7 @@
 f_alias() {
   # source
   alias s='source $HOME/.bashrc'
-  alias s.='source .venv/bin/activate'
+  alias s.venv='source .venv/bin/activate'
   alias s.zero='source $MY_BASH/bashrc_zero.sh'
 
   # shell

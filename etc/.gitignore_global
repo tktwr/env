@@ -15,13 +15,14 @@ Thumbs.db
 
 # build
 a.out
+_build*/
 build*/
 !build.gradle
 imgui.ini
 compile_commands.json
 .clangd/
 .cache/
-doxygen/
+_doxygen*/
 !Doxyfile
 
 # python

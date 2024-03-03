@@ -48,15 +48,15 @@ _f_sub() {
 
 #------------------------------------------------------
 f_10_install_all() {
+  ./zero_hostname.sh
   _f_cp_all
   _f_sub bash
   _f_sub vim
 }
 
 f_11_install_zero() {
+  ./zero.sh
   _f_cp_all
-  _f_sub bash f_install_zero
-  _f_sub vim  f_install_zero
 }
 
 #------------------------------------------------------

@@ -3,8 +3,6 @@
 #======================================================
 # variables
 #======================================================
-model='codellama'
-pre_prompt='You are an expert programmer that writes simple, concise code and explanations.'
 
 #======================================================
 # functions
@@ -39,12 +37,3 @@ f_ollama_chat_jp_stablelm_7b_gamma() { ollama run jp-stablelm-7b-gamma-inst    ;
 f_ollama_chat_elyza_jp_7b()          { ollama run elyza-jp-llama2-7b-fast-inst ; }
 # 30B                                {                                         ; }
 f_ollama_chat_mixtral()              { ollama run mixtral                      ; }
-#------------------------------------------------------
-f_ollama_run_gen_code() {
-  ollama run $model '<PRE> def compute_gcd(x, y): <SUF>return result <MID>'
-}
-f_ollama_run_gen_git_commit_message() {
-  prompt="Write a one-line git commit message that summarizes the following diff output: $(git diff)"
-  echo "$pre_prompt $prompt"
-  ollama run $model "$pre_prompt $prompt"
-}

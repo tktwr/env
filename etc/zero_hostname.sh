@@ -108,10 +108,13 @@ f_all() {
   echo "export SYS_PROJ_HOME=$(f_sys_proj_home)"
   echo "export SYS_DATA_HOME=$(f_sys_data_home)"
   echo
+  echo "export SYS_PYTHON_EXE=$(f_my_python_exe)"
+  echo "export SYS_GIT_EXE=$(f_sys_exe git.sh)"
+  echo "export SYS_VIM_EXE=$(f_sys_exe vim.sh)"
+  echo "export SYS_LS_EXE=$(f_sys_exe ls.sh)"
   echo "export SYS_CAT_EXE=$(f_sys_exe batcat cat)"
   echo "export SYS_FIND_EXE=$(f_sys_exe fdfind find)"
   echo "export SYS_FZF_EXE=$(f_sys_exe fzf)"
-  echo "export SYS_PYTHON_EXE=$(f_my_python_exe)"
 }
 
 #------------------------------------------------------

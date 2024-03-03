@@ -100,15 +100,16 @@ f_alias_os_common() {
   alias ,E='explorer.sh'
 
   alias vim='vim.sh'
+  alias ls='ls.sh'
+  alias make='mymake.sh'
+  alias m='mymake.sh'
+
   alias vimdiff='vimdiff.sh'
   alias vimdirdiff='vimdirdiff.sh'
   alias vim-which='vim-which.sh'
   alias vim-where='vim-which.sh'
 
-  alias l='exa-short.sh'
-  alias ls='ls.sh'
-  alias make='mymake.sh'
-  alias m='mymake.sh'
+  alias lsg='exa-short.sh'
 
   alias set.G='mypushd.sh --set `pwd`'
   alias get.G='mypushd.sh --get'

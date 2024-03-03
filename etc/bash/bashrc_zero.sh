@@ -30,7 +30,7 @@ f_zero_alias() {
 
   # source
   alias s='source $HOME/.bashrc'
-  alias s.='source .venv/bin/activate'
+  alias s.venv='source .venv/bin/activate'
 
   # shell
   alias h='history 20'

@@ -2,6 +2,8 @@ imgui.ini
 *.blend*
 *.BLEND*
 build*
-_output
-_local
+_build*
+_doxygen*
+_output*
+_local*
 __pycache__

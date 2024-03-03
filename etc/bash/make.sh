@@ -8,10 +8,6 @@ f_install_all() {
   cat bashrc_all.sh > $HOME/.bashrc
 }
 
-f_install_zero() {
-  cat bashrc_zero_func.sh bashrc_zero.sh > $HOME/.bashrc
-}
-
 #======================================================
 # main
 #======================================================

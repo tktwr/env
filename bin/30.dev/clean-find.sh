@@ -9,20 +9,22 @@ f_help() {
   echo "  $bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $bin_name [option] [-rm]"
+  echo "  $bin_name [option] [action]"
   echo
   echo "OPTIONS"
   echo "  -h, --help       ... print help"
-  echo "  --output-dir     ... print output dirs"
-  echo "  --build-dir      ... print build dirs"
   echo "  --pycache-dir    ... print pycache dirs"
+  echo "  --build-dir      ... print build dirs"
   echo "  --doxygen-dir    ... print doxygen dirs"
+  echo "  --output-dir     ... print output dirs"
   echo "  --blender-backup ... print blender backup files"
-  echo "  -rm              ... remove files and dirs"
+  echo
+  echo "ACTIONS"
+  echo "  -rm              ... remove found dirs/files"
 }
 
 f_clean() {
-  echo "=== [find . $opt] ===================="
+  echo "--- [find . $opt] ----------"
   eval "find . $opt"
 }
 
@@ -33,17 +35,17 @@ f_args() {
         f_help
         exit
         ;;
-      --output-dir)
-        opt="$opt -type d -name '_output' -prune"
-        ;;
-      --build-dir)
-        opt="$opt -type d -name 'build*' -prune"
-        ;;
       --pycache-dir)
         opt="$opt -type d -name '__pycache__' -prune"
         ;;
+      --build-dir)
+        opt="$opt -type d -name '_build*' -prune"
+        ;;
       --doxygen-dir)
-        opt="$opt -type d -name 'doxygen' -prune"
+        opt="$opt -type d -name '_doxygen*' -prune"
+        ;;
+      --output-dir)
+        opt="$opt -type d -name '_output*' -prune"
         ;;
       --blender-backup)
         opt="$opt -type f -name '*.blend1'"

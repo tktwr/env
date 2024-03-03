@@ -9,20 +9,25 @@ f_help() {
   echo "  $bin_name"
   echo
   echo "SYNOPSIS"
-  echo "  $bin_name [options]"
+  echo "  $bin_name [option] [action]"
   echo
   echo "OPTIONS"
   echo "  -h, --help       ... print help"
   echo "  --pycache-dir    ... find pycache dirs"
   echo "  --build-dir      ... find build dirs"
-  echo "  --output-dir     ... find output dirs"
   echo "  --doxygen-dir    ... find doxygen dirs"
+  echo "  --output-dir     ... find output dirs"
+  echo "  --git-dir        ... find git dirs"
   echo "  --svn-dir        ... find svn dirs"
   echo "  --blender-backup ... find blender backup files"
+  echo
+  echo "ACTIONS"
   echo "  -rm              ... remove found dirs/files"
+  echo "  -du              ... du found dirs/files"
 }
 
 f_clean() {
+  echo "--- [fdfind $opt] ----------"
   eval "fdfind $opt"
 }
 
@@ -37,13 +42,13 @@ f_args() {
         opt="$opt -I -t d --prune -g '__pycache__'"
         ;;
       --build-dir)
-        opt="$opt -I -t d --prune -g 'build*'"
+        opt="$opt -I -t d --prune -g '_build*'"
+        ;;
+      --doxygen-dir)
+        opt="$opt -I -t d --prune -g '_doxygen*'"
         ;;
       --output-dir)
         opt="$opt -I -t d --prune -g '_output*'"
-        ;;
-      --doxygen-dir)
-        opt="$opt -I -t d --prune -g 'doxygen'"
         ;;
       --git-dir)
         opt="$opt -IH -t d --prune -g '.git'"

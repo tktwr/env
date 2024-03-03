@@ -9,10 +9,6 @@ f_install_all() {
   cat vimrc_zero.vim > $SYS_WIN_HOME/_vimrc
 }
 
-f_install_zero() {
-  cat vimrc_zero.vim > $HOME/.vimrc
-}
-
 #------------------------------------------------------
 f_prof() { vim-log.sh; }
 
