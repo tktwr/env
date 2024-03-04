@@ -15,14 +15,6 @@ syn match    myComment          "#.*$"
 syn region   myComment          start="/\*" end="\*/"
 syn region   myDetails          start=+<details>+ end=+</details>+
 
-syn match    mySeparator        "<!--.*-->"
-syn match    mySeparator        "^\s*\~\~\+$"
-syn match    mySeparator        "^\s*==\+$"
-syn match    mySeparator        "^#==\+$"
-
-syn match    mySeparator2       "^\s*--\+$"
-syn match    mySeparator2       "^#--\+$"
-
 syn match    mySection1         "^# "
 syn match    mySection2         "^## "
 syn match    mySection3         "^### "
@@ -34,10 +26,18 @@ syn match    myColon            "\f\+:"
 syn match    myString           '"[^"]*"'
 syn match    myString           "'[^']*'"
 syn match    myHtml             "<[^>]*>"
-syn match    myHtml             "http://.*"
-syn match    myHtml             "https://.*"
+syn match    myUrl              "http://.*"
+syn match    myUrl              "https://.*"
 syn match    myDir              "[/\.\-0-9A-Za-z_]\+/"
 syn match    myVar              "\$\w\+"
+
+syn match    mySeparator        "<!--.*-->"
+syn match    mySeparator        "^\s*\~\~\+$"
+syn match    mySeparator        "^\s*==\+$"
+syn match    mySeparator        "^#==\+$"
+
+syn match    mySeparator2       "^\s*--\+$"
+syn match    mySeparator2       "^#--\+$"
 
 syn match    myDate             "\d\{1,2}/\d\{1,2}"
 syn match    myDate             "\d\{4}/\d\{2}/\d\{2}"
@@ -109,6 +109,7 @@ hi link myColon            MyYellow
 
 hi link myString           MyAqua
 hi link myHtml             MyPurple
+hi link myUrl              MyPurple
 hi link myDir              MyAqua
 hi link myVar              MyGreen
 
