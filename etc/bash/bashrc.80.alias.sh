@@ -14,17 +14,6 @@ f_alias() {
   alias j='jobs -l'
   alias where='type -all'
 
-  # directory stack
-  alias ,pushd='pushd'
-  alias ,pushd1='pushd +1'
-  alias ,pushd2='pushd +2'
-  alias ,popd='popd'
-  alias ,popd1='popd +1'
-  alias ,popd2='popd +2'
-  alias ,dirs_v='dirs -v'
-  alias ,dirs_c='dirs -c'
-  alias ,dirs_i='dirs -c; cd'
-
   # remap
   alias sudo='sudo -E'
   alias grep='grep -s'

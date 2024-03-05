@@ -40,13 +40,13 @@ map , <Nop>
 
 vnoremap <Space> y:VisFzfBmk<CR>
 nnoremap <Space> :VisFzfBmk<CR>
-nnoremap ,,      :VisFzfAll<CR>
+nnoremap ,,      :VisFzfWinbuf<CR>
+nnoremap ,f      :VisFzfAll<CR>
 nnoremap ,r      :VisFzfRg<CR>
 nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
 nnoremap ,b      :FzfBuffers<CR>
-nnoremap ,w      :VisFzfWinbuf<CR>
 
 nmap ,s          <Plug>(easymotion-overwin-f2)
 nmap ,j          <Plug>(easymotion-j)
