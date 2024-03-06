@@ -10,15 +10,16 @@
 f_ollama_install() {
   curl https://ollama.ai/install.sh | sh
 }
-
-f_ollama_start() { sudo service ollama start; }
-f_ollama_stop()  { sudo service ollama stop; }
-
+f_ollama_start() {
+  sudo service ollama start
+}
+f_ollama_stop() {
+  sudo service ollama stop
+}
 f_ollama_info() {
   service ollama status
   ollama list
 }
-
 f_ollama_create() {
   #ollama create jp-stablelm-3b-inst -f Modelfile
   #ollama create jp-stablelm-7b-gamma-inst -f Modelfile

@@ -22,3 +22,10 @@ f_nodejs_version() {
   npm --version
 }
 
+f_npm_list() {
+  npm list
+}
+
+f_npm_config() {
+  npm config ls -l
+}

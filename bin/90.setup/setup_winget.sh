@@ -10,6 +10,7 @@ winget_pkg="\
   BurntSushi.ripgrep.MSVC \
   dandavison.delta \
   JesseDuffield.lazygit \
+  OpenJS.NodeJS.LTS \
   "
 
 #======================================================
