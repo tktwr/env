@@ -134,7 +134,7 @@ augroup END
 
 vnoremap A       y:'<,'>w !sumcol.py<CR>
 
-func SumCol(col=1, sep='|')
+func SumCol(col=2, sep='|')
   echom printf("SumCol: col=%d sep=%s", a:col, a:sep)
   echom system(printf("sumcol.py -c %d -s '%s'", a:col, a:sep), @")
 endfunc

@@ -53,18 +53,23 @@
 - ,xk          | Wx up                          | :WxDir k
 - ,xl          | Wx right                       | :WxDir l
 - ,x           | Wx                             | :Wx ?
+- ,ch          | Wc left                        | :WcDir h
+- ,cj          | Wc down                        | :WcDir j
+- ,ck          | Wc up                          | :WcDir k
+- ,cl          | Wc right                       | :WcDir l
+- ,c           | Wc                             | :Wc ?
 - ,p           | Paste                     (,p) | ,p
 -              | Yank                       (Y) | "*y
 - ,Y           | YankFilePath                   | :call YankFilePath()
 -----          | ------------------------------ | ------------------------------
 -              | MyClangFormat                  | :MyClangFormat
-- ,c1          | EditTabBar                     | :EditTabBar
-- ,c:          | EditTabColon                   | :EditTabColon
-- ,c;          | EditTabSemicolon               | :EditTabSemicolon
-- ,c,          | EditTabComma                   | :EditTabComma
-- ,c.          | EditTabDots                    | :EditTabDots
-- ,c=          | EditTabEqual                   | :EditTabEqual
-- ,c[          | EditTabLabel                   | :EditTabLabel
+- ,t1          | EditTabBar                     | :EditTabBar
+- ,t:          | EditTabColon                   | :EditTabColon
+- ,t;          | EditTabSemicolon               | :EditTabSemicolon
+- ,t,          | EditTabComma                   | :EditTabComma
+- ,t.          | EditTabDots                    | :EditTabDots
+- ,t=          | EditTabEqual                   | :EditTabEqual
+- ,t[          | EditTabLabel                   | :EditTabLabel
 -----          | ------------------------------ | ------------------------------
 - ,pr          | PgrRemoveSpaces                | :call PgrRemoveSpaces()
 - ,pf          | PgrFormat                      | :call PgrFormat()
@@ -111,7 +116,6 @@
 -              | MyRunTest                      | :call MyRunTest()
 -              | ToggleDebug                    | :call bmk#ToggleDebug()
 -              | ctrlp                          | _Plug_(ctrlp)
--              | Wc                             | :Wc ?
 -              | VisBufDelete                   | :VisBufDelete
 -              | vimgrep TODO                   | :vimgrep 'TODO' %
 -              | quit                       (Q) | :confirm qall
