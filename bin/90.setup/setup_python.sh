@@ -31,7 +31,7 @@ torch torchvision torchaudio xformers --index-url https://download.pytorch.org/w
 #======================================================
 # functions
 #======================================================
-f_python_venv_create() {
+f_venv_create() {
   local dir=.venv
   if [ ! -d "$dir" ]; then
     echo "python -m venv $dir"
@@ -39,7 +39,7 @@ f_python_venv_create() {
   fi
 }
 
-f_python_venv_info() {
+f_venv_info() {
   which python
   which pip
 }
@@ -71,4 +71,13 @@ f_poetry_ls_config() {
 f_poetry_set_config() {
   poetry config virtualenvs.in-project true
 }
-
+#------------------------------------------------------
+f_poetry_new() {
+  poetry new myproj
+}
+f_poetry_init() {
+  poetry init -n
+}
+f_poetry_install() {
+  poetry install
+}

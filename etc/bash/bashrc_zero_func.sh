@@ -6,7 +6,7 @@ _f_title() {
 # venv
 #------------------------------------------------------
 f_venv_activate() {
-  local dir=$HOME/.venv
+  local dir=${1:-$HOME/.venv}
   if [ -d "$dir" ]; then
     case $MY_OS_NAME in
       msys|gitbash)
@@ -22,17 +22,14 @@ f_venv_activate() {
 }
 
 f_venv_deactivate() {
-  local dir=$HOME/.venv
-  if [ -d "$dir" ]; then
-    case $MY_OS_NAME in
-      msys|gitbash)
-        PATH=$MY_OLD_PATH
-        ;;
-      *)
-        deactivate
-        ;;
-    esac
-  fi
+  case $MY_OS_NAME in
+    msys|gitbash)
+      PATH=$MY_OLD_PATH
+      ;;
+    *)
+      deactivate
+      ;;
+  esac
 }
 #------------------------------------------------------
 # fzf
