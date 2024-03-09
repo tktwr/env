@@ -62,6 +62,7 @@ my_setup_path() {
       f_ins_path "$SYS_CONFIG_HOME/opt/winget"
       ;;
   esac
+  f_ins_path "$HOME/node_modules/wscat/bin"
 
   # on Windows FS
   f_add_path "$SYS_CONFIG_HOME/lconfig/bin"

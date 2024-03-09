@@ -1,9 +1,5 @@
 #!/bin/bash
 
-_f_title() {
-  echo "--- [$*] ----------"
-}
-
 f_format_path_unix() {
   sed 's+:+\n+g'
 }

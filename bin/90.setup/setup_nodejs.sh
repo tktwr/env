@@ -3,6 +3,9 @@
 #======================================================
 # variables
 #======================================================
+npm_pkg="\
+wscat \
+"
 
 #======================================================
 # functions
@@ -21,6 +24,11 @@ f_nodejs_version() {
   node --version
   npm --version
 }
+#------------------------------------------------------
+f_npm_install() {
+  cd
+  npm install $npm_pkg
+}
 
 f_npm_list() {
   npm list
@@ -28,4 +36,11 @@ f_npm_list() {
 
 f_npm_config() {
   npm config ls -l
+}
+#------------------------------------------------------
+f_wscat_server() {
+  wscat -l 3000
+}
+f_wscat_client() {
+  wscat -c ws://localhost:3000
 }

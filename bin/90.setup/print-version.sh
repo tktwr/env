@@ -1,9 +1,5 @@
 #!/bin/bash
 
-_f_title() {
-  echo "--- [$*] ----------"
-}
-
 _f_unexpand_env() {
   #sed "s+$MY_PYTHON_VENV_DIR+\$MY_PYTHON_VENV_DIR+"
   cat

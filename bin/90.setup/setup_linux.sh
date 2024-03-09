@@ -22,3 +22,14 @@ f_batcat_list()  { batcat -L; }
 f_batcat_build() { batcat cache --build; }
 f_batcat_clear() { batcat cache --clear; }
 #------------------------------------------------------
+f_linux_ls_config_dir() {
+  local dirs="\
+    $HOME/.config \
+    $HOME/.local/share \
+    $HOME/.cache \
+    "
+  for i in $dirs; do
+    _f_title $i
+    ls.sh $i
+  done
+}

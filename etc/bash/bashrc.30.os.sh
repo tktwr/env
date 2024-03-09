@@ -1,7 +1,7 @@
 #!/bin/bash
 
 f_os_wsl() {
-  export WSLENV=MY_LIBTT_WIN:MY_OPT_WIN:MY_DATA_WIN
+  export WSLENV=MY_LIBTT_WIN:MY_GITHUB_WIN:MY_OPT_WIN:MY_DATA_WIN
 
   if [ -z "$WSL_HOST_IP" ]; then
     export WSL_HOST_IP=$(grep nameserver /etc/resolv.conf | cut -d " " -f 2)

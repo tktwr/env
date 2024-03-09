@@ -64,4 +64,11 @@ f_pip_install_dev() {
 f_pip_install_torch() {
   pip install $pip_pkg_torch
 }
+#------------------------------------------------------
+f_poetry_ls_config() {
+  poetry config --list
+}
+f_poetry_set_config() {
+  poetry config virtualenvs.in-project true
+}
 

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-_f_title() {
-  echo "--- [$*] ----------"
-}
-
 _f_print_env() {
   printf "%-20s = %s\n" $1 $2
 }
