@@ -1,25 +1,33 @@
 #!/bin/bash
 
-files="\
-$HOME/.bashrc \
-$HOME/WinHome/.bashrc \
-$HOME/.not_existing_file \
-$HOME/WinHome/.not_existing_file \
-C:/Users/Takeh/.bashrc \
-C:/Users/Takeh2/.bashrc \
-"
+files=(\
+"$HOME/.bashrc" \
+"$HOME/.not_existing_file" \
+"$HOME/WinHome/.bashrc" \
+"$HOME/WinHome/.not_existing_file" \
+"C:/Users/Takeh/.bashrc" \
+"C:/Users/Takeh2/.bashrc" \
+"C:/Program Files" \
+"C:\Program Files" \
+)
 
 echo "=== pathconv.sh ===================="
-for i in $files; do
-  echo "orig: $i --------------------"
-  echo "unix: $(pathconv.sh unix $i)"
-  echo "win : $(pathconv.sh win $i)"
+len=${#files[@]}
+for (( i=0; i<$len; i++ )); do
+  orig=${files[$i]}
+  echo "------------------------------"
+  echo "orig: $orig"
+  echo "unix: $(pathconv.sh unix $orig)"
+  echo "win : $(pathconv.sh win $orig)"
 done
 
 echo "=== pathconv.py ===================="
-for i in $files; do
-  echo "orig: $i --------------------"
-  echo "unix: $(pathconv.py -t unix $i)"
-  echo "win : $(pathconv.py -t windows $i)"
-  echo "mix : $(pathconv.py -t mixed $i)"
+len=${#files[@]}
+for (( i=0; i<$len; i++ )); do
+  orig=${files[$i]}
+  echo "------------------------------"
+  echo "orig: $orig"
+  echo "unix: $(pathconv.py -t unix $orig)"
+  echo "mix : $(pathconv.py -t mixed $orig)"
+  echo "win : $(pathconv.py -t windows $orig)"
 done

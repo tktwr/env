@@ -10,6 +10,7 @@ case "$url" in
     open_pdf.sh "$url"
     ;;
   *)
+    url=$(pathconv.sh unix "$url")
     if [ -d "$url" ]; then
       open_dir.sh "$url"
     elif [ -f "$url" ]; then

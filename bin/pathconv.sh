@@ -22,6 +22,7 @@ f_to_win() {
   sed -e "s+$prefix/\([c-zC-Z]\)+\U\1:+" -e "s+^/home+$wslhome+" -e 's+/+\\+g'
 }
 
+#------------------------------------------------------
 f_path_unix() {
   local p=$(echo "$1" | f_to_unix)
   local p=$(realpath "$p")
@@ -49,6 +50,7 @@ f_path_win() {
   esac
 }
 
+#------------------------------------------------------
 os_name=$1
 shift
 pth="$*"
