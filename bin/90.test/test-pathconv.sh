@@ -18,7 +18,7 @@ for (( i=0; i<$len; i++ )); do
   echo "------------------------------"
   echo "orig: $orig"
   echo "unix: $(pathconv.sh unix $orig)"
-  echo "win : $(pathconv.sh win $orig)"
+  echo "win : $(pathconv.sh win  $orig)"
 done
 
 echo "=== pathconv.py ===================="
@@ -27,7 +27,7 @@ for (( i=0; i<$len; i++ )); do
   orig=${files[$i]}
   echo "------------------------------"
   echo "orig: $orig"
-  echo "unix: $(pathconv.py -t unix $orig)"
-  echo "mix : $(pathconv.py -t mixed $orig)"
+  echo "unix: $(pathconv.py -t unix    $orig)"
+  echo "mix : $(pathconv.py -t mixed   $orig)"
   echo "win : $(pathconv.py -t windows $orig)"
 done

@@ -1,5 +1,5 @@
 -------------- | ------------------------------ | ------------------------------
-- ,fd          | Fd                             | :VisFzfAll
+- ,fd          | Fd                             | :VisFzfFd
 - ,rg          | Rg                             | :VisFzfRg
 - ,rgw         | Rg <cword>                     | :VisFzfRg <cword>
 - ,rgf         | Rg <cfile>                     | :VisFzfRg <cfile>
@@ -48,6 +48,7 @@
 # ,gg          | fzf:Git graph                  | :FzfCommits
 - ,gl          | fugitive:Gllog %               | :Gllog %
 - ,gl          | fugitive:Gllog                 | :Gllog
+-----          | ------------------------------ | ------------------------------
 - ,xh          | Wx left                        | :WxDir h
 - ,xj          | Wx down                        | :WxDir j
 - ,xk          | Wx up                          | :WxDir k
@@ -62,7 +63,6 @@
 -              | Yank                       (Y) | "*y
 - ,Y           | YankFilePath                   | :call YankFilePath()
 -----          | ------------------------------ | ------------------------------
--              | MyClangFormat                  | :MyClangFormat
 - ,t1          | EditTabBar                     | :EditTabBar
 - ,t:          | EditTabColon                   | :EditTabColon
 - ,t;          | EditTabSemicolon               | :EditTabSemicolon
@@ -71,15 +71,18 @@
 - ,t=          | EditTabEqual                   | :EditTabEqual
 - ,t[          | EditTabLabel                   | :EditTabLabel
 -----          | ------------------------------ | ------------------------------
-- ,pr          | PgrRemoveSpaces                | :call PgrRemoveSpaces()
-- ,pf          | PgrFormat                      | :call PgrFormat()
-- ,p<          | PgrIndentLeft                  | :call PgrIndentLeft()
-- ,p>          | PgrIndentRight                 | :call PgrIndentRight()
+- ,sumcol0     | R_SumCol(0)                    | :call R_SumCol(0)
+- ,sumcol1     | R_SumCol(1)                    | :call R_SumCol(1)
+- ,sumcol2     | R_SumCol(2)                    | :call R_SumCol(2)
+- ,sumcol3     | R_SumCol(3)                    | :call R_SumCol(3)
 -----          | ------------------------------ | ------------------------------
-- ,sumcol0     | SumCol(0)                      | :call SumCol(0)
-- ,sumcol1     | SumCol(1)                      | :call SumCol(1)
-- ,sumcol2     | SumCol(2)                      | :call SumCol(2)
-- ,sumcol3     | SumCol(3)                      | :call SumCol(3)
+- ,pr          | P_RemoveSpaces                 | :call P_RemoveSpaces()
+- ,pf          | P_Format                       | :call P_Format()
+- ,p<          | P_IndentLeft                   | :call P_IndentLeft()
+- ,p>          | P_IndentRight                  | :call P_IndentRight()
+-----          | ------------------------------ | ------------------------------
+-              | B_ClangFormat                  | :call B_ClangFormat()
+-----          | ------------------------------ | ------------------------------
 - ,eL          | EditMdLink                     | :call EditMdLink()
 - ,eI          | EditMdImgLink                  | :call EditMdImgLink()
 -              | EditHtmlLink                   | :call EditHtmlLink()

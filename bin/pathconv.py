@@ -17,7 +17,7 @@ def parse_args():
                         help='set output type')
     parser.add_argument('-p', '--prefix',
                         type=str,
-                        default='',
+                        default='/mnt',
                         help='set prefix')
     parser.add_argument('files',
                         type=str,
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     otype  = args.type
     prefix = args.prefix
-    fname  = args.files[0]
+    fname  = ' '.join(args.files)
 
     p = eval(f"ttp.path_{otype}('{fname}', '{prefix}')")
     print(p)

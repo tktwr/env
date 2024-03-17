@@ -31,10 +31,6 @@ func s:MyDict()
   exec "below term ++rows=".g:my_trans_winheight." ++close trans -I"
 endfunc
 
-func s:MyClangFormat()
-  !clang-format -i %
-endfunc
-
 "------------------------------------------------------
 command MyAddTime                call s:MyAddTime()
 command -nargs=? MyAddDate       call s:MyAddDate(<f-args>)
@@ -42,5 +38,4 @@ command MyUpdateDateHere         call s:MyAddDate(expand("<cWORD>"))
 
 command MyTrans                  call s:MyTrans()
 command MyDict                   call s:MyDict()
-command MyClangFormat            call s:MyClangFormat()
 

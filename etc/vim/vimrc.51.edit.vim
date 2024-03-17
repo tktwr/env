@@ -70,11 +70,13 @@ func EditTogglePathFormat()
 endfunc
 
 "------------------------------------------------------
-func! RngRemoveSpaces() range
+" Range functions
+"------------------------------------------------------
+func! R_RemoveSpaces() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
 endfunc
 
-func! FormatLines() range
+func! R_FormatLines() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
   Tabularize /=dict
   Tabularize /|dict
@@ -82,19 +84,28 @@ func! FormatLines() range
 endfunc
 
 "------------------------------------------------------
-func! PgrRemoveSpaces()
-  '{,'}call RngRemoveSpaces()
+" Paragraph functions
+"------------------------------------------------------
+func! P_RemoveSpaces()
+  '{,'}call R_RemoveSpaces()
 endfunc
 
-func! PgrFormat()
-  '{,'}call FormatLines()
+func! P_Format()
+  '{,'}call R_FormatLines()
 endfunc
 
-func! PgrIndentLeft()
+func! P_IndentLeft()
   normal <ap
 endfunc
 
-func! PgrIndentRight()
+func! P_IndentRight()
   normal >ap
+endfunc
+
+"------------------------------------------------------
+" Buffer functions
+"------------------------------------------------------
+func B_ClangFormat()
+  !clang-format -i %
 endfunc
 

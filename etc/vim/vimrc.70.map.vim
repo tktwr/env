@@ -41,12 +41,12 @@ map , <Nop>
 vnoremap <Space> y:VisFzfBmk<CR>
 nnoremap <Space> :VisFzfBmk<CR>
 nnoremap ,,      :VisFzfWinbuf<CR>
-nnoremap ,f      :VisFzfAll<CR>
+nnoremap ,b      :FzfBuffers<CR>
+nnoremap ,f      :VisFzfFd<CR>
 nnoremap ,r      :VisFzfRg<CR>
 nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
 nnoremap ,h      :FzfHelptags<CR>
-nnoremap ,b      :FzfBuffers<CR>
 
 nmap ,s          <Plug>(easymotion-overwin-f2)
 nmap ,j          <Plug>(easymotion-j)
@@ -134,8 +134,8 @@ augroup END
 
 vnoremap A       y:'<,'>w !sumcol.py<CR>
 
-func SumCol(col=2, sep='|')
-  echom printf("SumCol: col=%d sep=%s", a:col, a:sep)
+func R_SumCol(col=2, sep='|')
+  echom printf("R_SumCol: col=%d sep=%s", a:col, a:sep)
   echom system(printf("sumcol.py -c %d -s '%s'", a:col, a:sep), @")
 endfunc
 
