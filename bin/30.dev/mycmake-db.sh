@@ -1,4 +1,6 @@
 #!/bin/bash
 
-mycmake.sh make Release
-cp build.make/Release/compile_commands.json .
+source setup_cmake.sh
+f_cmake_set_make_release
+
+mycmake.sh

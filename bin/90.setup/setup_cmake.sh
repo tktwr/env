@@ -11,7 +11,7 @@ fi
 #======================================================
 # functions
 #======================================================
-_f_set() {
+_f_cmake_set() {
   export MY_CMAKE_OPT=""
   export MY_BUILD_OPT=""
   export MY_BUILD_SYS=$1
@@ -58,29 +58,29 @@ _f_set() {
   echo "export CLANGD_FLAGS=\"--compile-commands-dir=$MY_BUILD_DIR\""
 }
 
-f_cmake_make_release()   { _f_set make   Release        > $BUILDRC; }
-f_cmake_make_debug()     { _f_set make   Debug          > $BUILDRC; }
-f_cmake_ninja_release()  { _f_set ninja  Release        > $BUILDRC; }
-f_cmake_ninja_debug()    { _f_set ninja  Debug          > $BUILDRC; }
-f_cmake_vs2017_release() { _f_set vs2017 Release        > $BUILDRC; }
-f_cmake_vs2017_debug()   { _f_set vs2017 Debug          > $BUILDRC; }
-f_cmake_vs2017_reldeb()  { _f_set vs2017 RelWithDebInfo > $BUILDRC; }
-f_cmake_vs2019_release() { _f_set vs2019 Release        > $BUILDRC; }
-f_cmake_vs2019_debug()   { _f_set vs2019 Debug          > $BUILDRC; }
-f_cmake_vs2019_reldeb()  { _f_set vs2019 RelWithDebInfo > $BUILDRC; }
-f_cmake_vs2022_release() { _f_set vs2022 Release        > $BUILDRC; }
-f_cmake_vs2022_debug()   { _f_set vs2022 Debug          > $BUILDRC; }
-f_cmake_vs2022_reldeb()  { _f_set vs2022 RelWithDebInfo > $BUILDRC; }
+f_cmake_set_make_release()   { _f_cmake_set make   Release        > $BUILDRC; }
+f_cmake_set_make_debug()     { _f_cmake_set make   Debug          > $BUILDRC; }
+f_cmake_set_ninja_release()  { _f_cmake_set ninja  Release        > $BUILDRC; }
+f_cmake_set_ninja_debug()    { _f_cmake_set ninja  Debug          > $BUILDRC; }
+f_cmake_set_vs2017_release() { _f_cmake_set vs2017 Release        > $BUILDRC; }
+f_cmake_set_vs2017_debug()   { _f_cmake_set vs2017 Debug          > $BUILDRC; }
+f_cmake_set_vs2017_reldeb()  { _f_cmake_set vs2017 RelWithDebInfo > $BUILDRC; }
+f_cmake_set_vs2019_release() { _f_cmake_set vs2019 Release        > $BUILDRC; }
+f_cmake_set_vs2019_debug()   { _f_cmake_set vs2019 Debug          > $BUILDRC; }
+f_cmake_set_vs2019_reldeb()  { _f_cmake_set vs2019 RelWithDebInfo > $BUILDRC; }
+f_cmake_set_vs2022_release() { _f_cmake_set vs2022 Release        > $BUILDRC; }
+f_cmake_set_vs2022_debug()   { _f_cmake_set vs2022 Debug          > $BUILDRC; }
+f_cmake_set_vs2022_reldeb()  { _f_cmake_set vs2022 RelWithDebInfo > $BUILDRC; }
 
 f_cmake() {
-  $SYS_CMAKE_EXE -S. -B$MY_BUILD_DIR -G"$MY_CMAKE_GENERATOR" $MY_CMAKE_OPT $@
+  $SYS_CMAKE_EXE -S. -B$MY_BUILD_DIR -G"$MY_CMAKE_GENERATOR" $MY_CMAKE_OPT "$@"
 }
 f_cmake_build() {
-  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT $@
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT "$@"
 }
 f_cmake_install() {
-  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target install $@
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target install "$@"
 }
 f_cmake_clean() {
-  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target clean $@
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target clean "$@"
 }
