@@ -35,18 +35,23 @@ f_venv_deactivate() {
 # fzf
 #------------------------------------------------------
 f_fzf_pw_opt() {
-  pw_opt='hidden,right,60%,border-left,+{2}/3'
-  if [ $COLUMNS -lt 80 ]; then
-    pw_opt='hidden,down,60%,border-top,+{2}/3'
+  local cols=${COLUMNS:-80}
+  local lins=${LINES:-10}
+  local fzf_opt=""
+  if [ $cols -ge 80 -a $lins -ge 10 ]; then
+    fzf_opt="$fzf_opt --preview-window 'right,60%,+{2}/3'"
+    fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(down,50%,+{2}/3|hidden|)'"
+  elif [ $cols -ge 80 -a $lins -lt 10 ]; then
+    fzf_opt="$fzf_opt --preview-window 'right,60%,+{2}/3'"
+    fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(hidden|)'"
+  elif [ $cols -lt 80 -a $lins -ge 10 ]; then
+    fzf_opt="$fzf_opt --preview-window 'down,50%,+{2}/3'"
+    fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(hidden|)'"
+  else
+    fzf_opt="$fzf_opt --preview-window 'hidden'"
+    fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(down,50%,+{2}/3|)'"
   fi
-  echo $pw_opt
-}
-f_fzf_pw_opt_cmd() {
-  pw_opt='right,30%,border-left,+{2}/3'
-  if [ $COLUMNS -lt 80 ]; then
-    pw_opt='down,30%,border-top,+{2}/3'
-  fi
-  echo $pw_opt
+  echo $fzf_opt
 }
 #------------------------------------------------------
 f_fzf_help() {
@@ -69,7 +74,6 @@ export -f _f_title
 export -f f_venv_activate
 export -f f_venv_deactivate
 export -f f_fzf_pw_opt
-export -f f_fzf_pw_opt_cmd
 export -f f_fzf_help
 export -f f_fzf_default
 export -f f_fzf_main

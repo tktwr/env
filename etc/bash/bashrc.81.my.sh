@@ -7,8 +7,8 @@
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
-  alias ,f='vimapi-edit-dir'
-  alias ,f2='vimapi-edit-dir-2'
+  alias ,d='vimapi-edit-dir'
+  alias ,d2='vimapi-edit-dir-2'
 
   alias ,ide='vimapi_exec VisIDE'
   alias ,ide2='vimapi_exec VisIDE 2'
@@ -121,11 +121,6 @@ f_alias_os_common() {
 #------------------------------------------------------
 f_mv_g_dir() { mv "$@" `mypushd.sh --get`; }
 f_cp_g_dir() { cp "$@" `mypushd.sh --get`; }
-
-mycmake-set() {
-  mycmake.sh --set $1 $2
-  source_bashrc
-}
 
 #------------------------------------------------------
 my_setup_alias() {

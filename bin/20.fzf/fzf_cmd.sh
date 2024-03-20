@@ -25,7 +25,11 @@ fzf_cmd_preview() {
 
 fzf_cmd() {
   cmd="$1"
-  echo $(eval "$cmd f_fzf_help" | fzf_cmd_pre | fzf --prompt "$cmd> " --preview 'fzf_cmd_preview {}' --preview-window "$(f_fzf_pw_opt_cmd)" | fzf_cmd_post)
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(f_fzf_pw_opt)"
+  echo $(eval "$cmd f_fzf_help" | \
+    fzf_cmd_pre | \
+    fzf --prompt "$cmd> " --preview 'fzf_cmd_preview {}' | \
+    fzf_cmd_post)
 }
 
 export -f fzf_cmd_rg

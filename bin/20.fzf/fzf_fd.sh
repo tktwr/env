@@ -1,8 +1,8 @@
 #!/bin/bash
 
 dirs="$@"
-
-FZF_DEFAULT_COMMAND="fd.sh a $dirs" \
+export FZF_DEFAULT_COMMAND="fd.sh a $dirs"
+export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $(f_fzf_pw_opt)"
 fzf --prompt 'Fd> ' \
     --ansi \
     --header '[A-adf] All|Dir|File, [A-oi] Open|Web, [A-/] Preview' \
@@ -11,5 +11,4 @@ fzf --prompt 'Fd> ' \
     --bind "alt-f:reload(fd.sh f $dirs)" \
     --bind 'alt-o:execute(open.sh {})' \
     --bind 'alt-i:execute(open_web.sh {})' \
-    --preview 'preview.sh {}' \
-    --preview-window "$(f_fzf_pw_opt)"
+    --preview 'preview.sh {}'

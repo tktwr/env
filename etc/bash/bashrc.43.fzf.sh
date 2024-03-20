@@ -115,12 +115,12 @@ eval_fzf_cmd() {
 _my_setup_fzf_common() {
   export FZF_DEFAULT_OPTS="--exact --no-sort --reverse --info 'inline-right'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --header '[A-/] Preview'"
-  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-/:toggle-preview'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-s:backward-delete-char'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgup:preview-page-up'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'pgdn:preview-page-down'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-p:preview-up+preview-up+preview-up+preview-up+preview-up'"
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'ctrl-n:preview-down+preview-down+preview-down+preview-down+preview-down'"
+  #export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --bind 'alt-/:toggle-preview'"
 }
 
 _my_setup_fzf_fdfind() {
