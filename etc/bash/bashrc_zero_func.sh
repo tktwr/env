@@ -39,10 +39,10 @@ f_fzf_pw_opt() {
   local lins=${LINES:-10}
   local fzf_opt=""
   if [ $cols -ge 80 -a $lins -ge 10 ]; then
-    fzf_opt="$fzf_opt --preview-window 'right,60%,+{2}/3'"
+    fzf_opt="$fzf_opt --preview-window 'right,50%,+{2}/3'"
     fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(down,50%,+{2}/3|hidden|)'"
   elif [ $cols -ge 80 -a $lins -lt 10 ]; then
-    fzf_opt="$fzf_opt --preview-window 'right,60%,+{2}/3'"
+    fzf_opt="$fzf_opt --preview-window 'right,50%,+{2}/3'"
     fzf_opt="$fzf_opt --bind 'alt-/:change-preview-window(hidden|)'"
   elif [ $cols -lt 80 -a $lins -ge 10 ]; then
     fzf_opt="$fzf_opt --preview-window 'down,50%,+{2}/3'"
