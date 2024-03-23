@@ -28,6 +28,7 @@ let g:vis_unexpand_env_list = [
   \ '$MY_PRIVATE_CONFIG',
   \ '$MY_DESKTOP',
   \ '$MY_DOWNLOADS',
+  \ '$MY_VIM_PLUGGED_DIR',
   \ '$USER_LOCAL',
   \ '$USER_ROAMING',
   \ '$SYS_ROAMING_HOME',

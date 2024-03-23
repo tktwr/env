@@ -1,42 +1,42 @@
 # for system
 
-# NAME              | ENV_VAR              | DIR
-#----------         | ----------           | ----------
-C                   | SYS_C                | C:/
-D                   | SYS_D                | D:/
-msys2-home          | SYS_MSYS2_HOME       | C:/msys64/home/$USERNAME
-cygwin-home         | SYS_CYGWIN_HOME      | C:/cygwin64/home/$USERNAME
-prog64              | SYS_PROG64_DIR       | C:\Program Files
-prog32              | SYS_PROG32_DIR       | C:\Program Files (x86)
-nodejs-home         | NODEJS_HOME          | C:\Program Files\nodejs
-java-home           | JAVA_HOME            | C:\Program Files\Android\Android Studio\jre
-sys-blender         | SYS_BLENDER          | C:\Program Files\Blender Foundation\Blender 3.3
-sys-blender-py      | SYS_BLENDER_PY       | C:\Program Files\Blender Foundation\Blender 3.3\3.3\scripts\modules
-sys-git             | SYS_GIT              | C:\Program Files\Git
-sys-cmake           | SYS_CMAKE            | C:\Program Files\CMake
-sys-vulkan-sdk      | SYS_VULKAN_SDK       | $VULKAN_SDK
-sys-cuda-sdk        | SYS_CUDA_SDK         | $CUDA_PATH
-#----------         | ----------           | ----------
-win-home            | SYS_WIN_HOME         | $SYS_WIN_HOME
-local-home          | SYS_LOCAL_HOME       | $SYS_LOCAL_HOME
-roaming-home        | SYS_ROAMING_HOME     | $SYS_ROAMING_HOME
-config-home         | SYS_CONFIG_HOME      | $SYS_CONFIG_HOME
-work-home           | SYS_WORK_HOME        | $SYS_WORK_HOME
-proj-home           | SYS_PROJ_HOME        | $SYS_PROJ_HOME
-data-home           | SYS_DATA_HOME        | $SYS_DATA_HOME
-#----------         | ----------           | ----------
-user-local          | USER_LOCAL           | $SYS_WIN_HOME/AppData/Local
-user-prog           | USER_PROG_DIR        | $SYS_WIN_HOME/AppData/Local/Programs
-user-python-home    | USER_PYTHON_HOME     | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python310
-android-sdk         | ANDROID_SDK          | $SYS_WIN_HOME/AppData/Local/Android/sdk
-winget-dir          | WINGET_DIR           | $SYS_WIN_HOME/AppData/Local/Microsoft/WinGet/Packages
-winapp-dir          | WINAPP_DIR           | $SYS_WIN_HOME/AppData/Local/Microsoft/WindowsApps
-#----------         | ----------           | ----------
-user-roaming        | USER_ROAMING         | $SYS_WIN_HOME/AppData/Roaming
-user-python-roaming | USER_PYTHON_ROAMING  | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
-blender-addons      | BLENDER_ADDONS_DIR   | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
-blender33-addons    | BLENDER33_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
-blender36-addons    | BLENDER36_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
-blender40-addons    | BLENDER40_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/4.0/scripts/addons
+# NAME                  | ENV_VAR              | DIR
+#----------             | ----------           | ----------
+sys-c                   | SYS_C                | C:/
+sys-d                   | SYS_D                | D:/
+sys-msys2-home          | SYS_MSYS2_HOME       | C:/msys64/home/$USERNAME
+sys-cygwin-home         | SYS_CYGWIN_HOME      | C:/cygwin64/home/$USERNAME
+sys-prog64              | SYS_PROG64_DIR       | C:\Program Files
+sys-prog32              | SYS_PROG32_DIR       | C:\Program Files (x86)
+sys-nodejs-home         | SYS_NODEJS_HOME      | C:\Program Files\nodejs
+sys-java-home           | SYS_JAVA_HOME        | C:\Program Files\Android\Android Studio\jre
+sys-blender             | SYS_BLENDER          | C:\Program Files\Blender Foundation\Blender 3.3
+sys-blender-py          | SYS_BLENDER_PY       | C:\Program Files\Blender Foundation\Blender 3.3\3.3\scripts\modules
+sys-git                 | SYS_GIT              | C:\Program Files\Git
+sys-cmake               | SYS_CMAKE            | C:\Program Files\CMake
+sys-vulkan-sdk          | SYS_VULKAN_SDK       | $VULKAN_SDK
+sys-cuda-sdk            | SYS_CUDA_SDK         | $CUDA_PATH
+#----------             | ----------           | ----------
+win-home                | SYS_WIN_HOME         | $SYS_WIN_HOME
+local-home              | SYS_LOCAL_HOME       | $SYS_LOCAL_HOME
+roaming-home            | SYS_ROAMING_HOME     | $SYS_ROAMING_HOME
+config-home             | SYS_CONFIG_HOME      | $SYS_CONFIG_HOME
+work-home               | SYS_WORK_HOME        | $SYS_WORK_HOME
+proj-home               | SYS_PROJ_HOME        | $SYS_PROJ_HOME
+data-home               | SYS_DATA_HOME        | $SYS_DATA_HOME
+#----------             | ----------           | ----------
+app-user-local          | USER_LOCAL           | $SYS_WIN_HOME/AppData/Local
+app-user-prog           | USER_PROG_DIR        | $SYS_WIN_HOME/AppData/Local/Programs
+app-user-python-home    | USER_PYTHON_HOME     | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python310
+app-android-sdk         | ANDROID_SDK          | $SYS_WIN_HOME/AppData/Local/Android/sdk
+app-winget-dir          | WINGET_DIR           | $SYS_WIN_HOME/AppData/Local/Microsoft/WinGet/Packages
+app-winapp-dir          | WINAPP_DIR           | $SYS_WIN_HOME/AppData/Local/Microsoft/WindowsApps
+#----------             | ----------           | ----------
+app-user-roaming        | USER_ROAMING         | $SYS_WIN_HOME/AppData/Roaming
+app-user-python-roaming | USER_PYTHON_ROAMING  | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
+app-blender-addons      | BLENDER_ADDONS_DIR   | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
+app-blender33-addons    | BLENDER33_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
+app-blender36-addons    | BLENDER36_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
+app-blender40-addons    | BLENDER40_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/4.0/scripts/addons
 
 # vim:set nowrap:

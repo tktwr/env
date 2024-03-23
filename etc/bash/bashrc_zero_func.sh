@@ -1,3 +1,5 @@
+set -a  # start exporting functions
+#------------------------------------------------------
 _f_title() {
   echo "--- [$*] ----------"
 }
@@ -68,12 +70,14 @@ f_fzf_main() {
   eval "$func_name $@"
 }
 #------------------------------------------------------
+set +a  # stop exporting functions
+#------------------------------------------------------
 # export functions
 #------------------------------------------------------
-export -f _f_title
-export -f f_venv_activate
-export -f f_venv_deactivate
-export -f f_fzf_pw_opt
-export -f f_fzf_help
-export -f f_fzf_default
-export -f f_fzf_main
+# export -f _f_title
+# export -f f_venv_activate
+# export -f f_venv_deactivate
+# export -f f_fzf_pw_opt
+# export -f f_fzf_help
+# export -f f_fzf_default
+# export -f f_fzf_main
