@@ -7,6 +7,9 @@
 #======================================================
 # functions
 #======================================================
+f_win_ip() {
+  ipconfig.exe
+}
 f_win_net_info() {
   _f_title "port"
   netsh.exe interface portproxy show v4tov4

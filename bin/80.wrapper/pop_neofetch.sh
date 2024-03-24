@@ -1,0 +1,4 @@
+#!/bin/bash
+
+neofetch
+read

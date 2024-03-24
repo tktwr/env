@@ -27,11 +27,11 @@ f_alias_vim_term() {
   alias ,toggle='vimapi_exec VisWinMaximizeYToggleTerm'
   alias ,toggle_x='vimapi_exec VisWinMaximizeXToggleTerm'
 
-  alias ,lg='vimapi_exec VisLazygit tab'
-  alias ,man='vimapi_exec VisFzfMan tab'
-  alias ,apt='vimapi_exec VisFzfApt tab'
-  alias ,pip='vimapi_exec VisFzfPip tab'
-  alias ,dpkg='vimapi_exec VisFzfDpkg tab'
+  alias ,lg='vimapi_exec VisLazygit pop'
+  alias ,man='vimapi_exec VisFzfMan pop'
+  alias ,apt='vimapi_exec VisFzfApt pop'
+  alias ,pip='vimapi_exec VisFzfPip pop'
+  alias ,dpkg='vimapi_exec VisFzfDpkg pop'
 
   alias ,gs='vimapi_exec VisGS'
   alias ,gg='vimapi_exec VisGV'
