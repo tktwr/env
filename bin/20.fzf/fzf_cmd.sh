@@ -13,11 +13,12 @@ fzf_cmd_rg () {
 }
 
 fzf_cmd_preview() {
-  local setup_files="\
+  local files="\
     $MY_BIN/90.setup/*.sh \
     $SYS_CONFIG_HOME/lconfig/bin/*.sh \
+    ./make.sh \
     "
-      args=$(fzf_cmd_rg -w "$1\(\)" $setup_files | awk -F ':' '{print $1,$2}')
+  args=$(fzf_cmd_rg -w "$1\(\)" $files | awk -F ':' '{print $1,$2}')
   if [ -n "$args" ]; then
     eval "preview_rg.sh $args"
   fi
@@ -36,6 +37,5 @@ export -f fzf_cmd_rg
 export -f fzf_cmd_preview
 
 #------------------------------------------------------
-cmd=${1:-"mymake.sh"}
+cmd=${1:-"cmd.sh"}
 fzf_cmd "$cmd"
-#fzf_cmd_preview $1

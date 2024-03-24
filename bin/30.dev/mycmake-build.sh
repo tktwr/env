@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source setup_cmake.sh
+source cmd_cmake.sh
 f_cmake_build "$@"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-f_git_graph() {
+_f_git_graph() {
   out=$(git.sh graph "$@")
   if [[ ! "$out" =~ "origin/" ]]; then
     git.sh graph origin "$@"
@@ -9,4 +9,4 @@ f_git_graph() {
   echo "$out"
 }
 
-f_git_graph "$@" | $GIT_PAGER
+_f_git_graph "$@" | $GIT_PAGER
