@@ -9,7 +9,7 @@ fzf_cmd_post() {
 }
 
 fzf_cmd_rg () {
-  rg --with-filename --column --line-number --no-heading --smart-case $*
+  rg --with-filename --column --line-number --no-heading --smart-case $* 2>/dev/null
 }
 
 fzf_cmd_preview() {
