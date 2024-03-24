@@ -29,10 +29,5 @@
 -              | Git graph all                  | > GA<CR>
 -              | Git status                     | > ,gs<CR>
 -              | Git graph                      | > ,gg<CR>
--              | Lazygit                        | > ,lg<CR>
--              | Man                            | > ,man<CR>
--              | Apt                            | > ,apt<CR>
--              | Pip                            | > ,pip<CR>
--              | Dpkg                           | > ,dpkg<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:

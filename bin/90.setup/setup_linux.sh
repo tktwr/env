@@ -30,10 +30,15 @@ f_linux_ls_config_dir() {
 #------------------------------------------------------
 # popup
 #------------------------------------------------------
-f_linux_info() { vimapi_exec 'VisShellOpen neofetch pop_neofetch.sh pop'; }
-f_linux_btop() { vimapi_exec 'VisShellOpen btop     btop pop'; }
-f_linux_htop() { vimapi_exec 'VisShellOpen htop     pop_htop.sh pop'; }
-f_linux_cal()  { vimapi_exec 'VisShellOpen cal      pop_cal.sh pop'; }
+f_linux_info()    { vimapi_exec 'VisShellPop pop_neofetch.sh'; }
+f_linux_btop()    { vimapi_exec 'VisShellPop btop'; }
+f_linux_htop()    { vimapi_exec 'VisShellPop pop_htop.sh'; }
+f_linux_cal()     { vimapi_exec 'VisShellPop pop_cal.sh'; }
+f_linux_lazygit() { vimapi_exec 'VisShellPop lazygit.sh'; }
+f_linux_man()     { vimapi_exec 'VisShellPop fzf_man.sh'; }
+f_linux_apt()     { vimapi_exec 'VisShellPop fzf_apt.sh'; }
+f_linux_pip()     { vimapi_exec 'VisShellPop fzf_pip.sh'; }
+f_linux_dpkg()    { vimapi_exec 'VisShellPop fzf_dpkg.sh'; }
 #------------------------------------------------------
 # nvidia
 #------------------------------------------------------

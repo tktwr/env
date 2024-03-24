@@ -99,11 +99,11 @@
 -              | Git status                     | :VisGS
 -              | Git graph                      | :VisGV
 -              | quickhl                  (C-a) | :VisQuickhl ??
--              | Lazygit                        | :VisLazygit tab
--              | Man                            | :VisFzfMan tab
--              | Apt                            | :VisFzfApt tab
--              | Pip                            | :VisFzfPip tab
--              | Dpkg                           | :VisFzfDpkg tab
+-              | Lazygit                        | :VisShellPop lazygit.sh
+-              | Man                            | :VisShellPop fzf_man.sh
+-              | Apt                            | :VisShellPop fzf_apt.sh
+-              | Pip                            | :VisShellPop fzf_pip.sh
+-              | Dpkg                           | :VisShellPop fzf_dpkg.sh
 -              | Memo                           | :Memo
 -              | Help                           | :VisHelp
 -----          | ------------------------------ | ------------------------------
