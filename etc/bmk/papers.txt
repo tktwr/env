@@ -10,43 +10,43 @@
 -              | paper:超雑訳 [Disney BRDF] Physically Based Shading at Disney                                                            | http://project-asura.com/blog/archives/1972
 -              | paper:超雑訳 Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                         | http://project-asura.com/blog/archives/4181
 -              | paper:SIGGRAPH2019: Advances in Real-Time Rendering in Games                                                             | https://advances.realtimerendering.com/s2019/index.htm
--              | paper.textbook:PBRT                                                                                                      | https://pbr-book.org/3ed-2018/contents
--              | paper.textbook:Physically Based Rendering in Filament                                                                    | https://google.github.io/filament/Filament.md.html
--              | paper.textbook:Filament [github]                                                                                         | https://github.com/google/filament
--              | paper.textbook:Learn OpenGL                                                                                              | https://learnopengl.com/
--              | paper.textbook:Learn OpenGL [github]                                                                                     | https://github.com/JoeyDeVries/LearnOpenGL
--              | paper.textbook:Enterprise PBR Shading Model                                                                              | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
--              | paper.textbook:Adobe: THE PBR GUIDE - PART 1                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
--              | paper.textbook:Adobe: THE PBR GUIDE - PART 2                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
--              | paper.textbook:GPU Gems 3                                                                                                | https://developer.nvidia.com/gpugems/gpugems3/foreword
--              | paper.textbook:GPU Gems 3.Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                         | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
--              | paper.textbook:GPU Gems 3.Chapter 24. The Importance of Being Linear                                                     | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
--              | paper.dr:nvdiffrec                                                                                                       | https://nvlabs.github.io/nvdiffrec/
--              | paper.dr:nvdiffmodeling                                                                                                  | https://github.com/NVlabs/nvdiffmodeling
--              | paper.dr:nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [arxiv]                             | https://arxiv.org/abs/2011.03277
--              | paper.dr:nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [github]                            | https://github.com/NVlabs/nvdiffrast
--              | paper.dr:Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                            | https://arxiv.org/abs/2007.08501
--              | paper.dr:PyTorch3D [github]                                                                                              | https://github.com/facebookresearch/pytorch3d
--              | paper.dr:Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                 | https://arxiv.org/abs/1904.01786
--              | paper.dr:Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                | https://github.com/ShichenLiu/SoftRas
--              | paper.nerf:Instant Neural Graphics Primitives with a Multiresolution Hash Encoding                                       | https://nvlabs.github.io/instant-ngp/
--              | paper.nerf:Instant Neural Graphics Primitives [github]                                                                   | https://github.com/NVlabs/instant-ngp
--              | paper.nerf:HVH: Learning a Hybrid Neural Volumetric Representation for Dynamic Hair Performance Capture                  | https://ziyanw1.github.io/hvh/
--              | paper.nerf:Mixture of Volumetric Primitives for Efficient Neural Rendering                                               | https://arxiv.org/abs/2103.01954
--              | paper.nerf:NeRF-Tex: Neural Reflectance Field Textures                                                                   | https://research.nvidia.com/publication/2021-06_nerf-tex-neural-reflectance-field-textures
--              | paper.nerf:NeRF: Neural Radiance Fields                                                                                  | https://www.matthewtancik.com/nerf
+-              | paper:textbook:PBRT                                                                                                      | https://pbr-book.org/3ed-2018/contents
+-              | paper:textbook:Physically Based Rendering in Filament                                                                    | https://google.github.io/filament/Filament.md.html
+-              | paper:textbook:Filament [github]                                                                                         | https://github.com/google/filament
+-              | paper:textbook:Learn OpenGL                                                                                              | https://learnopengl.com/
+-              | paper:textbook:Learn OpenGL [github]                                                                                     | https://github.com/JoeyDeVries/LearnOpenGL
+-              | paper:textbook:Enterprise PBR Shading Model                                                                              | https://dassaultsystemes-technology.github.io/EnterprisePBRShadingModel/
+-              | paper:textbook:Adobe: THE PBR GUIDE - PART 1                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-1
+-              | paper:textbook:Adobe: THE PBR GUIDE - PART 2                                                                             | https://substance3d.adobe.com/tutorials/courses/the-pbr-guide-part-2
+-              | paper:textbook:GPU Gems 3                                                                                                | https://developer.nvidia.com/gpugems/gpugems3/foreword
+-              | paper:textbook:GPU Gems 3.Chapter 14. Advanced Techniques for Realistic Real-Time Skin Rendering                         | https://developer.nvidia.com/gpugems/gpugems3/part-iii-rendering/chapter-14-advanced-techniques-realistic-real-time-skin
+-              | paper:textbook:GPU Gems 3.Chapter 24. The Importance of Being Linear                                                     | https://developer.nvidia.com/gpugems/gpugems3/part-iv-image-effects/chapter-24-importance-being-linear
+-              | paper:dr:nvdiffrec                                                                                                       | https://nvlabs.github.io/nvdiffrec/
+-              | paper:dr:nvdiffmodeling                                                                                                  | https://github.com/NVlabs/nvdiffmodeling
+-              | paper:dr:nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [arxiv]                             | https://arxiv.org/abs/2011.03277
+-              | paper:dr:nvdiffrast Modular Primitives for High-Performance Differentiable Rendering [github]                            | https://github.com/NVlabs/nvdiffrast
+-              | paper:dr:Accelerating 3D Deep Learning with PyTorch3D [arxiv]                                                            | https://arxiv.org/abs/2007.08501
+-              | paper:dr:PyTorch3D [github]                                                                                              | https://github.com/facebookresearch/pytorch3d
+-              | paper:dr:Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [arxiv]                                 | https://arxiv.org/abs/1904.01786
+-              | paper:dr:Soft Rasterizer: A Differentiable Renderer for Image-based 3D Reasoning [github]                                | https://github.com/ShichenLiu/SoftRas
+-              | paper:nerf:Instant Neural Graphics Primitives with a Multiresolution Hash Encoding                                       | https://nvlabs.github.io/instant-ngp/
+-              | paper:nerf:Instant Neural Graphics Primitives [github]                                                                   | https://github.com/NVlabs/instant-ngp
+-              | paper:nerf:HVH: Learning a Hybrid Neural Volumetric Representation for Dynamic Hair Performance Capture                  | https://ziyanw1.github.io/hvh/
+-              | paper:nerf:Mixture of Volumetric Primitives for Efficient Neural Rendering                                               | https://arxiv.org/abs/2103.01954
+-              | paper:nerf:NeRF-Tex: Neural Reflectance Field Textures                                                                   | https://research.nvidia.com/publication/2021-06_nerf-tex-neural-reflectance-field-textures
+-              | paper:nerf:NeRF: Neural Radiance Fields                                                                                  | https://www.matthewtancik.com/nerf
 -              | paper:Enhancing Photorealism Enhancement                                                                                 | https://isl-org.github.io/PhotorealismEnhancement/
 -              | paper:Tone Mapping                                                                                                       | https://64.github.io/tonemapping/
--              | paper.bsdf:SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2015-shading-course/
--              | paper.bsdf:SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2017-shading-course/
--              | paper.bsdf:Image Based Lighting with Multiple Scattering                                                                 | https://bruop.github.io/ibl/
--              | paper.bsdf:Lafortune BRDF: Non-linear approximation of reflectance functions                                             | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
--              | paper.bsdf:Lafortune BRDF: Reflectance Data                                                                              | http://www.graphics.cornell.edu/online/measurements/reflectance/
--              | paper.bsdf:Efficient BRDF Importance Sampling Using a Factored Representation                                            | https://gfx.cs.princeton.edu/proj/brdf/
--              | paper.bsdf:CS 431/636 - Advanced Rendering Techniques                                                                    | https://www.cs.drexel.edu/~david/Classes/CS431/
--              | paper.sss:Real-time subsurface scattering with single pass variance-guided adaptive importance sampling                  | https://thisistian.github.io/publication/real-time-subsurface-with-adaptive-sampling/
--              | paper.sss:Separable Subsurface Scattering                                                                                | http://www.iryoku.com/separable-sss/
--              | paper.sss:A Practical Model for Subsurface Light Transport                                                               | https://graphics.stanford.edu/papers/bssrdf/
+-              | paper:bsdf:SIGGRAPH 2015 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2015-shading-course/
+-              | paper:bsdf:SIGGRAPH 2017 Course: Physically Based Shading in Theory and Practice                                         | https://blog.selfshadow.com/publications/s2017-shading-course/
+-              | paper:bsdf:Image Based Lighting with Multiple Scattering                                                                 | https://bruop.github.io/ibl/
+-              | paper:bsdf:Lafortune BRDF: Non-linear approximation of reflectance functions                                             | http://www.graphics.cornell.edu/pubs/1997/LFTG97.html
+-              | paper:bsdf:Lafortune BRDF: Reflectance Data                                                                              | http://www.graphics.cornell.edu/online/measurements/reflectance/
+-              | paper:bsdf:Efficient BRDF Importance Sampling Using a Factored Representation                                            | https://gfx.cs.princeton.edu/proj/brdf/
+-              | paper:bsdf:CS 431/636 - Advanced Rendering Techniques                                                                    | https://www.cs.drexel.edu/~david/Classes/CS431/
+-              | paper:sss:Real-time subsurface scattering with single pass variance-guided adaptive importance sampling                  | https://thisistian.github.io/publication/real-time-subsurface-with-adaptive-sampling/
+-              | paper:sss:Separable Subsurface Scattering                                                                                | http://www.iryoku.com/separable-sss/
+-              | paper:sss:A Practical Model for Subsurface Light Transport                                                               | https://graphics.stanford.edu/papers/bssrdf/
 -              | paper:Real-Time Rendering Resources                                                                                      | http://www.realtimerendering.com/
 -              | paper:SIGGRAPH 2018 Course: Advances in Real-Time Rendering in Games                                                     | https://advances.realtimerendering.com/s2018/index.htm
 -              | paper:Tessellation-Free Displacement Mapping for Ray Tracing                                                             | https://perso.telecom-paristech.fr/boubek/papers/TFDM/
@@ -60,21 +60,21 @@
 -              | paper:ゲームグラフィックス特論 A / B                                                                                     | https://tokoik.github.io/gg/
 -              | paper:NVISII - NVIDIA Scene Imaging Interface                                                                            | https://github.com/owl-project/NVISII
 -              | paper:PFM Portable FloatMap Image Format                                                                                 | http://www.pauldebevec.com/Research/HDR/PFM/
--              | paper.sdk:4dface                                                                                                         | https://www.4dface.io/
--              | paper.sdk:4dface (github)                                                                                                | https://github.com/patrikhuber/4dface
--              | paper.sdk:6d.ai                                                                                                          | https://www.6d.ai/
--              | paper.univ:USC                                                                                                           | https://vgl.ict.usc.edu/publications.php
--              | paper.people:Ravi Ramamoorthi                                                                                            | https://cseweb.ucsd.edu/~ravir/
--              | paper.people:Kun Zhou                                                                                                    | http://www.kunzhou.net/
--              | paper.people:Jonas Unger                                                                                                 | http://weber.itn.liu.se/~jonun48/web/Home.php
--              | paper.light:Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                          | https://eheitzresearch.wordpress.com/415-2/
--              | paper.shadow:SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～                                     | http://project-asura.com/blog/archives/4748
--              | paper.shadow:Real-Time, All-Frequency Shadows in Dynamic Scenes                                                          | https://discovery.ucl.ac.uk/id/eprint/10005/1/10005.pdf
--              | paper.shadow:Real-time Rendering of Dynamic Scenes under All-frequency Lighting using Integral Spherical Gaussian        | http://web.wakayama-u.ac.jp/~iwasaki/project/ibl/eg2012.pdf
--              | paper.shadow:Moment Shadow Mapping                                                                                       | https://cg.cs.uni-bonn.de/en/publications/paper-details/peters-2015-msm/
--              | paper.material:Neural Radiosity                                                                                          | https://arxiv.org/abs/2105.12319
--              | paper.material:MATch: Differentiable Material Graphs for Procedural Material Capture                                     | http://match.csail.mit.edu/
--              | paper.material:NeuMIP: Multi-Resolution Neural Materials                                                                 | https://arxiv.org/abs/2104.02789
+-              | paper:sdk:4dface                                                                                                         | https://www.4dface.io/
+-              | paper:sdk:4dface (github)                                                                                                | https://github.com/patrikhuber/4dface
+-              | paper:sdk:6d.ai                                                                                                          | https://www.6d.ai/
+-              | paper:univ:USC                                                                                                           | https://vgl.ict.usc.edu/publications.php
+-              | paper:people:Ravi Ramamoorthi                                                                                            | https://cseweb.ucsd.edu/~ravir/
+-              | paper:people:Kun Zhou                                                                                                    | http://www.kunzhou.net/
+-              | paper:people:Jonas Unger                                                                                                 | http://weber.itn.liu.se/~jonun48/web/Home.php
+-              | paper:light:Real-Time Polygonal-Light Shading with Linearly Transformed Cosines                                          | https://eheitzresearch.wordpress.com/415-2/
+-              | paper:shadow:SS Soft Shadow: 中級グラフィックス入門 ～シャドウマップについての補足～                                     | http://project-asura.com/blog/archives/4748
+-              | paper:shadow:Real-Time, All-Frequency Shadows in Dynamic Scenes                                                          | https://discovery.ucl.ac.uk/id/eprint/10005/1/10005.pdf
+-              | paper:shadow:Real-time Rendering of Dynamic Scenes under All-frequency Lighting using Integral Spherical Gaussian        | http://web.wakayama-u.ac.jp/~iwasaki/project/ibl/eg2012.pdf
+-              | paper:shadow:Moment Shadow Mapping                                                                                       | https://cg.cs.uni-bonn.de/en/publications/paper-details/peters-2015-msm/
+-              | paper:material:Neural Radiosity                                                                                          | https://arxiv.org/abs/2105.12319
+-              | paper:material:MATch: Differentiable Material Graphs for Procedural Material Capture                                     | http://match.csail.mit.edu/
+-              | paper:material:NeuMIP: Multi-Resolution Neural Materials                                                                 | https://arxiv.org/abs/2104.02789
 -              | paper:A Biophysical 3D Morphable Model of Face Appearance                                                                |
 -              | paper:BioFaceNet: Deep Biophysical Face Image Interpretation                                                             |
 -              | paper:DECOMPOSING MULTISPECTRAL FACE IMAGES INTO DIFFUSE AND SPECULAR SHADING AND BIOPHYSICAL PARAMETERS                 | http://www-users.cs.york.ac.uk/~wsmith/
@@ -108,12 +108,12 @@
 -              | paper:A Dataset of Flash and Ambient Illumination Pairs from the Crowd                                                   | http://people.inf.ethz.ch/aksoyy/flashambient/
 -              | paper:Semantic Scene Completion from a Single Depth Image                                                                | https://github.com/shurans/sscnet
 -              | paper:Casual 3D Photography                                                                                              | http://visual.cs.ucl.ac.uk/pubs/casual3d/
--              | paper.2021:FabSoften: Face Beautification via Dynamic Skin Smoothing, Guided Feathering, and Texture Restoration         | https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Velusamy_FabSoften_Face_Beautification_via_Dynamic_Skin_Smoothing_Guided_Feathering_and_CVPRW_2020_paper.pdf
--              | paper.2021:ICT-FaceKit                                                                                                   | https://github.com/ICT-VGL/ICT-FaceKit
--              | paper.2021:Learning Formation of Physically-Based Face Attributes                                                        | https://arxiv.org/abs/2004.03458
--              | paper.2021:Image Super-Resolution via Iterative Refinement                                                               | https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
--              | paper.2022:ReLU Fields: The Little Non-linearity That Could                                                              | https://geometry.cs.ucl.ac.uk/group_website/projects/2022/relu_fields/
--              | paper.2022:Stable Diffusion                                                                                              | https://github.com/CompVis/stable-diffusion
--              | paper.2022:Stable Diffusion Version 2                                                                                    | https://github.com/Stability-AI/stablediffusion
+-              | paper:2021:FabSoften: Face Beautification via Dynamic Skin Smoothing, Guided Feathering, and Texture Restoration         | https://openaccess.thecvf.com/content_CVPRW_2020/papers/w31/Velusamy_FabSoften_Face_Beautification_via_Dynamic_Skin_Smoothing_Guided_Feathering_and_CVPRW_2020_paper.pdf
+-              | paper:2021:ICT-FaceKit                                                                                                   | https://github.com/ICT-VGL/ICT-FaceKit
+-              | paper:2021:Learning Formation of Physically-Based Face Attributes                                                        | https://arxiv.org/abs/2004.03458
+-              | paper:2021:Image Super-Resolution via Iterative Refinement                                                               | https://github.com/Janspiry/Image-Super-Resolution-via-Iterative-Refinement
+-              | paper:2022:ReLU Fields: The Little Non-linearity That Could                                                              | https://geometry.cs.ucl.ac.uk/group_website/projects/2022/relu_fields/
+-              | paper:2022:Stable Diffusion                                                                                              | https://github.com/CompVis/stable-diffusion
+-              | paper:2022:Stable Diffusion Version 2                                                                                    | https://github.com/Stability-AI/stablediffusion
 
 # vim:set ft=bmk syntax=txt nowrap:

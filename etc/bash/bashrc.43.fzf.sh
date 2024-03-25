@@ -146,7 +146,7 @@ _my_setup_fzf_alias() {
 
   alias .='pushd'
   alias ..='pushd .'
-  alias ,='eval_bmk       $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt tcmd.txt tcmd_sys.txt tcmd_git.txt bmk_file.txt bmk_file_opt.txt links.txt papers.txt)'
+  alias ,='eval_bmk       $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt tcmd.txt tcmd_sys.txt bmk_file.txt bmk_file_opt.txt links.txt papers.txt)'
   alias ,,='eval_cmd      pushd $(fzf_pushd)'
   alias ,,,='popd'
   alias ,-='eval_cmd      popd  $(fzf_pushd)'
