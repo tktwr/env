@@ -139,7 +139,7 @@ _my_setup_fzf_find() {
 _my_setup_fzf_alias() {
   alias ,fd='eval_fzf_fd'
   alias ,rg='eval_fzf_rg'
-  alias ,m='eval_fzf_cmd  ./make.sh'
+  alias ,m='eval_fzf_cmd  mymake.sh'
   alias ,c='eval_fzf_cmd  cmd.sh'
   alias ,S='eval_fzf_cmd  setup.sh'
   alias ,fzf='eval_fzf_cmd'

@@ -17,6 +17,7 @@ fzf_cmd_preview() {
     $MY_BIN/90.setup/*.sh \
     $SYS_CONFIG_HOME/lconfig/bin/*.sh \
     ./make.sh \
+    ./_make.sh \
     "
   args=$(fzf_cmd_rg -w "$1\(\)" $files | awk -F ':' '{print $1,$2}')
   if [ -n "$args" ]; then
