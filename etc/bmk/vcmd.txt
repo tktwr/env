@@ -7,9 +7,9 @@
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tags        | Tags <cfile>             (C-]) | :VisFzfTags <cfile>
 - ,memo        | Memo                           | :VisFzfMemo
-- ,msmpl       | MemoSample                     | :VisFzfMemoSample
-- ,mbmk        | MemoBmk                        | :VisFzfMemoBmk
-- ,mall        | MemoAll                        | :VisFzfMemoAll
+- ,memos       | MemoSample                     | :VisFzfMemoSample
+- ,memob       | MemoBmk                        | :VisFzfMemoBmk
+- ,memoa       | MemoAll                        | :VisFzfMemoAll
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
 -----          | ------------------------------ | ------------------------------
@@ -49,16 +49,16 @@
 - ,gl          | fugitive:Gllog %               | :Gllog %
 - ,gl          | fugitive:Gllog                 | :Gllog
 -----          | ------------------------------ | ------------------------------
+- ,x           | Wx                             | :Wx ?
 - ,xh          | Wx left                        | :WxDir h
 - ,xj          | Wx down                        | :WxDir j
 - ,xk          | Wx up                          | :WxDir k
 - ,xl          | Wx right                       | :WxDir l
-- ,x           | Wx                             | :Wx ?
+- ,c           | Wc                             | :Wc ?
 - ,ch          | Wc left                        | :WcDir h
 - ,cj          | Wc down                        | :WcDir j
 - ,ck          | Wc up                          | :WcDir k
 - ,cl          | Wc right                       | :WcDir l
-- ,c           | Wc                             | :Wc ?
 - ,p           | Paste                     (,p) | ,p
 -              | Yank                       (Y) | "*y
 - ,Y           | YankFilePath                   | :call YankFilePath()
@@ -98,7 +98,7 @@
 -              | Tag jump                       | :call VisTjumpPrompt()
 -              | Git status                     | :VisGS
 -              | Git graph                      | :VisGV
--              | quickhl                  (C-a) | :VisQuickhl ??
+-              | quickhl                  (C-u) | :VisQuickhl ??
 -              | Lazygit                        | :VisShellPop lazygit.sh
 -              | Man                            | :VisShellPop fzf_man.sh
 -              | Apt                            | :VisShellPop fzf_apt.sh

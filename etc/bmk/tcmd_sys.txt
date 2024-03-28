@@ -19,8 +19,6 @@
 -              | pip search <pkg>                  | > pip search
 -              | pip install <pkg>                 | > pip install
 -              | pip uninstall <pkg>               | > pip uninstall
--              | pip-upgrade                       | > pip install --upgrade pip<CR>
--              | git-upgrade                       | > git update-git-for-windows<CR>
 -              | pacman -S -h                      | > pacman -S -h<CR>
 -              | pacman -Syyu                      | > pacman -Syyu<CR>
 -              | pacman -S <pkg>                   | > pacman -S

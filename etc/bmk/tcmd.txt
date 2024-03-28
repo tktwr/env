@@ -11,8 +11,8 @@
 - ,r2          | Resize 20                      | > ,resize 20<CR>
 - ,r3          | Resize 30                      | > ,resize 30<CR>
 - ,r4          | Resize 40                      | > ,resize 40<CR>
-- ,fern        | Fern                           | > ,f<CR>
-- ,fern2       | Fern 2nd                       | > ,f2<CR>
+- ,dir         | Fern                           | > ,d<CR>
+- ,dir2        | Fern 2nd                       | > ,d2<CR>
 - ,ide         | IDE                            | > ,ide<CR>
 - ,ide2        | IDE2                           | > ,ide2<CR>
 - ,edit        | Editor                         | > ,edit<CR>

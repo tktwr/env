@@ -233,7 +233,7 @@ f_git_merge_abort() {
 # rebase
 #------------------------------------------------------
 f_git_rebase() {
-  br=$(prompt.sh 'Rebase branch' "$(f_git_branch_name)" "$*")
+  br=$(prompt.sh 'Rebase branch' "origin/$(f_git_branch_name)" "$*")
   if [ -n "$br" ]; then
     $SYS_GIT_EXE rebase $br
   fi
