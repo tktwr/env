@@ -25,9 +25,10 @@
 [difftool]
   prompt = false
 
-# [delta]
-#   true-color = always
-#   features = my_theme
+[delta]
+  side-by-side = true
+# true-color = always
+# features = my_theme
 [delta "my_theme"]
   minus-style      = reverse 1
   minus-emph-style = reverse 124
