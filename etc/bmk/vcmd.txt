@@ -36,13 +36,13 @@
 - ,qr          | Qfreplace                      | :Qfreplace
 -              | quickhl                  (C-u) | :VisQuickhl ??
 -----          | ------------------------------ | ------------------------------
-- ,rx          | Toggle size x                  | :VisWinMaximizeXToggle
 - ,ry          | Toggle size                    | :VisWinMaximizeYToggle
-- ,r0          | Resize 5                       | :VisWinResize 5
-- ,r1          | Resize 10                      | :VisWinResize 10
-- ,r2          | Resize 20                      | :VisWinResize 20
-- ,r3          | Resize 30                      | :VisWinResize 30
-- ,r4          | Resize 40                      | :VisWinResize 40
+- ,ry0         | Resize 5                       | :VisWinResize 5
+- ,ry1         | Resize 10                      | :VisWinResize 10
+- ,ry2         | Resize 20                      | :VisWinResize 20
+- ,ry3         | Resize 30                      | :VisWinResize 30
+- ,ry4         | Resize 40                      | :VisWinResize 40
+- ,rx          | Toggle size x                  | :VisWinMaximizeXToggle
 - ,rx185       | VResize 185                    | :VisWinVResize 185
 -----          | ------------------------------ | ------------------------------
 - ,wx          | Wx                             | :Wx ?

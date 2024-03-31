@@ -7,21 +7,21 @@
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
-  alias ,d='vimapi-edit-dir'
-  alias ,d2='vimapi-edit-dir-2'
-
   alias ,resize='vimapi_exec VisWinResize'
   alias ,resize_x='vimapi_exec VisWinVResize'
   alias ,toggle='vimapi_exec VisWinMaximizeYToggleTerm'
   alias ,toggle_x='vimapi_exec VisWinMaximizeXToggleTerm'
 
   alias ,r=',toggle'
-  alias ,rx=',toggle_x'
   alias ,r0=',resize 5'
   alias ,r1=',resize 10'
   alias ,r2=',resize 20'
   alias ,r3=',resize 30'
   alias ,r4=',resize 40'
+  alias ,rx=',toggle_x'
+
+  alias ,d='vimapi-edit-dir'
+  alias ,d2='vimapi-edit-dir-2'
 
   alias ,ide='vimapi_exec VisIDE'
   alias ,ide2='vimapi_exec VisIDE 2'
