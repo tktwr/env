@@ -89,8 +89,8 @@
 -              | MySetIgnoreCase                | :call MySetIgnoreCase()
 -              | MySetSmartCase                 | :call MySetSmartCase()
 -----          | ------------------------------ | ------------------------------
-- ,gs          | PopupGS                        | :VisShellPopup popup_gs.sh
-- ,gg          | PopupGV                        | :VisShellPopup popup_gv.sh
+- ,gs          | PopupGS                        | :VisShellPopup popup_gs.sh _PWD_
+- ,gg          | PopupGV                        | :VisShellPopup popup_gv.sh _PWD_
 - ,lg          | PopupLazygit                   | :VisShellPopup lazygit.sh
 - ,man         | PopupMan                       | :VisShellPopup fzf_man.sh
 - ,apt         | PopupApt                       | :VisShellPopup fzf_apt.sh
