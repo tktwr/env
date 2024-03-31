@@ -42,23 +42,19 @@
 - ,cmd         | Cmd in term                    | :VisSendCmdE2T
 - ,qf          | QuickFix                       | :VisQuickFix
 - ,qr          | Qfreplace                      | :Qfreplace
-- ,gs          | fzf:Git status                 | :VisFzfGitStatus
-- ,gg          | fzf:Git graph                  | :VisFzfGitLog
-# ,gs          | fzf:Git status                 | :FzfGFiles?
-# ,gg          | fzf:Git graph                  | :FzfCommits
-- ,gl          | fugitive:Gllog %               | :Gllog %
-- ,gl          | fugitive:Gllog                 | :Gllog
 -----          | ------------------------------ | ------------------------------
-- ,x           | Wx                             | :Wx ?
-- ,xh          | Wx left                        | :WxDir h
-- ,xj          | Wx down                        | :WxDir j
-- ,xk          | Wx up                          | :WxDir k
-- ,xl          | Wx right                       | :WxDir l
-- ,c           | Wc                             | :Wc ?
-- ,ch          | Wc left                        | :WcDir h
-- ,cj          | Wc down                        | :WcDir j
-- ,ck          | Wc up                          | :WcDir k
-- ,cl          | Wc right                       | :WcDir l
+- ,wx          | Wx                             | :Wx ?
+- ,wxh         | Wx left                        | :WxDir h
+- ,wxj         | Wx down                        | :WxDir j
+- ,wxk         | Wx up                          | :WxDir k
+- ,wxl         | Wx right                       | :WxDir l
+-----          | ------------------------------ | ------------------------------
+- ,wc          | Wc                             | :Wc ?
+- ,wch         | Wc left                        | :WcDir h
+- ,wcj         | Wc down                        | :WcDir j
+- ,wck         | Wc up                          | :WcDir k
+- ,wcl         | Wc right                       | :WcDir l
+-----          | ------------------------------ | ------------------------------
 - ,p           | Paste                     (,p) | ,p
 -              | Yank                       (Y) | "*y
 - ,Y           | YankFilePath                   | :call YankFilePath()
@@ -93,17 +89,28 @@
 -              | MySetIgnoreCase                | :call MySetIgnoreCase()
 -              | MySetSmartCase                 | :call MySetSmartCase()
 -----          | ------------------------------ | ------------------------------
+- ,gs          | PopupGS                        | :VisShellPopup popup_gs.sh
+- ,gg          | PopupGV                        | :VisShellPopup popup_gv.sh
+- ,lg          | PopupLazygit                   | :VisShellPopup lazygit.sh
+- ,man         | PopupMan                       | :VisShellPopup fzf_man.sh
+- ,apt         | PopupApt                       | :VisShellPopup fzf_apt.sh
+- ,pip         | PopupPip                       | :VisShellPopup fzf_pip.sh
+- ,dpkg        | PopupDpkg                      | :VisShellPopup fzf_dpkg.sh
+-----          | ------------------------------ | ------------------------------
+- ,gs          | fzf:Git status                 | :VisFzfGitStatus
+- ,gg          | fzf:Git graph                  | :VisFzfGitLog
+# ,gs          | fzf:Git status                 | :FzfGFiles?
+# ,gg          | fzf:Git graph                  | :FzfCommits
+- ,gl          | fugitive:Gllog %               | :Gllog %
+- ,gl          | fugitive:Gllog                 | :Gllog
+-----          | ------------------------------ | ------------------------------
 -              | Git grep                       | :VisGgrep ??
 -              | Vim grep here                  | :VisVimgrep ?? *
 -              | Tag jump                       | :call VisTjumpPrompt()
 -              | Git status                     | :VisGS
 -              | Git graph                      | :VisGV
 -              | quickhl                  (C-u) | :VisQuickhl ??
--              | Lazygit                        | :VisShellPop lazygit.sh
--              | Man                            | :VisShellPop fzf_man.sh
--              | Apt                            | :VisShellPop fzf_apt.sh
--              | Pip                            | :VisShellPop fzf_pip.sh
--              | Dpkg                           | :VisShellPop fzf_dpkg.sh
+-----          | ------------------------------ | ------------------------------
 -              | Memo                           | :Memo
 -              | Help                           | :VisHelp
 -----          | ------------------------------ | ------------------------------

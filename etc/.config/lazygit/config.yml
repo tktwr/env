@@ -11,7 +11,7 @@ gui:
 git:
   paging:
     colorArg: always
-    pager: delta -s --wrap-max-lines 0 --dark --paging=never
+    pager: delta.sh
   merging:
     args: '--no-ff'
   log:

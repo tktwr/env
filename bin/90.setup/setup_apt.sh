@@ -41,6 +41,7 @@ libopencv-dev \
 python3-tk \
 python3-opencv \
 python3-doc \
+doxygen \
 "
 apt_pkg_not_install="\
 blender \
