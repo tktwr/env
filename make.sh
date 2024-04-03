@@ -9,8 +9,6 @@ $MY_MEMO \
 $MY_SAMPLES \
 $MY_LIBTT \
 $MY_REMOTE_CONFIG/templates \
-$MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
-$MY_VIM_PLUGGED_DIR/vim-bmk-menu \
 $MY_VIM_PLUGGED_DIR/vim-ide-style \
 $MY_VIM_PLUGGED_DIR/vim-memo \
 "
@@ -28,8 +26,6 @@ VIM_FILES="\
 $MY_ENV/etc/vim/*.vim \
 $MY_ENV/etc/vim/vim-plug/*.vim \
 $MY_ENV/etc/vim/plugin \
-$MY_VIM_PLUGGED_DIR/vim-winbuf-menu \
-$MY_VIM_PLUGGED_DIR/vim-bmk-menu \
 $MY_VIM_PLUGGED_DIR/vim-ide-style \
 $MY_VIM_PLUGGED_DIR/vim-memo \
 "

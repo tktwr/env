@@ -109,7 +109,16 @@ vmap ,k          <Plug>(easymotion-k)
  tnoremap <silent> <C-;>   <C-W>:
 
 func s:term_map()
-  if &filetype == ''
+  if &filetype != ''
+    return
+  endif
+  if has('nvim')
+    tnoremap <buffer> <C-O>   <C-\><C-N>
+    tnoremap <buffer> <C-H>   <C-\><C-N><C-W>h
+    tnoremap <buffer> <C-J>   <C-\><C-N><C-W>w
+    tnoremap <buffer> <C-K>   <C-\><C-N><C-W>W
+    tnoremap <buffer> <C-L>   <C-\><C-N><C-W>l
+  else
     tnoremap <buffer> <C-ScrollWheelUp>  <C-W>N<ScrollWheelUp>
     tnoremap <buffer> <C-H>   <C-W>h
     tnoremap <buffer> <C-J>   <C-W>w
@@ -196,13 +205,3 @@ tnoremap <silent> <C-Del>      <Nop>
 
 nnoremap <silent> <S-PageUp>   5<C-Y>
 nnoremap <silent> <S-PageDown> 5<C-E>
-"======================================================
-" nvim
-"======================================================
-if has('nvim')
-tnoremap <C-O>   <C-\><C-N>
-tnoremap <C-H>   <C-\><C-N><C-W>h
-tnoremap <C-J>   <C-\><C-N><C-W>w
-tnoremap <C-K>   <C-\><C-N><C-W>W
-tnoremap <C-L>   <C-\><C-N><C-W>l
-endif
