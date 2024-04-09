@@ -1,6 +1,16 @@
 "------------------------------------------------------
 " plugin
 "------------------------------------------------------
+" popup menu support for nvim
+if has('nvim')
+  "Plug 'kamykn/popup-menu.nvim'
+
+  Plug 'Ajnasz/vim-popup-menu'
+
+  "Plug 'nvim-lua/plenary.nvim'
+  "Plug 'nvim-lua/popup.nvim'
+endif
+
 Plug 'thinca/vim-ref'
 
 Plug 'easymotion/vim-easymotion'
