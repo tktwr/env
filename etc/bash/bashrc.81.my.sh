@@ -36,6 +36,9 @@ f_alias_vim_term() {
 
   # alias ,gl='vimapi_exec_above GitLog $PWD'
 
+  alias ,vimdiff='popup-vimdiff.sh'
+  alias ,vimdirdiff='popup-vimdirdiff.sh'
+
   #------------------------------------------------------
   # tab
   #------------------------------------------------------
@@ -106,8 +109,6 @@ f_alias_os_common() {
   alias make='mymake.sh'
   alias m='mymake.sh'
 
-  alias vimdiff='vimdiff.sh'
-  alias vimdirdiff='vimdirdiff.sh'
   alias vim-which='vim-which.sh'
   alias vim-where='vim-which.sh'
 
