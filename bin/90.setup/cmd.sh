@@ -10,14 +10,14 @@
 #------------------------------------------------------
 # popup
 #------------------------------------------------------
-f_popup_nvidia_smi()     { vimapi_exec "VisShellPopup popup_nvidia_smi.sh"; }
-f_popup_nvidia_smi_exe() { vimapi_exec "VisShellPopup popup_nvidia_smi_exe.sh"; }
-f_popup_info()           { vimapi_exec "VisShellPopup popup_neofetch.sh"; }
+f_popup_nvidia_smi()     { vimapi_exec "VisShellPopup nvidia_smi.sh"; }
+f_popup_nvidia_smi_exe() { vimapi_exec "VisShellPopup nvidia_smi_exe.sh"; }
+f_popup_info()           { vimapi_exec "VisShellPopup neofetch.sh"; }
 f_popup_btop()           { vimapi_exec "VisShellPopup btop"; }
-f_popup_htop()           { vimapi_exec "VisShellPopup popup_htop.sh"; }
-f_popup_cal()            { vimapi_exec "VisShellPopup popup_cal.sh"; }
-f_popup_gs()             { vimapi_exec "VisShellPopup popup_gs.sh $PWD"; }
-f_popup_gv()             { vimapi_exec "VisShellPopup popup_gv.sh $PWD"; }
+f_popup_htop()           { vimapi_exec "VisShellPopup htop.sh"; }
+f_popup_cal()            { vimapi_exec "VisShellPopup cal.sh"; }
+f_popup_gs()             { vimapi_exec "VisShellPopup gs.sh"; }
+f_popup_gv()             { vimapi_exec "VisShellPopup gv.sh"; }
 f_popup_lazygit()        { vimapi_exec "VisShellPopup lazygit.sh"; }
 f_popup_man()            { vimapi_exec "VisShellPopup fzf_man.sh"; }
 f_popup_apt()            { vimapi_exec "VisShellPopup fzf_apt.sh"; }

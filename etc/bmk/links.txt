@@ -82,6 +82,7 @@
 -              | link:blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
 -              | link:blender:PrincipledHairBSDF                         | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
 -              | link:blender:Open Shading Language                      | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
++ ,lb          | link:blender:Python API Documentation 3.6               | https://docs.blender.org/api/3.3/
 + ,lb          | link:blender:Python API Documentation 3.3               | https://docs.blender.org/api/3.3/
 + ,lb          | link:blender:Python API Documentation                   | https://docs.blender.org/api/current/index.html
 -              | link:blender:bpy/Object(ID)                             | https://docs.blender.org/api/current/bpy.types.Object.html

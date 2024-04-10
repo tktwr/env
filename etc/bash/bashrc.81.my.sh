@@ -49,6 +49,9 @@ f_alias_vim_term() {
 
   alias ,,gs='vimapi_exec VisGS'
   alias ,,gg='vimapi_exec VisGV'
+
+  alias ,,vimdiff='tab-vimdiff.sh'
+  alias ,,vimdirdiff='tab-vimdirdiff.sh'
 }
 
 #------------------------------------------------------

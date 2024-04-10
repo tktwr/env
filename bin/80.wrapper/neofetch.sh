@@ -1,4 +1,4 @@
 #!/bin/bash
 
 neofetch
-read
+read -p '> '

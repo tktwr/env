@@ -91,8 +91,8 @@
 -----          | ------------------------------ | ------------------------------
 -              | B_ClangFormat                  | :call B_ClangFormat()
 -----          | ------------------------------ | ------------------------------
-- ,gs          | PopupGS                        | :VisShellPopup popup_gs.sh _PWD_
-- ,gg          | PopupGV                        | :VisShellPopup popup_gv.sh _PWD_
+- ,gs          | PopupGS                        | :VisShellPopup gs.sh
+- ,gg          | PopupGV                        | :VisShellPopup gv.sh
 - ,lg          | PopupLazygit                   | :VisShellPopup lazygit.sh
 - ,man         | PopupMan                       | :VisShellPopup fzf_man.sh
 - ,apt         | PopupApt                       | :VisShellPopup fzf_apt.sh
