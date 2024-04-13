@@ -30,6 +30,8 @@ ghostscript \
 x11-apps \
 lhasa \
 encfs \
+lynx \
+elinks \
 "
 apt_pkg_dev="\
 cmake \

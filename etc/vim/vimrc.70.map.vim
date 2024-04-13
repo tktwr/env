@@ -153,18 +153,17 @@ endfunc
 "------------------------------------------------------
 func YankUrlToClipboard()
   let url = expand(expand("<cfile>"))
-  call setreg('*', url)
+  call setreg('+', url)
   echo url
 endfunc
 
-if IsWsl()
-  "nnoremap ,p            "+p
-  nnoremap ,p            :r !paste.sh<CR>
-  vnoremap <silent> Y    y:silent '<,'>w !clip.sh<CR>
-else
+if has('clipboard')
   nnoremap ,p      "+p
   vnoremap Y       "+y
   nnoremap Y       :call YankUrlToClipboard()<CR>
+else
+  nnoremap ,p            :r !paste.sh<CR>
+  vnoremap <silent> Y    y:silent '<,'>w !clip.sh<CR>
 endif
 "------------------------------------------------------
 " function keys

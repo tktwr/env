@@ -12,6 +12,7 @@ function f_get_git_commit() { git rev-parse --short HEAD 2>/dev/null; }
 function f_get_dirname()  { echo $(dirname $1); }
 function f_get_dirname2() { echo ${1%/*}; }
 function f_get_fname()    { echo ${1##*/}; }
+function f_get_fname2()   { echo $(basename $1); }
 
 function f_get_name() {
   local fname=`f_get_fname $1`

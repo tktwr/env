@@ -20,6 +20,10 @@ files="$@"
 
 for i in $files; do
   o=$(f_get_fname $i)
+  if [ -f $o ]; then
+    echo "skip: file is already existed: [$o]"
+    continue
+  fi
   f_eval "ps2pdf ${OPT["prepress"]} $i $o"
 done
 

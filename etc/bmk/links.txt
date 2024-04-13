@@ -1,15 +1,29 @@
 -------------- | ------------------------------                          | ------------------------------
+-              | link:ai:ChatGPT                                         | https://chat.openai.com/
+-              | link:ai:Gemini                                          | https://gemini.google.com/app
+-              | link:ai:Claude                                          | https://claude.ai/
+-              | link:ai:groq                                            | https://groq.com/
+-              | link:ai:sd-webui                                        | https://github.com/AUTOMATIC1111/stable-diffusion-webui
+-              | link:ai:sd-webui/controlnet                             | https://github.com/Mikubill/sd-webui-controlnet
+-              | link:ai:sd-webui/EasyNegative                           | https://huggingface.co/datasets/gsdf/EasyNegative
+-              | link:ai:huggingface                                     | https://huggingface.co/
+-              | link:ai:huggingface/mmnga                               | https://huggingface.co/mmnga
+-              | link:ai:huggingface/TheBloke                            | https://huggingface.co/TheBloke
+-              | link:ai:github:Stability-AI                             | https://github.com/Stability-AI
+-------------- | ------------------------------                          | ------------------------------
 -              | link:google                                             | https://www.google.com/
--              | link:google/gemini                                      | https://gemini.google.com/app
-+ ,lt          | link:google/translate                                   | https://translate.google.co.jp/
--              | link:google/gmail                                       | https://mail.google.com/mail/u/0/#inbox
--              | link:google/calendar                                    | https://www.google.com/calendar/render?hl=ja
--              | link:google/keep                                        | https://keep.google.com/
--              | link:google/drive                                       | https://drive.google.com/drive/my-drive
--              | link:chrome/extensions                                  | https://chrome.google.com/webstore/category/extensions
--              | link:ChatGPT                                            | https://chat.openai.com/
--              | link:DeepL                                              | https://www.deepl.com/ja/translator
++ ,lt          | link:google:translate                                   | https://translate.google.co.jp/
+-              | link:google:gmail                                       | https://mail.google.com/mail/u/0/#inbox
+-              | link:google:calendar                                    | https://www.google.com/calendar/render?hl=ja
+-              | link:google:keep                                        | https://keep.google.com/
+-              | link:google:drive                                       | https://drive.google.com/drive/my-drive
+-              | link:chrome:extensions                                  | https://chrome.google.com/webstore/category/extensions
+-              | link:chrome:bookmarks                                   | chrome://bookmarks/
+-------------- | ------------------------------                          | ------------------------------
+-              | link:trans:DeepL                                        | https://www.deepl.com/ja/translator
+-------------- | ------------------------------                          | ------------------------------
 -              | link:TV番組                                             | http://tv.yahoo.co.jp/listings/realtime/
+-------------- | ------------------------------                          | ------------------------------
 -              | link:py:python                                          | https://www.python.org/
 + ,lp          | link:py:python/doc                                      | https://docs.python.org/ja/3/index.html
 -              | link:py:python/tutorial                                 | https://docs.python.org/ja/3/tutorial/
@@ -35,6 +49,7 @@
 -              | link:py:lib:tkinter/widgets                             | https://www.python-beginners.com/entry/20210607/1623057987
 -              | link:py:lib:tkinter/pack                                | https://imagingsolution.net/program/python/tkinter/widget_layout_pack/
 -              | link:py:lib:tkinter/1                                   | https://note.com/npaka/n/nfa8d16c3624e
+-------------- | ------------------------------                          | ------------------------------
 -              | link:cpp:cpprefjp                                       | https://cpprefjp.github.io/
 + ,lc          | link:cpp:cpprefjp/reference                             | https://cpprefjp.github.io/reference.html
 -              | link:cpp:cpprefjp/string                                | https://cpprefjp.github.io/reference/string/basic_string.html
@@ -55,6 +70,7 @@
 -              | link:cpp:lib:stb                                        | https://github.com/nothings/stb
 -              | link:cpp:lib:kissnet                                    | https://github.com/Ybalrid/kissnet
 -              | link:cpp:lib:miniaudio                                  | https://github.com/mackron/miniaudio
+-------------- | ------------------------------                          | ------------------------------
 -              | link:dev:git                                            | https://git-scm.com/
 -              | link:dev:git/doc                                        | https://git-scm.com/docs
 -              | link:dev:cmake                                          | https://cmake.org/
@@ -76,13 +92,14 @@
 -              | link:dev:OpenGL Tutorial                                | http://www.opengl-tutorial.org/jp/
 -              | link:dev:vulkan                                         | https://vulkan.lunarg.com/doc/sdk/1.2.162.1/windows/getting_started.html
 -              | link:dev:vulkan/raytracing                              | https://developer.nvidia.com/rtx/raytracing/vkray
+-------------- | ------------------------------                          | ------------------------------
 -              | link:blender:blender                                    | https://www.blender.org/
 -              | link:blender:doc                                        | https://docs.blender.org/
 -              | link:blender:Reference Manual                           | https://docs.blender.org/manual/en/latest/
 -              | link:blender:PrincipledBSDF                             | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/principled.html
 -              | link:blender:PrincipledHairBSDF                         | https://docs.blender.org/manual/en/latest/render/shader_nodes/shader/hair_principled.html
 -              | link:blender:Open Shading Language                      | https://docs.blender.org/manual/en/latest/render/shader_nodes/osl.html
-+ ,lb          | link:blender:Python API Documentation 3.6               | https://docs.blender.org/api/3.3/
++ ,lb          | link:blender:Python API Documentation 3.6               | https://docs.blender.org/api/3.6/
 + ,lb          | link:blender:Python API Documentation 3.3               | https://docs.blender.org/api/3.3/
 + ,lb          | link:blender:Python API Documentation                   | https://docs.blender.org/api/current/index.html
 -              | link:blender:bpy/Object(ID)                             | https://docs.blender.org/api/current/bpy.types.Object.html
@@ -95,8 +112,10 @@
 -              | link:blender:Environment                                | https://reflectorange.net/archives/041.html
 -              | link:blender:Blenderではじめる画像処理                  | https://qiita.com/nacasora/items/cf0e27d38b09654cf701
 -              | link:blender:Principled-Baker                           | https://github.com/danielenger/Principled-Baker
+-------------- | ------------------------------                          | ------------------------------
 -              | link:cv:OpenMVS                                         | https://github.com/cdcseacave/openMVS
 -              | link:cv:colmap                                          | https://github.com/colmap/colmap
+-------------- | ------------------------------                          | ------------------------------
 + ,lu          | link:cg:Unreal Engine 5                                 | https://docs.unrealengine.com/5.0/en-US/
 -              | link:cg:gimp                                            | https://www.gimp.org/
 -              | link:cg:gimp-normalmap                                  | https://code.google.com/archive/p/gimp-normalmap/
@@ -117,6 +136,7 @@
 -              | link:cg:ambientcg                                       | https://ambientcg.com/
 -              | link:cg:www.o3de.org                                    | https://www.o3de.org/
 -              | link:cg:o3de                                            | https://github.com/o3de/o3de
+-------------- | ------------------------------                          | ------------------------------
 -              | link:vim:vim                                            | https://www.vim.org/
 -              | link:vim:doc                                            | https://vim-jp.org/vimdoc-ja/
 -              | link:vim:colorswat                                      | http://colorswat.ch/vim/
@@ -172,9 +192,12 @@
 -              | link:vim:tabular                                        | https://github.com/godlygeek/tabular
 -              | link:vim:vim-dirdiff                                    | https://github.com/will133/vim-dirdiff
 -              | link:vim:vim-easymotion                                 | https://github.com/easymotion/vim-easymotion
+-------------- | ------------------------------                          | ------------------------------
 -              | link:nvim:Getting started using Lua in Neovim           | https://github.com/willelz/nvim-lua-guide-ja/blob/master/README.ja.md
+-------------- | ------------------------------                          | ------------------------------
 -              | link:font:HackGen                                       | https://github.com/yuru7/HackGen
 -              | link:font:プログラミング用日本語フォント                | https://github.com/tsunesan3/awsome-jp-coding-fonts
+-------------- | ------------------------------                          | ------------------------------
 -              | link:cui:new_commands                                   | https://wonderwall.hatenablog.com/entry/rust-command-line-tools
 -              | link:cui:bat                                            | https://github.com/sharkdp/bat
 -              | link:cui:fd                                             | https://github.com/sharkdp/fd
@@ -191,6 +214,7 @@
 -              | link:cui:ncdu                                           | https://dev.yorhel.nl/ncdu
 -              | link:cui:WezTerm                                        | https://wezfurlong.org/wezterm/index.html
 -              | link:cui:warp                                           | https://www.warp.dev/
+-------------- | ------------------------------                          | ------------------------------
 -              | link:win:wsltty                                         | https://github.com/mintty/wsltty
 -              | link:win:AutoHotkey                                     | https://www.autohotkey.com/
 -              | link:win:AutoHotkey/doc                                 | https://www.autohotkey.com/docs/AutoHotkey.htm
@@ -206,21 +230,17 @@
 -              | link:win:chocolatey                                     | https://chocolatey.org/
 -              | link:win:7z                                             | https://www.7-zip.org/
 -              | link:win:encfsy                                         | https://github.com/mimidesunya/encfsy
+-------------- | ------------------------------                          | ------------------------------
 -              | link:linux:ArchWiki                                     | https://wiki.archlinux.jp/
 -              | link:linux:snapcraft                                    | https://snapcraft.io/
 -              | link:linux:flathub                                      | https://flathub.org/
 -              | link:linux:launchpad                                    | https://launchpad.net/ubuntu
 -              | link:linux:SSL Certificate Verification                 | https://curl.se/docs/sslcerts.html
 -              | link:linux:EncFS                                        | https://wiki.archlinux.jp/index.php/EncFS
+-------------- | ------------------------------                          | ------------------------------
 -              | link:os:msys2                                           | https://www.msys2.org/
 -              | link:os:termux                                          | https://termux.com/
 -              | link:os:termux/wiki                                     | https://wiki.termux.com/wiki/Main_Page
--              | link:ai:sd-webui                                        | https://github.com/AUTOMATIC1111/stable-diffusion-webui
--              | link:ai:sd-webui/controlnet                             | https://github.com/Mikubill/sd-webui-controlnet
--              | link:ai:sd-webui/EasyNegative                           | https://huggingface.co/datasets/gsdf/EasyNegative
--              | link:ai:huggingface                                     | https://huggingface.co/
--              | link:ai:huggingface/mmnga                               | https://huggingface.co/mmnga
--              | link:ai:huggingface/TheBloke                            | https://huggingface.co/TheBloke
--              | link:ai:github:Stability-AI                             | https://github.com/Stability-AI
+-------------- | ------------------------------                          | ------------------------------
 
 # vim:set ft=bmk syntax=txt nowrap:

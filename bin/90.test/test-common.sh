@@ -8,6 +8,7 @@ f_test() {
   echo "f_get_dirname       : $(f_get_dirname $fname)"
   echo "f_get_dirname2      : $(f_get_dirname2 $fname)"
   echo "f_get_fname         : $(f_get_fname $fname)"
+  echo "f_get_fname2        : $(f_get_fname2 $fname)"
   echo "f_get_name          : $(f_get_name $fname)"
   echo "f_get_ext           : $(f_get_ext $fname)"
   echo "f_get_snapfname     : $(f_get_snapfname $fname)"
