@@ -73,9 +73,6 @@ f_alias_term() {
   alias ,nterm='nvim -c "VisTerm" -c "only"'
   alias ,nterm2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
   alias ,nterm2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'
-
-  alias ,gs='vim -c "VisGS"'
-  alias ,gg='vim -c "VisGV"'
 }
 
 #------------------------------------------------------

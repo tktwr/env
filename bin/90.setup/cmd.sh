@@ -24,11 +24,6 @@ f_popup_apt()            { vimapi_exec "VisShellPopup fzf_apt.sh"; }
 f_popup_pip()            { vimapi_exec "VisShellPopup fzf_pip.sh"; }
 f_popup_dpkg()           { vimapi_exec "VisShellPopup fzf_dpkg.sh"; }
 #------------------------------------------------------
-# nvidia
-#------------------------------------------------------
-f_nvidia_smi()     { watch nvidia-smi; }
-f_nvidia_smi_exe() { watch nvidia-smi.exe; }
-#------------------------------------------------------
 cmd_files="\
   $MY_BIN/90.setup/cmd_*.sh \
   $SYS_CONFIG_HOME/lconfig/bin/cmd_*.sh \
