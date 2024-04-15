@@ -4,26 +4,26 @@
 - ,m           | Make                           | > ,m<CR>
 - ,S           | Setup                          | > ,S<CR>
 -----          | ------------------------------ | ------------------------------
-- ,ry          | Toggle size                    | > ,toggle<CR>
-- ,ry0         | Resize 5                       | > ,resize 5<CR>
-- ,ry1         | Resize 10                      | > ,resize 10<CR>
-- ,ry2         | Resize 20                      | > ,resize 20<CR>
-- ,ry3         | Resize 30                      | > ,resize 30<CR>
-- ,ry4         | Resize 40                      | > ,resize 40<CR>
 - ,rx          | Toggle size x                  | > ,toggle_x<CR>
+- ,ry          | Toggle size y                  | > ,toggle_y<CR>
+- ,ry0         | Resize 5                       | > ,resize_h 5<CR>
+- ,ry1         | Resize 10                      | > ,resize_h 10<CR>
+- ,ry2         | Resize 20                      | > ,resize_h 20<CR>
+- ,ry3         | Resize 30                      | > ,resize_h 30<CR>
+- ,ry4         | Resize 40                      | > ,resize_h 40<CR>
 -----          | ------------------------------ | ------------------------------
 - ,dir         | Fern                           | > ,d<CR>
 - ,dir2        | Fern 2nd                       | > ,d2<CR>
-- ,ide         | IDE                            | > ,ide<CR>
-- ,ide2        | IDE2                           | > ,ide2<CR>
+- ,I           | IDE                            | > ,I<CR>
+- ,I2          | IDE2                           | > ,I2<CR>
 - ,edit        | Editor                         | > ,edit<CR>
 - ,term        | Term                           | > ,term<CR>
 -----          | ------------------------------ | ------------------------------
 - ,vedit       | vert Editor                    | > ,vedit<CR>
 - ,vterm       | vert Term                      | > ,vterm<CR>
 -----          | ------------------------------ | ------------------------------
-- ,,ide        | tab IDE                        | > ,,ide<CR>
-- ,,ide2       | tab IDE2                       | > ,,ide2<CR>
+- ,,I          | tab IDE                        | > ,,I<CR>
+- ,,I2         | tab IDE2                       | > ,,I2<CR>
 - ,,edit       | tab Editor                     | > ,,edit<CR>
 - ,,term       | tab Term                       | > ,,term<CR>
 - ,label       | Set tab label {name}           | > vimapi-tabline-set-label

@@ -7,24 +7,24 @@
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
-  alias ,resize='vimapi_exec VisWinResize'
-  alias ,resize_x='vimapi_exec VisWinVResize'
-  alias ,toggle='vimapi_exec VisWinMaximizeYToggleTerm'
   alias ,toggle_x='vimapi_exec VisWinMaximizeXToggleTerm'
+  alias ,toggle_y='vimapi_exec VisWinMaximizeYToggleTerm'
+  alias ,resize_w='vimapi_exec VisWinVResize'
+  alias ,resize_h='vimapi_exec VisWinResize'
 
-  alias ,r=',toggle'
-  alias ,r0=',resize 5'
-  alias ,r1=',resize 10'
-  alias ,r2=',resize 20'
-  alias ,r3=',resize 30'
-  alias ,r4=',resize 40'
   alias ,rx=',toggle_x'
+  alias ,ry=',toggle_y'
+  alias ,ry0=',resize_h 5'
+  alias ,ry1=',resize_h 10'
+  alias ,ry2=',resize_h 20'
+  alias ,ry3=',resize_h 30'
+  alias ,ry4=',resize_h 40'
 
   alias ,d='vimapi-edit-dir'
   alias ,d2='vimapi-edit-dir-2'
 
-  alias ,ide='vimapi_exec VisIDE'
-  alias ,ide2='vimapi_exec VisIDE 2'
+  alias ,I='vimapi_exec VisIDE'
+  alias ,I2='vimapi_exec VisIDE 2'
   alias ,edit='vimapi_exec new'
   alias ,term='vimapi_exec VisTerm'
 
@@ -42,8 +42,8 @@ f_alias_vim_term() {
   #------------------------------------------------------
   # tab
   #------------------------------------------------------
-  alias ,,ide='vimapi_exec_tab VisIDE'
-  alias ,,ide2='vimapi_exec_tab VisIDE 2'
+  alias ,,I='vimapi_exec_tab VisIDE'
+  alias ,,I2='vimapi_exec_tab VisIDE 2'
   alias ,,edit='vimapi_exec tabedit'
   alias ,,term='vimapi_exec tab VisTerm'
 
@@ -63,13 +63,13 @@ f_alias_term() {
   else
     TERM_cygwin=''
   fi
-  alias ,ide="$TERM_cygwin vim -c 'VisIDE'"
-  alias ,ide2="$TERM_cygwin vim -c 'VisIDE 2'"
+  alias ,I="$TERM_cygwin vim -c 'VisIDE'"
+  alias ,I2="$TERM_cygwin vim -c 'VisIDE 2'"
   alias ,term="$TERM_cygwin vim -c 'VisTerm' -c 'only'"
   alias ,term2="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'VisTerm'"
   alias ,term2v="$TERM_cygwin vim -c 'VisTerm' -c 'only' -c 'vert VisTerm'"
 
-  alias ,nide='nvim -c "VisIDE"'
+  alias ,nI='nvim -c "VisIDE"'
   alias ,nterm='nvim -c "VisTerm" -c "only"'
   alias ,nterm2='nvim -c "VisTerm" -c "only" -c "VisTerm"'
   alias ,nterm2v='nvim -c "VisTerm" -c "only" -c "vert VisTerm"'

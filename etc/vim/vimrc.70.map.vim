@@ -100,6 +100,7 @@ vmap ,k          <Plug>(easymotion-k)
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------
+ tnoremap <silent> <C-Q>   <C-W>:VisWinMaximizeYToggleTerm<CR>
  tnoremap <silent> <C-S>   <BS>
  tnoremap <silent> <C-G>   <C-L>
 " go to Terminal-Normal
