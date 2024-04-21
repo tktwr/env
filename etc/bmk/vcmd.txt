@@ -5,12 +5,12 @@
 - ,rgf         | Rg <cfile>                     | :VisFzfRg <cfile>
 - ,rga         | Rg <cfile> all                 | :VisFzfRgAll <cfile>
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
-- ,tags        | Tags <cfile>                   | :VisFzfTags <cfile>
-- ,tags        | Tags                           | :VisFzfTags
-- ,memo        | Memo                           | :VisFzfMemo
-- ,memos       | MemoSample                     | :VisFzfMemoSample
-- ,memob       | MemoBmk                        | :VisFzfMemoBmk
-- ,memoa       | MemoAll                        | :VisFzfMemoAll
+- ,tg          | Tags                           | :VisFzfTags
+- ,tgf         | Tags <cfile>                   | :VisFzfTags <cfile>
+- ,mem         | Memo                           | :VisFzfMemo
+- ,mems        | MemoSample                     | :VisFzfMemoSample
+- ,memb        | MemoBmk                        | :VisFzfMemoBmk
+- ,mema        | MemoAll                        | :VisFzfMemoAll
 - ,link        | Link                           | :VisFzfLink
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
@@ -24,8 +24,8 @@
 - ,vthis       | ViewThis                       | :call bmk#ViewThis()
 - ,othis       | OpenThis                       | :call bmk#OpenThis()
 -----          | ------------------------------ | ------------------------------
-- ,ide         | IDE                            | :VisIDE
-- ,ide2        | IDE2                           | :VisIDE 2
+- ,I           | IDE                            | :VisIDE
+- ,I2          | IDE2                           | :VisIDE 2
 - ,fern        | Fern                           | :VisFernDrawer %:p
 - ,edit        | Editor                         | :new
 - ,term        | Term                           | :below VisTerm
@@ -60,7 +60,7 @@
 - ,wcl         | Wc right                       | :WcDir l
 -----          | ------------------------------ | ------------------------------
 - ,p           | Paste                     (,p) | ,p
--              | Yank                       (Y) | "*y
+-              | Yank                       (Y) | "+y
 - ,Y           | YankFilePath                   | :call YankFilePath()
 -----          | ------------------------------ | ------------------------------
 - ,t1          | EditTabBar                     | :EditTabBar
