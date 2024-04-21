@@ -10,7 +10,6 @@ $MY_SAMPLES \
 $MY_LIBTT \
 $MY_REMOTE_CONFIG/templates \
 $MY_VIM_PLUGGED_DIR/vim-ide-style \
-$MY_VIM_PLUGGED_DIR/vim-memo \
 "
 SNAP_DIRS="\
 $MY_ENV \
@@ -27,7 +26,6 @@ $MY_ENV/etc/vim/*.vim \
 $MY_ENV/etc/vim/vim-plug/*.vim \
 $MY_ENV/etc/vim/plugin \
 $MY_VIM_PLUGGED_DIR/vim-ide-style \
-$MY_VIM_PLUGGED_DIR/vim-memo \
 "
 
 #======================================================
