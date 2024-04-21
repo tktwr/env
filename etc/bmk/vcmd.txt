@@ -6,10 +6,12 @@
 - ,rga         | Rg <cfile> all                 | :VisFzfRgAll <cfile>
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tags        | Tags <cfile>                   | :VisFzfTags <cfile>
+- ,tags        | Tags                           | :VisFzfTags
 - ,memo        | Memo                           | :VisFzfMemo
 - ,memos       | MemoSample                     | :VisFzfMemoSample
 - ,memob       | MemoBmk                        | :VisFzfMemoBmk
 - ,memoa       | MemoAll                        | :VisFzfMemoAll
+- ,link        | Link                           | :VisFzfLink
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
 -----          | ------------------------------ | ------------------------------

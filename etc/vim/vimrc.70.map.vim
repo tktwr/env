@@ -46,6 +46,7 @@ nnoremap ,f      :VisFzfFd<CR>
 nnoremap ,r      :VisFzfRg<CR>
 nnoremap ,t      :VisFzfTags <cfile><CR>
 nnoremap ,m      :VisFzfMemo<CR>
+nnoremap ,l      :VisFzfLink<CR>
 nnoremap ,h      :FzfHelptags<CR>
 
 nmap ,s          <Plug>(easymotion-overwin-f2)
