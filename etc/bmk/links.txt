@@ -1,7 +1,7 @@
 -------------- | ------------------------------                          | ------------------------------
--              | link:ai:ChatGPT                                         | https://chat.openai.com/
--              | link:ai:Gemini                                          | https://gemini.google.com/app
--              | link:ai:Claude                                          | https://claude.ai/
+- ,lc          | link:ai:ChatGPT                                         | https://chat.openai.com/
+- ,lc          | link:ai:Gemini                                          | https://gemini.google.com/app
+- ,lc          | link:ai:Claude                                          | https://claude.ai/
 -              | link:ai:groq                                            | https://groq.com/
 -              | link:ai:sd-webui                                        | https://github.com/AUTOMATIC1111/stable-diffusion-webui
 -              | link:ai:sd-webui/controlnet                             | https://github.com/Mikubill/sd-webui-controlnet
@@ -11,8 +11,8 @@
 -              | link:ai:huggingface/TheBloke                            | https://huggingface.co/TheBloke
 -              | link:ai:github:Stability-AI                             | https://github.com/Stability-AI
 -------------- | ------------------------------                          | ------------------------------
--              | link:google                                             | https://www.google.com/
-+ ,lt          | link:google:translate                                   | https://translate.google.co.jp/
+- ,lg          | link:google                                             | https://www.google.com/
++ ,lgt         | link:google:translate                                   | https://translate.google.co.jp/
 -              | link:google:gmail                                       | https://mail.google.com/mail/u/0/#inbox
 -              | link:google:calendar                                    | https://www.google.com/calendar/render?hl=ja
 -              | link:google:keep                                        | https://keep.google.com/
@@ -149,15 +149,15 @@
 -              | link:vim:vim-bmk-menu                                   | https://github.com/tktwr/vim-bmk-menu
 -              | link:vim:vim-ide-style                                  | https://github.com/tktwr/vim-ide-style
 -              | link:vim:vim-memo                                       | https://github.com/tktwr/vim-memo
--              | link:vim:fzf                                            | https://github.com/junegunn/fzf
+- ,lv          | link:vim:fzf                                            | https://github.com/junegunn/fzf
 -              | link:vim:fzf/README-VIM.md                              | https://github.com/junegunn/fzf/blob/master/README-VIM.md
 -              | link:vim:fzf/ADVANCED.md                                | https://github.com/junegunn/fzf/blob/master/ADVANCED.md
 -              | link:vim:fzf/examples                                   | https://github.com/junegunn/fzf/wiki/examples
--              | link:vim:fzf.vim                                        | https://github.com/junegunn/fzf.vim
+- ,lv          | link:vim:fzf.vim                                        | https://github.com/junegunn/fzf.vim
 -              | link:vim:fzf-git.sh                                     | https://github.com/junegunn/fzf-git.sh
 -              | link:vim:ctrlp.vim                                      | https://github.com/ctrlpvim/ctrlp.vim
 -              | link:vim:vim-fzy                                        | https://github.com/bfrg/vim-fzy
--              | link:vim:coc.nvim                                       | https://github.com/neoclide/coc.nvim
+- ,lv          | link:vim:coc.nvim                                       | https://github.com/neoclide/coc.nvim
 -              | link:vim:coc-fzf                                        | https://github.com/antoinemadec/coc-fzf
 -              | link:vim:vim-fugitive                                   | https://github.com/tpope/vim-fugitive
 -              | link:vim:vim-gitgutter                                  | https://github.com/airblade/vim-gitgutter
@@ -165,7 +165,7 @@
 -              | link:vim:agit.vim                                       | https://github.com/cohama/agit.vim
 -              | link:vim:tagbar                                         | https://github.com/majutsushi/tagbar
 -              | link:vim:vim-ref                                        | https://github.com/thinca/vim-ref
--              | link:vim:fern.vim                                       | https://github.com/lambdalisue/fern.vim
+- ,lv          | link:vim:fern.vim                                       | https://github.com/lambdalisue/fern.vim
 -              | link:vim:nerdfont.vim                                   | https://github.com/lambdalisue/nerdfont.vim
 -              | link:vim:fern-renderer-nerdfont.vim                     | https://github.com/lambdalisue/fern-renderer-nerdfont.vim
 -              | link:vim:glyph-palette.vim                              | https://github.com/lambdalisue/glyph-palette.vim

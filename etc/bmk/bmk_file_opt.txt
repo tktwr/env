@@ -1,4 +1,5 @@
 -------------- | ------------------------------                   | ------------------------------
+-              | local:memo                                       | $MY_LOCAL_CONFIG/memo/index.html
 -              | local:engword                                    | $MY_LOCAL_CONFIG/eng/engword.txt
 -              | github:cycles/bsdf_microfacet.h                  | $MY_GITHUB/blender/intern/cycles/kernel/closure/bsdf_microfacet.h
 -              | github:cycles/closure.h                          | $MY_GITHUB/blender/intern/cycles/kernel/svm/closure.h
