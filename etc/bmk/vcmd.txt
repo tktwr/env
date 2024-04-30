@@ -7,8 +7,13 @@
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tg          | Tags                           | :VisFzfTags
 - ,tgf         | Tags <cfile>                   | :VisFzfTags <cfile>
+-----          | ------------------------------ | ------------------------------
 - ,memo        | Memo                           | :VisFzfTags memo:
-- ,link        | BmkLink                        | :VisFzfBmk link:
+- ,bmk         | Bmk                            | :VisFzfTags memo:bmk:
+- ,bmka        | BmkAdd                         | :VisFzfTagsAdd
+- ,bmke        | BmkEdit                        | $MY_DOTMY/tags.bmk
+- ,link        | Link                           | :VisFzfBmk link:
+-----          | ------------------------------ | ------------------------------
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
 -----          | ------------------------------ | ------------------------------

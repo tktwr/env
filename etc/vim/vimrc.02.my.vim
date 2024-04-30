@@ -14,6 +14,7 @@ endif
 " tags
 "------------------------------------------------------
 " bmk
+set tags+=$MY_DOTMY/tags.bmk
 set tags+=$MY_GITHUB/tags.bmk
 
 " tags for env

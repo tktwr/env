@@ -63,6 +63,7 @@ let g:bmk_edit_dir_func = "VisFern"
 let g:bmk_open_url_prog = "open_web.sh"
 let g:bmk_open_dir_prog = "open_dir.sh"
 let g:bmk_open_file_prog = "open_file.sh"
+let g:vis_memo_bmk_file = '$MY_DOTMY/tags.bmk'
 
 Plug 'tktwr/vim-ide-style'
 "------------------------------------------------------
