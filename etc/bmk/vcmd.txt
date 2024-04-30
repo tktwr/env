@@ -10,7 +10,7 @@
 -----          | ------------------------------ | ------------------------------
 - ,memo        | Memo                           | :VisFzfTags memo:
 - ,bmk         | Bmk                            | :VisFzfTags memo:bmk:
-- ,bmka        | BmkAdd                         | :VisFzfTagsAdd
+- ,bmka        | BmkAdd                         | :VisFzfTagsAdd memo:bmk:
 - ,bmke        | BmkEdit                        | $MY_DOTMY/tags.bmk
 - ,link        | Link                           | :VisFzfBmk link:
 -----          | ------------------------------ | ------------------------------
