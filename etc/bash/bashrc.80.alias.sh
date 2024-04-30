@@ -20,6 +20,7 @@ f_alias() {
   alias nm='nm -C'
   alias df='df -h'
   alias more='$PAGER'
+  alias fd='fdfind'
 
   # ps
   alias psu='ps -H -u $USER'

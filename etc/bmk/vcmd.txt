@@ -7,11 +7,10 @@
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tg          | Tags                           | :VisFzfTags
 - ,tgf         | Tags <cfile>                   | :VisFzfTags <cfile>
-- ,mem         | Memo                           | :VisFzfMemo
-- ,mems        | MemoSample                     | :VisFzfMemoSample
-- ,memb        | MemoBmk                        | :VisFzfMemoBmk
-- ,mema        | MemoAll                        | :VisFzfMemoAll
-- ,link        | Link                           | :VisFzfLink
+- ,mem         | Memo                           | :VisFzfTags memo:
+- ,mems        | MemoSample                     | :VisFzfTags sample:
+- ,memb        | MemoBmk                        | :VisFzfTags bmk:
+- ,link        | BmkLink                        | :VisFzfBmk link:
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
 -----          | ------------------------------ | ------------------------------

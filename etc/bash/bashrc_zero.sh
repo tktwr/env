@@ -52,6 +52,7 @@ f_zero_alias() {
   alias sudo='sudo -E'
   alias ls="ls -F --color=auto -I 'NTUSER.*'"
   alias more='less'
+  alias fd='fdfind'
 
   # git
   alias gs='git status'
