@@ -75,17 +75,17 @@ def parse_args():
                         type=int,
                         default=0,
                         help="set ny")
-    parser.add_argument('--tile-wh',
+    parser.add_argument('-T', '--tile-wh',
                         type=int,
                         nargs=2,
                         default=[500, 500],
                         help='set each tile size (w, h)')
-    parser.add_argument('--file-order',
+    parser.add_argument('-O', '--file-order',
                         type=str,
                         choices=['X', 'Y'],
                         default='X',
                         help="the order of input files")
-    parser.add_argument('--label-type',
+    parser.add_argument('-L', '--label-type',
                         type=str,
                         choices=['NONE', 'FILE', 'NUM', 'ALPHA'],
                         default='NONE',
@@ -99,18 +99,31 @@ def parse_args():
 
 
 def compute_nsize(nelm, nx, ny):
+    mod = 0
+    fill = 0
     if nx == 0 and ny > 0:
-        nx = nelm // ny
+        nx, mod = divmod(nelm, ny)
+        if mod > 0:
+            nx += 1
+            fill = ny - mod
     elif ny == 0 and nx > 0:
-        ny = nelm // nx
-    return (nx, ny)
+        ny, mod = divmod(nelm, nx)
+        if mod > 0:
+            ny += 1
+            fill = nx - mod
+    return (nx, ny, fill)
 
 
 def run(args):
-    nx, ny = compute_nsize(len(args.files), args.nx, args.ny)
+    nx, ny, fill = compute_nsize(len(args.files), args.nx, args.ny)
     if not (nx > 0 and ny > 0):
         print('Valid args are nx > 0 and ny > 0')
         return
+
+    print(f'nx, ny, fill: {nx} {ny} {fill}')
+    if fill > 0:
+        # fill by 'BLACK'
+        args.files += ['BLACK'] * fill
 
     img = None
     if args.file_order == 'X':
