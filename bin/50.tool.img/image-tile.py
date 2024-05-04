@@ -54,50 +54,7 @@ def make_vtile(tile_wh, ny, ifnames, label_type):
     return cu.cv_vtile(l2)
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='tiling images',
-        add_help=False)
-
-    parser.add_argument('--help',
-                        action='help',
-                        help="show this help message and exit")
-    parser.add_argument('-o', '--output',
-                        type=str,
-                        default='tile.jpg',
-                        help="set output file name")
-    parser.add_argument('-nx',
-                        type=int,
-                        default=0,
-                        help="set nx")
-    parser.add_argument('-ny',
-                        type=int,
-                        default=0,
-                        help="set ny")
-    parser.add_argument('-T', '--tile-wh',
-                        type=int,
-                        nargs=2,
-                        default=[500, 500],
-                        help='set each tile size (w, h)')
-    parser.add_argument('-O', '--file-order',
-                        type=str,
-                        choices=['X', 'Y'],
-                        default='X',
-                        help="the order of input files")
-    parser.add_argument('-L', '--label-type',
-                        type=str,
-                        choices=['NONE', 'FILE', 'NUM', 'ALPHA'],
-                        default='NONE',
-                        help="set label type")
-    parser.add_argument('files',
-                        type=str,
-                        nargs='+',
-                        help='input files')
-
-    return parser.parse_args()
-
-
+# -----------------------------------------------------
 def compute_nsize(nelm, nx, ny):
     mod = 0
     fill = 0
@@ -114,8 +71,8 @@ def compute_nsize(nelm, nx, ny):
     return (nx, ny, fill)
 
 
-def run(args):
-    nx, ny, fill = compute_nsize(len(args.files), args.nx, args.ny)
+def save_tile(ofname, files, args):
+    nx, ny, fill = compute_nsize(len(files), args.nx, args.ny)
     if not (nx > 0 and ny > 0):
         print('Valid args are nx > 0 and ny > 0')
         return
@@ -123,17 +80,59 @@ def run(args):
     print(f'nx, ny, fill: {nx} {ny} {fill}')
     if fill > 0:
         # fill by 'BLACK'
-        args.files += ['BLACK'] * fill
+        files += ['BLACK'] * fill
 
     img = None
-    if args.file_order == 'X':
-        img = make_htile(args.tile_wh, nx, args.files, args.label_type)
-    elif args.file_order == 'Y':
-        img = make_vtile(args.tile_wh, ny, args.files, args.label_type)
+    if args.order == 'X':
+        img = make_htile(args.tile_wh, nx, files, args.label_type)
+    elif args.order == 'Y':
+        img = make_vtile(args.tile_wh, ny, files, args.label_type)
 
     if img is not None:
-        cu.cv_save(args.output, img)
+        cu.cv_save(ofname, img)
+
+
+def save_tiles(args):
+    mx = args.max
+    if mx == 0:
+        mx = len(args.files)
+
+    sub_files = [args.files[i:i+mx] for i in range(0, len(args.files), mx)]
+    n = 0
+    for i in sub_files:
+        ofname = args.output % n
+        save_tile(ofname, i, args)
+        n += 1
+
+
+# -----------------------------------------------------
+def parse_args():
+    parser = argparse.ArgumentParser(
+        formatter_class=tu.MyHelpFormatter,
+        description='tiling images',
+        add_help=False)
+
+    parser.add_argument('--help', help="show this help message and exit",
+                        action='help')
+    parser.add_argument('-o', '--output', help="set output file name",
+                        type=str, default='tile_%02d.jpg')
+    parser.add_argument('-max', help="set max",
+                        type=int, default=0)
+    parser.add_argument('-nx', help="set nx",
+                        type=int, default=0)
+    parser.add_argument('-ny', help="set ny",
+                        type=int, default=0)
+    parser.add_argument('-T', '--tile-wh', help='set each tile image size (w, h)',
+                        type=int, nargs=2, default=[500, 500])
+    parser.add_argument('-O', '--order', help="set the order of input files",
+                        type=str, default='X', choices=['X', 'Y'])
+    parser.add_argument('-L', '--label-type', help="set label type",
+                        type=str, default='NONE', choices=['NONE', 'FILE', 'NUM', 'ALPHA'])
+    parser.add_argument('files', help='input files',
+                        type=str, nargs='+')
+
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    run(parse_args())
+    save_tiles(parse_args())
