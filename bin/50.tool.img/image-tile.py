@@ -58,7 +58,9 @@ def make_vtile(tile_wh, ny, ifnames, label_type):
 def compute_nsize(nelm, nx, ny):
     mod = 0
     fill = 0
-    if nx == 0 and ny > 0:
+    if nx > 0 and ny > 0:
+        fill = nx * ny - nelm
+    elif nx == 0 and ny > 0:
         nx, mod = divmod(nelm, ny)
         if mod > 0:
             nx += 1
