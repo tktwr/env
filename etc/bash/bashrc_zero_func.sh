@@ -4,6 +4,19 @@ _f_title() {
   echo "--- [$*] ----------"
 }
 
+_f_expand() {
+  echo $(eval "echo $*")  # expand env variables
+}
+
+_f_expand_win() {
+  url=$(eval "echo $*")  # expand env variables
+  if [[ "$url" =~ 'http' ]]; then
+    echo "$url"
+  else
+    echo $(pathconv.sh win "$url")
+  fi
+}
+
 #------------------------------------------------------
 # venv
 #------------------------------------------------------

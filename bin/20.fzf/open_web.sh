@@ -1,5 +1,5 @@
 #!/bin/bash
 
-url="$*"
+url=$(_f_expand "$*")
 
 chrome.sh "$url"

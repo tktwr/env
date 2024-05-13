@@ -1,5 +1,5 @@
 #!/bin/bash
 
-url="$*"
+url=$(_f_expand "$*")
 
 gvim.sh "$url"

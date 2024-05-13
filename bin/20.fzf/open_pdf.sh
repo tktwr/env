@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url="$*"
+url=$(_f_expand "$*")
 
 case $MY_OS_NAME in
   linux)

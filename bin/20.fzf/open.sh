@@ -1,6 +1,6 @@
 #!/bin/bash
 
-url="$*"
+url=$(_f_expand "$*")
 
 case "$url" in
   http*)
