@@ -1,91 +1,88 @@
 #======================================================
 # snippets for python
 #======================================================
+#======================================================
+# separator
+#======================================================
+snippet ==
+# =====================================================
 
-#------------------------------------------------------
+endsnippet
+
+snippet --
+# -----------------------------------------------------
+
+endsnippet
+#======================================================
 # import
-#------------------------------------------------------
-
-snippet imp "import"
+#======================================================
+snippet s-import "import"
 import ${0:module}
 endsnippet
-
-snippet imp.datetime.datetime "import datetime.datetime"
+#------------------------------------------------------
+snippet s-import-datetime "import datetime.datetime"
 from datetime import datetime as dt
 endsnippet
-
-snippet imp.numpy "import numpy"
+#------------------------------------------------------
+snippet s-import-numpy "import numpy"
 import numpy as np
 endsnippet
-
-snippet imp.PIL.Image "import PIL.Image"
+#------------------------------------------------------
+snippet s-import-pil "import PIL.Image"
 from PIL import Image
 endsnippet
-
-snippet imp.matplotlib.pyplot "import matplotlib.pyplot"
+#------------------------------------------------------
+snippet s-import-plot "import matplotlib.pyplot"
 import matplotlib.pyplot as plt
 endsnippet
-
-#------------------------------------------------------
-# main
-#------------------------------------------------------
-
-snippet main "main"
-import sys
-
-
-def main(argv):
-    print(argv)
-
-
-if __name__ == "__main__":
-    main(sys.argv)
+#======================================================
+# util
+#======================================================
+snippet s-print "print"
+print(f'${1:val}: {$1}')
 endsnippet
-
 #------------------------------------------------------
+snippet s-print-stderr "print stderr"
+print(f'${1:val}: {$1}', file=sys.stderr)
+endsnippet
+#------------------------------------------------------
+snippet s-range "range"
+range(${1:0}, ${2:5}, ${3:1})
+endsnippet
+#------------------------------------------------------
+snippet s-list-int "list of int"
+[int(i) for i in range(${1:0}, ${2:5}, ${3:1})]
+endsnippet
+#======================================================
 # control
-#------------------------------------------------------
-
-snippet if "if"
+#======================================================
+snippet s-if "if"
 if ${1:True}:
 elif ${2:True}:
 else:
 endsnippet
-
-snippet elif "elif"
+#------------------------------------------------------
+snippet s-elif "elif"
 elif ${1:True}:
 endsnippet
-
-snippet el "else"
+#------------------------------------------------------
+snippet s-else "else"
 else:
 endsnippet
-
-snippet for "for"
+#------------------------------------------------------
+snippet s-for "for"
 for ${1:i} in ${2:list}:
     ${0:pass}
 endsnippet
-
-snippet wh "while"
+#------------------------------------------------------
+snippet s-while "while"
 while ${1:True}:
     ${0:pass}
 endsnippet
-
-#------------------------------------------------------
-# function
-#------------------------------------------------------
-
-snippet func "function"
-def ${1:func_name}(${2:arg1}):
-    ${0:pass}
-
-
-endsnippet
-
-#------------------------------------------------------
+#======================================================
 # class
-#------------------------------------------------------
-
-snippet cl "class"
+#======================================================
+snippet s-class "class"
 class MyClass():
     def __init__(self):
         pass
@@ -98,46 +95,34 @@ class MyClass():
 
 
 endsnippet
-
-snippet subcl "sub class"
+#------------------------------------------------------
+snippet s-sub-class "sub class"
 class MySubClass(MyClass):
     def g(self):
         pass
 
 
 endsnippet
+#======================================================
+# function
+#======================================================
+snippet s-func "function"
+def ${1:func_name}(${2:arg1}):
+    ${0:pass}
 
-#------------------------------------------------------
-# util
-#------------------------------------------------------
-
-snippet print "print"
-print(f'${1:val}: {$1}')
-endsnippet
-
-snippet print_stderr "print stderr"
-print(f'${1:val}: {$1}', file=sys.stderr)
-endsnippet
-
-snippet range "range"
-range(${1:0}, ${2:5}, ${3:1})
-endsnippet
-
-snippet int-list "int list"
-list(int(i) for i in range(${1:0}, ${2:5}, ${3:1}))
-endsnippet
-
-#------------------------------------------------------
-# comment
-#------------------------------------------------------
-
-snippet ==
-# =====================================================
 
 endsnippet
+#======================================================
+# main
+#======================================================
+snippet s-main "main"
+import sys
 
-snippet --
-# -----------------------------------------------------
 
+def main(argv):
+    print(argv)
+
+
+if __name__ == "__main__":
+    main(sys.argv)
 endsnippet
-

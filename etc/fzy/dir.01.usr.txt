@@ -1,22 +1,22 @@
-# NAME      | ENV_VAR            | DIR
-#---------- | ----------         | ----------
-desktop     | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
-downloads   | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
-#---------- | ----------         | ----------
-my          | MY_DOTMY           | $SYS_LOCAL_HOME/.my
-mycache     | MY_DOTMYCACHE      | $SYS_LOCAL_HOME/.mycache
-python_venv | MY_PYTHON_VENV_DIR | $SYS_LOCAL_HOME/.venv
-vim_plugged | MY_VIM_PLUGGED_DIR | $SYS_LOCAL_HOME/.mycache/vim_plugged
-coc_data    | MY_COC_DATA_DIR    | $SYS_LOCAL_HOME/.mycache/coc_data
-#---------- | ----------         | ----------
-env         | MY_ENV             | $SYS_ROAMING_HOME/env
-#---------- | ----------         | ----------
-rconfig     | MY_REMOTE_CONFIG   | $SYS_CONFIG_HOME/rconfig
-lconfig     | MY_LOCAL_CONFIG    | $SYS_CONFIG_HOME/lconfig
-pconfig     | MY_PRIVATE_CONFIG  | $SYS_CONFIG_HOME/pconfig
-#---------- | ----------         | ----------
-ropt        | MY_ROAMING_OPT     | $SYS_ROAMING_HOME/opt
-copt        | MY_CONFIG_OPT      | $SYS_CONFIG_HOME/opt
-winget      | MY_CONFIG_WINGET   | $SYS_CONFIG_HOME/opt/winget
+# NAME           | ENV_VAR            | DIR
+#----------      | ----------         | ----------
+desktop          | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
+downloads        | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
+#----------      | ----------         | ----------
+my               | MY_DOTMY           | $SYS_LOCAL_HOME/.my
+mycache          | MY_DOTMYCACHE      | $SYS_LOCAL_HOME/.mycache
+python_venv      | MY_PYTHON_VENV_DIR | $SYS_LOCAL_HOME/.venv
+vim_plugged      | MY_VIM_PLUGGED_DIR | $SYS_LOCAL_HOME/.mycache/vim_plugged
+coc_data         | MY_COC_DATA_DIR    | $SYS_LOCAL_HOME/.mycache/coc_data
+#----------      | ----------         | ----------
+env              | MY_ENV             | $SYS_ROAMING_HOME/env
+#----------      | ----------         | ----------
+my-rconfig       | MY_REMOTE_CONFIG   | $SYS_CONFIG_HOME/rconfig
+my-lconfig       | MY_LOCAL_CONFIG    | $SYS_CONFIG_HOME/lconfig
+my-pconfig       | MY_PRIVATE_CONFIG  | $SYS_CONFIG_HOME/pconfig
+#----------      | ----------         | ----------
+my-roaming-opt   | MY_ROAMING_OPT     | $SYS_ROAMING_HOME/opt
+my-config-opt    | MY_CONFIG_OPT      | $SYS_CONFIG_HOME/opt
+my-config-winget | MY_CONFIG_WINGET   | $SYS_CONFIG_HOME/opt/winget
 
 # vim:set nowrap:
