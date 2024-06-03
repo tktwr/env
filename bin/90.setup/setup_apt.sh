@@ -13,6 +13,7 @@ python3-pip \
 python3-venv \
 python3-poetry \
 pipx \
+git-lfs \
 "
 apt_pkg_ext="\
 vim-gtk3 \
