@@ -7,18 +7,18 @@
 # vim terminal
 #------------------------------------------------------
 f_alias_vim_term() {
-  alias ,toggle_x='vimapi_exec VisWinMaximizeXToggleTerm'
-  alias ,toggle_y='vimapi_exec VisWinMaximizeYToggleTerm'
-  alias ,resize_w='vimapi_exec VisWinVResize'
-  alias ,resize_h='vimapi_exec VisWinResize'
+  alias _ide_toggle_x='vimapi_exec VisWinMaximizeXToggleTerm'
+  alias _ide_toggle_y='vimapi_exec VisWinMaximizeYToggleTerm'
+  alias _ide_resize_w='vimapi_exec VisWinVResize'
+  alias _ide_resize_h='vimapi_exec VisWinResize'
 
-  alias ,rx=',toggle_x'
-  alias ,ry=',toggle_y'
-  alias ,ry0=',resize_h 5'
-  alias ,ry1=',resize_h 10'
-  alias ,ry2=',resize_h 20'
-  alias ,ry3=',resize_h 30'
-  alias ,ry4=',resize_h 40'
+  alias ,rx='_ide_toggle_x'
+  alias ,ry='_ide_toggle_y'
+  alias ,ry0='_ide_resize_h 5'
+  alias ,ry1='_ide_resize_h 10'
+  alias ,ry2='_ide_resize_h 20'
+  alias ,ry3='_ide_resize_h 30'
+  alias ,ry4='_ide_resize_h 40'
 
   alias ,d='vimapi-edit-dir'
   alias ,d2='vimapi-edit-dir-2'
@@ -38,6 +38,8 @@ f_alias_vim_term() {
 
   alias ,vimdiff='popup-vimdiff.sh'
   alias ,vimdirdiff='popup-vimdirdiff.sh'
+  alias ,vimdiff.alt='vimdiff.alt'
+  alias ,vimdirdiff.alt='vimdirdiff.alt'
 
   #------------------------------------------------------
   # tab
