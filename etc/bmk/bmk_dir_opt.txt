@@ -1,11 +1,11 @@
 -------------- | ------------------------------ | ------------------------------
--              | github:LearnOpenGL/            | $MY_GITHUB/LearnOpenGL/
--              | github:glTF-Sample-Viewer/     | $MY_GITHUB/glTF-Sample-Viewer/
--              | github:blender/                | $MY_GITHUB/blender/
--              | github:blender/eevee/          | $MY_GITHUB/blender/source/blender/gpu/
--              | github:blender/cycles/         | $MY_GITHUB/blender/intern/cycles/
--              | github:filament/               | $MY_GITHUB/filament/
--              | github:separable-sss/          | $MY_GITHUB/separable-sss/
--              | github:imgui/                  | $MY_GITHUB/imgui/
+-              | LD:github:LearnOpenGL/         | $MY_GITHUB/LearnOpenGL/
+-              | LD:github:glTF-Sample-Viewer/  | $MY_GITHUB/glTF-Sample-Viewer/
+-              | LD:github:blender/             | $MY_GITHUB/blender/
+-              | LD:github:blender/eevee/       | $MY_GITHUB/blender/source/blender/gpu/
+-              | LD:github:blender/cycles/      | $MY_GITHUB/blender/intern/cycles/
+-              | LD:github:filament/            | $MY_GITHUB/filament/
+-              | LD:github:separable-sss/       | $MY_GITHUB/separable-sss/
+-              | LD:github:imgui/               | $MY_GITHUB/imgui/
 
 # vim:set ft=bmk syntax=txt nowrap:

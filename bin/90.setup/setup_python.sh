@@ -10,6 +10,8 @@ flake8 \
 autopep8 \
 pyinstaller \
 pynvim \
+flask \
+flask_cors \
 "
 pip_pkg_dev="\
 parse \
@@ -45,11 +47,8 @@ f_venv_info() {
 }
 #------------------------------------------------------
 f_pip_upgrade() {
-  pip install --upgrade pip
-}
-
-f_pip_upgrade_old() {
   python -m pip install --upgrade pip
+  #pip install --upgrade pip
 }
 #------------------------------------------------------
 f_pip_install_min() {
