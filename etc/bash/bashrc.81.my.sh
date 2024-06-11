@@ -33,6 +33,8 @@ f_alias_vim_term() {
 
   alias ,gs='cmd.sh f_popup_gs'
   alias ,gg='cmd.sh f_popup_gv'
+  alias ,man='cmd.sh f_popup_man'
+  alias ,apt='cmd.sh f_popup_apt'
 
   # alias ,gl='vimapi_exec_above GitLog $PWD'
 

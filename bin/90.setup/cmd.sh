@@ -15,6 +15,7 @@ f_popup_gs()             { vimapi_exec "VisShellPopup gs.sh"; }
 f_popup_gv()             { vimapi_exec "VisShellPopup gv.sh"; }
 f_popup_lazygit()        { vimapi_exec "VisShellPopup lazygit.sh"; }
 f_popup_man()            { vimapi_exec "VisShellPopup fzf_man.sh"; }
+f_popup_apt()            { vimapi_exec "VisShellPopup fzf_apt.sh"; }
 #------------------------------------------------------
 cmd_files="\
   $MY_BIN/90.setup/cmd_*.sh \
