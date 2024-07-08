@@ -1,4 +1,6 @@
 ;======================================================
+; Tab
+;======================================================
 Tab::Tab
 Tab & Esc::Return
 
@@ -16,7 +18,7 @@ Tab & g::Send,#g              ; Xbox Game Bar
 Tab & z::Send,#{Left}         ; maximize window in left
 Tab & x::Send,#{Up}           ; maximize window
 Tab & c::Send,#{Right}        ; maximize window in right
-
+;------------------------------------------------------
 Tab &  m::Send,{F1}
 Tab &  ,::Send,{F2}
 Tab &  .::Send,{F3}
@@ -29,6 +31,8 @@ Tab &  o::Send,{F9}
 Tab &  /::Send,{F10}
 Tab & `;::Send,{F11}
 Tab &  p::Send,{F12}
+;===================================================
+; BS
 ;===================================================
 BS::BS
 BS & Esc::Return
@@ -43,6 +47,8 @@ BS & s::Send,{{}
 BS & d::Send,{}}
 BS & x::Send,{[}
 BS & c::Send,{]}
+;======================================================
+; Enter
 ;======================================================
 Enter::Enter
 Enter & Esc::Return
@@ -64,7 +70,7 @@ Enter & x::Send,{\}
 Enter & c::Send,{|}
 Enter & v::Send,{/}
 Enter & b::Send,{&}
-
+;------------------------------------------------------
 Enter & u::Send,{(}{)}
 Enter & j::Send,{{}{}}
 Enter & m::Send,{[}{]}
@@ -77,6 +83,8 @@ Enter & ,::Send,{[}
 Enter & .::Send,{]}
 
 Enter & /::Send,{BS}
+;======================================================
+; RShift
 ;======================================================
 ;RShift::RShift
 RShift & Esc::Return
@@ -97,7 +105,7 @@ RShift & q::Send,{+}
 RShift & g::Send,{*}
 RShift & t::Send,{/}
 RShift & b::Send,{=}
-
+;------------------------------------------------------
 RShift & ,::Send,{,}
 RShift & .::Send,{.}
 RShift & /::Send,{BS}

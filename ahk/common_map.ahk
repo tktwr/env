@@ -10,14 +10,15 @@ RShift::Send,{vkF3sc029} ; RShift to Hankaku/Zenkaku
 ;LCtrl & Space::Send,{Esc}
 ;Space & LCtrl::Send,{Esc}
 
-;======================================================
 LCtrl::LCtrl
 LCtrl & Esc::Return
 
-;======================================================
 Space::Space
 Space & Esc::Return
 
+;======================================================
+; Space in terminal
+;======================================================
 #IfWinActive ahk_exe WindowsTerminal.exe
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
@@ -29,7 +30,9 @@ Space & l::Send,{Blind}{PgDn}
 
 Space & /::Send,!/
 #IfWinActive
-
+;======================================================
+; Space
+;======================================================
 Space & q::AltTab               ; win_next
 Space & w::ShiftAltTab          ; win_prev
 Space & e::Send,^+{Tab}         ; app_prev
