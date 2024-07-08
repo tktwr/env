@@ -72,8 +72,7 @@ vmap ,k          <Plug>(easymotion-k)
 "nnoremap <silent> <C-V>   :echo 'C-V'<CR>  " [ORIG] block visual mode
  nmap     <silent> <C-B>   <Plug>(easymotion-overwin-f2)
 "------------------------------------------------------
- nmap     <silent> <C-Y>   <Plug>(quickhl-manual-this-whole-word)
- xmap     <silent> <C-Y>   <Plug>(quickhl-manual-this-whole-word)
+ nnoremap <silent> <C-Y>   :VisWinMaximizeXToggle<CR>
  nmap     <silent> <C-U>   <Plug>(quickhl-manual-this)
  xmap     <silent> <C-U>   <Plug>(quickhl-manual-this)
 "nnoremap <silent> <C-I>   :echo 'C-I'<CR>  " [ORIG] TAB
@@ -99,6 +98,7 @@ vmap ,k          <Plug>(easymotion-k)
 " tmap
 "------------------------------------------------------
  tnoremap <silent> <C-Q>   <C-W>:VisWinMaximizeYToggleTerm<CR>
+ tnoremap <silent> <C-Y>   <C-W>:VisWinMaximizeXToggleTerm<CR>
  tnoremap <silent> <C-S>   <BS>
  tnoremap <silent> <C-G>   <C-L>
 " go to Terminal-Normal
