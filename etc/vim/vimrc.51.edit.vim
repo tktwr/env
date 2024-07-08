@@ -81,6 +81,15 @@ func! R_FormatLines() range
   Tabularize /=dict
   Tabularize /|dict
   Tabularize /,
+  Tabularize /;
+  Tabularize /,
+  Tabularize /;
+  Tabularize /,
+  Tabularize /;
+  Tabularize /,
+  Tabularize /;
+  Tabularize /,
+  Tabularize /;
 endfunc
 
 "------------------------------------------------------
