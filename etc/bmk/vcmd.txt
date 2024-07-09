@@ -9,10 +9,12 @@
 - ,tgf         | Tags <cfile>                   | :VisFzfTags <cfile>
 -----          | ------------------------------ | ------------------------------
 - ,memo        | Memo                           | :VisFzfTags memo:
+- ,sample      | Sample                         | :VisFzfTags memo:sample:
 - ,bmk         | Bmk                            | :VisFzfTags memo:bmk:
 - ,bmka        | BmkAdd                         | :VisFzfTagsAdd memo:bmk:
 - ,bmke        | BmkEdit                        | $MY_DOTMY/tags.bmk
 - ,link        | Link                           | :VisFzfBmk link:
+- ,paper       | Paper                          | :VisFzfBmk paper:
 -----          | ------------------------------ | ------------------------------
 - ,help        | Help                           | :FzfHelptags
 - ,buf         | Buffers                        | :FzfBuffers
