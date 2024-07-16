@@ -80,16 +80,10 @@ func! R_FormatLines() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
   Tabularize /=dict
   Tabularize /|dict
-  Tabularize /,
-  Tabularize /;
-  Tabularize /,
-  Tabularize /;
-  Tabularize /,
-  Tabularize /;
-  Tabularize /,
-  Tabularize /;
-  Tabularize /,
-  Tabularize /;
+  for i in range(5)
+    Tabularize /,
+    Tabularize /;
+  endfor
 endfunc
 
 "------------------------------------------------------
