@@ -11,6 +11,7 @@ winget_pkg="\
   dandavison.delta \
   JesseDuffield.lazygit \
   OpenJS.NodeJS.LTS \
+  Kitware.CMake \
   "
 
 #======================================================

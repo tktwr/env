@@ -80,11 +80,12 @@ f_check_env_dir() {
   work_dirs="\
     $MY_REPO \
     $MY_GIT \
-    $MY_PROJ \
+    $MY_WORK \
     $MY_BACKUP \
     $MY_TMP \
     "
   proj_dirs="\
+    $MY_PROJ \
     $MY_DOC \
     $MY_OFFICE \
     "

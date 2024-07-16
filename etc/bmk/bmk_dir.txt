@@ -8,6 +8,7 @@
 -              | samples/                       | $MY_SAMPLES/
 -              | libtt/                         | $MY_LIBTT/
 -              | git/                           | $MY_GIT/
+-              | work/                          | $MY_WORK/
 -              | proj/                          | $MY_PROJ/
 -              | .my/                           | $MY_DOTMY/
 -              | .mycache/                      | $MY_DOTMYCACHE/
