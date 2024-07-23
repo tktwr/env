@@ -49,17 +49,19 @@ Space & z::Send,{Blind}{Ins}
 Space & x::Send,{Blind}{Del}
 Space & c::Send,^c              ; copy
 Space & v::Send,^v              ; paste
+Space & b::Send,{Blind}{Esc}
 ;------------------------------------------------------
 Space & y::Send,^{Left}
 Space & u::Send,^{Right}
 Space & i::Send,^{Up}
 Space & o::Send,^{Down}
-Space & p::Send,{Blind}{Esc}
+Space & p::Send,^{Home}
 
 Space & h::Send,{Blind}{PgUp}
 Space & j::Send,{Down 5}
 Space & k::Send,{Up 5}
 Space & l::Send,{Blind}{PgDn}
+Space & `;::Send,^{End}
 
 Space & n::Send,{Blind}{Down}
 Space & m::Send,{Blind}{Up}

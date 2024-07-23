@@ -183,8 +183,8 @@ nnoremap <silent> <C-Left>     <C-W>:tabprev<CR>
 nnoremap <silent> <C-Right>    <C-W>:tabnext<CR>
 nnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
-nnoremap <silent> <C-Home>     <Nop>
-nnoremap <silent> <C-End>      <Nop>
+nnoremap <silent> <C-Home>     <C-W>:tabedit %<CR>
+nnoremap <silent> <C-End>      <C-W>:split .<CR>
 nnoremap <silent> <C-PageUp>   <Nop>
 nnoremap <silent> <C-PageDown> <Nop>
 nnoremap <silent> <C-Insert>   <Nop>
