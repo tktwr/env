@@ -70,20 +70,34 @@ func EditTogglePathFormat()
 endfunc
 
 "------------------------------------------------------
+" edit table
+"------------------------------------------------------
+command EditTabBar             Tabularize /|
+command EditTabColon           Tabularize /:
+command EditTabSemicolon       Tabularize /;
+command EditTabComma           Tabularize /,
+command EditTabDots            Tabularize /\.\.\.
+command EditTabEqual           Tabularize /=
+command EditTabLabel           Tabularize /\[.*\]
+
+"------------------------------------------------------
 " Range functions
 "------------------------------------------------------
 func! R_RemoveSpaces() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
 endfunc
 
-func! R_FormatLines() range
+func! R_FormatDict() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
   Tabularize /=dict
   Tabularize /|dict
-  for i in range(5)
-    Tabularize /,
-    Tabularize /;
-  endfor
+  Tabularize /,
+endfunc
+
+func! R_FormatLine() range
+  exec printf('%d,%ds/ //g', a:firstline, a:lastline)
+  Tabularize /=
+  Tabularize /;
 endfunc
 
 "------------------------------------------------------
@@ -93,8 +107,12 @@ func! P_RemoveSpaces()
   '{,'}call R_RemoveSpaces()
 endfunc
 
-func! P_Format()
-  '{,'}call R_FormatLines()
+func! P_FormatDict()
+  '{,'}call R_FormatDict()
+endfunc
+
+func! P_FormatLine()
+  '{,'}call R_FormatLine()
 endfunc
 
 func! P_IndentLeft()
