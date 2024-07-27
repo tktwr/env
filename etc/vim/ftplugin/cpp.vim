@@ -13,17 +13,18 @@ setl shiftwidth=4
 setl cindent
 "setl keywordprg=man
 
-command -buffer -nargs=* CC  !$MY_CXX $MY_CXXFLAGS <args> % $MY_LDFLAGS
-"command -buffer          A   call EditAltSrc()
+if 0
+  command -buffer -nargs=* CC  !$MY_CXX $MY_CXXFLAGS <args> % $MY_LDFLAGS
+  "command -buffer          A   call EditAltSrc()
 
-" insert mode completion (tags)
-inoremap <buffer> <C-]>    <C-X><C-]>
-" insert mode completion (definitions or macros)
-inoremap <buffer> <C-D>    <C-X><C-D>
+  " insert mode completion (tags)
+  inoremap <buffer> <C-]>    <C-X><C-]>
+  " insert mode completion (definitions or macros)
+  inoremap <buffer> <C-D>    <C-X><C-D>
 
-" abbrebiations
-iabclear
-if 1
+  " abbrebiations
+  iabclear
+
   iabbr #D     #define
   iabbr #I     #include
   iabbr IF     if () {<CR>}<ESC>%F(
@@ -48,35 +49,35 @@ if 1
   iabbr COUT   std::cout << " : " << x << std::endl;<ESC>0f"
   iabbr <<;;   << std::endl << std::flush;
   iabbr <<;    << std::endl;
+
+  iabbr GLb     GLbyte
+  iabbr GLs     GLshort
+  iabbr GLi     GLint
+  iabbr GLf     GLfloat
+  iabbr GLd     GLdouble
+  iabbr GLub    GLubyte
+  iabbr GLus    GLushort
+  iabbr GLui    GLuint
+
+  iabbr glB     glBegin(GL_);<CR>glEnd();<ESC>-t)a
+
+  iabbr glTf    glTranslatef(0, 0, 0);<ESC>F(
+  iabbr glRf    glRotatef(angle, 0, 0, 0);<ESC>F(
+  iabbr glSf    glScalef(1, 1, 1);<ESC>F(
+  iabbr glC3f   glColor3f(0, 0, 0);<ESC>F(
+  iabbr glC4f   glColor4f(0, 0, 0, 0);<ESC>F(
+  iabbr glV2f   glVertex2f(0, 0);<ESC>F(
+  iabbr glV3f   glVertex3f(0, 0, 0);<ESC>F(
+  iabbr glV4f   glVertex4f(0, 0, 0, 0);<ESC>F(
+  iabbr glT2f   glTexCoord2f(0, 0);<ESC>F(
+  iabbr glT3f   glTexCoord3f(0, 0, 0);<ESC>F(
+  iabbr glN3f   glNormal3f(0, 0, 0);<ESC>F(
+  iabbr glC3fv  glColor3fv();<ESC>F(
+  iabbr glC4fv  glColor4fv();<ESC>F(
+  iabbr glV2fv  glVertex2fv();<ESC>F(
+  iabbr glV3fv  glVertex3fv();<ESC>F(
+  iabbr glV4fv  glVertex4fv();<ESC>F(
+  iabbr glT2fv  glTexCoord2fv();<ESC>F(
+  iabbr glT3fv  glTexCoord3fv();<ESC>F(
+  iabbr glN3fv  glNormal3fv();<ESC>F(
 endif
-
-iabbr GLb     GLbyte
-iabbr GLs     GLshort
-iabbr GLi     GLint
-iabbr GLf     GLfloat
-iabbr GLd     GLdouble
-iabbr GLub    GLubyte
-iabbr GLus    GLushort
-iabbr GLui    GLuint
-
-iabbr glB     glBegin(GL_);<CR>glEnd();<ESC>-t)a
-
-iabbr glTf    glTranslatef(0, 0, 0);<ESC>F(
-iabbr glRf    glRotatef(angle, 0, 0, 0);<ESC>F(
-iabbr glSf    glScalef(1, 1, 1);<ESC>F(
-iabbr glC3f   glColor3f(0, 0, 0);<ESC>F(
-iabbr glC4f   glColor4f(0, 0, 0, 0);<ESC>F(
-iabbr glV2f   glVertex2f(0, 0);<ESC>F(
-iabbr glV3f   glVertex3f(0, 0, 0);<ESC>F(
-iabbr glV4f   glVertex4f(0, 0, 0, 0);<ESC>F(
-iabbr glT2f   glTexCoord2f(0, 0);<ESC>F(
-iabbr glT3f   glTexCoord3f(0, 0, 0);<ESC>F(
-iabbr glN3f   glNormal3f(0, 0, 0);<ESC>F(
-iabbr glC3fv  glColor3fv();<ESC>F(
-iabbr glC4fv  glColor4fv();<ESC>F(
-iabbr glV2fv  glVertex2fv();<ESC>F(
-iabbr glV3fv  glVertex3fv();<ESC>F(
-iabbr glV4fv  glVertex4fv();<ESC>F(
-iabbr glT2fv  glTexCoord2fv();<ESC>F(
-iabbr glT3fv  glTexCoord3fv();<ESC>F(
-iabbr glN3fv  glNormal3fv();<ESC>F(
