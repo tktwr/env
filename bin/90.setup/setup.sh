@@ -16,7 +16,7 @@ f_11_setup_time() {
 f_21_setup_weekly() {
   weekly-tags.sh
 }
-f_22_setup_monthly() {
+f_31_setup_monthly() {
   monthly-tags.sh
 }
 f_90_setup_init() {
