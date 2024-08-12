@@ -88,7 +88,8 @@ f_git_ls_no_x() {
 f_git_chmod_x() {
   # f_git_chmod_x {files...}
   if [ $# -gt 0 ]; then
-    $SYS_GIT_EXE update-index --add --chmod=+x "$@"
+    #$SYS_GIT_EXE update-index --add --chmod=+x "$@"
+    chmod +x "$@"
   fi
 }
 
