@@ -27,6 +27,7 @@ f_alias_vim_term() {
   alias ,I2='vimapi_exec VisIDE 2'
   alias ,edit='vimapi_exec new'
   alias ,term='vimapi_exec VisTerm'
+  alias ,label='vimapi-tabline-set-label'
 
   alias ,vedit='vimapi_exec vnew'
   alias ,vterm='vimapi_exec VisTermV'
@@ -105,9 +106,6 @@ f_alias_os_termux() {
 }
 
 f_alias_os_common() {
-  alias ,D='open_dir.sh'
-  alias ,E='explorer.sh'
-
   alias vim='vim.sh'
   alias ls='ls.sh'
   alias make='mymake.sh'
@@ -118,16 +116,19 @@ f_alias_os_common() {
 
   alias lsg='exa-short.sh'
 
-  alias set.G='mypushd.sh --set `pwd`'
-  alias get.G='mypushd.sh --get'
-  alias cd.G='cd `mypushd.sh --get`'
-  alias mv.G='f_mv_g_dir'
-  alias cp.G='f_cp_g_dir'
+  alias ,D='open_dir.sh'
+  alias ,E='explorer.sh'
+
+  alias ,G.set_dir='mypushd.sh --set `pwd`'
+  alias ,G.get_dir='mypushd.sh --get'
+  alias ,G.cd='cd `mypushd.sh --get`'
+  alias ,G.mv='f_g_mv'
+  alias ,G.cp='f_g_cp'
 }
 
 #------------------------------------------------------
-f_mv_g_dir() { mv "$@" `mypushd.sh --get`; }
-f_cp_g_dir() { cp "$@" `mypushd.sh --get`; }
+f_g_mv() { mv "$@" `mypushd.sh --get`; }
+f_g_cp() { cp "$@" `mypushd.sh --get`; }
 
 #------------------------------------------------------
 my_setup_alias() {

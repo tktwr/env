@@ -2,22 +2,23 @@
 - ,fd          | Fd                             | > ,fd<CR>
 - ,rg          | Rg                             | > ,rg<CR>
 - ,m           | Make                           | > ,m<CR>
-- ,S           | Setup                          | > ,S<CR>
+- ,c           | Command                        | > ,c<CR>
 -----          | ------------------------------ | ------------------------------
-- ,rx          | Toggle size x                  | > _ide_toggle_x<CR>
-- ,ry          | Toggle size y                  | > _ide_toggle_y<CR>
-- ,ry0         | Resize 5                       | > _ide_resize_h 5<CR>
-- ,ry1         | Resize 10                      | > _ide_resize_h 10<CR>
-- ,ry2         | Resize 20                      | > _ide_resize_h 20<CR>
-- ,ry3         | Resize 30                      | > _ide_resize_h 30<CR>
-- ,ry4         | Resize 40                      | > _ide_resize_h 40<CR>
+- ,rx          | Toggle size x                  | > ,rx<CR>
+- ,ry          | Toggle size y                  | > ,ry<CR>
+- ,ry0         | Resize 5                       | > ,ry0<CR>
+- ,ry1         | Resize 10                      | > ,ry1<CR>
+- ,ry2         | Resize 20                      | > ,ry2<CR>
+- ,ry3         | Resize 30                      | > ,ry3<CR>
+- ,ry4         | Resize 40                      | > ,ry4<CR>
 -----          | ------------------------------ | ------------------------------
-- ,dir         | Fern                           | > ,d<CR>
-- ,dir2        | Fern 2nd                       | > ,d2<CR>
+- ,d           | Fern                           | > ,d<CR>
+- ,d2          | Fern 2nd                       | > ,d2<CR>
 - ,I           | IDE                            | > ,I<CR>
 - ,I2          | IDE2                           | > ,I2<CR>
 - ,edit        | Editor                         | > ,edit<CR>
 - ,term        | Term                           | > ,term<CR>
+- ,label       | Set tab label {name}           | > ,label
 -----          | ------------------------------ | ------------------------------
 - ,vedit       | vert Editor                    | > ,vedit<CR>
 - ,vterm       | vert Term                      | > ,vterm<CR>
@@ -26,11 +27,10 @@
 - ,,I2         | tab IDE2                       | > ,,I2<CR>
 - ,,edit       | tab Editor                     | > ,,edit<CR>
 - ,,term       | tab Term                       | > ,,term<CR>
-- ,label       | Set tab label {name}           | > vimapi-tabline-set-label
 -----          | ------------------------------ | ------------------------------
--              | Git graph                      | > G<CR>
--              | Git graph all                  | > GA<CR>
--              | Git status                     | > ,gs<CR>
--              | Git graph                      | > ,gg<CR>
+- ,G           | Git graph                      | > G<CR>
+- ,GA          | Git graph all                  | > GA<CR>
+- ,gs          | Git status                     | > ,gs<CR>
+- ,gg          | Git graph                      | > ,gg<CR>
 
 # vim:set ft=bmk syntax=txt nowrap:
