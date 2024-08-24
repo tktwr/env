@@ -244,9 +244,17 @@ def cv_crop_img_simple(img, pos, size):
     return img[top:bottom, left:right]
 
 
-# pos  : [x, y]
-# size : [w, h]
 def cv_crop_img(img, pos, size, centering=False):
+    '''
+    Crop an image
+
+    Args:
+        pos : [x, y]
+        size: [w, h]
+
+    Returns:
+        img: cropped image
+    '''
     h, w, ch = cv_size(img)
 
     if ch == 1:
@@ -454,3 +462,50 @@ def cv_create_se_stripe_img(shape, dtype, co0, co1, nelm):
             if mx == 1:
                 img[y, x] = co1
     return img
+
+
+# =====================================================
+#
+# =====================================================
+def cv_normalize_img(img, min_val=0, max_val=0):
+    if min_val == 0 and max_val == 0:
+        min_val = img.min()
+        max_val = img.max()
+    return (img - min_val) / (max_val - min_val)
+
+
+def cv_compare_img(img1, img2):
+    sz_img1 = cv_size(img1)
+    sz_img2 = cv_size(img2)
+    if sz_img1 != sz_img2:
+        raise ValueError(f"different image size: {sz_img1}, {sz_img2}")
+
+    h, w, ch = sz_img1
+    half_w = w // 2
+    img1 = cv_crop_img_simple(img1 , (0      , 0) , (half_w , h))
+    img2 = cv_crop_img_simple(img2 , (half_w , 0) , (half_w , h))
+    oimg = cv_hconcat([img1, img2])
+    return oimg
+
+
+def cv_add_label(img, label_type, ifname, nr):
+    ifname = os.path.abspath(ifname)
+    if label_type == 'FILE':
+        name = ifname.split('/')[-1]
+    elif label_type == 'DIR':
+        name = ifname.split('/')[-2]
+    elif label_type == 'NUM':
+        name = f'{nr})'
+    elif label_type == 'ALPHA':
+        ch = chr(ord('a') + nr - 1)
+        name = f'{ch})'
+    else:
+        name = ''
+
+    if name != '':
+        h, w, ch = cv_size(img)
+        xy = (int(0.05 * w), int(0.95 * h))
+        color = (255, 255, 255)
+        cv2.putText(img, name, xy, cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+
+

@@ -45,19 +45,44 @@ def log_title(title, sep='-', sep_n=55, place='center'):
 
 
 # -----------------------------------------------------
-#
+# list
 # -----------------------------------------------------
-def list_startswith(lst, start_str):
+def lst_split_sublists(lst, mx):
+    '''
+    Split the list into sublists, each of length mx
+    '''
+    return [lst[i:i+mx] for i in range(0, len(lst), mx)]
+
+
+def lst_prefix_match(lst, start_str):
     return [i for i in lst if i.startswith(start_str)]
 
 
 def get_all_funcs(lst):
     if len(sys.argv) == 1:
-        func_lst = list_startswith(lst, 'f_')
+        func_lst = lst_prefix_match(lst, 'f_')
     else:
         func_lst = sys.argv[1:]
     log(f'func_lst: {func_lst}')
     return func_lst
+
+
+def tile_fill(nelm, nx, ny):
+    mod = 0
+    fill = 0
+    if nx > 0 and ny > 0:
+        fill = nx * ny - nelm
+    elif nx == 0 and ny > 0:
+        nx, mod = divmod(nelm, ny)
+        if mod > 0:
+            nx += 1
+            fill = ny - mod
+    elif ny == 0 and nx > 0:
+        ny, mod = divmod(nelm, nx)
+        if mod > 0:
+            ny += 1
+            fill = nx - mod
+    return (nx, ny, fill)
 
 
 # -----------------------------------------------------
