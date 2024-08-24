@@ -27,8 +27,10 @@ def parse_args():
         formatter_class=tu.MyHelpFormatter,
         description='show images')
 
-    parser.add_argument('files' , nargs='+' , help='input files'      , type=str , )
-    parser.add_argument('-s'    , '--size'  , help='set display size' , type=int , nargs=2 , default=[500 , 500] , )
+    A = parser.add_argument
+
+    A('files' , nargs='+' , help='input files'      , type=str , )
+    A('-s'    , '--size'  , help='set display size' , type=int , nargs=2 , default=[500 , 500] , )
 
     return parser.parse_args()
 

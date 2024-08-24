@@ -12,14 +12,16 @@ def parse_args():
         formatter_class=tu.MyHelpFormatter,
         description='create an image')
 
-    parser.add_argument('-o'  , '--output'   , help='set output file name'    , type=str   , default='output.png' , )
-    parser.add_argument('-s'  , '--size'     , help='set image size'          , type=int   , nargs=2              , default=[256     , 256]     , )
-    parser.add_argument('-ch' , '--channels' , help='set image channels'      , type=int   , default=3            , choices=[1       , 3        , 4]         , )
-    parser.add_argument('-ty' , '--dtype'    , help='set image dtype'         , type=str   , default='uint8'      , choices=['uint8' , 'uint16' , 'float32'] , )
-    parser.add_argument('-a'  , '--action'   , help='set action'              , type=str   , default='new'        , choices=['new'   , 'hgrad'  , 'vgrad'    , 'check' , 'hstripe' , 'se_stripe'] , )
-    parser.add_argument('-n'  , '--nelm'     , help='set number of elements'  , type=int   , nargs=2              , default=[2       , 2]       , )
-    parser.add_argument('-c0' , '--col0'     , help='set color0 in BGR [0 1]' , type=float , nargs='+'            , default=[0.0     , 0.0      , 0.0]       , )
-    parser.add_argument('-c1' , '--col1'     , help='set color1 in BGR [0 1]' , type=float , nargs='+'            , default=[1.0     , 1.0      , 1.0]       , )
+    A = parser.add_argument
+
+    A('-o'  , '--output'   , help='set output file name'    , type=str   , default='output.png' , )
+    A('-s'  , '--size'     , help='set image size'          , type=int   , nargs=2              , default=[256     , 256]     , )
+    A('-ch' , '--channels' , help='set image channels'      , type=int   , default=3            , choices=[1       , 3        , 4]         , )
+    A('-ty' , '--dtype'    , help='set image dtype'         , type=str   , default='uint8'      , choices=['uint8' , 'uint16' , 'float32'] , )
+    A('-a'  , '--action'   , help='set action'              , type=str   , default='new'        , choices=['new'   , 'hgrad'  , 'vgrad'    , 'check' , 'hstripe' , 'se_stripe'] , )
+    A('-n'  , '--nelm'     , help='set number of elements'  , type=int   , nargs=2              , default=[2       , 2]       , )
+    A('-c0' , '--col0'     , help='set color0 in BGR [0 1]' , type=float , nargs='+'            , default=[0.0     , 0.0      , 0.0]       , )
+    A('-c1' , '--col1'     , help='set color1 in BGR [0 1]' , type=float , nargs='+'            , default=[1.0     , 1.0      , 1.0]       , )
 
     return parser.parse_args()
 

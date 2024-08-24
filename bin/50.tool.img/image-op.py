@@ -56,12 +56,14 @@ def parse_args():
         formatter_class=tu.MyHelpFormatter,
         description='operate images')
 
-    parser.add_argument('files' , nargs='+'   , help='input files'          , type=str            , )
-    parser.add_argument('-o'    , '--output'  , help='set output file name' , type=str            , default='output.png' , )
-    parser.add_argument('-s'    , '--split'   , help='split'                , action='store_true' , )
-    parser.add_argument('-m'    , '--merge'   , help='merge'                , action='store_true' , )
-    parser.add_argument('-d'    , '--diff'    , help='diff'                 , action='store_true' , )
-    parser.add_argument('-c'    , '--compare' , help='compare'              , action='store_true' , )
+    A = parser.add_argument
+
+    A('files' , nargs='+'   , help='input files'          , type=str            , )
+    A('-o'    , '--output'  , help='set output file name' , type=str            , default='output.png' , )
+    A('-s'    , '--split'   , help='split'                , action='store_true' , )
+    A('-m'    , '--merge'   , help='merge'                , action='store_true' , )
+    A('-d'    , '--diff'    , help='diff'                 , action='store_true' , )
+    A('-c'    , '--compare' , help='compare'              , action='store_true' , )
 
     return parser.parse_args()
 

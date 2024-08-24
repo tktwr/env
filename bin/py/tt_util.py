@@ -13,16 +13,16 @@ import numpy as np
 # -----------------------------------------------------
 # log
 # -----------------------------------------------------
-def log(s):
-    print(f'{s}', file=sys.stderr)
+def log_sep_0(s):
+    print(f'=== {s} ====================', file=sys.stderr)
 
 
 def log_sep(s):
     print(f'--- {s} --------------------', file=sys.stderr)
 
 
-def log_sep_0(s):
-    print(f'=== {s} ====================', file=sys.stderr)
+def log(s):
+    print(f'{s}', file=sys.stderr)
 
 
 def log_title(title, sep='-', sep_n=55, place='center'):
@@ -60,13 +60,13 @@ def lst_split_sublists(lst, mx):
     return [lst[i:i+mx] for i in range(0, len(lst), mx)]
 
 
-def lst_prefix_match(lst, start_str):
-    return [i for i in lst if i.startswith(start_str)]
+def lst_prefix_match(lst, prefix):
+    return [i for i in lst if i.startswith(prefix)]
 
 
-def get_all_funcs(lst):
+def get_all_funcs(lst, prefix='f_'):
     if len(sys.argv) == 1:
-        func_lst = lst_prefix_match(lst, 'f_')
+        func_lst = lst_prefix_match(lst, prefix)
     else:
         func_lst = sys.argv[1:]
     log(f'func_lst: {func_lst}')

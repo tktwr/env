@@ -34,10 +34,12 @@ def parse_args():
         description='print information of images',
         add_help=False)
 
-    parser.add_argument('files' , nargs='+'   , help='input files'                     , type=str            , )
-    parser.add_argument('-h'    , '--help'    , help="show this help message and exit" , action='help'       , )
-    parser.add_argument('-v'    , '--verbose' , help='show verbose message'            , action='store_true' , )
-    parser.add_argument('-xy'   , '--xy'      , help='set position'                    , type=int            , nargs=2 , default=[-1 , -1] , )
+    A = parser.add_argument
+
+    A('files' , nargs='+'   , help='input files'                     , type=str            , )
+    A('-h'    , '--help'    , help="show this help message and exit" , action='help'       , )
+    A('-v'    , '--verbose' , help='show verbose message'            , action='store_true' , )
+    A('-xy'   , '--xy'      , help='set position'                    , type=int            , nargs=2 , default=[-1 , -1] , )
 
     return parser.parse_args()
 
