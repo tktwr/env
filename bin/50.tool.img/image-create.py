@@ -2,59 +2,29 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import numpy as np
 import tt_util as tu
 import cv_util as cu
 
 
+# =====================================================
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
         description='create an image')
 
-    parser.add_argument('-a', '--action',
-                        type=str,
-                        choices=['new', 'hgrad', 'vgrad', 'check', 'hstripe', 'se_stripe'],
-                        default='new',
-                        help='set action')
-    parser.add_argument('-o', '--ofname',
-                        type=str,
-                        default='output.png',
-                        help='set output file name')
-    parser.add_argument('-s', '--size',
-                        type=int,
-                        nargs=2,
-                        default=[256, 256],
-                        help='set image size')
-    parser.add_argument('-n', '--nelm',
-                        type=int,
-                        nargs=2,
-                        default=[2, 2],
-                        help='set number of elements')
-    parser.add_argument('-c', '--channels',
-                        type=int,
-                        choices=[1, 3, 4],
-                        default=3,
-                        help='set channels')
-    parser.add_argument('-y', '--dtype',
-                        type=str,
-                        choices=['uint8', 'uint16', 'float32'],
-                        default='uint8',
-                        help='set dtype')
-    parser.add_argument('--bgr0',
-                        type=float,
-                        nargs='+',
-                        default=[1.0, 1.0, 1.0],
-                        help='set bgr color')
-    parser.add_argument('--bgr1',
-                        type=float,
-                        nargs='+',
-                        default=[1.0, 1.0, 1.0],
-                        help='set bgr color')
+    parser.add_argument('-o'  , '--output'   , help='set output file name'    , type=str   , default='output.png' , )
+    parser.add_argument('-s'  , '--size'     , help='set image size'          , type=int   , nargs=2              , default=[256     , 256]     , )
+    parser.add_argument('-ch' , '--channels' , help='set image channels'      , type=int   , default=3            , choices=[1       , 3        , 4]         , )
+    parser.add_argument('-ty' , '--dtype'    , help='set image dtype'         , type=str   , default='uint8'      , choices=['uint8' , 'uint16' , 'float32'] , )
+    parser.add_argument('-a'  , '--action'   , help='set action'              , type=str   , default='new'        , choices=['new'   , 'hgrad'  , 'vgrad'    , 'check' , 'hstripe' , 'se_stripe'] , )
+    parser.add_argument('-n'  , '--nelm'     , help='set number of elements'  , type=int   , nargs=2              , default=[2       , 2]       , )
+    parser.add_argument('-c0' , '--col0'     , help='set color0 in BGR [0 1]' , type=float , nargs='+'            , default=[0.0     , 0.0      , 0.0]       , )
+    parser.add_argument('-c1' , '--col1'     , help='set color1 in BGR [0 1]' , type=float , nargs='+'            , default=[1.0     , 1.0      , 1.0]       , )
 
     return parser.parse_args()
 
 
+# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
 
@@ -64,20 +34,23 @@ if __name__ == "__main__":
 
     shape = (h, w, c)
     dtype = args.dtype
-    bgr0 = cu.cv_color(args.bgr0, dtype)
-    bgr1 = cu.cv_color(args.bgr1, dtype)
+    col0 = cu.cv_color(args.col0, dtype)
+    col1 = cu.cv_color(args.col1, dtype)
 
     if args.action == 'new':
-        img = cu.cv_create_img(shape, dtype, bgr0)
+        img = cu.cv_create_img(shape, dtype, col0)
     elif args.action == 'hgrad':
-        img = cu.cv_create_hgrad_img(shape, dtype, bgr0, bgr1)
+        img = cu.cv_create_hgrad_img(shape, dtype, col0, col1)
     elif args.action == 'vgrad':
-        img = cu.cv_create_vgrad_img(shape, dtype, bgr0, bgr1)
+        img = cu.cv_create_vgrad_img(shape, dtype, col0, col1)
     elif args.action == 'check':
-        img = cu.cv_create_check_img(shape, dtype, bgr0, bgr1, args.nelm)
+        img = cu.cv_create_check_img(shape, dtype, col0, col1, args.nelm)
     elif args.action == 'hstripe':
-        img = cu.cv_create_hstripe_img(shape, dtype, bgr0, bgr1, args.nelm)
+        img = cu.cv_create_hstripe_img(shape, dtype, col0, col1, args.nelm)
     elif args.action == 'se_stripe':
-        img = cu.cv_create_se_stripe_img(shape, dtype, bgr0, bgr1, args.nelm)
+        img = cu.cv_create_se_stripe_img(shape, dtype, col0, col1, args.nelm)
+    else:
+        tu.log(f'unknown action: {args.action}')
+        img = None
 
-    cu.cv_save(args.ofname, img)
+    cu.cv_save(args.output, img)

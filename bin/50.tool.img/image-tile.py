@@ -76,7 +76,7 @@ def save_tiles(args):
         n += 1
 
 
-# -----------------------------------------------------
+# =====================================================
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
@@ -91,9 +91,9 @@ def parse_args():
     A('-max'  , '--max'             , help="set max per page"                , type=int            , default=0               , )
     A('-nx'   , '--nx'              , help="set nx"                          , type=int            , default=0               , )
     A('-ny'   , '--ny'              , help="set ny"                          , type=int            , default=0               , )
-    A('-T'    , '--tile-wh'         , help='set each tile image size (w h)'  , type=int            , nargs=2                 , default=[500    , 500]   , )
+    A('-T'    , '--tile_wh'         , help='set each tile image size (w h)'  , type=int            , nargs=2                 , default=[500    , 500]   , )
     A('-O'    , '--order'           , help="set the order of input files"    , type=str            , default='X'             , choices=['X'    , 'Y']   , )
-    A('-L'    , '--label-type'      , help="set label type"                  , type=str            , default='NONE'          , choices=['NONE' , 'FILE' , 'DIR' , 'NUM' , 'ALPHA'] , )
+    A('-L'    , '--label_type'      , help="set label type"                  , type=str            , default='NONE'          , choices=['NONE' , 'FILE' , 'DIR' , 'NUM' , 'ALPHA'] , )
     A('-N'    , '--normalize'       , help='normalize'                       , action='store_true' , )
     A('-Nr'   , '--normalize_range' , help='set normalize range'             , type=float          , nargs=2                 , default=[0.0    , 0.0]   , )
     A('-l2s'  , '--linear_to_srgb'  , help='convert linear to srgb'          , action='store_true' , )

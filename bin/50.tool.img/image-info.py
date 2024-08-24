@@ -27,32 +27,22 @@ def f_info(files, args):
             print(f'fail to get info ... {fname} {e}')
 
 
+# =====================================================
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
         description='print information of images',
         add_help=False)
 
-    parser.add_argument('--help',
-                        action='help',
-                        help="show this help message and exit")
-    parser.add_argument('-v', '--verbose',
-                        action='store_true',
-                        help='show verbose message')
-    parser.add_argument('--xy',
-                        type=int,
-                        nargs=2,
-                        default=[-1, -1],
-                        help='set position')
-    parser.add_argument('files',
-                        type=str,
-                        nargs='+',
-                        help='input files')
+    parser.add_argument('files' , nargs='+'   , help='input files'                     , type=str            , )
+    parser.add_argument('-h'    , '--help'    , help="show this help message and exit" , action='help'       , )
+    parser.add_argument('-v'    , '--verbose' , help='show verbose message'            , action='store_true' , )
+    parser.add_argument('-xy'   , '--xy'      , help='set position'                    , type=int            , nargs=2 , default=[-1 , -1] , )
 
     return parser.parse_args()
 
 
+# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
     f_info(args.files, args)
-

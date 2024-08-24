@@ -47,6 +47,7 @@ def f_conv_images(files, args):
             print(f'fail to convert ... {ifname} {e}')
 
 
+# =====================================================
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
@@ -71,43 +72,39 @@ examples:
     A = parser.add_argument
 
     A('files' , nargs='+'           , help='input files'                     , type=str            , )
-    #         ,
     A('-h'    , '--help'            , help="show this help message and exit" , action='help'       , )
     A('-v'    , '--verbose'         , help='show verbose message'            , action='store_true' , )
     A('-f'    , '--force'           , help='force to overwrite'              , action='store_true' , )
-    A('-Cc'   , '--crop_centering'  , help='set crop centering'              , action='store_true' , )
+    A('-e'    , '--ext'             , help='set image ext'                   , type=str            , default='jpg' , )
+    A('-W'    , '--width'           , help='set image width'                 , type=int            , default=0     , )
+    A('-H'    , '--height'          , help='set image height'                , type=int            , default=0     , )
+    A('-ch'   , '--channels'        , help='set image channels'              , type=int            , default=0     , choices=[1       , 3        , 4]         , )
+    A('-ty'   , '--dtype'           , help='set image dtype'                 , type=str            , default=''    , choices=['uint8' , 'uint16' , 'float32'] , )
+    A('-N'    , '--normalize'       , help='normalize'                       , action='store_true' , )
+    A('-Nr'   , '--normalize_range' , help='set normalize range'             , type=float          , nargs=2       , default=[0.0     , 0.0]     , )
     A('-l2s'  , '--linear_to_srgb'  , help='convert linear to srgb'          , action='store_true' , )
     A('-s2l'  , '--srgb_to_linear'  , help='convert srgb to linear'          , action='store_true' , )
-    A('-N'    , '--normalize'       , help='normalize'                       , action='store_true' , )
-    #         ,
-    A('-e'    , '--ext'             , help='set ext'                         , type=str            , default='jpg' , )
-    A('-T'    , '--thumbnail'       , help='set thumbnail size'              , type=int            , default=0     , )
-    A('-W'    , '--width'           , help='set width'                       , type=int            , default=0     , )
-    A('-H'    , '--height'          , help='set height'                      , type=int            , default=0     , )
     A('-mult' , '--mult'            , help='multiply'                        , type=float          , default=1.0   , )
     A('-br'   , '--brightness'      , help='set brightness'                  , type=float          , default=0.0   , )
     A('-ct'   , '--contrast'        , help='set contrast'                    , type=float          , default=0.0   , )
-    #         ,
+    A('-Cc'   , '--crop_centering'  , help='set crop centering'              , action='store_true' , )
     A('-Cp'   , '--crop_pos'        , help='set crop position'               , type=int            , nargs=2       , default=[0       , 0]       , )
     A('-Cs'   , '--crop_size'       , help='set crop size'                   , type=int            , nargs=2       , default=[0       , 0]       , )
-    A('-Nr'   , '--normalize_range' , help='set normalize range'             , type=float          , nargs=2       , default=[0.0     , 0.0]     , )
-    #         ,
-    A('-ty'   , '--dtype'           , help='set dtype'                       , type=str            , default=''    , choices=['uint8' , 'uint16' , 'float32'] , )
-    A('-ch'   , '--channels'        , help='set channels'                    , type=int            , default=0     , choices=[1       , 3        , 4]         , )
+    A('-T'    , '--thumbnail'       , help='set thumbnail size'              , type=int            , default=0     , )
 
     return parser.parse_args()
 
 
+# -----------------------------------------------------
 def print_args(args):
     print(f"--- args ---")
     print(f"{args}")
 
 
+# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
         print_args(args)
 
     f_conv_images(args.files, args)
-
-

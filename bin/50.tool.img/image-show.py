@@ -21,24 +21,19 @@ def img_show(fname, size):
         cu.cv_save(ofname, oimg)
 
 
+# =====================================================
 def parse_args():
     parser = argparse.ArgumentParser(
         formatter_class=tu.MyHelpFormatter,
         description='show images')
 
-    parser.add_argument('-s', '--size',
-                        type=int,
-                        nargs=2,
-                        default=[500, 500],
-                        help='set display size')
-    parser.add_argument('files',
-                        type=str,
-                        nargs='+',
-                        help='input files')
+    parser.add_argument('files' , nargs='+' , help='input files'      , type=str , )
+    parser.add_argument('-s'    , '--size'  , help='set display size' , type=int , nargs=2 , default=[500 , 500] , )
 
     return parser.parse_args()
 
 
+# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
 
