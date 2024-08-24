@@ -96,15 +96,9 @@ examples:
 
 
 # -----------------------------------------------------
-def print_args(args):
-    print(f"--- args ---")
-    print(f"{args}")
-
-
-# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
-        print_args(args)
+        tu.print_args(args)
 
     f_conv_images(args.files, args)
