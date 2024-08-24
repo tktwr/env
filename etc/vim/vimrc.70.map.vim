@@ -185,8 +185,8 @@ nnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
 nnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
 nnoremap <silent> <C-Home>     <C-W>:tabedit %<CR>
 nnoremap <silent> <C-End>      <C-W>:split .<CR>
-nnoremap <silent> <C-PageUp>   <Nop>
-nnoremap <silent> <C-PageDown> <Nop>
+nnoremap <silent> <C-PageUp>   <C-W>:tabmove -<CR>
+nnoremap <silent> <C-PageDown> <C-W>:tabmove +<CR>
 nnoremap <silent> <C-Insert>   <Nop>
 nnoremap <silent> <C-Del>      <Nop>
 
@@ -196,8 +196,8 @@ tnoremap <silent> <C-Up>       <C-W>:call VisTabEdit()<CR>
 tnoremap <silent> <C-Down>     <C-W>:VisTabClosePrev<CR>
 tnoremap <silent> <C-Home>     <Nop>
 tnoremap <silent> <C-End>      <Nop>
-tnoremap <silent> <C-PageUp>   <Nop>
-tnoremap <silent> <C-PageDown> <Nop>
+tnoremap <silent> <C-PageUp>   <C-W>:tabmove -<CR>
+tnoremap <silent> <C-PageDown> <C-W>:tabmove +<CR>
 tnoremap <silent> <C-Insert>   <Nop>
 tnoremap <silent> <C-Del>      <Nop>
 
