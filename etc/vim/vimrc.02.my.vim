@@ -21,7 +21,7 @@ set tags+=$MY_SAMPLES/tags
 set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
 
 let tags_env    = join(split(glob('$MY_ENV/.tags.*'),   "\n"), ",")
-let tags_github = join(split(glob('$MY_GITHUB/tags.*'), "\n"), ",")
+let tags_github = join(split(glob('$MY_GITHUB/.tags.*'), "\n"), ",")
 execute 'set tags+=' . tags_env
 execute 'set tags+=' . tags_github
 "------------------------------------------------------

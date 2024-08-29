@@ -34,8 +34,8 @@ def f_conv_images(files, args):
                 img = cu.cv_cvt_dtype(img, args.dtype)
                 if args.normalize:
                     img = cu.cv_normalize_img(img, args.normalize_range[0], args.normalize_range[1])
-                img = cu.cv_mult_img(img, args.mult)
-                img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
+                # img = cu.cv_mult_img(img, args.mult)
+                # img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
                 if args.flip_x:
                     img = cu.cv_flip_x(img)
                 if args.crop_size != [0, 0]:
