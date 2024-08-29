@@ -467,6 +467,10 @@ def cv_create_se_stripe_img(shape, dtype, co0, co1, nelm):
 # =====================================================
 #
 # =====================================================
+def cv_flip_x(img):
+    return np.fliplr(img)
+
+
 def cv_normalize_img(img, min_val=0, max_val=0):
     if min_val == 0 and max_val == 0:
         min_val = img.min()
@@ -477,8 +481,8 @@ def cv_normalize_img(img, min_val=0, max_val=0):
 def cv_compare_img(img1, img2):
     sz_img1 = cv_size(img1)
     sz_img2 = cv_size(img2)
-    if sz_img1 != sz_img2:
-        raise ValueError(f"different image size: {sz_img1}, {sz_img2}")
+    # if sz_img1 != sz_img2:
+    #     raise ValueError(f"different image size: {sz_img1}, {sz_img2}")
 
     h, w, ch = sz_img1
     half_w = w // 2

@@ -14,6 +14,7 @@ Plug 'tomasr/molokai'
 "------------------------------------------------------
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'tikhomirov/vim-glsl'
+Plug 'phenyque/vim-pbrt'
 
 "------------------------------------------------------
 " display

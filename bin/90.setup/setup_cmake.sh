@@ -21,6 +21,7 @@ _f_cmake_set() {
     vs2017|vs2019|vs2022)
       export SYS_CMAKE_EXE=cmake.exe
       export MY_CMAKE_OPT="$MY_CMAKE_OPT -DCMAKE_INSTALL_PREFIX=$MY_OPT_WIN/usr/local"
+      export MY_CMAKE_OPT="$MY_CMAKE_OPT -DCMAKE_TOOLCHAIN_FILE=D:/vcpkg/scripts/buildsystems/vcpkg.cmake"
       export MY_BUILD_DIR=_build.$MY_BUILD_SYS
       ;;
     make|ninja)

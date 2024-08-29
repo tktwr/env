@@ -36,6 +36,8 @@ def f_conv_images(files, args):
                     img = cu.cv_normalize_img(img, args.normalize_range[0], args.normalize_range[1])
                 img = cu.cv_mult_img(img, args.mult)
                 img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
+                if args.flip_x:
+                    img = cu.cv_flip_x(img)
                 if args.crop_size != [0, 0]:
                     img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
 
@@ -91,6 +93,7 @@ examples:
     A('-Cp'   , '--crop_pos'        , help='set crop position'               , type=int            , nargs=2       , default=[0       , 0]       , )
     A('-Cs'   , '--crop_size'       , help='set crop size'                   , type=int            , nargs=2       , default=[0       , 0]       , )
     A('-T'    , '--thumbnail'       , help='set thumbnail size'              , type=int            , default=0     , )
+    A('-fx'   , '--flip_x'          , help='flip x'                          , action='store_true' , )
 
     return parser.parse_args()
 
