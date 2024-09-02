@@ -92,14 +92,6 @@ snippet s-while "while"
 while True:
     pass
 endsnippet
-#------------------------------------------------------
-snippet s-try "try"
-try:
-except FileNotFoundError as e:
-    print(f"FileNotFoundError: {e}")
-except Exception as e:
-    print(f"Exception: {e}")
-endsnippet
 #================================================================
 # class
 #================================================================
@@ -146,4 +138,44 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
+endsnippet
+#================================================================
+# io
+#================================================================
+snippet s-f_read_text_file "read a text file"
+def f_read_text_file(fname):
+    with open(fname, 'r') as f:
+        return f.readlines()
+endsnippet
+#----------------------------------------------------------------
+snippet s-f_write_text_file "write a text file"
+def f_write_text_file(fname, lines):
+    with open(fname, 'w') as f:
+        for i in lines:
+            f.write(i)
+endsnippet
+#----------------------------------------------------------------
+snippet s-f_read_json_file "read a json file"
+import json
+
+def f_read_json_file(fname):
+    with open(fname, 'r') as f:
+        return json.load(f)
+endsnippet
+#----------------------------------------------------------------
+snippet s-f_write_json_file "write a json file"
+import json
+
+def f_write_json_file(fname, data):
+    with open(fname, 'w') as f:
+        f.write(json.dumps(data, sort_keys=True, indent=4))
+        f.write('\n')
+endsnippet
+#------------------------------------------------------
+snippet s-try "try"
+try:
+except FileNotFoundError as e:
+    print(e)
+except Exception as e:
+    print(e)
 endsnippet
