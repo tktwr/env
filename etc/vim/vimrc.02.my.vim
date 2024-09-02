@@ -18,9 +18,9 @@ set tags+=$MY_MEMO/tags
 set tags+=$MY_LOCAL_CONFIG/memo/tags
 set tags+=$MY_DIARY/tags
 set tags+=$MY_SAMPLES/tags
-set tags+=$MY_REMOTE_CONFIG/libtt/tags.libtt
+set tags+=$MY_REMOTE_CONFIG/libtt/tags
 
-let tags_env    = join(split(glob('$MY_ENV/.tags.*'),   "\n"), ",")
+let tags_env    = join(split(glob('$MY_ENV/.tags.*')   , "\n"), ",")
 let tags_github = join(split(glob('$MY_GITHUB/.tags.*'), "\n"), ",")
 execute 'set tags+=' . tags_env
 execute 'set tags+=' . tags_github
