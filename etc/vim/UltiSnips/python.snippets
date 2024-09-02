@@ -129,15 +129,25 @@ endsnippet
 # main
 #================================================================
 snippet s-main "main"
-import sys
+import argparse
 
 
-def main(argv):
-    print(argv)
+# =====================================================
+def parse_args():
+    parser = argparse.ArgumentParser()
+    A = parser.add_argument
+
+    A('files' , nargs='+' , help='input files' , type=str , )
+    A('-s'    , '--str'   , help='set str'     , type=str , default='str' , )
+    A('-i'    , '--int'   , help='set int'     , type=int , default=1     , )
+
+    return parser.parse_args()
 
 
-if __name__ == "__main__":
-    main(sys.argv)
+# -----------------------------------------------------
+if __name__ == '__main__':
+    args = parse_args()
+    print(args)
 endsnippet
 #================================================================
 # io
