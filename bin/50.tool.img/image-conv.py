@@ -7,46 +7,55 @@ import tt_util as tu
 import cv_util as cu
 
 
-def f_conv_images(files, args):
-    dst_size = (args.width, args.height)
+def f_conv(ifname, args):
+    fname = tu.FileName(ifname)
+    if args.relative:
+        dirname = fname.dirname()
+    else:
+        dirname = ''
+    name = fname.name()
+    ofname = f"{args.output_dir}/{dirname}/{name}.{args.ext}"
+    if os.path.isfile(ofname) == True and not args.force:
+        print(f"file is already existed: {ofname}")
+        return
 
-    for ifname in files:
-        fname = tu.FileName(ifname)
-        name = fname.name()
-        ofname = f"{name}.{args.ext}"
-        if os.path.isfile(ofname) == True and not args.force:
-            print(f"file is already existed: {ofname}")
-            continue
+    img = cu.cv_load(ifname)
 
+    if args.srgb_to_linear:
+        img = cu.cv_srgb_to_linear(img)
+
+    if args.thumbnail > 0:
+        thmb_size = (args.thumbnail, args.thumbnail)
+        img = cu.cv_fit_img(img, thmb_size)
+        img = cu.cv_crop_img(img, (0, 0), thmb_size, True)
+    else:
+        dst_size = (args.width, args.height)
+        img = cu.cv_resize_img(img, dst_size)
+        img = cu.cv_cvt_channels(img, args.channels)
+        img = cu.cv_cvt_dtype(img, args.dtype)
+        if args.normalize:
+            img = cu.cv_normalize_img(img, args.normalize_range[0], args.normalize_range[1])
+        # img = cu.cv_mult_img(img, args.mult)
+        # img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
+        if args.flip_x:
+            img = cu.cv_flip_x(img)
+        if args.crop_size != [0, 0]:
+            img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
+
+    if args.linear_to_srgb:
+        img = cu.cv_linear_to_srgb(img)
+
+    cu.cv_save(ofname, img)
+
+
+def f_conv_all(args):
+    for fname in args.files:
         try:
-            img = cu.cv_load(ifname)
-
-            if args.srgb_to_linear:
-                img = cu.cv_srgb_to_linear(img)
-
-            if args.thumbnail > 0:
-                thmb_size = (args.thumbnail, args.thumbnail)
-                img = cu.cv_fit_img(img, thmb_size)
-                img = cu.cv_crop_img(img, (0, 0), thmb_size, True)
-            else:
-                img = cu.cv_resize_img(img, dst_size)
-                img = cu.cv_cvt_channels(img, args.channels)
-                img = cu.cv_cvt_dtype(img, args.dtype)
-                if args.normalize:
-                    img = cu.cv_normalize_img(img, args.normalize_range[0], args.normalize_range[1])
-                # img = cu.cv_mult_img(img, args.mult)
-                # img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
-                if args.flip_x:
-                    img = cu.cv_flip_x(img)
-                if args.crop_size != [0, 0]:
-                    img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
-
-            if args.linear_to_srgb:
-                img = cu.cv_linear_to_srgb(img)
-
-            cu.cv_save(ofname, img)
+            if os.path.isfile(fname) == False:
+                continue
+            f_conv(fname, args)
         except Exception as e:
-            print(f'fail to convert ... {ifname} {e}')
+            print(f'{e}: {fname}')
 
 
 # =====================================================
@@ -77,6 +86,8 @@ examples:
     A('-h'    , '--help'            , help="show this help message and exit" , action='help'       , )
     A('-v'    , '--verbose'         , help='show verbose message'            , action='store_true' , )
     A('-f'    , '--force'           , help='force to overwrite'              , action='store_true' , )
+    A('-R'    , '--relative'        , help='relative path'                   , action='store_true' , )
+    A('-o'    , '--output_dir'      , help='set output directory'            , type=str            , default='.'   , )
     A('-e'    , '--ext'             , help='set image ext'                   , type=str            , default='jpg' , )
     A('-W'    , '--width'           , help='set image width'                 , type=int            , default=0     , )
     A('-H'    , '--height'          , help='set image height'                , type=int            , default=0     , )
@@ -104,4 +115,4 @@ if __name__ == "__main__":
     if args.verbose:
         tu.print_args(args)
 
-    f_conv_images(args.files, args)
+    f_conv_all(args)

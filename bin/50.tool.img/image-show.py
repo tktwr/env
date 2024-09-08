@@ -1,17 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import cv2
+import os
 import argparse
-import cv_util as cu
 import tt_util as tu
+import cv_util as cu
+import cv2
 
 
-def img_show(fname, size):
+def f_show(fname, size):
     img = cu.cv_load(fname)
-
     oimg = cu.cv_fit_img(img, size)
-
     cv2.imshow(f"{fname}, {img.shape} {img.dtype}", oimg)
 
     key = cv2.waitKey()
@@ -19,6 +18,16 @@ def img_show(fname, size):
         fn = tu.FileName(fname)
         ofname = f"small_{fn.name()}.png"
         cu.cv_save(ofname, oimg)
+
+
+def f_show_all(args):
+    for fname in args.files:
+        try:
+            if os.path.isfile(fname) == False:
+                continue
+            f_show(fname, args.size)
+        except Exception as e:
+            print(f'{e}: {fname}')
 
 
 # =====================================================
@@ -38,7 +47,4 @@ def parse_args():
 # -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
-
-    for fname in args.files:
-        img_show(fname, args.size)
-
+    f_show_all(args)

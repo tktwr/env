@@ -338,7 +338,6 @@ def cv_info(fname):
     print(f"type(img) = {type(img)}")
     print(f"min       = {min}")
     print(f"max       = {max}")
-    print(f'---')
 
 
 def cv_pick(fname, x, y):
@@ -356,8 +355,9 @@ def cv_load(ifname):
     return cv2.imread(ifname, cv2.IMREAD_UNCHANGED)
 
 
-def cv_save(ifname, img):
-    fname = tu.FileName(ifname)
+def cv_save(ofname, img):
+    fname = tu.FileName(ofname)
+    odir = fname.dirname()
     ext = fname.ext()
 
     dst_dtype = ''
@@ -366,8 +366,9 @@ def cv_save(ifname, img):
 
     img = cv_cvt_dtype(img, dst_dtype)
 
-    print(f"cv_save: {ifname} {img.shape} {img.dtype}")
-    cv2.imwrite(ifname, img)
+    print(f"cv_save: {ofname} {img.shape} {img.dtype}")
+    os.makedirs(odir, exist_ok=True)
+    cv2.imwrite(ofname, img)
 
 
 # =====================================================
