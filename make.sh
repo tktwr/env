@@ -31,16 +31,17 @@ $MY_VIM_PLUGGED_DIR/vim-ide-style \
 #======================================================
 # functions
 #======================================================
-f_10_git_status()  { for-dir.sh "git.sh status -s"    $GIT_DIRS; }
-f_11_git_graph()   { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
-f_12_git_fetch()   { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
-f_13_git_pull()    { for-dir.sh "git.sh pull"         $GIT_DIRS; }
+f_10_git_status()   { for-dir.sh "git.sh status -s"    $GIT_DIRS; }
+f_11_git_graph()    { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
+f_12_git_fetch()    { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
+f_13_git_pull()     { for-dir.sh "git.sh pull"         $GIT_DIRS; }
 
-f_20_git_tar()     { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
-f_21_git_tar_wip() { tar czvf wip.tar.gz $(git.sh diff --name-only); }
+f_20_git_tar()      { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
+f_21_git_wip_diff() { git-wip-diff.sh; }
+f_22_git_wip_tar()  { git-wip-tar.sh; }
 
-f_30_cpp_build()   { for-dir.sh "make all"            $BUILD_DIRS; }
-f_31_cpp_clean()   { for-dir.sh "make all.clean"      $BUILD_DIRS; }
+f_30_cpp_build()    { for-dir.sh "make all"            $BUILD_DIRS; }
+f_31_cpp_clean()    { for-dir.sh "make all.clean"      $BUILD_DIRS; }
 
 f_tags() {
   ctags -o .tags.bin_sh -R bin/*.sh bin/*/*.sh
