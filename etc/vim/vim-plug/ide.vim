@@ -55,7 +55,6 @@ let g:my_rg_dirs = [
   \ '$MY_ENV',
   \ '$MY_COMMON_SETTING',
   \ '$MY_VIM_PLUGGED_DIR/vim-ide-style',
-  \ '$MY_VIM_PLUGGED_DIR/vim-memo',
   \ ]
 let g:wbl_max = 10
 let g:bmk_winwidth = g:my_left_winwidth
@@ -66,14 +65,3 @@ let g:bmk_open_file_prog = "open_file.sh"
 let g:vis_memo_bmk_file = '$MY_DOTMY/tags.bmk'
 
 Plug 'tktwr/vim-ide-style'
-"------------------------------------------------------
-" vim-memo
-"------------------------------------------------------
-let g:memo_tags_files = [
-  \ "$MY_MEMO/tags",
-  \ "$MY_SAMPLES/tags",
-  \ "$MY_DIARY/tags",
-  \ "$MY_LOCAL_CONFIG/memo/tags",
-  \ ]
-
-Plug 'tktwr/vim-memo'
