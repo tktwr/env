@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import argparse
-import tt_path_util as ttp
+import tt_util as tu
 
 
 def parse_args():
@@ -42,5 +42,5 @@ if __name__ == "__main__":
     prefix = args.prefix
     fname  = ' '.join(args.files)
 
-    p = eval(f"ttp.path_{otype}('{fname}', '{prefix}')")
+    p = eval(f"tu.path_{otype}('{fname}', '{prefix}')")
     print(p)

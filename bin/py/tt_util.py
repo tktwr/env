@@ -3,12 +3,67 @@
 
 import os
 import sys
+import re
 import time
 import subprocess
 import json
 import argparse
 import numpy as np
+import shutil
 
+
+# -----------------------------------------------------
+# exists
+# -----------------------------------------------------
+def sh_isfile(fname):
+    return os.path.isfile(fname)
+
+def sh_isdir(dirname):
+    return os.path.isdir(dirname)
+
+def sh_exists(fname):
+    return os.path.exists(fname)
+
+# -----------------------------------------------------
+# file
+# -----------------------------------------------------
+def sh_touch(ofname):
+    with open(ofname, 'w') as f:
+        f.write('')
+
+def sh_rm(fname):
+    os.remove(fname)
+
+def sh_cp(src_file, dst_file):
+    shutil.copy(src_file, dst_file)
+
+def sh_mv(src_file, dst_file):
+    shutil.move(src_file, dst_file)
+
+# -----------------------------------------------------
+# dir
+# -----------------------------------------------------
+def sh_getcwd():
+    return os.getcwd()
+
+def sh_chdir(dirname):
+    os.chdir(dirname)
+
+def sh_ls(dirname='.'):
+    print(os.listdir(dirname))
+
+def sh_mkdir(dirname, exist_ok=True):
+    #os.mkdir(dirname)
+    os.makedirs(dirname, exist_ok=exist_ok)
+
+def sh_rmdir(dirname, ignore_errors=True):
+    shutil.rmtree(dirname, ignore_errors=ignore_errors)
+
+def sh_cpdir(src_dir, dst_dir):
+    shutil.copytree(src_dir, dst_dir)
+
+def sh_mvdir(src_dir, dst_dir):
+    shutil.move(src_dir, dst_dir)
 
 # -----------------------------------------------------
 # log
@@ -103,6 +158,16 @@ class MyHelpFormatter(argparse.RawDescriptionHelpFormatter,
 # -----------------------------------------------------
 # file name
 # -----------------------------------------------------
+def expand_env(s):
+    r = re.search(r'\$\w+', s)
+    if r is not None:
+        matched = r.group()
+        env_var = matched[1:]
+        if os.getenv(env_var) is not None:
+            s = s.replace(matched, os.environ[env_var])
+    return s
+
+
 class FileName():
     def __init__(self, orig_path):
         self._orig_path = orig_path
@@ -112,8 +177,12 @@ class FileName():
     def origname(self):
         return self._orig_path
 
-    def dirname(self):
-        return self._dirname
+    def dirname(self, expand=False):
+        path = self._dirname
+        if expand:
+            path = os.path.expanduser(path)
+            path = os.path.abspath(path)
+        return path
 
     def filename(self):
         return self._filename
@@ -127,6 +196,43 @@ class FileName():
         return ext
 
 
+# -----------------------------------------------------
+# path
+# -----------------------------------------------------
+def drive_unix(match):
+    return f'/{match.group(1).lower()}'
+
+
+def drive_windows(match):
+    return f'{match.group(1).upper()}:/'
+
+
+def path_unix(fname, prefix='', realpath=True):
+    fname = fname.replace('\\', '/')
+    fname = re.sub(f'^{prefix}', '', fname)
+    fname = re.sub(f'^([c-zC-Z]):', drive_unix, fname)
+    fname = re.sub(f'^(/[c-z]/)', f'{prefix}\\1', fname)
+    if realpath and os.path.islink(fname):
+        fname = os.path.realpath(fname)
+    return fname
+
+
+def path_mixed(fname, prefix='', realpath=True):
+    fname = re.sub(f'^{prefix}', '', fname)
+    fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
+    fname = fname.replace('\\', '/')
+    if realpath and os.path.islink(fname):
+        fname = os.path.realpath(fname)
+    return fname
+
+
+def path_windows(fname, prefix='', realpath=True):
+    fname = re.sub(f'^{prefix}', '', fname)
+    fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
+    fname = fname.replace('/', '\\')
+    if realpath and os.path.islink(fname):
+        fname = os.path.realpath(fname)
+    return fname
 # -----------------------------------------------------
 # image size
 # -----------------------------------------------------

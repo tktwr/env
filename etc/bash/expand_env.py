@@ -6,7 +6,7 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../bin/py'))
 import re
 import argparse
-import tt_path_util as ttp
+import tt_util as tu
 
 
 def f_expand_env(fname, args):
@@ -26,11 +26,11 @@ def f_expand_env(fname, args):
                 # expand env except MY_XXX
                 r = re.search(r'^\$MY_', dir_name)
                 if r is None:
-                    dir_name = ttp.expand_env(dir_name)
+                    dir_name = tu.expand_env(dir_name)
 
-                dir_name = ttp.path_unix(dir_name, args.prefix)
+                dir_name = tu.path_unix(dir_name, args.prefix)
                 dir_name_win = re.sub(r'(\$\w+)', r'\1_WIN', dir_name)
-                dir_name_win = ttp.path_mixed(dir_name_win, args.prefix)
+                dir_name_win = tu.path_mixed(dir_name_win, args.prefix)
 
                 print(f'export {env_name}="{dir_name}"')
                 print(f'export {env_name}_WIN="{dir_name_win}"')

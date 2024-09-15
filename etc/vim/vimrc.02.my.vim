@@ -18,6 +18,7 @@ set tags+=$MY_MEMO/tags
 set tags+=$MY_LOCAL_CONFIG/memo/tags
 set tags+=$MY_DIARY/tags
 set tags+=$MY_SAMPLES/tags
+set tags+=$MY_SAMPLES/tags.memo
 set tags+=$MY_REMOTE_CONFIG/libtt/tags
 
 let tags_env    = join(split(glob('$MY_ENV/.tags.*')   , "\n"), ",")
