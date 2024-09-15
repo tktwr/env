@@ -158,7 +158,7 @@ class MyHelpFormatter(argparse.RawDescriptionHelpFormatter,
 # -----------------------------------------------------
 # file name
 # -----------------------------------------------------
-def expand_env(s):
+def expand_env_old(s):
     r = re.search(r'\$\w+', s)
     if r is not None:
         matched = r.group()
@@ -166,6 +166,12 @@ def expand_env(s):
         if os.getenv(env_var) is not None:
             s = s.replace(matched, os.environ[env_var])
     return s
+
+
+def expand_env(path):
+    path = os.path.expanduser(path)
+    path = os.path.expandvars(path)
+    return path
 
 
 class FileName():
@@ -177,10 +183,13 @@ class FileName():
     def origname(self):
         return self._orig_path
 
-    def dirname(self, expand=False):
+    def dirname(self, expand=False, realpath=False):
         path = self._dirname
         if expand:
             path = os.path.expanduser(path)
+            path = os.path.expandvars(path)
+        if realpath:
+            path = os.path.realpath(path)
             path = os.path.abspath(path)
         return path
 
