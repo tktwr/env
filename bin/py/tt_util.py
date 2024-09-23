@@ -4,6 +4,7 @@
 import os
 import sys
 import re
+import glob
 import time
 import subprocess
 import json
@@ -43,14 +44,17 @@ def sh_mv(src_file, dst_file):
 # -----------------------------------------------------
 # dir
 # -----------------------------------------------------
+def sh_ls(dirname='.'):
+    print(os.listdir(dirname))
+
+def sh_glob(pattern):
+    return glob.glob(pattern)
+
 def sh_getcwd():
     return os.getcwd()
 
 def sh_chdir(dirname):
     os.chdir(dirname)
-
-def sh_ls(dirname='.'):
-    print(os.listdir(dirname))
 
 def sh_mkdir(dirname, exist_ok=True):
     #os.mkdir(dirname)
@@ -147,12 +151,19 @@ def tile_fill(nelm, nx, ny):
 
 
 # -----------------------------------------------------
-# MyHelpFormatter
+# argparse
 # -----------------------------------------------------
 class MyHelpFormatter(argparse.RawDescriptionHelpFormatter,
                       argparse.ArgumentDefaultsHelpFormatter,
                       argparse.MetavarTypeHelpFormatter):
     pass
+
+
+def parser(desc):
+    parser = argparse.ArgumentParser(
+        formatter_class=MyHelpFormatter,
+        description=desc)
+    return parser
 
 
 # -----------------------------------------------------
