@@ -9,14 +9,14 @@ function f_get_time()       { env LC_TIME=C date '+%H%M%S'; }
 function f_get_git_branch() { git rev-parse --abbrev-ref HEAD 2>/dev/null; }
 function f_get_git_commit() { git rev-parse --short HEAD 2>/dev/null; }
 
-function f_get_dirname()  { echo $(dirname $1); }
+function f_get_dirname()  { echo $(dirname "$1"); }
 function f_get_dirname2() { echo ${1%/*}; }
 function f_get_fname()    { echo ${1##*/}; }
-function f_get_fname2()   { echo $(basename $1); }
+function f_get_fname2()   { echo $(basename "$1"); }
 
 function f_get_name() {
-  local fname=`f_get_fname $1`
-  case $fname in
+  local fname=`f_get_fname "$1"`
+  case "$fname" in
     *.tar.gz)
       fname=${fname%.*}
       fname=${fname%.*}
@@ -25,13 +25,13 @@ function f_get_name() {
       fname=${fname%.*}
       ;;
   esac
-  echo $fname
+  echo "$fname"
 }
 
 function f_get_ext() {
-  local fname=`f_get_fname $1`
+  local fname=`f_get_fname "$1"`
   local ext=""
-  case $fname in
+  case "$fname" in
     *.tar.gz)
       ext="tar.gz"
       ;;
@@ -39,10 +39,10 @@ function f_get_ext() {
       ext=${fname##*.}
       ;;
   esac
-  if [ $ext = $fname ]; then
+  if [ "$ext" = "$fname" ]; then
     echo
   else
-    echo .$ext
+    echo ".$ext"
   fi
 }
 

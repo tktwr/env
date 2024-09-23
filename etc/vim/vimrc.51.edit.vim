@@ -88,16 +88,15 @@ func! R_RemoveSpaces() range
 endfunc
 
 func! R_FormatDict() range
-  exec printf('%d,%ds/ //g', a:firstline, a:lastline)
-  Tabularize /=dict
-  Tabularize /|dict
-  Tabularize /,
+  exec printf('%d,%ds/ *, */, /g', a:firstline, a:lastline)
+  Tabularize /=
+  for i in range(5)
+    Tabularize /|
+    Tabularize /;
+  endfor
 endfunc
 
 func! R_FormatLine() range
-  exec printf('%d,%ds/ //g', a:firstline, a:lastline)
-  Tabularize /=
-  Tabularize /;
 endfunc
 
 "------------------------------------------------------
