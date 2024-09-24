@@ -159,10 +159,11 @@ class MyHelpFormatter(argparse.RawDescriptionHelpFormatter,
     pass
 
 
-def parser(desc):
+def parser(desc, epilog=''):
     parser = argparse.ArgumentParser(
         formatter_class=MyHelpFormatter,
-        description=desc)
+        description=desc,
+        epilog=epilog)
     return parser
 
 

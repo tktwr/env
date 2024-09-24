@@ -1,20 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import argparse
 import tt_util as tu
 import pil_util as pu
 
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(description='create an image')
-
+    parser = tu.parser('create an image')
     A = parser.add_argument
 
+    A('-v' , '--verbose' , help='show verbose message' , action='store_true' , )
     A('-i' , '--input'   , help='set input filename'   , type=str            , default="input.png"    , )
     A('-o' , '--output'  , help='set output filename'  , type=str            , default="output.png"   , )
-    A('-v' , '--verbose' , help='show verbose message' , action='store_true' , )
     A('-a' , '--action'  , help='set action'           , type=str            , default="create_color" , choices=['create_color' , 'create_nml' , 'create_metalroughness' , 'query' , 'info'] , )
     A('-s' , '--size'    , help='set image size'       , nargs='+'           , type=int               , default=[256            , 256]         , )
     A('-p' , '--pos'     , help='set position'         , nargs='+'           , type=int               , default=[0              , 0]           , )

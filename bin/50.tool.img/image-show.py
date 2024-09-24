@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import argparse
 import tt_util as tu
 import cv_util as cu
 import cv2
@@ -32,10 +31,7 @@ def f_show_all(args):
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='show images')
-
+    parser = tu.parser('show images')
     A = parser.add_argument
 
     A('files' , nargs='+' , help='input files'      , type=str , )

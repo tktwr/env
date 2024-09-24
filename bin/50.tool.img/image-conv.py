@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import argparse
 import tt_util as tu
 import cv_util as cu
 
@@ -60,12 +59,10 @@ def f_conv_all(args):
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='convert images',
+    parser = tu.parser(
+        desc='convert images',
         epilog='''
 examples:
-
   same size as each input
       image-conv.py -e jpg a.png b.png...
 
@@ -77,13 +74,11 @@ examples:
 
   fixed width and height
       image-conv.py -e jpg -w 200 -h 100 a.png b.png...
-        ''',
-        add_help=False)
+        ''')
 
     A = parser.add_argument
 
     A('files' , nargs='+'           , help='input files'                     , type=str            , )
-    A('-h'    , '--help'            , help="show this help message and exit" , action='help'       , )
     A('-v'    , '--verbose'         , help='show verbose message'            , action='store_true' , )
     A('-f'    , '--force'           , help='force to overwrite'              , action='store_true' , )
     A('-R'    , '--relative'        , help='relative path'                   , action='store_true' , )

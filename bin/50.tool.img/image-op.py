@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import argparse
 import tt_util as tu
 import cv_util as cu
 
@@ -52,10 +51,7 @@ def f_imgf_compare(ofname, ifname1, ifname2):
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='operate images')
-
+    parser = tu.parser('operate images')
     A = parser.add_argument
 
     A('files' , nargs='+'   , help='input files'          , type=str            , )

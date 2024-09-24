@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import argparse
 import numpy as np
 import tt_util as tu
 import cv_util as cu
@@ -78,15 +77,10 @@ def save_tiles(args):
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='tiling images',
-        add_help=False)
-
+    parser = tu.parser('tiling images')
     A = parser.add_argument
 
     A('files' , nargs='+'           , help='input files'                     , type=str            , )
-    A('-h'    , '--help'            , help="show this help message and exit" , action='help'       , )
     A('-o'    , '--output'          , help="set output file name"            , type=str            , default='tile_%02d.jpg' , )
     A('-max'  , '--max'             , help="set max per page"                , type=int            , default=0               , )
     A('-nx'   , '--nx'              , help="set nx"                          , type=int            , default=0               , )

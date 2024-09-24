@@ -1,17 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import argparse
 import tt_util as tu
 import cv_util as cu
 
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='create an image')
-
+    parser = tu.parser('create an image')
     A = parser.add_argument
 
     A('-o'  , '--output'   , help='set output file name'    , type=str   , default='output.png' , )

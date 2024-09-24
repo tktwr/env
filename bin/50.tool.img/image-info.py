@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import argparse
 import tt_util as tu
 import cv_util as cu
 
@@ -35,10 +34,7 @@ def f_info_all(args):
 
 # =====================================================
 def parse_args():
-    parser = argparse.ArgumentParser(
-        formatter_class=tu.MyHelpFormatter,
-        description='print information of images')
-
+    parser = tu.parser('print information of images')
     A = parser.add_argument
 
     A('files' , nargs='+'   , help='input files'          , type=str            , )
