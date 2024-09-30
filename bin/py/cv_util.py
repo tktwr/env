@@ -367,7 +367,8 @@ def cv_save(ofname, img):
     img = cv_cvt_dtype(img, dst_dtype)
 
     print(f"cv_save: {ofname} {img.shape} {img.dtype}")
-    os.makedirs(odir, exist_ok=True)
+    if odir != '':
+        os.makedirs(odir, exist_ok=True)
     cv2.imwrite(ofname, img)
 
 

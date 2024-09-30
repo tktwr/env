@@ -11,13 +11,7 @@ syn clear
 " syntax is case sensitive
 syn case match
 
-syn match    myComment          "#.*$"
-syn region   myComment          start="/\*" end="\*/"
 syn region   myDetails          start=+<details>+ end=+</details>+
-
-syn match    mySection1         "^# "
-syn match    mySection2         "^## "
-syn match    mySection3         "^### "
 
 syn match    myItem             "^\s*[-+*] "
 syn match    myCitation         "^\s*>.*$"
@@ -90,6 +84,13 @@ else
   syn match myHyperTextEntry    "\*[#-)!+-~]\+\*\s"he=e-1
   syn match myHyperTextEntry    "\*[#-)!+-~]\+\*$"
 endif
+
+syn match    myComment          "#.*$"
+syn region   myComment          start="/\*" end="\*/"
+
+syn match    mySection1         "^# "
+syn match    mySection2         "^## "
+syn match    mySection3         "^### "
 
 "------------------------------------------------------
 " highlight
