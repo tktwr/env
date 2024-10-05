@@ -53,6 +53,12 @@ def cv_cvt_dtype(img, dst_dtype):
     return np.clip(img / smax * dmax, 0, dmax).astype(dst_dtype)
 
 
+def img_u8_to_f32(img):
+    return (img / 255.0).astype('float32')
+
+def img_f32_to_u8(img):
+    return np.clip(img * 255, 0, 255).astype('uint8')
+
 # -----------------------------------------------------
 # convert channel
 # -----------------------------------------------------
@@ -472,6 +478,8 @@ def cv_create_se_stripe_img(shape, dtype, co0, co1, nelm):
 def cv_flip_x(img):
     return np.fliplr(img)
 
+def cv_flip_y(img):
+    return np.flipud(img)
 
 def cv_normalize_img(img, min_val=0, max_val=0):
     if min_val == 0 and max_val == 0:
