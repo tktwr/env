@@ -44,7 +44,7 @@ nnoremap ,,      :VisFzfWinbuf<CR>
 nnoremap ,b      :FzfBuffers<CR>
 nnoremap ,f      :VisFzfFd<CR>
 nnoremap ,r      :VisFzfRg<CR>
-nnoremap ,t      :VisFzfTags <cfile><CR>
+nnoremap ,t      :VisFzfTags<CR>
 
 nmap ,s          <Plug>(easymotion-overwin-f2)
 nmap ,j          <Plug>(easymotion-j)
@@ -93,7 +93,7 @@ vmap ,k          <Plug>(easymotion-k)
 
  nnoremap <silent> <C-]>   g<C-]>
 "nnoremap <silent> <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
-"nnoremap <silent> <C-]>   :VisFzfTags <cfile><CR>
+"nnoremap <silent> <C-]>   :VisFzfTags <cword><CR>
 "------------------------------------------------------
 " tmap
 "------------------------------------------------------

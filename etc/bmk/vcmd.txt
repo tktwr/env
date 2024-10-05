@@ -6,6 +6,7 @@
 - ,rga         | Rg <cfile> all                 | :VisFzfRgAll <cfile>
 - ,rgc         | Rg <cfile> %                   | :VisFzfRgCur <cfile>
 - ,tg          | Tags                           | :VisFzfTags
+- ,tgw         | Tags <cword>                   | :VisFzfTags <cword>
 - ,tgf         | Tags <cfile>                   | :VisFzfTags <cfile>
 -----          | ------------------------------ | ------------------------------
 - ,memo        | Memo                           | :VisFzfTags memo:
