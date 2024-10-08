@@ -41,6 +41,14 @@ def cv_color(col, dst_dtype):
     return (np.array(col) * dmax).astype(dst_dtype)
 
 
+def ext_to_dtype(ext):
+    e2d = {
+        '.png': 'uint8',
+        '.jpg': 'uint8',
+    }
+    return e2d[ext]
+
+
 def cv_cvt_dtype(img, dst_dtype):
     if dst_dtype not in ('uint8', 'uint16', 'float32', 'float64'):
         return img
@@ -58,6 +66,12 @@ def img_u8_to_f32(img):
 
 def img_f32_to_u8(img):
     return np.clip(img * 255, 0, 255).astype('uint8')
+
+def cv_img_bgr2lab(img):
+    return cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
+
+def cv_img_lab2bgr(img):
+    return cv2.cvtColor(img, cv2.COLOR_LAB2BGR)
 
 # -----------------------------------------------------
 # convert channel
@@ -358,18 +372,17 @@ def cv_resize(ifname, ofname, dst_size):
 
 
 def cv_load(ifname):
+    ifname = tu.expand_env(ifname)
     return cv2.imread(ifname, cv2.IMREAD_UNCHANGED)
 
 
 def cv_save(ofname, img):
-    fname = tu.FileName(ofname)
-    odir = fname.dirname()
-    ext = fname.ext()
+    ofname = tu.expand_env(ofname)
+    FN = tu.FileName(ofname)
+    odir = FN.dirname()
+    ext = FN.ext()
 
-    dst_dtype = ''
-    if ext in ('.png', '.jpg'):
-        dst_dtype = 'uint8'
-
+    dst_dtype = ext_to_dtype(ext)
     img = cv_cvt_dtype(img, dst_dtype)
 
     print(f"cv_save: {ofname} {img.shape} {img.dtype}")

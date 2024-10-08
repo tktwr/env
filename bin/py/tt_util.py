@@ -283,8 +283,14 @@ def fix_size(src_wh: tuple[int, int], dst_wh: tuple[int, int]):
         return (w, h)
 
 
-# compute the maximized size
 def fit_size(src_wh, max_wh):
+    '''
+    Compute the maximized size
+
+    Args:
+        src_wh: source size
+        max_wh: maximum size
+    '''
     w, h = src_wh
     w_max, h_max = max_wh
 
