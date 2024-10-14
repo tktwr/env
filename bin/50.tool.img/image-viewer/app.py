@@ -188,7 +188,7 @@ class App():
     # image operation command
     #------------------------------------------------------
     def cmd_new(self, shape, dtype, val):
-        img = cu.cv_create_img(shape, dtype, val)
+        img = cu.img_create(shape, dtype, val)
         self.append_img(img, "new")
 
     def cmd_channel(self, ch, nr=-1):
@@ -225,7 +225,7 @@ class App():
 
     def cmd_brightness_contrast(self, brightness, contrast, nr=-1):
         I = self.get_I(nr)
-        oimg = cu.cv_brightness_contrast_img(I.img, brightness, contrast)
+        oimg = cu.img_brightness_contrast(I.img, brightness, contrast)
         self.append_img(oimg, f'brightness_contrast_{I.fname}')
 
     #------------------------------------------------------

@@ -14,8 +14,8 @@ class ImagePkg():
             self.load(fname)
         else:
             w, h = (500, 500)
-            col = cu.cv_color((0.5, 0.5, 0.5), 'uint8')
-            img = cu.cv_create_img((h, w, 3), 'uint8', col)
+            col = cu.color_cvt_dtype((0.5, 0.5, 0.5), 'uint8')
+            img = cu.img_create((h, w, 3), 'uint8', col)
             self.set_img(img, 'default')
             self.make_disp_img((w, h))
 
@@ -41,11 +41,11 @@ class ImagePkg():
             return self.crop_img
 
     def load(self, fname):
-        img = cu.cv_load(fname)
+        img = cu.imgfile_load(fname)
         self.set_img(img, fname)
 
     def save(self, fname):
-        cu.cv_save(fname, self.img)
+        cu.imgfile_save(fname, self.img)
 
     def pick_xy(self, xy):
         x, y = xy
@@ -66,7 +66,7 @@ class ImagePkg():
         return (float(x)/(w-1), float(y)/(h-1))
 
     def make_disp_img(self, max_wh):
-        self.disp_img = cu.cv_fit_img(self.img, max_wh)
+        self.disp_img = cu.img_fit(self.img, max_wh)
         return self.disp_img
 
     def make_crop_xy_img(self, xy, wh):
@@ -75,7 +75,7 @@ class ImagePkg():
         p2 = (center[0] + 5, center[1] + 5)
         color = (0, 0, 255)
 
-        oimg = cu.cv_crop_center_img(self.img, xy, wh)
+        oimg = cu.img_crop_center(self.img, xy, wh)
         oimg = cv2.rectangle(oimg, p1, p2, color, 1)
         self.crop_img = oimg
         return self.crop_img

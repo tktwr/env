@@ -8,8 +8,8 @@ from PIL import Image, ImageTk
 
 
 def cvimg_to_imgtk(img):
-    img = cu.cv_cvt_channels(img, 3)
-    img = cu.cv_cvt_dtype(img, 'uint8')
+    img = cu.img_cvt_channels(img, 3)
+    img = cu.img_cvt_dtype(img, 'uint8')
     img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img_pil = Image.fromarray(img_rgb)
     img_tk  = ImageTk.PhotoImage(img_pil)
