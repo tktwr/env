@@ -52,6 +52,13 @@ def img_size(img):
     return (h, w, ch)
 
 
+def img_reshape_3d(img):
+    if len(img.shape) > 2:
+        return img
+    h, w = img.shape
+    return img.reshape([h, w, 1])
+
+
 def img_channel(img, ch):
     return img[:, :, ch]
 
@@ -114,13 +121,6 @@ def img_cvt_channels(img, dst_ch):
         return cv2.merge(img_list)
 
     return img
-
-
-def img_reshape_3d(img):
-    if len(img.shape) > 2:
-        return img
-    h, w = img.shape
-    return img.reshape([h, w, 1])
 
 
 # -----------------------------------------------------
