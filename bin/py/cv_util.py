@@ -153,11 +153,49 @@ def img_hsv_to_bgr(img):
     return cv2.cvtColor(img, cv2.COLOR_HSV2BGR_FULL)
 
 # -----------------------------------------------------
+def img_bgr_to_gray(img):
+    return cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+def img_gray_to_bgr(img):
+    return cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
+
+# -----------------------------------------------------
 def img_linear_to_srgb(img):
     return np.power(img, 1.0 / 2.2)
 
 def img_srgb_to_linear(img):
     return np.power(img, 2.2)
+
+# -----------------------------------------------------
+# cmap
+# -----------------------------------------------------
+import matplotlib.pyplot as plt
+
+
+def cmap_list(cmap_name='viridis', n_colors=256):
+    cmap = plt.get_cmap(cmap_name)
+    rgb = cmap(np.linspace(0, 1, n_colors))
+    bgr = rgb[:, [2, 1, 0, 3]]
+    return bgr
+
+
+def img_cmap_lut(img):
+    color_list = cmap_list()
+    n_colors = len(color_list)
+    img = np.clip(img, 0, 1)
+    scaled_value = img * (n_colors - 1)
+
+    lo = np.floor(scaled_value).astype(int)
+    up = np.ceil(scaled_value).astype(int)
+
+    exact_matches = (lo == up)
+
+    lo_color = color_list[lo]
+    up_color = color_list[up]
+    t = scaled_value - lo
+
+    return np.where(exact_matches[..., None], lo_color, (1 - t[..., None]) * lo_color + t[..., None] * up_color)
+
 
 # -----------------------------------------------------
 # convert pixel value
@@ -169,11 +207,19 @@ def img_mult(img, val):
     return img_cvt_dtype(img, dtype)
 
 
-def img_diff(img1, img2):
+def img_diff(img1, img2, scale=1.0):
     dtype = img1.dtype
+    h, w, ch = img_size(img1)
+    if ch == 3:
+        img1 = img_bgr_to_gray(img1)
+        img2 = img_bgr_to_gray(img2)
     img1 = img_cvt_dtype(img1, 'float32')
     img2 = img_cvt_dtype(img2, 'float32')
     oimg = np.abs(img1 - img2)
+    min_val = oimg.min()
+    max_val = oimg.max()
+    print(f'img_diff: min_val, max_val: {min_val:.3f} {max_val:.3f}')
+    oimg = img_cmap_lut(oimg * scale)
     oimg = img_cvt_dtype(oimg, dtype)
     return img_cvt_channels(oimg, 3)
 

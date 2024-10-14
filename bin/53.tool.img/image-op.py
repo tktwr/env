@@ -6,7 +6,7 @@ import cv_util as cu
 
 
 # =====================================================
-def f_imgf_split(ifname):
+def f_imgfile_split(ifname):
     fname = tu.FileName(ifname)
     name = fname.name()
     ext = fname.ext()
@@ -23,7 +23,7 @@ def f_imgf_split(ifname):
 
 
 # -----------------------------------------------------
-def f_imgf_merge(ofname, ifnames):
+def f_imgfile_merge(ofname, ifnames):
     img_list = []
     for i in ifnames:
         img = cu.imgfile_load(i)
@@ -34,15 +34,15 @@ def f_imgf_merge(ofname, ifnames):
 
 
 # -----------------------------------------------------
-def f_imgf_diff(ofname, ifname1, ifname2):
+def f_imgfile_diff(ofname, ifname1, ifname2, scale):
     img1 = cu.imgfile_load(ifname1)
     img2 = cu.imgfile_load(ifname2)
-    oimg = cu.img_diff(img1, img2)
+    oimg = cu.img_diff(img1, img2, scale)
     cu.imgfile_save(ofname, oimg)
 
 
 # -----------------------------------------------------
-def f_imgf_compare(ofname, ifname1, ifname2):
+def f_imgfile_compare(ofname, ifname1, ifname2):
     img1 = cu.imgfile_load(ifname1)
     img2 = cu.imgfile_load(ifname2)
     oimg = cu.img_compare(img1, img2)
@@ -60,6 +60,7 @@ def parse_args():
     A('-m'    , '--merge'   , help='merge'                , action='store_true' , )
     A('-d'    , '--diff'    , help='diff'                 , action='store_true' , )
     A('-c'    , '--compare' , help='compare'              , action='store_true' , )
+    A('-sc'   , '--scale'   , help='set scale'            , type=float          , default=1.0          , )
 
     return parser.parse_args()
 
@@ -69,11 +70,11 @@ if __name__ == "__main__":
     args = parse_args()
 
     if args.split:
-        f_imgf_split(args.files[0])
+        f_imgfile_split(args.files[0])
     elif args.merge:
-        f_imgf_merge(args.output, args.files)
+        f_imgfile_merge(args.output, args.files)
     elif args.diff:
-        f_imgf_diff(args.output, args.files[0], args.files[1])
+        f_imgfile_diff(args.output, args.files[0], args.files[1], args.scale)
     elif args.compare:
-        f_imgf_compare(args.output, args.files[0], args.files[1])
+        f_imgfile_compare(args.output, args.files[0], args.files[1])
 
