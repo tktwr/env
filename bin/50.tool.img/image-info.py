@@ -8,15 +8,15 @@ import cv_util as cu
 
 def f_info_pick(fname, xy):
     x, y = xy
-    val = cu.cv_pick(fname, x, y)
+    val = cu.imgfile_pick(fname, x, y)
     print(f'{fname} {xy} {val}')
 
 
 def f_info(fname, args):
     if args.verbose:
-        cu.cv_info(fname)
+        cu.imgfile_info(fname)
     else:
-        cu.cv_info_short(fname)
+        cu.imgfile_info_short(fname)
 
 
 def f_info_all(args):

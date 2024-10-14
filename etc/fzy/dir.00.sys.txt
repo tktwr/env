@@ -37,8 +37,7 @@ app-user-python-roaming | USER_PYTHON_ROAMING  | $SYS_WIN_HOME/AppData/Roaming/P
 app-blender-addons      | BLENDER_ADDONS_DIR   | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
 app-blender33-addons    | BLENDER33_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 app-blender36-addons    | BLENDER36_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
-app-blender40-addons    | BLENDER40_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/4.0/scripts/addons
-app-blender41-addons    | BLENDER41_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/4.1/scripts/addons
+app-blender42-addons    | BLENDER42_ADDONS_DIR | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/4.2/scripts/addons
 app-vscode              | APP_VSCODE           | $SYS_WIN_HOME/AppData/Roaming/Code/User
 
 # vim:set nowrap:

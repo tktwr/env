@@ -18,33 +18,33 @@ def f_conv(ifname, args):
         print(f"file is already existed: {ofname}")
         return
 
-    img = cu.cv_load(ifname)
+    img = cu.imgfile_load(ifname)
 
     if args.srgb_to_linear:
-        img = cu.cv_srgb_to_linear(img)
+        img = cu.img_srgb_to_linear(img)
 
     if args.thumbnail > 0:
         thmb_size = (args.thumbnail, args.thumbnail)
-        img = cu.cv_fit_img(img, thmb_size)
-        img = cu.cv_crop_img(img, (0, 0), thmb_size, True)
+        img = cu.img_fit(img, thmb_size)
+        img = cu.img_crop(img, (0, 0), thmb_size, True)
     else:
         dst_size = (args.width, args.height)
-        img = cu.cv_resize_img(img, dst_size)
-        img = cu.cv_cvt_channels(img, args.channels)
-        img = cu.cv_cvt_dtype(img, args.dtype)
+        img = cu.img_resize(img, dst_size)
+        img = cu.img_cvt_channels(img, args.channels)
+        img = cu.img_cvt_dtype(img, args.dtype)
         if args.normalize:
-            img = cu.cv_normalize_img(img, args.normalize_range[0], args.normalize_range[1])
-        # img = cu.cv_mult_img(img, args.mult)
-        # img = cu.cv_brightness_contrast_img(img, args.brightness, args.contrast)
+            img = cu.img_normalize(img, args.normalize_range[0], args.normalize_range[1])
+        # img = cu.img_mult(img, args.mult)
+        # img = cu.img_brightness_contrast(img, args.brightness, args.contrast)
         if args.flip_x:
-            img = cu.cv_flip_x(img)
+            img = cu.img_flip_x(img)
         if args.crop_size != [0, 0]:
-            img = cu.cv_crop_img(img, args.crop_pos, args.crop_size, args.crop_centering)
+            img = cu.img_crop(img, args.crop_pos, args.crop_size, args.crop_centering)
 
     if args.linear_to_srgb:
-        img = cu.cv_linear_to_srgb(img)
+        img = cu.img_linear_to_srgb(img)
 
-    cu.cv_save(ofname, img)
+    cu.imgfile_save(ofname, img)
 
 
 def f_conv_all(args):

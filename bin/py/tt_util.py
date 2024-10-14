@@ -104,12 +104,6 @@ def log_title(title, sep='-', sep_n=55, place='center'):
 
 
 # -----------------------------------------------------
-def print_args(args):
-    print(f"--- args ---")
-    print(f"{args}")
-
-
-# -----------------------------------------------------
 # list
 # -----------------------------------------------------
 def lst_split_sublists(lst, mx):
@@ -165,6 +159,12 @@ def parser(desc, epilog=''):
         description=desc,
         epilog=epilog)
     return parser
+
+
+# -----------------------------------------------------
+def print_args(args):
+    print(f"--- args ---")
+    print(f"{args}")
 
 
 # -----------------------------------------------------

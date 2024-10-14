@@ -12,13 +12,13 @@ def f_imgf_split(ifname):
     ext = fname.ext()
     #ext = ".png"
 
-    img = cu.cv_load(ifname)
+    img = cu.imgfile_load(ifname)
 
-    img_list = cu.cv_split_img(img)
+    img_list = cu.img_split(img)
     idx = 0
     for i in img_list:
         ofname = f"{name}_{idx}{ext}"
-        cu.cv_save(ofname, i)
+        cu.imgfile_save(ofname, i)
         idx += 1
 
 
@@ -26,27 +26,27 @@ def f_imgf_split(ifname):
 def f_imgf_merge(ofname, ifnames):
     img_list = []
     for i in ifnames:
-        img = cu.cv_load(i)
+        img = cu.imgfile_load(i)
         img_list.append(img)
 
-    oimg = cu.cv_merge_img(img_list)
-    cu.cv_save(ofname, oimg)
+    oimg = cu.img_merge(img_list)
+    cu.imgfile_save(ofname, oimg)
 
 
 # -----------------------------------------------------
 def f_imgf_diff(ofname, ifname1, ifname2):
-    img1 = cu.cv_load(ifname1)
-    img2 = cu.cv_load(ifname2)
-    oimg = cu.cv_diff_img(img1, img2)
-    cu.cv_save(ofname, oimg)
+    img1 = cu.imgfile_load(ifname1)
+    img2 = cu.imgfile_load(ifname2)
+    oimg = cu.img_diff(img1, img2)
+    cu.imgfile_save(ofname, oimg)
 
 
 # -----------------------------------------------------
 def f_imgf_compare(ofname, ifname1, ifname2):
-    img1 = cu.cv_load(ifname1)
-    img2 = cu.cv_load(ifname2)
-    oimg = cu.cv_compare_img(img1, img2)
-    cu.cv_save(ofname, oimg)
+    img1 = cu.imgfile_load(ifname1)
+    img2 = cu.imgfile_load(ifname2)
+    oimg = cu.img_compare(img1, img2)
+    cu.imgfile_save(ofname, oimg)
 
 
 # =====================================================

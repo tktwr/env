@@ -8,15 +8,15 @@ import cv2
 
 
 def f_show(fname, size):
-    img = cu.cv_load(fname)
-    oimg = cu.cv_fit_img(img, size)
+    img = cu.imgfile_load(fname)
+    oimg = cu.img_fit(img, size)
     cv2.imshow(f"{fname}, {img.shape} {img.dtype}", oimg)
 
     key = cv2.waitKey()
     if key == 115: # 's'
         fn = tu.FileName(fname)
         ofname = f"small_{fn.name()}.png"
-        cu.cv_save(ofname, oimg)
+        cu.imgfile_save(ofname, oimg)
 
 
 def f_show_all(args):

@@ -17,27 +17,27 @@ def make_img_list(ifnames, args):
         elif i == 'WHITE':
             img = np.ones((wh[1], wh[0], 3), 'uint8') * 255
         else:
-            img = cu.cv_load(i)
-            img = cu.cv_fit_img(img, wh)
-            img = cu.cv_crop_img(img, (0, 0), wh, True)
-            cu.cv_add_label(img, args.label_type, i, nr)
+            img = cu.imgfile_load(i)
+            img = cu.img_fit(img, wh)
+            img = cu.img_crop(img, (0, 0), wh, True)
+            cu.img_add_label(img, args.label_type, i, nr)
             nr += 1
         if args.linear_to_srgb:
-            img = cu.cv_linear_to_srgb(img)
+            img = cu.img_linear_to_srgb(img)
         l1.append(img)
     return l1
 
 
 def make_htile(ifnames, nx, args):
     l1 = make_img_list(ifnames, args)
-    l2 = cu.cv_convert_1d_to_2d(l1, nx)
-    return cu.cv_htile(l2)
+    l2 = cu.imglst_to_imglst2d(l1, nx)
+    return cu.imglst_htile(l2)
 
 
 def make_vtile(ifnames, ny, args):
     l1 = make_img_list(ifnames, args)
-    l2 = cu.cv_convert_1d_to_2d(l1, ny)
-    return cu.cv_vtile(l2)
+    l2 = cu.imglst_to_imglst2d(l1, ny)
+    return cu.imglst_vtile(l2)
 
 
 # -----------------------------------------------------
@@ -59,7 +59,7 @@ def save_tile(ofname, files, args):
         img = make_vtile(files, ny, args)
 
     if img is not None:
-        cu.cv_save(ofname, img)
+        cu.imgfile_save(ofname, img)
 
 
 def save_tiles(args):

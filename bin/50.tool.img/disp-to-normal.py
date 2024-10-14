@@ -13,7 +13,7 @@ def normalize_vector(v):
 
 
 def disp_to_normal(ifname, ofname, height):
-    gray_img = cu.cv_load(ifname)
+    gray_img = cu.imgfile_load(ifname)
     if len(gray_img.shape) == 3:
         h, w, ch = gray_img.shape[:3]
         gray_img = gray_img[:, :, 0]
@@ -36,7 +36,7 @@ def disp_to_normal(ifname, ofname, height):
     nml_img *= 255
     nml_img = nml_img.astype('uint8')
     nml_img = cv2.cvtColor(nml_img, cv2.COLOR_RGB2BGR)
-    cu.cv_save(ofname, nml_img)
+    cu.imgfile_save(ofname, nml_img)
 
 
 if __name__ == "__main__":

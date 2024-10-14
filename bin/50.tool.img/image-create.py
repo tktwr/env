@@ -32,23 +32,23 @@ if __name__ == "__main__":
 
     shape = (h, w, c)
     dtype = args.dtype
-    col0 = cu.cv_color(args.col0, dtype)
-    col1 = cu.cv_color(args.col1, dtype)
+    col0 = cu.color_cvt_dtype(args.col0, dtype)
+    col1 = cu.color_cvt_dtype(args.col1, dtype)
 
     if args.action == 'new':
-        img = cu.cv_create_img(shape, dtype, col0)
+        img = cu.img_create(shape, dtype, col0)
     elif args.action == 'hgrad':
-        img = cu.cv_create_hgrad_img(shape, dtype, col0, col1)
+        img = cu.img_create_hgrad(shape, dtype, col0, col1)
     elif args.action == 'vgrad':
-        img = cu.cv_create_vgrad_img(shape, dtype, col0, col1)
+        img = cu.img_create_vgrad(shape, dtype, col0, col1)
     elif args.action == 'check':
-        img = cu.cv_create_check_img(shape, dtype, col0, col1, args.nelm)
+        img = cu.img_create_check(shape, dtype, col0, col1, args.nelm)
     elif args.action == 'hstripe':
-        img = cu.cv_create_hstripe_img(shape, dtype, col0, col1, args.nelm)
+        img = cu.img_create_hstripe(shape, dtype, col0, col1, args.nelm)
     elif args.action == 'se_stripe':
-        img = cu.cv_create_se_stripe_img(shape, dtype, col0, col1, args.nelm)
+        img = cu.img_create_se_stripe(shape, dtype, col0, col1, args.nelm)
     else:
         tu.log(f'unknown action: {args.action}')
         img = None
 
-    cu.cv_save(args.output, img)
+    cu.imgfile_save(args.output, img)

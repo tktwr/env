@@ -63,8 +63,7 @@
 -              | app-blender-addons/            | $BLENDER_ADDONS_DIR/
 -              | app-blender33-addons/          | $BLENDER33_ADDONS_DIR/
 -              | app-blender36-addons/          | $BLENDER36_ADDONS_DIR/
--              | app-blender40-addons/          | $BLENDER40_ADDONS_DIR/
--              | app-blender41-addons/          | $BLENDER41_ADDONS_DIR/
+-              | app-blender42-addons/          | $BLENDER42_ADDONS_DIR/
 -              | app-winget/                    | $APP_WINGET_DIR/
 -              | app-winapp/                    | $APP_WINAPP_DIR/
 -              | app-vscode/                    | $APP_VSCODE/
