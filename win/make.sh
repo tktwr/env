@@ -13,8 +13,8 @@ VSCODE=$APP_VSCODE
 #------------------------------------------------------
 f_vscode_diff() {
   cd vscode
-  vimdiff.sh settings.json $VSCODE/settings.json
-  vimdiff.sh keybindings.json $VSCODE/keybindings.json
+  popup-vimdiff.sh settings.json $VSCODE/settings.json
+  popup-vimdiff.sh keybindings.json $VSCODE/keybindings.json
 }
 
 f_vscode_push() {

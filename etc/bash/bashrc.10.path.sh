@@ -66,6 +66,7 @@ my_setup_path() {
 
   # on Windows FS
   f_add_path "$SYS_CONFIG_HOME/lconfig/bin"
+  f_add_path "$SYS_CONFIG_HOME/lconfig/bin/py"
   f_add_path "$SYS_CONFIG_HOME/opt/bin"
 
   # OS dependent wrapper
