@@ -57,8 +57,9 @@ def sh_chdir(dirname):
     os.chdir(dirname)
 
 def sh_mkdir(dirname, exist_ok=True):
-    #os.mkdir(dirname)
-    os.makedirs(dirname, exist_ok=exist_ok)
+    if dirname != '':
+        #os.mkdir(dirname)
+        os.makedirs(dirname, exist_ok=exist_ok)
 
 def sh_rmdir(dirname, ignore_errors=True):
     shutil.rmtree(dirname, ignore_errors=ignore_errors)
@@ -168,9 +169,9 @@ def print_args(args):
 
 
 # -----------------------------------------------------
-# file name
+# string
 # -----------------------------------------------------
-def expand_env_old(s):
+def str_expand_env(s):
     r = re.search(r'\$\w+', s)
     if r is not None:
         matched = r.group()
@@ -180,6 +181,9 @@ def expand_env_old(s):
     return s
 
 
+# -----------------------------------------------------
+# filename
+# -----------------------------------------------------
 def expand_env(path):
     path = os.path.expanduser(path)
     path = os.path.expandvars(path)
@@ -188,29 +192,31 @@ def expand_env(path):
 
 class FileName():
     def __init__(self, orig_path):
+        path = expand_env(orig_path)
+        path = os.path.realpath(path)
+        path = os.path.abspath(path)
+
         self._orig_path = orig_path
-        self._dirname = os.path.dirname(self._orig_path)
-        self._filename = os.path.basename(self._orig_path)
+        self._dirname = os.path.dirname(path)
+        self._filename = os.path.basename(path)
 
     def origname(self):
         return self._orig_path
 
-    def dirname(self, expand=False, realpath=False):
-        path = self._dirname
-        if expand:
-            path = os.path.expanduser(path)
-            path = os.path.expandvars(path)
-        if realpath:
-            path = os.path.realpath(path)
-            path = os.path.abspath(path)
-        return path
+    def dirname(self):
+        return self._dirname
 
-    def filename(self):
-        return self._filename
+    def abspath(self, prefix='', postfix='', ext=''):
+        return f'{self.dirname()}/{self.filename(prefix, postfix, ext)}'
 
-    def name(self):
+    def filename(self, prefix='', postfix='', ext=''):
+        if ext == '':
+            ext = self.ext()
+        return f'{self.name(prefix, postfix)}{ext}'
+
+    def name(self, prefix='', postfix=''):
         name, ext = os.path.splitext(self._filename)
-        return name
+        return f'{prefix}{name}{postfix}'
 
     def ext(self):
         name, ext = os.path.splitext(self._filename)
@@ -254,6 +260,8 @@ def path_windows(fname, prefix='', realpath=True):
     if realpath and os.path.islink(fname):
         fname = os.path.realpath(fname)
     return fname
+
+
 # -----------------------------------------------------
 # image size
 # -----------------------------------------------------
@@ -348,6 +356,8 @@ def write_json(fname, data):
         f.write(json.dumps(data, sort_keys=True, indent=4))
 
 
+# -----------------------------------------------------
+# subprocess
 # -----------------------------------------------------
 def run(command):
     proc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

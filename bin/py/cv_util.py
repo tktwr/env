@@ -471,23 +471,18 @@ def imgfile_info(fname):
 
 
 def imgfile_load(ifname):
-    ifname = tu.expand_env(ifname)
-    return cv2.imread(ifname, cv2.IMREAD_UNCHANGED)
+    FN = tu.FileName(ifname)
+    return cv2.imread(FN.abspath(), cv2.IMREAD_UNCHANGED)
 
 
 def imgfile_save(ofname, img):
-    ofname = tu.expand_env(ofname)
     FN = tu.FileName(ofname)
-    odir = FN.dirname()
-    ext = FN.ext()
 
-    dst_dtype = ext_to_dtype(ext)
-    img = img_cvt_dtype(img, dst_dtype)
+    img = img_cvt_dtype(img, ext_to_dtype(FN.ext()))
 
     print(f"imgfile_save: {ofname} {img.shape} {img.dtype}")
-    if odir != '':
-        os.makedirs(odir, exist_ok=True)
-    cv2.imwrite(ofname, img)
+    tu.sh_mkdir(FN.dirname())
+    cv2.imwrite(FN.abspath(), img)
 
 
 def imgfile_resize(ifname, ofname, dst_size):
