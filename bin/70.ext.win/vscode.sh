@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export PATH="$SYS_PROG64_DIR/Microsoft VS Code:$PATH"
-export PATH="$USER_PROG_DIR/Microsoft VS Code:$PATH"
+export PATH="$APP_L_PROG/Microsoft VS Code:$PATH"
 
 wp=$(_f_expand_win "$*")
 

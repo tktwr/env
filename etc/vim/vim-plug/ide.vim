@@ -39,8 +39,8 @@ let g:vis_unexpand_env_list = [
   \ '$MY_DESKTOP',
   \ '$MY_DOWNLOADS',
   \ '$MY_VIM_PLUGGED_DIR',
-  \ '$USER_LOCAL',
-  \ '$USER_ROAMING',
+  \ '$APP_L',
+  \ '$APP_R',
   \ '$SYS_ROAMING_HOME',
   \ '$SYS_CONFIG_HOME',
   \ '$SYS_WORK_HOME',
@@ -49,7 +49,7 @@ let g:vis_unexpand_env_list = [
   \ '$SYS_WIN_HOME',
   \ '$SYS_PROG64_DIR',
   \ '$SYS_PROG32_DIR',
-  \ '$BLENDER_ADDONS_DIR',
+  \ '$APP_R_BLENDER_ADDONS',
   \ ]
 let g:my_rg_dirs = [
   \ '$MY_ENV',

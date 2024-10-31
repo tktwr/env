@@ -12,6 +12,7 @@ winget_pkg="\
   JesseDuffield.lazygit \
   OpenJS.NodeJS.LTS \
   Kitware.CMake \
+  Neovim.Neovim \
   "
 
 #======================================================

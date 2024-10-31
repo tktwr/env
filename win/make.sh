@@ -3,7 +3,7 @@
 #======================================================
 # variables
 #======================================================
-VSCODE=$APP_VSCODE
+VSCODE=$APP_R_VSCODE
 
 #======================================================
 # functions
@@ -11,19 +11,19 @@ VSCODE=$APP_VSCODE
 #------------------------------------------------------
 # vscode
 #------------------------------------------------------
-f_vscode_diff() {
-  cd vscode
-  popup-vimdiff.sh settings.json $VSCODE/settings.json
-  popup-vimdiff.sh keybindings.json $VSCODE/keybindings.json
+f_10_vscode_diff() {
+  popup-vimdiff.sh vscode/settings.json $VSCODE/settings.json
+  pause.sh
+  popup-vimdiff.sh vscode/keybindings.json $VSCODE/keybindings.json
 }
 
-f_vscode_push() {
+f_11_vscode_push() {
   cd vscode
   cp settings.json $VSCODE
   cp keybindings.json $VSCODE
 }
 
-f_vscode_pull() {
+f_12_vscode_pull() {
   cd vscode
   cp $VSCODE/settings.json .
   cp $VSCODE/keybindings.json .
@@ -32,7 +32,7 @@ f_vscode_pull() {
 #------------------------------------------------------
 # wsltty
 #------------------------------------------------------
-f_install_wsltty_config() {
+f_20_install_wsltty_config() {
   cd wsltty
   wsltty_dir=$(wslpath -au $APPDATA/wsltty)
   cp config $wsltty_dir
@@ -41,4 +41,5 @@ f_install_wsltty_config() {
 #======================================================
 # main
 #======================================================
+f_fzf_default() { f_10_vscode_diff; }
 f_fzf_main "$@"

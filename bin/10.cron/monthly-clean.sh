@@ -1,3 +1,3 @@
 #!/bin/bash
 
-rm $USER_LOCAL/Temp/*_autosave.blend
+rm $APP_L/Temp/*_autosave.blend
