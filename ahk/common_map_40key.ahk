@@ -20,6 +20,8 @@ Tab & x::Send,#{Up}           ; maximize window
 Tab & c::Send,#{Right}        ; maximize window in right
 ;------------------------------------------------------
 Tab &  f::Send,^+f
+Tab &  v::Send,^+v
+Tab &  b::Send,^+b
 Tab &  y::Send,^+y
 Tab &  h::Send,^+h
 Tab &  n::Send,^+n

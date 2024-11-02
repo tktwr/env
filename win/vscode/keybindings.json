@@ -1,38 +1,38 @@
 [
    // --------------------------------------------------
-   // terminal: focus
+   // close all editors
+   // --------------------------------------------------
+   {
+     "key": "ctrl+shift+v",
+     "command": "workbench.action.closeAllEditors"
+   },
+   // --------------------------------------------------
+   // focus terminal
    // --------------------------------------------------
    {
       "key": "ctrl+shift+f",
       "command": "workbench.action.terminal.focus"
    },
    // --------------------------------------------------
-   // terminal: toggle maximize
+   // toggle maximize terminal
    // --------------------------------------------------
    {
       "key": "ctrl+shift+y",
       "command": "workbench.action.toggleMaximizedPanel"
    },
    // --------------------------------------------------
-   // sidebar: toggle visible
+   // toggle sidebar
    // --------------------------------------------------
    {
        "key": "ctrl+shift+h",
-       "command": "workbench.action.closeSidebar",
-       "when": "sideBarVisible"
+       "command": "workbench.action.toggleSidebarVisibility"
    },
    // --------------------------------------------------
-   // terminal: toggle visible
+   // toggle terminal
    // --------------------------------------------------
    {
       "key": "ctrl+shift+n",
-      "command": "workbench.action.terminal.toggleTerminal",
-      "when": "!terminalFocus"
-   },
-   {
-      "key": "ctrl+shift+n",
-      "command": "workbench.action.closePanel",
-      "when": "terminalFocus"
+      "command": "workbench.action.terminal.toggleTerminal"
    },
    // --------------------------------------------------
    // disable "ctrl+special"
