@@ -25,5 +25,7 @@
     },
     "terminal.integrated.defaultProfile.windows": "Ubuntu-22.04 (WSL)",
     "terminal.integrated.fontFamily": "HackGen Console NF",
+    "terminal.integrated.fontSize": 16,
     "terminal.integrated.allowChords": false
 }
+// vim: ft=jsonc

@@ -19,6 +19,11 @@ Tab & z::Send,#{Left}         ; maximize window in left
 Tab & x::Send,#{Up}           ; maximize window
 Tab & c::Send,#{Right}        ; maximize window in right
 ;------------------------------------------------------
+Tab &  f::Send,^+f
+Tab &  y::Send,^+y
+Tab &  h::Send,^+h
+Tab &  n::Send,^+n
+
 Tab &  m::Send,{F1}
 Tab &  ,::Send,{F2}
 Tab &  .::Send,{F3}
