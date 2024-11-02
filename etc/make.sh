@@ -17,6 +17,7 @@ $DOT_FILES_CONFIG \
 .gitignore_global \
 .rsync_exclude \
 .my/pushdrc.sh \
+.code-workspace \
 "
 DOT_FILES_DIFF="\
 .my/buildrc.sh \
@@ -35,8 +36,8 @@ _f_cp_all() {
   cp -a --parents    $DOT_FILES_COMMON $HOME
   cp -a --parents -n $DOT_FILES_DIFF   $HOME
 
-  if [ -n "$APPDATA" ]; then
-    cp -a $DOT_FILES_CONFIG $APPDATA
+  if [ -n "$APP_R" ]; then
+    cp -a $DOT_FILES_CONFIG $APP_R
   fi
 }
 

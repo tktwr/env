@@ -3,7 +3,6 @@
 #======================================================
 # variables
 #======================================================
-VSCODE=$APP_R_VSCODE
 
 #======================================================
 # functions
@@ -12,30 +11,26 @@ VSCODE=$APP_R_VSCODE
 # vscode
 #------------------------------------------------------
 f_10_vscode_diff() {
-  popup-vimdiff.sh vscode/settings.json $VSCODE/settings.json
+  popup-vimdiff.sh vscode/settings.json $APP_R_VSCODE/settings.json
   pause.sh
-  popup-vimdiff.sh vscode/keybindings.json $VSCODE/keybindings.json
+  popup-vimdiff.sh vscode/keybindings.json $APP_R_VSCODE/keybindings.json
 }
 
 f_11_vscode_push() {
-  cd vscode
-  cp settings.json $VSCODE
-  cp keybindings.json $VSCODE
+  cp vscode/settings.json $APP_R_VSCODE
+  cp vscode/keybindings.json $APP_R_VSCODE
 }
 
 f_12_vscode_pull() {
-  cd vscode
-  cp $VSCODE/settings.json .
-  cp $VSCODE/keybindings.json .
+  cp $APP_R_VSCODE/settings.json vscode
+  cp $APP_R_VSCODE/keybindings.json vscode
 }
 
 #------------------------------------------------------
 # wsltty
 #------------------------------------------------------
 f_20_install_wsltty_config() {
-  cd wsltty
-  wsltty_dir=$(wslpath -au $APPDATA/wsltty)
-  cp config $wsltty_dir
+  cp wsltty/config $APP_R/wsltty
 }
 
 #======================================================

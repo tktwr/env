@@ -69,6 +69,7 @@
 -              | app-roaming/                   | $APP_R/
 -              | app-r-python/                  | $APP_R_PYTHON/
 -              | app-r-vscode/                  | $APP_R_VSCODE/
+-              | app-r-nvim/                    | $APP_R_NVIM/
 -              | app-r-blender-addons/          | $APP_R_BLENDER_ADDONS/
 -              | app-r-blender33-addons/        | $APP_R_BLENDER33_ADDONS/
 -              | app-r-blender36-addons/        | $APP_R_BLENDER36_ADDONS/

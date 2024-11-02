@@ -26,6 +26,9 @@
     "terminal.integrated.defaultProfile.windows": "Ubuntu-22.04 (WSL)",
     "terminal.integrated.fontFamily": "HackGen Console NF",
     "terminal.integrated.fontSize": 16,
-    "terminal.integrated.allowChords": false
+    "terminal.integrated.allowChords": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 0
+    }
 }
 // vim: ft=jsonc

@@ -35,6 +35,7 @@ app-l-android-sdk      | ANDROID_SDK            | $SYS_WIN_HOME/AppData/Local/An
 app-roaming            | APP_R                  | $SYS_WIN_HOME/AppData/Roaming
 app-r-python           | APP_R_PYTHON           | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 app-r-vscode           | APP_R_VSCODE           | $SYS_WIN_HOME/AppData/Roaming/Code/User
+app-r-nvim             | APP_R_NVIM             | $SYS_WIN_HOME/AppData/Roaming/nvim
 app-r-blender-addons   | APP_R_BLENDER_ADDONS   | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
 app-r-blender33-addons | APP_R_BLENDER33_ADDONS | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 app-r-blender36-addons | APP_R_BLENDER36_ADDONS | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
