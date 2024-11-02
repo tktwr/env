@@ -4,11 +4,6 @@
 Tab::Tab
 Tab & Esc::Return
 
-#IfWinActive ahk_exe Code.exe
-Tab & e::Send,^{PgUp}         ; app_prev
-Tab & r::Send,^{PgDn}         ; app_next
-#IfWinActive
-
 Tab & q::AltTab               ; win_next
 Tab & w::ShiftAltTab          ; win_prev
 Tab & e::Send,^+{Tab}         ; app_prev
@@ -24,12 +19,12 @@ Tab & z::Send,#{Left}         ; maximize window in left
 Tab & x::Send,#{Up}           ; maximize window
 Tab & c::Send,#{Right}        ; maximize window in right
 ;------------------------------------------------------
-Tab &  f::Send,^+f
-Tab &  v::Send,^+v
-Tab &  b::Send,^+b
-Tab &  y::Send,^+y
-Tab &  h::Send,^+h
-Tab &  n::Send,^+n
+Tab &  f::Send,^+!f
+Tab &  v::Send,^+!v
+Tab &  b::Send,^+!b
+Tab &  y::Send,^+!y
+Tab &  h::Send,^+!h
+Tab &  n::Send,^+!n
 
 Tab &  m::Send,{F1}
 Tab &  ,::Send,{F2}

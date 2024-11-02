@@ -2,11 +2,13 @@
   // --------------------------------------------------
   // action
   // --------------------------------------------------
-  { "key": "ctrl+shift+f" , "command": "workbench.action.terminal.focus" }          ,
-  { "key": "ctrl+shift+v" , "command": "workbench.action.closeAllEditors" }         ,
-  { "key": "ctrl+shift+y" , "command": "workbench.action.toggleMaximizedPanel" }    ,
-  { "key": "ctrl+shift+h" , "command": "workbench.action.toggleSidebarVisibility" } ,
-  { "key": "ctrl+shift+n" , "command": "workbench.action.terminal.toggleTerminal" } ,
+  { "key": "ctrl+shift+tab"   , "command": "workbench.action.previousEditor" }          ,
+  { "key": "ctrl+tab"         , "command": "workbench.action.nextEditor" }              ,
+  { "key": "ctrl+shift+alt+f" , "command": "workbench.action.terminal.focus" }          ,
+  { "key": "ctrl+shift+alt+v" , "command": "workbench.action.closeAllEditors" }         ,
+  { "key": "ctrl+shift+alt+y" , "command": "workbench.action.toggleMaximizedPanel" }    ,
+  { "key": "ctrl+shift+alt+h" , "command": "workbench.action.toggleSidebarVisibility" } ,
+  { "key": "ctrl+shift+alt+n" , "command": "workbench.action.terminal.toggleTerminal" } ,
   // --------------------------------------------------
   // disable shortcuts in terminal
   // --------------------------------------------------
