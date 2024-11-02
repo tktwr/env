@@ -1,4 +1,7 @@
 {
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    },
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
@@ -27,8 +30,6 @@
     "terminal.integrated.fontFamily": "HackGen Console NF",
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.allowChords": false,
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 0
-    }
+    "terminal.integrated.minimumContrastRatio": 1
 }
 // vim: ft=jsonc
