@@ -4,6 +4,11 @@
 Tab::Tab
 Tab & Esc::Return
 
+#IfWinActive ahk_exe Code.exe
+Tab & e::Send,^{PgUp}         ; app_prev
+Tab & r::Send,^{PgDn}         ; app_next
+#IfWinActive
+
 Tab & q::AltTab               ; win_next
 Tab & w::ShiftAltTab          ; win_prev
 Tab & e::Send,^+{Tab}         ; app_prev
