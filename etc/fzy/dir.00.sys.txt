@@ -30,12 +30,12 @@ app-l-prog             | APP_L_PROG             | $SYS_WIN_HOME/AppData/Local/Pr
 app-l-python           | APP_L_PYTHON           | $SYS_WIN_HOME/AppData/Local/Programs/Python/Python310
 app-l-winget           | APP_L_WINGET           | $SYS_WIN_HOME/AppData/Local/Microsoft/WinGet/Packages
 app-l-winapp           | APP_L_WINAPP           | $SYS_WIN_HOME/AppData/Local/Microsoft/WindowsApps
+app-l-nvim             | APP_L_NVIM             | $SYS_WIN_HOME/AppData/Local/nvim
 app-l-android-sdk      | ANDROID_SDK            | $SYS_WIN_HOME/AppData/Local/Android/sdk
 #----------            | ----------             | ----------
 app-roaming            | APP_R                  | $SYS_WIN_HOME/AppData/Roaming
 app-r-python           | APP_R_PYTHON           | $SYS_WIN_HOME/AppData/Roaming/Python/Python310
 app-r-vscode           | APP_R_VSCODE           | $SYS_WIN_HOME/AppData/Roaming/Code/User
-app-r-nvim             | APP_R_NVIM             | $SYS_WIN_HOME/AppData/Roaming/nvim
 app-r-blender-addons   | APP_R_BLENDER_ADDONS   | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons
 app-r-blender33-addons | APP_R_BLENDER33_ADDONS | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.3/scripts/addons
 app-r-blender36-addons | APP_R_BLENDER36_ADDONS | $SYS_WIN_HOME/AppData/Roaming/Blender Foundation/Blender/3.6/scripts/addons

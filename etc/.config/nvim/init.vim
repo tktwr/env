@@ -1,7 +1,9 @@
 if exists('g:vscode')
     " VSCode extension
-    source ~/.vimrc
+    echom "load init.vim in vscode"
+    "source ~/.vimrc
 else
     " ordinary Neovim
-    source ~/.vimrc
+    echom "load init.vim"
+    "source ~/.vimrc
 endif
