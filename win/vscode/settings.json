@@ -1,7 +1,18 @@
 {
+    // vscodevim
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.visualstar": true,
+    "vim.leader": ",",
+
+    // to improve performance
     "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
         "asvetliakov.vscode-neovim": 1
     },
+
+    // terminal
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",

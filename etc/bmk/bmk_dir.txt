@@ -67,7 +67,7 @@
 -              | app-l-nvim/                    | $APP_L_NVIM/
 -              | app-l-android-sdk/             | $ANDROID_SDK/
 -----          | ------------------------------ | ------------------------------
--              | app-roaming/                   | $APP_R/
+-              | app-roaming/ (APPDATA)         | $APP_R/
 -              | app-r-python/                  | $APP_R_PYTHON/
 -              | app-r-vscode/                  | $APP_R_VSCODE/
 -              | app-r-blender-addons/          | $APP_R_BLENDER_ADDONS/

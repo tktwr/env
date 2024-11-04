@@ -19,7 +19,21 @@ Space & Esc::Return
 ;======================================================
 ; Space in terminal
 ;======================================================
-#IfWinActive ahk_exe WindowsTerminal.exe or ahk_exe Code.exe
+#IfWinActive ahk_exe WindowsTerminal.exe
+Space & c::Send,^+c             ; copy
+Space & v::Send,^+v             ; paste
+;------------------------------------------------------
+Space & h::Send,{Blind}{PgUp}
+Space & j::Send,^n
+Space & k::Send,^p
+Space & l::Send,{Blind}{PgDn}
+
+Space & /::Send,!/
+#IfWinActive
+;======================================================
+; Space in vscode
+;======================================================
+#IfWinActive ahk_exe Code.exe
 Space & c::Send,^+c             ; copy
 Space & v::Send,^+v             ; paste
 ;------------------------------------------------------
