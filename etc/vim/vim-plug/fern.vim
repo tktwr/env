@@ -1,14 +1,23 @@
 "------------------------------------------------------
 " fern
 "------------------------------------------------------
-"Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern.vim', {'commit': 'a675dff495a0a0fd15663ebbae585c19825a64c5'}  " work with vim prior to 8.2.5136
-Plug 'lambdalisue/nerdfont.vim'
-Plug 'lambdalisue/fern-renderer-nerdfont.vim'
-Plug 'lambdalisue/glyph-palette.vim'
-
-if $MY_PROMPT_TYPE >= 4
-  Plug 'lambdalisue/fern-git-status.vim'
+if v:true
+  " work with vim prior to 8.2.5136 (Ubuntu 22.04)
+  Plug 'lambdalisue/fern.vim'                   , {'commit': 'a675dff'}
+  Plug 'lambdalisue/nerdfont.vim'               , {'commit': '4dec28b'}
+  Plug 'lambdalisue/fern-renderer-nerdfont.vim' , {'commit': '84fae1b'}
+  Plug 'lambdalisue/glyph-palette.vim'          , {'commit': 'acc67da'}
+  if $MY_PROMPT_TYPE >= 4
+    Plug 'lambdalisue/fern-git-status.vim', {'commit': '1513363'}
+  endif
+else
+  Plug 'lambdalisue/vim-fern'
+  Plug 'lambdalisue/vim-nerdfont'
+  Plug 'lambdalisue/vim-fern-renderer-nerdfont'
+  Plug 'lambdalisue/vim-glyph-palette'
+  if $MY_PROMPT_TYPE >= 4
+    Plug 'lambdalisue/vim-fern-git-status'
+  endif
 endif
 
 let g:fern#drawer_width = g:my_left_winwidth
