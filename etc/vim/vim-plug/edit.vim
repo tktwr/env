@@ -7,7 +7,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 "------------------------------------------------------
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', {'commit': '8405725'}
 
 "======================================================
 " comment

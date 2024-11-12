@@ -16,6 +16,18 @@ _f_expand_win() {
     echo $(pathconv.sh win "$url")
   fi
 }
+
+_in_win_dir() {
+  rp=$(realpath "$PWD")
+  case $rp in
+    /mnt/*)
+      return 0
+      ;;
+    *)
+      return 1
+      ;;
+  esac
+}
 #======================================================
 # venv
 #======================================================

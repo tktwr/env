@@ -92,6 +92,7 @@
 - ,sumcol3     | R_SumCol(3)                    | :call R_SumCol(3)
 -----          | ------------------------------ | ------------------------------
 - ,prs         | P_RemoveSpaces                 | :call P_RemoveSpaces()
+- ,pfc         | P_FormatComma                  | :call P_FormatComma()
 - ,pfd         | P_FormatDict                   | :call P_FormatDict()
 - ,pfl         | P_FormatLine                   | :call P_FormatLine()
 - ,p<          | P_IndentLeft                   | :call P_IndentLeft()

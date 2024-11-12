@@ -87,13 +87,14 @@ func! R_RemoveSpaces() range
   exec printf('%d,%ds/ //g', a:firstline, a:lastline)
 endfunc
 
+func! R_FormatComma() range
+  exec printf('%d,%ds/ *, */,/g', a:firstline, a:lastline)
+endfunc
+
 func! R_FormatDict() range
-  exec printf('%d,%ds/ *, */, /g', a:firstline, a:lastline)
+  exec printf('%d,%ds/ *, */,/g', a:firstline, a:lastline)
   Tabularize /=
-  for i in range(5)
-    Tabularize /|
-    Tabularize /;
-  endfor
+  Tabularize /;
 endfunc
 
 func! R_FormatLine() range
@@ -104,6 +105,10 @@ endfunc
 "------------------------------------------------------
 func! P_RemoveSpaces()
   '{,'}call R_RemoveSpaces()
+endfunc
+
+func! P_FormatComma()
+  '{,'}call R_FormatComma()
 endfunc
 
 func! P_FormatDict()
