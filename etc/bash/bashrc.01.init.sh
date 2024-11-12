@@ -25,4 +25,4 @@ export GIT_EDITOR='vim'
 export WWW_HOME="https://tktwr.github.io/memo/"
 
 shopt -s no_empty_cmd_completion
-
+shopt -s globstar
