@@ -19,6 +19,8 @@ f_alias_vim_term() {
   alias ,ry2='_ide_resize_h 20'
   alias ,ry3='_ide_resize_h 30'
   alias ,ry4='_ide_resize_h 40'
+  alias ,ry5='_ide_resize_h 50'
+  alias ,ry6='_ide_resize_h 60'
 
   alias ,d='vimapi-edit-dir'
   alias ,d2='vimapi-edit-dir-2'
@@ -118,6 +120,7 @@ f_alias_os_common() {
 
   alias ,D='open_dir.sh'
   alias ,E='explorer.sh'
+  alias ,V='vscode.sh'
 
   alias ,G.set_dir='mypushd.sh --set `pwd`'
   alias ,G.get_dir='mypushd.sh --get'
