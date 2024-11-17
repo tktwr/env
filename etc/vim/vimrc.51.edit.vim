@@ -97,9 +97,6 @@ func! R_FormatDict() range
   Tabularize /;
 endfunc
 
-func! R_FormatLine() range
-endfunc
-
 "------------------------------------------------------
 " Paragraph functions
 "------------------------------------------------------
@@ -113,10 +110,6 @@ endfunc
 
 func! P_FormatDict()
   '{,'}call R_FormatDict()
-endfunc
-
-func! P_FormatLine()
-  '{,'}call R_FormatLine()
 endfunc
 
 func! P_IndentLeft()

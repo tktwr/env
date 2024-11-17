@@ -44,37 +44,28 @@ def f_expand_env(fname, args):
         pass
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(description='make env variables')
-    parser.add_argument('-v', '--verbose',
-                        action='store_true',
-                        help='show verbose message')
-    parser.add_argument('-p', '--prefix',
-                        type=str,
-                        default='',
-                        help='set prefix')
-    parser.add_argument('files',
-                        type=str,
-                        nargs='+',
-                        help='input files')
-    return parser.parse_args()
-
-
-def print_args(args):
-    print(f"--- args ---")
-    print(f"args.prefix : {args.prefix}")
-    print(f"args.files  : {args.files}")
-
-
 def main(files, args):
     print(f"#!/bin/bash")
     for i in files:
         f_expand_env(i, args)
 
 
+# =====================================================
+def parse_args():
+    parser = tu.parser('make env variables')
+    A = parser.add_argument
+
+    A('files' , nargs='+'   , help='input files'          , type=str)
+    A('-v'    , '--verbose' , help='show verbose message' , action='store_true')
+    A('-p'    , '--prefix'  , help='set prefix'           , type=str             , default='')
+
+    return parser.parse_args()
+
+
+# -----------------------------------------------------
 if __name__ == "__main__":
     args = parse_args()
     if args.verbose:
-        print_args(args)
+        tu.print_args(args)
 
     main(args.files, args)
