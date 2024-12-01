@@ -17,6 +17,16 @@ Space::Space
 Space & Esc::Return
 
 ;======================================================
+; Tab in apps
+;======================================================
+#IfWinActive ahk_exe chrome.exe
+Space & ,::Send,+{Enter}
+#IfWinActive
+
+#IfWinActive ahk_exe excel.exe
+Space & ,::Send,!{Enter}
+#IfWinActive
+;======================================================
 ; Space in terminal
 ;======================================================
 #IfWinActive ahk_exe WindowsTerminal.exe
@@ -79,6 +89,6 @@ Space & `;::Send,^{End}
 
 Space & n::Send,{Blind}{Down}
 Space & m::Send,{Blind}{Up}
-Space & ,::ReloadScript()
-Space & .::SuspendScript()
+Space & ,::Send,{Enter}
+Space & .::ReloadScript()
 ;======================================================

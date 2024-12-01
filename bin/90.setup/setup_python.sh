@@ -24,6 +24,7 @@ pip_pkg_dev_ext="\
 gradio \
 scipy \
 scikit-learn \
+scikit-image \
 tensorboard \
 "
 pip_pkg_torch="\

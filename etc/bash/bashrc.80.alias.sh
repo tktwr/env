@@ -30,6 +30,9 @@ f_alias() {
   alias lsd='\ls -d --color=auto */'
   alias tree2='tree -L 2'
 
+  # python
+  alias p='python'
+
   # vim
   alias vi='vim'
   alias vim-none='/usr/bin/vim -u NONE'

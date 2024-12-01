@@ -184,11 +184,49 @@ def str_expand_env(s):
 # -----------------------------------------------------
 # filename
 # -----------------------------------------------------
+def fn_dirname(path, prefix='', postfix=''):
+    '''
+    Examples:
+        tu.fn_dirname('aa/bb' , 'img_', '_out')
+        aa/img_bb_out
+        tu.fn_dirname('aa/bb/', 'img_', '_out')
+        aa/img_bb_out
+    '''
+    path = path.rstrip('/')
+    parent_dirname = os.path.dirname(path)
+    base_dirname = os.path.basename(path)
+    return f'{parent_dirname}/{prefix}{base_dirname}{postfix}'
+
+def fn_filename(path, prefix='', postfix='', ext=''):
+    '''
+    Examples:
+        tu.fn_filename('aa/bb/cc.png', 'img_', '_out', '.jpg')
+        aa/bb/img_cc_out.jpg
+    '''
+    dirname = os.path.dirname(path)
+    filename = os.path.basename(path)
+    name, _ext = os.path.splitext(filename)
+    if ext != '':
+        _ext = ext
+    return f'{dirname}/{prefix}{name}{postfix}{_ext}'
+
+def fn_filename_ext(path):
+    '''
+    Examples:
+        tu.fn_filename_ext('aa/bb/cc.png')
+        .png
+    '''
+    filename = os.path.basename(path)
+    name, ext = os.path.splitext(filename)
+    return ext
+
+# -----------------------------------------------------
+# FileName
+# -----------------------------------------------------
 def expand_env(path):
     path = os.path.expanduser(path)
     path = os.path.expandvars(path)
     return path
-
 
 class FileName():
     def __init__(self, orig_path):
@@ -219,6 +257,11 @@ class FileName():
         return f'{prefix}{name}{postfix}'
 
     def ext(self):
+        '''
+        Returns:
+            aa/bb/cc.txt -> .txt
+            aa/bb/cc     -> ''
+        '''
         name, ext = os.path.splitext(self._filename)
         return ext
 
