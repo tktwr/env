@@ -89,6 +89,7 @@ endfunc
 
 func! R_FormatComma() range
   exec printf('%d,%ds/ *, */,/g', a:firstline, a:lastline)
+  exec printf('%d,%ds/ *| */|/g', a:firstline, a:lastline)
 endfunc
 
 func! R_FormatDict() range
