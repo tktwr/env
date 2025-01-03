@@ -277,7 +277,9 @@ def drive_windows(match):
     return f'{match.group(1).upper()}:/'
 
 
-def path_unix(fname, prefix='', realpath=True):
+def path_unix(fname, prefix='/mnt', expand=False, realpath=True):
+    if expand:
+        fname = expand_env(fname)
     fname = fname.replace('\\', '/')
     fname = re.sub(f'^{prefix}', '', fname)
     fname = re.sub(f'^([c-zC-Z]):', drive_unix, fname)
@@ -287,7 +289,9 @@ def path_unix(fname, prefix='', realpath=True):
     return fname
 
 
-def path_mixed(fname, prefix='', realpath=True):
+def path_mixed(fname, prefix='/mnt', expand=False, realpath=True):
+    if expand:
+        fname = expand_env(fname)
     fname = re.sub(f'^{prefix}', '', fname)
     fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
     fname = fname.replace('\\', '/')
@@ -296,10 +300,12 @@ def path_mixed(fname, prefix='', realpath=True):
     return fname
 
 
-def path_windows(fname, prefix='', realpath=True):
+def path_windows(fname, prefix='/mnt', expand=False, realpath=True):
+    if expand:
+        fname = expand_env(fname)
     fname = re.sub(f'^{prefix}', '', fname)
     fname = re.sub(f'^/([c-zC-Z])/', drive_windows, fname)
-    fname = fname.replace('/', '\\')
+    fname = fname.replace('/', r'\\')
     if realpath and os.path.islink(fname):
         fname = os.path.realpath(fname)
     return fname
@@ -435,6 +441,29 @@ def run(command):
 # =====================================================
 # main
 # =====================================================
+import pprint
+
+def f_test_sys_path():
+    pprint.pprint(sys.path)
+
+def f_test_path_os():
+    def _f_test(fname):
+        fname_unix = path_unix(fname, expand=True)
+        fname_mix  = path_mixed(fname, expand=True)
+        fname_win  = path_windows(fname, expand=True)
+        print('--- test_path ---')
+        print(f'orig : {fname}')
+        print(f'unix : {fname_unix}')
+        print(f'mix  : {fname_mix}')
+        print(f'win  : {fname_win}')
+
+    _f_test('$HOME/aa\\bb/cc.txt')
+    _f_test('$HOME/WinHome/.bashrc')
+    _f_test('$MY_DATA/aa\\bb/cc.txt')
+    _f_test('D:/aa\\bb/cc.txt')
+    _f_test('/d/aa\\bb/cc.txt')
+    _f_test('/mnt/d/aa\\bb/mnt/cc.txt')
+
 def f_test_fn():
     print(fn_dirname('aa/bb' , 'img_', '_out'))
     print(fn_dirname('aa/bb/', 'img_', '_out'))
