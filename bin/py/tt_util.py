@@ -373,31 +373,51 @@ def timeit(func):
 
 
 # -----------------------------------------------------
-# text
+# text (string)
 # -----------------------------------------------------
 def read_text(fname):
-    with open(fname, "r") as f:
-        return f.readlines()
+    with open(fname, "r", encoding="utf-8") as f:
+        return f.read()
 
-
-def write_text(fname, lines):
-    with open(fname, "w") as f:
-        for i in lines:
-            f.write(i)
-
+def write_text(fname, text):
+    with open(fname, "w", encoding="utf-8") as f:
+        f.write(text)
 
 # -----------------------------------------------------
-# json
+# lines (list os string)
 # -----------------------------------------------------
+def text2lines(text):
+    return text.splitlines()
+
+def read_lines(fname, del_null=False):
+    with open(fname, "r", encoding="utf-8") as f:
+        lst = f.readlines()
+        lst = [i.strip() for i in lst]
+        if del_null:
+            lst = [i for i in lst if i != '']
+        return lst
+
+def write_lines(fname, lst, del_null=False):
+    with open(fname, "w", encoding="utf-8") as f:
+        if del_null:
+            lst = [i for i in lst if i != '']
+        lst = [i + "\n" for i in lst]
+        f.writelines(lst)
+
+# -----------------------------------------------------
+# json (dict)
+# -----------------------------------------------------
+def text2json(json_text):
+    return json.loads(json_text)
+
 def read_json(fname):
-    with open(fname, "r") as f:
+    with open(fname, "r", encoding="utf-8") as f:
         return json.load(f)
 
-
-def write_json(fname, data):
-    with open(fname, "w") as f:
-        f.write(json.dumps(data, sort_keys=True, indent=4))
-
+def write_json(fname, dct):
+    with open(fname, "w", encoding="utf-8") as f:
+        text = json.dumps(dct, indent=4, ensure_ascii=False)
+        f.write(text)
 
 # -----------------------------------------------------
 # subprocess
@@ -411,3 +431,76 @@ def run(command):
             sys.stdout.write(line)
         if not line and proc.poll() is not None:
             break
+
+# =====================================================
+# main
+# =====================================================
+def f_test_fn():
+    print(fn_dirname('aa/bb' , 'img_', '_out'))
+    print(fn_dirname('aa/bb/', 'img_', '_out'))
+    print(fn_filename('aa/bb/cc.png', 'img_', '_out', '.jpg'))
+    print(fn_filename_ext('aa/bb/cc.png'))
+
+def f_test_filename():
+    FN = FileName("$HOME/a/b/c/d.png")
+
+    print(f"FN.origname() = {FN.origname()}")
+    print(f"FN.dirname()  = {FN.dirname()}")
+    print(f"FN.abspath()  = {FN.abspath(prefix='pre_', postfix='_post', ext='.jpg')}")
+    print(f"FN.filename() = {FN.filename(prefix='pre_', postfix='_post', ext='.jpg')}")
+    print(f"FN.filename() = {FN.filename()}")
+    print(f"FN.name()     = {FN.name()}")
+    print(f"FN.ext()      = {FN.ext()}")
+
+def f_test_io_text():
+    text = '''
+key1 1
+key2 2
+key3 3
+'''
+    write_text(f'_output.txt', text)
+    text = read_text('_output.txt')
+    print(text)
+
+def f_test_io_lines():
+    text = '''
+key1 1
+key2 2
+key3 3
+'''
+    lst = text2lines(text)
+    write_lines(f'_output_lines.txt', lst)
+    lst = read_lines('_output_lines.txt')
+    print(lst)
+
+def f_test_io_json():
+    json_text = '''
+{
+  "key1": 1,
+  "key2": 2,
+  "key3": 3
+}
+'''
+    json_data = text2json(json_text)
+    write_json(f'_output.json', json_data)
+    json_data = read_json('_output.json')
+    print(json_data)
+
+# -----------------------------------------------------
+import types
+
+def get_global_funcs(prefix=''):
+    lst = [name for name, obj in globals().items() if isinstance(obj, types.FunctionType)]
+    if prefix != '':
+        lst = [i for i in lst if i.startswith(prefix)]
+    return lst
+
+def run_funcs():
+    func_lst = get_global_funcs('f_test_')
+    for func in func_lst:
+        log_title(f' [{func}] ')
+        eval(f'{func}()')
+
+# -----------------------------------------------------
+if __name__ == '__main__':
+    run_funcs()
