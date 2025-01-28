@@ -244,6 +244,10 @@ f_git_rebase_abort() {
   $SYS_GIT_EXE rebase --abort
 }
 
+f_git_rebase_continue() {
+  $SYS_GIT_EXE rebase --continue
+}
+
 #------------------------------------------------------
 # wip
 #------------------------------------------------------
