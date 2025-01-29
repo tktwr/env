@@ -438,6 +438,42 @@ def run(command):
         if not line and proc.poll() is not None:
             break
 
+# -----------------------------------------------------
+# excel
+# -----------------------------------------------------
+def rowcol2excel(row: int, col: int) -> str:
+    """
+    数値座標 (row, col) を Excel 形式 (例: A1, B2) に変換する関数。
+    :param row: 行番号（0始まり）
+    :param col: 列番号（0始まり）
+    :return: Excel 形式のセル位置 (例: A1, B2)
+    """
+    column_label = ""
+    col += 1  # 1-indexed に変換
+    while col > 0:
+        col -= 1
+        column_label = chr(ord('A') + (col % 26)) + column_label
+        col //= 26
+
+    return f"{column_label}{row + 1}"
+
+def excel2rowcol(cell: str) -> tuple:
+    """
+    Excel 形式のセル位置 (例: A1, B2) を数値座標 (row, col) に変換する関数。
+    :param cell: Excel 形式のセル位置 (例: A1, B2)
+    :return: 数値座標 (row, col)
+    """
+    match = re.match(r"([A-Z]+)([0-9]+)", cell)
+    if not match:
+        raise ValueError("Invalid cell format")
+
+    column_label, row = match.groups()
+    col = 0
+    for char in column_label:
+        col = col * 26 + (ord(char) - ord('A') + 1)
+
+    return int(row) - 1, col - 1
+
 # =====================================================
 # main
 # =====================================================
@@ -514,6 +550,17 @@ def f_test_io_json():
     write_json(f'_output.json', json_data)
     json_data = read_json('_output.json')
     print(json_data)
+
+def f_test_excel():
+    print(rowcol2excel(0, 0))  # A1
+    print(rowcol2excel(1, 1))  # B2
+    print(rowcol2excel(2, 3))  # D3
+    print(rowcol2excel(27, 27)) # AB28
+
+    print(excel2rowcol("A1"))  # (0, 0)
+    print(excel2rowcol("B2"))  # (1, 1)
+    print(excel2rowcol("D3"))  # (2, 3)
+    print(excel2rowcol("AB28")) # (27, 27)
 
 # -----------------------------------------------------
 import types
