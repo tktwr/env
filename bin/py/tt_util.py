@@ -14,6 +14,53 @@ import shutil
 
 
 # -----------------------------------------------------
+# log
+# -----------------------------------------------------
+def bin_name(fname):
+    return os.path.basename(os.path.abspath(fname))
+
+def log(s):
+    print(f'{s}', file=sys.stderr)
+
+def _log(s, tag, fname=''):
+    if fname != '':
+        fname = bin_name(fname)
+    print(f'{tag}:{fname}: {s}', file=sys.stderr)
+
+def logI(s, fname=''):
+    _log(s, 'INFO', fname)
+
+def logD(s, fname=''):
+    _log(s, 'DEBUG', fname)
+
+def logE(s, fname=''):
+    _log(s, 'ERROR', fname)
+
+def log_sep_0(s):
+    print(f'=== {s} ====================', file=sys.stderr)
+
+def log_sep(s):
+    print(f'--- {s} --------------------', file=sys.stderr)
+
+def log_title(title, sep='-', sep_n=55, place='center'):
+    separator = sep * sep_n
+    n = len(title)
+    out = separator
+    if place == 'left':
+        out = title + separator[n:]
+    elif place == 'right':
+        out = separator[:-n] + title
+    elif place == 'center':
+        nn = len(separator) - n
+        r = nn % 2
+        nl = int(nn / 2)
+        nr = int(nn / 2) + r
+        sepl = separator[:nl]
+        sepr = separator[-nr:]
+        out = sepl + title + sepr
+    print(f'{out}', flush=True, file=sys.stderr)
+
+# -----------------------------------------------------
 # exists
 # -----------------------------------------------------
 def sh_isfile(fname):
@@ -69,40 +116,6 @@ def sh_cpdir(src_dir, dst_dir):
 
 def sh_mvdir(src_dir, dst_dir):
     shutil.move(src_dir, dst_dir)
-
-# -----------------------------------------------------
-# log
-# -----------------------------------------------------
-def log_sep_0(s):
-    print(f'=== {s} ====================', file=sys.stderr)
-
-
-def log_sep(s):
-    print(f'--- {s} --------------------', file=sys.stderr)
-
-
-def log(s):
-    print(f'{s}', file=sys.stderr)
-
-
-def log_title(title, sep='-', sep_n=55, place='center'):
-    separator = sep * sep_n
-    n = len(title)
-    out = separator
-    if place == 'left':
-        out = title + separator[n:]
-    elif place == 'right':
-        out = separator[:-n] + title
-    elif place == 'center':
-        nn = len(separator) - n
-        r = nn % 2
-        nl = int(nn / 2)
-        nr = int(nn / 2) + r
-        sepl = separator[:nl]
-        sepr = separator[-nr:]
-        out = sepl + title + sepr
-    print(f'{out}', flush=True, file=sys.stderr)
-
 
 # -----------------------------------------------------
 # list
@@ -475,7 +488,7 @@ def excel2rowcol(cell: str) -> tuple:
     return int(row) - 1, col - 1
 
 # =====================================================
-# main
+# test
 # =====================================================
 import pprint
 
