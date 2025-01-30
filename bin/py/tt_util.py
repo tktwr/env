@@ -13,15 +13,16 @@ import numpy as np
 import shutil
 
 
-# -----------------------------------------------------
-# log
-# -----------------------------------------------------
 def bin_name(fname):
     return os.path.basename(os.path.abspath(fname))
 
+# -----------------------------------------------------
+# log
+# -----------------------------------------------------
 def log(s):
     print(f'{s}', file=sys.stderr)
 
+# -----------------------------------------------------
 def _log(s, tag, fname=''):
     if fname != '':
         fname = bin_name(fname)
@@ -36,6 +37,7 @@ def logD(s, fname=''):
 def logE(s, fname=''):
     _log(s, 'ERROR', fname)
 
+# -----------------------------------------------------
 def log_sep_0(s):
     print(f'=== {s} ====================', file=sys.stderr)
 
