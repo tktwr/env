@@ -13,9 +13,10 @@ syn case match
 
 syn region   myDetails          start=+<details>+ end=+</details>+
 
+"syn match    myColon            "\f\+:"
+syn match    myColon            ".\+: "
 syn match    myItem             "^\s*[-+*] "
 syn match    myCitation         "^\s*>.*$"
-syn match    myColon            "\f\+:"
 
 syn match    myString           '"[^"]*"'
 syn match    myString           "'[^']*'"

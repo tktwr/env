@@ -6,7 +6,8 @@ let $NVIM_COC_LOG_LEVEL='debug'
 if $MY_OS_NAME == 'termux'
   Plug 'neoclide/coc.nvim', {'commit': 'cf651a31736fc36c441bf307d2babff78280dd59'}  " work with node v12.22.9
 else
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  "Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'neoclide/coc.nvim', {'commit': '408e2506'}
 endif
 
 if filereadable(expand('~/.vim/coc-settings.json'))

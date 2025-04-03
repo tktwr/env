@@ -93,6 +93,10 @@ Date & Time
 10:20
 1:10
 
+- aaa: bbb
+- aaa:bbb: ccc
+- aaa bbb: ccc
+
 Sat
 Sun
 祝日
