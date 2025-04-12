@@ -18,7 +18,6 @@ _my_setup_python_win() {
 
 _my_setup_conda_win() {
   export PATH="$APP_L_MINIFORGE3/condabin:$PATH"
-  eval "$('~/miniforge3/Scripts/conda.exe' 'shell.bash' 'hook')"
 }
 
 _my_setup_python_linux() {
