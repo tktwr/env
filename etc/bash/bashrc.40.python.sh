@@ -17,7 +17,7 @@ _my_setup_python_win() {
 }
 
 _my_setup_conda_win() {
-  export PATH="$APP_L_MINIFORGE3_WIN/condabin:$PATH"
+  export PATH="$APP_L_MINIFORGE3/condabin:$PATH"
 }
 
 _my_setup_python_linux() {
