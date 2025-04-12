@@ -13,6 +13,7 @@ winget_pkg="\
   OpenJS.NodeJS.LTS \
   Kitware.CMake \
   Neovim.Neovim \
+  CondaForge.Miniforge3 \
   "
 
 #======================================================

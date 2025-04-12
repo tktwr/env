@@ -17,6 +17,7 @@ pip_pkg_dev="\
 parse \
 numpy \
 opencv-python \
+OpenEXR \
 matplotlib \
 tkinterdnd2 \
 "

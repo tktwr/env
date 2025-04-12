@@ -32,6 +32,7 @@ app-l-winget           | APP_L_WINGET           | $SYS_WIN_HOME/AppData/Local/Mi
 app-l-winapp           | APP_L_WINAPP           | $SYS_WIN_HOME/AppData/Local/Microsoft/WindowsApps
 app-l-nvim             | APP_L_NVIM             | $SYS_WIN_HOME/AppData/Local/nvim
 app-l-android-sdk      | ANDROID_SDK            | $SYS_WIN_HOME/AppData/Local/Android/sdk
+app-l-miniforge3       | APP_L_MINIFORGE3       | $SYS_WIN_HOME/miniforge3
 #----------            | ----------             | ----------
 app-roaming            | APP_R                  | $SYS_WIN_HOME/AppData/Roaming
 app-r-python           | APP_R_PYTHON           | $SYS_WIN_HOME/AppData/Roaming/Python/Python310

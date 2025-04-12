@@ -16,6 +16,10 @@ _my_setup_python_win() {
   alias python='winpty python'
 }
 
+_my_setup_conda_win() {
+  export PATH="$APP_L_MINIFORGE3_WIN/condabin:$PATH"
+}
+
 _my_setup_python_linux() {
   export PYTHONPATH="$SYS_BLENDER_PY:$PYTHONPATH"
   export PYTHONPATH="$MY_SAMPLES/py/lib:$PYTHONPATH"
@@ -26,6 +30,7 @@ my_setup_python() {
   case $MY_OS_NAME in
     msys|gitbash)
       _my_setup_python_win
+      _my_setup_conda_win
       ;;
     *)
       _my_setup_python_linux

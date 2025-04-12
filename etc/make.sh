@@ -36,11 +36,11 @@ _f_cp_all() {
   cp -a --parents    $DOT_FILES_COMMON $HOME
   cp -a --parents -n $DOT_FILES_DIFF   $HOME
 
-  if [ -n "$APP_L" ]; then
+  if [ -n "$APP_L" -a -d "$APP_L" ]; then
     mkdir -p $APP_L/nvim
     cp -a vim/vimrc_zero.vim $APP_L/nvim/init.vim
   fi
-  if [ -n "$APP_R" ]; then
+  if [ -n "$APP_R" -a -d "$APP_R" ]; then
     cp -a $DOT_FILES_CONFIG $APP_R
   fi
 }
