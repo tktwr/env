@@ -568,7 +568,10 @@ def img_compare(img1, img2):
     return oimg
 
 
-def img_add_label(img, label_type, ifname, nr):
+# =====================================================
+# draw
+# =====================================================
+def img_draw_label(img, label_type, ifname, nr, desired_height, color, thickness=1):
     ifname = os.path.abspath(ifname)
     if label_type == 'FILE':
         name = ifname.split('/')[-1]
@@ -585,7 +588,42 @@ def img_add_label(img, label_type, ifname, nr):
     if name != '':
         h, w, ch = img_size(img)
         xy = (int(0.05 * w), int(0.95 * h))
-        color = (255, 255, 255)
-        cv2.putText(img, name, xy, cv2.FONT_HERSHEY_SIMPLEX, 1, color, 1, cv2.LINE_AA)
+        font = cv2.FONT_HERSHEY_SIMPLEX
+        (text_width, text_height), baseline = cv2.getTextSize(name, font, 1, thickness)
+        font_scale = desired_height / text_height
+        cv2.putText(img, name, xy, font, font_scale, color, thickness, cv2.LINE_AA)
+
+
+def img_draw_title(img, text_lst, desired_height, color, thickness=1):
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    lst = text_lst.split(';')
+    n = len(lst)
+    h, w, ch = img_size(img)
+    dw = w / n
+
+    for i in range(n):
+        text = lst[i]
+        (text_width, text_height), baseline = cv2.getTextSize(text, font, 1, thickness)
+        font_scale = desired_height / text_height
+        xy = (int(i * dw + 0.5 * dw - 0.5 * text_width), int(desired_height * 2))
+        cv2.putText(img, text, xy, font, font_scale, color, thickness, cv2.LINE_AA)
+
+
+def img_draw_line(img, begin_point, end_point, color, thickness=1):
+    cv2.line(img, begin_point, end_point, color, thickness)
+
+
+def img_draw_grid(img, tile_wh, nxny, color, thickness=1):
+    tw, th = tile_wh
+    nx, ny = nxny
+    for i in range(nx + 1):
+        b = (tw * i, th * 0)
+        e = (tw * i, th * ny)
+        img_draw_line(img, b, e, color, thickness)
+
+    for i in range(ny + 1):
+        b = (tw * 0 , th * i)
+        e = (tw * nx, th * i)
+        img_draw_line(img, b, e, color, thickness)
 
 

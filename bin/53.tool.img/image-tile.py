@@ -8,6 +8,8 @@ import cv_util as cu
 
 # -----------------------------------------------------
 def make_img_list(ifnames, args):
+    text_height = 18
+    color = (255, 255, 255)
     wh = args.tile_wh
     nr = 1
     l1 = []
@@ -20,7 +22,7 @@ def make_img_list(ifnames, args):
             img = cu.imgfile_load(i)
             img = cu.img_fit(img, wh)
             img = cu.img_crop(img, (0, 0), wh, True)
-            cu.img_add_label(img, args.label_type, i, nr)
+            cu.img_draw_label(img, args.label_type, i, nr, text_height, color)
             nr += 1
         if args.linear_to_srgb:
             img = cu.img_linear_to_srgb(img)
@@ -58,6 +60,17 @@ def save_tile(ofname, files, args):
     elif args.order == 'Y':
         img = make_vtile(files, ny, args)
 
+    if args.border > 0:
+        color = (127, 127, 127)
+        thickness = args.border
+        cu.img_draw_grid(img, args.tile_wh, (nx, ny), color, thickness)
+
+    if args.title != '':
+        text_height = 20
+        color = (0, 255, 255)
+        thickness = 2
+        cu.img_draw_title(img, args.title, text_height, color, thickness)
+
     if img is not None:
         cu.imgfile_save(ofname, img)
 
@@ -80,17 +93,21 @@ def parse_args():
     parser = tu.parser('tiling images')
     A = parser.add_argument
 
-    A('files' , nargs='+'           , help='input files'                     , type=str            , )
-    A('-o'    , '--output'          , help="set output file name"            , type=str            , default='tile_%02d.jpg' , )
-    A('-max'  , '--max'             , help="set max per page"                , type=int            , default=0               , )
-    A('-nx'   , '--nx'              , help="set nx"                          , type=int            , default=0               , )
-    A('-ny'   , '--ny'              , help="set ny"                          , type=int            , default=0               , )
-    A('-T'    , '--tile_wh'         , help='set each tile image size (w h)'  , type=int            , nargs=2                 , default=[500    , 500]   , )
-    A('-O'    , '--order'           , help="set the order of input files"    , type=str            , default='X'             , choices=['X'    , 'Y']   , )
-    A('-L'    , '--label_type'      , help="set label type"                  , type=str            , default='NONE'          , choices=['NONE' , 'FILE' , 'DIR' , 'NUM' , 'ALPHA'] , )
-    A('-N'    , '--normalize'       , help='normalize'                       , action='store_true' , )
-    A('-Nr'   , '--normalize_range' , help='set normalize range'             , type=float          , nargs=2                 , default=[0.0    , 0.0]   , )
-    A('-l2s'  , '--linear_to_srgb'  , help='convert linear to srgb'          , action='store_true' , )
+    A('files' , nargs='+'           , help='input files'                    , type=str            , )
+    A('-o'    , '--output'          , help="set output file name"           , type=str            , default='tile_%02d.jpg' , )
+    A('-max'  , '--max'             , help="set max per page"               , type=int            , default=0               , )
+    A('-nx'   , '--nx'              , help="set nx"                         , type=int            , default=0               , )
+    A('-ny'   , '--ny'              , help="set ny"                         , type=int            , default=0               , )
+    A('-T'    , '--tile_wh'         , help='set each tile image size (w h)' , type=int            , nargs=2                 , default=[500    , 500]   , )
+    A('-O'    , '--order'           , help="set the order of input files"   , type=str            , default='X'             , choices=['X'    , 'Y']   , )
+    #         ,
+    A('-N'    , '--normalize'       , help='normalize'                      , action='store_true' , )
+    A('-Nr'   , '--normalize_range' , help='set normalize range'            , type=float          , nargs=2                 , default=[0.0    , 0.0]   , )
+    A('-l2s'  , '--linear_to_srgb'  , help='convert linear to srgb'         , action='store_true' , )
+    #         ,
+    A('-t'    , '--title'           , help="set title"                      , type=str            , default=''              , )
+    A('-L'    , '--label_type'      , help="set label type"                 , type=str            , default='NONE'          , choices=['NONE' , 'FILE' , 'DIR' , 'NUM' , 'ALPHA'] , )
+    A('-b'    , '--border'          , help="set border"                     , type=int            , default=0               , )
 
     return parser.parse_args()
 
