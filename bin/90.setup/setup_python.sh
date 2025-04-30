@@ -18,6 +18,7 @@ parse \
 numpy \
 opencv-python \
 OpenEXR \
+rawpy \
 matplotlib \
 tkinterdnd2 \
 "

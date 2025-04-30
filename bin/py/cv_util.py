@@ -4,6 +4,7 @@
 import os
 os.environ['OPENCV_IO_ENABLE_OPENEXR'] = '1'
 import cv2
+import rawpy
 import numpy as np
 import tt_util as tu
 
@@ -472,6 +473,10 @@ def imgfile_info(fname):
 
 def imgfile_load(ifname):
     FN = tu.FileName(ifname)
+    if FN.ext() == '.CR2':
+        raw = rawpy.imread(FN.abspath())
+        rgb = raw.postprocess()
+        return img_rgb_to_bgr(rgb)
     return cv2.imread(FN.abspath(), cv2.IMREAD_UNCHANGED)
 
 
