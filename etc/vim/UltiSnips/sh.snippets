@@ -80,13 +80,31 @@ f_fzf_default() { f_all; }
 f_fzf_main "$@"
 endsnippet
 #----------------------------------------------------------------
-snippet s-make-python
+snippet s-make-venv
+#------------------------------------------------------
+VENV_DIR=.venv_proj
 f_venv_create() {
-  python -m venv .venv_proj
+  python -m venv $VENV_DIR
 }
-f_pip_install() {
+f_venv_activate() {
+  echo "source $VENV_DIR/bin/activate"
+}
+f_venv_pip_install() {
   pip install numpy opencv-python matplotlib
 }
+#------------------------------------------------------
+endsnippet
+#----------------------------------------------------------------
+snippet s-make-conda
+#------------------------------------------------------
+CONDA_ENV_NAME=conda_proj
+f_conda_create() {
+  conda create -n $CONDA_ENV_NAME python
+}
+f_conda_activate() {
+  echo "conda activate $CONDA_ENV_NAME"
+}
+#------------------------------------------------------
 endsnippet
 #----------------------------------------------------------------
 snippet s-main

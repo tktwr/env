@@ -29,8 +29,15 @@ f_time_end() {
 #------------------------------------------------------
 # source_file
 #------------------------------------------------------
-echo_err() {
-  echo "$@" 1>&2
+echo_D() {
+  if [ $MY_DEBUG -eq 1 ]; then
+    echo "[DEBUG] $@" 1>&2
+  fi
+}
+
+MyCall() {
+  echo_D "call: $@"
+  eval "$@"
 }
 
 source_file() {
@@ -39,14 +46,12 @@ source_file() {
   local I
   for I in $files; do
     if [ -f $I ]; then
+      echo_D "source: $I"
       f_time_start $I
-      #echo $I
       source $I
       f_time_end $I
     else
-      if [ $MY_DEBUG -eq 1 ]; then
-        echo_err "no file: $I"
-      fi
+      echo_D "no file: $I"
     fi
   done
 }
