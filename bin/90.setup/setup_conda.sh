@@ -1,5 +1,10 @@
 #!/bin/bash
 
+conda_pkg_dev="\
+opencv \
+openexr \
+"
+
 f_conda_info()      { conda info; }
 f_conda_info_envs() { conda info -e; }
 f_conda_list()      { conda list; }
@@ -22,6 +27,9 @@ f_conda_10_activate() {
 }
 f_conda_10_deactivate() {
   conda deactivate
+}
+f_conda_10_install() {
+  conda install $conda_pkg_dev
 }
 #------------------------------------------------------
 f_conda_11_create_local() {

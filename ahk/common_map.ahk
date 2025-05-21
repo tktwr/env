@@ -20,11 +20,11 @@ Space & Esc::Return
 ; Tab in apps
 ;======================================================
 #IfWinActive ahk_exe chrome.exe
-Space & ,::Send,+{Enter}
+Space & Enter::Send,+{Enter}
 #IfWinActive
 
 #IfWinActive ahk_exe excel.exe
-Space & ,::Send,!{Enter}
+Space & Enter::Send,!{Enter}
 #IfWinActive
 ;======================================================
 ; Space in terminal
