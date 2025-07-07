@@ -14,6 +14,7 @@ winget_pkg="\
   Kitware.CMake \
   Neovim.Neovim \
   CondaForge.Miniforge3 \
+  Genymobile.scrcpy \
   "
 
 #======================================================
