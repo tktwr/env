@@ -48,6 +48,10 @@ syn match    myTagR             '([^)]*)' contains=mySat,mySun
 syn match    myTagC             '{[^}]*}'
 syn match    myIcon             '[-﵆]'
 
+syn keyword  myHIGH             HIGH
+syn keyword  myMIDDLE           MIDDLE
+syn keyword  myLOW              LOW
+
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
 syn keyword  myTODO             TODO
@@ -61,6 +65,17 @@ syn keyword  mykBlue            End win right
 syn keyword  mykPurple          py readline fzf
 syn keyword  mykAqua            term
 syn keyword  mykOrange          tab
+
+syn keyword  myDark1Red         生活
+syn keyword  myDark1Green       趣味
+syn keyword  myDark1Green       開発 Dev
+syn keyword  myDark1Yellow      購入
+syn keyword  myDark1Blue        運動
+syn keyword  myDark1Purple      Game
+syn keyword  myDark1Purple      イベント
+syn keyword  myDark1Aqua        掃除
+syn keyword  myDark1Aqua        事務 スマホ
+syn keyword  myDark1Orange      News
 
 syn match    myRed              "\[ *Red *\]"
 syn match    myGreen            "\[ *Green *\]"
@@ -126,6 +141,10 @@ hi link myTagR             MyAqua
 hi link myTagC             MyYellow
 hi link myIcon             MyGreen
 
+hi link myHIGH             MyRed
+hi link myMIDDLE           MyYellow
+hi link myLOW              MyGreen
+
 hi link myWORK             MyBlue
 hi link myINFO             MyYellow
 hi link myTODO             MyOrange
@@ -139,6 +158,14 @@ hi link mykBlue            MyBlue
 hi link mykPurple          MyPurple
 hi link mykAqua            MyAqua
 hi link mykOrange          MyOrange
+
+hi link myDark1Red         MyDark1Red
+hi link myDark1Green       MyDark1Green
+hi link myDark1Yellow      MyDark1Yellow
+hi link myDark1Blue        MyDark1Blue
+hi link myDark1Purple      MyDark1Purple
+hi link myDark1Aqua        MyDark1Aqua
+hi link myDark1Orange      MyDark1Orange
 
 hi link myRed              MyRed  
 hi link myGreen            MyGreen 

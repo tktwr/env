@@ -270,23 +270,28 @@ f_git_clone_shallow() {
     $SYS_GIT_EXE clone --depth 1 "$@"
   fi
 }
-
 f_git_clone_shallow_recursive() {
   if [ $# -gt 0 ]; then
     $SYS_GIT_EXE clone --depth 1 --recurse-submodules --shallow-submodules "$@"
   fi
 }
-
 f_git_clone_recursive() {
   if [ $# -gt 0 ]; then
     $SYS_GIT_EXE clone --recurse-submodules "$@"
   fi
 }
-
-f_git_submodule_update_all() {
-  $SYS_GIT_EXE submodule update --init --recursive
+f_git_submodule_add_memo_js() {
+  mkdir -p third_party
+  git submodule add https://github.com/tktwr/memo_js.git third_party/memo_js
 }
-
+f_git_submodule_update_all() {
+  $SYS_GIT_EXE submodule update --init --recursive --remote --rebase
+  $SYS_GIT_EXE commit -a -m "update submodule"
+}
+f_git_submodule_status() {
+  git submodule status --recursive
+  git submodule summary
+}
 #------------------------------------------------------
 # diff
 #------------------------------------------------------
