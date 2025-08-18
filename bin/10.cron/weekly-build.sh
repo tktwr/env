@@ -2,4 +2,4 @@
 
 source cmd_util.sh
 
-f_all_monthly_tags
+f_all_weekly_build

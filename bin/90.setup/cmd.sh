@@ -13,12 +13,6 @@ f_10_setup_daily() {
 f_11_setup_time() {
   sync-time.sh
 }
-f_21_setup_weekly() {
-  weekly-tags.sh
-}
-f_31_setup_monthly() {
-  monthly-tags.sh
-}
 f_90_setup_init() {
   f_apt_update
   f_apt_install_min

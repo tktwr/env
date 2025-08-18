@@ -1,3 +1,5 @@
 #!/bin/bash
 
-rm $APP_L/Temp/*_autosave.blend
+source cmd_util.sh
+
+f_all_monthly_clean
