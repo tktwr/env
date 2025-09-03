@@ -79,14 +79,14 @@ f_all_weekly_build() {
 #======================================================
 # all
 #======================================================
-f_all_status() { for-dir.sh "mymake.sh f_status" ${MEMO_DIRS} }
+f_all_memo_status() { for-dir.sh "mymake.sh f_status" ${MEMO_DIRS}; }
 #======================================================
 # env
 #======================================================
-f_env_status()      { for-dir.sh "git.sh status -s"    $GIT_DIRS; }
-f_env_graph()       { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
-f_env_fetch()       { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
-f_env_pull()        { for-dir.sh "git.sh pull"         $GIT_DIRS; }
-f_env_build()       { for-dir.sh "make all"            $BUILD_DIRS; }
-f_env_build_clean() { for-dir.sh "make all.clean"      $BUILD_DIRS; }
+f_all_env_status()      { for-dir.sh "git.sh status -s"    $GIT_DIRS; }
+f_all_env_graph()       { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
+f_all_env_fetch()       { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
+f_all_env_pull()        { for-dir.sh "git.sh pull"         $GIT_DIRS; }
+f_all_env_build()       { for-dir.sh "make all"            $BUILD_DIRS; }
+f_all_env_build_clean() { for-dir.sh "make all.clean"      $BUILD_DIRS; }
 
