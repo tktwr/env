@@ -20,8 +20,8 @@ secret      | MY_SECRET         | $MY_PRIVATE_CONFIG/secret
 repo        | MY_REPO           | $SYS_WORK_HOME/repo
 git         | MY_GIT            | $SYS_WORK_HOME/git
 work        | MY_WORK           | $SYS_WORK_HOME/work
-backup      | MY_BACKUP         | $SYS_WORK_HOME/backup/2024
-tmp         | MY_TMP            | $SYS_WORK_HOME/tmp/2024
+backup      | MY_BACKUP         | $SYS_WORK_HOME/backup/2025
+tmp         | MY_TMP            | $SYS_WORK_HOME/tmp/2025
 #---------- | ----------        | ----------
 proj        | MY_PROJ           | $SYS_PROJ_HOME/proj
 doc         | MY_DOC            | $SYS_PROJ_HOME/doc
