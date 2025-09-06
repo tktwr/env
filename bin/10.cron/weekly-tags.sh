@@ -1,5 +1,4 @@
 #!/bin/bash
 
-source cmd_util.sh
-
-f_all_weekly_tags
+source cmd_proj.sh
+f_weekly_tags

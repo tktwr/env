@@ -1,5 +1,6 @@
 -------------- | ------------------------------ | ------------------------------
 + 📄💡         | dia                            | $MY_DIARY/diary.md.html
++ 📄💡         | weekly                         | $MY_DIARY/weekly.md.html
 +              | todo                           | $MY_DIARY/todo.md.html
 +              | info                           | $MY_DIARY/info.md.html
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html

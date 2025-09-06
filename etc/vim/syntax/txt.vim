@@ -54,7 +54,7 @@ syn keyword  myLOW              LOW
 
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
-syn keyword  myTODO             TODO
+syn keyword  myTODO             TODO contained
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 

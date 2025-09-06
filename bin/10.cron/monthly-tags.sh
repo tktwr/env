@@ -1,5 +1,4 @@
 #!/bin/bash
 
-source cmd_util.sh
-
-f_all_monthly_tags
+source cmd_proj.sh
+f_monthly_tags

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source cmd_proj.sh
+
 #======================================================
 # variables
 #======================================================
@@ -28,7 +30,6 @@ DOT_FILES_INIT="\
 .profile \
 "
 DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
-
 #======================================================
 # functions
 #======================================================
@@ -44,34 +45,29 @@ _f_cp_all() {
     cp -a $DOT_FILES_CONFIG $APP_R
   fi
 }
-
 _f_sub() {
   cd $1
   ./make.sh $2
   cd ..
 }
-
 #------------------------------------------------------
-f_10_install_all() {
+f_11_install_all() {
   ./zero_hostname.sh
   _f_cp_all
   _f_sub bash
   _f_sub vim
 }
-
-f_11_install_zero() {
+f_12_install_zero() {
   ./zero.sh
   _f_cp_all
 }
-
 #------------------------------------------------------
 f_cmp()            { diff-files.sh -c cmp        -d $HOME $DOT_FILES_ALL; }
 f_cmp_diff()       { diff-files.sh -c diff       -d $HOME $DOT_FILES_ALL; }
 f_cmp_vimdiff()    { diff-files.sh -c vimdiff.sh -d $HOME $DOT_FILES_ALL; }
 f_cmp_vimdirdiff() { vimdirdiff.sh . $HOME; }
-f_backup_cp()      { cd; snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
-f_backup_tar()     { cd; snap-tar.sh $MY_SNAP dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
-
+f_dot_backup_cp()  { cd; snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
+f_dot_backup_tar() { cd; snap-tar.sh $MY_SNAP dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
 #======================================================
 # main
 #======================================================

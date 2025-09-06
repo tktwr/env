@@ -1,5 +1,4 @@
 #!/bin/bash
 
-source cmd_util.sh
-
-f_all_weekly_build
+source cmd_proj.sh
+f_weekly_build
