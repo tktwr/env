@@ -43,7 +43,7 @@ syn keyword  mySun              Sun
 syn keyword  myHoliday          祝日
 syn keyword  myHoliday          Holiday
 
-syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL
+syn match    myTag              "\[[^]]*\]" contains=myDate,myWORK,myINFO,myTODO,myOK,myFAIL,myTagHIGH,myTagMIDDLE,myTagLOW
 syn match    myTagR             '([^)]*)' contains=mySat,mySun
 syn match    myTagC             '{[^}]*}'
 syn match    myIcon             '[-﵆]'
@@ -51,6 +51,10 @@ syn match    myIcon             '[-﵆]'
 syn keyword  myHIGH             HIGH
 syn keyword  myMIDDLE           MIDDLE
 syn keyword  myLOW              LOW
+
+syn keyword  myTagHIGH          H contained
+syn keyword  myTagMIDDLE        M contained
+syn keyword  myTagLOW           L contained
 
 syn keyword  myWORK             WORK contained
 syn keyword  myINFO             INFO contained
@@ -146,6 +150,10 @@ hi link myIcon             MyGreen
 hi link myHIGH             MyRed
 hi link myMIDDLE           MyYellow
 hi link myLOW              MyGreen
+
+hi link myTagHIGH          MyRed
+hi link myTagMIDDLE        MyYellow
+hi link myTagLOW           MyGreen
 
 hi link myWORK             MyBlue
 hi link myINFO             MyYellow

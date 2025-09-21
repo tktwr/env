@@ -71,5 +71,5 @@ f_dot_backup_tar() { cd; snap-tar.sh $MY_SNAP dotfiles $DOT_FILES_ALL $DOT_FILES
 #======================================================
 # main
 #======================================================
-f_fzf_default() { f_10_install_all; }
+f_fzf_default() { f_11_install_all; }
 f_fzf_main "$@"
