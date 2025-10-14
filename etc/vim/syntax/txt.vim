@@ -72,6 +72,7 @@ syn keyword  mykOrange          tab
 
 syn keyword  mykYellow          朝食 昼食 夕食
 
+syn keyword  myDark1Red         立会
 syn keyword  myDark1Red         生活
 syn keyword  myDark1Green       趣味
 syn keyword  myDark1Green       開発 Dev

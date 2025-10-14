@@ -1,4 +1,4 @@
 #!/bin/bash
 
-source cmd_proj.sh
-f_weekly_tags
+source cmd_cron.sh
+f_cron_weekly_tags

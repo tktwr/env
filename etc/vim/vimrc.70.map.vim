@@ -89,7 +89,7 @@ vmap ,k          <Plug>(easymotion-k)
 "nnoremap <silent> <C-M>   :echo 'C-M'<CR>  " [ORIG] CR
  nnoremap <silent> <C-,>   :VisModifiable<CR>
  nnoremap <silent> <C-.>   :VisLcdHere<CR>
-"nnoremap <silent> <C-/>   <Nop>
+ nnoremap <silent> <C-/>   :EditTabBar<CR>
 
  nnoremap <silent> <C-]>   g<C-]>
 "nnoremap <silent> <C-]>   :<C-U>call VisTjump(expand('<cword>'), v:count)<CR>
