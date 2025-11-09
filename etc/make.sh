@@ -37,6 +37,10 @@ _f_cp_all() {
   cp -a --parents    $DOT_FILES_COMMON $HOME
   cp -a --parents -n $DOT_FILES_DIFF   $HOME
 
+  if [ -n "$SYS_WIN_HOME" -a -d "$SYS_WIN_HOME" ]; then
+    cp -a --parents    $DOT_FILES_COMMON $SYS_WIN_HOME
+  fi
+
   if [ -n "$APP_L" -a -d "$APP_L" ]; then
     mkdir -p $APP_L/nvim
     cp -a vim/vimrc_zero.vim $APP_L/nvim/init.vim

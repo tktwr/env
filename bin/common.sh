@@ -84,20 +84,20 @@ function f_eval() {
 }
 
 function f_mkdir() {
-  if [ ! -d $1 ]; then
-    f_eval "mkdir $1"
+  if [ ! -d "$1" ]; then
+    f_eval "mkdir -p $1" $2
   fi
 }
 
 function f_rm() {
-  if [ -f $1 ]; then
-    f_eval "rm -f $1"
+  if [ -f "$1" ]; then
+    f_eval "rm -f $1" $2
   fi
 }
 
 function f_rmdir() {
-  if [ -d $1 ]; then
-    f_eval "rm -rf $1"
+  if [ -d "$1" ]; then
+    f_eval "rm -rf $1" $2
   fi
 }
 

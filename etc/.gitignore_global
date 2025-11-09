@@ -35,6 +35,7 @@ __pycache__
 # local
 _output*/
 _local*/
+_backup*/
 local.cmake
 local.mk
 

@@ -58,7 +58,8 @@ SNAP_DIRS="\
   $MY_DIARY \
   $MY_SECRET \
   "
-f_all_snap() { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
+f_all_snap()        { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
+f_all_snap_status() { for-dir.sh "git.sh status -s" $SNAP_DIRS; }
 
 #======================================================
 # daily
@@ -70,8 +71,9 @@ f_cron_daily_update() {
 # weekly
 #======================================================
 f_cron_weekly_tags() {
+  f_all_env_tags
+
   local MEMO_TAGS_DIRS="\
-    $MY_ENV \
     $MY_MEMO \
     $MY_LOCAL_CONFIG/memo \
     $MY_DIARY \
