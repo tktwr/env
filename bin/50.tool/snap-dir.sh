@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# snap-tar.sh dst_dir/out_name dirs|files...
+# snap-dir.sh dst_dir/out_name dirs|files...
 
 source common.sh
 

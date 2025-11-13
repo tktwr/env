@@ -53,12 +53,12 @@ f_parse_args() {
 }
 
 f_print_args() {
-  echo "== [args] ============================================="
+  echo "-- [args] ---------------------------------------------"
   echo "g_backup_dir : $g_backup_dir"
   echo "g_files      : $g_files"
   echo "g_snap_name  : $g_snap_name"
   echo "g_exec_flag  : $g_exec_flag"
-  echo "======================================================="
+  echo "-------------------------------------------------------"
 }
 
 f_backup() {
@@ -76,4 +76,3 @@ f_backup() {
 f_parse_args "$@"
 f_print_args
 f_backup "$g_files"
-

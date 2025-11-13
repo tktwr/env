@@ -91,12 +91,17 @@ SNAP_DIRS="\
   $MY_DIARY \
   $MY_SECRET \
   "
-_f_all_snap()        { for-dir.sh "git-tar.sh $MY_SNAP" $SNAP_DIRS; }
+_f_all_snap()        { for-dir.sh "git-tar.sh -t -D $MY_SNAP" $SNAP_DIRS; }
+_f_all_snap_n()      { for-dir.sh "git-tar.sh -t -D $MY_SNAP -n" $SNAP_DIRS; }
 _f_all_snap_status() { for-dir.sh "git.sh status -s" $SNAP_DIRS; }
 #------------------------------------------------------
 _f_all_dot_backup() {
   cd $MY_ETC
   mymake.sh f_dot_backup_tar
+}
+_f_all_dot_backup_n() {
+  cd $MY_ETC
+  mymake.sh f_dot_backup_tar_n
 }
 #------------------------------------------------------
 # clean
@@ -127,6 +132,10 @@ f_cron_monthly_tags() {
 }
 f_cron_monthly_clean() {
   _f_all_blender_clean
+}
+f_cron_monthly_backup_n() {
+  _f_all_snap_n
+  _f_all_dot_backup_n
 }
 f_cron_monthly_backup() {
   _f_all_snap

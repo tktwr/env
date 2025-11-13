@@ -66,12 +66,13 @@ f_12_install_zero() {
   _f_cp_all
 }
 #------------------------------------------------------
-f_cmp()            { diff-files.sh -c cmp        -d $HOME $DOT_FILES_ALL; }
-f_cmp_diff()       { diff-files.sh -c diff       -d $HOME $DOT_FILES_ALL; }
-f_cmp_vimdiff()    { diff-files.sh -c vimdiff.sh -d $HOME $DOT_FILES_ALL; }
-f_cmp_vimdirdiff() { vimdirdiff.sh . $HOME; }
-f_dot_backup_cp()  { cd; snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
-f_dot_backup_tar() { cd; snap-tar.sh $MY_SNAP dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
+f_cmp()              { diff-files.sh -c cmp        -d $HOME $DOT_FILES_ALL; }
+f_cmp_diff()         { diff-files.sh -c diff       -d $HOME $DOT_FILES_ALL; }
+f_cmp_vimdiff()      { diff-files.sh -c vimdiff.sh -d $HOME $DOT_FILES_ALL; }
+f_cmp_vimdirdiff()   { vimdirdiff.sh . $HOME; }
+f_dot_backup_cp()    { cd; snap-dir.sh $MY_BACKUP/dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
+f_dot_backup_tar()   { cd; snap-tar.sh -t -D $MY_SNAP -o dotfiles $DOT_FILES_ALL $DOT_FILES_INIT; }
+f_dot_backup_tar_n() { cd; snap-tar.sh -t -D $MY_SNAP -o dotfiles $DOT_FILES_ALL $DOT_FILES_INIT -n; }
 #======================================================
 # main
 #======================================================
