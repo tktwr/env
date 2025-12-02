@@ -1,7 +1,8 @@
 -------------- | ------------------------------ | ------------------------------
 + 📄💡         | dia                            | $MY_DIARY/diary.md.html
-+ 📄💡         | weekly                         | $MY_DIARY/weekly.md.html
 +              | todo                           | $MY_DIARY/todo.md.html
++              | weekly                         | $MY_DIARY/weekly.md.html
++              | finance                        | $MY_DIARY/finance.md.html
 +              | info                           | $MY_DIARY/info.md.html
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html
 +              | links                          | $MY_BMK/links.txt

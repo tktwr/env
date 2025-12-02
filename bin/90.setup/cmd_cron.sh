@@ -84,24 +84,28 @@ _f_all_bin_build() {
   mymake.sh f_install
 }
 #------------------------------------------------------
-# backup
+# snap
 #------------------------------------------------------
 SNAP_DIRS="\
   $MY_LOCAL_CONFIG/memo \
   $MY_DIARY \
   $MY_SECRET \
   "
-_f_all_snap()        { for-dir.sh "git-tar.sh -t -D $MY_SNAP" $SNAP_DIRS; }
-_f_all_snap_n()      { for-dir.sh "git-tar.sh -t -D $MY_SNAP -n" $SNAP_DIRS; }
-_f_all_snap_status() { for-dir.sh "git.sh status -s" $SNAP_DIRS; }
-#------------------------------------------------------
-_f_all_dot_backup() {
+_f_all_snap() {
+  for-dir.sh "git-tar.sh -t -D $MY_SNAP" $SNAP_DIRS
   cd $MY_ETC
-  mymake.sh f_dot_backup_tar
+  mymake.sh f_dot_snap_tar
 }
-_f_all_dot_backup_n() {
+_f_all_snap_n() {
+  for-dir.sh "git-tar.sh -t -D $MY_SNAP -n" $SNAP_DIRS
   cd $MY_ETC
-  mymake.sh f_dot_backup_tar_n
+  mymake.sh f_dot_snap_tar_n
+}
+_f_all_snap_status() {
+  for-dir.sh "git.sh status -s" $SNAP_DIRS
+}
+_f_all_snap_commit() {
+  for-dir.sh "git.sh commit -a -m 'snap update'" $SNAP_DIRS
 }
 #------------------------------------------------------
 # clean
@@ -133,14 +137,15 @@ f_cron_monthly_tags() {
 f_cron_monthly_clean() {
   _f_all_blender_clean
 }
-f_cron_monthly_backup_n() {
+f_cron_monthly_snap_n() {
   _f_all_snap_n
-  _f_all_dot_backup_n
 }
-f_cron_monthly_backup() {
+f_cron_monthly_snap() {
   _f_all_snap
-  _f_all_dot_backup
 }
-f_cron_monthly_backup_status() {
+f_cron_monthly_snap_status() {
   _f_all_snap_status
+}
+f_cron_monthly_snap_commit() {
+  _f_all_snap_commit
 }
