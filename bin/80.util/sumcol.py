@@ -7,6 +7,8 @@ import fileinput
 
 def str_to_val(s):
     s = s.replace(',', '')
+    s = s.replace('万', '')
+    s = s.replace('円', '')
     return int(s)
 
 

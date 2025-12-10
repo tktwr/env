@@ -90,6 +90,7 @@
 - ,sumcol1     | R_SumCol(1)                    | :call R_SumCol(1)
 - ,sumcol2     | R_SumCol(2)                    | :call R_SumCol(2)
 - ,sumcol3     | R_SumCol(3)                    | :call R_SumCol(3)
+- ,sumcol4     | R_SumCol(4)                    | :call R_SumCol(4)
 -----          | ------------------------------ | ------------------------------
 - ,prs         | P_RemoveSpaces                 | :call P_RemoveSpaces()
 - ,pfc         | P_FormatComma                  | :call P_FormatComma()
