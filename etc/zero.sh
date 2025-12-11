@@ -57,7 +57,7 @@ f_zero_venv_create() {
 #------------------------------------------------------
 f_zero_bash() {
   cd $BASE_DIR/bash
-  cp --update=none $HOME/.bashrc $HOME/.bashrc.orig
+  cp -n $HOME/.bashrc $HOME/.bashrc.orig
   cat bashrc_zero_func.sh bashrc_zero.sh > $HOME/.bashrc
 }
 f_zero_vim() {
