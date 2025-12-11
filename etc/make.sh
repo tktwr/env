@@ -34,8 +34,8 @@ DOT_FILES_ALL="$DOT_FILES_COMMON $DOT_FILES_DIFF"
 # functions
 #======================================================
 _f_cp_all() {
-  cp -a --parents    $DOT_FILES_COMMON $HOME
-  cp -a --parents -n $DOT_FILES_DIFF   $HOME
+  cp -a --parents               $DOT_FILES_COMMON $HOME
+  cp -a --parents --update=none $DOT_FILES_DIFF   $HOME
 
   if [ -n "$SYS_WIN_HOME" -a -d "$SYS_WIN_HOME" ]; then
     cp -a --parents    $DOT_FILES_COMMON $SYS_WIN_HOME
@@ -56,7 +56,7 @@ _f_sub() {
 }
 #------------------------------------------------------
 f_11_install_all() {
-  ./zero_hostname.sh
+  ./zero.sh
   _f_cp_all
   _f_sub bash
   _f_sub vim
