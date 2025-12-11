@@ -8,11 +8,8 @@ vim fzf fd-find ripgrep bat \
 tree ncdu \
 zip unzip \
 universal-ctags \
-eblook \
 python3-pip \
 python3-venv \
-python3-poetry \
-pipx \
 git-lfs \
 "
 apt_pkg_ext="\
@@ -47,11 +44,14 @@ python3-doc \
 doxygen \
 "
 apt_pkg_not_install="\
+python3-poetry \
+pipx \
 blender \
 nvidia-cuda-toolkit \
 baobab \
 nodejs npm \
 exa \
+eblook \
 "
 #======================================================
 # functions

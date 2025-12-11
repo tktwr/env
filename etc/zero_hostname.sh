@@ -117,32 +117,7 @@ f_all() {
   echo "export SYS_FZF_EXE=$(f_sys_exe fzf)"
 }
 
-#------------------------------------------------------
-f_symlink() {
-  if [ ! -e "$2" -a ! -L "$2" ]; then
-    echo "ln -s $1 $2"
-    ln -s $1 $2
-  fi
-}
-
-f_zero_dir() {
-  cd
-  os_name=$(f_os_name)
-  case $os_name in
-    wsl)
-      f_symlink WinHome/MyConfig MyConfig
-      f_symlink WinHome/MyData   MyData
-      f_symlink WinHome/MyProj   MyProj
-      f_symlink WinHome/MyWork   MyWork
-      ;;
-  esac
-
-  mkdir -p $HOME/.my
-  mkdir -p $HOME/.mycache
-}
-
 #======================================================
 # main
 #======================================================
-f_zero_dir
-f_all > $HOME/.my/hostname.sh
+f_all

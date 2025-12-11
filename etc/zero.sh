@@ -1,10 +1,33 @@
 #!/bin/bash
 
-./zero_hostname.sh
+mkdir -p $HOME/.my
+mkdir -p $HOME/.mycache
+
+./zero_hostname.sh > $HOME/.my/hostname.sh
 source $HOME/.my/hostname.sh
 
 BASE_DIR=$(pwd)
 echo $BASE_DIR
+
+#------------------------------------------------------
+f_symlink() {
+  if [ ! -e "$2" -a ! -L "$2" ]; then
+    echo "ln -s $1 $2"
+    ln -s $1 $2
+  fi
+}
+
+f_zero_symlink() {
+  cd
+  case $MY_OS_NAME in
+    wsl)
+      f_symlink WinHome/MyConfig MyConfig
+      f_symlink WinHome/MyData   MyData
+      f_symlink WinHome/MyProj   MyProj
+      f_symlink WinHome/MyWork   MyWork
+      ;;
+  esac
+}
 
 #------------------------------------------------------
 f_zero_sys() {
@@ -47,6 +70,7 @@ f_zero_venv_create() {
 }
 
 #------------------------------------------------------
+f_zero_symlink
 f_zero_sys
 f_zero_bash
 f_zero_vim
