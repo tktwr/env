@@ -14,12 +14,12 @@ if [ -d $HOME/MyRoaming ]; then
   exit
 fi
 
-f_init_mkdir() {
-  # make dirs in win
+f_init_mkdir_win() {
   cd $WIN_HOME
   mkdir -p MyRoaming MyConfig MyData MyProj MyWork
+}
 
-  # symbolic links in linux
+f_init_mkdir_wsl() {
   cd
   mkdir -p MyRoaming
   ln -s $WIN_HOME        WinHome
@@ -29,4 +29,5 @@ f_init_mkdir() {
   ln -s WinHome/MyWork   MyWork
 }
 
-f_init_mkdir
+f_init_mkdir_win
+f_init_mkdir_wsl

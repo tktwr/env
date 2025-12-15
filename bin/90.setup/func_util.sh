@@ -12,24 +12,6 @@ f_blender_clean() {
 }
 
 #------------------------------------------------------
-f_11_setup_time() {
-  sync-time.sh
-}
-f_90_setup_init() {
-  f_apt_update
-  f_apt_install_min
-  f_pip_upgrade
-  f_pip_install_min
-  f_nodejs_install
-  f_vim_plug_upgrade
-  f_vim_plug_install
-}
-f_91_setup_update() {
-  f_apt_update
-  f_pip_upgrade
-  f_vim_plug_update
-}
-#------------------------------------------------------
 # info
 #------------------------------------------------------
 f_info_env()     { print-env.sh     | fzf; }
