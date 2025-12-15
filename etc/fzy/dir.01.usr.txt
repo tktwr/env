@@ -2,6 +2,7 @@
 #----------      | ----------         | ----------
 desktop          | MY_DESKTOP         | $SYS_WIN_HOME/Desktop
 downloads        | MY_DOWNLOADS       | $SYS_WIN_HOME/Downloads
+www              | MY_WWW             | $SYS_WIN_HOME/www
 #----------      | ----------         | ----------
 my               | MY_DOTMY           | $SYS_LOCAL_HOME/.my
 mycache          | MY_DOTMYCACHE      | $SYS_LOCAL_HOME/.mycache

@@ -20,6 +20,7 @@
 -              | vim-memo/                      | $MY_VIM_PLUGGED_DIR/vim-memo/
 -              | Desktop/                       | $MY_DESKTOP/
 -              | Downloads/                     | $MY_DOWNLOADS/
+-              | www/                           | $MY_WWW/
 -              | ahk/                           | $MY_ENV/ahk/
 -              | repo/                          | $MY_REPO/
 -              | backup/                        | $MY_BACKUP/
