@@ -123,6 +123,8 @@ func s:term_map()
     tnoremap <buffer> <C-J>   <C-W>w
     tnoremap <buffer> <C-K>   <C-W>W
     tnoremap <buffer> <C-L>   <C-W>l
+    "tnoremap <silent> <C-j> <Plug>(vis-send-C-j)
+    "tnoremap <silent> <C-k> <Plug>(vis-send-C-k)
   endif
 endfunc
 
@@ -147,23 +149,6 @@ func R_SumCol(col=2, sep='|')
   echom system(printf("sumcol.py -c %d -s '%s'", a:col, a:sep), @")
 endfunc
 
-"------------------------------------------------------
-" clipboard
-"------------------------------------------------------
-func YankUrlToClipboard()
-  let url = expand(expand("<cfile>"))
-  call setreg('+', url)
-  echo url
-endfunc
-
-if has('clipboard')
-  nnoremap ,p      "+p
-  vnoremap Y       "+y
-  nnoremap Y       :call YankUrlToClipboard()<CR>
-else
-  nnoremap ,p            :r !paste.sh<CR>
-  vnoremap <silent> Y    y:silent '<,'>w !clip.sh<CR>
-endif
 "------------------------------------------------------
 " function keys
 "------------------------------------------------------
@@ -203,3 +188,22 @@ tnoremap <silent> <C-Del>      <Nop>
 
 nnoremap <silent> <S-PageUp>   5<C-Y>
 nnoremap <silent> <S-PageDown> 5<C-E>
+"------------------------------------------------------
+" clipboard
+"------------------------------------------------------
+func YankUrlToClipboard()
+  let url = expand(expand("<cfile>"))
+  call setreg('+', url)
+  echo url
+endfunc
+
+if has('clipboard')
+  nnoremap <C-Insert>    "+p
+  vnoremap <C-Del>       "+y
+  nnoremap ,p            "+p
+  vnoremap Y             "+y
+  nnoremap Y             :call YankUrlToClipboard()<CR>
+else
+  nnoremap ,p            :r !paste.sh<CR>
+  vnoremap <silent> Y    y:silent '<,'>w !clip.sh<CR>
+endif

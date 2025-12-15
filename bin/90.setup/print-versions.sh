@@ -36,6 +36,7 @@ f_print_ver_all() {
   flake8 \
   clang \
   clangd \
+  nvm \
   node \
   npm \
   cmake \

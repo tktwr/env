@@ -30,8 +30,8 @@ Space & Enter::Send,!{Enter}
 ; Space in terminal
 ;======================================================
 #IfWinActive ahk_exe WindowsTerminal.exe
-Space & c::Send,^+c             ; copy
-Space & v::Send,^+v             ; paste
+Space & c::Send,^{Del}             ; copy
+Space & v::Send,^{Ins}             ; paste
 ;------------------------------------------------------
 Space & h::Send,{Blind}{PgUp}
 Space & j::Send,^n
