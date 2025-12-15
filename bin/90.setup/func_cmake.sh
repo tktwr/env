@@ -73,3 +73,16 @@ f_cmake_set_vs2022_release() { _f_cmake_set vs2022 Release        > $BUILDRC; }
 f_cmake_set_vs2022_debug()   { _f_cmake_set vs2022 Debug          > $BUILDRC; }
 f_cmake_set_vs2022_reldeb()  { _f_cmake_set vs2022 RelWithDebInfo > $BUILDRC; }
 
+#------------------------------------------------------
+f_cmake() {
+  $SYS_CMAKE_EXE -S. -B$MY_BUILD_DIR -G"$MY_CMAKE_GENERATOR" $MY_CMAKE_OPT "$@"
+}
+f_cmake_build() {
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT "$@"
+}
+f_cmake_install() {
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target install "$@"
+}
+f_cmake_clean() {
+  $SYS_CMAKE_EXE --build $MY_BUILD_DIR --config $MY_BUILD_CONFIG $MY_BUILD_OPT --target clean "$@"
+}

@@ -49,10 +49,8 @@ f_popup_man()            { vimapi_exec "VisShellPopup fzf_man.sh"; }
 f_popup_apt()            { vimapi_exec "VisShellPopup fzf_apt.sh"; }
 #------------------------------------------------------
 cmd_files="\
-  $MY_BIN/90.setup/setup_*.sh \
-  $MY_BIN/90.setup/cmd_*.sh \
-  $SYS_CONFIG_HOME/lconfig/bin/setup_*.sh \
-  $SYS_CONFIG_HOME/lconfig/bin/cmd_*.sh \
+  $MY_BIN/90.setup/func_*.sh \
+  $SYS_CONFIG_HOME/lconfig/bin/func_*.sh \
   "
 for cmd_file in $cmd_files; do
   if [ -f $cmd_file ]; then
