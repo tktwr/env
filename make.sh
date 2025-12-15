@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source cmd_proj.sh
+source cmd_funcs.sh
 
 #======================================================
 # variables
