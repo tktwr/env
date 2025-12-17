@@ -62,13 +62,13 @@ syn keyword  myTODO             TODO contained
 syn keyword  myOK               OK DONE FIXED SOLVED contained
 syn keyword  myFAIL             FAIL CANCEL OBSOLETE contained
 
-syn keyword  mykRed             LCtrl PgUp up prev wsl vim
-syn keyword  mykGreen           RCtrl PgDn down next gitbash app
-syn keyword  mykYellow          Space Home linux bash left
-syn keyword  mykBlue            End win right
-syn keyword  mykPurple          py readline fzf
-syn keyword  mykAqua            term
-syn keyword  mykOrange          tab
+syn keyword  mykRed             up    PgUp prev wsl vim rubidium
+syn keyword  mykGreen           down  PgDn next gitbash app titanium
+syn keyword  mykYellow          left  LCtrl linux bash
+syn keyword  mykBlue            right RCtrl win
+syn keyword  mykPurple          Home  py readline fzf
+syn keyword  mykAqua            End   term www
+syn keyword  mykOrange          Space tab
 
 syn keyword  mykYellow          朝食 昼食 夕食
 
