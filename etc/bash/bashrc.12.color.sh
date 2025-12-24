@@ -43,6 +43,7 @@ export COLOR5="\033[35m"  # magenta
 export COLOR6="\033[36m"  # cyan
 export COLOR7="\033[37m"  # white
 export COLORD="\033[0m"   # default
+export COLORB="\033[1m"   # bold
 export COLORR="\033[7m"   # reverse
 
 export ECO0="\[$COLOR0\]"
@@ -54,5 +55,6 @@ export ECO5="\[$COLOR5\]"
 export ECO6="\[$COLOR6\]"
 export ECO7="\[$COLOR7\]"
 export ECOD="\[$COLORD\]"
+export ECOB="\[$COLORB\]"
 export ECOR="\[$COLORR\]"
 

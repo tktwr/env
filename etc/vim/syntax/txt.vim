@@ -67,7 +67,7 @@ syn keyword  mykGreen           down  PgDn next gitbash app titanium
 syn keyword  mykYellow          left  LCtrl linux bash
 syn keyword  mykBlue            right RCtrl win
 syn keyword  mykPurple          Home  py readline fzf
-syn keyword  mykAqua            End   term www
+syn keyword  mykAqua            End   term web
 syn keyword  mykOrange          Space tab
 
 syn keyword  mykYellow          朝食 昼食 夕食

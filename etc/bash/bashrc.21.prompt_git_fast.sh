@@ -27,6 +27,6 @@ f_set_prompt_git_fast() {
   local PS1_DIR=$(f_get_prompt_color_dir)
   local PS1_GIT=$(f_get_prompt_color_git_fast)
 
-  export PS1="$ECOD$PS1_HOST:$PS1_OS$ECOD$PS1_DIR$PS1_GIT$ECOD\$ "
+  export PS1="$ECOD$ECOR$PS1_HOST:$PS1_OS$ECOD$PS1_DIR$PS1_GIT$ECOD\$ "
 }
 
