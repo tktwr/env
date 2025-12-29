@@ -9,4 +9,4 @@ _f_git_graph() {
   echo "$out"
 }
 
-_f_git_graph "$@" 2> /dev/null | $GIT_PAGER
+_f_git_graph "$@" | $GIT_PAGER
