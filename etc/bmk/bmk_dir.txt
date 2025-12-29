@@ -14,6 +14,7 @@
 -              | .mycache/                      | $MY_DOTMYCACHE/
 -              | local.common/                  | $MY_COMMON_SETTING/
 -              | local.memo/                    | $MY_LOCAL_CONFIG/memo/
+-              | local.memo_family/             | $MY_LOCAL_CONFIG/memo_family/
 -              | vim-ide-style/                 | $MY_VIM_PLUGGED_DIR/vim-ide-style/
 -              | vim-bmk-menu/                  | $MY_VIM_PLUGGED_DIR/vim-bmk-menu/
 -              | vim-winbuf-menu/               | $MY_VIM_PLUGGED_DIR/vim-winbuf-menu/

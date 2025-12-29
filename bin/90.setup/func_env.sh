@@ -40,10 +40,12 @@ GIT_DIRS="\
   $MY_REMOTE_CONFIG/templates \
   $MY_VIM_PLUGGED_DIR/vim-ide-style \
   $MY_LOCAL_CONFIG/memo \
+  $MY_LOCAL_CONFIG/memo_family \
   $MY_DIARY \
   $MY_SECRET \
   "
 f_envs_status()      { for-dir.sh "git.sh status -s"    $GIT_DIRS; }
+f_envs_commit()      { for-dir.sh "git.sh commit -a -m 'update'"    $GIT_DIRS; }
 f_envs_graph()       { for-dir.sh "git-graph.sh -1"     $GIT_DIRS; }
 f_envs_fetch()       { for-dir.sh "git.sh fetch"        $GIT_DIRS; }
 f_envs_pull()        { for-dir.sh "git.sh pull"         $GIT_DIRS; }

@@ -3,7 +3,7 @@
 +              | todo                           | $MY_DIARY/todo.md.html
 +              | weekly                         | $MY_DIARY/weekly.md.html
 +              | finance                        | $MY_DIARY/finance.md.html
-+              | kakei                          | $MY_LOCAL_CONFIG/memo/life_kakei.md.html
++              | kakei                          | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
 +              | info                           | $MY_DIARY/info.md.html
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html
 +              | links                          | $MY_BMK/links.txt
