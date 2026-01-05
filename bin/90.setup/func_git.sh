@@ -308,25 +308,27 @@ f_git_dirdiff() {
 }
 
 #------------------------------------------------------
-# diff
+# need
 #------------------------------------------------------
-f_git_need_action() {
-  local need_commit=0
-  local need_push=0
-
-  # commitが必要か：未ステージ or ステージ済みがある
+f_git_need_commit() {
   if ! git diff --quiet || ! git diff --cached --quiet; then
-    need_commit=1
+    return 1
   fi
-
-  # pushが必要か：upstreamがある場合だけ判定
+  return 0
+}
+f_git_need_push() {
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
     local behind ahead
     read behind ahead < <(git rev-list --left-right --count @{u}...HEAD)
     if [ "$ahead" -gt 0 ]; then
-      need_push=1
+      return 1
     fi
   fi
+  return 0
+}
+f_git_need_action() {
+  f_git_need_commit ; local need_commit=$?
+  f_git_need_push   ; local need_push=$?
 
   if [ "$need_commit" -eq 1 ] && [ "$need_push" -eq 1 ]; then
     echo "need_commit need_push"; return 3

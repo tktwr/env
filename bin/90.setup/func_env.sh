@@ -44,12 +44,12 @@ GIT_DIRS="\
   $MY_DIARY \
   $MY_SECRET \
   "
-f_envs_status()      { for-dir.sh "git.sh status -s"                $GIT_DIRS; }
-f_envs_commit()      { for-dir.sh "git.sh commit -a -m 'update'"    $GIT_DIRS; }
-f_envs_graph()       { for-dir.sh "git-info.sh"                     $GIT_DIRS; }
-f_envs_fetch()       { for-dir.sh "git.sh fetch"                    $GIT_DIRS; }
-f_envs_pull()        { for-dir.sh "git.sh pull"                     $GIT_DIRS; }
-f_envs_push()        { for-dir.sh "cmd.sh f_git_push_origin"        $GIT_DIRS; }
+f_envs_ci_status()      { for-dir.sh "git-ci.sh status"      $GIT_DIRS; }
+f_envs_ci_commit()      { for-dir.sh "git-ci.sh commit"      $GIT_DIRS; }
+f_envs_ci_graph()       { for-dir.sh "git-ci.sh graph"       $GIT_DIRS; }
+f_envs_ci_fetch()       { for-dir.sh "git-ci.sh fetch"       $GIT_DIRS; }
+f_envs_ci_pull()        { for-dir.sh "git-ci.sh pull"        $GIT_DIRS; }
+f_envs_ci_push()        { for-dir.sh "git-ci.sh push"        $GIT_DIRS; }
 #------------------------------------------------------
 BUILD_DIRS="\
   $MY_LIBTT \
