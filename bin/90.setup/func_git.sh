@@ -311,15 +311,15 @@ f_git_dirdiff() {
 # need
 #------------------------------------------------------
 f_git_need_commit() {
-  if ! git diff --quiet || ! git diff --cached --quiet; then
+  if ! $SYS_GIT_EXE diff --quiet || ! $SYS_GIT_EXE diff --cached --quiet; then
     return 1
   fi
   return 0
 }
 f_git_need_push() {
-  if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+  if $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
     local behind ahead
-    read behind ahead < <(git rev-list --left-right --count @{u}...HEAD)
+    read behind ahead < <($SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD)
     if [ "$ahead" -gt 0 ]; then
       return 1
     fi
