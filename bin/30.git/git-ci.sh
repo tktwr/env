@@ -38,7 +38,10 @@ _f_git_pull() {
 }
 
 _f_git_push() {
-  f_git_push_origin
+  f_git_need_push; local need_push=$?
+  if [ $need_push -eq 1 ]; then
+    f_git_push_origin
+  fi
 }
 
 case $1 in
