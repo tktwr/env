@@ -198,6 +198,7 @@ func YankUrlToClipboard()
 endfunc
 
 if has('clipboard')
+  inoremap <C-Insert>    <Esc>"+p
   nnoremap <C-Insert>    "+p
   vnoremap <C-Del>       "+y
   nnoremap ,p            "+p
