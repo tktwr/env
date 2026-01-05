@@ -42,6 +42,8 @@ f_git_cd_root() {
 f_git_print_branch_all() {
   echo "[REMOTE]"
   $SYS_GIT_EXE remote -v
+  echo "[SUBMODULE]"
+  $SYS_GIT_EXE submodule
   echo "[BRANCH]"
   $SYS_GIT_EXE branch --color=always -a -vv | $GIT_PAGER
 }
@@ -312,32 +314,27 @@ f_git_need_action() {
   local need_commit=0
   local need_push=0
 
-  # 1. commit が必要か（working tree or index に差分）
+  # commitが必要か：未ステージ or ステージ済みがある
   if ! git diff --quiet || ! git diff --cached --quiet; then
     need_commit=1
   fi
 
-  # 2. push が必要か（upstream との差分）
+  # pushが必要か：upstreamがある場合だけ判定
   if git rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
-    local ahead behind
-    read ahead behind < <(git rev-list --left-right --count @{u}...HEAD)
+    local behind ahead
+    read behind ahead < <(git rev-list --left-right --count @{u}...HEAD)
     if [ "$ahead" -gt 0 ]; then
       need_push=1
     fi
   fi
 
-  # 出力
   if [ "$need_commit" -eq 1 ] && [ "$need_push" -eq 1 ]; then
-    echo "commit_needed push_needed"
-    return 3
+    echo "need_commit need_push"; return 3
   elif [ "$need_commit" -eq 1 ]; then
-    echo "commit_needed"
-    return 1
+    echo "need_commit"; return 1
   elif [ "$need_push" -eq 1 ]; then
-    echo "push_needed"
-    return 2
+    echo "need_push"; return 2
   else
-    echo "clean"
-    return 0
+    echo "clean"; return 0
   fi
 }

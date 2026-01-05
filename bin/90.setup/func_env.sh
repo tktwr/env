@@ -46,7 +46,7 @@ GIT_DIRS="\
   "
 f_envs_status()      { for-dir.sh "git.sh status -s"                $GIT_DIRS; }
 f_envs_commit()      { for-dir.sh "git.sh commit -a -m 'update'"    $GIT_DIRS; }
-f_envs_graph()       { for-dir.sh "git-graph.sh -1 2> /dev/null"    $GIT_DIRS; }
+f_envs_graph()       { for-dir.sh "git-info.sh"                     $GIT_DIRS; }
 f_envs_fetch()       { for-dir.sh "git.sh fetch"                    $GIT_DIRS; }
 f_envs_pull()        { for-dir.sh "git.sh pull"                     $GIT_DIRS; }
 f_envs_push()        { for-dir.sh "cmd.sh f_git_push_origin"        $GIT_DIRS; }
