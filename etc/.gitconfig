@@ -3,9 +3,20 @@
 [include]
   path = ~/.my/gitconfig
 
+#------------------------------------------------------
 # [user]
 #   name = username
 #   email = username@example.com
+#
+# ## wsl
+# [credential]
+#   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+#
+# ## gitbash/msys2
+# [credential]
+#   helper = manager
+#
+#------------------------------------------------------
 [core]
   autocrlf = input
   quotepath = false
@@ -13,6 +24,8 @@
   editor = vim
   excludesfile = ~/.gitignore_global
 
+[init]
+	defaultBranch = main
 [pull]
   ff = only
 [merge]
@@ -25,6 +38,13 @@
 [difftool]
   prompt = false
 
+[alias]
+  graph     = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
+  graph-all = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --all
+  co = checkout
+  dd = difftool -d
+
+#------------------------------------------------------
 [delta]
   side-by-side = true
 # true-color = always
@@ -37,18 +57,5 @@
 [delta "my_theme_true_color"]
   minus-style = reverse "#fb4934"
   plus-style  = reverse "#b8bb26"
-
-[alias]
-  graph     = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M'
-  graph-all = log --graph --color=always --pretty=format:'%C(red)%h %C(green)%cd %C(blue)%an %C(yellow)%d %C(reset)%s' --date=format-local:'%Y/%m/%d %H:%M' --all
-  co = checkout
-  dd = difftool -d
-
-# ## wsl
-# [credential]
-#   helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
-# ## gitbash/msys2
-# [credential]
-#   helper = manager
 
 # vim:set ft=gitconfig:

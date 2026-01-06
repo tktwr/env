@@ -7,6 +7,14 @@ f_git_root() {
   git rev-parse --show-toplevel 2> /dev/null
 }
 
+f_git_has_remote_branch() {
+  $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
+}
+
+f_git_remote_branch_name() {
+  $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u}
+}
+
 f_git_branch_name() {
   $SYS_GIT_EXE rev-parse --abbrev-ref HEAD 2>/dev/null
   #$SYS_GIT_EXE symbolic-ref --short HEAD 2>/dev/null
@@ -317,7 +325,7 @@ f_git_need_commit() {
   return 0
 }
 f_git_need_push() {
-  if $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1; then
+  if f_git_has_remote_branch; then
     local behind ahead
     read behind ahead < <($SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD)
     if [ "$ahead" -gt 0 ]; then

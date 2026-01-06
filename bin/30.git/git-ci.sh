@@ -2,6 +2,10 @@
 
 source func_git.sh
 
+_f_git_info() {
+  f_git_print_branch_all
+}
+
 _f_git_status() {
   git.sh status -s
 }
@@ -45,6 +49,7 @@ _f_git_push() {
 }
 
 case $1 in
+  info)   _f_git_info   ;;
   status) _f_git_status ;;
   commit) _f_git_commit ;;
   graph)  _f_git_graph  ;;
