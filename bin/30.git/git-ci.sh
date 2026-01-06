@@ -2,22 +2,7 @@
 
 source func_git.sh
 
-_f_git_info() {
-  f_git_print_branch_all
-}
-
-_f_git_status() {
-  git.sh status -s
-}
-
-_f_git_commit() {
-  f_git_need_commit; local need_commit=$?
-  if [ $need_commit -eq 1 ]; then
-    git.sh commit -a -m 'update'
-  fi
-}
-
-_f_git_graph() {
+_f_git_summary() {
   f_git_need_action > /dev/null; local need_action=$?
   local mark=""
   case $need_action in
@@ -30,6 +15,26 @@ _f_git_graph() {
     local out=$(git.sh graph --color=never -1)
     echo -e "$mark $out"
     git.sh status -s
+  fi
+}
+
+_f_git_info() {
+  f_git_print_branch_all
+}
+
+#------------------------------------------------------
+_f_git_graph() {
+  git.sh graph -1
+}
+
+_f_git_status() {
+  git.sh status -s
+}
+
+_f_git_commit() {
+  f_git_need_commit; local need_commit=$?
+  if [ $need_commit -eq 1 ]; then
+    git.sh commit -a -m 'update'
   fi
 }
 
@@ -48,12 +53,14 @@ _f_git_push() {
   fi
 }
 
+#------------------------------------------------------
 case $1 in
-  info)   _f_git_info   ;;
-  status) _f_git_status ;;
-  commit) _f_git_commit ;;
-  graph)  _f_git_graph  ;;
-  fetch)  _f_git_fetch  ;;
-  pull)   _f_git_pull   ;;
-  push)   _f_git_push   ;;
+  summary)  _f_git_summary  ;;
+  info)     _f_git_info     ;;
+  graph)    _f_git_graph    ;;
+  status)   _f_git_status   ;;
+  commit)   _f_git_commit   ;;
+  fetch)    _f_git_fetch    ;;
+  pull)     _f_git_pull     ;;
+  push)     _f_git_push     ;;
 esac
