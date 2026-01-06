@@ -2,65 +2,14 @@
 
 source func_git.sh
 
-_f_git_summary() {
-  f_git_need_action > /dev/null; local need_action=$?
-  local mark=""
-  case $need_action in
-    0) mark="[\\e[32m✔ \\e[0m]" ;; # clean
-    1) mark="[\\e[31m✘ \\e[0m]" ;; # need_commit
-    2) mark="[\\e[34m \\e[0m]" ;; # need_push
-    3) mark="[\\e[35m✘ \\e[0m]" ;; # need_commit need_push
-  esac
-  if [ $need_action -gt 0 ]; then
-    local out=$(git.sh graph --color=never -1)
-    echo -e "$mark $out"
-    git.sh status -s
-  fi
-}
-
-_f_git_info() {
-  f_git_print_branch_all
-}
-
-#------------------------------------------------------
-_f_git_graph() {
-  git.sh graph -1
-}
-
-_f_git_status() {
-  git.sh status -s
-}
-
-_f_git_commit() {
-  f_git_need_commit; local need_commit=$?
-  if [ $need_commit -eq 1 ]; then
-    git.sh commit -a -m 'update'
-  fi
-}
-
-_f_git_fetch() {
-  git.sh fetch
-}
-
-_f_git_pull() {
-  git.sh pull
-}
-
-_f_git_push() {
-  f_git_need_push; local need_push=$?
-  if [ $need_push -eq 1 ]; then
-    f_git_push_origin
-  fi
-}
-
 #------------------------------------------------------
 case $1 in
-  summary)  _f_git_summary  ;;
-  info)     _f_git_info     ;;
-  graph)    _f_git_graph    ;;
-  status)   _f_git_status   ;;
-  commit)   _f_git_commit   ;;
-  fetch)    _f_git_fetch    ;;
-  pull)     _f_git_pull     ;;
-  push)     _f_git_push     ;;
+  summary)  f_git_ci_summary  ;;
+  info)     f_git_ci_info     ;;
+  graph)    f_git_ci_graph    ;;
+  status)   f_git_ci_status   ;;
+  commit)   f_git_ci_commit   ;;
+  fetch)    f_git_ci_fetch    ;;
+  pull)     f_git_ci_pull     ;;
+  push)     f_git_ci_push     ;;
 esac
