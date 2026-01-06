@@ -3,6 +3,7 @@
 #======================================================
 # variables
 #======================================================
+DRIVE=d
 
 #======================================================
 # functions
@@ -16,12 +17,12 @@ f_encfs_ls_mount() {
 }
 
 f_encfs_mount() {
-  #mount-drive.sh e
-  encfs -o allow_root /mnt/e/_encfs_e ~/mnt/encfs_e
+  #mount-drive.sh $DRIVE
+  encfs -o allow_root /mnt/$DRIVE/_encfs_e ~/mnt/encfs_e
 }
 
 f_encfs_umount() {
   fusermount -u ~/mnt/encfs_e
-  #umount-drive.sh e
+  #umount-drive.sh $DRIVE
 }
 
