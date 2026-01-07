@@ -34,11 +34,6 @@ f_alias_vim_term() {
   alias ,vedit='vimapi_exec vnew'
   alias ,vterm='vimapi_exec VisTermV'
 
-  alias ,gs='cmd.sh f_popup_gs'
-  alias ,gg='cmd.sh f_popup_gv'
-  alias ,man='cmd.sh f_popup_man'
-  alias ,apt='cmd.sh f_popup_apt'
-
   # alias ,gl='vimapi_exec_above GitLog $PWD'
 
   alias ,vimdiff='popup-vimdiff.sh'
@@ -59,6 +54,19 @@ f_alias_vim_term() {
 
   alias ,,vimdiff='tab-vimdiff.sh'
   alias ,,vimdirdiff='tab-vimdirdiff.sh'
+
+  #------------------------------------------------------
+  # cmd.sh
+  #------------------------------------------------------
+  alias ,eu='cmd.sh f_envs_ci_summary'
+
+  alias ,gu='cmd.sh f_git_ci_summary'
+  alias ,gi='cmd.sh f_git_ci_info'
+  alias ,gs='cmd.sh f_popup_gs'
+  alias ,gg='cmd.sh f_popup_gv'
+
+  alias ,man='cmd.sh f_popup_man'
+  alias ,apt='cmd.sh f_popup_apt'
 }
 
 #------------------------------------------------------
@@ -118,9 +126,9 @@ f_alias_os_common() {
 
   alias lsg='exa-short.sh'
 
-  alias ,D='open_dir.sh'
-  alias ,E='explorer.sh'
-  alias ,V='vscode.sh'
+  alias ,wd='open_dir.sh'
+  alias ,wx='explorer.sh'
+  alias ,wv='vscode.sh'
 
   alias ,G.set_dir='mypushd.sh --set `pwd`'
   alias ,G.get_dir='mypushd.sh --get'
