@@ -23,10 +23,10 @@
 - ,vedit       | vert Editor                    | > ,vedit<CR>
 - ,vterm       | vert Term                      | > ,vterm<CR>
 -----          | ------------------------------ | ------------------------------
-- ,,I          | tab IDE                        | > ,,I<CR>
-- ,,I2         | tab IDE2                       | > ,,I2<CR>
-- ,,edit       | tab Editor                     | > ,,edit<CR>
-- ,,term       | tab Term                       | > ,,term<CR>
+- ..I          | tab IDE                        | > ..I<CR>
+- ..I2         | tab IDE2                       | > ..I2<CR>
+- ..edit       | tab Editor                     | > ..edit<CR>
+- ..term       | tab Term                       | > ..term<CR>
 -----          | ------------------------------ | ------------------------------
 - ,G           | Git graph                      | > G<CR>
 - ,GA          | Git graph all                  | > GA<CR>

@@ -136,29 +136,12 @@ _my_setup_fzf_find() {
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --no-unicode"
 }
 
-_my_setup_fzf_alias() {
-  alias ,='eval_bmk       $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt tcmd.txt tcmd_sys.txt bmk_file.txt bmk_file_opt.txt links.txt papers.txt)'
-  alias ,c='eval_fzf_cmd  cmd.sh'
-  alias ,m='eval_fzf_cmd  mymake.sh'
-  alias ,fd='eval_fzf_fd'
-  alias ,rg='eval_fzf_rg'
-
-  alias .='pushd'
-  alias ..='pushd .'
-  alias ,,='eval_cmd      pushd $(fzf_pushd)'
-  alias ,,,='popd'
-  alias ,-='eval_cmd      popd  $(fzf_pushd)'
-  alias ,--='dirs -c'
-  #alias ..='eval_cmd     pushd $(fzf_bmk.sh bmk_dir.txt bmk_dir_opt.txt | bmk_get_value)'
-}
-
 my_setup_fzf() {
   f_ins_path  $MY_VIM_PLUGGED_DIR/fzf/bin
   source_file $MY_VIM_PLUGGED_DIR/fzf/shell/completion.bash
   source_file $MY_VIM_PLUGGED_DIR/fzf/shell/key-bindings.bash
 
   _my_setup_fzf_$SYS_FIND_EXE
-  _my_setup_fzf_alias
 }
 #------------------------------------------------------
 # export functions

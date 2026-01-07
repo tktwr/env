@@ -66,15 +66,15 @@ f_git_print_tag_all() {
 # graph
 #------------------------------------------------------
 f_git_graph() {
-  git-graph.sh "$@"
+  $SYS_GIT_EXE graph "$@"
 }
 
 f_git_graph_date() {
-  git-graph.sh --date-order "$@"
+  $SYS_GIT_EXE graph --date-order "$@"
 }
 
 f_git_graph_status() {
-  git-graph.sh --name-status "$@"
+  $SYS_GIT_EXE graph --name-status "$@"
 }
 
 #------------------------------------------------------

@@ -34,7 +34,7 @@ def f_expand_env(fname, args):
                 print(f'export {env_name}="{dir_name}"')
                 print(f'export {env_name}_WIN="{dir_name_win}"')
                 print(f'alias cd.{name}=\'cd "${env_name}"\'')
-                print(f'alias .{name}=\'pushd "${env_name}"\'')
+                print(f'alias pd.{name}=\'pushd "${env_name}"\'')
     except FileNotFoundError as e:
         # print(f"FileNotFoundError: {e}")
         pass
