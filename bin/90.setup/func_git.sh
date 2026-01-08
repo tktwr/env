@@ -401,3 +401,15 @@ f_git_ci_push() {
   fi
 }
 
+#------------------------------------------------------
+f_git_repo_master_to_main() {
+  git branch -m master main
+  git push -u origin main
+  git branch -vv
+}
+
+f_git_repo_delete_remote_master() {
+  # githubでデフォルトブランチをmainに変更後
+  git push origin --delete master
+}
+

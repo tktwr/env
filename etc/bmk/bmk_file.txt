@@ -3,11 +3,12 @@
 +              | todo                           | $MY_DIARY/todo.md.html
 +              | weekly                         | $MY_DIARY/weekly.md.html
 +              | finance                        | $MY_DIARY/finance.md.html
-+              | kakei                          | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
 +              | info                           | $MY_DIARY/info.md.html
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html
 +              | links                          | $MY_BMK/links.txt
 +              | papers                         | $MY_BMK/papers.txt
++              | memo_family/kakei              | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
++              | local.memo/commands            | $MY_LOCAL_CONFIG/memo/dev.md.html
 +              | memo/keymap                    | $MY_MEMO/my.md.html
 +              | memo/vim                       | $MY_MEMO/vim.md.html
 +              | memo/git                       | $MY_MEMO/git.md.html
