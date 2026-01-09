@@ -12,12 +12,6 @@ f_blender_clean() {
 }
 
 #------------------------------------------------------
-# info
-#------------------------------------------------------
-f_info_env()     { print-env.sh     | fzf; }
-f_info_path()    { print-path.sh    | fzf; }
-f_info_version() { print-version.sh | fzf; }
-#------------------------------------------------------
 # popup
 #------------------------------------------------------
 f_popup_nvidia_smi()     { vimapi_exec "VisShellPopup watch nvidia-smi"; }
