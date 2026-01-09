@@ -50,7 +50,6 @@ f_info_alias() {
 #------------------------------------------------------
 # info
 #------------------------------------------------------
-f_info_env()     { info-env.sh     | fzf; }
 f_info_path()    { info-path.sh    | fzf; }
 f_info_version() { info-version.sh | fzf; }
 

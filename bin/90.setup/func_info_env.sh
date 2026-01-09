@@ -1,0 +1,101 @@
+#!/bin/bash
+
+_f_print_env() {
+  printf "%-20s = %s\n" $1 $2
+}
+
+_f_print_env_exe() {
+  printf "%-20s = %s [%s]\n" $1 $2 $(which $2)
+}
+
+_f_print_env_dir() {
+  dir="$1"
+  if [ -d "$dir" ]; then
+    echo "[OK  ] $dir"
+  else
+    echo "[FAIL] $dir"
+  fi
+}
+
+#------------------------------------------------------
+f_info_env() {
+  _f_print_env MY_USER_NAME       $MY_USER_NAME
+  _f_print_env MY_HOST_NAME       $MY_HOST_NAME
+  _f_print_env MY_OS_NAME         $MY_OS_NAME
+
+  _f_print_env SYS_WIN_HOME       $SYS_WIN_HOME
+  _f_print_env SYS_LOCAL_HOME     $SYS_LOCAL_HOME
+  _f_print_env SYS_ROAMING_HOME   $SYS_ROAMING_HOME
+  _f_print_env SYS_CONFIG_HOME    $SYS_CONFIG_HOME
+  _f_print_env SYS_WORK_HOME      $SYS_WORK_HOME
+  _f_print_env SYS_PROJ_HOME      $SYS_PROJ_HOME
+  _f_print_env SYS_DATA_HOME      $SYS_DATA_HOME
+
+  _f_print_env MY_DOTMY           $MY_DOTMY
+  _f_print_env MY_PYTHON_VENV_DIR $MY_PYTHON_VENV_DIR
+  _f_print_env MY_ENV             $MY_ENV
+
+  _f_print_env MY_REMOTE_CONFIG   $MY_REMOTE_CONFIG
+  _f_print_env MY_LOCAL_CONFIG    $MY_LOCAL_CONFIG
+  _f_print_env MY_PRIVATE_CONFIG  $MY_PRIVATE_CONFIG
+}
+
+f_info_env_build() {
+  _f_print_env MY_PUSHD_DIR    $MY_PUSHD_DIR
+  _f_print_env MY_BUILD_SYS    $MY_BUILD_SYS
+  _f_print_env MY_BUILD_CONFIG $MY_BUILD_CONFIG
+}
+
+f_info_env_proxy() {
+  _f_print_env HTTP_PROXY         $HTTP_PROXY
+  _f_print_env HTTPS_PROXY        $HTTPS_PROXY
+  _f_print_env NO_PROXY           $NO_PROXY
+  _f_print_env GIT_SSL_NO_VERIFY  $GIT_SSL_NO_VERIFY
+  _f_print_env CURL_SSL_NO_VERIFY $CURL_SSL_NO_VERIFY
+  _f_print_env WSL_HOST_IP        $WSL_HOST_IP
+  _f_print_env WSL_GUEST_IP       $WSL_GUEST_IP
+}
+
+f_info_env_exe() {
+  _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
+  _f_print_env_exe SYS_GIT_EXE    $SYS_GIT_EXE
+  _f_print_env_exe SYS_VIM_EXE    $SYS_VIM_EXE
+  _f_print_env_exe SYS_LS_EXE     $SYS_LS_EXE
+  _f_print_env_exe SYS_CAT_EXE    $SYS_CAT_EXE
+  _f_print_env_exe SYS_FIND_EXE   $SYS_FIND_EXE
+  _f_print_env_exe SYS_FZF_EXE    $SYS_FZF_EXE
+}
+
+f_info_env_dir() {
+  work_dirs="\
+    $MY_REPO \
+    $MY_GIT \
+    $MY_WORK \
+    $MY_BACKUP \
+    $MY_TMP \
+    "
+  proj_dirs="\
+    $MY_PROJ \
+    $MY_DOC \
+    $MY_OFFICE \
+    "
+  data_dirs="\
+    $MY_ARCH \
+    $MY_SNAP \
+    $MY_PAPERS \
+    $MY_GITHUB \
+    $MY_OPT \
+    $MY_MAN \
+    $MY_DATA \
+    "
+  dirs="\
+    $MY_PYTHON_VENV_DIR \
+    $work_dirs \
+    $proj_dirs \
+    $data_dirs \
+    "
+  for i in $dirs; do
+    _f_print_env_dir "$i"
+  done
+}
+
