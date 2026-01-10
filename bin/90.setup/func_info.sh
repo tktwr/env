@@ -47,9 +47,3 @@ f_info_alias() {
   _f_info_alias_normal | _f_info_alias_sort
 }
 
-#------------------------------------------------------
-# info
-#------------------------------------------------------
-f_info_path()    { info-path.sh    | fzf; }
-f_info_version() { info-version.sh | fzf; }
-

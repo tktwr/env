@@ -19,6 +19,8 @@ _f_print_env_dir() {
 
 #------------------------------------------------------
 f_info_env() {
+  _f_title "ENV"
+
   _f_print_env MY_USER_NAME       $MY_USER_NAME
   _f_print_env MY_HOST_NAME       $MY_HOST_NAME
   _f_print_env MY_OS_NAME         $MY_OS_NAME
@@ -41,12 +43,16 @@ f_info_env() {
 }
 
 f_info_env_build() {
+  _f_title "ENV_BUILD"
+
   _f_print_env MY_PUSHD_DIR    $MY_PUSHD_DIR
   _f_print_env MY_BUILD_SYS    $MY_BUILD_SYS
   _f_print_env MY_BUILD_CONFIG $MY_BUILD_CONFIG
 }
 
 f_info_env_proxy() {
+  _f_title "ENV_PROXY"
+
   _f_print_env HTTP_PROXY         $HTTP_PROXY
   _f_print_env HTTPS_PROXY        $HTTPS_PROXY
   _f_print_env NO_PROXY           $NO_PROXY
@@ -57,6 +63,8 @@ f_info_env_proxy() {
 }
 
 f_info_env_exe() {
+  _f_title "ENV_EXE"
+
   _f_print_env_exe SYS_PYTHON_EXE $SYS_PYTHON_EXE
   _f_print_env_exe SYS_GIT_EXE    $SYS_GIT_EXE
   _f_print_env_exe SYS_VIM_EXE    $SYS_VIM_EXE
@@ -67,6 +75,8 @@ f_info_env_exe() {
 }
 
 f_info_env_dir() {
+  _f_title "ENV_DIR"
+
   work_dirs="\
     $MY_REPO \
     $MY_GIT \
