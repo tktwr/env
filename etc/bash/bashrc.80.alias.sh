@@ -63,10 +63,11 @@ f_alias() {
 }
 
 f_alias_git() {
+  alias cd.root='cd $(cmd.sh f_git_root)'
+  alias pd.root='pushd $(cmd.sh f_git_root)'
+
   alias ,g='git-default.sh'
 
-  alias ,gs='$SYS_GIT_EXE status'
-  alias ,gS='$SYS_GIT_EXE status -s'
   alias ,gd='$SYS_GIT_EXE diff'
   alias ,gD='$SYS_GIT_EXE diff --staged'
   alias ,gf='$SYS_GIT_EXE fetch'
@@ -87,11 +88,16 @@ f_alias_git() {
   alias ,GA='$SYS_GIT_EXE graph --date-order -6 --all'
   alias ,GM='git-log.sh --log 4 --log-submodule 2'
 
-  alias ,gba='cmd.sh f_git_print_branch_all'
-  alias ,gta='cmd.sh f_git_print_tag_all'
+  alias ,es='cmd.sh f_envs_ci_summary'
+  alias ,gs='cmd.sh f_git_ci_summary'
+  alias ,gi='cmd.sh f_git_ci_info'
 
-  alias cd.root='cd $(cmd.sh f_git_root)'
-  alias pd.root='pushd $(cmd.sh f_git_root)'
+  alias .gs='cmd.sh f_popup_gs'
+  alias .gg='cmd.sh f_popup_gv'
+  alias ..GS='vimapi_exec VisGS'
+  alias ..GG='vimapi_exec VisGV'
+
+  # alias ,gl='vimapi_exec_above GitLog $PWD'
 }
 
 f_alias_fzf() {
@@ -141,21 +147,9 @@ f_alias_vim_term() {
   alias ,vert.edit='vimapi_exec vnew'
   alias ,vert.term='vimapi_exec VisTermV'
 
-  # alias ,gl='vimapi_exec_above GitLog $PWD'
-
-  #------------------------------------------------------
-  # cmd.sh
-  #------------------------------------------------------
-  alias ,eu='cmd.sh f_envs_ci_summary'
-
-  alias ,gu='cmd.sh f_git_ci_summary'
-  alias ,gi='cmd.sh f_git_ci_info'
-
   #------------------------------------------------------
   # popup
   #------------------------------------------------------
-  alias .gs='cmd.sh f_popup_gs'
-  alias .gg='cmd.sh f_popup_gv'
   alias .man='cmd.sh f_popup_man'
   alias .apt='cmd.sh f_popup_apt'
 
@@ -171,9 +165,6 @@ f_alias_vim_term() {
   alias ..I2='vimapi_exec_tab VisIDE 2'
   alias ..edit='vimapi_exec tabedit'
   alias ..term='vimapi_exec tab VisTerm'
-
-  alias ..GS='vimapi_exec VisGS'
-  alias ..GG='vimapi_exec VisGV'
 
   alias ..vimdiff='tab-vimdiff.sh'
   alias ..vimdirdiff='tab-vimdirdiff.sh'
