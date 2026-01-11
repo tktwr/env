@@ -1,15 +1,5 @@
 #!/bin/bash
 
-f_coloring() {
-  local esc=$'\e'
-  sed -E \
-    -e "s/\[([^]]+)\]/[${esc}[35m\1${esc}[0m]/g" \
-    -e "s/OK/${esc}[32m&${esc}[0m/g" \
-    -e "s/FAIL/${esc}[31m&${esc}[0m/g" \
-    -e "s/TODO/${esc}[37m&${esc}[0m/g" \
-    -e "s/DONE/${esc}[32m&${esc}[0m/g"
-}
-
 f_info_all() {
   cmd.sh f_info_env
   cmd.sh f_info_env_build
