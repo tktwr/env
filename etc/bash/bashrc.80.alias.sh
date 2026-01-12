@@ -71,11 +71,10 @@ f_alias_git() {
   alias ,gd='$SYS_GIT_EXE diff'
   alias ,gD='$SYS_GIT_EXE diff --staged'
   alias ,gf='$SYS_GIT_EXE fetch'
-  alias ,gg='$SYS_GIT_EXE graph'
   alias ,gb='$SYS_GIT_EXE branch'
   alias ,gt='$SYS_GIT_EXE tag'
 
-  alias ,ga='$SYS_GIT_EXE add'
+  alias ,gaa='$SYS_GIT_EXE add .'
   alias ,gau='$SYS_GIT_EXE add -u'
   alias ,gac='cmd.sh f_git_commit_add'
   alias ,gc='cmd.sh f_git_commit'
@@ -84,9 +83,9 @@ f_alias_git() {
   alias ,gRom='cmd.sh f_git_reset_hard_origin'
   alias ,gPom='cmd.sh f_git_push_origin'
 
-  alias ,G='$SYS_GIT_EXE graph --date-order -6'
-  alias ,GA='$SYS_GIT_EXE graph --date-order -6 --all'
-  alias ,GM='git-log.sh --log 4 --log-submodule 2'
+  alias ,gg='$SYS_GIT_EXE graph --date-order -6'
+  alias ,gga='$SYS_GIT_EXE graph --date-order -6 --all'
+  alias ,ggm='git-log.sh --log 4 --log-submodule 2'
 
   alias ,es='cmd.sh f_envs_ci_summary'
   alias ,gs='cmd.sh f_git_ci_summary'
@@ -94,8 +93,8 @@ f_alias_git() {
 
   alias .gs='cmd.sh f_popup_gs'
   alias .gg='cmd.sh f_popup_gv'
-  alias ..GS='vimapi_exec VisGS'
-  alias ..GG='vimapi_exec VisGV'
+  alias ..gs='vimapi_exec VisGS'
+  alias ..gg='vimapi_exec VisGV'
 
   # alias ,gl='vimapi_exec_above GitLog $PWD'
 }
