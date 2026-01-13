@@ -324,10 +324,11 @@ f_git_need_commit() {
   fi
   return 0
 }
+f_git_remote_status() { $SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD; }
 f_git_need_push() {
   if f_git_has_remote_branch; then
     local behind ahead
-    read behind ahead < <($SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD)
+    read behind ahead < <(f_get_remote_status)
     if [ "$ahead" -gt 0 ]; then
       return 1
     fi
@@ -353,19 +354,30 @@ f_git_need_action() {
 #------------------------------------------------------
 f_git_ci_summary() {
   f_git_ci_fetch
-  f_git_need_action > /dev/null; local need_action=$?
-  local mark=""
-  case $need_action in
-    0) mark="[\\e[32m✔ \\e[0m]" ;; # clean
-    1) mark="[\\e[31m✘ \\e[0m]" ;; # need_commit
-    2) mark="[\\e[34m \\e[0m]" ;; # need_push
-    3) mark="[\\e[35m✘ \\e[0m]" ;; # need_commit need_push
-  esac
-  if [ $need_action -gt 0 ]; then
-    local out=$(f_git_ci_graph --color=never)
-    echo -e "$mark $out"
-    f_git_ci_status
+
+  local mark_c="  "
+  local mark_r="  "
+  local behind ahead
+  local esc=$'\e'
+
+  f_git_need_commit ; local need_commit=$?
+  if f_git_has_remote_branch; then
+    read behind ahead < <(f_git_remote_status)
   fi
+  if [ "$need_commit" -eq 1 ]; then
+    mark_c="${esc}[31m✘ ${esc}[0m" # need_commit
+  else
+    mark_c="${esc}[32m✔ ${esc}[0m" # clean
+  fi
+  if [ "$behind" -gt 0 ]; then
+    mark_r="${esc}[34m ${esc}[0m" # need_pull
+  elif [ "$ahead" -gt 0 ]; then
+    mark_r="${esc}[37m ${esc}[0m" # need_push
+  fi
+
+  echo "[$mark_c$mark_r] $(f_git_ci_graph --color=never)"
+
+  f_git_ci_status
 }
 
 f_git_ci_info() {
