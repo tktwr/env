@@ -74,17 +74,17 @@ f_alias_git() {
   alias ,gb='$SYS_GIT_EXE branch'
   alias ,gt='$SYS_GIT_EXE tag'
 
-  alias ,gaa='$SYS_GIT_EXE add .'
+  alias ,ga.='$SYS_GIT_EXE add .'
   alias ,gau='$SYS_GIT_EXE add -u'
   alias ,gac='cmd.sh f_git_commit_add'
   alias ,gc='cmd.sh f_git_commit'
 
   alias ,gR='$SYS_GIT_EXE reset --hard'
   alias ,gRom='cmd.sh f_git_reset_hard_origin'
-  alias ,gPom='cmd.sh f_git_push_origin'
 
-  alias ,gg='$SYS_GIT_EXE graph --date-order -6'
-  alias ,gga='$SYS_GIT_EXE graph --date-order -6 --all'
+  alias ,gpom='cmd.sh f_git_push_origin'
+  alias ,grom='cmd.sh f_git_rebase'
+  alias ,gg='cmd.sh f_git_graph_date -6 --all'
   alias ,ggm='git-log.sh --log 4 --log-submodule 2'
 
   alias ,es='cmd.sh f_envs_ci_summary'
