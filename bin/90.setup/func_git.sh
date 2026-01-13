@@ -352,6 +352,7 @@ f_git_need_action() {
 # ci
 #------------------------------------------------------
 f_git_ci_summary() {
+  f_git_ci_fetch
   f_git_need_action > /dev/null; local need_action=$?
   local mark=""
   case $need_action in
@@ -361,9 +362,9 @@ f_git_ci_summary() {
     3) mark="[\\e[35m✘ \\e[0m]" ;; # need_commit need_push
   esac
   if [ $need_action -gt 0 ]; then
-    local out=$(git.sh graph --color=never -1)
+    local out=$(f_git_ci_graph --color=never)
     echo -e "$mark $out"
-    git.sh status -s
+    f_git_ci_status
   fi
 }
 
@@ -372,7 +373,7 @@ f_git_ci_info() {
 }
 
 f_git_ci_graph() {
-  git.sh graph -1
+  git.sh graph -1 "$@"
 }
 
 f_git_ci_status() {

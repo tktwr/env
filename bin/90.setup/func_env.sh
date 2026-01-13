@@ -40,18 +40,19 @@ GIT_DIRS="\
   $MY_REMOTE_CONFIG/templates \
   $MY_VIM_PLUGGED_DIR/vim-ide-style \
   $MY_LOCAL_CONFIG/memo \
+  $MY_LOCAL_CONFIG/memo_private \
   $MY_LOCAL_CONFIG/memo_family \
   $MY_DIARY \
   $MY_SECRET \
   "
-f_envs_ci_summary()     { for-dir.sh "git-ci.sh summary"     $GIT_DIRS; }
-f_envs_ci_info()        { for-dir.sh "git-ci.sh info"        $GIT_DIRS; }
-f_envs_ci_graph()       { for-dir.sh "git-ci.sh graph"       $GIT_DIRS; }
-f_envs_ci_status()      { for-dir.sh "git-ci.sh status"      $GIT_DIRS; }
-f_envs_ci_commit()      { for-dir.sh "git-ci.sh commit"      $GIT_DIRS; }
-f_envs_ci_fetch()       { for-dir.sh "git-ci.sh fetch"       $GIT_DIRS; }
-f_envs_ci_pull()        { for-dir.sh "git-ci.sh pull"        $GIT_DIRS; }
-f_envs_ci_push()        { for-dir.sh "git-ci.sh push"        $GIT_DIRS; }
+f_envs_ci_summary()     { for-dir.sh "cmd.sh f_git_ci_summary"     $GIT_DIRS; }
+f_envs_ci_info()        { for-dir.sh "cmd.sh f_git_ci_info"        $GIT_DIRS; }
+f_envs_ci_graph()       { for-dir.sh "cmd.sh f_git_ci_graph"       $GIT_DIRS; }
+f_envs_ci_status()      { for-dir.sh "cmd.sh f_git_ci_status"      $GIT_DIRS; }
+f_envs_ci_commit()      { for-dir.sh "cmd.sh f_git_ci_commit"      $GIT_DIRS; }
+f_envs_ci_fetch()       { for-dir.sh "cmd.sh f_git_ci_fetch"       $GIT_DIRS; }
+f_envs_ci_pull()        { for-dir.sh "cmd.sh f_git_ci_pull"        $GIT_DIRS; }
+f_envs_ci_push()        { for-dir.sh "cmd.sh f_git_ci_push"        $GIT_DIRS; }
 #------------------------------------------------------
 BUILD_DIRS="\
   $MY_LIBTT \
