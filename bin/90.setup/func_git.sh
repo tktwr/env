@@ -361,18 +361,19 @@ f_git_ci_summary() {
   local esc=$'\e'
 
   f_git_need_commit ; local need_commit=$?
-  if f_git_has_remote_branch; then
-    read behind ahead < <(f_git_remote_status)
-  fi
   if [ "$need_commit" -eq 1 ]; then
     mark_c="${esc}[31m✘ ${esc}[0m" # need_commit
   else
     mark_c="${esc}[32m✔ ${esc}[0m" # clean
   fi
-  if [ "$behind" -gt 0 ]; then
-    mark_r="${esc}[34m $behind${esc}[0m" # need_pull
-  elif [ "$ahead" -gt 0 ]; then
-    mark_r="${esc}[37m $ahead${esc}[0m" # need_push
+
+  if f_git_has_remote_branch; then
+    read behind ahead < <(f_git_remote_status)
+    if [ "$behind" -gt 0 ]; then
+      mark_r="${esc}[34m $behind${esc}[0m" # need_pull
+    elif [ "$ahead" -gt 0 ]; then
+      mark_r="${esc}[37m $ahead${esc}[0m" # need_push
+    fi
   fi
 
   echo "[$mark_c$mark_r] $(f_git_ci_graph --color=never)"
