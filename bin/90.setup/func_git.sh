@@ -370,9 +370,9 @@ f_git_ci_summary() {
     mark_c="${esc}[32m✔ ${esc}[0m" # clean
   fi
   if [ "$behind" -gt 0 ]; then
-    mark_r="${esc}[34m ${esc}[0m" # need_pull
+    mark_r="${esc}[34m $behind${esc}[0m" # need_pull
   elif [ "$ahead" -gt 0 ]; then
-    mark_r="${esc}[37m ${esc}[0m" # need_push
+    mark_r="${esc}[37m $ahead${esc}[0m" # need_push
   fi
 
   echo "[$mark_c$mark_r] $(f_git_ci_graph --color=never)"
