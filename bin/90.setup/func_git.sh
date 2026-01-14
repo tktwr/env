@@ -386,26 +386,26 @@ f_git_ci_info() {
 }
 
 f_git_ci_graph() {
-  git.sh graph -1 "$@"
+  $SYS_GIT_EXE graph -1 "$@"
 }
 
 f_git_ci_status() {
-  git.sh status -s
+  $SYS_GIT_EXE status -s
 }
 
 f_git_ci_commit() {
   f_git_need_commit; local need_commit=$?
   if [ $need_commit -eq 1 ]; then
-    git.sh commit -a -m 'update'
+    $SYS_GIT_EXE commit -a -m 'update'
   fi
 }
 
 f_git_ci_fetch() {
-  git.sh fetch
+  $SYS_GIT_EXE fetch
 }
 
 f_git_ci_pull() {
-  git.sh pull
+  $SYS_GIT_EXE pull
 }
 
 f_git_ci_push() {
@@ -417,13 +417,17 @@ f_git_ci_push() {
 
 #------------------------------------------------------
 f_git_repo_master_to_main() {
-  git branch -m master main
-  git push -u origin main
-  git branch -vv
+  $SYS_GIT_EXE branch -m master main
+  $SYS_GIT_EXE push -u origin main
+  $SYS_GIT_EXE branch -vv
 }
 
 f_git_repo_delete_remote_master() {
   # githubでデフォルトブランチをmainに変更後
-  git push origin --delete master
+  $SYS_GIT_EXE push origin --delete master
+}
+
+f_git_remote_none() {
+  $SYS_GIT_EXE remote rm origin
 }
 
