@@ -353,8 +353,6 @@ f_git_need_action() {
 # ci
 #------------------------------------------------------
 f_git_ci_summary() {
-  f_git_ci_fetch
-
   local mark_c="  "
   local mark_r="  "
   local behind ahead

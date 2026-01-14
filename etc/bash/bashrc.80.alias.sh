@@ -81,9 +81,9 @@ f_alias_git() {
   alias ,gg='cmd.sh f_git_graph_date -6 --all'
   alias ,ggm='git-log.sh --log 4 --log-submodule 2'
 
-  alias ,gf='$SYS_GIT_EXE fetch'
-  alias ,gpush='cmd.sh f_git_push_origin'
+  alias ,gfetch='$SYS_GIT_EXE fetch'
   alias ,gpull='$SYS_GIT_EXE pull'
+  alias ,gpush='cmd.sh f_git_push_origin'
   alias ,grebase='cmd.sh f_git_rebase'
 
   alias ,gR='$SYS_GIT_EXE reset --hard'
@@ -91,6 +91,9 @@ f_alias_git() {
 
   alias ,es='cmd.sh f_envs_ci_summary'
   alias ,eac='cmd.sh f_envs_ci_commit'
+  alias ,efetch='cmd.sh f_envs_ci_fetch'
+  alias ,epull='cmd.sh f_envs_ci_pull'
+  alias ,epush='cmd.sh f_envs_ci_push'
 
   alias ,gs='cmd.sh f_git_ci_summary'
   alias ,gi='cmd.sh f_git_ci_info'
