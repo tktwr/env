@@ -399,11 +399,15 @@ f_git_ci_commit() {
 }
 
 f_git_ci_fetch() {
-  $SYS_GIT_EXE fetch
+  if f_git_has_remote_branch; then
+    $SYS_GIT_EXE fetch
+  fi
 }
 
 f_git_ci_pull() {
-  $SYS_GIT_EXE pull
+  if f_git_has_remote_branch; then
+    $SYS_GIT_EXE pull
+  fi
 }
 
 f_git_ci_push() {
