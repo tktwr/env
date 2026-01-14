@@ -328,7 +328,7 @@ f_git_remote_status() { $SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD; 
 f_git_need_push() {
   if f_git_has_remote_branch; then
     local behind ahead
-    read behind ahead < <(f_get_remote_status)
+    read behind ahead < <(f_git_remote_status)
     if [ "$ahead" -gt 0 ]; then
       return 1
     fi
