@@ -94,6 +94,7 @@ f_alias_git() {
   alias ,efetch='cmd.sh f_envs_ci_fetch'
   alias ,epull='cmd.sh f_envs_ci_pull'
   alias ,epush='cmd.sh f_envs_ci_push'
+  alias ,evimdiff='cmd.sh f_envs_ci_vimdiff'
 
   alias ,gs='cmd.sh f_git_ci_summary'
   alias ,gi='cmd.sh f_git_ci_info'

@@ -53,6 +53,7 @@ f_envs_ci_commit()      { for-dir.sh "cmd.sh f_git_ci_commit"      $GIT_DIRS; }
 f_envs_ci_fetch()       { for-dir.sh "cmd.sh f_git_ci_fetch"       $GIT_DIRS; }
 f_envs_ci_pull()        { for-dir.sh "cmd.sh f_git_ci_pull"        $GIT_DIRS; }
 f_envs_ci_push()        { for-dir.sh "cmd.sh f_git_ci_push"        $GIT_DIRS; }
+f_envs_ci_vimdiff()     { for-dir.sh "cmd.sh f_git_ci_vimdiff"     $GIT_DIRS; }
 #------------------------------------------------------
 BUILD_DIRS="\
   $MY_LIBTT \

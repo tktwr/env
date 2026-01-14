@@ -8,14 +8,21 @@ ESC = "\x1b"
 
 patterns = [
     # [xxx] の xxx だけ紫
-    (re.compile(r"\[([^]]+)\]"),
-     lambda m: f"[{ESC}[35m{m.group(1)}{ESC}[0m]"),
+    (re.compile(r"\[([^]]+)\]"), lambda m: f"[{ESC}[33m{m.group(1)}{ESC}[0m]"),
+    (re.compile(r"\(([^)]+)\)"), lambda m: f"({ESC}[31m{m.group(1)}{ESC}[0m)"),
 
     # キーワード色付け
-    (re.compile(r"OK"),   f"{ESC}[32mOK{ESC}[0m"),
-    (re.compile(r"FAIL"), f"{ESC}[31mFAIL{ESC}[0m"),
-    (re.compile(r"TODO"), f"{ESC}[37mTODO{ESC}[0m"),
-    (re.compile(r"DONE"), f"{ESC}[32mDONE{ESC}[0m"),
+    (re.compile(r"OK")      , f"{ESC}[32mOK{ESC}[0m")      ,
+    (re.compile(r"FAIL")    , f"{ESC}[31mFAIL{ESC}[0m")    ,
+    (re.compile(r"TODO")    , f"{ESC}[37mTODO{ESC}[0m")    ,
+    (re.compile(r"DONE")    , f"{ESC}[32mDONE{ESC}[0m")    ,
+    (re.compile(r"rconfig") , f"{ESC}[32mrconfig{ESC}[0m") ,
+    (re.compile(r"lconfig") , f"{ESC}[34mlconfig{ESC}[0m") ,
+    (re.compile(r"pconfig") , f"{ESC}[35mpconfig{ESC}[0m") ,
+    (re.compile(r"✔ ")      , f"{ESC}[32m✔ {ESC}[0m")      ,
+    (re.compile(r"✘ ")      , f"{ESC}[31m✘ {ESC}[0m")      ,
+    (re.compile(r" ")      , f"{ESC}[37m {ESC}[0m")      ,
+    (re.compile(r" ")      , f"{ESC}[34m {ESC}[0m")      ,
 ]
 
 for line in sys.stdin:

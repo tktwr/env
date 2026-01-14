@@ -1,18 +1,22 @@
 #!/bin/bash
 
 #------------------------------------------------------
+# info:remote
+#------------------------------------------------------
+f_git_remote_branch_name() {
+  $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u}
+}
+f_git_remote_status() {
+  $SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD
+}
+f_git_has_remote_branch() {
+  f_git_remote_branch_name >/dev/null 2>&1
+}
+#------------------------------------------------------
 # info
 #------------------------------------------------------
 f_git_root() {
   git rev-parse --show-toplevel 2> /dev/null
-}
-
-f_git_has_remote_branch() {
-  $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u} >/dev/null 2>&1
-}
-
-f_git_remote_branch_name() {
-  $SYS_GIT_EXE rev-parse --abbrev-ref --symbolic-full-name @{u}
 }
 
 f_git_branch_name() {
@@ -324,7 +328,6 @@ f_git_need_commit() {
   fi
   return 0
 }
-f_git_remote_status() { $SYS_GIT_EXE rev-list --left-right --count @{u}...HEAD; }
 f_git_need_push() {
   if f_git_has_remote_branch; then
     local behind ahead
@@ -354,27 +357,26 @@ f_git_need_action() {
 #------------------------------------------------------
 f_git_ci_summary() {
   local mark_c="  "
-  local mark_r="  "
+  local mark_r="   "
   local behind ahead
-  local esc=$'\e'
 
   f_git_need_commit ; local need_commit=$?
   if [ "$need_commit" -eq 1 ]; then
-    mark_c="${esc}[31m✘ ${esc}[0m" # need_commit
+    mark_c="✘ " # need_commit
   else
-    mark_c="${esc}[32m✔ ${esc}[0m" # clean
+    mark_c="✔ " # clean
   fi
 
   if f_git_has_remote_branch; then
     read behind ahead < <(f_git_remote_status)
     if [ "$behind" -gt 0 ]; then
-      mark_r="${esc}[34m $behind${esc}[0m" # need_pull
+      mark_r=" $behind" # need_pull
     elif [ "$ahead" -gt 0 ]; then
-      mark_r="${esc}[37m $ahead${esc}[0m" # need_push
+      mark_r=" $ahead" # need_push
     fi
   fi
 
-  echo "[$mark_c$mark_r] $(f_git_ci_graph --color=never)"
+  echo "[$mark_c$mark_r] $(f_git_ci_graph --color=never)" | coloring.py
 
   f_git_ci_status
 }
@@ -414,6 +416,14 @@ f_git_ci_push() {
   f_git_need_push; local need_push=$?
   if [ $need_push -eq 1 ]; then
     f_git_push_origin
+  fi
+}
+
+f_git_ci_vimdiff() {
+  f_git_need_commit; local need_commit=$?
+  if [ $need_commit -eq 1 ]; then
+    cmd.sh f_popup_gs
+    pause.sh
   fi
 }
 
