@@ -70,7 +70,6 @@ f_alias_git() {
 
   alias ,gd='$SYS_GIT_EXE diff'
   alias ,gD='$SYS_GIT_EXE diff --staged'
-  alias ,gf='$SYS_GIT_EXE fetch'
   alias ,gb='$SYS_GIT_EXE branch'
   alias ,gt='$SYS_GIT_EXE tag'
 
@@ -79,15 +78,20 @@ f_alias_git() {
   alias ,gac='cmd.sh f_git_commit_add'
   alias ,gc='cmd.sh f_git_commit'
 
-  alias ,gR='$SYS_GIT_EXE reset --hard'
-  alias ,gRom='cmd.sh f_git_reset_hard_origin'
-
-  alias ,gpom='cmd.sh f_git_push_origin'
-  alias ,grom='cmd.sh f_git_rebase'
   alias ,gg='cmd.sh f_git_graph_date -6 --all'
   alias ,ggm='git-log.sh --log 4 --log-submodule 2'
 
+  alias ,gf='$SYS_GIT_EXE fetch'
+  alias ,gpush='cmd.sh f_git_push_origin'
+  alias ,gpull='$SYS_GIT_EXE pull'
+  alias ,grebase='cmd.sh f_git_rebase'
+
+  alias ,gR='$SYS_GIT_EXE reset --hard'
+  alias ,gRom='cmd.sh f_git_reset_hard_origin'
+
   alias ,es='cmd.sh f_envs_ci_summary'
+  alias ,eac='cmd.sh f_envs_ci_commit'
+
   alias ,gs='cmd.sh f_git_ci_summary'
   alias ,gi='cmd.sh f_git_ci_info'
 
