@@ -8,7 +8,7 @@
 +              | links                          | $MY_BMK/links.txt
 +              | papers                         | $MY_BMK/papers.txt
 +              | memo_family/kakei              | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
-+              | memo_private/dev               | $MY_LOCAL_CONFIG/memo_private/dev.md.html
++              | memo_private/dev_todo          | $MY_LOCAL_CONFIG/memo_private/dev.md.html
 +              | memo_private/commands          | $MY_LOCAL_CONFIG/memo_private/dev_cmd.md.html
 +              | memo/keymap                    | $MY_MEMO/my.md.html
 +              | memo/vim                       | $MY_MEMO/vim.md.html
