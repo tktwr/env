@@ -13,7 +13,7 @@ vid() { display "vid:$*"; }
 
 f_alias() {
   # source
-  alias s='source $HOME/.bashrc'
+  alias s='source ~/.bashrc'
   alias s.venv='source .venv/bin/activate'
   alias s.zero='source $MY_BASH/bashrc_zero.sh'
 
@@ -81,11 +81,12 @@ f_alias_git() {
   alias ,gg='cmd.sh f_git_graph_date -6 --all'
   alias ,ggm='git-log.sh --log 4 --log-submodule 2'
 
-  alias ,gfetch='$SYS_GIT_EXE fetch'
-  alias ,gpull='$SYS_GIT_EXE pull'
-  alias ,gpush='cmd.sh f_git_push_origin'
+  alias ,gs='cmd.sh f_git_ci_summary'
+  alias ,gi='cmd.sh f_git_ci_info'
+  alias ,gfetch='cmd.sh f_git_ci_fetch'
+  alias ,gpull='cmd.sh f_git_ci_pull'
+  alias ,gpush='cmd.sh f_git_ci_push'
   alias ,grebase='cmd.sh f_git_rebase'
-
   alias ,gR='$SYS_GIT_EXE reset --hard'
   alias ,gRom='cmd.sh f_git_reset_hard_origin'
 
@@ -94,11 +95,8 @@ f_alias_git() {
   alias ,efetch='cmd.sh f_envs_ci_fetch'
   alias ,epull='cmd.sh f_envs_ci_pull'
   alias ,epush='cmd.sh f_envs_ci_push'
-  alias ,evimdiff='cmd.sh f_envs_ci_vimdiff'
 
-  alias ,gs='cmd.sh f_git_ci_summary'
-  alias ,gi='cmd.sh f_git_ci_info'
-
+  alias .es='cmd.sh f_envs_ci_vimdiff'
   alias .gs='cmd.sh f_popup_gs'
   alias .gg='cmd.sh f_popup_gv'
   alias ..gs='vimapi_exec VisGS'
@@ -228,6 +226,7 @@ f_alias_os_common() {
   alias ls='ls.sh'
   alias make='mymake.sh'
   alias m='mymake.sh'
+  alias ms='mymake.sh; source ~/.bashrc'
 
   alias vim-which='vim-which.sh'
   alias vim-where='vim-which.sh'
