@@ -25,7 +25,6 @@ compile_commands.json
 .cache/
 _doxygen*/
 !Doxyfile
-#third_party/
 
 # python
 __pycache__
