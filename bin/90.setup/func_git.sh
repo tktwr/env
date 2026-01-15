@@ -415,7 +415,7 @@ f_git_ci_pull() {
 f_git_ci_push() {
   f_git_need_push; local need_push=$?
   if [ $need_push -eq 1 ]; then
-    f_git_push_origin
+    $SYS_GIT_EXE push origin $(f_git_branch_name)
   fi
 }
 
