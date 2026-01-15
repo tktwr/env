@@ -5,7 +5,7 @@ _f_unexpand_env() {
   cat
 }
 
-_f_print_ver() {
+_f_print_version() {
   cmd=$1
   abspath=$(which $cmd 2> /dev/null)
   ver=$($cmd --version 2> /dev/null | head -1)
@@ -17,13 +17,13 @@ _f_print_ver() {
 }
 
 #------------------------------------------------------
-f_info_ver_os() {
+f_info_version_os() {
   _f_title "OS"
 
   lsb_release -dc
 }
 
-f_info_ver_exe() {
+f_info_version_exe() {
   _f_title "VERSION"
 
   BIN_NAMES="\
@@ -49,7 +49,7 @@ f_info_ver_exe() {
   rg \
   "
   for i in $BIN_NAMES; do
-    _f_print_ver $i
+    _f_print_version $i
   done
 }
 

@@ -35,15 +35,17 @@ f_envs_tags() {
 GIT_DIRS="\
   $MY_ENV \
   $MY_MEMO \
-  $MY_SAMPLES \
-  $MY_LIBTT \
-  $MY_REMOTE_CONFIG/templates \
-  $MY_VIM_PLUGGED_DIR/vim-ide-style \
-  $MY_LOCAL_CONFIG/memo \
   $MY_LOCAL_CONFIG/memo_private \
   $MY_LOCAL_CONFIG/memo_family \
   $MY_DIARY \
   $MY_SECRET \
+  "
+GIT_ALL_DIRS="\
+  $MY_LOCAL_CONFIG/memo \
+  $MY_SAMPLES \
+  $MY_LIBTT \
+  $MY_REMOTE_CONFIG/templates \
+  $MY_VIM_PLUGGED_DIR/vim-ide-style \
   "
 f_envs_ci_summary()     { for-dir.sh "cmd.sh f_git_ci_summary"     $GIT_DIRS; }
 f_envs_ci_info()        { for-dir.sh "cmd.sh f_git_ci_info"        $GIT_DIRS; }
