@@ -97,8 +97,8 @@ f_alias_git() {
   alias ,efetch='cmd.sh f_envs_ci_fetch'
   alias ,epull='cmd.sh f_envs_ci_pull'
   alias ,epush='cmd.sh f_envs_ci_push'
-
   alias .es='cmd.sh f_envs_ci_vimdiff'
+
   alias .gs='cmd.sh f_popup_gs'
   alias .gg='cmd.sh f_popup_gv'
   alias ..gs='vimapi_exec VisGS'
