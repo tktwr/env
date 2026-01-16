@@ -380,6 +380,10 @@ f_git_ci_summary() {
 
   f_git_ci_status
 }
+f_git_ci_fetch_summary() {
+  f_git_ci_fetch
+  f_git_ci_summary
+}
 
 f_git_ci_info() {
   f_git_print_branch_all
