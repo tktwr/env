@@ -356,8 +356,8 @@ f_git_need_action() {
 # ci
 #------------------------------------------------------
 f_git_ci_summary() {
-  local mark_c="  "
-  local mark_r="   "
+  local mark_c=""
+  local mark_r=""
   local behind ahead
 
   f_git_need_commit ; local need_commit=$?
@@ -370,9 +370,10 @@ f_git_ci_summary() {
   if f_git_has_remote_branch; then
     read behind ahead < <(f_git_remote_status)
     if [ "$behind" -gt 0 ]; then
-      mark_r=" $behind" # need_pull
-    elif [ "$ahead" -gt 0 ]; then
-      mark_r=" $ahead" # need_push
+      mark_r="$mark_r $behind" # need_pull
+    fi
+    if [ "$ahead" -gt 0 ]; then
+      mark_r="$mark_r $ahead" # need_push
     fi
   fi
 
