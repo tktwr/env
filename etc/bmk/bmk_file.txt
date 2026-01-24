@@ -1,19 +1,19 @@
 -------------- | ------------------------------ | ------------------------------
-+ 📄💡         | dia                            | $MY_DIARY/diary.md.html
-+              | todo                           | $MY_DIARY/todo.md.html
-+              | weekly                         | $MY_DIARY/weekly.md.html
-+              | finance                        | $MY_DIARY/finance.md.html
-+              | info                           | $MY_DIARY/info.md.html
++ 📅           | dia                            | $MY_DIARY/diary.md.html
++ ✏            | todo                           | $MY_DIARY/todo.md.html
++ ✏            | todo_dev                       | $MY_LOCAL_CONFIG/memo_private/dev_todo.md.html
++ ✅           | done                           | $MY_DIARY/weekly.md.html
++ 💰           | finance                        | $MY_DIARY/finance.md.html
++ 💰           | memo_family/kakei              | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
++ 💡           | info                           | $MY_DIARY/info.md.html
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html
-+              | links                          | $MY_BMK/links.txt
-+              | papers                         | $MY_BMK/papers.txt
-+              | memo_family/kakei              | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
-+              | memo_private/dev_todo          | $MY_LOCAL_CONFIG/memo_private/dev_todo.md.html
++ 🔗           | links                          | $MY_BMK/links.txt
++ 📄           | papers                         | $MY_BMK/papers.txt
 +              | memo_private/commands          | $MY_LOCAL_CONFIG/memo_private/dev_cmd.md.html
 +              | memo/keymap                    | $MY_MEMO/my.md.html
 +              | memo/vim                       | $MY_MEMO/vim.md.html
 +              | memo/git                       | $MY_MEMO/git.md.html
 +              | memo/lang                      | $MY_MEMO/lang.md.html
--              | work/index.md.html             | $MY_WORK/index.md.html
+- 🏠           | work/index.md.html             | $MY_WORK/index.md.html
 
 # vim:set ft=bmk syntax=txt nowrap:
