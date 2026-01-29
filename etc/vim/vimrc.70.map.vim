@@ -144,9 +144,20 @@ augroup END
 
 vnoremap A       y:'<,'>w !sumcol.py<CR>
 
-func R_SumCol(col=2, sep='|')
+func! R_SumCol(col=2, sep='|')
   echom printf("R_SumCol: col=%d sep=%s", a:col, a:sep)
-  echom system(printf("sumcol.py -c %d -s '%s'", a:col, a:sep), @")
+
+  " stdin に @" を渡して、stdout を受け取る
+  let cmd = printf("sumcol.py -c %d -s %s", a:col, shellescape(a:sep))
+  let out = system(cmd, @")
+
+  " system() は末尾に改行が付くことが多いので落とす（必要なら）
+  let out = substitute(out, '\n\%$', '', '')
+
+  " 標準出力をレジスタに保存
+  call setreg('"', out)
+
+  echom 'saved to register "'
 endfunc
 
 "------------------------------------------------------

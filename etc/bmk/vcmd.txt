@@ -91,6 +91,11 @@
 - ,sumcol2     | R_SumCol(2)                    | :call R_SumCol(2)
 - ,sumcol3     | R_SumCol(3)                    | :call R_SumCol(3)
 - ,sumcol4     | R_SumCol(4)                    | :call R_SumCol(4)
+- ,sumcol5     | R_SumCol(5)                    | :call R_SumCol(5)
+- ,sumcol6     | R_SumCol(6)                    | :call R_SumCol(6)
+- ,sumcol7     | R_SumCol(7)                    | :call R_SumCol(7)
+- ,sumcol8     | R_SumCol(8)                    | :call R_SumCol(8)
+- ,sumcol9     | R_SumCol(9)                    | :call R_SumCol(9)
 -----          | ------------------------------ | ------------------------------
 - ,prs         | P_RemoveSpaces                 | :call P_RemoveSpaces()
 - ,pfc         | P_FormatComma                  | :call P_FormatComma()
