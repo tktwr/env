@@ -10,7 +10,7 @@ PATTERNS = [
     r'<style.*>.*</style>',
     r'<script.*>.*</script>',
     r'<meta name=.*>',
-    r'^\s*\*\*.*\*\*\s*$',
+    r'^\s*\*\*[^*]*\*\*\s*$',
 ]
 
 regex = re.compile('|'.join(PATTERNS))

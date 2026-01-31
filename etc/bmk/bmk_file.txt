@@ -1,7 +1,7 @@
 -------------- | ------------------------------ | ------------------------------
 + 📅           | dia                            | $MY_DIARY/diary.md.html
 + ✏            | todo                           | $MY_DIARY/todo.md.html
-+ ✏            | todo_dev                       | $MY_LOCAL_CONFIG/memo_private/dev_todo.md
++ ✏            | todo_dev                       | $MY_LOCAL_CONFIG/memo_private/dev/dev_todo.md
 + ✅           | done                           | $MY_DIARY/weekly.md.html
 + 💰           | finance                        | $MY_DIARY/finance.md.html
 + 💰           | memo_family/kakei              | $MY_LOCAL_CONFIG/memo_family/life_kakei.md.html
@@ -9,11 +9,11 @@
 +              | scratchpad                     | $MY_DIARY/scratchpad.md.html
 + 🔗           | links                          | $MY_BMK/links.txt
 + 📄           | papers                         | $MY_BMK/papers.txt
-+              | memo_private/commands          | $MY_LOCAL_CONFIG/memo_private/dev_cmd.md
-+              | memo/keymap                    | $MY_MEMO/my.md.html
-+              | memo/vim                       | $MY_MEMO/vim.md.html
-+              | memo/git                       | $MY_MEMO/git.md.html
-+              | memo/lang                      | $MY_MEMO/lang.md.html
++              | memo/commands                  | $MY_LOCAL_CONFIG/memo_private/dev/dev_cmd.md
++              | memo/keymap                    | $MY_LOCAL_CONFIG/memo_private/dev/keymap.md
++              | memo/vim                       | $MY_LOCAL_CONFIG/memo_private/dev/vim.md
++              | memo/git                       | $MY_LOCAL_CONFIG/memo_private/dev/git.md
++              | memo/lang                      | $MY_LOCAL_CONFIG/memo_private/dev/lang.md.html
 - 🏠           | work/index.md.html             | $MY_WORK/index.md.html
 
 # vim:set ft=bmk syntax=txt nowrap:

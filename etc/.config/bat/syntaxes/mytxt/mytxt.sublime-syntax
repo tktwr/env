@@ -1,7 +1,7 @@
 %YAML 1.2
 ---
 name: mytxt
-file_extensions: [mytxt, txt, html]
+file_extensions: [mytxt, txt, md, html]
 scope: source.mytxt
 
 contexts:
